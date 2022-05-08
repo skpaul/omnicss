@@ -1,0 +1,227 @@
+
+@mixin create-padding-old($class:"", $property:"") {
+
+    @for $i from 1 through 9 {
+        .#{$class}-#{$i} {
+            #{$property}: #{$i}px;
+          }
+    }
+
+    //This loop creates value 10px, 15px, 20px, 25px
+    @for $i from 2 through 5 {
+        $value: $i*5;
+        .#{$class}-#{$value} {
+            #{$property}: #{$value}px;            
+        }
+    }
+}
+
+
+@mixin create-padding($prefix:"", $property:"") {
+    .#{$prefix}0 {
+        #{$property}: 0 !important;
+    }
+  
+    .#{$prefix}025 {
+        #{$property}: 0.25rem !important;
+    }
+  
+    .#{$prefix}050 {
+        #{$property}: 0.5rem !important;
+    }
+
+    .#{$prefix}075 {
+        #{$property}: 0.75rem !important;
+    }
+  
+    .#{$prefix}100 {
+        #{$property}: 1rem !important;
+    }
+
+    .#{$prefix}125 {
+        #{$property}: 1.25rem !important;
+    }
+  
+    .#{$prefix}150 {
+        #{$property}: 1.5rem !important;
+    }
+  
+    .#{$prefix}300 {
+        #{$property}: 3rem !important;
+    }
+    
+    @include small{
+        .#{$prefix}auto-sm {
+            #{$property}: auto !important;
+        }
+    
+        .#{$prefix}0-sm {
+            #{$property}: 0 !important;
+        }
+      
+        .#{$prefix}025-sm {
+            #{$property}: 0.25rem !important;
+        }
+      
+        .#{$prefix}050-sm {
+            #{$property}: 0.5rem !important;
+        }
+      
+        .#{$prefix}100-sm {
+            #{$property}: 1rem !important;
+        }
+      
+        .#{$prefix}150-sm {
+            #{$property}: 1.5rem !important;
+        }
+      
+        .#{$prefix}300-sm {
+            #{$property}: 3rem !important;
+        }
+    }
+
+    @include large{
+        .#{$prefix}auto-lg {
+            #{$property}: auto !important;
+        }
+    
+        .#{$prefix}0-lg {
+            #{$property}: 0 !important;
+        }
+      
+        .#{$prefix}025-lg {
+            #{$property}: 0.25rem !important;
+        }
+      
+        .#{$prefix}050-lg {
+            #{$property}: 0.5rem !important;
+        }
+      
+        .#{$prefix}100-lg {
+            #{$property}: 1rem !important;
+        }
+      
+        .#{$prefix}150-lg {
+            #{$property}: 1.5rem !important;
+        }
+      
+        .#{$prefix}300-lg {
+            #{$property}: 3rem !important;
+        }
+    }
+}
+
+@include create-padding("pa", "padding"); //will create .m-* {padding:*rem;}
+@include create-padding("pt", "padding-top"); 
+@include create-padding("pb", "padding-bottom"); 
+@include create-padding("pl", "padding-left"); 
+@include create-padding("pr", "padding-right"); 
+
+@mixin create-double-padding($prefix:"", $property1:"", $property2:"") {
+    .#{$prefix}0 {
+        #{$property1}: 0 !important;
+        #{$property2}: 0 !important;
+    }
+  
+    .#{$prefix}025 {
+        #{$property1}: 0.25rem !important;
+        #{$property2}: 0.25rem !important;
+    }
+  
+    .#{$prefix}050 {
+        #{$property1}: 0.5rem !important;
+        #{$property2}: 0.5rem !important;
+    }
+  
+    .#{$prefix}100 {
+        #{$property1}: 1rem !important;
+        #{$property2}: 1rem !important;
+    }
+  
+    .#{$prefix}150 {
+        #{$property1}: 1.5rem !important;
+        #{$property2}: 1.5rem !important;
+    }
+  
+    .#{$prefix}300 {
+        #{$property1}: 3rem !important;
+        #{$property2}: 3rem !important;
+    }
+    
+    @include small{
+        .#{$prefix}auto-sm {
+            #{$property1}: auto !important;
+            #{$property2}: auto !important;
+        }
+    
+        .#{$prefix}0-sm {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+      
+        .#{$prefix}025-sm {
+            #{$property1}: 0.25rem !important;
+            #{$property2}: 0.25rem !important;
+        }
+      
+        .#{$prefix}050-sm {
+            #{$property1}: 0.5rem !important;
+            #{$property2}: 0.5rem !important;
+        }
+      
+        .#{$prefix}100-sm {
+            #{$property1}: 1rem !important;
+            #{$property2}: 1rem !important;
+        }
+      
+        .#{$prefix}150-sm {
+            #{$property1}: 1.5rem !important;
+            #{$property2}: 1.5rem !important;
+        }
+      
+        .#{$prefix}300-sm {
+            #{$property1}: 3rem !important;
+            #{$property2}: 3rem !important;
+        }
+    }
+
+    @include large{
+        .#{$prefix}auto-lg {
+            #{$property1}: auto !important;
+            #{$property2}: auto !important;
+        }
+    
+        .#{$prefix}0-lg {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+      
+        .#{$prefix}025-lg {
+            #{$property1}: 0.25rem !important;
+            #{$property2}: 0.25rem !important;
+        }
+      
+        .#{$prefix}050-lg {
+            #{$property1}: 0.5rem !important;
+            #{$property2}: 0.5rem !important;
+        }
+      
+        .#{$prefix}100-lg {
+            #{$property1}: 1rem !important;
+            #{$property2}: 1rem !important;
+        }
+      
+        .#{$prefix}150-lg {
+            #{$property1}: 1.5rem !important;
+            #{$property2}: 1.5rem !important;
+        }
+      
+        .#{$prefix}300-lg {
+            #{$property1}: 3rem !important;
+            #{$property2}: 3rem !important;
+        }
+    }
+}
+
+@include create-double-padding("pv", "padding-top","padding-bottom"); 
+@include create-double-padding("ph", "padding-left","padding-right"); 

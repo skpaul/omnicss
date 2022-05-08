@@ -1,0 +1,50 @@
+
+////========================
+//Convert HEX to rgba example
+// rgba(#ff0000, 0.5);
+////========================
+    .bg-brand{
+        background-color: var(--brand-color);
+    }
+
+    .fg-brand{
+        color: var(--brand-color);
+    }
+
+    .bc-brand{
+        border-color: var(--brand-color);
+    }
+
+    .link-color{
+        color: var(--default-hyperlink-color);
+    }
+
+    .bg-default{
+        background-color: var(--dafault-background);
+    }
+    .fg-default{
+        color: var(--default-foreground);
+    }
+    .bc-default{
+        border-color: var(--default-border);
+    }
+
+    .bg-muted{
+        background-color: var(--muted-background);
+    }
+    .fg-muted{
+        color: var(--muted-foreground);
+    }
+    .bc-muted{
+        border-color: var(--muted-border);
+    }
+
+    .bg-red{
+        background-color: red !important;
+    }
+    .fg-red{
+        color: red !important;
+    }
+    .bc-red{
+        border-color: red !important;
+    }

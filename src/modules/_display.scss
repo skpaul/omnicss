@@ -1,0 +1,125 @@
+.hidden{
+    display: none !important;
+    @include small(){
+        &-sm{
+            display: none !important; //.d-hidden-sm { ... }
+        }
+    }
+    @include large(){
+        &-lg{
+            display: none !important; //.d-hidden-lg { ... }
+        }
+    }
+}
+
+.d{
+    &-none {
+        display: none !important; //.d-none { ... }
+        @include small(){
+            &-sm{
+                display: none !important; //.d-none-sm { ... }
+            }
+        }
+        @include large(){
+            &-lg{
+                display: none !important; //.d-none-lg { ... }
+            }
+        }
+    }
+
+    &-inline {
+        display: inline !important; //.d-inline { ... }
+        @include small(){
+            &-sm {
+                display: inline !important; //.d-inline-sm { ... }
+            }
+        }
+        @include large(){
+            &-lg {
+                display: inline !important; //.d-inline-lg { ... }
+            }
+        }
+    }
+
+    &-block {
+        display: block !important; //.d-block { ... }
+        @include small(){
+            &-sm {
+                display: block !important; //.d-block-sm { ... }
+            }
+        }
+        @include large(){
+            &-lg {
+                display: block !important; //.d-block-lg { ... }
+            }
+        }
+    }
+
+    &-inblock {
+        display: inline-block !important; //.d-inblock { ... }
+        @include small(){
+            &-sm {
+                display: inline-block !important; //.d-inblock-sm { ... }
+            }
+        }
+        @include large(){
+            &-lg {
+                display: inline-block !important; //.d-inblock-lg { ... }
+            }
+        }
+    }
+
+
+
+    &-inflex {
+        display: inline-flex !important;
+        @include small(){
+            &-sm { //.d-inflex-sm { ... }
+                display: inline-flex !important; 
+            }
+        }
+        @include large(){
+            &-lg { //.d-inflex-lg { ... }
+                display: inline-flex !important; 
+            }
+        }
+    }
+
+    &-flex { //.d-flex { ... }
+        display: flex !important;
+        @include small(){
+            &-sm { //.d-flex-sm { ... }
+                display: flex !important;
+            }
+        }
+        @include large(){
+            &-lg { //.d-flex-lg { ... }
+                display: flex !important;
+            }
+        }
+    }
+
+    &-grid {
+        display: grid !important;
+        //Excluded media query intentionally.
+    }
+    &-ingrid {
+        display: -ms-inline-grid !important;
+        display: inline-grid !important;
+        //Excluded media query intentionally.
+    }
+
+    &-table {
+        display: table !important;
+        //Excluded media query intentionally.
+        &-row {
+            display: table-row !important; //.d-table-row { ... }
+            //Excluded media query intentionally.
+        }
+
+        &-cell {
+            display: table-cell !important; //.d-table-cell { ... }
+            //Excluded media query intentionally.
+        }
+    }
+}

@@ -1,0 +1,94 @@
+
+form.small{   
+
+        width: 98%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding:20px;
+
+        .field{
+            display: flex;
+            flex-direction: row; 
+            margin-bottom: 20px;
+            @include sm {  
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+        }
+
+          //Set common font for all input element
+        label, input[type=text], input[type=password], select, textarea, input[type=submit], button {
+            font-family: $font-family;
+        }
+
+        //designed for lg first
+        label{
+            color: $label-color;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            &.required::after {
+                content: "*";
+                color: red;
+                padding-left: 2px;
+            }
+        }
+
+        label{
+            width: 35%;
+            @include sm{
+                width: 100%;
+                margin-bottom: 5px;
+             }
+        }
+
+        input[type=text], input[type=password], select{
+            width: 65%;
+            @include sm{
+                width: 100%;
+             }
+        }
+
+        input[type=submit], .recover{
+            margin-left: 35%;
+            @include sm{
+                margin-left: 0;
+             }
+        }
+
+        //Set common type settings for all.
+        input[type=text], input[type=password], select, input[type=submit], button {
+            font-weight: 400;
+            font-size: 15px;
+            color: #3d4e5e;
+            letter-spacing: 0.25px; //0.02452rem;
+        }
+
+        //Set same border color for all
+        input[type=text], input[type=password], select{
+            border:1px solid rgba(172, 168, 168, 0.5);
+            outline: none;
+            padding: 5px 10px;
+        }
+
+        input[type=submit], button{
+            // margin-top: 10px;
+            color:white;
+            font-weight: 600;
+        }
+ 
+        .recover{
+            display: block;
+            text-decoration: none;
+            color: $label-color;
+            margin-top: 20px;
+            font-size: 13px;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+}
+
+
+

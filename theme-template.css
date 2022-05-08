@@ -1,0 +1,109 @@
+/* 
+    NOVERA CSS
+    ==========================
+    How to create a new theme:
+    --------------------------
+    Change value of any variable below as per your requirements.
+*/
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* 
+    //Font size tips-
+    font-size: 100%; in most browsers, this 100% = 16px = 1rem
+    font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
+
+    //Another option to set font-size-
+    //In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
+    font-size: 62.5%;  (62.5/100) * 16px = 10px  
+*/
+    
+:root {
+    --fallback-font: sans-serif;
+    --default-font: 'Inter', var(--fallback-font);
+    --default-font-weight: normal;
+
+    --body-line-height-sm: 1.75;
+    --body-line-height-lg: 1.75;
+
+    /* applied to h1, h2, h3, h4, h5, h6 */
+    --heading-line-height-sm: 1.2;          
+    --heading-line-height-lg: 1.2;          
+    --heading-letter-spacing: -0.031rem;    
+
+    /* Based on the following type-scale- 
+       https://type-scale.com/?size=16&scale=1.200&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false 
+    */
+    
+    --h1-font-size-sm: 1.802rem;
+    --h1-font-size-lg: 2.488rem;
+    --h1-letter-spacing: var(--heading-letter-spacing);
+    --h1-font-weight: 600;
+    /* if not set other value, heading-line-height-sm will be applied.  */
+    --h1-line-height-sm: var(--heading-line-height-sm); 
+    /* if not set other value, heading-line-height-lg will be applied.  */
+    --h1-line-height-lg: var(--heading-line-height-lg); 
+    --h1-margin-sm: 0 0 0 0;
+    --h1-margin-lg: 0 0 0 0;
+
+    --h2-font-size-sm: 1.602rem;
+    --h2-font-size-lg: 2.074rem;
+    --h2-letter-spacing: var(--heading-letter-spacing);
+    --h2-font-weight: 500;
+    --h2-line-height-sm: var(--heading-line-height-sm); 
+    --h2-line-height-lg: var(--heading-line-height-lg); 
+    --h2-margin-sm: 0 0 0 0;
+    --h2-margin-lg: 0 0 0 0;
+
+    --h3-font-size-sm: 1.424rem;
+    --h3-font-size-lg: 1.728rem;
+    --h3-letter-spacing: var(--heading-letter-spacing);
+    --h3-font-weight: 300;
+    --h3-line-height-sm: var(--heading-line-height-sm); 
+    --h3-line-height-lg: var(--heading-line-height-lg); 
+    --h3-margin-sm: 0 0 0 0;
+    --h3-margin-lg: 0 0 0 0;
+
+    --h4-font-size-sm: 1.266rem;
+    --h4-font-size-lg: 1.44rem;
+    --h4-letter-spacing: var(--heading-letter-spacing);
+    --h4-font-weight: 400;
+    --h4-line-height-sm: var(--heading-line-height-sm); 
+    --h4-line-height-lg: var(--heading-line-height-lg); 
+    --h4-margin-sm: 0 0 0 0;
+    --h4-margin-lg: 0 0 0 0;
+
+    --h5-font-size: 1.2rem;       /* Does not have any responsive size. */
+    --h5-letter-spacing: 0.05rem; /* var(--heading-letter-spacing); */
+    --h5-line-height-sm: var(--heading-line-height-sm); 
+    --h5-line-height-lg: var(--heading-line-height-lg); 
+    --h5-margin-sm: 0 0 0 0;
+    --h5-margin-lg: 0 0 0 0;
+
+    --h6-font-size: 1rem;         /* same as default body font size */
+    --h6-letter-spacing: 0.05rem;
+    --h6-line-height-sm: var(--heading-line-height-sm); 
+    --h6-line-height-lg: var(--heading-line-height-lg); 
+    --h6-margin-sm: 0 0 0 0;
+    --h6-margin-lg: 0 0 0 0;
+    
+    --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
+
+    --brand-color: green;
+    --accent-color: #2196F3;
+
+    --default-hyperlink-color: #539bf5;
+
+    /* Default Background color */
+    --dafault-background: #1c2128;
+    --default-foreground: #adbac7;
+    --default-border: #444c56;
+
+    --muted-background: #22272E;
+    --muted-foreground: #768390;
+    --muted-border: #373e47;
+
+    /* Border */
+    --default-radius: 0.25rem;
+}

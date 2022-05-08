@@ -1,0 +1,262 @@
+@mixin display-flex() {
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+}
+
+@mixin flex-direction($direction) {
+    -ms-flex-direction: $direction !important;
+    -webkit-flex-direction: $direction !important;
+    flex-direction: $direction !important;
+}
+
+@mixin flex-flow($direction: row, $wrap: nowrap) {
+    -ms-flex-wrap: $wrap;
+    -ms-flex-direction: $direction;
+    -webkit-flex-flow: $direction $wrap;
+    flex-flow: $direction $wrap;
+}
+
+@mixin flex-wrap($wrapValue) {
+    -ms-flex-wrap: $wrapValue !important;
+    -webkit-flex-wrap: $wrapValue !important;
+    flex-wrap: $wrapValue !important;
+}
+
+@mixin justify-content($align) {
+    @include ms-justify-content($align);
+    -webkit-justify-content: $align !important;
+    justify-content: $align !important;
+}
+
+@mixin ms-justify-content($align) {
+    @if $align=='flex-start' {
+        -ms-flex-pack: start !important;
+    }
+
+    @else if $align=='flex-end' {
+        -ms-flex-pack: end !important;
+    }
+
+    @else if $align=='space-between' {
+        -ms-flex-pack: justify !important;
+    }
+
+    @else if $align=='space-around' {
+        -ms-flex-pack: distribute !important;
+    }
+
+    @else {
+        -ms-flex-align: $align !important;
+    }
+}
+
+@mixin align-items($align) {
+    @include ms-align-items($align);
+    -webkit-align-items: $align !important;
+    align-items: $align !important;
+}
+
+@mixin ms-align-items($align) {
+    @if $align=='flex-start' {
+        -ms-flex-align: start !important;
+    }
+
+    @else if $align=='flex-end' {
+        -ms-flex-align: end !important;
+    }
+
+    @else {
+        -ms-flex-align: $align !important;
+    }
+}
+
+@mixin align-content($align: stretch) {
+    @include ms-align-content($align);
+    -webkit-align-content: $align !important;
+    align-content: $align !important;
+}
+
+@mixin ms-align-content($align) {
+    @if $align=='flex-start' {
+        -ms-flex-line-pack: start !important;
+    }
+
+    @else if $align=='flex-end' {
+        -ms-flex-line-pack: end !important;
+    }
+
+    @else if $align=='space-between' {
+        -ms-flex-line-pack: justify !important;
+    }
+
+    @else if $align=='space-around' {
+        -ms-flex-line-pack: distribute !important;
+    }
+
+    @else {
+        -ms-flex-line-pack: $align !important;
+    }
+}
+
+.flex {
+    @include display-flex();
+
+    &.fd-row {
+        @include flex-direction(row);
+        @include small(){
+            &-sm {
+                @include flex-direction(row);
+                //will generate .fd-row-sm { ... }
+            }
+        }
+
+        @include large(){
+            &-lg {
+                @include flex-direction(row);
+                //will generate .fd-row-lg { ... }
+            }
+        }
+
+        &-rev {
+            @include flex-direction(row-reverse);  //will generate .fd-row-rev { ... }
+           
+            @include small(){
+                &-sm {
+                    @include flex-direction(row-reverse); //will generate .fd-row-rev-sm { ... }
+                }
+            }
+    
+            @include large(){
+                &-lg {
+                    @include flex-direction(row-reverse); //will generate .fd-row-rev-lg { ... }
+                }
+            }
+        }
+    }
+
+    &.fd-col {
+        @include flex-direction(column);
+        @include small(){
+            &-sm {
+                @include flex-direction(column); //will generate .fd-col-sm { ... }
+            }
+        }
+
+        @include large(){
+            &-lg {
+                @include flex-direction(column); //will generate .fd-col-lg { ... }
+            }
+        }
+
+        &-rev {
+            @include flex-direction(column-reverse); //will generate .fd-col-rev { ... }
+            @include small(){
+                &-sm {
+                    @include flex-direction(column-reverse); //will generate .fd-col-rev-sm { ... }
+                }
+            }
+            @include large(){
+                &-lg {
+                    @include flex-direction(column-reverse); //will generate .fd-col-rev-lg { ... }
+                }
+            }
+        }
+    }
+
+    &.ff-row-wrap {
+        @include flex-flow(row, wrap)
+    }
+
+    &.ff-row-nowrap {
+        @include flex-flow(row, nowrap)
+    }
+
+    &.fw-wrap
+    {
+        @include flex-wrap(wrap);
+    }
+
+    &.fw-nowrap
+    {
+        @include flex-wrap(nowrap);
+    }
+
+    &.fw-rev {
+        @include flex-wrap(wrap-reverse);
+    }
+
+    &.jc{
+        &-start {
+            @include justify-content(flex-start); //Create .jc-start { ... }
+        }
+
+        &-end {
+            @include justify-content(flex-end); //Create .jc-end { ... }
+        }
+
+        &-center {
+            @include justify-content(center); //Create .jc-center { ... }
+        }
+
+        &-between {
+            @include justify-content(space-between); //Create .jc-between { ... }
+        }
+
+        &-around {
+            @include justify-content(space-around);
+        }
+
+        &-evenly {
+            @include justify-content(space-evenly);
+        }
+    }
+
+    &.ai {
+        &-start {
+            @include align-items(flex-start);
+        }
+    
+        &-end {
+            @include align-items(flex-end);
+        }
+    
+        &-center {
+            @include align-items(center);
+        }
+    
+        &-baseline {
+            @include align-items(baseline);
+        }
+    
+        &-stretch {
+            @include align-items(stretch);
+        }
+    }
+
+    &.ac {
+        &-start {
+            align-content: flex-start !important;
+        }
+    
+        &-end {
+            align-content: flex-end !important;
+        }
+    
+        &-center {
+            align-content: center !important;
+        }
+    
+        &-between {
+            align-content: space-between !important;
+        }
+    
+        &-around {
+            align-content: space-around !important;
+        }
+    
+        &-stretch {
+            align-content: stretch !important;
+        }
+    }
+}

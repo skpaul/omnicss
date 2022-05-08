@@ -1,0 +1,220 @@
+$printable-border-color:gray; //border color for print items - applicant's copy, admit card etc.
+$printable-bg-color: rgba(0, 0, 0, 0.08);
+$printable-font-size: 11px;
+
+.printable{
+
+    .header{
+        display: flex;
+        border-bottom: 3px solid $printable-border-color;
+        margin-bottom: 21px;
+        padding-bottom: 8px;
+
+        .left{ //for left div- logo, govt name and org name.
+          flex-grow: 1;
+        }
+
+        .brand{
+          display: flex;
+        }
+        .logo{
+          height: 36px;
+        }
+
+        .govt-org{
+          margin-left: 7px;
+        }
+
+        .govt{
+          font-size: 12px;
+        }
+
+        .organization{
+          font-weight: 600; margin-top: 2px;
+        }
+        .right{ //for left div- logo, govt name and org name.
+          display: flex;
+            align-items: center;
+            &>div{
+              font-size: 12px;
+              background-color: $printable-bg-color;
+              /* height: 20px; */
+              /* line-height: 20px; */
+              width: 73px;
+              text-align: center;
+              border: 1px solid #a5a1a1;
+              font-weight: 600;
+              color: black;
+              padding: 2px;
+              min-height: 35px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+        }
+    }
+
+    //To show applicant's photo on right side.
+    .special-row{
+        display: flex; 
+        border: 1px solid $printable-border-color;
+        border-bottom: 0;
+        &>div:first-child{
+            flex-grow: 1;
+        }
+        // Last child is the photo container
+        &>div:last-child{
+            width: 111px;
+            display: flex;
+            flex-grow:0;
+            flex-shrink: 0;
+            img{
+                width:100%;
+                height: auto;
+                border-left: 1px solid $printable-border-color;
+            }
+        }
+    } 
+
+    .field{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        &.vertical{
+            flex-direction: column;
+        }
+
+        &>.wrapper{
+            display: flex;
+            label{
+                // border-bottom: 1px solid $printable-border-color;
+                // border-right: 0;
+                flex-grow:1;
+                border-right: 0;
+            }
+        }
+    }
+    
+
+    label.fixed-width{
+      width: 125px;
+    }
+    .serial-no, label, .text{
+        padding: 2px 4px;
+        font-family: var(--font-family);
+        font-size: $printable-font-size;
+        // line-height: 1.5;
+        color: #000;
+    }
+
+    .text{
+      b{
+        font-weight: 600;
+        color: #000;
+      }
+    }
+     //font size must be the same for perfect alignment
+    .serial-no, label{
+        font-weight: 600;
+        // color: $label-color;
+        background-color:$printable-bg-color;
+    }
+
+    label{
+        letter-spacing: 0.25px;
+        justify-content: flex-start;
+        display: inline-flex;
+        // border-right: 1px solid;
+    }
+
+    .signature{
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    footer{
+      background-color: transparent;
+      border-top:1px solid $printable-border-color;
+      margin-top: 32px;
+      padding:0;
+      &>div {
+        color:black;
+      }
+    }
+    .no-border{
+        border:0 !important;
+    }
+
+    .border-all{
+        border: 1px solid $printable-border-color;
+    }
+    .border-top{
+        border-top: 1px solid $printable-border-color;
+    }
+
+    .border-bottom{
+        border-bottom: 1px solid $printable-border-color;
+    }
+
+    .border-left{
+        border-left: 1px solid $printable-border-color;
+    }
+
+    .border-right{
+        border-right: 1px solid $printable-border-color;
+    }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-family);
+      thead{
+        border-bottom: 1px solid $printable-border-color;
+        th{
+          padding: 2px 4px;
+          font-size: $printable-font-size;
+          font-weight: 600;
+          background-color:$printable-bg-color;
+          &:not(:last-child){
+            border-right: 1px solid $printable-border-color;
+          }
+        }
+       
+        // th:not(:last-child){
+        //   background-color:$printable-bg-color;
+        //   border-right: 1px solid $printable-border-color;
+        // }
+      }
+
+      tbody{          
+        tr:not(:last-child){
+          border-bottom: 1px solid $printable-border-color;
+        }
+        td{
+          padding: 2px 4px;
+          font-size: $printable-font-size;
+          text-align: center;
+        }
+      }
+    }
+
+    .instructions{
+      ol, ul{
+         margin-left: 24px;
+          font-size: 12px;
+
+      }
+    }
+
+    .authority{
+      position: relative;
+      height: 44px;
+      // margin-top: 20px;
+      &>div{
+        position: absolute;
+        font-size: 12px;
+        text-align: center;
+        right: 0;
+      }
+    }
+}

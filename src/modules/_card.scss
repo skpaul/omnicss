@@ -1,0 +1,21 @@
+.card{
+
+    &.fit-content{
+        display: inline-block;
+    }
+
+    &.fill-parent{
+        height: 100%;
+        // flex:1;
+    }
+
+    border: 1px solid  var(--default-border);  /*fallbacks for use when the property has not been set in :root*/
+    border-top-width: 0.5rem;;
+    border-radius: var(--default-radius);
+    padding: 0.5rem 0.5rem;  
+    @include large{
+        padding: 1.5rem 0.9rem;
+    }
+    //  background-color: var(--main-bg-color, #FFFFFF);    /*fallbacks for use when the property has not been set in :root*/
+
+}

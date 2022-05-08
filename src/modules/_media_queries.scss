@@ -1,0 +1,76 @@
+/* Extra small devices (phones, 600px and down) */
+@mixin extra-small-devices {
+	@media only screen and (max-width: 600px) {
+		@content;
+	} 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@mixin small-devices {
+	@media only screen and (min-width: 600px) {
+		@content;
+	} 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@mixin medium-devices {
+	@media only screen and (min-width: 768px) {
+		@content;
+	} 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@mixin large-devices {
+	@media only screen and (min-width: 992px) {     
+		@content;
+	} 
+}
+
+//for the simplicity, I opted only for two types of devices - sm & lg
+@mixin sm {
+    @media screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media screen and (max-width: 991px) {
+        @content;
+    }
+}
+
+@mixin lg {
+	@media only screen and (min-width: 992px) {     
+		@content;
+	} 
+}
+
+@mixin large {
+	@media only screen and (min-width: 992px) {     
+		@content;
+	} 
+}
+
+/*
+    //How to use media query mixins
+    //Media query can be inside a class
+    .class{
+        width: 65%; //default 65%
+        @include sm{
+            width: 100%;  //on small devices 100%
+        }
+
+        @include lg{
+            width: 50%;  //on large devices 50%
+        }
+    }
+
+    //Media query can be outside a class
+    @include lg{
+        .class{
+            width: 50%;  //on large devices 50%
+        }
+    }
+*/
+
+

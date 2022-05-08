@@ -1,0 +1,32 @@
+@for $i from 1 through 12 {
+    .offset-left-#{$i} {
+        // padding-right: #{$i*8.333333333333333}px;
+        margin-left: #{$i*8.333333333333333}#{"%"};
+      }
+}
+
+@for $i from 1 through 12 {
+    .offset-right-#{$i} {
+        // padding-right: #{$i*8.333333333333333}px;
+        margin-right: #{$i*8.333333333333333}#{"%"};
+      }
+}
+
+@include lg {  
+    @for $i from 1 through 12 {
+
+        .lg-offset-left-#{$i} {
+            // padding-right: #{$i*8.333333333333333}px;
+            margin-left: #{$i*8.333333333333333}#{"%"};
+        }
+    }
+
+
+    @for $i from 1 through 12 {
+
+        .lg-offset-right-#{$i} {
+            // padding-right: #{$i*8.333333333333333}px;
+            margin-right: #{$i*8.333333333333333}#{"%"};
+        }
+    }
+}

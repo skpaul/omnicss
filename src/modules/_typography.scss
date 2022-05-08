@@ -1,0 +1,205 @@
+////Font size tips-
+// font-size: 100%; in most browsers, this 100% = 16px = 1rem
+// font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
+
+////Another option to set font-size-
+////In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
+//  font-size: 62.5%;  (62.5/100) * 16px = 10px 
+
+////Responsive/Fluid heading font size tips-
+// font-size: calc(0.5rem + 2.5vmin);
+
+h1 {
+    // font-size: calc(0.5rem + 2.5vmin);
+    font-size: var(--h1-font-size-sm);
+    @include large(){
+        font-size: var(--h1-font-size-lg);
+    }
+    letter-spacing: var(--h1-letter-spacing);
+    font-weight: var(--h1-font-weight);
+    line-height: var(--h1-line-height-sm);
+    @include large(){
+        line-height: var(--h1-line-height-lg);
+    }
+    margin: var(--h1-margin-sm);
+    @include large(){
+        margin: var(--h1-margin-lg);
+    }
+    word-break: break-word;
+}
+
+
+h2 {
+    font-size: var(--h2-font-size-sm); //OR, font-size: calc(0.5rem + 2.5vmin); for responsive/fluid heading size trick.
+    @include large(){
+        font-size: var(--h2-font-size-lg);
+    }
+    letter-spacing: var(--h2-letter-spacing);
+    font-weight: var(--h2-font-weight);
+    line-height: var(--h2-line-height-sm);
+    @include large(){
+        line-height: var(--h2-line-height-lg);
+    }
+    margin: var(--h2-margin-sm);
+    @include large(){
+        margin: var(--h2-margin-lg);
+    }
+    word-break: break-word;
+}
+
+h3 {
+    
+    font-size: var(--h3-font-size-sm); //OR, font-size: calc(0.5rem + 2.5vmin); for responsive/fluid heading size trick.
+    @include large(){
+        font-size: var(--h3-font-size-lg);
+    }
+    letter-spacing: var(--h3-letter-spacing);
+    font-weight: var(--h3-font-weight);
+    line-height: var(--h3-line-height-sm);
+    @include large(){
+        line-height: var(--h3-line-height-lg);
+    }
+    margin: var(--h3-margin-sm);
+    @include large(){
+        margin: var(--h3-margin-lg);
+    }
+}
+
+
+h4 {
+    font-size: var(--h4-font-size-sm); //OR, font-size: calc(0.5rem + 2.5vmin); for responsive/fluid heading size trick.
+    @include large(){
+        font-size: var(--h4-font-size-lg);
+    }
+    letter-spacing: var(--h4-letter-spacing);
+    font-weight: var(--h4-font-weight);
+    line-height: var(--h4-line-height-sm);
+    @include large(){
+        line-height: var(--h4-line-height-lg);
+    }
+    margin: var(--h4-margin-sm);
+    @include large(){
+        margin: var(--h4-margin-lg);
+    }
+}
+
+h5 {
+    font-size: var(--h5-font-size); //OR, font-size: calc(0.5rem + 2.5vmin); for responsive/fluid heading size trick.
+    letter-spacing: var(--h5-letter-spacing);
+    font-weight: 400;
+    line-height: var(--h5-line-height-sm);
+    @include large(){
+        line-height: var(--h5-line-height-lg);
+    }
+    margin: var(--h5-margin-sm);
+    @include large(){
+        margin: var(--h5-margin-lg);
+    }
+}
+
+
+h6 {
+    font-size: var(--h6-font-size); //OR, font-size: calc(0.5rem + 2.5vmin); for responsive/fluid heading size trick.
+    letter-spacing: var(--h6-letter-spacing); 
+    font-weight: 400;
+    line-height: var(--h6-line-height-sm);
+    @include large(){
+        line-height: var(--h6-line-height-lg);
+    }
+    margin: var(--h6-margin-sm);
+    @include large(){
+        margin: var(--h6-margin-lg);
+    }
+}
+ 
+p {
+    // font-family: has been set in body
+    font-size: 1rem;
+    // font-weight: has been set in body
+    // line-height: has been set in body
+    margin: var(--p-default-margin);
+}
+
+/* Makes text upper case*/
+.ucase{
+    text-transform: uppercase;
+}
+
+/* Makes text lower case*/
+.lcase{
+    text-transform: lowercase;
+}
+
+/*capitalizes the first letter of each word*/
+.capitalize{
+    text-transform: capitalize;
+}
+
+// text-align -->
+.ta{
+    &-left{
+        text-align: left;
+    }
+    
+    &-center{
+        text-align: center;
+    }
+    
+    
+    &-right{
+        text-align: right;
+    }
+    
+    &-justify{
+        text-align: justify;
+    }
+}// <--- text-align
+
+.line-throw{
+    text-decoration: line-through;
+}
+
+.underline{
+    text-decoration: underline;
+}
+.overline{
+    text-decoration: overline;
+}
+.no-underline{
+    text-decoration: none !important;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.thin, .fw100{
+    font-weight: 100;
+}
+.extralight, .fw200{
+    font-weight: 200;
+}
+.light, .fw300{
+    font-weight: 300;
+}
+.regular, .fw400{
+    font-weight: 400;
+}
+.medium, .fw500{
+    font-weight: 500;
+}
+.semibold, .fw600{
+    font-weight: 600;
+}
+.bold, .strong, .fw700{
+    font-weight: 700;
+}
+.extrabold, .fw800{
+    font-weight: 800;
+}
+.black, .fw900{
+    font-weight: 900;
+}
+
+
+//break-word
