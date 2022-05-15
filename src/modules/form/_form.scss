@@ -1,4 +1,4 @@
-form{
+form, .form{
     accent-color: var(--accent-color);
     $margin-left: 2px;
     @mixin width() {
@@ -40,8 +40,12 @@ form{
         }
     }
 
+    .textbox{
+        //This class transforms any element to look like input[type=text]
+        //Useful to show readonly data.
+    }
 
-    input[type=text], input[type=password], select, textarea{
+    input[type=text], input[type=password], select, textarea, .textbox{
         background-color: var(--dafault-background);
         color: var(--default-foreground);
         border:1px solid var(--default-border);
@@ -57,18 +61,17 @@ form{
     }
 
     //same padding
-    input[type=text], input[type=password], select, textarea, .radio-group, .checkbox-group{
+    input[type=text], input[type=password], select, textarea, .radio-group, .checkbox-group, .textbox{
         padding: 0.232124rem 0.37rem ;
     }
 
-
     //Make same height.
-    input[type=text], input[type=password], select{
+    input[type=text], input[type=password], select, .textbox{
         height: 2.2rem !important;
     }
 
     //Set font size.
-    input[type=text], input[type=password], select, textarea, .radio-group label, .checkbox-group label {
+    input[type=text], input[type=password], select, .textbox, textarea, .radio-group label, .checkbox-group label {
         font-size: 0.9rem;
         letter-spacing: normal;
     }
