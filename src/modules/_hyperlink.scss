@@ -1,5 +1,7 @@
 
 a {
+    color: var(--default-hyperlink-color);
+    
     :link, :link:active :visited, :visited:active{
         color: var(--default-hyperlink-color);
         text-decoration: underline;
