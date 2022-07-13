@@ -43,6 +43,7 @@ form, .form{
     .textbox{
         //This class transforms any element to look like input[type=text]
         //Useful to show readonly data.
+        //Properties are added in the following rules.
     }
 
     input[type=text], input[type=password], select, textarea, .textbox{
