@@ -22,10 +22,10 @@ input[type=button], input[type=submit], button, .btn {
     text-decoration: none;
         
     &:hover {
-        color: #fff;
+        // color: #fff;
         // background-color: #5a6268;
-        background-color: #47494b;
-        border-color: #545b62;
+        // background-color: #47494b;
+        border-color: var(--default-hyperlink-color-hover);
     }
 
     &:hover, &:focus {
@@ -69,9 +69,9 @@ input[type=button], input[type=submit], button, .btn {
         border-color: var(--default-border);
 
         &:hover {
-            color: #fff;
-            background-color: #6c757d;
-            border-color: #6c757d;
+            // color: #fff;
+            // background-color: #6c757d;
+            border-color: var(--default-hyperlink-color-hover);
         }
           
         &:focus, &.focus {
