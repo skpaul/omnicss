@@ -110,7 +110,7 @@
     --scroll-color: var(--default-foreground); /* applied to the index.php marquee*/
     --scroll-color-hover: var(--default-foreground); /* applied to the index.php marquee*/
     --default-hyperlink-color: var(--default-foreground);
-
+    --default-hyperlink-color-hover: var(--default-foreground);
     /* Border */
     --default-radius: 0.25rem;
 }
