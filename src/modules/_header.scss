@@ -77,7 +77,7 @@ header{
                 text-decoration: none;
                 margin-bottom: 0.4345rem;
                 padding-bottom: 0.4345rem;
-                border-bottom: 1px solid transparent;
+                border-bottom: 1px solid var(--muted-border);
                 &:last-child{
                     border-bottom: 0;
                     padding-bottom: 20px;
