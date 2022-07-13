@@ -24,7 +24,7 @@ header{
             .govt-name{
                 font-size: 0.7rem; 
                 line-height: 1;
-                color: var(--color-fg-muted);
+                color: var(--gov-color);
                 @include large{
                     font-size: 0.7rem;
                 }
@@ -33,11 +33,10 @@ header{
             .org{
                 font-weight: 900;
                 font-size: 1.2rem; line-height: 1;
-                // color: #3d4e5e;
+                color: var(--org-color);
                 @include large{
                     font-weight: 900;
                     font-size: 1.9rem; line-height: 1;
-                    // color: #3d4e5e;
                 }
             }
           
@@ -63,7 +62,7 @@ header{
     }
 
     .main-top-nav-container{
-        // background-color: var(--color-canvas-subtle);
+        // background-color: var(--dafault-background);
         .main-top-nav{
             display: none;
             @include large{
@@ -73,7 +72,7 @@ header{
             }
 
             &>a{
-                // color: var(--default-hyperlink-color);
+                color: var(--header-menu-color);
                 font-size: 0.945rem;
                 display: flex;
                 text-decoration: none;
@@ -101,8 +100,8 @@ header{
                 }
 
                 &:hover{
-                    border-bottom: 1px solid var(--default-hyperlink-color) !important;
-                    color: var(--default-foreground-color);
+                    border-bottom: 1px solid var(--header-menu-color-hover) !important;
+                    color: var(--header-menu-color-hover);
                 }
             }
         }

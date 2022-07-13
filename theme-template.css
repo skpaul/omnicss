@@ -90,8 +90,24 @@
     
     --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
 
-    --brand-color: green;
+
     --accent-color: #2196F3;
+    --brand-color: green;
+
+    /* applied to the text of "Government of the People's Republic of Bangladesh" */
+    --gov-color: blue;
+    /* applied to the organization/company/office name in the top header */
+    --org-color: green;
+
+    /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color: red;
+    /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color-hover: red;
+
+    /* applied to the index.php marquee*/
+    --scroll-color: red;
+    /* applied to the index.php marquee*/
+    --scroll-color-hover: red;
 
     --default-hyperlink-color: #539bf5;
 
