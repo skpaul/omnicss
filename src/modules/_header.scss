@@ -77,10 +77,11 @@ header{
                 text-decoration: none;
                 margin-bottom: 0.4345rem;
                 padding-bottom: 0.4345rem;
-                border-bottom: 1px solid var(--muted-border);
+                border-bottom: 1px solid var(--muted-border);  //required for hamburger menu items
+                
                 &:last-child{
-                    border-bottom: 0;
-                    padding-bottom: 20px;
+                    // border-bottom: 0;
+                    // padding-bottom: 20px;
                 }
 
                 @include large{
