@@ -46,11 +46,11 @@ header{
                     display: none;
                 }
                 .hamb{
-                    border: 1px solid white;
+                    border: 1px solid var(--hamb-border-color);
                     display: block;
                     padding-left: 0.29rem;
                     padding-right: 0.29rem;
-                    // color: white;
+                    color: var(--hamb-color);
                     font-size: 1.5rem;
                     line-height: 1.1;
                     cursor: pointer;

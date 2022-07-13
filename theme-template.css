@@ -90,9 +90,6 @@
     
     --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
 
-
-   
-
     /* These following 3 colors are the main base color. */
     --dafault-background: #1c2128;
     --default-foreground: #adbac7;
@@ -102,26 +99,17 @@
     --muted-background: #22272E;
     --muted-foreground: #768390;
     --muted-border: #373e47;
-
     --accent-color: #2196F3;
-    --brand-color: green;
-
-    /* applied to the text of "Government of the People's Republic of Bangladesh" */
-    --gov-color: blue;
-    /* applied to the organization/company/office name in the top header */
-    --org-color: green;
-
-    /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --header-menu-color: red;
-    /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --header-menu-color-hover: red;
-
-    /* applied to the index.php marquee*/
-    --scroll-color: red;
-    /* applied to the index.php marquee*/
-    --scroll-color-hover: red;
-
-    --default-hyperlink-color: #539bf5;
+    --brand-color: var(--default-foreground);
+    --gov-color: var(--default-foreground); /* applied to the text of "Government of the People's Republic of Bangladesh" */
+    --org-color: var(--default-foreground); /* applied to the organization/company/office name in the top header */
+    --header-menu-color: var(--default-foreground); /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color-hover: var(--default-foreground); /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --hamb-color: var(--default-foreground); /* applied to the hamburger menu icon.*/
+    --hamb-border-color: var(--default-foreground); /* applied to the hamburger menu box border.*/
+    --scroll-color: var(--default-foreground); /* applied to the index.php marquee*/
+    --scroll-color-hover: var(--default-foreground); /* applied to the index.php marquee*/
+    --default-hyperlink-color: var(--default-foreground);
 
     /* Border */
     --default-radius: 0.25rem;
