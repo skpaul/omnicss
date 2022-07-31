@@ -3144,13 +3144,12 @@ html {
 }
 
 body {
-  background-color: var(--dafault-background, #FFFFFF);
-  background: var(--default-body-background);
-  font-family: var(--default-font);
-  font-weight: var(--default-font-weight);
-  text-align: left;
-  line-height: var(--body-line-height-sm);
-  color: var(--default-foreground);
+    color: var(--default-foreground);
+    background: var(--default-body-background);
+    font-family: var(--default-font);
+    font-weight: var(--default-font-weight);
+    text-align: left;
+    line-height: var(--body-line-height-sm);
 }
 @media only screen and (min-width: 992px) {
   body {

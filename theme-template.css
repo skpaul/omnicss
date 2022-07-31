@@ -90,23 +90,36 @@
     
     --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
 
-    /* --default-body-background can be anyone of the following -
-        background: red; OR
-        background: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); OR
-        background: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; 
+
+
+    /* 
+        Colors and theming
+        ------------------
+        Color themes are designed to be harmonious, ensure accessible text, and distinguish UI elements and surfaces from one another. 
+        https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+        https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=006064&secondary.color=689F38
+        https://webflow.com/blog/color-theory
     */
 
-   
 
     /* These following 3 colors are the main base color. */
     --dafault-background: #1c2128;
     --default-foreground: #adbac7;
     --default-border: #444c56;
 
+    /* Applied only for body tag */
+    --default-body-background: var(--dafault-background) url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; 
+    /* --default-body-background can be anyone of the following -
+        background: red; //solid color
+        background: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
+        background: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
+    */
+
     /* All the following colors are the variant of the above base colors. */
     --muted-background: #22272E;
     --muted-foreground: #768390;
     --muted-border: #373e47;
+    /* A secondary color can be featured with a primary color as an accent color. The primary color is still the dominant color but the secondary color is used in combination to draw attention. */
     --accent-color: #2196F3;
     --brand-color: var(--default-foreground);
     --gov-color: var(--default-foreground); /* applied to the text of "Government of the People's Republic of Bangladesh" */
