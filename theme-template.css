@@ -90,6 +90,14 @@
     
     --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
 
+    /* --default-body-background can be anyone of the following -
+        background: red; OR
+        background: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); OR
+        background: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; 
+    */
+
+   
+
     /* These following 3 colors are the main base color. */
     --dafault-background: #1c2128;
     --default-foreground: #adbac7;

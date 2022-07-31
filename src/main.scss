@@ -82,7 +82,15 @@ html{
 }
 
 body{
+    // can be treated like a fallback 
     background-color: var(--dafault-background, #FFFFFF);  //Custom properties with fallbacks for use when the property has not been set
+    // will be "on top", if browser supports it 
+    background:  var(--default-body-background); 
+    // --default-body-background can be anyone of the following -
+    //background: red; OR
+    //background: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); OR
+    //background: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain;
+
     font-family: var(--default-font);  //var(--font-body);
    
     // overflow-x: hidden;
