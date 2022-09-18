@@ -1,0 +1,20 @@
+.divider, .line{
+    &-h{
+        height: 1px;
+    }
+    &-v{
+        width: 1px;
+        height: 100%;
+        display: inline-block;
+    }
+}
+
+.line, .h-line, .line-h{
+    height: 1px;
+}
+
+.v-line, .line-v{
+    width: 1px;
+    height: 100%;
+    display: inline-block;
+}

@@ -1,0 +1,265 @@
+
+// \31 = 1, \32 = 2, ...
+// \25 = % sign 
+// \31 30\25 = 130%
+
+
+@mixin create-font-size-in-percentage($device) {
+    @for $i from 5 through 20 {
+        $value: $i*10;
+        .fs-#{$value}\25#{$device}{
+            font-size:#{$value} + '%';
+        }
+    }
+}
+
+
+$values: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40' '1.50' '1.60' '1.70' '1.80' '1.90' '2.00';
+@mixin create-font-size-in-rem($device) {
+    // @for $i from 5 through 20 {
+    //     $value: $i*0.1;
+    //     $escaped: replace-decimal($value); // see _functions.scss 
+    //     .fs-#{$escaped}#{$device}{
+    //         font-size:#{$value} + 'rem';
+    //     }
+    // }
+
+    @each $value in $values{
+        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+        .fs-#{$escaped}#{$device}{
+            font-size:#{$value} + 'rem';
+        }
+    }
+}
+
+@mixin create-padding-in-rem($prefix, $property, $device) {
+    @each $value in $values{
+        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+        .fs-#{$escaped}#{$device}{
+            font-size:#{$value} + 'rem';
+        }
+    }
+}
+
+
+@include create-font-size-in-percentage("");
+@include create-font-size-in-rem("");
+
+@include small{
+    @include create-font-size-in-percentage("-sm");
+    @include create-font-size-in-rem("-sm");
+}
+@include large{
+    @include create-font-size-in-percentage("-lg");
+    @include create-font-size-in-rem("-lg");
+}
+
+
+// .fs-50\25{ 
+//     // 50%
+//     font-size: 0.5rem;
+// }
+// .fs-60\25{ 
+//     // 60%
+//     font-size: 0.6rem;
+// }
+// .fs-70\25{ 
+//     // 70%
+//     font-size: 0.7rem;
+// }
+// .fs-80\25{ 
+//     // 80%
+//     font-size: 0.8rem;
+// }
+// .fs-90\25{ 
+//     // 90%
+//     font-size: 0.9rem;
+// }
+
+// .fs-\31 00\25{
+//     //100%
+//     font-size: 1rem;
+// }
+
+// .fs-\31 10\25{ 
+//     // 110%
+//     font-size: 1.1rem;
+// }
+// .fs-\31 20\25{ 
+//     // 120%
+//     font-size: 1.2rem;
+// }
+
+// .fs-\31 30\25{ 
+//     // 130%
+//     font-size: 1.3rem;
+// }
+
+// .fs-\31 40\25{ 
+//     // 140%
+//     font-size: 1.4rem;
+// }
+// .fs-\31 50\25{ 
+//     // 150%
+//     font-size: 1.5rem;
+// }
+// .fs-\31 60\25{ 
+//     // 160%
+//     font-size: 1.6rem;
+// }
+// .fs-\31 70\25{ 
+//     // 170%
+//     font-size: 1.7rem;
+// }
+// .fs-\31 80\25{ 
+//     // 180%
+//     font-size: 1.8rem;
+// }
+// .fs-\31 90\25{ 
+//     // 190%
+//     font-size: 1.9rem;
+// }
+// .fs-\32 00\25{ 
+//     // 200%
+//     font-size: 2rem;
+// }
+
+// @include small{
+//     .fs-50\25-sm{ 
+//         // 50%
+//         font-size: 0.5rem;
+//     }
+//     .fs-60\25-sm{ 
+//         // 60%
+//         font-size: 0.6rem;
+//     }
+//     .fs-70\25-sm{ 
+//         // 70%
+//         font-size: 0.7rem;
+//     }
+//     .fs-80\25-sm{ 
+//         // 80%
+//         font-size: 0.8rem;
+//     }
+//     .fs-90\25-sm{ 
+//         // 90%
+//         font-size: 0.9rem;
+//     }
+
+//     .fs-\31 00\25-sm{
+//         //100%
+//         font-size: 1rem;
+//     }
+
+//     .fs-\31 10\25-sm{ 
+//         // 110%
+//         font-size: 1.1rem;
+//     }
+//     .fs-\31 20\25-sm{ 
+//         // 120%
+//         font-size: 1.2rem;
+//     }
+
+//     .fs-\31 30\25-sm{ 
+//         // 130%
+//         font-size: 1.3rem;
+//     }
+//     .fs-\31 40\25-sm{ 
+//         // 140%
+//         font-size: 1.4rem;
+//     }
+//     .fs-\31 50\25-sm{ 
+//         // 150%
+//         font-size: 1.5rem;
+//     }
+//     .fs-\31 60\25-sm{ 
+//         // 160%
+//         font-size: 1.6rem;
+//     }
+//     .fs-\31 70\25-sm{ 
+//         // 170%
+//         font-size: 1.7rem;
+//     }
+//     .fs-\31 80\25-sm{ 
+//         // 180%
+//         font-size: 1.8rem;
+//     }
+//     .fs-\31 90\25-sm{ 
+//         // 190%
+//         font-size: 1.9rem;
+//     }
+//     .fs-\32 00\25-sm{ 
+//         // 200%
+//         font-size: 2rem;
+//     }
+// }
+// @include large{
+//     .fs-50\25-lg{ 
+//         // 50%
+//         font-size: 0.5rem;
+//     }
+//     .fs-60\25-lg{ 
+//         // 60%
+//         font-size: 0.6rem;
+//     }
+//     .fs-70\25-lg{ 
+//         // 70%
+//         font-size: 0.7rem;
+//     }
+//     .fs-80\25-lg{ 
+//         // 80%
+//         font-size: 0.8rem;
+//     }
+//     .fs-90\25-lg{ 
+//         // 90%
+//         font-size: 0.9rem;
+//     }
+
+//     .fs-\31 00\25-lg{
+//         //100%
+//         font-size: 1rem;
+//     }
+
+//     .fs-\31 10\25-lg{ 
+//         // 110%
+//         font-size: 1.1rem;
+//     }
+//     .fs-\31 20\25-lg{ 
+//         // 120%
+//         font-size: 1.2rem;
+//     }
+
+//     .fs-\31 30\25-lg{ 
+//         // 130%
+//         font-size: 1.3rem;
+//     }
+//     .fs-\31 40\25-lg{ 
+//         // 140%
+//         font-size: 1.4rem;
+//     }
+//     .fs-\31 50\25-lg{ 
+//         // 150%
+//         font-size: 1.5rem;
+//     }
+//     .fs-\31 60\25-lg{ 
+//         // 160%
+//         font-size: 1.6rem;
+//     }
+//     .fs-\31 70\25-lg{ 
+//         // 170%
+//         font-size: 1.7rem;
+//     }
+//     .fs-\31 80\25-lg{ 
+//         // 180%
+//         font-size: 1.8rem;
+//     }
+//     .fs-\31 90\25-lg{ 
+//         // 190%
+//         font-size: 1.9rem;
+//     }
+//     .fs-\32 00\25-lg{ 
+//         // 200%
+//         font-size: 2rem;
+//     }
+// }
+

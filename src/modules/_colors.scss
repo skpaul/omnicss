@@ -3,48 +3,82 @@
 //Convert HEX to rgba example
 // rgba(#ff0000, 0.5);
 ////========================
-    .bg-brand{
-        background-color: var(--brand-color);
-    }
 
-    .fg-brand{
-        color: var(--brand-color);
-    }
+// High-emphasis text should have an opacity of 87%
+// Medium emphasis text is applied at 60%
+// Disabled text uses an opacity of 38%.
 
-    .bc-brand{
-        border-color: var(--brand-color);
-    }
+@mixin add-color-old($property) {
+    &-pc900{
+        #{$property}: var(--pc900);
+    }  
+}
+.bg-dark-1{
 
-    .link-color{
-        color: var(--default-hyperlink-color);
-    }
+}
+@mixin add-color($color, $scale, $property) {
+    &-#{$color}-#{$scale}{
+        #{$property}: var(--#{$color}-#{$scale});
+    }  
+}
 
-    .bg-default{
-        background-color: var(--dafault-background);
+@mixin create-rule($property) {
+    @for $scale from 0 through 9 {
+        @include add-color("gray", $scale , $property);
+        // @include add-color("blue", $scale , $property);
+        // @include add-color("green", $scale , $property);
+        // @include add-color("yellow", $scale , $property);
+        // @include add-color("orange", $scale , $property);
+        // @include add-color("red", $scale , $property);
+        // @include add-color("purple", $scale , $property);
+        // @include add-color("pink", $scale , $property);
+        // @include add-color("coral", $scale , $property);
+        // @include add-color("teal", $scale , $property);
     }
-    .fg-default{
-        color: var(--default-foreground);
+    @for $scale from 0 through 9 {
+        @include add-color("blue", $scale , $property);
     }
-    .bc-default{
-        border-color: var(--default-border);
+    @for $scale from 0 through 9 {
+        @include add-color("green", $scale , $property);
     }
+    @for $scale from 0 through 9 {
+        @include add-color("yellow", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("orange", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("red", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("red", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("red", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("purple", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("pink", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("coral", $scale , $property);
+    }
+    @for $scale from 0 through 9 {
+        @include add-color("teal", $scale , $property);
+    }
+}
 
-    .bg-muted{
-        background-color: var(--muted-background);
-    }
-    .fg-muted{
-        color: var(--muted-foreground);
-    }
-    .bc-muted{
-        border-color: var(--muted-border);
-    }
+.bg{
+    @include create-rule("background-color");
+}
+.c{
+    @include create-rule("color");
+}
+.bc{
+    @include create-rule("border-color");
+}
 
-    .bg-red{
-        background-color: red !important;
-    }
-    .fg-red{
-        color: red !important;
-    }
-    .bc-red{
-        border-color: red !important;
-    }
+
+   

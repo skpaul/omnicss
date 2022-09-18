@@ -1,0 +1,45 @@
+
+// Here's a general way to escape decimal numbers for class names (replacing . with -)   ----->
+    @function strip-units ( $number ) {
+        @return $number / ( $number * 0 + 1 );
+    }
+
+    @function replace-decimal( $value ) {
+        @if type-of( $value ) != 'number' {
+            @return $value;
+        }
+        $int: floor( strip-units( $value ) );
+        $fract: $value - $int;
+        @if ( $fract == 0 ) {
+            @return $int;
+        }
+        @while ( $fract != floor( $fract ) ) {
+            $fract: $fract * 10;
+        }
+        @return $int + '-' + $fract;
+    }
+    @function remove-decimal( $value ) {
+        @if type-of( $value ) != 'number' {
+            @return $value;
+        }
+        $int: floor( strip-units( $value ) );
+        $fract: $value - $int;
+        @if ( $fract == 0 ) {
+            @return $int;
+        }
+        @while ( $fract != floor( $fract ) ) {
+            $fract: $fract * 10;
+        }
+        @return $int + '' + $fract;
+    }
+//<------ Here's a general way to escape decimal numbers for class names (replacing . with -)
+
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    
+    @if $index {
+      @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    
+    @return $string;
+  }

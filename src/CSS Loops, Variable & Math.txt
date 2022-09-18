@@ -1,0 +1,36 @@
+Usage Examples of Variables, if..else, for loop and Arithmatice operations.
+
+@mixin create-font-weight($suffix) {
+    &-#{$suffix}{
+        font-weight: #{$suffix};
+    }
+} 
+
+//This loop creates value 100,200,300, ......., 900
+ @for $i from 1 through 9 {
+    $suffix: $i*100;
+    @include create-font-weight($suffix) 
+}
+
+
+@mixin ms-align-content($align) {
+    @if $align=='flex-start' {
+        -ms-flex-line-pack: start !important;
+    }
+
+    @else if $align=='flex-end' {
+        -ms-flex-line-pack: end !important;
+    }
+
+    @else if $align=='space-between' {
+        -ms-flex-line-pack: justify !important;
+    }
+
+    @else if $align=='space-around' {
+        -ms-flex-line-pack: distribute !important;
+    }
+
+    @else {
+        -ms-flex-line-pack: $align !important;
+    }
+}

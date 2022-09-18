@@ -1,0 +1,12 @@
+//sass nesting ----->
+    //.bg {  &-orange { ... } } will turn into .bg-orange { ... }
+//<----- sass nesting//
+
+
+//Remove default behavior of 'a' tag-
+a{
+    color: inherit;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+}

@@ -1,0 +1,25 @@
+b, .bold, strong, .strong {
+    font-weight: bold;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+.lighter{
+    font-weight: lighter;
+}
+
+@mixin create-font-weight($suffix) {
+    &-#{$suffix}{
+        font-weight: #{$suffix};
+    }
+}
+
+.fw{
+    //This loop creates value 100,200,300, ......., 900
+    @for $i from 1 through 9 {
+        $suffix: $i*100;
+        @include create-font-weight($suffix) 
+    }
+}

@@ -1,17 +1,16 @@
-.m-icons {
-    margin-top:1px;
-    margin-right: 5px;
+.m-icons{
     font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 1.12rem;  
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;  
     display: inline-block;
-    /* line-height: 1; */
+    line-height: inherit; 
     text-transform: none;
-    letter-spacing: normal;
+    letter-spacing: inherit;
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
+    vertical-align: baseline;
 
     /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;

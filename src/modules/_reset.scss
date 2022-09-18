@@ -10,27 +10,12 @@
   box-sizing: border-box;
 }
 
-/* Remove default margin */
-// body,
-// h1,
-// h2,
-// h3,
-// h4,
-// p,
-// figure,
-// blockquote,
-// dl,
-// dd {
-//   margin: 0;
-// }
-
 *{
     margin: 0;
     padding: 0;
 }
 
-ul,
-ol {
+ul, ol {
   list-style: none;
 //   margin: 0;
 //   padding: 0;
@@ -43,13 +28,13 @@ html {
 
 /* Set core body defaults */
 body {
-  text-rendering: optimizeSpeed;
-//   font-size: var(--base-font-size);
-//   font-family: var(--font-body);
-//   line-height: var(--default-line-height-for-body);
+    line-height: 1;
+	color: black;
+	background: white;
+    text-rendering: optimizeSpeed;
 }
 
-/* A elements that don't have a class get default styles */
+/* 'a' elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
@@ -88,3 +73,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+
+

@@ -1,0 +1,101 @@
+
+@mixin create-order($class:"", $property:"") {
+    @for $i from 0 through 5 {
+       .flex>.#{$class}#{$i} {
+            #{$property}: #{$i} !important;
+          }
+    }
+}
+
+@mixin flex-grow($grow) {
+    -ms-flex-positive: $grow !important;
+    -webkit-flex-grow: $grow !important;
+    flex-grow: $grow !important;
+}
+
+@mixin flex-shrink($shrink) {
+    -ms-flex-negative: $shrink !important;
+    -webkit-flex-shrink: $shrink !important;
+    flex-shrink: $shrink !important;
+}
+
+@mixin flex-basis($basis:auto) {
+    -ms-flex-preferred-size: $basis !important;
+    -webkit-flex-basis: $basis !important;
+    flex-basis: $basis !important;
+}
+
+.flex{
+    &>.order-first {
+        order: -1 !important;
+    }
+    
+    &>.order-last {
+        order: 6 !important;
+    }
+}
+
+
+@include create-order("order", "order");
+
+@mixin create-grow($class:"") {
+    @for $i from 0 through 11 {
+        .flex>.#{$class}#{$i} {
+            @include flex-grow($i);
+        }
+    }
+}
+
+// @include create-grow("fg"); //will create fg-0 to fg-11
+
+.flex{
+    &>.grow{
+        @include flex-grow(1);
+    }
+    &>.no-grow{
+        @include flex-grow(0);
+    }
+    &>.shrink {
+        @include flex-shrink(1);
+    }
+
+    &>.no-shrink {
+        flex-shrink: 0 !important;
+        @include flex-shrink(0);
+    }
+    &>.as-auto {
+        align-self: auto !important;
+    }
+
+    &>.as-start {
+        align-self: flex-start !important;
+    }
+
+    &>.as-end {
+        align-self: flex-end !important;
+    }
+    &>.as-center {
+        align-self: center !important;
+    }
+
+    &>.as-baseline {
+        align-self: baseline !important;
+    }
+
+    &>.as-stretch {
+        align-self: stretch !important;
+    }
+
+    &>.flex-fill {
+        flex: 1 1 auto !important;
+    }
+}
+
+  
+  
+
+  
+
+  
+
+

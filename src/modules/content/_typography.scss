@@ -1,0 +1,32 @@
+////Font size tips-
+// font-size: 100%; in most browsers, this 100% = 16px = 1rem
+// font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
+
+////Another option to set font-size-
+////In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
+//  font-size: 62.5%;  (62.5/100) * 16px = 10px 
+
+////Responsive/Fluid heading font size tips-
+// font-size: calc(0.5rem + 2.5vmin);
+
+h1, h2, h3, h4, h5, h6, p{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+
+
+.italic{
+    font-style: italic;
+}
+
+
+
+//break-word

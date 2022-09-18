@@ -1,0 +1,77 @@
+$values: '0.25' '0.50' '0.75' '1.00' '1.25' '1.50' '1.75' '2.00' '2.25' '2.50' '2.75' '3.00' '4.00';
+
+@mixin create-margin-in-rem($prefix, $property, $device) {
+    @each $value in $values{
+        $esc: str-replace($value, '.', '' ); // see _functions.scss 
+        .#{$prefix}-#{$esc}#{$device}{
+            #{$property}:#{$value} + 'rem';
+        }
+    }
+}
+
+@mixin create-margin($prefix, $property, $device:"") {
+    .#{$prefix}-auto#{$device} {
+        #{$property}: auto !important;
+    }
+    .#{$prefix}-0#{$device} {
+        #{$property}: 0 !important;
+    }
+
+    @include create-margin-in-rem($prefix, $property, $device)
+}
+
+@include create-margin("ma", "margin"); 
+@include create-margin("mt", "margin-top"); 
+@include create-margin("mb", "margin-bottom"); 
+@include create-margin("ml", "margin-left"); 
+@include create-margin("mr", "margin-right"); 
+
+@include small(){
+    @include create-margin("ma", "margin", "-sm"); 
+    @include create-margin("mt", "margin-top", "-sm"); 
+    @include create-margin("mb", "margin-bottom", "-sm"); 
+    @include create-margin("ml", "margin-left", "-sm"); 
+    @include create-margin("mr", "margin-right", "-sm"); 
+}
+
+@include large(){
+    @include create-margin("ma", "margin", "-lg"); 
+    @include create-margin("mt", "margin-top", "-lg"); 
+    @include create-margin("mb", "margin-bottom", "-lg"); 
+    @include create-margin("ml", "margin-left", "-lg"); 
+    @include create-margin("mr", "margin-right", "-lg"); 
+}
+
+@mixin create-both-margin-in-rem($prefix, $property1, $property2, $device) {
+    @each $value in $values{
+        $esc: str-replace($value, '.', '' ); // see _functions.scss 
+        .#{$prefix}-#{$esc}#{$device}{
+            #{$property1}: #{$value} + 'rem' !important;
+            #{$property2}: #{$value} + 'rem' !important;
+        }
+    }
+}
+ 
+@mixin create-both-margin($prefix, $property1, $property2, $device:"") {
+    .#{$prefix}-auto#{$device} {
+        #{$property1}: auto !important;
+        #{$property2}: auto !important;
+    }
+    .#{$prefix}-0#{$device} {
+        #{$property1}: 0 !important;
+        #{$property2}: 0 !important;
+    }
+  
+    @include create-both-margin-in-rem($prefix, $property1, $property2, $device);   
+}
+
+@include create-both-margin("mv", "margin-top","margin-bottom"); 
+@include create-both-margin("mh", "margin-left","margin-right"); 
+@include small(){
+    @include create-both-margin("mv", "margin-top","margin-bottom", "-sm"); 
+    @include create-both-margin("mh", "margin-left","margin-right", "-sm"); 
+}
+@include large(){
+    @include create-both-margin("mv", "margin-top","margin-bottom", "-lg"); 
+    @include create-both-margin("mh", "margin-left","margin-right", "-lg"); 
+}

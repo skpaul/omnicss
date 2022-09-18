@@ -1,0 +1,77 @@
+$values: '0.25' '0.50' '0.75' '1.00' '1.25' '1.50' '1.75' '2.00' '2.25' '2.50' '2.75' '3.00' '4.00';
+
+@mixin create-padding-in-rem($prefix, $property, $device) {
+    @each $value in $values{
+        $esc: str-replace($value, '.', '' ); // see _functions.scss 
+        .#{$prefix}-#{$esc}#{$device}{
+            #{$property}:#{$value} + 'rem';
+        }
+    }
+}
+
+@mixin create-padding($prefix, $property, $device:"") {
+    .#{$prefix}-auto#{$device} {
+        #{$property}: auto !important;
+    }
+    .#{$prefix}-0#{$device} {
+        #{$property}: 0 !important;
+    }
+
+    @include create-padding-in-rem($prefix, $property, $device)
+}
+
+@include create-padding("pa", "padding"); 
+@include create-padding("pt", "padding-top"); 
+@include create-padding("pb", "padding-bottom"); 
+@include create-padding("pl", "padding-left"); 
+@include create-padding("pr", "padding-right"); 
+
+@include small(){
+    @include create-padding("pa", "padding", "-sm"); 
+    @include create-padding("pt", "padding-top", "-sm"); 
+    @include create-padding("pb", "padding-bottom", "-sm"); 
+    @include create-padding("pl", "padding-left", "-sm"); 
+    @include create-padding("pr", "padding-right", "-sm"); 
+}
+
+@include large(){
+    @include create-padding("pa", "padding", "-lg"); 
+    @include create-padding("pt", "padding-top", "-lg"); 
+    @include create-padding("pb", "padding-bottom", "-lg"); 
+    @include create-padding("pl", "padding-left", "-lg"); 
+    @include create-padding("pr", "padding-right", "-lg"); 
+}
+
+@mixin create-both-padding-in-rem($prefix, $property1, $property2, $device) {
+    @each $value in $values{
+        $esc: str-replace($value, '.', '' ); // see _functions.scss 
+        .#{$prefix}-#{$esc}#{$device}{
+            #{$property1}: #{$value} + 'rem' !important;
+            #{$property2}: #{$value} + 'rem' !important;
+        }
+    }
+}
+ 
+@mixin create-both-padding($prefix, $property1, $property2, $device:"") {
+    .#{$prefix}-auto#{$device} {
+        #{$property1}: auto !important;
+        #{$property2}: auto !important;
+    }
+    .#{$prefix}-0#{$device} {
+        #{$property1}: 0 !important;
+        #{$property2}: 0 !important;
+    }
+  
+    @include create-both-padding-in-rem($prefix, $property1, $property2, $device);   
+}
+
+@include create-both-padding("pv", "padding-top","padding-bottom"); 
+@include create-both-padding("ph", "padding-left","padding-right"); 
+@include small(){
+    @include create-both-padding("pv", "padding-top","padding-bottom", "-sm"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "-sm"); 
+}
+@include large(){
+    @include create-both-padding("pv", "padding-top","padding-bottom", "-lg"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "-lg"); 
+}

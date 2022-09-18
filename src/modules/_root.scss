@@ -1,35 +1,113 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* @import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700;800&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
 
+/* 
+    //Font size tips-
+    font-size: 100%; in most browsers, this 100% = 16px = 1rem
+    font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
 
-////Font size tips-
-// font-size: 100%; in most browsers, this 100% = 16px = 1rem
-// font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
+    //Another option to set font-size-
+    //In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
+    font-size: 62.5%;  (62.5/100) * 16px = 10px  
+*/
 
-////Another option to set font-size-
-////In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
-//  font-size: 62.5%;  (62.5/100) * 16px = 10px 
-    
 :root {
     --fallback-font: sans-serif;
-    --default-font: 'Inter', var(--fallback-font);
-    --default-font-weight: normal;
+    --font-family-default: 'Inter', var(--fallback-font);  /* --font-family-default: 'Anek Bangla'; */
+    --font-weight-default: 400;
+    --line-height-default: 1.75;
 
-    --body-line-height-sm: 1.75;
-    --body-line-height-lg: 1.75;
+    /* Color scheme were generated from https://color.adobe.com/create/color-wheel */
+    /*Shades were generated from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
+    
+    /* Shades of primary color---> */
+    --pc900: #222d38;
+    --pc800: #33414f;
+    --pc700: #425464;
+    --pc600: #52677b;
+    --pc500: #5e768c;
+    --pc400: #768a9d;
+    --pc300: #8d9eaf;
+    --pc200: #adbac7;  /* default text color */
+    --pc100: #ccd6df;
+    --pc50:  #eaeef4;
 
-    --heading-line-height-sm: 1.2;          //applied to h1, h2, h3, h4, h5, h6
-    --heading-line-height-lg: 1.2;          //applied to h1, h2, h3, h4, h5, h6
-    --heading-letter-spacing: -0.031rem;    //applied to h1, h2, h3, h4, h5, h6
+    /* Shades of accent color---> */
+    --ac900: #3f4f8e;
+    --ac800: #4c6cae;
+    --ac700: #547dc1;
+    --ac600: #5d8fd4; /* default accent color */
+    --ac500: #659de2;
+    --ac400: #72aae6;
+    --ac300: #85baeb;
+    --ac200: #a3cdf2;
+    --ac100: #c5e0f7;
+    --ac50:  #e7f3fb;
 
-    /* based on the following type-scale https://type-scale.com/?size=16&scale=1.200&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false */
+
+    --darker: #162233; /* default background color */
+    --dark: #1F3047;
+    --light: #253954;
+    --lighter: #416494;
+
+
+    --color-default: var(--pc200);
+    --background-color-default: var(--darker);
+        /* background can be anyone of the following -
+            --background-color-default: red; //solid color
+            --background-color-default: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
+            --background-color-default: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
+            --background-color-default: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
+        */
+
+    --accent-color-default: var(--ac600);
+    --border-color-default: var(--pc700);
+    --border-default: 1px solid var(--border-color-default);
+    --border-radius-default: 0.25rem;
+
+    /* All the following colors are the variant of the above base colors. */
+    --gov-color: var(--color-default);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
+    --org-color: var(--color-default);             /* applied to the organization/company/office name in the top header */
+    --header-menu-color: var(--accent-color);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color-hover: #2E9CCA;               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --hamb-color: var(--color-default);            /* applied to the hamburger menu icon.*/
+    --hamb-border-color: var(--color-default);     /* applied to the hamburger menu box border.*/
+    --scroll-color: var(--color-default);          /* applied to the index.php marquee*/
+    --scroll-color-hover: var(--color-default);    /* applied to the index.php marquee*/
+
+    --default-hyperlink-color: var(--color-default);
+    --default-hyperlink-color-hover: var(--accent-color);
+
+    /* Default values for table */
+    --table-default-background-color: transparent; 
+    --table-default-border-color: transparent; 
+    --thead-default-background-color: transparent; 
+    --thead-default-color: transparent; 
+    --th-default-border-color:transparent;
+    --tbody-default-color:transparent;
+    --tr-default-border-color:transparent;
+    --tr-default-even-background-color:transparent;     /* for even rows only */
+    --tr-default-hover-background-color:transparent;    /* on hover effect */
+
+    /* applied to h1, h2, h3, h4, h5, h6 */
+    --heading-line-height-sm: 1.2;          
+    --heading-line-height-lg: 1.2;          
+    --heading-letter-spacing: -0.031rem;    
+
+    /* Based on the following type-scale- 
+       https://type-scale.com/?size=16&scale=1.200&text=MDN%20Web%20Docs&font=Inter&fontweight=400&bodyfont=body_font_default&bodyfontweight=400&lineheight=1.75&backgroundcolor=%23ffffff&fontcolor=%23000000&preview=false 
+    */
     
     --h1-font-size-sm: 1.802rem;
     --h1-font-size-lg: 2.488rem;
     --h1-letter-spacing: var(--heading-letter-spacing);
     --h1-font-weight: 600;
-    --h1-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h1-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    /* if not set other value, heading-line-height-sm will be applied.  */
+    --h1-line-height-sm: var(--heading-line-height-sm); 
+    /* if not set other value, heading-line-height-lg will be applied.  */
+    --h1-line-height-lg: var(--heading-line-height-lg); 
     --h1-margin-sm: 0 0 0 0;
     --h1-margin-lg: 0 0 0 0;
 
@@ -37,8 +115,8 @@
     --h2-font-size-lg: 2.074rem;
     --h2-letter-spacing: var(--heading-letter-spacing);
     --h2-font-weight: 500;
-    --h2-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h2-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    --h2-line-height-sm: var(--heading-line-height-sm); 
+    --h2-line-height-lg: var(--heading-line-height-lg); 
     --h2-margin-sm: 0 0 0 0;
     --h2-margin-lg: 0 0 0 0;
 
@@ -46,8 +124,8 @@
     --h3-font-size-lg: 1.728rem;
     --h3-letter-spacing: var(--heading-letter-spacing);
     --h3-font-weight: 300;
-    --h3-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h3-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    --h3-line-height-sm: var(--heading-line-height-sm); 
+    --h3-line-height-lg: var(--heading-line-height-lg); 
     --h3-margin-sm: 0 0 0 0;
     --h3-margin-lg: 0 0 0 0;
 
@@ -55,43 +133,34 @@
     --h4-font-size-lg: 1.44rem;
     --h4-letter-spacing: var(--heading-letter-spacing);
     --h4-font-weight: 400;
-    --h4-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h4-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    --h4-line-height-sm: var(--heading-line-height-sm); 
+    --h4-line-height-lg: var(--heading-line-height-lg); 
     --h4-margin-sm: 0 0 0 0;
     --h4-margin-lg: 0 0 0 0;
 
-    --h5-font-size: 1.2rem; //Does not have any responsive size.
-    --h5-letter-spacing: 0.05rem; //var(--heading-letter-spacing);
-    --h5-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h5-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    --h5-font-size: 1.2rem;       /* Does not have any responsive size. */
+    --h5-letter-spacing: 0.05rem; /* var(--heading-letter-spacing); */
+    --h5-line-height-sm: var(--heading-line-height-sm); 
+    --h5-line-height-lg: var(--heading-line-height-lg); 
     --h5-margin-sm: 0 0 0 0;
     --h5-margin-lg: 0 0 0 0;
 
-    --h6-font-size: 1rem; //same as default body font size
-    --h6-letter-spacing: 0.05rem; //var(--heading-letter-spacing);
-    --h6-line-height-sm: var(--heading-line-height-sm); //if not set other value, heading-line-height-sm will be applied. 
-    --h6-line-height-lg: var(--heading-line-height-lg); //if not set other value, heading-line-height-lg will be applied. 
+    --h6-font-size: 1rem;         /* same as default body font size */
+    --h6-letter-spacing: 0.05rem;
+    --h6-line-height-sm: var(--heading-line-height-sm); 
+    --h6-line-height-lg: var(--heading-line-height-lg); 
     --h6-margin-sm: 0 0 0 0;
     --h6-margin-lg: 0 0 0 0;
     
-    --p-default-margin : 0 0 1rem 0; //applied to paragraph
+    --p-default-margin : 0 0 1rem 0; /* applies to paragraph */
 
-    --default-body-background : linear-gradient(307deg, #29648a 0%, #5e9ac3 50%);
-    --brand-color: green;
-    --accent-color: #2196F3;
-
-    --default-hyperlink-color: #539bf5;
-
-    /* Default Background color */
-    --dafault-background: #1c2128;
-    --default-foreground: #adbac7;
-    --default-border: #444c56;
-
-    --muted-background: #22272E;
-    --muted-foreground: #768390;
-    --muted-border: #373e47;
-
-    --default-radius: 0.25rem;
 }
 
-  
+/* Override sweet-modal color */
+  .sweet-modal-content{
+    color: black;
+}
+
+.sweet-modal-overlay {
+     background: radial-gradient(at center, rgba(34, 39, 46, 0.6) 0%, rgba(34, 39, 46, 0.7) 100%)  !important;
+}
