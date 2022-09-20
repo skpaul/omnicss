@@ -22,18 +22,37 @@
     }
 }
 
+$brightnesses: '100' '120' '140' '160' '180' '200' '300' '400';
 
-.hover\:bright{
-    &:hover{
-        filter: brightness(1.2);
-        transition: all .3s ease-in-out;  //ease-in, ease-out, ease-in-out
+@mixin create-brightness() {
+    @each $brightness in $brightnesses{
+        &-#{$brightness}\25{
+            &:hover{
+                filter: brightness(#{$brightness}+'%');
+                transition: all 0.3s ease-in-out;  //ease-in, ease-out, ease-in-out
+            }
+        }
     }
 }
 
-.hover\:dark{
-    &:hover{
-        filter: brightness(0.80);
-        transition: all .3s ease-in-out;  //ease-in, ease-out, ease-in-out
+.hover\:bright{
+    @include create-brightness();
+}
+$darknesses: '80' '60' '40' '20' '0';
+
+
+
+@mixin create-darkness() {
+    @each $dark in $darknesses{
+        &-#{$dark}\25{
+            &:hover{
+                filter: brightness(#{$dark}+'%');
+                transition: all 0.3s ease-in-out;  //ease-in, ease-out, ease-in-out
+            }
+        }
     }
+}
+.hover\:dark{
+    @include create-darkness();
 }
 
