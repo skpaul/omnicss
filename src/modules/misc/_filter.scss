@@ -6,7 +6,7 @@
     @for $i from 5 through 15 {
         $value: $i*10;
         &-#{$value}\25{
-            filter:#{$property}(50%);
+            filter:#{$property}(#{$value} + '%');
         }
     }
 }
