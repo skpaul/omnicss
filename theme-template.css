@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-/* @import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 
@@ -138,7 +138,8 @@
 
 :root {
     --fallback-font: sans-serif;
-    --font-family: 'Inter', var(--fallback-font);  /* --font-family: 'Anek Bangla'; */
+    --font-family-english: 'Inter', var(--fallback-font); 
+    --font-family-bangla: 'Anek Bangla', var(--fallback-font);
     --font-weight: 400;
 
     /* Color scheme were generated from https://color.adobe.com/create/color-wheel */

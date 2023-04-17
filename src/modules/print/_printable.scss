@@ -101,7 +101,7 @@ $printable-font-size: 11px;
     }
     .serial-no, label, .text{
         padding: 2px 4px;
-        font-family: var(--font-family);
+        font-family: var(--font-family-english);
         font-size: $printable-font-size;
         // line-height: 1.5;
         color: #000;
@@ -167,7 +167,7 @@ $printable-font-size: 11px;
     .table{
       width: 100%;
       border-collapse: collapse;
-      font-family: var(--font-family);
+      font-family: var(--font-family-english);
       thead{
         border-bottom: 1px solid $printable-border-color;
         th{
