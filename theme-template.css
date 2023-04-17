@@ -154,8 +154,10 @@
             --background-color: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
         */
 
-    --accent-color: var(--ac600);
-    --border-color: var(--pc700);
+    --line-height : 1;
+    --accent-color: var(--blue-5);
+
+    --border-color: var(--blue-5);
     --border: 1px solid var(--border-color);
     --border-radius: 0.25rem;
 
