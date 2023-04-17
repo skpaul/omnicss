@@ -22,34 +22,43 @@
         On that note, when you click on an element, you give it focus, which also cultivates the illusion that :focus and :active are the same. They are not the same. When clicked the button is in :focus:active state.
     */
 
-    // &:hover, &:focus {
-    //     text-decoration: none;
-    //     filter: brightness(120%);
-    //     transition: all 0.3s ease-in-out;
-    // }
+    .mybtn{                               
+        outline: none;   
+        box-shadow: none;
+        border-width: 1px;
+        border-style: solid;
+    }
+    .mybtn:hover{
+        text-decoration: none;
+        filter: brightness(200%);
+        transition: all 0.2s ease-in-out;
+        /* outline: none;   
+        box-shadow: none; */
+    }
+
+    .mybtn:not(:disabled):not(.disabled):focus, .mybtn:not(:disabled):not(.disabled):focus{
+        filter: brightness(200%);
+        transition: all 0.2s ease-in-out;
+        /* outline: none;   
+        box-shadow: none; */
+    }
     
-    // &:focus, &.focus {
-    //     outline: 0;   
-    // }_
+    .mybtn:not(:disabled):not(.disabled):active, .mybtn:not(:disabled):not(.disabled).active {
+        filter: brightness(80%);
+        transition: all 0.2s ease-in-out;
+        /* outline: none;   
+        box-shadow: none; */
+    }
 
-    // &.disabled, &:disabled {
-    //     opacity: 0.65;
-    //     pointer-events: none;
-    // }
+    .mybtn:not(:disabled):not(.disabled) {
+        cursor: pointer;
+    }
 
-    // &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
-    //     filter: brightness(120%);
-    //     transition: all 0.3s ease-in-out;
-    // }
+    .mybtn.disabled, .mybtn:disabled {
+        opacity: 0.65;
+        pointer-events: none;
+    }
 
-    // &:not(:disabled):not(.disabled) {
-    //     cursor: pointer;
-    // }
-
-    // &:not(:disabled):not(.disabled):active:focus, &:not(:disabled):not(.disabled).active:focus{
-    //     filter: brightness(120%);
-    //     transition: all 0.3s ease-in-out;
-    // }
 }
   
 

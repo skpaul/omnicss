@@ -1226,6 +1226,38 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
       On that note, when you click on an element, you give it focus, which also cultivates the illusion that :focus and :active are the same. They are not the same. When clicked the button is in :focus:active state.
   */
 }
+.button .mybtn {
+  outline: none;
+  box-shadow: none;
+  border-width: 1px;
+  border-style: solid;
+}
+.button .mybtn:hover {
+  text-decoration: none;
+  filter: brightness(200%);
+  transition: all 0.2s ease-in-out;
+  /* outline: none;   
+  box-shadow: none; */
+}
+.button .mybtn:not(:disabled):not(.disabled):focus, .button .mybtn:not(:disabled):not(.disabled):focus {
+  filter: brightness(200%);
+  transition: all 0.2s ease-in-out;
+  /* outline: none;   
+  box-shadow: none; */
+}
+.button .mybtn:not(:disabled):not(.disabled):active, .button .mybtn:not(:disabled):not(.disabled).active {
+  filter: brightness(80%);
+  transition: all 0.2s ease-in-out;
+  /* outline: none;   
+  box-shadow: none; */
+}
+.button .mybtn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.button .mybtn.disabled, .button .mybtn:disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
 
 .table {
   background-color: var(--table-background-color);
