@@ -11,67 +11,34 @@
     // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     text-decoration: none;
 
-    &:hover, &:focus {
-        text-decoration: none;
-        filter: brightness(120%);
-        transition: all 0.3s ease-in-out;
-    }
-    
-    &:focus, &.focus {
-        outline: 0;   
-    }
-
-    &.disabled, &:disabled {
-        opacity: 0.65;
-        pointer-events: none;
-    }
-
-    &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
-        filter: brightness(120%);
-        transition: all 0.3s ease-in-out;
-    }
-
-    &:not(:disabled):not(.disabled) {
-        cursor: pointer;
-    }
-
-    &:not(:disabled):not(.disabled):active:focus, &:not(:disabled):not(.disabled).active:focus{
-        filter: brightness(120%);
-        transition: all 0.3s ease-in-out;
-    }
-
-    // &.outline {
-    //     color: var(--button-color);
-    //     background-color: transparent;
-    //     background-image: none;
-    //     border-color: var(--button-border-color);
-
-    //     &:hover {
-    //         color: var(--button-hover-color);
-    //         background-color: var(--button-hover-background-color);
-    //         border-color: var(--button-hover-border-color);
-    //     }
-          
-    //     &:focus, &.focus {
-    //         box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-    //     }
-        
-    //     &.disabled, &:disabled {
-    //         color: #6c757d;
-    //         background-color: transparent;
-    //     }
-        
-    //     &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
-    //         color: #fff;
-    //         background-color: #6c757d;
-    //         border-color: #6c757d;
-    //     }
-        
-    //     &:not(:disabled):not(.disabled):active:focus, &:not(:disabled):not(.disabled).active:focus{
-    //         box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-    //     }
+    // &:hover, &:focus {
+    //     text-decoration: none;
+    //     filter: brightness(120%);
+    //     transition: all 0.3s ease-in-out;
     // }
-    //outline ends
+    
+    // &:focus, &.focus {
+    //     outline: 0;   
+    // }
+
+    // &.disabled, &:disabled {
+    //     opacity: 0.65;
+    //     pointer-events: none;
+    // }
+
+    // &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
+    //     filter: brightness(120%);
+    //     transition: all 0.3s ease-in-out;
+    // }
+
+    // &:not(:disabled):not(.disabled) {
+    //     cursor: pointer;
+    // }
+
+    // &:not(:disabled):not(.disabled):active:focus, &:not(:disabled):not(.disabled).active:focus{
+    //     filter: brightness(120%);
+    //     transition: all 0.3s ease-in-out;
+    // }
 }
   
 

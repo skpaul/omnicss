@@ -1215,29 +1215,6 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   user-select: none;
   text-decoration: none;
 }
-.button:hover, .button:focus {
-  text-decoration: none;
-  filter: brightness(120%);
-  transition: all 0.3s ease-in-out;
-}
-.button:focus, .button.focus {
-  outline: 0;
-}
-.button.disabled, .button:disabled {
-  opacity: 0.65;
-  pointer-events: none;
-}
-.button:not(:disabled):not(.disabled):active, .button:not(:disabled):not(.disabled).active {
-  filter: brightness(120%);
-  transition: all 0.3s ease-in-out;
-}
-.button:not(:disabled):not(.disabled) {
-  cursor: pointer;
-}
-.button:not(:disabled):not(.disabled):active:focus, .button:not(:disabled):not(.disabled).active:focus {
-  filter: brightness(120%);
-  transition: all 0.3s ease-in-out;
-}
 
 .table {
   background-color: var(--table-background-color);
