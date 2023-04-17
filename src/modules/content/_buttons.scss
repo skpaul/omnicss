@@ -10,6 +10,17 @@
     user-select: none;
     // transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     text-decoration: none;
+    box-shadow: none; //re
+    /*
+        :focus and :active are two different states.
+
+        :focus represents the state when the element is currently selected to receive input and
+        :active represents the state when the element is currently being activated by the user.
+        
+        For example let's say we have a <button>. The <button> will not have any state to begin with. It just exists. If we use Tab to give "focus" to the <button>, it now enters its :focus state. If you then click (or press space), you then make the button enter its (:active) state.
+
+        On that note, when you click on an element, you give it focus, which also cultivates the illusion that :focus and :active are the same. They are not the same. When clicked the button is in :focus:active state.
+    */
 
     // &:hover, &:focus {
     //     text-decoration: none;
@@ -19,7 +30,7 @@
     
     // &:focus, &.focus {
     //     outline: 0;   
-    // }
+    // }_
 
     // &.disabled, &:disabled {
     //     opacity: 0.65;

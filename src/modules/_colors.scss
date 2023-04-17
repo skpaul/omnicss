@@ -72,5 +72,16 @@
     @include create-rule("border-color");
 }
 
+.bg-0{
+    background-color: transparent;
+}
+.c-0{
+    color: transparent;
+}
+.bc-0{
+    border-color: transparent;
+}
+
+
 
    
