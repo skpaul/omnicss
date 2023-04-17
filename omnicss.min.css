@@ -1218,6 +1218,8 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
 }
 .button:hover, .button:focus {
   text-decoration: none;
+  filter: brightness(120%);
+  transition: all 0.3s ease-in-out;
 }
 .button:focus, .button.focus {
   border-width: 2px;
