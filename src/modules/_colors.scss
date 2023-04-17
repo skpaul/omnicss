@@ -8,14 +8,6 @@
 // Medium emphasis text is applied at 60%
 // Disabled text uses an opacity of 38%.
 
-@mixin add-color-old($property) {
-    &-pc900{
-        #{$property}: var(--pc900);
-    }  
-}
-.bg-dark-1{
-
-}
 @mixin add-color($color, $scale, $property) {
     &-#{$color}-#{$scale}{
         #{$property}: var(--#{$color}-#{$scale});

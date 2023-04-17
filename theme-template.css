@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 /* @import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700;800&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap'); */
 
 
 /* 
@@ -139,62 +138,50 @@
 
 :root {
     --fallback-font: sans-serif;
-    --font-family-default: 'Inter', var(--fallback-font);  /* --font-family-default: 'Anek Bangla'; */
-    --font-weight-default: 400;
-
-    /* Font sizes generated from https://type-scale.com/  using Scale: 1.125-Major Second. Also used https://nekocalc.com/px-to-rem-converter  */
-    --font-size-very-large: 1.802rem;   /*28.83px*/
-    --font-size-extra-large: 1.602rem;  /*25.63px*/
-    --font-size-largest: 1.424rem;      /*22.78px*/
-    --font-size-larger: 1.266rem;       /*20.25px*/
-    --font-size-large: 1.125rem;        /*18.00px*/
-    --font-size-normal: 1rem;           /*16.00px*/
-    --font-size-small: 0.889rem;        /*14.22px*/
-    --font-size-smaller: 0.79rem;       /*12.64px*/
-    --font-size-smallest: 0.702rem;     /*11.24px*/
-    --line-height-default: 1.75;
+    --font-family: 'Inter', var(--fallback-font);  /* --font-family: 'Anek Bangla'; */
+    --font-weight: 400;
 
     /* Color scheme were generated from https://color.adobe.com/create/color-wheel */
     /* Shades were generated from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
     /* https://nekocolor.com is also good tool */
 
-    --color-default: var(--gray-2);
-    --background-color-default: var(--gray-9);
+    --color: var(--gray-2);
+    --background-color: var(--gray-9);
         /* background can be anyone of the following -
-            --background-color-default: red; //solid color
-            --background-color-default: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
-            --background-color-default: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
-            --background-color-default: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
+            --background-color: red; //solid color
+            --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
+            --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
+            --background-color: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
         */
 
-    --accent-color-default: var(--ac600);
-    --border-color-default: var(--pc700);
-    --border-default: 1px solid var(--border-color-default);
-    --border-radius-default: 0.25rem;
+    --accent-color: var(--ac600);
+    --border-color: var(--pc700);
+    --border: 1px solid var(--border-color);
+    --border-radius: 0.25rem;
 
     /* All the following colors are the variant of the above base colors. */
     --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
     --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
     --header-menu-color: var(--accent-color);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
     --header-menu-color-hover: #2E9CCA;               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --hamb-color: var(--color-default);            /* applied to the hamburger menu icon.*/
-    --hamb-border-color: var(--color-default);     /* applied to the hamburger menu box border.*/
-    --scroll-color: var(--color-default);          /* applied to the index.php marquee*/
-    --scroll-color-hover: var(--color-default);    /* applied to the index.php marquee*/
+    --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
+    --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
+    --scroll-color: var(--color);          /* applied to the index.php marquee*/
+    --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
 
-    --default-hyperlink-color: var(--color-default);
-    --default-hyperlink-color-hover: var(--accent-color);
+    --hyperlink-color: var(--color);
+    --hyperlink-color-hover: var(--accent-color);
 
     /* Default values for table */
-    --table-default-background-color: transparent; 
-    --table-default-border-color: transparent; 
-    --thead-default-background-color: transparent; 
-    --thead-default-color: transparent; 
-    --th-default-border-color:transparent;
-    --tbody-default-color:transparent;
-    --tr-default-border-color:transparent;
-    --tr-default-even-background-color:transparent;     /* for even rows only */
-    --tr-default-hover-background-color:transparent;    /* on hover effect */
+    --table-background-color: transparent; 
+    --table-border-color: transparent; 
+    --thead-background-color: transparent; 
+    --thead-color: transparent; 
+    --th-border-color:transparent;
+    --tbody-color:transparent;
+    --tr-border-color:transparent;
+    --tr-even-background-color:transparent;     /* for even rows only */
+    --tr-hover-background-color:transparent;    /* on hover effect */
 
     /* Form element */
     --label-color: var(--gray-2);
@@ -205,9 +192,8 @@
     --input-background-color-on-hover: unset;  /* input[type=text], input[type=password], select, textarea, .textbox */
     --input-background-color-on-focus: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
     --input-border-color: #46576e;  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-border-color-on-hover: var(--ac600);  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-border-color-on-focus: var(--ac600);  /* input[type=text], input[type=password], select, textarea, .textbox */
-
+    --input-border-color-on-hover: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
+    --input-border-color-on-focus: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
 }
 
 /* Override sweet-modal color */

@@ -18,19 +18,19 @@ body {
     min-height: 100vh;
 
     // can be treated like a fallback 
-    background-color: var(--background-color-default, #FFFFFF);  //Custom properties with fallbacks for use when the property has not been set
+    background-color: var(--background-color, #FFFFFF);  //Custom properties with fallbacks for use when the property has not been set
     // will be "on top", if browser supports it 
-    background:  var(--background-color-default); 
+    background:  var(--background-color); 
         // /* background can be anyone of the following -
-        //     --background-color-default: red; //solid color
-        //     --background-color-default: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
-        //     --background-color-default: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
-        //     --background-color-default: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
+        //     --background-color: red; //solid color
+        //     --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
+        //     --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
+        //     --background-color: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
         // */
 
-    color:  var(--color-default); 
-    font-family: var(--font-family-default); 
-    font-weight: var(--font-weight-default);
+    color:  var(--color); 
+    font-family: var(--font-family); 
+    font-weight: var(--font-weight);
     line-height: var(--line-height-default);
     text-align: left;
 }

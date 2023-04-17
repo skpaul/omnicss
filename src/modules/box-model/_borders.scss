@@ -1,7 +1,7 @@
 // .border{
 //     border-width: 1px;
 //     border-style: solid;
-//     border-radius: var(--border-radius-default);
+//     border-radius: var(--border-radius);
 // }
 
 .b{
@@ -14,17 +14,14 @@
         border-top-style: solid;
     }
     &b{
-        // border-bottom: var(--border-default);
         border-bottom-width: 1px;
         border-bottom-style: solid;
     }
     &l{
-        // border-left: var(--border-default);
         border-left-width: 1px;
         border-left-style: solid;
     }
     &r{
-        // border-right: var(--border-default);
         border-right-width: 1px;
         border-right-style: solid;
     }
@@ -54,7 +51,7 @@
 }
 
 .round{
-    border-radius: var(--border-radius-default);
+    border-radius: var(--border-radius);
 }
 
 .br{

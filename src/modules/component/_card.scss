@@ -9,7 +9,7 @@
         // flex:1;
     }
 
-    border: 1px solid  var(--border-default);  /*fallbacks for use when the property has not been set in :root*/
+    border: 1px solid  var(--border);  /*fallbacks for use when the property has not been set in :root*/
     border-top-width: 0.5rem;;
     border-radius: var(--default-radius);
     padding: 0.5rem 0.5rem;  
