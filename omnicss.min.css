@@ -1213,16 +1213,12 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   text-decoration: none;
 }
 .button:hover, .button:focus {
   text-decoration: none;
   filter: brightness(120%);
   transition: all 0.3s ease-in-out;
-}
-.button:focus, .button.focus {
-  border-width: 2px;
 }
 .button:focus, .button.focus {
   outline: 0;
