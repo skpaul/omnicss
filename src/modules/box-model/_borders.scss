@@ -1,13 +1,13 @@
-.border{
-    border-width: 1px;
-    border-style: solid;
-    border-radius: var(--border-radius-default);
-}
+// .border{
+//     border-width: 1px;
+//     border-style: solid;
+//     border-radius: var(--border-radius-default);
+// }
 
 .b{
     &a{
-        //DEPRICATED
-        border: var(--border-default);
+        border-width: 1px;
+        border-style: solid;
     }
     &t{
         border-top-width: 1px;
@@ -66,5 +66,8 @@
     }
     &-5{
         border-radius: 5px !important;
+    }
+    &-6{
+        border-radius: 6px !important;
     }
 }
