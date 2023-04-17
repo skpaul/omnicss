@@ -1204,7 +1204,7 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   border: 1px solid var(--input-border-color);
 }
 
-.button, .btn {
+.button {
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
@@ -1213,65 +1213,28 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border: 1px solid var(--button-border-color-default);
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  color: var(--button-color-default);
-  background-color: var(--button-background-color-default);
-  border-color: var(--button-border-color-default);
   text-decoration: none;
 }
-.button:hover, .button:focus, .btn:hover, .btn:focus {
+.button:hover, .button:focus {
   text-decoration: none;
 }
-.button:focus, .button.focus, .btn:focus, .btn.focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-.button:focus, .button.focus, .btn:focus, .btn.focus {
+.button:focus, .button.focus {
   outline: 0;
 }
-.button.disabled, .button:disabled, .btn.disabled, .btn:disabled {
+.button.disabled, .button:disabled {
   opacity: 0.65;
   pointer-events: none;
 }
-.button:not(:disabled):not(.disabled):active, .button:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active {
+.button:not(:disabled):not(.disabled):active, .button:not(:disabled):not(.disabled).active {
   color: #fff;
   background-color: #545b62;
   border-color: #4e555b;
 }
-.button:not(:disabled):not(.disabled), .btn:not(:disabled):not(.disabled) {
+.button:not(:disabled):not(.disabled) {
   cursor: pointer;
 }
-.button:not(:disabled):not(.disabled):active:focus, .button:not(:disabled):not(.disabled).active:focus, .btn:not(:disabled):not(.disabled):active:focus, .btn:not(:disabled):not(.disabled).active:focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-.button.outline, .btn.outline {
-  color: var(--button-color-default);
-  background-color: transparent;
-  background-image: none;
-  border-color: var(--button-border-color-default);
-}
-.button.outline:hover, .btn.outline:hover {
-  color: var(--button-hover-color-default);
-  background-color: var(--button-hover-background-color-default);
-  border-color: var(--button-hover-border-color-default);
-}
-.button.outline:focus, .button.outline.focus, .btn.outline:focus, .btn.outline.focus {
-  box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
-}
-.button.outline.disabled, .button.outline:disabled, .btn.outline.disabled, .btn.outline:disabled {
-  color: #6c757d;
-  background-color: transparent;
-}
-.button.outline:not(:disabled):not(.disabled):active, .button.outline:not(:disabled):not(.disabled).active, .btn.outline:not(:disabled):not(.disabled):active, .btn.outline:not(:disabled):not(.disabled).active {
-  color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
-}
-.button.outline:not(:disabled):not(.disabled):active:focus, .button.outline:not(:disabled):not(.disabled).active:focus, .btn.outline:not(:disabled):not(.disabled):active:focus, .btn.outline:not(:disabled):not(.disabled).active:focus {
+.button:not(:disabled):not(.disabled):active:focus, .button:not(:disabled):not(.disabled).active:focus {
   box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5);
 }
 

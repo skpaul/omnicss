@@ -196,6 +196,11 @@
     --input-border-color: #46576e;  /* input[type=text], input[type=password], select, textarea, .textbox */
     --input-border-color-on-hover: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
     --input-border-color-on-focus: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
+
+    --button-color:             var(--gray-2);
+    --button-border-color:      var(--gray-2);
+    --button-background-color:  var(--gray-2);
+
 }
 
 /* Override sweet-modal color */
