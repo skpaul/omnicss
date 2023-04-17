@@ -86,7 +86,7 @@ header{
                 text-decoration: none;
                 margin-bottom: 0.4345rem;
                 padding-bottom: 0.4345rem;
-                border-bottom: 1px solid var(--muted-border);  //required for hamburger menu items
+                border-bottom: 1px solid var(--header-menu-color);  //required for hamburger menu items
                 
                 &:last-child{
                     // border-bottom: 0;
