@@ -31,15 +31,16 @@
     }
     &:hover{
         text-decoration: none;
-        filter: brightness(200%);
+        filter: brightness(120%);
         transition: all 0.2s ease-in-out;
     }
 
     &:not(:disabled):not(.disabled):focus, &:not(:disabled):not(.disabled):focus{
-        filter: brightness(200%);
+        filter: brightness(120%);
         transition: all 0.2s ease-in-out;
     }
     
+
     &:not(:disabled):not(.disabled):active, &:not(:disabled):not(.disabled).active {
         filter: brightness(80%);
         transition: all 0.2s ease-in-out;
