@@ -1,6 +1,11 @@
 
 // sass --watch omnicss.scss:../omnicss.min.css --style compressed
 
+// git tag 		//show current tags
+// git tag v1.0.0   	//create new tag
+// git push --tags -u origin master
+
+
 //sass nesting ----->
     //.bg {  &-orange { ... } } will turn into .bg-orange { ... }
 //<----- sass nesting//
