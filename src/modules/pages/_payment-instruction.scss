@@ -1,0 +1,73 @@
+.payment-instruction {
+    // .sms --->
+    .sms {
+        .top {
+            margin-bottom: 2px;
+            height: 77px;
+        }
+
+        .title {
+            width: 203px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .step {
+            width: 208px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .step p {
+            text-align: center;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            width: 65px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    // <--- .sms
+
+    .mobile-screen{
+        margin: auto;
+
+        .outer {
+            border: 1px solid #544f4f;
+            border-radius: 20px;
+            height: 91px;
+            width: 120px;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            padding-left: 1px;
+            padding-right: 1px;
+            background-color: gray;
+            .inner {
+                height: 100%;
+                width: 100%;
+                border-radius: 19px;
+                background-color: white;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                font-size: 11px;
+                font-family: arial;
+                letter-spacing: 0.0523rem;
+                color: red;
+                line-height: 0.9876523rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
