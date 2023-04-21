@@ -72,6 +72,8 @@
     @include create-rule("border-color");
 }
 
+
+
 .bg-0{
     background-color: transparent;
 }
@@ -80,6 +82,26 @@
 }
 .bc-0{
     border-color: transparent;
+}
+
+.bg-dark{
+    background-color: var(--dark);
+}
+.c-dark{
+    color: var(--dark);
+}
+.bc-dark{
+    border-color: var(--dark);
+}
+
+.bg-light{
+    background-color: var(--light);
+}
+.c-light{
+    color: var(--light);
+}
+.bc-light{
+    border-color: var(--light);
 }
 
 

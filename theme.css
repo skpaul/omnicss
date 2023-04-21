@@ -139,7 +139,7 @@
 :root {
     --container-max-width: 1200px;
     --container-padding: 0.75rem;  /* left + right*/
- 
+
     --fallback-font: sans-serif;
     --font-family-english: 'Inter', var(--fallback-font); 
     --font-family-bangla: 'Anek Bangla', var(--fallback-font);
@@ -149,27 +149,35 @@
     /* Shades were generated from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
     /* https://nekocolor.com is also good tool */
 
+    /* Used as default text color */
     --color: var(--gray-2);
-    --background-color: var(--gray-9);
+   
+    /* Used as default page background color */
+    --background-color: var(--gray-9);  /*--gray-9 = rgb(22,34,51)*/
         /* background can be anyone of the following -
             --background-color: red; //solid color
             --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
             --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
             --background-color: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
         */
+    
+    /* --dark & --light are two variants of --background-color. */
+    /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/
+    --dark:   rgba(19,30,46,1);  
+    --light:  rgba(27,42,62,1);
 
     --line-height : 1;
     --accent-color: var(--blue-5);
 
-    --border-color: var(--blue-5);
+    --border-color: var(--gray-5);
     --border: 1px solid var(--border-color);
     --border-radius: 0.25rem;
 
     /* All the following colors are the variant of the above base colors. */
     --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
     --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
-    --header-menu-color: var(--accent-color);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --header-menu-color-hover: #2E9CCA;               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color: var(--blue-3);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+    --header-menu-color-hover: var(--blue-2);               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
     --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
     --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
     --scroll-color: var(--color);          /* applied to the index.php marquee*/
@@ -215,3 +223,4 @@
 .sweet-modal-overlay {
      background: radial-gradient(at center, rgba(34, 39, 46, 0.6) 0%, rgba(34, 39, 46, 0.7) 100%)  !important;
 }
+
