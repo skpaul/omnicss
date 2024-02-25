@@ -24,7 +24,9 @@
 
     <link href="assets/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/monogrid@0.0.1/monogrid.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css"> -->
+    <link rel="stylesheet" href="../omnicss.min.css">
+    <link rel="stylesheet" href="../theme.css">
 
     <style>
         code[class*=language-] {
@@ -48,14 +50,7 @@
             margin-bottom: 20px;
         }
 
-        h2:not(.ignore){
-            margin-top:60px;
-            margin-bottom: 30px;
-        }
-        h3:not(.ignore){
-           
-            margin-bottom: 20px;
-        }
+
 
         /* h2{
             margin-top:40px;
@@ -89,6 +84,139 @@
 </head>
 
 <body>
+    <header class="header">
+        <div class="container">
+            <div class="mt-300 mb-100" style="font-size: 1.5rem;">OmniCSS v11.0.22</div>
+            <h1 class="mb150" style="font-size: 1.5rem !important;">
+                A hand-full CSS <code>.class</code> library for busy developers.
+            </h1>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container mv-300">
+
+            <div class="ba bc-gray-7">
+                <div class="container-900 mv-150">
+                    <!-- //default settings -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2 class="fs-150 fw-600">Default settings</h2>
+                        <p>See details in theme.css. You can change any - </p>
+                        <h3>Import google fonts</h3>
+                        <p>If you want to use google font/s, you can import here.</p>
+                        <h3>Color Schemes</h3>
+                        <p>Your color schemes will be here.</p>
+                        <h3>Other</h3>
+                        <ul>
+                            <li>--container-max-width: 1200px;</li>
+                            <li>--container-padding: 0.75rem;  /* left + right*/</li>
+                        
+                            <li>--fallback-font: sans-serif;</li>
+                            <li>--font-family-english: 'Inter', var(--fallback-font); </li>
+                            <li>--font-family-bangla: 'Anek Bangla', var(--fallback-font);</li>
+                            <li>--font-weight: 300;</li>
+                            <li>--color: var(--gray-2); /* default text color */</li>
+                            <li>--background-color: var(--gray-9);   /* Used as default page background color */</li>
+                               
+                            
+                            /* --dark & --light are two variants of --background-color. */
+                            /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/
+                            --dark:   rgba(19,30,46,1);  
+                            --light:  rgba(27,42,62,1);
+                        
+                            --line-height : 1.3;
+                            --accent-color: var(--blue-5);
+                        
+                            --border-color: var(--gray-5);
+                            --border: 1px solid var(--border-color);
+                            --border-radius: 0.25rem;
+                        
+                            /* All the following colors are the variant of the above base colors. */
+                            --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
+                            --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
+                            --header-menu-color: var(--blue-3);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+                            --header-menu-color-hover: var(--blue-2);               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
+                            --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
+                            --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
+                            --scroll-color: var(--color);          /* applied to the index.php marquee*/
+                            --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
+                        
+                            --hyperlink-color: var(--color);
+                            --hyperlink-color-hover: var(--accent-color);
+                        
+                            /* Default values for table */
+                            --table-background-color: transparent; 
+                            --table-border-color: transparent; 
+                            --thead-background-color: transparent; 
+                            --thead-color: transparent; 
+                            --th-border-color:transparent;
+                            --tbody-color:transparent;
+                            --tr-border-color:transparent;
+                            --tr-even-background-color:transparent;     /* for even rows only */
+                            --tr-hover-background-color:transparent;    /* on hover effect */
+                        
+                            /* Form element */
+                            --label-color: var(--gray-2);
+                            --placeholder-color: #51637b; /* input[type=text], input[type=password], textarea */
+                            --input-color: var(--gray-2);  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-caret-color: #fff;
+                            --input-background-color: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-background-color-on-hover: unset;  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-background-color-on-focus: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-border-color: #46576e;  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-border-color-on-hover: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
+                            --input-border-color-on-focus: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
+                        
+                            --button-color:             var(--gray-2);
+                            --button-border-color:      var(--gray-2);
+                            --button-background-color:  var(--gray-2);
+                        </ul>
+                    </section> <!-- default settings// -->
+
+
+                    <!-- //font-size -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2 class="fs-150 fw-600">Font Size</h2>
+                        <p>You can set font-size property in two ways- using rem and percentage.</p>
+                        <h3>Using rem-</h3>
+                        <p>
+                            Syntax: .prefix-value[-device]  <br>
+                            prefix = fs (Font Size)<br>                           
+                            value = 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300 <br>
+                            device = sm/lg<br>
+                        </p>
+                        <h4>Example</h4>
+                        <ul class="example">
+                            <li><span>.fs-050</span>: Sets font-size: 0.50rem;</li>
+                            <li><span>.fs-060</span>: Sets font-size: 0.60rem;</li>
+                            <li><span>.fs-100-sm</span>: Sets font-size: 1.00rem in only small devices.</li>
+                            <li><span>.fs-100-lg</span>: Sets font-size: 1.00rem in only large devices.</li>
+                        </ul>
+
+
+                        <h3>Using percentage-</h3>
+                        <p>
+                            Syntax: .prefix-value[-device]  <br>
+                            prefix = fs (Font Size)<br>                           
+                            value = 50%, 60%, 70%, 80%, 90%, 100%, 110%, 120%, 130%, 140%, 150%, 160%, 170%, 180%, 190%, 200%<br>
+                            device = sm/lg<br>
+                        </p>
+                        <h4>Example</h4>
+                        <ul class="example">
+                            <li><span>.fs-50%</span>: Sets font-size: 50% of 1.00rem (16px)</li>
+                            <li><span>.fs-60%</span>: Sets font-size: 60% of 1.00rem (16px)</li>
+                            <li><span>.fs-110%-sm</span>: Sets font-size: 110% of 1.00rem (16px) in only small devices.</li>
+                            <li><span>.fs-90%-lg</span>: Sets font-size: 90% of 1.00rem (16px) in only large devices.</li>
+                        </ul>
+
+                    </section> <!-- font-size// -->
+                </div>
+            </div>
+        </div><!-- .container -->
+    </main>
+    <footer></footer>
+
+
     <div class="master-wrapper">
         <main class="">
 
@@ -115,13 +243,20 @@
                             .container-600      : max width 600px        <br><br>      
                         
                         
-                            Background colors<br>
-                            ======================<br>
-                                Use .bg-COLOR-N to set background color. <br>
-                                COLOR   = gray, red, green, blue, orange, teal, purple, yellow, pink, coral<br>
-                                N       = 0 to 9<br>
-                               
-                                for example-<br>
+                            <h2>Background colors</h2>
+                                ======================<br>
+                                Default Background Color  <br>
+                                -------------------------  <br>
+                                --background-color: var(--gray-9); <br>
+                                You can customize --background-color in theme.css. For example, --background-color: var(--green-2); <br>
+
+                                Syntax: .prefix-colorName-shade  <br> 
+                                prefix = bg <br>
+                                colorName = gray, red, green, blue, orange, teal, purple, yellow, pink, coral <br>
+                                You can customize the color shades in theme.css stylesheet. <br>
+                                shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                                                              
+                                Example-<br>
                                 .bg-red-9<br>
                                 .bg-dark = Slight dark shade of default page background color<br>
                                 .bg-light = Slight dark light of default page background color<br>
@@ -153,8 +288,11 @@
                         
                         Margins<br>
                         ==================================<br>
-                            Syntax: .xx-yyy[-zz]  xx = ma/mt/mb/ml/mr/mv/mh, yyy = auto/0/025/050/075/100/125/150/175/200/225/250/275/300/400, zz = sm/lg<br>
-                            
+                            Syntax: .prefix-value[-device]  <br>
+                            prefix = ma/mt/mb/ml/mr/mv/mh <br>                           
+                            value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
+                            device = sm/lg<br>
+
                             ma: margin all<br>
                             mt: margin-top<br>
                             mb: margin-bottom <br>
@@ -167,17 +305,20 @@
                             Example<br>
                             -------<br>
                             
-                            .ma-auto		: creates 'margin: auto' on all devices.<br>
-                            .ma-auto-sm	: creates 'margin: auto' on small devices. <br>
-                            .ma-auto-lg	: creates 'margin: auto' on large devices.<br>
+                            .ma-auto	: creates all 'margin: auto' on all devices.<br>
+                            .ma-auto-sm	: creates all 'margin: auto' on small devices. <br>
+                            .ma-auto-lg	: creates all 'margin: auto' on large devices.<br>
                             
-                            .mb-025		: creates 'margin-bottom: 0.25rem' on all devices.    <br>                      
-                            .mb-025-sm	: creates 'margin-bottom: 0.25rem' on small devices.<br>
-                            .mb-025-lg	: creates 'margin-bottom: 0.25rem' on large devices.<br><br>
+                            .mb-020		: creates 'margin-bottom: 0.20rem' on all devices.    <br>                      
+                            .mb-020-sm	: creates 'margin-bottom: 0.20rem' on small devices.<br>
+                            .mb-020-lg	: creates 'margin-bottom: 0.20rem' on large devices.<br><br>
                             
                         Padding<br>
                         ==================================<br>
-                            Syntax: .xx-yyy[-zz]  xx = pa/pt/pb/pl/pr/pv/ph,  yyy = auto/0/025/050/075/100/125/150/175/200/225/250/275/300/400, zz = sm/lg<br>
+                            Syntax: .prefix-value[-device]  <br> 
+                            prefix = pa/pt/pb/pl/pr/pv/ph <br>
+                            value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
+                            device = sm/lg<br>
                             
                             pa: padding all<br>
                             pt: padding-top<br>
@@ -186,7 +327,6 @@
                             pr: padding-right <br>
                             pv: vertical padding (top+bottom)<br>
                             ph: horizontal padding (left+right)<br><br>
-                        
                         
                             Example<br>
                             -------<br>
@@ -204,26 +344,40 @@
                         
                         Borders<br>
                         ==================================<br>
-                            .ba     - border-all<br>
-                            .bt     - border-top<br>
-                            .bb     - border-bottom<br>
-                            .bl     - border-left<br>
-                            .br     - border-right<br>
-                            .bv     - border-vertical (border-top  + border-bottom)<br>
-                            .bh     - border-horizontal (border-left + border-right)<br>
-                        
+                            .ba     - Sets border-width: 1px; border-style: solid;<br>
+                            .bt     - Sets border-top-width: 1px; border-top-style: solid;<br>
+                            .bb     - Sets border-bottom-width: 1px; border-bottom-style: solid;<br>
+                            .bl     - Sets  border-left-width: 1px; border-left-style: solid;<br>
+                            .br     - Sets border-right-width: 1px; border-right-style: solid;<br>
+                            .bv     - border-vertical (border-top  + border-bottom). Sets border-top-width: 1px; border-top-style: solid; border-bottom-width: 1px; border-bottom-style: solid;<br>
+                            .bh     - border-horizontal (border-left + border-right). Sets border-left-width: 1px; border-left-style: solid; border-right-width: 1px; border-right-style: solid;<br>
                         
                             .solid  - border-style: solid <br>
                             .dash   - border-style: dashed <br>
                             .dot    - border-style: dotted <br>
-                            .round  - border-radius (default: 0.25rem;)<br><br>
+                            .round  - Sets border-radius: 0.25rem; 0.25rem is the default value.<br><br>
 
-                            .br-2   - border-radius: 2px <br>
-                            .br-4   - border-radius: 4px <br>
-                            .br-5   - border-radius: 5px <br>
-                            .br-6   - border-radius: 6px <br>
+                            Border radius in px-<br>
+                            ------------------- <br>
+                            Syntax: .br-value <br> 
+                            value = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 <br>
+                            .br-1   - Sets border-radius: 1px <br>
+                            . . . . . <br>
+                            . . . . . <br>
+                            .br-10  - Sets border-radius: 10px <br>
 
-                        
+                            Border radius in rem-<br>
+                            ------------------- <br>
+                            Syntax: .br-value <br> 
+                            value = 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200 <br>
+                            .br-010   - Sets border-radius: 0.10rem; <br>
+                            .br-020   - Sets border-radius: 0.20rem; <br>
+                            .br-030   - Sets border-radius: 0.30rem; <br>
+                            . . . . . <br>
+                            . . . . . <br>
+                            .br-200   - Sets border-radius: 2.00rem; <br>
+
+
                         Typography<br>
                         ==================================<br>
                         

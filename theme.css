@@ -143,7 +143,7 @@
     --fallback-font: sans-serif;
     --font-family-english: 'Inter', var(--fallback-font); 
     --font-family-bangla: 'Anek Bangla', var(--fallback-font);
-    --font-weight: 400;
+    --font-weight: 300;
 
     /* Color scheme were generated from https://color.adobe.com/create/color-wheel */
     /* Shades were generated from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
@@ -166,7 +166,7 @@
     --dark:   rgba(19,30,46,1);  
     --light:  rgba(27,42,62,1);
 
-    --line-height : 1;
+    --line-height : 1.3;
     --accent-color: var(--blue-5);
 
     --border-color: var(--gray-5);
