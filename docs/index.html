@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="../theme.css">
 
     <style>
+        body{
+            line-height: 1.8;
+            font-size: 90%;
+        }
         code[class*=language-] {
             white-space: break-spaces;
         }
@@ -39,9 +43,12 @@
             /* white-space: ; */
         }
 
-        /* .grid{
-            gap:2.5rem;
-        } */
+        h2{
+            font-size: 1.5rem;
+            border-bottom: 1px solid #304a6f;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
 
         .grid{
             margin-bottom: 50px;
@@ -51,34 +58,17 @@
         }
 
 
-
-        /* h2{
-            margin-top:40px;
-            font-weight: 700;
-        }
-        h3, h4, h5{
-            margin-top:30px;
-        }
-
-        p{
-            margin-top:10px;
-        } */
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
         code:not(code[class*=language-]) {
-            font-family: Consolas;
-            border-radius: 0.30rem;
-            border: 1px solid #373e47;
-            padding: 0 1px;
+            /* font-family: Consolas; */
+            font-family: "Inconsolata", monospace;
+            /* font-family: "Source Code Pro", monospace; */
+            border-radius: 0.3rem;
+            border: 1px solid #2b3e59;
+            padding: 4px 6px;
             white-space: nowrap;
-            background-color: #22272e;
+            background-color: #162233;
+            font-size: 0.8rem;
+            color: #ddca9e;
         }
     </style>
 </head>
@@ -116,20 +106,29 @@
                             <li>--font-family-bangla: 'Anek Bangla', var(--fallback-font);</li>
                             <li>--font-weight: 300;</li>
                             <li>--color: var(--gray-2); /* default text color */</li>
-                            <li>--background-color: var(--gray-9);   /* Used as default page background color */</li>
+                            <li><code>--background-color: var(--gray-9);</code>   /* Used as default page background color */</li>
                                
                             
-                            /* --dark & --light are two variants of --background-color. */
-                            /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/
-                            --dark:   rgba(19,30,46,1);  
-                            --light:  rgba(27,42,62,1);
+                            <li>
+                               Quick variants of <code>--background-color</code> : <br>
+                                
+                                --dark:   rgba(19,30,46,1); <br>
+                                --light:  rgba(27,42,62,1); <br>
+
+                                Usage: <br>
+                                <code>.c-dark</code> <code>.c-light</code>  : Sets font color dark/light in terms of --background-color. <br>
+                                <code>.bg-dark</code> <code>.bg-light</code>: Sets background color dark/light in terms of --background-color. <br>
+                                <code>.bc-dark</code> <code>.bc-light</code> : Sets border color dark/light in terms of --background-color. <br>
+                                File- _colors.scss.
+                            </li>
                         
-                            --line-height : 1.3;
-                            --accent-color: var(--blue-5);
-                        
-                            --border-color: var(--gray-5);
-                            --border: 1px solid var(--border-color);
-                            --border-radius: 0.25rem;
+                            <li><code>--line-height : 1.3;</code> </li>
+                            
+                            <li><code>--accent-color: var(--blue-5);</code></li>
+                            <li><code> --border-color: var(--gray-5);</code></li>
+                            <li><code>--border: 1px solid var(--border-color);</code></li>
+                            <li><code>--border-radius: 0.25rem;</code> : Applicable if you use <code>.round</code> class.</li>
+                            
                         
                             /* All the following colors are the variant of the above base colors. */
                             --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
@@ -141,35 +140,34 @@
                             --scroll-color: var(--color);          /* applied to the index.php marquee*/
                             --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
                         
-                            --hyperlink-color: var(--color);
-                            --hyperlink-color-hover: var(--accent-color);
-                        
+                            <li><code>--hyperlink-color: var(--color);</code></li>
+                            <li><code>--hyperlink-color-hover: var(--accent-color);</code></li>
+
                             /* Default values for table */
-                            --table-background-color: transparent; 
-                            --table-border-color: transparent; 
-                            --thead-background-color: transparent; 
-                            --thead-color: transparent; 
-                            --th-border-color:transparent;
-                            --tbody-color:transparent;
-                            --tr-border-color:transparent;
-                            --tr-even-background-color:transparent;     /* for even rows only */
-                            --tr-hover-background-color:transparent;    /* on hover effect */
+                            <li><code>--table-background-color: transparent;</code></li>
+                            <li><code>--table-border-color: transparent;</code></li>
+                            <li><code>--thead-background-color: transparent;</code></li>
+                            <li><code>--thead-color: transparent;</code></li>
+                            <li><code>--th-border-color:transparent;</code></li>
+                            <li><code>--tbody-color:transparent;</code></li>
+                            <li><code>--tr-border-color:transparent;</code></li>
+                            <li><code>--tr-even-background-color:transparent;</code> /* for even rows only */</li>
+                            <li><code> --tr-hover-background-color:transparent;</code> /* on hover effect */</li>
                         
                             /* Form element */
-                            --label-color: var(--gray-2);
-                            --placeholder-color: #51637b; /* input[type=text], input[type=password], textarea */
-                            --input-color: var(--gray-2);  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-caret-color: #fff;
-                            --input-background-color: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-background-color-on-hover: unset;  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-background-color-on-focus: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-border-color: #46576e;  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-border-color-on-hover: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
-                            --input-border-color-on-focus: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
-                        
-                            --button-color:             var(--gray-2);
-                            --button-border-color:      var(--gray-2);
-                            --button-background-color:  var(--gray-2);
+                            <li><code>--label-color: var(--gray-2);</code></li>
+                            <li><code> --placeholder-color: #51637b; </code> /* input[type=text], input[type=password], textarea */</li>
+                            <li><code>--input-color: var(--gray-2);</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-caret-color: #fff;</code></li>
+                            <li><code>--input-background-color: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-background-color-on-hover: unset;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-background-color-on-focus: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-border-color: #46576e;</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-border-color-on-hover: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--input-border-color-on-focus: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code>--button-color: var(--gray-2);</code></li>
+                            <li><code>--button-border-color: var(--gray-2);</code></li>
+                            <li><code>--button-background-color: var(--gray-2);</code></li>
                         </ul>
                     </section> <!-- default settings// -->
 
@@ -187,10 +185,10 @@
                         </p>
                         <h4>Example</h4>
                         <ul class="example">
-                            <li><span>.fs-050</span>: Sets font-size: 0.50rem;</li>
-                            <li><span>.fs-060</span>: Sets font-size: 0.60rem;</li>
-                            <li><span>.fs-100-sm</span>: Sets font-size: 1.00rem in only small devices.</li>
-                            <li><span>.fs-100-lg</span>: Sets font-size: 1.00rem in only large devices.</li>
+                            <li><code>.fs-050</code>: Sets font-size: 0.50rem;</li>
+                            <li><code>.fs-060</code>: Sets font-size: 0.60rem;</li>
+                            <li><code>.fs-100-sm</code>: Sets font-size: 1.00rem in only small devices.</li>
+                            <li><code>.fs-100-lg</code>: Sets font-size: 1.00rem in only large devices.</li>
                         </ul>
 
 
@@ -199,17 +197,88 @@
                             Syntax: .prefix-value[-device]  <br>
                             prefix = fs (Font Size)<br>                           
                             value = 50%, 60%, 70%, 80%, 90%, 100%, 110%, 120%, 130%, 140%, 150%, 160%, 170%, 180%, 190%, 200%<br>
-                            device = sm/lg<br>
+                            device = sm(small), lg(large)<br>
                         </p>
                         <h4>Example</h4>
                         <ul class="example">
-                            <li><span>.fs-50%</span>: Sets font-size: 50% of 1.00rem (16px)</li>
-                            <li><span>.fs-60%</span>: Sets font-size: 60% of 1.00rem (16px)</li>
-                            <li><span>.fs-110%-sm</span>: Sets font-size: 110% of 1.00rem (16px) in only small devices.</li>
-                            <li><span>.fs-90%-lg</span>: Sets font-size: 90% of 1.00rem (16px) in only large devices.</li>
+                            <li><code>.fs-50%</code>: Sets font-size: 50% of 1.00rem (16px)</li>
+                            <li><code>.fs-60%</code>: Sets font-size: 60% of 1.00rem (16px)</li>
+                            <li><code>.fs-110%-sm</code>: Sets font-size: 110% of 1.00rem (16px) in only small devices.</li>
+                            <li><code>.fs-90%-lg</code>: Sets font-size: 90% of 1.00rem (16px) in only large devices.</li>
                         </ul>
 
                     </section> <!-- font-size// -->
+
+                    <!-- Container -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Containers</h2>
+                        <ul>
+                            <li><code>.container-fluid</code>: full width.</li>
+                            <li><code>.container</code> max width 1200px default. Customizable via theme.css.</li>
+                            <li><code>.container-1100</code>: max width 1100px</li>
+                            <li><code>.container-1000</code>: max width 1000px</li>
+                            <li><code>.container-900</code>: max width 900px</li>
+                            <li><code>.container-800</code>: max width 800px</li>
+                            <li><code>.container-700</code>: max width 700px</li>
+                            <li><code>.container-600</code>: max width 600px</li>
+                        </ul>
+                    </section>
+                    <!-- Container -->
+
+                    <!-- Background colors -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Background Colors</h2>
+                        Syntax: <code>.prefix-colorName-shade</code>  <br>  
+                        prefix = bg <br>
+                        colorName = gray, red, green, blue, orange, teal, purple, yellow, pink, coral <br>
+                        You can customize the color shades in theme.css stylesheet. <br>
+                        shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                          
+                        <h3>Example</h3>
+                        <ul>
+                            <li><code>.bg-red-9</code></li>
+                            <li><code>.bg-dark</code> Slight dark shade of default page background color</li>
+                            <li><code>.bg-light</code> Slight light shade of default page background color</li>
+                            <li><code>.bg-0</code>transparent</li>
+                        </ul>
+                    </section>
+                    <!-- Background colors -->
+
+                    <!-- Foreground colors -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Foreground Colors</h2>
+                        Syntax: <code>.prefix-colorName-shade</code>  <br> 
+                        prefix = c [c = color] <br>
+                        colorName = gray, red, green, blue, orange, teal, purple, yellow, pink and coral. You can customize the color shades in theme.css stylesheet. <br>
+                        shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                          
+                        <h3>Example</h3>
+                        <ul>
+                            <li><code>.c-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
+                            <li><code>.c-dark</code> <span>Slight dark shade of default page background color as foreground color</span></li>
+                            <li><code>.c-light</code> <span>Slight light shade of default page background color as foreground color</span></li>
+                            <li><code>.c-0</code> Transparent foreground color.</li>
+                        </ul>
+                    </section>
+                    <!-- Foreground colors -->
+
+                    <!-- Foreground colors -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Border Colors</h2>
+                        Syntax: <code>.prefix-colorName-shade</code>  <br> 
+                        prefix = bc [bc = border-color] <br>
+                        colorName = gray, red, green, blue, orange, teal, purple, yellow, pink and coral. You can customize the color shades in theme.css stylesheet. <br>
+                        shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                          
+                        <h3>Example</h3>
+                        <ul>
+                            <li><code>.bc-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
+                            <li><code>.bc-dark</code> <span>Slight dark shade of default page background color as border color</span></li>
+                            <li><code>.bc-light</code> <span>Slight light shade of default page background color as border color</span></li>
+                            <li><code>.bc-0</code> Transparent border color.</li>
+                        </ul>
+                    </section>
+                    <!-- Foreground colors -->
                 </div>
             </div>
         </div><!-- .container -->
@@ -230,61 +299,6 @@
                  
                     <!-- //raw content -->
                     <div>
-
-                            Container<br>
-                            ======================<br>
-                            .container-fluid    : full width.
-                            .container          : max width 1200px default. Customizable via theme.css.
-                            .container-1100     : max width 1100px
-                            .container-1000     : max width 1000px
-                            .container-900      : max width 900px
-                            .container-800      : max width 800px
-                            .container-700      : max width 700px
-                            .container-600      : max width 600px        <br><br>      
-                        
-                        
-                            <h2>Background colors</h2>
-                                ======================<br>
-                                Default Background Color  <br>
-                                -------------------------  <br>
-                                --background-color: var(--gray-9); <br>
-                                You can customize --background-color in theme.css. For example, --background-color: var(--green-2); <br>
-
-                                Syntax: .prefix-colorName-shade  <br> 
-                                prefix = bg <br>
-                                colorName = gray, red, green, blue, orange, teal, purple, yellow, pink, coral <br>
-                                You can customize the color shades in theme.css stylesheet. <br>
-                                shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
-                                                              
-                                Example-<br>
-                                .bg-red-9<br>
-                                .bg-dark = Slight dark shade of default page background color<br>
-                                .bg-light = Slight dark light of default page background color<br>
-                                .bg-0 = transparent<br><br>
-
-                            Foreground colors<br>
-                            ======================<br>
-                                Use .c-COLOR-N to set foreground color. <br>
-                                COLOR   = gray, red, green, blue, orange, teal, purple, yellow, pink, coral<br>
-                                N       = 0 to 9<br>
-                               
-                                for example-<br>
-                                .c-red-9<br>
-                                .c-dark = Slight dark shade of default page background color<br>
-                                .c-light = Slight dark light of default page background color<br>
-                                .c-0 = transparent<br><br>  
-                        
-                        Set Border colors <br>
-                        ======================<br>
-                            Use .bc-COLOR-N to set border color. <br>
-                            COLOR   = gray, red, green, blue, orange, teal, purple, yellow, pink, coral<br>
-                            N       = 0 to 9<br>
-                           
-                            for example-<br>
-                            .bc-red-9<br>
-                            .bc-dark = Slight dark shade of default page background color<br>
-                            .bc-light = Slight dark light of default page background color<br>
-                            .bc-0 = transparent<br><br>
                         
                         Margins<br>
                         ==================================<br>
