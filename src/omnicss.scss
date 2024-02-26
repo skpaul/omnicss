@@ -37,8 +37,8 @@
     //Typography
     @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
     @import 'modules/content/text-transform'; //uppercase, lowercase, capitalize
-    @import 'modules/content/text-align'; //left, right, center, justify
-    @import 'modules/content/alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
+    @import 'modules/content/text-alignment'; //left, right, center, justify
+    @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
     @import 'modules/content/text-decoration'; //underline, overline, line-through, ...
     @import 'modules/content/font-weight'; //bold, bolder, lighter, 100-900
     @import 'modules/content/font-size'; // .fs-50%, .fs-60%, ....., .fs-200%

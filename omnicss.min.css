@@ -656,6 +656,22 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: justify;
 }
 
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
 .va-baseline {
   vertical-align: baseline;
 }
@@ -687,15 +703,15 @@ h1, h2, h3, h4, h5, h6, p {
   vertical-align: inherit;
 }
 
-.line-throw {
+.line-through, .tline {
   text-decoration: line-through;
 }
 
-.underline {
+.underline, .uline {
   text-decoration: underline;
 }
 
-.overline {
+.overline, .oline {
   text-decoration: overline;
 }
 
@@ -703,7 +719,7 @@ h1, h2, h3, h4, h5, h6, p {
   text-decoration: none;
 }
 
-b, .bold, strong, .strong {
+.bold, .strong {
   font-weight: bold;
 }
 
