@@ -3,33 +3,48 @@
 // \25 = % sign 
 // \31 30\25 = 130%
 
+
+$percentageValues: '50' '60' '70' '80' '90' '100' '110' '120' '130' '140' '150' '160' '170' '180' '190' '200' '210' '220' '230' '240' '250' '260' '270' '280' '290' '300';
 @mixin create-font-size-in-percentage($device) {
-    @for $i from 5 through 20 {
-        $value: $i*10;
-        .fs-#{$value}\25#{$device}{
-            font-size:#{$value} + '%';
+    // @for $i from 5 through 20 {
+    //     $value: $i*10;
+    //     .fs-#{$value}\25#{$device}{
+    //         font-size:#{$value} + '%';
+    //     }
+    // }
+
+    @each $value in $percentageValues{
+        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+        .fs-#{$escaped}\25#{$device}{
+            font-size:#{$escaped} + '%';
         }
     }
 }
 
-$values: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40' '1.50' '1.60' '1.70' '1.80' '1.90' '2.00' '2.10' '2.20' '2.30' '2.40' '2.50' '2.60' '2.70' '2.80' '2.90' '3.00';
+$rmValues: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40' '1.50' '1.60' '1.70' '1.80' '1.90' '2.00' '2.10' '2.20' '2.30' '2.40' '2.50' '2.60' '2.70' '2.80' '2.90' '3.00';
+
 @mixin create-font-size-in-rem($device) {
-    @each $value in $values{
-        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
-        .fs-#{$escaped}#{$device}{
+    @each $value in $rmValues{
+        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+        .fs-#{$part1}\.#{$part2}#{$device}{
             font-size:#{$value} + 'rem';
         }
+        // $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+        // .fs-#{$escaped}#{$device}{
+        //     font-size:#{$value} + 'rem';
+        // }
     }
 }
 
-@mixin create-padding-in-rem($prefix, $property, $device) {
-    @each $value in $values{
-        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
-        .fs-#{$escaped}#{$device}{
-            font-size:#{$value} + 'rem';
-        }
-    }
-}
+// @mixin create-padding-in-rem($prefix, $property, $device) {
+//     @each $value in $rmValues{
+//         $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+//         .fs-#{$escaped}#{$device}{
+//             font-size:#{$value} + 'rem';
+//         }
+//     }
+// }
 
 @include create-font-size-in-percentage("");
 @include create-font-size-in-rem("");

@@ -807,107 +807,147 @@ b, .bold, strong, .strong {
   font-size: 200%;
 }
 
-.fs-050 {
+.fs-210\% {
+  font-size: 210%;
+}
+
+.fs-220\% {
+  font-size: 220%;
+}
+
+.fs-230\% {
+  font-size: 230%;
+}
+
+.fs-240\% {
+  font-size: 240%;
+}
+
+.fs-250\% {
+  font-size: 250%;
+}
+
+.fs-260\% {
+  font-size: 260%;
+}
+
+.fs-270\% {
+  font-size: 270%;
+}
+
+.fs-280\% {
+  font-size: 280%;
+}
+
+.fs-290\% {
+  font-size: 290%;
+}
+
+.fs-300\% {
+  font-size: 300%;
+}
+
+.fs-0\.50 {
   font-size: 0.50rem;
 }
 
-.fs-060 {
+.fs-0\.60 {
   font-size: 0.60rem;
 }
 
-.fs-070 {
+.fs-0\.70 {
   font-size: 0.70rem;
 }
 
-.fs-080 {
+.fs-0\.80 {
   font-size: 0.80rem;
 }
 
-.fs-090 {
+.fs-0\.90 {
   font-size: 0.90rem;
 }
 
-.fs-100 {
+.fs-1\.00 {
   font-size: 1.00rem;
 }
 
-.fs-110 {
+.fs-1\.10 {
   font-size: 1.10rem;
 }
 
-.fs-120 {
+.fs-1\.20 {
   font-size: 1.20rem;
 }
 
-.fs-130 {
+.fs-1\.30 {
   font-size: 1.30rem;
 }
 
-.fs-140 {
+.fs-1\.40 {
   font-size: 1.40rem;
 }
 
-.fs-150 {
+.fs-1\.50 {
   font-size: 1.50rem;
 }
 
-.fs-160 {
+.fs-1\.60 {
   font-size: 1.60rem;
 }
 
-.fs-170 {
+.fs-1\.70 {
   font-size: 1.70rem;
 }
 
-.fs-180 {
+.fs-1\.80 {
   font-size: 1.80rem;
 }
 
-.fs-190 {
+.fs-1\.90 {
   font-size: 1.90rem;
 }
 
-.fs-200 {
+.fs-2\.00 {
   font-size: 2.00rem;
 }
 
-.fs-210 {
+.fs-2\.10 {
   font-size: 2.10rem;
 }
 
-.fs-220 {
+.fs-2\.20 {
   font-size: 2.20rem;
 }
 
-.fs-230 {
+.fs-2\.30 {
   font-size: 2.30rem;
 }
 
-.fs-240 {
+.fs-2\.40 {
   font-size: 2.40rem;
 }
 
-.fs-250 {
+.fs-2\.50 {
   font-size: 2.50rem;
 }
 
-.fs-260 {
+.fs-2\.60 {
   font-size: 2.60rem;
 }
 
-.fs-270 {
+.fs-2\.70 {
   font-size: 2.70rem;
 }
 
-.fs-280 {
+.fs-2\.80 {
   font-size: 2.80rem;
 }
 
-.fs-290 {
+.fs-2\.90 {
   font-size: 2.90rem;
 }
 
-.fs-300 {
+.fs-3\.00 {
   font-size: 3.00rem;
 }
 
@@ -976,107 +1016,147 @@ b, .bold, strong, .strong {
     font-size: 200%;
   }
 
-  .fs-050-sm {
+  .fs-210\%-sm {
+    font-size: 210%;
+  }
+
+  .fs-220\%-sm {
+    font-size: 220%;
+  }
+
+  .fs-230\%-sm {
+    font-size: 230%;
+  }
+
+  .fs-240\%-sm {
+    font-size: 240%;
+  }
+
+  .fs-250\%-sm {
+    font-size: 250%;
+  }
+
+  .fs-260\%-sm {
+    font-size: 260%;
+  }
+
+  .fs-270\%-sm {
+    font-size: 270%;
+  }
+
+  .fs-280\%-sm {
+    font-size: 280%;
+  }
+
+  .fs-290\%-sm {
+    font-size: 290%;
+  }
+
+  .fs-300\%-sm {
+    font-size: 300%;
+  }
+
+  .fs-0\.50-sm {
     font-size: 0.50rem;
   }
 
-  .fs-060-sm {
+  .fs-0\.60-sm {
     font-size: 0.60rem;
   }
 
-  .fs-070-sm {
+  .fs-0\.70-sm {
     font-size: 0.70rem;
   }
 
-  .fs-080-sm {
+  .fs-0\.80-sm {
     font-size: 0.80rem;
   }
 
-  .fs-090-sm {
+  .fs-0\.90-sm {
     font-size: 0.90rem;
   }
 
-  .fs-100-sm {
+  .fs-1\.00-sm {
     font-size: 1.00rem;
   }
 
-  .fs-110-sm {
+  .fs-1\.10-sm {
     font-size: 1.10rem;
   }
 
-  .fs-120-sm {
+  .fs-1\.20-sm {
     font-size: 1.20rem;
   }
 
-  .fs-130-sm {
+  .fs-1\.30-sm {
     font-size: 1.30rem;
   }
 
-  .fs-140-sm {
+  .fs-1\.40-sm {
     font-size: 1.40rem;
   }
 
-  .fs-150-sm {
+  .fs-1\.50-sm {
     font-size: 1.50rem;
   }
 
-  .fs-160-sm {
+  .fs-1\.60-sm {
     font-size: 1.60rem;
   }
 
-  .fs-170-sm {
+  .fs-1\.70-sm {
     font-size: 1.70rem;
   }
 
-  .fs-180-sm {
+  .fs-1\.80-sm {
     font-size: 1.80rem;
   }
 
-  .fs-190-sm {
+  .fs-1\.90-sm {
     font-size: 1.90rem;
   }
 
-  .fs-200-sm {
+  .fs-2\.00-sm {
     font-size: 2.00rem;
   }
 
-  .fs-210-sm {
+  .fs-2\.10-sm {
     font-size: 2.10rem;
   }
 
-  .fs-220-sm {
+  .fs-2\.20-sm {
     font-size: 2.20rem;
   }
 
-  .fs-230-sm {
+  .fs-2\.30-sm {
     font-size: 2.30rem;
   }
 
-  .fs-240-sm {
+  .fs-2\.40-sm {
     font-size: 2.40rem;
   }
 
-  .fs-250-sm {
+  .fs-2\.50-sm {
     font-size: 2.50rem;
   }
 
-  .fs-260-sm {
+  .fs-2\.60-sm {
     font-size: 2.60rem;
   }
 
-  .fs-270-sm {
+  .fs-2\.70-sm {
     font-size: 2.70rem;
   }
 
-  .fs-280-sm {
+  .fs-2\.80-sm {
     font-size: 2.80rem;
   }
 
-  .fs-290-sm {
+  .fs-2\.90-sm {
     font-size: 2.90rem;
   }
 
-  .fs-300-sm {
+  .fs-3\.00-sm {
     font-size: 3.00rem;
   }
 }
@@ -1145,141 +1225,464 @@ b, .bold, strong, .strong {
     font-size: 200%;
   }
 
-  .fs-050-lg {
+  .fs-210\%-lg {
+    font-size: 210%;
+  }
+
+  .fs-220\%-lg {
+    font-size: 220%;
+  }
+
+  .fs-230\%-lg {
+    font-size: 230%;
+  }
+
+  .fs-240\%-lg {
+    font-size: 240%;
+  }
+
+  .fs-250\%-lg {
+    font-size: 250%;
+  }
+
+  .fs-260\%-lg {
+    font-size: 260%;
+  }
+
+  .fs-270\%-lg {
+    font-size: 270%;
+  }
+
+  .fs-280\%-lg {
+    font-size: 280%;
+  }
+
+  .fs-290\%-lg {
+    font-size: 290%;
+  }
+
+  .fs-300\%-lg {
+    font-size: 300%;
+  }
+
+  .fs-0\.50-lg {
     font-size: 0.50rem;
   }
 
-  .fs-060-lg {
+  .fs-0\.60-lg {
     font-size: 0.60rem;
   }
 
-  .fs-070-lg {
+  .fs-0\.70-lg {
     font-size: 0.70rem;
   }
 
-  .fs-080-lg {
+  .fs-0\.80-lg {
     font-size: 0.80rem;
   }
 
-  .fs-090-lg {
+  .fs-0\.90-lg {
     font-size: 0.90rem;
   }
 
-  .fs-100-lg {
+  .fs-1\.00-lg {
     font-size: 1.00rem;
   }
 
-  .fs-110-lg {
+  .fs-1\.10-lg {
     font-size: 1.10rem;
   }
 
-  .fs-120-lg {
+  .fs-1\.20-lg {
     font-size: 1.20rem;
   }
 
-  .fs-130-lg {
+  .fs-1\.30-lg {
     font-size: 1.30rem;
   }
 
-  .fs-140-lg {
+  .fs-1\.40-lg {
     font-size: 1.40rem;
   }
 
-  .fs-150-lg {
+  .fs-1\.50-lg {
     font-size: 1.50rem;
   }
 
-  .fs-160-lg {
+  .fs-1\.60-lg {
     font-size: 1.60rem;
   }
 
-  .fs-170-lg {
+  .fs-1\.70-lg {
     font-size: 1.70rem;
   }
 
-  .fs-180-lg {
+  .fs-1\.80-lg {
     font-size: 1.80rem;
   }
 
-  .fs-190-lg {
+  .fs-1\.90-lg {
     font-size: 1.90rem;
   }
 
-  .fs-200-lg {
+  .fs-2\.00-lg {
     font-size: 2.00rem;
   }
 
-  .fs-210-lg {
+  .fs-2\.10-lg {
     font-size: 2.10rem;
   }
 
-  .fs-220-lg {
+  .fs-2\.20-lg {
     font-size: 2.20rem;
   }
 
-  .fs-230-lg {
+  .fs-2\.30-lg {
     font-size: 2.30rem;
   }
 
-  .fs-240-lg {
+  .fs-2\.40-lg {
     font-size: 2.40rem;
   }
 
-  .fs-250-lg {
+  .fs-2\.50-lg {
     font-size: 2.50rem;
   }
 
-  .fs-260-lg {
+  .fs-2\.60-lg {
     font-size: 2.60rem;
   }
 
-  .fs-270-lg {
+  .fs-2\.70-lg {
     font-size: 2.70rem;
   }
 
-  .fs-280-lg {
+  .fs-2\.80-lg {
     font-size: 2.80rem;
   }
 
-  .fs-290-lg {
+  .fs-2\.90-lg {
     font-size: 2.90rem;
   }
 
-  .fs-300-lg {
+  .fs-3\.00-lg {
     font-size: 3.00rem;
   }
 }
-.lh-0\.8 {
-  line-height: 0.8 !important;
-}
-.lh-0\.9 {
-  line-height: 0.9 !important;
-}
-.lh-1 {
-  line-height: 1 !important;
-}
-.lh-1\.1 {
-  line-height: 1.1 !important;
-}
-.lh-1\.2 {
-  line-height: 1.2 !important;
-}
-.lh-1\.3 {
-  line-height: 1.3 !important;
-}
-.lh-1\.4 {
-  line-height: 1.4 !important;
-}
-.lh-1\.5 {
-  line-height: 1.5 !important;
-}
-.lh-1\.6 {
-  line-height: 1.6 !important;
-}
-.lh-1\.7 {
-  line-height: 1.7 !important;
+.lh-0\.5 {
+  line-height: 0.5;
 }
 
+.lh-0\.6 {
+  line-height: 0.6;
+}
+
+.lh-0\.7 {
+  line-height: 0.7;
+}
+
+.lh-0\.8 {
+  line-height: 0.8;
+}
+
+.lh-0\.9 {
+  line-height: 0.9;
+}
+
+.lh-1\.0 {
+  line-height: 1.0;
+}
+
+.lh-1\.1 {
+  line-height: 1.1;
+}
+
+.lh-1\.2 {
+  line-height: 1.2;
+}
+
+.lh-1\.3 {
+  line-height: 1.3;
+}
+
+.lh-1\.4 {
+  line-height: 1.4;
+}
+
+.lh-1\.5 {
+  line-height: 1.5;
+}
+
+.lh-1\.6 {
+  line-height: 1.6;
+}
+
+.lh-1\.7 {
+  line-height: 1.7;
+}
+
+.lh-1\.8 {
+  line-height: 1.8;
+}
+
+.lh-1\.9 {
+  line-height: 1.9;
+}
+
+.lh-2\.0 {
+  line-height: 2.0;
+}
+
+.lh-2\.1 {
+  line-height: 2.1;
+}
+
+.lh-2\.2 {
+  line-height: 2.2;
+}
+
+.lh-2\.3 {
+  line-height: 2.3;
+}
+
+.lh-2\.4 {
+  line-height: 2.4;
+}
+
+.lh-2\.5 {
+  line-height: 2.5;
+}
+
+.lh-2\.6 {
+  line-height: 2.6;
+}
+
+.lh-2\.7 {
+  line-height: 2.7;
+}
+
+.lh-2\.8 {
+  line-height: 2.8;
+}
+
+.lh-2\.9 {
+  line-height: 2.9;
+}
+
+.lh-3\.0 {
+  line-height: 3.0;
+}
+
+@media screen and (max-width: 991px) {
+  .lh-0\.5-sm {
+    line-height: 0.5;
+  }
+
+  .lh-0\.6-sm {
+    line-height: 0.6;
+  }
+
+  .lh-0\.7-sm {
+    line-height: 0.7;
+  }
+
+  .lh-0\.8-sm {
+    line-height: 0.8;
+  }
+
+  .lh-0\.9-sm {
+    line-height: 0.9;
+  }
+
+  .lh-1\.0-sm {
+    line-height: 1.0;
+  }
+
+  .lh-1\.1-sm {
+    line-height: 1.1;
+  }
+
+  .lh-1\.2-sm {
+    line-height: 1.2;
+  }
+
+  .lh-1\.3-sm {
+    line-height: 1.3;
+  }
+
+  .lh-1\.4-sm {
+    line-height: 1.4;
+  }
+
+  .lh-1\.5-sm {
+    line-height: 1.5;
+  }
+
+  .lh-1\.6-sm {
+    line-height: 1.6;
+  }
+
+  .lh-1\.7-sm {
+    line-height: 1.7;
+  }
+
+  .lh-1\.8-sm {
+    line-height: 1.8;
+  }
+
+  .lh-1\.9-sm {
+    line-height: 1.9;
+  }
+
+  .lh-2\.0-sm {
+    line-height: 2.0;
+  }
+
+  .lh-2\.1-sm {
+    line-height: 2.1;
+  }
+
+  .lh-2\.2-sm {
+    line-height: 2.2;
+  }
+
+  .lh-2\.3-sm {
+    line-height: 2.3;
+  }
+
+  .lh-2\.4-sm {
+    line-height: 2.4;
+  }
+
+  .lh-2\.5-sm {
+    line-height: 2.5;
+  }
+
+  .lh-2\.6-sm {
+    line-height: 2.6;
+  }
+
+  .lh-2\.7-sm {
+    line-height: 2.7;
+  }
+
+  .lh-2\.8-sm {
+    line-height: 2.8;
+  }
+
+  .lh-2\.9-sm {
+    line-height: 2.9;
+  }
+
+  .lh-3\.0-sm {
+    line-height: 3.0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .lh-0\.5-lg {
+    line-height: 0.5;
+  }
+
+  .lh-0\.6-lg {
+    line-height: 0.6;
+  }
+
+  .lh-0\.7-lg {
+    line-height: 0.7;
+  }
+
+  .lh-0\.8-lg {
+    line-height: 0.8;
+  }
+
+  .lh-0\.9-lg {
+    line-height: 0.9;
+  }
+
+  .lh-1\.0-lg {
+    line-height: 1.0;
+  }
+
+  .lh-1\.1-lg {
+    line-height: 1.1;
+  }
+
+  .lh-1\.2-lg {
+    line-height: 1.2;
+  }
+
+  .lh-1\.3-lg {
+    line-height: 1.3;
+  }
+
+  .lh-1\.4-lg {
+    line-height: 1.4;
+  }
+
+  .lh-1\.5-lg {
+    line-height: 1.5;
+  }
+
+  .lh-1\.6-lg {
+    line-height: 1.6;
+  }
+
+  .lh-1\.7-lg {
+    line-height: 1.7;
+  }
+
+  .lh-1\.8-lg {
+    line-height: 1.8;
+  }
+
+  .lh-1\.9-lg {
+    line-height: 1.9;
+  }
+
+  .lh-2\.0-lg {
+    line-height: 2.0;
+  }
+
+  .lh-2\.1-lg {
+    line-height: 2.1;
+  }
+
+  .lh-2\.2-lg {
+    line-height: 2.2;
+  }
+
+  .lh-2\.3-lg {
+    line-height: 2.3;
+  }
+
+  .lh-2\.4-lg {
+    line-height: 2.4;
+  }
+
+  .lh-2\.5-lg {
+    line-height: 2.5;
+  }
+
+  .lh-2\.6-lg {
+    line-height: 2.6;
+  }
+
+  .lh-2\.7-lg {
+    line-height: 2.7;
+  }
+
+  .lh-2\.8-lg {
+    line-height: 2.8;
+  }
+
+  .lh-2\.9-lg {
+    line-height: 2.9;
+  }
+
+  .lh-3\.0-lg {
+    line-height: 3.0;
+  }
+}
 a {
   color: inherit;
 }

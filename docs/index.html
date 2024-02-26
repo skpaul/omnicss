@@ -38,14 +38,16 @@
             line-height: 1.8;
             font-size: 90%;
         }
-        code[class*=language-] {
-            white-space: break-spaces;
-        }
 
-        :not(pre)>code[class*=language-],
-        pre[class*=language-] {
-            background: #22272e;
-            /* white-space: ; */
+        section{
+            background-color: var(--light);
+            border-color: var(--gray-7);
+            border-radius: var(--border-radius);
+            border-width: 1px;
+            border-style: solid;
+            padding: 1.5rem;
+            margin-top: 2rem !important;
+            margin-bottom: 2rem !important;
         }
 
         h2{
@@ -75,13 +77,36 @@
             font-size: 0.8rem;
             color: #ddca9e;
         }
+        code[class*=language-] {
+            white-space: break-spaces;
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            /* background: #22272e; */
+            background: #162233;
+            border-radius: 0.3rem;
+            border: 1px solid #2b3e59;
+            padding: 4px 6px;
+            /* white-space: ; */
+        }
+
+        table td{
+            vertical-align: top;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        table tr td:nth-child(2n){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <div class="mt-300 mb-100" style="font-size: 1.5rem;">OmniCSS v11.0.22</div>
+            <div class="mt-300 mb-100 fs-3.00">OmniCSS v11.0.22</div>
             <h1 class="mb150" style="font-size: 1.5rem !important;">
                 A hand-full CSS <code class="language-css">.class</code> library for busy developers.
             </h1>
@@ -443,6 +468,277 @@
                     </section>
                     <!-- Table// -->
 
+                    <!-- Spinner -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Spinner/Loader</h2>
+                        <table>
+                            <tr>
+                                <td><code>.spinner</code><code>.loader</code></td>
+                                <td class="ph-050">:</td>
+                                <td><span class="m-icons spinner ml-075">autorenew</span></td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Spinner// -->
+
+                    <!-- Borders -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Borders <code>.b</code></h2>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.ba</code></td>
+                                <td>:</td>
+                                <td>Sets <code>border-width: 1px; border-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.bt</code></td>
+                                <td>:</td>
+                                <td>sets <code>border-top-width: 1px; border-top-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.bb</code></td>
+                                <td>:</td>
+                                <td>Sets <code>border-bottom-width: 1px; border-bottom-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.bl</code></td>
+                                <td>:</td>
+                                <td><code>border-left-width: 1px; border-left-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.br</code></td>
+                                <td>:</td>
+                                <td><code>border-right-width: 1px; border-right-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.bv</code></td>
+                                <td>:</td>
+                                <td>Sets vertical borders (border-top + border-bottom). <code>border-top-width: 1px; border-top-style: solid; border-bottom-width: 1px; border-bottom-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.bh</code></td>
+                                <td>:</td>
+                                <td>border-horizontal (border-left + border-right).<code>border-left-width: 1px; border-left-style: solid; border-right-width: 1px; border-right-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.solid</code></td>
+                                <td>:</td>
+                                <td><code>border-style: solid;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.dash</code></td>
+                                <td>:</td>
+                                <td><code>border-style: dashed;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.dot</code></td>
+                                <td>:</td>
+                                <td><code>border-style: dotted;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.round</code></td>
+                                <td>:</td>
+                                <td><code>border-radius: 0.25rem;</code> 0.25rem is the default value. You can customize it in theme.css.</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Borders// -->
+
+                    <!-- Border radius -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Border Radius <code>.br</code></h2>
+                        You can set border radius in two ways- 1. in px 2. in rem
+                        <h3>Border Radius in px</h3>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code>.br-value</code></td>
+                            </tr>
+                            <tr>
+                                <td>value</td>
+                                <td>=</td>
+                                <td>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</td>
+                            </tr>
+                        </table>
+                        <h4>Example</h4>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.br-1</code></td>
+                                <td>:</td>
+                                <td>Sets border-radius: 1px;</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.br-10</code></td>
+                                <td>:</td>
+                                <td>Sets border-radius: 10px;</td>
+                            </tr>
+                        </table>
+
+
+                        <h3>Border Radius in <code>rem</code></h3>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code>.br-value</code></td>
+                            </tr>
+                            <tr>
+                                <td>value</td>
+                                <td>=</td>
+                                <td>010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200</td>
+                            </tr>
+                        </table>
+                        <h4>Example</h4>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.br-010</code></td>
+                                <td>:</td>
+                                <td>Sets <code class="language-css">border-radius: 0.10rem;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.br-120</code></td>
+                                <td>:</td>
+                                <td>Sets<code class="language-css">border-radius: 1.20rem;</code></td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Border radius// -->
+                 
+                    <!-- Font Sizes -->
+                    <section>
+                        <h2>Font Sizes <code>.fs</code></h2>
+                        <h3>Set font size in <code>rem</code></h3>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code>.fs-value[-device]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>value = 0.50, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70, 1.80, 1.90, 2.00, 2.10, 2.20, 2.30, 2.40, 2.50, 2.60, 2.70, 2.80, 2.90, 3.00 <br>
+                                    device = sm (small), lg (large)
+                                </td>
+                            </tr>
+                        </table>
+                        <h4>Examples-</h4>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.fs-1.00</code></td>
+                                <td>:</td>
+                                <td><code>font-size: 1.00rem;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.fs-0.70-sm</code></td>
+                                <td>:</td>
+                                <td><code>font-size: 0.70rem;</code> in <code>small</code> devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.fs-1.20-lg</code></td>
+                                <td>:</td>
+                                <td><code>font-size: 1.20rem;</code> in <code>large</code> devices.</td>
+                            </tr>
+                        </table>
+
+                        <h3>Set font size in percentage <code> % </code></h3>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code>.fs-value%[-device]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>value = 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300 <br>
+                                    device = sm (small), lg (large)
+                                </td>
+                            </tr>
+                        </table>
+                        <h4>Examples-</h4>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.fs-050%</code></td>
+                                <td>:</td>
+                                <td>Sets font size 50% smaller of current root font size.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.fs-150%-sm</code></td>
+                                <td>:</td>
+                                <td>Sets font size 150% larger of current root font size in <code>small</code> devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.fs-200%-lg</code></td>
+                                <td>:</td>
+                                <td>Sets font size 200% larger of current root font size in <code>large</code> devices.</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Font Sizes// -->
+
+                    <!-- Line Heights -->
+                    <section>
+                        <h2>Line Heights <code>.lh</code></h2>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code>.lh-value[-device]</code></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>value = 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0 <br>
+                                    device = sm (small), lg (large)
+                                </td>
+                            </tr>
+                        </table>
+                        <h3>Exmpales</h3>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.lh-1.2</code></td>
+                                <td>:</td>
+                                <td>Sets <code>line-height: 1.2;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.lh-0.8-sm</code></td>
+                                <td>:</td>
+                                <td>Sets <code>line-height: 1.2;</code> on small devices</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.lh-1.8-lg</code></td>
+                                <td>:</td>
+                                <td>Sets <code>line-height: 1.8;</code> on large devices</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Line Heights -->
+
+                    <!-- Text Transformation -->
+                    <section>
+                        <h2>Text Transformation</h2>
+                        <table>
+                            <tr>
+                                <td><code>.ucase</code></td>
+                                <td>:</td>
+                                <td>UPPERCASE</td>
+                            </tr>
+                            <tr>
+                                <td><code class="">.lcase</code></td>
+                                <td>:</td>
+                                <td>lowercase</td>
+                            </tr>
+                            <tr>
+                                <td><code class="">.capitalize</code> <code>.cap</code></td>
+                                <td>:</td>
+                                <td><code>text-transform: capitalize;</code></td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Text Transformation -->
+
                 </div>
             </div>
         </div><!-- .container -->
@@ -463,95 +759,6 @@
                  
                     <!-- //raw content -->
                     <div>
-                            
-
-                           
-                        
-                        Table<br>
-                        ==================================<br>
-                            .table, .thead, .tr, .th, .tbody, .tr, .td <br><br>
-                        
-                        Spinner<br>
-                        ==================================<br>
-                           .spinner, .loader    : spin 1s infinite linear;<br><br>
-                        
-                        Borders<br>
-                        ==================================<br>
-                            .ba     - Sets border-width: 1px; border-style: solid;<br>
-                            .bt     - Sets border-top-width: 1px; border-top-style: solid;<br>
-                            .bb     - Sets border-bottom-width: 1px; border-bottom-style: solid;<br>
-                            .bl     - Sets  border-left-width: 1px; border-left-style: solid;<br>
-                            .br     - Sets border-right-width: 1px; border-right-style: solid;<br>
-                            .bv     - border-vertical (border-top  + border-bottom). Sets border-top-width: 1px; border-top-style: solid; border-bottom-width: 1px; border-bottom-style: solid;<br>
-                            .bh     - border-horizontal (border-left + border-right). Sets border-left-width: 1px; border-left-style: solid; border-right-width: 1px; border-right-style: solid;<br>
-                        
-                            .solid  - border-style: solid <br>
-                            .dash   - border-style: dashed <br>
-                            .dot    - border-style: dotted <br>
-                            .round  - Sets border-radius: 0.25rem; 0.25rem is the default value.<br><br>
-
-                            Border radius in px-<br>
-                            ------------------- <br>
-                            Syntax: .br-value <br> 
-                            value = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 <br>
-                            .br-1   - Sets border-radius: 1px <br>
-                            . . . . . <br>
-                            . . . . . <br>
-                            .br-10  - Sets border-radius: 10px <br>
-
-                            Border radius in rem-<br>
-                            ------------------- <br>
-                            Syntax: .br-value <br> 
-                            value = 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200 <br>
-                            .br-010   - Sets border-radius: 0.10rem; <br>
-                            .br-020   - Sets border-radius: 0.20rem; <br>
-                            .br-030   - Sets border-radius: 0.30rem; <br>
-                            . . . . . <br>
-                            . . . . . <br>
-                            .br-200   - Sets border-radius: 2.00rem; <br>
-
-
-                        Typography<br>
-                        ==================================<br>
-                        
-                            Font Size in % (increasing by 10%)<br>
-                            -------------------------------<br>
-                            .fs-50%             .fs-50%-sm              .fs-50%-lg<br>
-                            .fs-60%             .fs-60%-sm              .fs-60%-lg<br>
-                            .fs-70%             .fs-70%-sm              .fs-70%-lg<br>
-                            ....<br>
-                            ....<br>
-                            .fs-200%            .fs-200%-sm             .fs-200%-lg<br><br>
-                            
-                        
-                            Font Size in rem (increasing by 0.10 rem)<br>
-                            -------------------------------<br>
-                            .fs-050             .fs-050-sm            .fs-050-lg<br>
-                            .fs-060             .fs-060-sm            .fs-060-lg<br>
-                            .fs-070             .fs-070-sm            .fs-070-lg<br>
-                            ....<br>
-                            ....<br>
-                            .fs-100             .fs-100-sm            .fs-100-lg<br>
-                            .fs-110             .fs-110-sm            .fs-110-lg<br>
-                            ....<br>
-                            ....<br>
-                            .fs-200             .fs-200-sm            .fs-200-lg<br><br>
-                            
-                            
-                            
-                            Line Height<br>
-                            -------------------------------<br>
-                            .lh-1.1<br>
-                            .lh-1.2<br>
-                            .....<br>
-                            .....<br>
-                            .lh-1.7<br><br>
-                        
-                        
-                            Text Transform<br>
-                            -------------------------------<br>
-                            .ucase, .lcase , .capitalize/.cap <br><br>
-                        
                         
                             Text Alignment<br>
                             -------------------------------<br>
