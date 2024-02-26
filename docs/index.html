@@ -25,8 +25,13 @@
     <link href="assets/prism.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/monogrid@0.0.1/monogrid.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css"> -->
-    <link rel="stylesheet" href="assets/omnicss.min.css">
-    <link rel="stylesheet" href="assets/theme.css">
+    <!-- For github -->
+    <!-- <link rel="stylesheet" href="assets/omnicss.min.css">
+    <link rel="stylesheet" href="assets/theme.css"> -->
+
+    <!-- For local -->
+    <link rel="stylesheet" href="../omnicss.min.css">
+    <link rel="stylesheet" href="../theme.css">
 
     <style>
         body{
@@ -78,7 +83,7 @@
         <div class="container">
             <div class="mt-300 mb-100" style="font-size: 1.5rem;">OmniCSS v11.0.22</div>
             <h1 class="mb150" style="font-size: 1.5rem !important;">
-                A hand-full CSS <code>.class</code> library for busy developers.
+                A hand-full CSS <code class="language-css">.class</code> library for busy developers.
             </h1>
         </div>
     </header>
@@ -106,28 +111,28 @@
                             <li>--font-family-bangla: 'Anek Bangla', var(--fallback-font);</li>
                             <li>--font-weight: 300;</li>
                             <li>--color: var(--gray-2); /* default text color */</li>
-                            <li><code>--background-color: var(--gray-9);</code>   /* Used as default page background color */</li>
+                            <li><code class="language-css">--background-color: var(--gray-9);</code>   /* Used as default page background color */</li>
                                
                             
                             <li>
-                               Quick variants of <code>--background-color</code> : <br>
+                               Quick variants of <code class="language-css">--background-color</code> : <br>
                                 
                                 --dark:   rgba(19,30,46,1); <br>
                                 --light:  rgba(27,42,62,1); <br>
 
                                 Usage: <br>
-                                <code>.c-dark</code> <code>.c-light</code>  : Sets font color dark/light in terms of --background-color. <br>
-                                <code>.bg-dark</code> <code>.bg-light</code>: Sets background color dark/light in terms of --background-color. <br>
-                                <code>.bc-dark</code> <code>.bc-light</code> : Sets border color dark/light in terms of --background-color. <br>
+                                <code class="language-css">.c-dark</code> <code class="language-css">.c-light</code>  : Sets font color dark/light in terms of --background-color. <br>
+                                <code class="language-css">.bg-dark</code> <code class="language-css">.bg-light</code>: Sets background color dark/light in terms of --background-color. <br>
+                                <code class="language-css">.bc-dark</code> <code class="language-css">.bc-light</code> : Sets border color dark/light in terms of --background-color. <br>
                                 File- _colors.scss.
                             </li>
                         
-                            <li><code>--line-height : 1.3;</code> </li>
+                            <li><code class="language-css">--line-height : 1.3;</code> </li>
                             
-                            <li><code>--accent-color: var(--blue-5);</code></li>
-                            <li><code> --border-color: var(--gray-5);</code></li>
-                            <li><code>--border: 1px solid var(--border-color);</code></li>
-                            <li><code>--border-radius: 0.25rem;</code> : Applicable if you use <code>.round</code> class.</li>
+                            <li><code class="language-css">--accent-color: var(--blue-5);</code></li>
+                            <li><code class="language-css"> --border-color: var(--gray-5);</code></li>
+                            <li><code class="language-css">--border: 1px solid var(--border-color);</code></li>
+                            <li><code class="language-css">--border-radius: 0.25rem;</code> : Applicable if you use <code class="language-css">.round</code> class.</li>
                             
                         
                             /* All the following colors are the variant of the above base colors. */
@@ -140,37 +145,52 @@
                             --scroll-color: var(--color);          /* applied to the index.php marquee*/
                             --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
                         
-                            <li><code>--hyperlink-color: var(--color);</code></li>
-                            <li><code>--hyperlink-color-hover: var(--accent-color);</code></li>
+                            <li><code class="language-css">--hyperlink-color: var(--color);</code></li>
+                            <li><code class="language-css">--hyperlink-color-hover: var(--accent-color);</code></li>
 
                             /* Default values for table */
-                            <li><code>--table-background-color: transparent;</code></li>
-                            <li><code>--table-border-color: transparent;</code></li>
-                            <li><code>--thead-background-color: transparent;</code></li>
-                            <li><code>--thead-color: transparent;</code></li>
-                            <li><code>--th-border-color:transparent;</code></li>
-                            <li><code>--tbody-color:transparent;</code></li>
-                            <li><code>--tr-border-color:transparent;</code></li>
-                            <li><code>--tr-even-background-color:transparent;</code> /* for even rows only */</li>
-                            <li><code> --tr-hover-background-color:transparent;</code> /* on hover effect */</li>
+                            <li><code class="language-css">--table-background-color: transparent;</code></li>
+                            <li><code class="language-css">--table-border-color: transparent;</code></li>
+                            <li><code class="language-css">--thead-background-color: transparent;</code></li>
+                            <li><code class="language-css">--thead-color: transparent;</code></li>
+                            <li><code class="language-css">--th-border-color:transparent;</code></li>
+                            <li><code class="language-css">--tbody-color:transparent;</code></li>
+                            <li><code class="language-css">--tr-border-color:transparent;</code></li>
+                            <li><code class="language-css">--tr-even-background-color:transparent;</code> /* for even rows only */</li>
+                            <li><code class="language-css"> --tr-hover-background-color:transparent;</code> /* on hover effect */</li>
                         
                             /* Form element */
-                            <li><code>--label-color: var(--gray-2);</code></li>
-                            <li><code> --placeholder-color: #51637b; </code> /* input[type=text], input[type=password], textarea */</li>
-                            <li><code>--input-color: var(--gray-2);</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-caret-color: #fff;</code></li>
-                            <li><code>--input-background-color: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-background-color-on-hover: unset;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-background-color-on-focus: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-border-color: #46576e;</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-border-color-on-hover: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--input-border-color-on-focus: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code>--button-color: var(--gray-2);</code></li>
-                            <li><code>--button-border-color: var(--gray-2);</code></li>
-                            <li><code>--button-background-color: var(--gray-2);</code></li>
+                            <li><code class="language-css">--label-color: var(--gray-2);</code></li>
+                            <li><code class="language-css"> --placeholder-color: #51637b; </code> /* input[type=text], input[type=password], textarea */</li>
+                            <li><code class="language-css">--input-color: var(--gray-2);</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-caret-color: #fff;</code></li>
+                            <li><code class="language-css">--input-background-color: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-background-color-on-hover: unset;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-background-color-on-focus: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-border-color: #46576e;</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-border-color-on-hover: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--input-border-color-on-focus: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                            <li><code class="language-css">--button-color: var(--gray-2);</code></li>
+                            <li><code class="language-css">--button-border-color: var(--gray-2);</code></li>
+                            <li><code class="language-css">--button-background-color: var(--gray-2);</code></li>
                         </ul>
                     </section> <!-- default settings// -->
 
+                    <!-- Container -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Containers</h2>
+                        <ul>
+                            <li><code class="language-css">.container-fluid</code>: full width.</li>
+                            <li><code class="language-css">.container</code> max width 1200px default. Customizable via theme.css.</li>
+                            <li><code class="language-css">.container-1100</code>: max width 1100px</li>
+                            <li><code class="language-css">.container-1000</code>: max width 1000px</li>
+                            <li><code class="language-css">.container-900</code>: max width 900px</li>
+                            <li><code class="language-css">.container-800</code>: max width 800px</li>
+                            <li><code class="language-css">.container-700</code>: max width 700px</li>
+                            <li><code class="language-css">.container-600</code>: max width 600px</li>
+                        </ul>
+                    </section>
+                    <!-- Container -->
 
                     <!-- //font-size -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
@@ -178,17 +198,17 @@
                         <p>You can set font-size property in two ways- using rem and percentage.</p>
                         <h3>Using rem-</h3>
                         <p>
-                            Syntax: .prefix-value[-device]  <br>
+                            Syntax: <code class="language-css">.prefix-value[-device]</code>  <br>
                             prefix = fs (Font Size)<br>                           
                             value = 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300 <br>
                             device = sm/lg<br>
                         </p>
                         <h4>Example</h4>
                         <ul class="example">
-                            <li><code>.fs-050</code>: Sets font-size: 0.50rem;</li>
-                            <li><code>.fs-060</code>: Sets font-size: 0.60rem;</li>
-                            <li><code>.fs-100-sm</code>: Sets font-size: 1.00rem in only small devices.</li>
-                            <li><code>.fs-100-lg</code>: Sets font-size: 1.00rem in only large devices.</li>
+                            <li><code class="language-css">.fs-050</code>: Sets font-size: 0.50rem;</li>
+                            <li><code class="language-css">.fs-060</code>: Sets font-size: 0.60rem;</li>
+                            <li><code class="language-css">.fs-100-sm</code>: Sets font-size: 1.00rem in only small devices.</li>
+                            <li><code class="language-css">.fs-100-lg</code>: Sets font-size: 1.00rem in only large devices.</li>
                         </ul>
 
 
@@ -201,34 +221,20 @@
                         </p>
                         <h4>Example</h4>
                         <ul class="example">
-                            <li><code>.fs-50%</code>: Sets font-size: 50% of 1.00rem (16px)</li>
-                            <li><code>.fs-60%</code>: Sets font-size: 60% of 1.00rem (16px)</li>
-                            <li><code>.fs-110%-sm</code>: Sets font-size: 110% of 1.00rem (16px) in only small devices.</li>
-                            <li><code>.fs-90%-lg</code>: Sets font-size: 90% of 1.00rem (16px) in only large devices.</li>
+                            <li><code class="language-css">.fs-50%</code>: Sets font-size: 50% of 1.00rem (16px)</li>
+                            <li><code class="language-css">.fs-60%</code>: Sets font-size: 60% of 1.00rem (16px)</li>
+                            <li><code class="language-css">.fs-110%-sm</code>: Sets font-size: 110% of 1.00rem (16px) in only small devices.</li>
+                            <li><code class="language-css">.fs-90%-lg</code>: Sets font-size: 90% of 1.00rem (16px) in only large devices.</li>
                         </ul>
 
                     </section> <!-- font-size// -->
 
-                    <!-- Container -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Containers</h2>
-                        <ul>
-                            <li><code>.container-fluid</code>: full width.</li>
-                            <li><code>.container</code> max width 1200px default. Customizable via theme.css.</li>
-                            <li><code>.container-1100</code>: max width 1100px</li>
-                            <li><code>.container-1000</code>: max width 1000px</li>
-                            <li><code>.container-900</code>: max width 900px</li>
-                            <li><code>.container-800</code>: max width 800px</li>
-                            <li><code>.container-700</code>: max width 700px</li>
-                            <li><code>.container-600</code>: max width 600px</li>
-                        </ul>
-                    </section>
-                    <!-- Container -->
+                  
 
                     <!-- Background colors -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2>Background Colors</h2>
-                        Syntax: <code>.prefix-colorName-shade</code>  <br>  
+                        Syntax: <code class="language-css">.prefix-colorName-shade</code>  <br>  
                         prefix = bg <br>
                         colorName = gray, red, green, blue, orange, teal, purple, yellow, pink, coral <br>
                         You can customize the color shades in theme.css stylesheet. <br>
@@ -236,10 +242,10 @@
                           
                         <h3>Example</h3>
                         <ul>
-                            <li><code>.bg-red-9</code></li>
-                            <li><code>.bg-dark</code> Slight dark shade of default page background color</li>
-                            <li><code>.bg-light</code> Slight light shade of default page background color</li>
-                            <li><code>.bg-0</code>transparent</li>
+                            <li><code class="language-css">.bg-red-9</code></li>
+                            <li><code class="language-css">.bg-dark</code> Slight dark shade of default page background color</li>
+                            <li><code class="language-css">.bg-light</code> Slight light shade of default page background color</li>
+                            <li><code class="language-css">.bg-0</code>transparent</li>
                         </ul>
                     </section>
                     <!-- Background colors -->
@@ -247,38 +253,196 @@
                     <!-- Foreground colors -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2>Foreground Colors</h2>
-                        Syntax: <code>.prefix-colorName-shade</code>  <br> 
+                        Syntax: <code class="language-css">.prefix-colorName-shade</code>  <br> 
                         prefix = c [c = color] <br>
                         colorName = gray, red, green, blue, orange, teal, purple, yellow, pink and coral. You can customize the color shades in theme.css stylesheet. <br>
                         shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
                           
                         <h3>Example</h3>
                         <ul>
-                            <li><code>.c-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
-                            <li><code>.c-dark</code> <span>Slight dark shade of default page background color as foreground color</span></li>
-                            <li><code>.c-light</code> <span>Slight light shade of default page background color as foreground color</span></li>
-                            <li><code>.c-0</code> Transparent foreground color.</li>
+                            <li><code class="language-css">.c-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
+                            <li><code class="language-css">.c-dark</code> <span>Slight dark shade of default page background color as foreground color</span></li>
+                            <li><code class="language-css">.c-light</code> <span>Slight light shade of default page background color as foreground color</span></li>
+                            <li><code class="language-css">.c-0</code> Transparent foreground color.</li>
                         </ul>
                     </section>
                     <!-- Foreground colors -->
 
-                    <!-- Foreground colors -->
+                    <!-- Border colors -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2>Border Colors</h2>
-                        Syntax: <code>.prefix-colorName-shade</code>  <br> 
+                        Syntax: <code class="language-css">.prefix-colorName-shade</code>  <br> 
                         prefix = bc [bc = border-color] <br>
                         colorName = gray, red, green, blue, orange, teal, purple, yellow, pink and coral. You can customize the color shades in theme.css stylesheet. <br>
                         shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
                           
                         <h3>Example</h3>
                         <ul>
-                            <li><code>.bc-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
-                            <li><code>.bc-dark</code> <span>Slight dark shade of default page background color as border color</span></li>
-                            <li><code>.bc-light</code> <span>Slight light shade of default page background color as border color</span></li>
-                            <li><code>.bc-0</code> Transparent border color.</li>
+                            <li><code class="language-css">.bc-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
+                            <li><code class="language-css">.bc-dark</code> <span>Slight dark shade of default page background color as border color</span></li>
+                            <li><code class="language-css">.bc-light</code> <span>Slight light shade of default page background color as border color</span></li>
+                            <li><code class="language-css">.bc-0</code> Transparent border color.</li>
                         </ul>
                     </section>
-                    <!-- Foreground colors -->
+                    <!-- Border colors -->
+
+                    <!-- Margins -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Margins</h2>
+                        Syntax: <code class="language-css">.prefix-value[-device]</code>  <br> 
+                        prefix = ma/mt/mb/ml/mr/mv/mh <br>
+                            ma: margin all<br>
+                            mt: margin-top<br>
+                            mb: margin-bottom <br>
+                            ml: margin-left <br>
+                            mr: margin-right <br>
+                            mv: vertical margin (top+bottom)<br>
+                            mh: horizontal margin (left+right)<br>
+                        value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
+                        device = sm/lg <br>
+                          
+                        <h3>Example</h3>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.ma-auto</code></td>
+                                <td>: creates all 'margin: auto' on all devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.ma-auto-sm</code></td>
+                                <td>: creates all 'margin: auto' on small devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.ma-auto-lg</code></td>
+                                <td>: creates all 'margin: auto' on large devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.mb-020</code></td>
+                                <td>: creates 'margin-bottom: 0.20rem' on all devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.mb-020-sm</code></td>
+                                <td>: creates 'margin-bottom: 0.20rem' on small devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.mb-020-lg</code></td>
+                                <td>: creates 'margin-bottom: 0.20rem' on large devices.</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Margins -->
+
+                    <!-- Paddings -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Paddings</h2>
+                        <table>
+                            <tr>
+                                <td>Syntax</td>
+                                <td>:</td>
+                                <td><code class="language-css">.prefix-value[-device]</code></td>
+                            </tr>
+                            <tr>
+                                <td>prefix</td>
+                                <td>=</td>
+                                <td>pa/pt/pb/pl/pr/pv/ph</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>pa: padding all<br>
+                                    pt: padding-top<br>
+                                    pb: padding-bottom <br>
+                                    pl: padding-left <br>
+                                    pr: padding-right <br>
+                                    pv: vertical padding (top+bottom)<br>
+                                    ph: horizontal padding (left+right)<br><br></td>
+                            </tr>
+                            <tr>
+                                <td class="va-top">value</td>
+                                <td class="va-top">=</td>
+                                <td>auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400</td>
+                            </tr>
+                            <tr>
+                                <td>device</td>
+                                <td>=</td>
+                                <td>sm/lg</td>
+                            </tr>
+                        </table>
+                        <h3>Example</h3>
+                        <table class="example">
+                            <tr>
+                                <td><code class="language-css">.pb-050</code></td>
+                                <td class="ph-050">:</td>
+                                <td>creates 'padding-bottom: 0.50rem' on all devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.pb-100-sm</code></td>
+                                <td>:</td>
+                                <td>creates 'padding-bottom: 1.00rem' on small devices.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.pb-125-lg</code></td>
+                                <td>:</td>
+                                <td>creates 'padding-bottom: 0.25rem' on large devices.</td>
+                            </tr>
+                        
+                        </table>
+                    </section>
+                    <!-- Paddings -->
+
+                    <!-- Table -->
+                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                        <h2>Table</h2>
+                        <table>
+                            <tr>
+                                <td class="va-top"><code  class="language-css">.table</code></td>
+                                <td class="va-top">:</td>
+                                <td>
+                                    <code class="language-css">background-color: var(--table-background-color);</code> <br>
+                                    <code class="language-css">border: 1px solid var(--table-border-color);</code> <br>
+                                    <code class="language-css">border-radius: var(--border-radius);</code> <br>
+                                    <code class="language-css">border-spacing: 0;</code> <br>
+                                    <code class="language-css">overflow: hidden;</code> <br>
+                                    <code class="language-css">font-size: 0.9rem;</code> <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="va-top"><code class="language-css">.thead</code></td>
+                                <td class="va-top">:</td>
+                                <td>
+                                    <code class="language-css">background-color: var(--thead-background-color);</code> <br>
+                                    <code class="language-css">color: var(--thead-color);</code> <br>
+                                    <code class="language-css">text-align: center;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="va-top"><code class="language-css">.th</code></td>
+                                <td class="va-top">:</td>
+                                <td>
+                                    <code class="language-css">font-weight: 600;</code> <br>
+                                    <code class="language-css">padding: 0.2345rem;</code> <br>
+                                    <code class="language-css">border-bottom: 2px solid var(--th-border-color);</code> <br>
+                                    <code class="language-css"> word-break: break-all;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="va-top"><code class="language-css">.tbody</code></td>
+                                <td class="va-top">:</td>
+                                <td>
+                                    <code class="language-css">color: var(--tbody-color);</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="va-top"><code class="language-css">.tr</code></td>
+                                <td class="va-top">:</td>
+                                <td>
+                                    <code class="language-css">background-color: var(--tr-even-background-color);</code> //Sets bg color on even rows. <br>
+                                    <code class="language-css">background-color: var(--tr-hover-background-color);</code> //Sets bg color on hover. <br>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Table// -->
+
                 </div>
             </div>
         </div><!-- .container -->
@@ -293,60 +457,15 @@
                 <div class="content">
                     <div class="mt300 mb100" style="font-size: 1.5rem;">OmniCSS v11.0.22</div>
                     <h1 class="mb150" style="font-size: 1.5rem !important;">
-                        A hand-full CSS <code>.class</code> library for busy developers.
+                        A hand-full CSS <code class="language-css">.class</code> library for busy developers.
                     </h1>
                     <div class="divider mb-300"></div>
                  
                     <!-- //raw content -->
                     <div>
-                        
-                        Margins<br>
-                        ==================================<br>
-                            Syntax: .prefix-value[-device]  <br>
-                            prefix = ma/mt/mb/ml/mr/mv/mh <br>                           
-                            value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
-                            device = sm/lg<br>
+                            
 
-                            ma: margin all<br>
-                            mt: margin-top<br>
-                            mb: margin-bottom <br>
-                            ml: margin-left <br>
-                            mr: margin-right <br>
-                            mv: vertical margin (top+bottom)<br>
-                            mh: horizontal margin (left+right)<br>
-                        
-                        
-                            Example<br>
-                            -------<br>
-                            
-                            .ma-auto	: creates all 'margin: auto' on all devices.<br>
-                            .ma-auto-sm	: creates all 'margin: auto' on small devices. <br>
-                            .ma-auto-lg	: creates all 'margin: auto' on large devices.<br>
-                            
-                            .mb-020		: creates 'margin-bottom: 0.20rem' on all devices.    <br>                      
-                            .mb-020-sm	: creates 'margin-bottom: 0.20rem' on small devices.<br>
-                            .mb-020-lg	: creates 'margin-bottom: 0.20rem' on large devices.<br><br>
-                            
-                        Padding<br>
-                        ==================================<br>
-                            Syntax: .prefix-value[-device]  <br> 
-                            prefix = pa/pt/pb/pl/pr/pv/ph <br>
-                            value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
-                            device = sm/lg<br>
-                            
-                            pa: padding all<br>
-                            pt: padding-top<br>
-                            pb: padding-bottom <br>
-                            pl: padding-left <br>
-                            pr: padding-right <br>
-                            pv: vertical padding (top+bottom)<br>
-                            ph: horizontal padding (left+right)<br><br>
-                        
-                            Example<br>
-                            -------<br>
-                            .pb-025		: creates 'padding-bottom: 0.25rem' on all devices.<br>
-                            .pb-025-sm	: creates 'padding-bottom: 0.25rem' on small devices.<br>
-                            .pb-025-lg	: creates 'padding-bottom: 0.25rem' on large devices.<br><br>
+                           
                         
                         Table<br>
                         ==================================<br>

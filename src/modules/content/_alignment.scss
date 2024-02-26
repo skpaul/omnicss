@@ -1,0 +1,33 @@
+
+.va{
+    &-baseline{
+        vertical-align: baseline;
+    }
+    &-sub{
+        vertical-align: sub;
+    }
+    &-super{
+        vertical-align: super;
+    }
+    &-top{
+        vertical-align: top;
+    }
+    &-middle{
+        vertical-align: middle;
+    }
+    &-bottom{
+        vertical-align: bottom;
+    }
+    &-text-top{
+        vertical-align: text-top;
+    }
+    &-text-bottom{
+        vertical-align: text-bottom;
+    }
+    &-initial{
+        vertical-align: initial;
+    }
+    &-inherit{
+        vertical-align: inherit;
+    }
+}

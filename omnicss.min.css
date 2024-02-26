@@ -656,6 +656,37 @@ h1, h2, h3, h4, h5, h6, p {
   text-align: justify;
 }
 
+.va-baseline {
+  vertical-align: baseline;
+}
+.va-sub {
+  vertical-align: sub;
+}
+.va-super {
+  vertical-align: super;
+}
+.va-top {
+  vertical-align: top;
+}
+.va-middle {
+  vertical-align: middle;
+}
+.va-bottom {
+  vertical-align: bottom;
+}
+.va-text-top {
+  vertical-align: text-top;
+}
+.va-text-bottom {
+  vertical-align: text-bottom;
+}
+.va-initial {
+  vertical-align: initial;
+}
+.va-inherit {
+  vertical-align: inherit;
+}
+
 .line-throw {
   text-decoration: line-through;
 }
