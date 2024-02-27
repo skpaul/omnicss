@@ -1,19 +1,11 @@
-.divider, .line{
-    &-h{
-        height: 1px;
-    }
-    &-v{
-        width: 1px;
-        height: 100%;
-        display: inline-block;
-    }
-}
-
-.line, .h-line, .line-h{
+// for backward compatibility, keep this class
+.divider-h{
     height: 1px;
 }
-
-.v-line, .line-v{
+.line, .divider, .separator{
+    height: 1px;
+}
+.line-v, .divider-v, .separator-v{
     width: 1px;
     height: 100%;
     display: inline-block;

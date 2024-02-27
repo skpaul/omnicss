@@ -108,7 +108,7 @@
         <div class="container">
             <div class="mt-300 mb-100 fs-3.00">OmniCSS v11.0.22</div>
             <h1 class="mb150" style="font-size: 1.5rem !important;">
-                A hand-full CSS <code class="language-css">.class</code> library for busy developers.
+                A semantic hand-full CSS <code class="language-css">.class</code> library for busy developers.
             </h1>
         </div>
     </header>
@@ -952,10 +952,356 @@
                                 <td>:</td>
                                 <td></td>
                             </tr>
+                            <tr>
+                                <td><code>.h-full-sm</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.h-full-lg</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
                         </table>
                     </section>
                     <!-- Height// -->
 
+                    <!-- Display -->
+                    <section>
+                        <h2>Display</h2>
+                        <table>
+                            <tr>
+                                <td><code>.hidden</code></td>
+                                <td>:</td>
+                                <td>display: none !important;
+                                    <div>Responsive</div>
+                                    <code>.hidden-sm</code> <code>.hidden-lg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.inline</code></td>
+                                <td>:</td>
+                                <td>display: inline;
+                                    <div>Responsive</div>
+                                    <code>.inline-sm</code> <code>.inline-lg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.block</code></td>
+                                <td>:</td>
+                                <td>display: block;
+                                    <div>Responsive-</div>
+                                    <code>.block-sm</code> <code>.block-lg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.inblock</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets display: inline-block;
+                                    <div>Responsive</div>
+                                    <code>.inblock-sm</code> <code>.inblock-lg</code>
+                                </td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Display// -->
+
+                    <!-- Display Table -->
+                    <section>
+                        <h2>Display : table <code>.dt</code></h2>
+                        <table>
+                            <tr>
+                                <td><code>.dt</code></td>
+                                <td>:</td>
+                                <td>display: table;</td>
+                            </tr>
+                            <tr>
+                                <td><code>.dt-row</code></td>
+                                <td>:</td>
+                                <td>display: table-row;</td>
+                            </tr>
+                            <tr>
+                                <td><code>.dt-cell</code></td>
+                                <td>:</td>
+                                <td>display: table-cell;</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Display Table// -->
+
+                    <!-- Line, Separator, Divider -->
+                    <section>
+                        <h2>Line, Separator, Divider</h2>
+                        <table>
+                            <tr>
+                                <td><code>.line</code> or <code>.separator</code> or <code>.divider</code></td>
+                                <td>:</td>
+                                <td>Creates a horizontal line <code>height: 1px;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>.line-h</code> or <code>.separator-h</code> or <code>.divider-h</code></td>
+                                <td>:</td>
+                                <td>Creates vertical line. width: 1px; height: 100%; display: inline-block;</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Line, Separator, Divider// -->
+
+                    <!-- Cursor -->
+                    <section>
+                        <h2>Cursor</h2>
+                        <table>
+                            <tr>
+                                <td class="pointer"><code>.pointer</code></td>
+                                <td>:</td>
+                                <td class="pointer">Hover this line to see the cursor pointer.</td>
+                            </tr>
+                            <tr>
+                                <td class="progress"><code>.progress</code></td>
+                                <td>:</td>
+                                <td class="progress">Hover this line to see the progress cursor.</td>
+                            </tr>
+                            <tr>
+                                <td class="wait"><code>.wait</code></td>
+                                <td>:</td>
+                                <td class="wait">Hover this line to see the wait cursor.</td>
+                            </tr>
+                            <tr>
+                                <td class="not-allowed"><code>.not-allowed</code></td>
+                                <td>:</td>
+                                <td class="not-allowed">Hover this line to see the not-allowed cursor.</td>
+                            </tr>
+                            <tr>
+                                <td class="help"><code>.help</code></td>
+                                <td>:</td>
+                                <td class="help">Hover this line to see the help cursor.</td>
+                            </tr>
+
+                        </table>
+                    </section>
+                    <!-- Cursor// -->
+
+                    <!-- Flexbox -->
+                    <section>
+                        <h2>Flexbox</h2>
+                        <table>
+                            <tr>
+                                <td><code>.flex</code></td>
+                                <td>:</td>
+                                <td>Creates block-level flex parent.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.inflex</code></td>
+                                <td>:</td>
+                                <td>Creates inline flex parent.</td>
+                            </tr>
+                        </table>
+                        <h3>flex-direction <code>.fd</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.fd-row</code> </td>
+                                <td>:</td>
+                                <td>  flex-direction: row; <br>
+                                    <code>fd-row-sm</code> <code>.fd-row-lg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.fd-row-rev</code></td>
+                                <td>:</td>
+                                <td>
+                                    flex-direction: row-reverse; <br>
+                                    <code>.fd-row-rev-sm</code>.fd-row-rev-lg<code></code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.fd-col</code></td>
+                                <td>:</td>
+                                <td>  flex-direction: column;
+                                    <code>.fd-col-sm</code> <code>.fd-col-lg</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>.fd-col-rev</code></td>
+                                <td>:</td>
+                                <td>
+                                    flex-direction: column-reverse;
+                                    <code>.fd-col-rev-sm</code> <code>.fd-col-rev-lg</code>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <h3>flex-flow <code>.ff</code></h3>
+                        <table>
+                            <tr>
+                                <td>.ff-row-wrap</td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ff-row-nowrap</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <h3>flex-wrap <code>.fw</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.fw-wrap</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.fw-nowrap</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.fw-rev</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <h3>justify-content <code>.jc</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.jc-start</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.jc-end</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.jc-center</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.jc-between</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.jc-around</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.jc-evenly</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <h3>align-items <code>.ai</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.ai-start</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ai-end</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ai-center</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ai-baseline</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ai-stretch</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                        <h3>align-content <code>.ac</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.ac-start</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ac-end</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ac-center</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ac-between</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ac-around</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>.ac-stretch</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- Flexbox// -->
+
+                    <!-- Google Material Icons -->
+                    <section>
+                        <h2>Google Material Icons <code>.m-icons</code></h2>
+                        
+                        <code>&lt;span class="m-icons"&gt;icon_name&lt;/span&gt;</code> <br>
+
+                        For icon_name, please refer to <a href="https://fonts.google.com/icons">Google Fonts</a>.
+
+                        <h3>Here are some samples-</h3>
+                        <table>
+                            <tr>
+                                <td><code>&lt;span class="m-icons"&gt;close&lt;/span&gt;</code></td>
+                                <td>:</td>
+                                <td><code><span class="m-icons">close</span></code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;span class="m-icons"&gt;done&lt;/span&gt;</code></td>
+                                <td>:</td>
+                                <td><code><span class="m-icons">done</span></code></td>
+                            </tr>
+                            <tr>
+                                <td><code>&lt;span class="m-icons"&gt;check_box&lt;/span&gt;</code></td>
+                                <td>:</td>
+                                <td><code><span class="m-icons">check_box</span></code></td>
+                            </tr>
+                        </table>
+                       
+                    </section>
+                    <!-- Google Material Icons// -->
+
+                    <!-- Bangla -->
+                    <section>
+                        <h2>Bangla <code>.bn</code></h2>
+                        <div class="bn">আমার সোনার বাংলা, আমি তোমায় ভালোবাসি</div>
+                        <div>
+                            Use <code>.bn</code> to display Bangla font. Default Bangla font is 'Anek Bangla'. You can customize it in theme.css.
+                        </div>
+                    </section>
+                    <!-- Bangla// -->
                 </div>
             </div>
         </div><!-- .container -->
@@ -981,73 +1327,6 @@
                             .m-icons<br><br>
                         
                         
-                        Divider<br>
-                        ========<br>
-                            .line, .h-line, .line-h     : Horizontal line<br>
-                            .v-line, .line-v            : Vertical line<br><br>
-                        
-                        
-                       
-                        
-                        
-                        Flexbox<br>
-                        ========<br>
-                            .flex <br>
-                            .inflex <br>
-                        
-                            flex-direction<br>
-                            --------------<br>
-                            .fd-row         .fd-row-sm          .fd-row-lg <br>
-                            .fd-row-rev     .fd-row-rev-sm      .fd-row-rev-lg <br>
-                            .fd-col         .fd-col-sm          .fd-col-lg <br>
-                            .fd-col-rev     .fd-col-rev-sm      .fd-col-rev-lg <br><br>
-                        
-                            flex-flow<br>
-                            ---------<br>
-                            .ff-row-wrap <br>
-                            .ff-row-nowrap<br>
-                        
-                            .fw-wrap .fw-nowrap .fw-rev <br><br>
-                        
-                            justify-content<br>
-                            ---------------<br>
-                            .jc-start <br>
-                            .jc-end <br>
-                            .jc-center <br>
-                            .jc-between <br>
-                            .jc-around <br>
-                            .jc-evenly <br><br>
-                        
-                            align-items<br>
-                            -----------<br>
-                            .ai-start <br>
-                            .ai-end <br>
-                            .ai-center <br>
-                            .ai-baseline <br>
-                            .ai-stretch <br><br>
-                        
-                            align-content<br>
-                            -------------<br>
-                            .ac-start <br>
-                            .ac-end <br>
-                            .ac-center <br>
-                            .ac-between <br>
-                            .ac-around <br>
-                            .ac-stretch <br><br>
-                        
-                        
-                        Display Utility<br>
-                        ================<br>
-                            .hidden         .hidden-sm          .hidden-lg <br>
-                            .inline         .inline-sm          .inline-lg <br>
-                            .block          .block-sm           .block-lg <br>
-                            .inblock        .inblock-sm         .inblock-lg <br>
-                            .d-table        .d-table-row        .d-table-cell <br><br>
-                        
-                        
-                       
-                        
-                        
                         Filter<br>
                         ======<br>
                             .brightness-50%, .brightness-60%, ........, .brightness-150%<br>
@@ -1062,9 +1341,7 @@
                             .hover:dark-80%     : Decrease 80% brightness on hover. Other values are- 80,60,40,20,0<br><br>
                         
                         
-                        Cursor<br>
-                        =====<br>
-                            .pointer, .progress, .wait, .not-allowed, .help <br><br>
+
                         
                         
                         Transition<br>

@@ -1902,20 +1902,15 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   }
 }
 
-.divider-h, .line-h {
-  height: 1px;
-}
-.divider-v, .line-v {
-  width: 1px;
-  height: 100%;
-  display: inline-block;
-}
-
-.line, .h-line, .line-h {
+.divider-h {
   height: 1px;
 }
 
-.v-line, .line-v {
+.line, .divider, .separator {
+  height: 1px;
+}
+
+.line-v, .divider-v, .separator-v {
   width: 1px;
   height: 100%;
   display: inline-block;
@@ -9875,13 +9870,13 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
     display: inline-block;
   }
 }
-.d-table {
+.dt {
   display: table;
 }
-.d-table-row {
+.dt-row {
   display: table-row;
 }
-.d-table-cell {
+.dt-cell {
   display: table-cell;
 }
 

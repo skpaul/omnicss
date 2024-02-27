@@ -30,19 +30,17 @@
 //display:flex and display:inline-flex removed to _flex-parent.scss.
 //display:grid is not in the scope of this framework. See griddle.
 
+.dt{
+    display: table;
+    //Excluded media query intentionally.
 
-.d{
-    &-table {
-        display: table;
+    &-row {
+        display: table-row; //.d-table-row { ... }
         //Excluded media query intentionally.
-        &-row {
-            display: table-row; //.d-table-row { ... }
-            //Excluded media query intentionally.
-        }
+    }
 
-        &-cell {
-            display: table-cell; //.d-table-cell { ... }
-            //Excluded media query intentionally.
-        }
+    &-cell {
+        display: table-cell; //.d-table-cell { ... }
+        //Excluded media query intentionally.
     }
 }
