@@ -63,6 +63,8 @@
 
 //Misc
     @import 'modules/misc/box-sizing';      //fullwidth, fullheight, fitcontent, mincontent, maxcontent
+    @import 'modules/misc/width';           //
+    @import 'modules/misc/height';           //
     @import 'modules/misc/display';         //display:none/inline/block/inline-block/table/table-row/table-cell
     @import 'modules/misc/positioning';     //relative, fixed, absolute
     @import 'modules/misc/hover-effect';    //change background, border etc

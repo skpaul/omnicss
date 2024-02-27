@@ -9752,6 +9752,79 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   }
 }
 
+.w-full, .full-width {
+  width: 100% !important;
+}
+@media screen and (max-width: 991px) {
+  .w-full-sm, .full-width-sm {
+    width: 100% !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .w-full-lg, .full-width-lg {
+    width: 100% !important;
+  }
+}
+
+.w-fit, .fit-content {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+@media screen and (max-width: 991px) {
+  .w-fit-sm, .fit-content-sm {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .w-fit-lg, .fit-content-lg {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+}
+
+.w-min, .min-content {
+  width: min-content !important;
+}
+@media screen and (max-width: 991px) {
+  .w-min-sm, .min-content-sm {
+    width: min-content !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .w-min-lg, .min-content-lg {
+    width: min-content !important;
+  }
+}
+
+.w-max, .max-content {
+  width: max-content !important;
+}
+@media screen and (max-width: 991px) {
+  .w-max-sm, .max-content-sm {
+    width: max-content !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .w-max-lg, .max-content-lg {
+    width: max-content !important;
+  }
+}
+
+.h-full, .full-height {
+  height: 100% !important;
+}
+@media screen and (max-width: 991px) {
+  .h-full-sm, .full-height-sm {
+    height: 100% !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .h-full-lg, .full-height-lg {
+    height: 100% !important;
+  }
+}
+
 .hidden {
   display: none !important;
 }
