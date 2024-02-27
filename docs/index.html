@@ -118,6 +118,26 @@
 
             <div class="ba bc-gray-7">
                 <div class="container-900 mv-150">
+
+                    <!-- Installation -->
+                    <section>
+                        <h2>Installation</h2>
+                        <div>
+                            The easiest way to use from CDN below- <br>
+                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css</code>
+                        </div>
+                        <br>
+                        <div>
+                            As an alternative, download the latest repo from <a href="https://github.com/skpaul/omnicss">GitHub</a> .
+                        </div>
+                        <p>
+                            You'll also need to download the theme.css.
+                        </p>
+                    </section>
+                    <!-- Installation// -->
+
+
+                    
                     <!-- //default settings -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2 class="fs-150 fw-600">Default settings</h2>
@@ -201,36 +221,92 @@
                         </ul>
                     </section> <!-- default settings// -->
 
+                    <!-- White Space -->
+                    <section>
+                        <h2>white-space <code>.ws</code></h2>
+                        <table>
+                            <tr>
+                                <td><code>.ws-nowrap</code></td>
+                                <td>:</td>
+                                <td>white-space: nowrap;</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- White Space// -->
+                    
                     <!-- Container -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2>Containers</h2>
-                        <ul>
-                            <li><code class="language-css">.container-fluid</code>: full width.</li>
-                            <li><code class="language-css">.container</code> max width 1200px default. Customizable via theme.css.</li>
-                            <li><code class="language-css">.container-1100</code>: max width 1100px</li>
-                            <li><code class="language-css">.container-1000</code>: max width 1000px</li>
-                            <li><code class="language-css">.container-900</code>: max width 900px</li>
-                            <li><code class="language-css">.container-800</code>: max width 800px</li>
-                            <li><code class="language-css">.container-700</code>: max width 700px</li>
-                            <li><code class="language-css">.container-600</code>: max width 600px</li>
-                        </ul>
+                        <table>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-fluid</code></td>
+                                <td>:</td>
+                                <td>Full width container</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css">.container</code></td>
+                                <td>:</td>
+                                <td>Max width 1200px default. You can change <code>--container-max-width</code> in theme.css to change the default value.</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-1100</code></td>
+                                <td>:</td>
+                                <td>Max width 1100px</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-1000</code></td>
+                                <td>:</td>
+                                <td>Max width 1000px</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-900</code></td>
+                                <td>:</td>
+                                <td>Max width 900px</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-800</code></td>
+                                <td>:</td>
+                                <td>Max width 800px</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-700</code></td>
+                                <td>:</td>
+                                <td>Max width 700px</td>
+                            </tr>
+                            <tr>
+                                <td><code class="language-css ws-nowrap">.container-600</code></td>
+                                <td>:</td>
+                                <td>Max width 600px</td>
+                            </tr>
+                        </table>
+
                     </section>
                     <!-- Container -->
 
                     <!-- //font-size -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2 class="fs-150 fw-600">Font Size</h2>
+                    <section>
+                        <h2>Font Size <code>.fs</code></h2>
                         <p>You can set font-size property in two ways- using rem and percentage.</p>
                         <h3>Using rem-</h3>
                         <p>
-                            Syntax: <code class="language-css">.prefix-value[-device]</code>  <br>
-                            prefix = fs (Font Size)<br>                           
-                            value = 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300 <br>
+                            Syntax: <code class="language-css">.fs-value[-device]</code>  <br>
+                                                    
+                            value =  0.50, 0.60, 0.70, 0.80, 0.90, 1.00, 1.10, 1.20, 1.30, 1.40, 1.50, 1.60, 1.70, 1.80, 1.90, 2.00, 2.10, 2.20, 2.30, 2.40, 2.50, 2.60, 2.70, 2.80, 2.90, 3.00<br>
                             device = sm/lg<br>
                         </p>
                         <h4>Example</h4>
+                        <table>
+                            <tr>
+                                <td><code class="language-css">.fs-0.50</code></td>
+                                <td>:</td>
+                                <td>Sets font-size: 0.50rem;
+                                    <div class="fs-2.50-sm fs-1.50-lg">Reponsive</div>
+                                    <code>.fs-0.50-sm</code> <code>.fs-0.50-lg</code>
+                                </td>
+                            </tr>
+                        </table>
                         <ul class="example">
-                            <li><code class="language-css">.fs-050</code>: Sets font-size: 0.50rem;</li>
+                            <li>: </li>
                             <li><code class="language-css">.fs-060</code>: Sets font-size: 0.60rem;</li>
                             <li><code class="language-css">.fs-100-sm</code>: Sets font-size: 1.00rem in only small devices.</li>
                             <li><code class="language-css">.fs-100-lg</code>: Sets font-size: 1.00rem in only large devices.</li>

@@ -34,14 +34,14 @@
 
 
 //Content
-    //Typography
+    
     @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
     @import 'modules/content/text-transform'; //uppercase, lowercase, capitalize
     @import 'modules/content/text-alignment'; //left, right, center, justify
     @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
     @import 'modules/content/text-decoration'; //underline, overline, line-through, ...
     @import 'modules/content/font-weight'; //bold, bolder, lighter, 100-900
-    @import 'modules/content/font-size'; // .fs-50%, .fs-60%, ....., .fs-200%
+   
     @import 'modules/content/line-height'; //.lh-1.1, .lh-1.2, ...., .lh-1.7
 
     @import 'modules/content/hyperlink';
@@ -50,6 +50,9 @@
     @import 'modules/content/buttons'; 
     @import 'modules/content/table'; // table, tr, td, ...
 
+    //Typography
+    @import 'modules/typography/white-space';
+    @import 'modules/typography/font-size'; // .fs-50%, .fs-60%, ....., .fs-200%
 
 //Component
     @import 'modules/component/card';  
