@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/monogrid@0.0.1/monogrid.min.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css"> -->
     <!-- For github -->
-    <link rel="stylesheet" href="assets/omnicss.min.css">
-    <link rel="stylesheet" href="assets/theme.css">
+    <!-- <link rel="stylesheet" href="assets/omnicss.min.css">
+    <link rel="stylesheet" href="assets/theme.css"> -->
 
     <!-- For local -->
-    <!-- <link rel="stylesheet" href="../omnicss.min.css">
-    <link rel="stylesheet" href="../theme.css"> -->
+    <link rel="stylesheet" href="../omnicss.min.css">
+    <link rel="stylesheet" href="../theme.css">
 
     <style>
         body{
@@ -147,45 +147,119 @@
                         <h3>Color Schemes</h3>
                         <p>Your color schemes will be here.</p>
                         <h3>Other</h3>
+                        <table>
+                            <tr>
+                                <td><code>--container-max-width</code></td>
+                                <td>:</td>
+                                <td>: 1200px;</td>
+                            </tr>
+                            <tr>
+                                <td><code>--container-padding</code></td>
+                                <td>:</td>
+                                <td>: 0.75rem;  /* left + right*/</td>
+                            </tr>
+                            <tr>
+                                <td><code>--fallback-font</code></td>
+                                <td>:</td>
+                                <td>sans-serif;</td>
+                            </tr>
+                            <tr>
+                                <td><code>--font-family-english</code></td>
+                                <td>:</td>
+                                <td>: 'Inter', var(--fallback-font);</td>
+                            </tr>
+                            <tr>
+                                <td><code>--font-family-bangla</code></td>
+                                <td>:</td>
+                                <td>: 'Anek Bangla', var(--fallback-font);</td>
+                            </tr>
+                            <tr>
+                                <td><code>--font-weight</code></td>
+                                <td>:</td>
+                                <td>: 300;</td>
+                            </tr>
+                            <tr>
+                                <td><code>--color</code></td>
+                                <td>:</td>
+                                <td>Default text color  var(--gray-2).</td>
+                            </tr>
+                            <tr>
+                                <td><code>--background-color</code></td>
+                                <td>:</td>
+                                <td>Used as default page background color var(--gray-9).</td>
+                            </tr>
+                            <tr>
+                                <td><code>--dark</code> </td>
+                                <td>:</td>
+                                <td>Quick variant of <code class="language-css">--background-color</code> : <br>
+                                    Usage: <br>
+                                    <code class="language-css">.c-dark</code>   : Sets font color dark <br>
+                                    <code class="language-css">.bg-dark</code>  : Sets background color dark. <br>
+                                    <code class="language-css">.bc-dark</code>  : Sets border color dark <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>--light</code></td>
+                                <td>:</td>
+                                <td>Quick variant of <code class="language-css">--background-color</code> : <br>
+                                    <code class="language-css">.c-light</code> : Sets font color light. <br>
+                                    <code class="language-css">.bg-light</code>: Sets background color light. <br>
+                                    <code class="language-css">.bc-light</code>: Sets border color light. <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><code>--line-height</code></td>
+                                <td>:</td>
+                                <td>1.3;</td>
+                            </tr>
+                            <tr>
+                                <td><code>--accent-color</code></td>
+                                <td>:</td>
+                                <td>var(--blue-5);</td>
+                            </tr>
+                            <tr>
+                                <td><code>--border-color</code></td>
+                                <td>:</td>
+                                <td>var(--gray-5);</td>
+                            </tr>
+                            <tr>
+                                <td><code>--border</code></td>
+                                <td>:</td>
+                                <td>1px solid var(--border-color);</td>
+                            </tr>
+                            <tr>
+                                <td><code>--border-radius</code></td>
+                                <td>:</td>
+                                <td>: 0.25rem;  Applicable if you use <code class="language-css">.round</code> class.</td>
+                            </tr>
+                            <tr>
+                                <td><code>--header-menu-color </code></td>
+                                <td>:</td>
+                                <td>Applied to the top navigation menu items  i.e. Home, Login etc.</td>
+                            </tr>
+                            <tr>
+                                <td><code>--header-menu-color-hover</code></td>
+                                <td>:</td>
+                                <td>Applied to the top menu items  i.e. Home, Login etc.</td>
+                            </tr>
+                            <tr>
+                                <td><code>--hamb-color</code></td>
+                                <td>:</td>
+                                <td>Applied to the hamburger menu icon.</td>
+                            </tr>
+                            <tr>
+                                <td><code></code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code></code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                        </table>
                         <ul>
-                            <li>--container-max-width: 1200px;</li>
-                            <li>--container-padding: 0.75rem;  /* left + right*/</li>
-                        
-                            <li>--fallback-font: sans-serif;</li>
-                            <li>--font-family-english: 'Inter', var(--fallback-font); </li>
-                            <li>--font-family-bangla: 'Anek Bangla', var(--fallback-font);</li>
-                            <li>--font-weight: 300;</li>
-                            <li>--color: var(--gray-2); /* default text color */</li>
-                            <li><code class="language-css">--background-color: var(--gray-9);</code>   /* Used as default page background color */</li>
-                               
                             
-                            <li>
-                               Quick variants of <code class="language-css">--background-color</code> : <br>
-                                
-                                --dark:   rgba(19,30,46,1); <br>
-                                --light:  rgba(27,42,62,1); <br>
-
-                                Usage: <br>
-                                <code class="language-css">.c-dark</code> <code class="language-css">.c-light</code>  : Sets font color dark/light in terms of --background-color. <br>
-                                <code class="language-css">.bg-dark</code> <code class="language-css">.bg-light</code>: Sets background color dark/light in terms of --background-color. <br>
-                                <code class="language-css">.bc-dark</code> <code class="language-css">.bc-light</code> : Sets border color dark/light in terms of --background-color. <br>
-                                File- _colors.scss.
-                            </li>
-                        
-                            <li><code class="language-css">--line-height : 1.3;</code> </li>
-                            
-                            <li><code class="language-css">--accent-color: var(--blue-5);</code></li>
-                            <li><code class="language-css"> --border-color: var(--gray-5);</code></li>
-                            <li><code class="language-css">--border: 1px solid var(--border-color);</code></li>
-                            <li><code class="language-css">--border-radius: 0.25rem;</code> : Applicable if you use <code class="language-css">.round</code> class.</li>
-                            
-                        
-                            /* All the following colors are the variant of the above base colors. */
-                            --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
-                            --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
-                            --header-menu-color: var(--blue-3);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-                            --header-menu-color-hover: var(--blue-2);               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-                            --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
                             --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
                             --scroll-color: var(--color);          /* applied to the index.php marquee*/
                             --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
