@@ -135,8 +135,6 @@
                         </p>
                     </section>
                     <!-- Installation// -->
-
-
                     
                     <!-- //default settings -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
@@ -191,20 +189,20 @@
                             <tr>
                                 <td><code>--dark</code> </td>
                                 <td>:</td>
-                                <td>Quick variant of <code class="language-css">--background-color</code> : <br>
+                                <td>Quick variant of <code>--background-color</code> : <br>
                                     Usage: <br>
-                                    <code class="language-css">.c-dark</code>   : Sets font color dark <br>
-                                    <code class="language-css">.bg-dark</code>  : Sets background color dark. <br>
-                                    <code class="language-css">.bc-dark</code>  : Sets border color dark <br>
+                                    <code>.c-dark</code>   : Sets font color dark <br>
+                                    <code>.bg-dark</code>  : Sets background color dark. <br>
+                                    <code>.bc-dark</code>  : Sets border color dark <br>
                                 </td>
                             </tr>
                             <tr>
                                 <td><code>--light</code></td>
                                 <td>:</td>
-                                <td>Quick variant of <code class="language-css">--background-color</code> : <br>
-                                    <code class="language-css">.c-light</code> : Sets font color light. <br>
-                                    <code class="language-css">.bg-light</code>: Sets background color light. <br>
-                                    <code class="language-css">.bc-light</code>: Sets border color light. <br>
+                                <td>Quick variant of <code>--background-color</code> : <br>
+                                    <code>.c-light</code> : Sets font color light. <br>
+                                    <code>.bg-light</code>: Sets background color light. <br>
+                                    <code>.bc-light</code>: Sets border color light. <br>
                                 </td>
                             </tr>
                             <tr>
@@ -230,7 +228,7 @@
                             <tr>
                                 <td><code>--border-radius</code></td>
                                 <td>:</td>
-                                <td>: 0.25rem;  Applicable if you use <code class="language-css">.round</code> class.</td>
+                                <td>: 0.25rem;  Applicable if you use <code>.round</code> class.</td>
                             </tr>
                             <tr>
                                 <td><code>--header-menu-color </code></td>
@@ -391,18 +389,25 @@
                       
                     </section> <!-- default settings// -->
 
-                    <!-- White Space -->
+                    <!-- Media Queries -->
                     <section>
-                        <h2>white-space <code>.ws</code></h2>
+                        <h2>Media Queries</h2>
+                        <p>To be minimalistic, OmniCSS uses only two types of device- </p>
                         <table>
                             <tr>
-                                <td><code>.ws-nowrap</code></td>
+                                <td><code>-sm</code></td>
                                 <td>:</td>
-                                <td>white-space: nowrap;</td>
+                                <td>max-width: 991px</td>
+                            </tr>
+                            <tr>
+                                <td><code>-lg</code></td>
+                                <td>:</td>
+                                <td>min-width: 992px</td>
                             </tr>
                         </table>
                     </section>
-                    <!-- White Space// -->
+                    <!-- Media Queries// -->
+                  
                     
                     <!-- Container -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
@@ -452,6 +457,20 @@
 
                     </section>
                     <!-- Container -->
+
+
+                      <!-- White Space -->
+                      <section>
+                        <h2>white-space <code>.ws</code></h2>
+                        <table>
+                            <tr>
+                                <td><code>.ws-nowrap</code></td>
+                                <td>:</td>
+                                <td>white-space: nowrap;</td>
+                            </tr>
+                        </table>
+                    </section>
+                    <!-- White Space// -->
 
                     <!-- //font-size -->
                     <section>
