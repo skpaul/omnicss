@@ -12,7 +12,7 @@
     gtag('config', 'G-Q3M7MBWWK0');
     </script>
 
-    <meta name="description" content="A hand-full CSS .class library for busy developers.">
+    <meta name="description" content="A semantic hand-full .css library for busy developers.">
     <meta name="robots" content="index, follow">
 
     <meta name="keywords" content="Web development, From-end design, CSS, SASS, CSS Style">
@@ -248,9 +248,114 @@
                                 <td>Applied to the hamburger menu icon.</td>
                             </tr>
                             <tr>
-                                <td><code></code></td>
+                                <td><code>--hamb-border-color</code></td>
+                                <td>:</td>
+                                <td>Applied to the hamburger menu box border.</td>
+                            </tr>
+                            <tr>
+                                <td><code>--scroll-color</code></td>
+                                <td>:</td>
+                                <td>Applied to the index.php marquee</td>
+                            </tr>
+                            <tr>
+                                <td><code>--scroll-color-hover</code></td>
+                                <td>:</td>
+                                <td>Applied to the index.php marquee</td>
+                            </tr>
+                            <tr>
+                                <td><code>--hyperlink-color</code></td>
                                 <td>:</td>
                                 <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--hyperlink-color-hover</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--table-background-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--table-border-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--thead-background-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--thead-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--th-border-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--tbody-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--tr-border-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--tr-even-background-color</code></td>
+                                <td>:</td>
+                                <td>for even rows only</td>
+                            </tr>
+                            <tr>
+                                <td><code>--tr-hover-background-color</code></td>
+                                <td>:</td>
+                                <td>on hover effect</td>
+                            </tr>
+                           
+                        </table>
+
+                        <!-- Default values for form element -->
+                        <table>
+                             <tr>
+                                <td><code>--label-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                             <tr>
+                                <td><code>--placeholder-color</code></td>
+                                <td>:</td>
+                                <td>For input[type=text], input[type=password], textarea</td>
+                            </tr>
+                             <tr>
+                                <td><code>--input-color</code></td>
+                                <td>:</td>
+                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
+                            </tr>
+                            <tr>
+                                <td><code>--input-caret-color</code></td>
+                                <td>:</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>--input-background-color</code></td>
+                                <td>:</td>
+                                <td>input[type=text], input[type=password], select, textarea, .textbox </td>
+                            </tr>
+                            <tr>
+                                <td><code>--input-background-color-on-hover</code></td>
+                                <td>:</td>
+                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
+                            </tr>
+                            <tr>
+                                <td><code>--input-background-color-on-focus</code></td>
+                                <td>:</td>
+                                <td>input[type=text], input[type=password], select, textarea, .textbox </td>
                             </tr>
                             <tr>
                                 <td><code></code></td>
@@ -258,34 +363,12 @@
                                 <td></td>
                             </tr>
                         </table>
+                        <!-- Default values for table element// -->
                         <ul>
-                            
-                            --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
-                            --scroll-color: var(--color);          /* applied to the index.php marquee*/
-                            --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
-                        
-                            <li><code class="language-css">--hyperlink-color: var(--color);</code></li>
-                            <li><code class="language-css">--hyperlink-color-hover: var(--accent-color);</code></li>
-
-                            /* Default values for table */
-                            <li><code class="language-css">--table-background-color: transparent;</code></li>
-                            <li><code class="language-css">--table-border-color: transparent;</code></li>
-                            <li><code class="language-css">--thead-background-color: transparent;</code></li>
-                            <li><code class="language-css">--thead-color: transparent;</code></li>
-                            <li><code class="language-css">--th-border-color:transparent;</code></li>
-                            <li><code class="language-css">--tbody-color:transparent;</code></li>
-                            <li><code class="language-css">--tr-border-color:transparent;</code></li>
-                            <li><code class="language-css">--tr-even-background-color:transparent;</code> /* for even rows only */</li>
-                            <li><code class="language-css"> --tr-hover-background-color:transparent;</code> /* on hover effect */</li>
-                        
                             /* Form element */
-                            <li><code class="language-css">--label-color: var(--gray-2);</code></li>
-                            <li><code class="language-css"> --placeholder-color: #51637b; </code> /* input[type=text], input[type=password], textarea */</li>
-                            <li><code class="language-css">--input-color: var(--gray-2);</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code class="language-css">--input-caret-color: #fff;</code></li>
-                            <li><code class="language-css">--input-background-color: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code class="language-css">--input-background-color-on-hover: unset;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
-                            <li><code class="language-css">--input-background-color-on-focus: #162233;</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
+                          
+                            <li><code class="language-css">: unset;</code>  /*  */</li>
+                            <li><code class="language-css">: #162233;</code>  /* */</li>
                             <li><code class="language-css">--input-border-color: #46576e;</code> /* input[type=text], input[type=password], select, textarea, .textbox */</li>
                             <li><code class="language-css">--input-border-color-on-hover: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
                             <li><code class="language-css">--input-border-color-on-focus: var(--accent-color);</code>  /* input[type=text], input[type=password], select, textarea, .textbox */</li>
