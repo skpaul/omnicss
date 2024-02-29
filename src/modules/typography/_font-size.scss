@@ -4,26 +4,31 @@
 // \31 30\25 = 130%
 
 
-$percentageValues: '50' '60' '70' '80' '90' '100' '110' '120' '130' '140' '150' '160' '170' '180' '190' '200' '210' '220' '230' '240' '250' '260' '270' '280' '290' '300';
+$percentageValues: '10' '20' '30' '40' '50' '60' '70' '80' '90' '100' '110' '120' '130' '140' '150' '160' '170' '180' '190' '200' '210' '220' '230' '240' '250' '260' '270' '280' '290' '300' '310' '320' '330' '340' '350' '360' '370' '380' '390' '400';
 @mixin create-font-size-in-percentage($device) {
-    // @for $i from 5 through 20 {
-    //     $value: $i*10;
-    //     .fs-#{$value}\25#{$device}{
-    //         font-size:#{$value} + '%';
-    //     }
-    // }
 
+    //General version. Creates .fs-10%
     @each $value in $percentageValues{
         $escaped: str-replace($value, '.', '' ); // see _functions.scss 
         .fs-#{$escaped}\25#{$device}{
             font-size:#{$escaped} + '%';
         }
     }
+    //Compact version. Creates .fs10%
+    @each $value in $percentageValues{
+        $escaped: str-replace($value, '.', '' ); // see _functions.scss 
+        .fs#{$escaped}\25#{$device}{
+            font-size:#{$escaped} + '%';
+        }
+    }
 }
 
-$rmValues: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40' '1.50' '1.60' '1.70' '1.80' '1.90' '2.00' '2.10' '2.20' '2.30' '2.40' '2.50' '2.60' '2.70' '2.80' '2.90' '3.00';
+
+$rmValues: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '2.0' '2.1' '2.2' '2.3' '2.4' '2.5' '2.6' '2.7' '2.8' '2.9' '3.0' '3.1' '3.2' '3.3' '3.4' '3.5' '3.6' '3.7' '3.8' '3.9' '4.0';
 
 @mixin create-font-size-in-rem($device) {
+
+    //General version. Create rules like .fs-1.0
     @each $value in $rmValues{
         $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
         $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
@@ -35,16 +40,16 @@ $rmValues: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40'
         //     font-size:#{$value} + 'rem';
         // }
     }
-}
 
-// @mixin create-padding-in-rem($prefix, $property, $device) {
-//     @each $value in $rmValues{
-//         $escaped: str-replace($value, '.', '' ); // see _functions.scss 
-//         .fs-#{$escaped}#{$device}{
-//             font-size:#{$value} + 'rem';
-//         }
-//     }
-// }
+    //Compact version. Create rules like .fs10
+    @each $value in $rmValues{
+        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+        .fs#{$part1}#{$part2}#{$device}{
+            font-size:#{$value} + 'rem';
+        }
+    }
+}
 
 @include create-font-size-in-percentage("");
 @include create-font-size-in-rem("");
@@ -56,4 +61,13 @@ $rmValues: '0.50' '0.60' '0.70' '0.80' '0.90' '1.00' '1.10' '1.20' '1.30' '1.40'
 @include large{
     @include create-font-size-in-percentage("-lg");
     @include create-font-size-in-rem("-lg");
+}
+
+@include small{
+    @include create-font-size-in-percentage("Sm");
+    @include create-font-size-in-rem("Sm");
+}
+@include large{
+    @include create-font-size-in-percentage("Lg");
+    @include create-font-size-in-rem("Lg");
 }
