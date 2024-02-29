@@ -47,6 +47,7 @@
             border-width: 1px;
             border-style: solid;
             padding: 1.5rem;
+            padding-top: 0.9rem;
             margin-top: 2rem !important;
             margin-bottom: 2rem !important;
         }
@@ -852,33 +853,67 @@
 
                     <!-- Line Heights -->
                     <section>
-                        <h2 class="fw700">Line Height<code>.lh</code></h2>
+                        <h2 class="fw700">Line Height  <code>.lh</code></h2>
+                       
+                        <p class="mt15 mb05">Available line height values -</p>
+                        <div class="grid fr12 values">
+                            <code>0.1</code>
+                            <code>0.2</code>
+                            <code>0.4</code>
+                            <code>0.5</code>
+                            <code>0.6</code>
+                            <code>0.7</code>
+                            <code>0.8</code>
+                            <code>0.9</code>
+                            <code>1.0</code>
+                            <code>1.1</code>
+                            <code>1.2</code>
+                            <code>1.3</code>
+                            <code>1.4</code>
+                            <code>1.5</code>
+                            <code>1.6</code>
+                            <code>1.7</code>
+                            <code>1.8</code>
+                            <code>1.9</code>
+                            <code>2.0</code>
+                            <code>2.1</code>
+                            <code>2.2</code>
+                            <code>2.3</code>
+                            <code>2.4</code>
+                            <code>2.5</code>
+                            <code>2.6</code>
+                            <code>2.7</code>
+                            <code>2.8</code>
+                            <code>2.9</code>
+                            <code>3.0</code>
+                            <code>3.1</code>
+                            <code>3.2</code>
+                            <code>3.3</code>
+                            <code>3.4</code>
+                            <code>3.5</code>
+                            <code>3.6</code>
+                            <code>3.7</code>
+                            <code>3.8</code>
+                            <code>3.9</code>
+                            <code>4.0</code>
+                        </div>
+
+                        <h3 class="mt15">Exmpales</h3>
                         <table>
-                           
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td>value = 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0 <br>
-                                    device = sm (small), lg (large)
-                                </td>
-                            </tr>
-                        </table>
-                        <h3>Exmpales</h3>
-                        <table>
-                            <tr>
-                                <td><code class="language-css">.lh-1.2</code></td>
+                                <td><code>.lh-1.2</code></td>
                                 <td>:</td>
-                                <td>Sets <code>line-height: 1.2;</code></td>
+                                <td>Sets <code>line-height: 1.2rem;</code></td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.lh-0.8-sm</code></td>
+                                <td><code>.lh-0.8-sm</code></td>
                                 <td>:</td>
-                                <td>Sets <code>line-height: 1.2;</code> on small devices</td>
+                                <td>Sets <code>line-height: 1.2rem;</code> on small devices.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.lh-1.8-lg</code></td>
+                                <td><code>.lh-1.8-lg</code></td>
                                 <td>:</td>
-                                <td>Sets <code>line-height: 1.8;</code> on large devices</td>
+                                <td>Sets <code>line-height: 1.8rem;</code> on large devices.</td>
                             </tr>
                         </table>
                     </section>
@@ -886,7 +921,7 @@
 
                     <!-- Text Transformation -->
                     <section>
-                        <h2>Text Transformation</h2>
+                        <h2 class="fw700">Text Transformation</h2>
                         <table>
                             <tr>
                                 <td><code>.ucase</code></td>
@@ -899,9 +934,9 @@
                                 <td>lowercase</td>
                             </tr>
                             <tr>
-                                <td><code class="">.capitalize</code> <code>.cap</code></td>
+                                <td><code>.ccase</code> or <code>.capitalize</code> or <code>.cap</code></td>
                                 <td>:</td>
-                                <td><code>text-transform: capitalize;</code></td>
+                                <td>Capitalizes the first letter of each word</td>
                             </tr>
                         </table>
                     </section>
@@ -909,25 +944,25 @@
 
                     <!-- Text Alignments -->
                     <section>
-                        <h2>Text Alignment <code>.ta</code></h2>
+                        <h2 class="fw700">Text Alignment <code>.ta</code></h2>
                         <table>
                             <tr>
-                                <td><code>.ta-left</code> or <code>.left</code></td>
+                                <td><code>.left</code> or <code>.ta-left</code></td>
                                 <td>:</td>
                                 <td>Left aligned text.</td>
                             </tr>
                             <tr>
-                                <td><code>.ta-center</code> or <code>center</code></td>
+                                <td><code>.center</code> or <code>.ta-center</code></td>
                                 <td>:</td>
                                 <td>Center aligned text.</td>
                             </tr>
                             <tr>
-                                <td><code>.ta-right</code> or <code>right</code></td>
+                                <td><code>.right</code> or <code>.ta-right</code></td>
                                 <td>:</td>
                                 <td>Right aligned text.</td>
                             </tr>
                             <tr>
-                                <td><code>.ta-justify</code> or <code>justify</code></td>
+                                <td><code>.justify</code> or <code>.ta-justify</code></td>
                                 <td>:</td>
                                 <td>Justified text.</td>
                             </tr>
@@ -937,22 +972,22 @@
 
                     <!-- Text Decoration -->
                     <section>
-                        <h2>Text Decoration</h2>
+                        <h2 class="fw700">Text Decoration</h2>
                         <table>
                             <tr>
-                                <td><code>.line-through</code> or <code>tline</code></td>
-                                <td>:</td>
-                                <td class="tline">Line through</td>
-                            </tr>
-                            <tr>
-                                <td><code>.underline</code> or <code>.uline</code></td>
+                                <td><code>.uline</code> or <code>.underline</code></td>
                                 <td>:</td>
                                 <td class="uline">Underline text.</td>
                             </tr>
                             <tr>
-                                <td><code>.overline</code> or <code>oline</code></td>
+                                <td><code>.oline</code> or <code>.overline</code></td>
                                 <td>:</td>
                                 <td class="oline">Overline text.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.tline</code> or <code>.line-through</code></td>
+                                <td>:</td>
+                                <td class="tline">Line through</td>
                             </tr>
                             <tr>
                                 <td><code>.noline</code></td>
@@ -962,109 +997,291 @@
                         </table>
                     </section>
                     <!-- Text Decoration -->
-                  
-
-
 
                     <!-- Margins -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Margins</h2>
-                        Syntax: <code class="language-css">.prefix-value[-device]</code>  <br> 
-                        prefix = ma/mt/mb/ml/mr/mv/mh <br>
-                            ma: margin all<br>
-                            mt: margin-top<br>
-                            mb: margin-bottom <br>
-                            ml: margin-left <br>
-                            mr: margin-right <br>
-                            mv: vertical margin (top+bottom)<br>
-                            mh: horizontal margin (left+right)<br>
-                        value = auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400 <br>
-                        device = sm/lg <br>
+                    <section>
+                        <h2 class="fw700">Margins</h2>
+                       
+                        <p class="mt15 mb05">Available margin values (in rem) -</p>
+                        <div class="grid fr12 values">
+                            <code>0.1</code>
+                            <code>0.2</code>
+                            <code>0.4</code>
+                            <code>0.5</code>
+                            <code>0.6</code>
+                            <code>0.7</code>
+                            <code>0.8</code>
+                            <code>0.9</code>
+                            <code>1.0</code>
+                            <code>1.1</code>
+                            <code>1.2</code>
+                            <code>1.3</code>
+                            <code>1.4</code>
+                            <code>1.5</code>
+                            <code>1.6</code>
+                            <code>1.7</code>
+                            <code>1.8</code>
+                            <code>1.9</code>
+                            <code>2.0</code>
+                            <code>2.1</code>
+                            <code>2.2</code>
+                            <code>2.3</code>
+                            <code>2.4</code>
+                            <code>2.5</code>
+                            <code>2.6</code>
+                            <code>2.7</code>
+                            <code>2.8</code>
+                            <code>2.9</code>
+                            <code>3.0</code>
+                            <code>3.1</code>
+                            <code>3.2</code>
+                            <code>3.3</code>
+                            <code>3.4</code>
+                            <code>3.5</code>
+                            <code>3.6</code>
+                            <code>3.7</code>
+                            <code>3.8</code>
+                            <code>3.9</code>
+                            <code>4.0</code>
+                        </div>
                           
-                        <h3>Example</h3>
+                        <h3 class="mt20 fs10 fw500">Margin All <code>.ma</code></h3>
                         <table>
                             <tr>
-                                <td><code class="language-css">.ma-auto</code></td>
-                                <td>: creates all 'margin: auto' on all devices.</td>
+                                <td><code>.ma-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates margin for all sides 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.ma-auto-sm</code></td>
-                                <td>: creates all 'margin: auto' on small devices.</td>
+                                <td><code>.ma-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates margin for all sides 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.ma-auto-lg</code></td>
-                                <td>: creates all 'margin: auto' on large devices.</td>
+                                <td><code>.ma-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates margin for all sides 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Margin Left <code>.ml</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.ml-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates left margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.mb-020</code></td>
-                                <td>: creates 'margin-bottom: 0.20rem' on all devices.</td>
+                                <td><code>.ml-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates left margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.mb-020-sm</code></td>
-                                <td>: creates 'margin-bottom: 0.20rem' on small devices.</td>
+                                <td><code>.ml-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates left margin 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Margin Right <code>.mr</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.mr-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates right margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.mb-020-lg</code></td>
-                                <td>: creates 'margin-bottom: 0.20rem' on large devices.</td>
+                                <td><code>.mr-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates right margin 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.mr-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates right margin 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Margin Top <code>.mt</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.mt-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates top margin 2.0rem. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.mt-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates top margin 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.mt-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates top margin 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Margin Bottom <code>.mb</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.mb-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates bottom margin 2.0rem. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.mb-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates bottom margin 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.mb-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates bottom margin 1.9rem on large devices. </td>
                             </tr>
                         </table>
                     </section>
                     <!-- Margins -->
 
                     <!-- Paddings -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Paddings</h2>
+                    <section>
+                        <h2 class="fw700">Padding</h2>
+                       
+                        <p class="mt15 mb05">Available padding values (in rem) -</p>
+                        <div class="grid fr12 values">
+                            <code>0.1</code>
+                            <code>0.2</code>
+                            <code>0.4</code>
+                            <code>0.5</code>
+                            <code>0.6</code>
+                            <code>0.7</code>
+                            <code>0.8</code>
+                            <code>0.9</code>
+                            <code>1.0</code>
+                            <code>1.1</code>
+                            <code>1.2</code>
+                            <code>1.3</code>
+                            <code>1.4</code>
+                            <code>1.5</code>
+                            <code>1.6</code>
+                            <code>1.7</code>
+                            <code>1.8</code>
+                            <code>1.9</code>
+                            <code>2.0</code>
+                            <code>2.1</code>
+                            <code>2.2</code>
+                            <code>2.3</code>
+                            <code>2.4</code>
+                            <code>2.5</code>
+                            <code>2.6</code>
+                            <code>2.7</code>
+                            <code>2.8</code>
+                            <code>2.9</code>
+                            <code>3.0</code>
+                            <code>3.1</code>
+                            <code>3.2</code>
+                            <code>3.3</code>
+                            <code>3.4</code>
+                            <code>3.5</code>
+                            <code>3.6</code>
+                            <code>3.7</code>
+                            <code>3.8</code>
+                            <code>3.9</code>
+                            <code>4.0</code>
+                        </div>
+                          
+                        <h3 class="mt20 fs10 fw500">Padding All <code>.pa</code></h3>
                         <table>
                             <tr>
-                                <td>Syntax</td>
+                                <td><code>.pa-2.0</code></td>
                                 <td>:</td>
-                                <td><code class="language-css">.prefix-value[-device]</code></td>
+                                <td>Creates padding for all sides 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td>prefix</td>
-                                <td>=</td>
-                                <td>pa/pt/pb/pl/pr/pv/ph</td>
+                                <td><code>.pa-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates padding for all sides 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td>pa: padding all<br>
-                                    pt: padding-top<br>
-                                    pb: padding-bottom <br>
-                                    pl: padding-left <br>
-                                    pr: padding-right <br>
-                                    pv: vertical padding (top+bottom)<br>
-                                    ph: horizontal padding (left+right)<br><br></td>
-                            </tr>
-                            <tr>
-                                <td class="va-top">value</td>
-                                <td class="va-top">=</td>
-                                <td>auto, 0, 010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400</td>
-                            </tr>
-                            <tr>
-                                <td>device</td>
-                                <td>=</td>
-                                <td>sm/lg</td>
+                                <td><code>.pa-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates padding for all sides 1.9rem on large devices. </td>
                             </tr>
                         </table>
-                        <h3>Example</h3>
-                        <table class="example">
+
+                        <h3 class="mt20 fs10 fw500">Padding Left <code>.pl</code></h3>
+                        <table>
                             <tr>
-                                <td><code class="language-css">.pb-050</code></td>
-                                <td class="ph-050">:</td>
-                                <td>creates 'padding-bottom: 0.50rem' on all devices.</td>
-                            </tr>
-                            <tr>
-                                <td><code class="language-css">.pb-100-sm</code></td>
+                                <td><code>.pl-2.0</code></td>
                                 <td>:</td>
-                                <td>creates 'padding-bottom: 1.00rem' on small devices.</td>
+                                <td>Creates left padding 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.pb-125-lg</code></td>
+                                <td><code>.pl-0.9-sm</code></td>
                                 <td>:</td>
-                                <td>creates 'padding-bottom: 0.25rem' on large devices.</td>
+                                <td>Creates left padding 2.0rem on small devices. </td>
                             </tr>
-                        
+                            <tr>
+                                <td><code>.pl-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates left padding 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Padding Right <code>.pr</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.pr-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates right padding 2.0rem. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pr-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates right padding 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pr-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates right padding 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Padding Top <code>.pt</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.pt-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates top padding 2.0rem. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pt-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates top padding 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pt-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates top padding 1.9rem on large devices. </td>
+                            </tr>
+                        </table>
+
+                        <h3 class="mt20 fs10 fw500">Padding Bottom <code>.pb</code></h3>
+                        <table>
+                            <tr>
+                                <td><code>.pb-2.0</code></td>
+                                <td>:</td>
+                                <td>Creates bottom padding 2.0rem. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pb-0.9-sm</code></td>
+                                <td>:</td>
+                                <td>Creates bottom padding 2.0rem on small devices. </td>
+                            </tr>
+                            <tr>
+                                <td><code>.pb-1.9-lg</code></td>
+                                <td>:</td>
+                                <td>Creates bottom padding 1.9rem on large devices. </td>
+                            </tr>
                         </table>
                     </section>
                     <!-- Paddings -->

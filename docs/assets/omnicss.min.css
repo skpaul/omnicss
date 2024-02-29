@@ -631,47 +631,6 @@ h1, h2, h3, h4, h5, h6, p {
   font-family: var(--font-family-bangla) !important;
 }
 
-.ucase {
-  text-transform: uppercase;
-}
-
-.lcase {
-  text-transform: lowercase;
-}
-
-.capitalize, .cap {
-  text-transform: capitalize;
-}
-
-.ta-left {
-  text-align: left;
-}
-.ta-center {
-  text-align: center;
-}
-.ta-right {
-  text-align: right;
-}
-.ta-justify {
-  text-align: justify;
-}
-
-.left {
-  text-align: left;
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
-
-.justify {
-  text-align: justify;
-}
-
 .va-baseline {
   vertical-align: baseline;
 }
@@ -701,22 +660,6 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .va-inherit {
   vertical-align: inherit;
-}
-
-.line-through, .tline {
-  text-decoration: line-through;
-}
-
-.underline, .uline {
-  text-decoration: underline;
-}
-
-.overline, .oline {
-  text-decoration: overline;
-}
-
-.noline {
-  text-decoration: none;
 }
 
 a {
@@ -3858,6 +3801,63 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
     line-height: 4.0rem;
   }
 }
+.ucase {
+  text-transform: uppercase;
+}
+
+.lcase {
+  text-transform: lowercase;
+}
+
+.ccase, .capitalize, .cap {
+  text-transform: capitalize;
+}
+
+.ta-left {
+  text-align: left;
+}
+.ta-center {
+  text-align: center;
+}
+.ta-right {
+  text-align: right;
+}
+.ta-justify {
+  text-align: justify;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.line-through, .tline {
+  text-decoration: line-through;
+}
+
+.underline, .uline {
+  text-decoration: underline;
+}
+
+.overline, .oline {
+  text-decoration: overline;
+}
+
+.noline {
+  text-decoration: none;
+}
+
 .card {
   border: var(--border);
   /*fallbacks for use when the property has not been set in :root*/

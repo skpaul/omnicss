@@ -35,10 +35,10 @@
 //Content
     
     @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
-    @import 'modules/content/text-transform'; //uppercase, lowercase, capitalize
-    @import 'modules/content/text-alignment'; //left, right, center, justify
+
+
     @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
-    @import 'modules/content/text-decoration'; //underline, overline, line-through, ...
+
 
    
  
@@ -54,6 +54,9 @@
     @import 'modules/typography/font-size'; // 
     @import 'modules/typography/font-weight'; //bold, bolder, lighter, 100-900
     @import 'modules/typography/line-height'; //.lh-1.1, .lh-1.2, ...., .lh-1.7
+    @import 'modules/typography/text-transform'; //uppercase, lowercase, capitalize
+    @import 'modules/typography/text-alignment'; //left, right, center, justify
+    @import 'modules/typography/text-decoration'; //underline, overline, line-through, ...
 
 //Component
     @import 'modules/component/card';  
