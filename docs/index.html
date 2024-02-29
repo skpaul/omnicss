@@ -406,7 +406,7 @@
                     <!-- Media Queries// -->
                     
                     <!-- Container -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                    <section>
                         <h2>Containers</h2>
                         <table>
                             <tr>
@@ -455,7 +455,7 @@
                     <!-- Container -->
 
                     <!-- Foreground colors -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
+                    <section>
                         <h2>Color <code>.c</code></h2>
                         
                         <div class="grid fr10 fr3-sm values">
@@ -523,48 +523,150 @@
                     <!-- Foreground colors -->
 
                     <!-- Background colors -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Background Colors</h2>
-                        Syntax: <code class="language-css">.prefix-colorName-shade</code>  <br>  
-                        prefix = bg <br>
-                        colorName = gray, red, green, blue, orange, teal, purple, yellow, pink, coral <br>
-                        You can customize the color shades in theme.css stylesheet. <br>
-                        shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                    <section>
+                        <h2>Background Color <code>.bg</code></h2>
+                       
+                        <p>Available colors-</p>
+                        <div class="grid fr10 fr3-sm values">
+                            <code>gray</code>
+                            <code>red</code>
+                            <code>green</code>
+                            <code>blue</code>
+                            <code>orange</code>
+                            <code>teal</code>
+                            <code>purple</code>
+                            <code>yellow</code>
+                            <code>pink</code>
+                            <code>coral</code>
+                        </div>
+                        
+                        <p class="mt10">Color density/shade-</p>
+                        <div class="grid fr10 fr3-sm values">
+                            <code>1</code>
+                            <code>2</code>
+                            <code>3</code>
+                            <code>4</code>
+                            <code>5</code>
+                            <code>6</code>
+                            <code>7</code>
+                            <code>8</code>
+                            <code>9</code>
+                            <code>10</code>
+                        </div>
+
+                        <p class="pv-250">
+                            You can customize the color shades in <code>theme.css</code> stylesheet.
+                        </p>
                             
-                        <h3>Example</h3>
-                        <ul>
-                            <li><code class="language-css">.bg-red-9</code></li>
-                            <li><code class="language-css">.bg-dark</code> Slight dark shade of default page background color</li>
-                            <li><code class="language-css">.bg-light</code> Slight light shade of default page background color</li>
-                            <li><code class="language-css">.bg-0</code>transparent</li>
-                        </ul>
+                        <h3 class="mt-2.0">Example</h3>
+                        <table>
+                            <tr>
+                                <td><code>.bg-green-3</code></td>
+                                <td>:</td>
+                                <td class="bg-green-3 cGreen9 ph10">3rd shade of green color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.bg-yellow-5</code></td>
+                                <td>:</td>
+                                <td class="bg-yellow-5 ph10">5th shade of yellow color.</td>
+                            </tr>
+                        </table>
+                        
+                        <p class="mt20">
+                            You can also use light/dark shade of <code>--background-color</code> defined in theme.css -
+                        </p>
+                        <table>
+                            <tr>
+                                <td><code>.bg-dark</code></td>
+                                <td>:</td>
+                                <td class="bg-dark">Dark shaded background color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.bg-light</code></td>
+                                <td>:</td>
+                                <td class="bg-light">Light shaded background color.</td>
+                            </tr>
+                        </table>
+
+                        <p class="mt20">
+                            Use <code>.bg-0</code> for transparent background color.
+                        </p>
                     </section>
                     <!-- Background colors -->
 
                     <!-- Border colors -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Border Colors</h2>
-                        Syntax: <code class="language-css">.prefix-colorName-shade</code>  <br> 
-                        prefix = bc [bc = border-color] <br>
-                        colorName = gray, red, green, blue, orange, teal, purple, yellow, pink and coral. You can customize the color shades in theme.css stylesheet. <br>
-                        shade = 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 <br>
+                    <section>
+                        <h2>Border Color <code>.bc</code></h2>
+                       
+                        <p>Available colors-</p>
+                        <div class="grid fr10 fr3-sm values">
+                            <code>gray</code>
+                            <code>red</code>
+                            <code>green</code>
+                            <code>blue</code>
+                            <code>orange</code>
+                            <code>teal</code>
+                            <code>purple</code>
+                            <code>yellow</code>
+                            <code>pink</code>
+                            <code>coral</code>
+                        </div>
+                        
+                        <p class="mt10">Color density/shade-</p>
+                        <div class="grid fr10 fr3-sm values">
+                            <code>1</code>
+                            <code>2</code>
+                            <code>3</code>
+                            <code>4</code>
+                            <code>5</code>
+                            <code>6</code>
+                            <code>7</code>
+                            <code>8</code>
+                            <code>9</code>
+                            <code>10</code>
+                        </div>
+
+                        <p class="mt10">
+                            You can customize the color shades in <code>theme.css</code> stylesheet.
+                        </p>
                             
-                        <h3>Example</h3>
-                        <ul>
-                            <li><code class="language-css">.bc-green-4</code> <span class="c-green-4">4th shade of green color.</span></li>
-                            <li><code class="language-css">.bc-dark</code> <span>Slight dark shade of default page background color as border color</span></li>
-                            <li><code class="language-css">.bc-light</code> <span>Slight light shade of default page background color as border color</span></li>
-                            <li><code class="language-css">.bc-0</code> Transparent border color.</li>
-                        </ul>
+                        <h3 class="mt-2.0">Example</h3>
+                        <table>
+                            <tr>
+                                <td><code>.bc-green-3</code></td>
+                                <td>:</td>
+                                <td class="ba bcGreen3 ph10">3rd shade of green color. Please note that, you must use <code>.ba</code> to set the border width and style. </td>
+                            </tr>
+                        </table>
+                        
+                        <p class="mt20">
+                            You can also use light/dark shade of <code>--background-color</code> defined in theme.css -
+                        </p>
+                        <table>
+                            <tr>
+                                <td><code>.bc-dark</code></td>
+                                <td>:</td>
+                                <td class="bc-dark">Dark shaded border color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.bc-light</code></td>
+                                <td>:</td>
+                                <td class="bc-light">Light shaded border color.</td>
+                            </tr>
+                        </table>
+
+                        <p class="mt20">
+                            Use <code>.bc-0</code> for transparent border color.
+                        </p>
                     </section>
                     <!-- Border colors -->
 
                     <!-- //font-size -->
                     <section>
-                        <h2>Font Size <code>.fs</code></h2>
+                        <h2 class="fw700">Font Size <code>.fs</code></h2>
                         <p>You can set font-size property in two ways- using rem and percentage.</p>
-                        <h3>Using rem-</h3>
-                        <div class="mt15 mb05">Available font sizes in rem are the following -</div>
+                        <h3 class="fs12 fw500 mt20" >Using rem -</h3>
+                        <div class="mt10 mb05">Available font sizes in rem are the following -</div>
                         
                         <div class="grid fr12 values">
                             <code>0.1</code>
@@ -608,7 +710,7 @@
                             <code>4.0</code>
                         </div>
 
-                        <h4 class="mt-12">Example</h4>
+                        <h4 class="mt12">Example</h4>
                         <table>
                             <tr>
                                 <td><code>.fs-0.5</code></td>
@@ -618,23 +720,20 @@
                             <tr>
                                 <td><code>.fs-1.2-sm</code></td>
                                 <td>:</td>
-                                <td>Sets font size <code>1.2rem</code> in small devices</td>
+                                <td>Sets font size <code>1.2rem</code> in small devices.</td>
                             </tr>
                             <tr>
                                 <td><code>.fs-2.0-lg</code></td>
                                 <td>:</td>
-                                <td>Sets font size <code>2.0rem</code> in large devices</td>
+                                <td>Sets font size <code>2.0rem</code> in large devices.</td>
                             </tr>
                         </table>
 
-                        
-
-                        <h3>Using percentage-</h3>
+                        <h3 class="fs12 fw500 mt20" >Using percentage -</h3>
                         <div class="mt15 mb05">Available font sizes in % are the following -</div>
                         <div class="grid fr12 values">
                             <code>10%</code><code> 20%</code><code> 30%</code><code> 40%</code><code> 50%</code><code> 60%</code><code> 70%</code><code> 80%</code><code> 90%</code><code> 100%</code><code> 110%</code><code> 120%</code><code> 130%</code><code> 140%</code><code> 150%</code><code> 160%</code><code> 170%</code><code> 180%</code><code> 190%</code><code> 200%</code><code> 210%</code><code> 220%</code><code> 230%</code><code> 240%</code><code> 250%</code><code> 260%</code><code> 270%</code><code> 280%</code><code> 290%</code><code> 300%</code><code> 310%</code><code> 320%</code><code> 330%</code><code> 340%</code><code> 350%</code><code> 360%</code><code> 370%</code><code> 380%</code><code> 390%</code><code> 400%</code>
                         </div>
-
           
                         <h4 class="mt10">Example</h4>
                         <table>
@@ -658,7 +757,7 @@
 
                     <!-- Font Style -->
                     <section>
-                        <h2>Font Style <code>.fs</code></h2>
+                        <h2 class="fw700">Font Style <code>.fs</code></h2>
                         <table>
                             <tr>
                                 <td><code>.italic</code></td>
@@ -671,7 +770,7 @@
 
                     <!-- Font Weight -->
                     <section>
-                        <h2>Font Weight <code>.fw</code></h2>
+                        <h2 class="fw700">Font Weight <code>.fw</code></h2>
                         <table>
                             <tr>
                                 <td><code>.bold</code> or <code>.strong</code></td>
@@ -740,7 +839,7 @@
 
                     <!-- White Space -->
                     <section>
-                        <h2>White Space <code>.ws</code></h2>
+                        <h2 class="fw700">White Space <code>.ws</code></h2>
                         <table>
                             <tr>
                                 <td><code>.ws-nowrap</code></td>
@@ -753,13 +852,9 @@
 
                     <!-- Line Heights -->
                     <section>
-                        <h2>Line Height<code>.lh</code></h2>
+                        <h2 class="fw700">Line Height<code>.lh</code></h2>
                         <table>
-                            <tr>
-                                <td>Syntax</td>
-                                <td>:</td>
-                                <td><code>.lh-value[-device]</code></td>
-                            </tr>
+                           
                             <tr>
                                 <td></td>
                                 <td></td>

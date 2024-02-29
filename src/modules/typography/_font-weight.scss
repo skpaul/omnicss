@@ -14,6 +14,9 @@
     &-#{$suffix}{
         font-weight: #{$suffix};
     }
+    &#{$suffix}{
+        font-weight: #{$suffix};
+    }
 }
 
 .fw{

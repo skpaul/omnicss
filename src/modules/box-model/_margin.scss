@@ -86,23 +86,8 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
     @include create-margin("mr", "margin-right", "general", "-lg"); 
     @include create-margin("mr", "margin-right", "compact", "Lg"); 
 }
-
-@mixin create-both-margin-in-rem($prefix, $property1, $property2, $device) {
-    
-    @each $value in $values{
-        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-        .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
-            #{$property1}: #{$value} + 'rem' !important;
-            #{$property2}: #{$value} + 'rem' !important;
-        }
-        .#{$prefix}#{$part1}\.#{$part2}#{$device}{
-            #{$property1}: #{$value} + 'rem' !important;
-            #{$property2}: #{$value} + 'rem' !important;
-        }
-    }
-}
  
+
 @mixin create-both-margin($prefix, $property1, $property2, $version, $device:"") {
 
     @if $version == "general" {
@@ -139,7 +124,7 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
         @each $value in $values{
             $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
             $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
                 #{$property1}: #{$value} + 'rem' !important;
                 #{$property2}: #{$value} + 'rem' !important;
             }

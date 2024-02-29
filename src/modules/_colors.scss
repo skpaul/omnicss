@@ -13,97 +13,74 @@
         #{$property}: var(--#{$color}-#{$scale});
     }  
 }
+@mixin add-color-compact($color, $scale, $property) {
+    &#{$color}#{$scale}{
+        // #{$property}: var(--#{$color}-#{$scale});
+        #{$property}: var(--#{to-lower-case($color)}-#{$scale});
+    }  
+}
 
 @mixin create-rule($property) {
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("gray", $scale , $property);
-        // @include add-color("blue", $scale , $property);
-        // @include add-color("green", $scale , $property);
-        // @include add-color("yellow", $scale , $property);
-        // @include add-color("orange", $scale , $property);
-        // @include add-color("red", $scale , $property);
-        // @include add-color("purple", $scale , $property);
-        // @include add-color("pink", $scale , $property);
-        // @include add-color("coral", $scale , $property);
-        // @include add-color("teal", $scale , $property);
+        @include add-color-compact("Gray", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("blue", $scale , $property);
+        @include add-color-compact("Blue", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("green", $scale , $property);
+        @include add-color-compact("Green", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("yellow", $scale , $property);
+        @include add-color-compact("Yellow", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("orange", $scale , $property);
+        @include add-color-compact("Orange", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("red", $scale , $property);
+        @include add-color-compact("Red", $scale , $property);
     }
-    @for $scale from 0 through 9 {
-        @include add-color("red", $scale , $property);
-    }
-    @for $scale from 0 through 9 {
-        @include add-color("red", $scale , $property);
-    }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("purple", $scale , $property);
+        @include add-color-compact("Purple", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("pink", $scale , $property);
+        @include add-color-compact("Pink", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("coral", $scale , $property);
+        @include add-color-compact("Coral", $scale , $property);
     }
-    @for $scale from 0 through 9 {
+    @for $scale from 1 through 10 {
         @include add-color("teal", $scale , $property);
+        @include add-color-compact("Teal", $scale , $property);
     }
 }
 
-.bg{
-    @include create-rule("background-color");
-}
 .c{
     @include create-rule("color");
+}
+.bg{
+    @include create-rule("background-color");
 }
 .bc{
     @include create-rule("border-color");
 }
 
+.c-0{color: transparent;} .c0{color: transparent;}
+.bg-0{background-color: transparent;} .bg0{background-color: transparent;}
+.bc-0{border-color: transparent;} .bc0{border-color: transparent;}
 
+.c-dark{color: var(--dark);} .cDark{color: var(--dark);}
+.bg-dark{background-color: var(--dark);} .bgDark{background-color: var(--dark);}
+.bc-dark{border-color: var(--dark);} .bcDark{border-color: var(--dark);}
 
-.bg-0{
-    background-color: transparent;
-}
-.c-0{
-    color: transparent;
-}
-.bc-0{
-    border-color: transparent;
-}
-
-.bg-dark{
-    background-color: var(--dark);
-}
-.c-dark{
-    color: var(--dark);
-}
-.bc-dark{
-    border-color: var(--dark);
-}
-
-.bg-light{
-    background-color: var(--light);
-}
-.c-light{
-    color: var(--light);
-}
-.bc-light{
-    border-color: var(--light);
-}
-
-
-
-   
+.c-light{color: var(--light);} .cLight{color: var(--light);}
+.bg-light{background-color: var(--light);} .bgLight{background-color: var(--light);}
+.bc-light{border-color: var(--light); } .bcLight{ border-color: var(--light); }  

@@ -1,133 +1,138 @@
 $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '2.0' '2.1' '2.2' '2.3' '2.4' '2.5' '2.6' '2.7' '2.8' '2.9' '3.0' '3.1' '3.2' '3.3' '3.4' '3.5' '3.6' '3.7' '3.8' '3.9' '4.0';
 
-@mixin create-padding-in-rem($prefix, $property, $device) {
-    // @each $value in $values{
-    //     $esc: str-replace($value, '.', '' ); // see _functions.scss 
-    //     .#{$prefix}-#{$esc}#{$device}{
-    //         #{$property}:#{$value} + 'rem';
-    //     }
-    // }
 
-    //General version. Create rules like .pa-1.4
-    @each $value in $values{
-        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-        .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
-            #{$property}:#{$value} + 'rem';
+
+@mixin create-padding($prefix, $property, $version, $device:"") {
+    @if $version == "general" {
+        //General version. Create rules like .ma-1.4
+        .#{$prefix}-0#{$device} {
+            #{$property}: 0 !important;
         }
-    }
 
-    //Compact version. Create rules like .pa14
-    @each $value in $values{
-        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-        .#{$prefix}#{$part1}#{$part2}#{$device}{
-            #{$property}:#{$value} + 'rem'; 
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
+        }
+    } @else {
+        //Compact version. Create rules like .ma14
+        .#{$prefix}0#{$device} {
+            #{$property}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
         }
     }
 }
 
-@mixin create-padding($prefix, $property, $device:"") {
-    .#{$prefix}-auto#{$device} {
-        #{$property}: auto !important;
-    }
-    .#{$prefix}Auto#{$device} {
-        #{$property}: auto !important;
-    }
-    .#{$prefix}-0#{$device} {
-        #{$property}: 0 !important;
-    }
+@include create-padding("pa", "padding", "general"); 
+@include create-padding("pa", "padding", "compact"); 
 
-    @include create-padding-in-rem($prefix, $property, $device)
-}
+@include create-padding("pt", "padding-top", "general"); 
+@include create-padding("pt", "padding-top", "compact"); 
 
-@include create-padding("pa", "padding"); 
-@include create-padding("pt", "padding-top"); 
-@include create-padding("pb", "padding-bottom"); 
-@include create-padding("pl", "padding-left"); 
-@include create-padding("pr", "padding-right"); 
+@include create-padding("pb", "padding-bottom", "general"); 
+@include create-padding("pb", "padding-bottom", "compact"); 
+
+@include create-padding("pl", "padding-left", "general"); 
+@include create-padding("pl", "padding-left", "compact"); 
+
+@include create-padding("pr", "padding-right", "general"); 
+@include create-padding("pr", "padding-right", "compact"); 
 
 @include small(){
-    @include create-padding("pa", "padding", "-sm"); 
-    @include create-padding("pt", "padding-top", "-sm"); 
-    @include create-padding("pb", "padding-bottom", "-sm"); 
-    @include create-padding("pl", "padding-left", "-sm"); 
-    @include create-padding("pr", "padding-right", "-sm"); 
+    @include create-padding("pa", "padding", "general", "-sm"); 
+    @include create-padding("pa", "padding", "compact", "Sm"); 
+
+    @include create-padding("pt", "padding-top", "general", "-sm"); 
+    @include create-padding("pt", "padding-top", "compact", "Sm"); 
+
+    @include create-padding("pb", "padding-bottom", "general", "-sm"); 
+    @include create-padding("pb", "padding-bottom", "compact", "Sm"); 
+
+    @include create-padding("pl", "padding-left", "general", "-sm"); 
+    @include create-padding("pl", "padding-left", "compact", "Sm"); 
+
+    @include create-padding("pr", "padding-right", "general", "-sm"); 
+    @include create-padding("pr", "padding-right", "compact", "Sm"); 
 }
 
 @include large(){
-    @include create-padding("pa", "padding", "-lg"); 
-    @include create-padding("pt", "padding-top", "-lg"); 
-    @include create-padding("pb", "padding-bottom", "-lg"); 
-    @include create-padding("pl", "padding-left", "-lg"); 
-    @include create-padding("pr", "padding-right", "-lg"); 
+    @include create-padding("pa", "padding", "general", "-lg"); 
+    @include create-padding("pa", "padding", "compact", "Lg"); 
+
+    @include create-padding("pt", "padding-top", "general", "-lg"); 
+    @include create-padding("pt", "padding-top", "compact", "Lg"); 
+
+    @include create-padding("pb", "padding-bottom", "general", "-lg"); 
+    @include create-padding("pb", "padding-bottom", "compact", "Lg"); 
+
+    @include create-padding("pl", "padding-left", "general", "-lg"); 
+    @include create-padding("pl", "padding-left", "compact", "Lg"); 
+
+    @include create-padding("pr", "padding-right", "general", "-lg"); 
+    @include create-padding("pr", "padding-right", "compact", "Lg"); 
 }
 
-@mixin create-both-padding-in-rem($prefix, $property1, $property2, $device) {
-    @each $value in $values{
-        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-        .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
-            #{$property1}: #{$value} + 'rem' !important;
-            #{$property2}: #{$value} + 'rem' !important;
+@mixin create-both-padding($prefix, $property1, $property2, $version, $device:"") {
+
+    @if $version == "general" {
+        .#{$prefix}-0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
         }
 
-        .#{$prefix}#{$part1}#{$part2}#{$device}{
-            #{$property1}: #{$value} + 'rem' !important;
-            #{$property2}: #{$value} + 'rem' !important;
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
+        }
+
+    } @else {
+        .#{$prefix}0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
         }
     }
-    // @each $value in $values{
-    //     $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-    //     $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-
-    //     .#{$prefix}#{$part1}\.#{$part2}#{$device}{
-    //         #{$property1}: #{$value} + 'rem' !important;
-    //         #{$property2}: #{$value} + 'rem' !important;
-    //     }
-    // }
-}
- 
-@mixin create-both-padding($prefix, $property1, $property2, $device:"") {
-    .#{$prefix}-auto#{$device} {
-        #{$property1}: auto !important;
-        #{$property2}: auto !important;
-    }
-    .#{$prefix}Auto#{$device} {
-        #{$property1}: auto !important;
-        #{$property2}: auto !important;
-    }
-    .#{$prefix}-0#{$device} {
-        #{$property1}: 0 !important;
-        #{$property2}: 0 !important;
-    }
-    .#{$prefix}0#{$device} {
-        #{$property1}: 0 !important;
-        #{$property2}: 0 !important;
-    }
-  
-    @include create-both-padding-in-rem($prefix, $property1, $property2, $device);   
 }
 
-@include create-both-padding("pv", "padding-top","padding-bottom"); 
-@include create-both-padding("ph", "padding-left","padding-right"); 
+@include create-both-padding("pv", "padding-top","padding-bottom", "general"); 
+@include create-both-padding("pv", "padding-top","padding-bottom", "compact"); 
+
+@include create-both-padding("ph", "padding-left","padding-right", "general"); 
+@include create-both-padding("ph", "padding-left","padding-right", "compact"); 
 
 @include small(){
-    @include create-both-padding("pv", "padding-top","padding-bottom", "-sm"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "-sm"); 
-}
+    @include create-both-padding("pv", "padding-top","padding-bottom", "general", "-sm"); 
+    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "Sm"); 
 
-@include small(){
-    @include create-both-padding("pv", "padding-top","padding-bottom", "Sm"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "Sm"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "general", "-sm"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "compact", "Sm"); 
 }
 
 @include large(){
-    @include create-both-padding("pv", "padding-top","padding-bottom", "-lg"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "-lg"); 
-}
+    @include create-both-padding("pv", "padding-top","padding-bottom", "general", "-lg"); 
+    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "Lg"); 
 
-@include large(){
-    @include create-both-padding("pv", "padding-top","padding-bottom", "Lg"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "Lg"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "general", "-lg"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "compact", "Lg"); 
 }
