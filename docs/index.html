@@ -69,7 +69,7 @@
             white-space: nowrap;
             background-color: #162233;
             font-size: 0.8rem;
-            color: #ddca9e;
+            color: #ffe8b1;
         }
         code[class*=language-] {
             white-space: break-spaces;
@@ -104,9 +104,9 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="mt-300 mb-100 fs-3.00">OmniCSS v11.0.22</div>
-            <h1 class="mb150" style="font-size: 1.5rem !important;">
-                A semantic hand-full CSS <code class="language-css">.class</code> library for busy developers.
+            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v11.0.22</code></div>
+            <h1 class="mb15 fs15">
+                A semantic & handy <code>.css</code> library for busy developers.
             </h1>
         </div>
     </header>
@@ -126,10 +126,11 @@
                         </div>
                         <br>
                         <div>
-                            As an alternative, download the latest repo from <a href="https://github.com/skpaul/omnicss">GitHub</a> .
+                            As an alternative, download the latest repo from <a class="pointer cBlue4" href="https://github.com/skpaul/omnicss">GitHub</a> .
                         </div>
+                        <br>
                         <p>
-                            You'll also need to download the theme.css.
+                            You'll also need to download the <code>theme.css</code>.
                         </p>
                     </section>
                     <!-- Installation// -->
@@ -137,12 +138,15 @@
                     <!-- //default settings -->
                     <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
                         <h2 class="fs-150 fw-600">Default settings</h2>
-                        <p>See details in theme.css. You can change any - </p>
-                        <h3>Import google fonts</h3>
-                        <p>If you want to use google font/s, you can import here.</p>
-                        <h3>Color Schemes</h3>
-                        <p>Your color schemes will be here.</p>
-                        <h3>Other</h3>
+                        <p>Some default values are set in <code>theme.css</code>. You can customize those as your requirements.</p>
+                        
+                        <h3 class="fw500 mt15">Import google fonts</h3>
+                        <p>All required google fonts have been imported in <code>theme.css</code>. You can import your preferable fonts.</p>
+
+                        <h3 class="fw500 mt15">Color Schemes</h3>
+                        <p><code>theme.css</code> contains color names and shades. You can modify any time.</p>
+
+                        <h3 class="fw500 mt15">Default values -</h3>
                         <table>
                             <tr>
                                 <td><code>--container-max-width</code></td>
@@ -408,45 +412,45 @@
                     
                     <!-- Container -->
                     <section>
-                        <h2>Containers</h2>
+                        <h2 class="fw700">Containers</h2>
                         <table>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-fluid</code></td>
+                                <td><code class="ws-nowrap">.container-fluid</code></td>
                                 <td>:</td>
                                 <td>Full width container</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.container</code></td>
+                                <td><code>.container</code></td>
                                 <td>:</td>
                                 <td>Max width 1200px default. You can change <code>--container-max-width</code> in theme.css to change the default value.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-1100</code></td>
+                                <td><code class="ws-nowrap">.container-1100</code></td>
                                 <td>:</td>
                                 <td>Max width 1100px</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-1000</code></td>
+                                <td><code class="ws-nowrap">.container-1000</code></td>
                                 <td>:</td>
                                 <td>Max width 1000px</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-900</code></td>
+                                <td><code class="ws-nowrap">.container-900</code></td>
                                 <td>:</td>
                                 <td>Max width 900px</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-800</code></td>
+                                <td><code class="ws-nowrap">.container-800</code></td>
                                 <td>:</td>
                                 <td>Max width 800px</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-700</code></td>
+                                <td><code class="ws-nowrap">.container-700</code></td>
                                 <td>:</td>
                                 <td>Max width 700px</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css ws-nowrap">.container-600</code></td>
+                                <td><code class="ws-nowrap">.container-600</code></td>
                                 <td>:</td>
                                 <td>Max width 600px</td>
                             </tr>
@@ -457,7 +461,7 @@
 
                     <!-- Foreground colors -->
                     <section>
-                        <h2>Color <code>.c</code></h2>
+                        <h2 class="fw700">Color <code>.c</code></h2>
                         
                         <div class="grid fr10 fr3-sm values">
                             <code>gray</code>
@@ -525,7 +529,7 @@
 
                     <!-- Background colors -->
                     <section>
-                        <h2>Background Color <code>.bg</code></h2>
+                        <h2 class="fw700">Background Color <code>.bg</code></h2>
                        
                         <p>Available colors-</p>
                         <div class="grid fr10 fr3-sm values">
@@ -597,7 +601,7 @@
 
                     <!-- Border colors -->
                     <section>
-                        <h2>Border Color <code>.bc</code></h2>
+                        <h2 class="fw700">Border Color <code>.bc</code></h2>
                        
                         <p>Available colors-</p>
                         <div class="grid fr10 fr3-sm values">
@@ -669,7 +673,7 @@
                         <h3 class="fs12 fw500 mt20" >Using rem -</h3>
                         <div class="mt10 mb05">Available font sizes in rem are the following -</div>
                         
-                        <div class="grid fr12 values">
+                        <div class="grid fr10 fr3-sm values">
                             <code>0.1</code>
                             <code>0.2</code>
                             <code>0.4</code>
@@ -1287,53 +1291,53 @@
                     <!-- Paddings -->
 
                     <!-- Table -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Table</h2>
+                    <section>
+                        <h2 class="fw700">Table</h2>
                         <table>
                             <tr>
-                                <td class="va-top"><code  class="language-css">.table</code></td>
+                                <td class="va-top"><code>.table</code></td>
                                 <td class="va-top">:</td>
                                 <td>
-                                    <code class="language-css">background-color: var(--table-background-color);</code> <br>
-                                    <code class="language-css">border: 1px solid var(--table-border-color);</code> <br>
-                                    <code class="language-css">border-radius: var(--border-radius);</code> <br>
-                                    <code class="language-css">border-spacing: 0;</code> <br>
-                                    <code class="language-css">overflow: hidden;</code> <br>
-                                    <code class="language-css">font-size: 0.9rem;</code> <br>
+                                    <code>background-color: var(--table-background-color);</code> <br>
+                                    <code>border: 1px solid var(--table-border-color);</code> <br>
+                                    <code>border-radius: var(--border-radius);</code> <br>
+                                    <code>border-spacing: 0;</code> <br>
+                                    <code>overflow: hidden;</code> <br>
+                                    <code>font-size: 0.9rem;</code> <br>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="va-top"><code class="language-css">.thead</code></td>
+                                <td class="va-top"><code>.thead</code></td>
                                 <td class="va-top">:</td>
                                 <td>
-                                    <code class="language-css">background-color: var(--thead-background-color);</code> <br>
-                                    <code class="language-css">color: var(--thead-color);</code> <br>
-                                    <code class="language-css">text-align: center;</code>
+                                    <code>background-color: var(--thead-background-color);</code> <br>
+                                    <code>color: var(--thead-color);</code> <br>
+                                    <code>text-align: center;</code>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="va-top"><code class="language-css">.th</code></td>
+                                <td class="va-top"><code>.th</code></td>
                                 <td class="va-top">:</td>
                                 <td>
-                                    <code class="language-css">font-weight: 600;</code> <br>
-                                    <code class="language-css">padding: 0.2345rem;</code> <br>
-                                    <code class="language-css">border-bottom: 2px solid var(--th-border-color);</code> <br>
-                                    <code class="language-css"> word-break: break-all;</code>
+                                    <code>font-weight: 600;</code> <br>
+                                    <code>padding: 0.2345rem;</code> <br>
+                                    <code>border-bottom: 2px solid var(--th-border-color);</code> <br>
+                                    <code> word-break: break-all;</code>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="va-top"><code class="language-css">.tbody</code></td>
+                                <td class="va-top"><code>.tbody</code></td>
                                 <td class="va-top">:</td>
                                 <td>
-                                    <code class="language-css">color: var(--tbody-color);</code>
+                                    <code>color: var(--tbody-color);</code>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="va-top"><code class="language-css">.tr</code></td>
+                                <td class="va-top"><code>.tr</code></td>
                                 <td class="va-top">:</td>
                                 <td>
-                                    <code class="language-css">background-color: var(--tr-even-background-color);</code> //Sets bg color on even rows. <br>
-                                    <code class="language-css">background-color: var(--tr-hover-background-color);</code> //Sets bg color on hover. <br>
+                                    <code>background-color: var(--tr-even-background-color);</code> //Sets bg color on even rows. <br>
+                                    <code>background-color: var(--tr-hover-background-color);</code> //Sets bg color on hover. <br>
                                 </td>
                             </tr>
                         </table>
@@ -1341,8 +1345,8 @@
                     <!-- Table// -->
 
                     <!-- Spinner -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Spinner/Loader</h2>
+                    <section>
+                        <h2 class="fw700">Spinner/Loader</h2>
                         <table>
                             <tr>
                                 <td><code>.spinner</code><code>.loader</code></td>
@@ -1354,124 +1358,158 @@
                     <!-- Spinner// -->
 
                     <!-- Borders -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Borders <code>.b</code></h2>
+                    <section>
+                        <h2 class="fw700">Borders <code>.b</code></h2>
                         <table>
                             <tr>
-                                <td><code class="language-css">.ba</code></td>
+                                <td><code>.ba</code></td>
                                 <td>:</td>
-                                <td>Sets <code>border-width: 1px; border-style: solid;</code></td>
+                                <td>Sets 1px solid borders for all sides.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.bt</code></td>
+                                <td><code>.bt</code></td>
                                 <td>:</td>
-                                <td>sets <code>border-top-width: 1px; border-top-style: solid;</code></td>
+                                <td>Sets 1px solid <code>top</code> border.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.bb</code></td>
+                                <td><code>.bb</code></td>
                                 <td>:</td>
-                                <td>Sets <code>border-bottom-width: 1px; border-bottom-style: solid;</code></td>
+                                <td>Sets 1px solid <code>bottom</code> border.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.bl</code></td>
+                                <td><code>.bl</code></td>
                                 <td>:</td>
-                                <td><code>border-left-width: 1px; border-left-style: solid;</code></td>
+                                <td>Sets 1px solid <code>left</code> border.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.br</code></td>
+                                <td><code>.br</code></td>
                                 <td>:</td>
-                                <td><code>border-right-width: 1px; border-right-style: solid;</code></td>
+                                <td>Sets 1px solid <code>right</code> border.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.bv</code></td>
+                                <td><code>.bv</code></td>
                                 <td>:</td>
-                                <td>Sets vertical borders (border-top + border-bottom). <code>border-top-width: 1px; border-top-style: solid; border-bottom-width: 1px; border-bottom-style: solid;</code></td>
+                                <td>Sets 1px solid borders vertically (left + right). To set border color, see Border Color section.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.bh</code></td>
+                                <td><code>.bh</code></td>
                                 <td>:</td>
-                                <td>border-horizontal (border-left + border-right).<code>border-left-width: 1px; border-left-style: solid; border-right-width: 1px; border-right-style: solid;</code></td>
+                                <td>Sets 1px solid borders horizontally (top + bottom). To set border color, see Border Color section.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.solid</code></td>
+                                <td><code>.solid</code></td>
                                 <td>:</td>
-                                <td><code>border-style: solid;</code></td>
+                                <td>Sets solid border style.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.dash</code></td>
+                                <td><code>.dash</code></td>
                                 <td>:</td>
-                                <td><code>border-style: dashed;</code></td>
+                                <td>Sets dashed border style.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.dot</code></td>
+                                <td><code>.dot</code></td>
                                 <td>:</td>
-                                <td><code>border-style: dotted;</code></td>
+                                <td>Sets dotted border style.</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.round</code></td>
+                                <td><code>.round</code></td>
                                 <td>:</td>
-                                <td><code>border-radius: 0.25rem;</code> 0.25rem is the default value. You can customize it in theme.css.</td>
+                                <td>Sets  <code>0.25rem</code> border radius. 0.25rem is the default value. You can customize it in <code>theme.css</code>.</td>
                             </tr>
                         </table>
                     </section>
                     <!-- Borders// -->
 
                     <!-- Border radius -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2>Border Radius <code>.br</code></h2>
-                        You can set border radius in two ways- 1. in px 2. in rem
-                        <h3>Border Radius in px</h3>
+                    <section>
+                        <h2 class="fw700">Border Radius <code>.br</code></h2>
+                        You can set border radius in two ways- px and rem.
+
+                        <h3 class="fs12 fw400 mt10" >Border Radius in <code>px</code> - </h3>
+                        <p>Available values</p>
+                        
+                        <div class="grid fr10 fr3-sm values">
+                            <code>1</code>
+                            <code>2</code>
+                            <code>3</code>
+                            <code>4</code>
+                            <code>5</code>
+                            <code>6</code>
+                            <code>7</code>
+                            <code>8</code>
+                            <code>9</code>
+                            <code>10</code>
+                        </div>
+                       
+                        <h4 class="mt12">Example</h4>
                         <table>
                             <tr>
-                                <td>Syntax</td>
-                                <td>:</td>
-                                <td><code>.br-value</code></td>
-                            </tr>
-                            <tr>
-                                <td>value</td>
-                                <td>=</td>
-                                <td>1, 2, 3, 4, 5, 6, 7, 8, 9, 10</td>
-                            </tr>
-                        </table>
-                        <h4>Example</h4>
-                        <table>
-                            <tr>
-                                <td><code class="language-css">.br-1</code></td>
+                                <td><code>.br-1</code></td>
                                 <td>:</td>
                                 <td>Sets border-radius: 1px;</td>
                             </tr>
                             <tr>
-                                <td><code class="language-css">.br-10</code></td>
+                                <td><code>.br-10</code></td>
                                 <td>:</td>
                                 <td>Sets border-radius: 10px;</td>
                             </tr>
                         </table>
 
 
-                        <h3>Border Radius in <code>rem</code></h3>
+                        <h3 class="fs12 fw400 mt19" >Border Radius in <code>rem</code> - </h3>
+                        <div class="grid fr10 fr3-sm values">
+                            <code>0.1</code>
+                            <code>0.2</code>
+                            <code>0.4</code>
+                            <code>0.5</code>
+                            <code>0.6</code>
+                            <code>0.7</code>
+                            <code>0.8</code>
+                            <code>0.9</code>
+                            <code>1.0</code>
+                            <code>1.1</code>
+                            <code>1.2</code>
+                            <code>1.3</code>
+                            <code>1.4</code>
+                            <code>1.5</code>
+                            <code>1.6</code>
+                            <code>1.7</code>
+                            <code>1.8</code>
+                            <code>1.9</code>
+                            <code>2.0</code>
+                            <code>2.1</code>
+                            <code>2.2</code>
+                            <code>2.3</code>
+                            <code>2.4</code>
+                            <code>2.5</code>
+                            <code>2.6</code>
+                            <code>2.7</code>
+                            <code>2.8</code>
+                            <code>2.9</code>
+                            <code>3.0</code>
+                            <code>3.1</code>
+                            <code>3.2</code>
+                            <code>3.3</code>
+                            <code>3.4</code>
+                            <code>3.5</code>
+                            <code>3.6</code>
+                            <code>3.7</code>
+                            <code>3.8</code>
+                            <code>3.9</code>
+                            <code>4.0</code>
+                        </div>
+
+                        <h4 class="mt15">Example</h4>
                         <table>
                             <tr>
-                                <td>Syntax</td>
+                                <td><code>.br-1.0</code></td>
                                 <td>:</td>
-                                <td><code>.br-value</code></td>
+                                <td>Sets <code>1.0rem</code> border radius.</td>
                             </tr>
                             <tr>
-                                <td>value</td>
-                                <td>=</td>
-                                <td>010, 020, 030, 040, 050, 060, 070, 080, 090, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200</td>
-                            </tr>
-                        </table>
-                        <h4>Example</h4>
-                        <table>
-                            <tr>
-                                <td><code class="language-css">.br-010</code></td>
+                                <td><code>.br-1.2</code></td>
                                 <td>:</td>
-                                <td>Sets <code class="language-css">border-radius: 0.10rem;</code></td>
-                            </tr>
-                            <tr>
-                                <td><code class="language-css">.br-120</code></td>
-                                <td>:</td>
-                                <td>Sets<code class="language-css">border-radius: 1.20rem;</code></td>
+                                <td>Sets <code>1.2rem</code> border radius.</td>
                             </tr>
                         </table>
                     </section>
@@ -1479,22 +1517,22 @@
 
                     <!-- Positioning -->
                     <section>
-                        <h2>Positioning</h2>
+                        <h2 class="fw700">Positioning</h2>
                         <table>
                             <tr>
                                 <td><code>.relative</code> or <code>.rel</code></td>
                                 <td>:</td>
-                                <td></td>
+                                <td>Relative positioning.</td>
                             </tr>
                             <tr>
                                 <td><code>.fixed</code></td>
                                 <td>:</td>
-                                <td></td>
+                                <td>Fixed positioning.</td>
                             </tr>
                             <tr>
-                                <td><code>absolute</code> or <code>.abs</code></td>
+                                <td><code>.absolute</code> or <code>.abs</code></td>
                                 <td>:</td>
-                                <td></td>
+                                <td>Absolute positioning.</td>
                             </tr>
                         </table>
                     </section>
@@ -1502,21 +1540,22 @@
 
                     <!-- Width -->
                     <section>
-                        <h2>Width <code class="language-css">.w</code></h2>
+                        <h2 class="fw700">Width <code>.w</code></h2>
                         <table>
                             <tr>
                                 <td><code>.w-full</code> or <code>.full-width</code></td>
                                 <td>:</td>
-                                <td><code>width:100% !important; </code></td>
+                                <td>Sets 100% width.</td>
                             </tr>
                             <tr>
                                 <td><code>.w-fit</code> or <code>.fit-content</code></td>
                                 <td>:</td>
                                 <td>
-                                    <code>width: fit-content !important;</code>
+                                   Sets <code>width: fit-content</code>. <br>
+                                    To be responsive use the following class -
                                     <div>
-                                        For responsive- <code>.w-fit-sm</code> <code>.w-fit-lg</code> 
-                                        <code>.fit-content-sm</code> <code>.fit-content-lg</code>
+                                        <code>.w-fit-sm</code> or <code>.fit-content-sm</code> <br>
+                                        <code>.w-fit-lg</code> or <code>.fit-content-lg</code>
                                     </div>
                                 </td>
                             </tr>
@@ -1524,20 +1563,25 @@
                                 <td><code>.w-min</code> or <code>.min-content</code></td>
                                 <td>:</td>
                                 <td>
-                                    <code>width: min-content !important;</code>
-                                    <div>
-                                        Responsive: <code>.w-min-sm</code> <code>.w.min-lg</code> <code>.min-content-sm</code> <code>.min-content-lg</code>
-                                    </div>
-                                </td>
+                                    Sets <code>width: min-content</code>. <br>
+                                     To be responsive use the following class -
+                                     <div>
+                                         <code>.w-min-sm</code> or <code>.min-content-sm</code> <br>
+                                         <code>.w-min-lg</code> or <code>.min-content-lg</code>
+                                     </div>
+                                 </td>
                             </tr>
                             <tr>
                                 <td><code>.w-max</code> or <code>.max-content</code></td>
                                 <td>:</td>
                                 <td>
-                                    <code>width: max-content !important;</code>
-                                    <div>Responsive</div>
-                                    <code>.w-max-sm</code> <code>.w-max-lg</code> <code>.max-content-sm</code> <code>.max-content-lg</code>
-                                </td>
+                                    Sets <code>width: max-content</code>. <br>
+                                     To be responsive use the following class -
+                                     <div>
+                                         <code>.w-max-sm</code> or <code>.max-content-sm</code> <br>
+                                         <code>.w-max-lg</code> or <code>.max-content-lg</code>
+                                     </div>
+                                 </td>
                             </tr>
                         </table>
                     </section>
@@ -1545,7 +1589,7 @@
 
                     <!-- Height -->
                     <section>
-                        <h2>Height <code class="language-css">.h</code></h2>
+                        <h2 class="fw700">Height <code>.h</code></h2>
                         <table>
                             <tr>
                                 <td><code>.h-full</code> or <code>.full-height</code></td>
@@ -1568,30 +1612,36 @@
 
                     <!-- Display -->
                     <section>
-                        <h2>Display</h2>
+                        <h2 class="fw700">Display</h2>
                         <table>
                             <tr>
                                 <td><code>.hidden</code></td>
                                 <td>:</td>
-                                <td>display: none !important;
-                                    <div>Responsive</div>
-                                    <code>.hidden-sm</code> <code>.hidden-lg</code>
-                                </td>
+                                <td>
+                                    Sets <code>display: none</code>. <br>
+                                     To be responsive use the following class -
+                                     <div>
+                                        <code>.hidden-sm</code> <br> <code>.hidden-lg</code>
+                                     </div>
+                                 </td>
                             </tr>
                             <tr>
                                 <td><code>.inline</code></td>
                                 <td>:</td>
-                                <td>display: inline;
-                                    <div>Responsive</div>
-                                    <code>.inline-sm</code> <code>.inline-lg</code>
-                                </td>
+                                <td>
+                                    Sets <code>display: inline</code>. <br>
+                                     To be responsive use the following class -
+                                     <div>
+                                        <code>.inline-sm</code> <br> <code>.inline-lg</code>
+                                     </div>
+                                 </td>
                             </tr>
                             <tr>
                                 <td><code>.block</code></td>
                                 <td>:</td>
                                 <td>display: block;
-                                    <div>Responsive-</div>
-                                    <code>.block-sm</code> <code>.block-lg</code>
+                                    <div>Responsive-
+                                    <code>.block-sm</code>, <code>.block-lg</code></div>
                                 </td>
                             </tr>
                             <tr>
@@ -1609,7 +1659,7 @@
 
                     <!-- Display Table -->
                     <section>
-                        <h2>Display : table <code>.dt</code></h2>
+                        <h2 class="fw700">Display : table <code>.dt</code></h2>
                         <table>
                             <tr>
                                 <td><code>.dt</code></td>
@@ -1632,7 +1682,7 @@
 
                     <!-- Line, Separator, Divider -->
                     <section>
-                        <h2>Line, Separator, Divider</h2>
+                        <h2 class="fw700">Line, Separator, Divider</h2>
                         <table>
                             <tr>
                                 <td><code>.line</code> or <code>.separator</code> or <code>.divider</code></td>
@@ -1640,7 +1690,7 @@
                                 <td>Creates a horizontal line <code>height: 1px;</code></td>
                             </tr>
                             <tr>
-                                <td><code>.line-h</code> or <code>.separator-h</code> or <code>.divider-h</code></td>
+                                <td><code>.line-v</code> or <code>.separator-v</code> or <code>.divider-v</code></td>
                                 <td>:</td>
                                 <td>Creates vertical line. width: 1px; height: 100%; display: inline-block;</td>
                             </tr>
@@ -1650,7 +1700,7 @@
 
                     <!-- Cursor -->
                     <section>
-                        <h2>Cursor</h2>
+                        <h2 class="fw-700">Cursor</h2>
                         <table>
                             <tr>
                                 <td class="pointer"><code>.pointer</code></td>
@@ -1684,7 +1734,7 @@
 
                     <!-- Flexbox -->
                     <section>
-                        <h2>Flexbox</h2>
+                        <h2 class="fw-700">Flexbox</h2>
                         <table>
                             <tr>
                                 <td><code>.flex</code></td>
@@ -1697,7 +1747,7 @@
                                 <td>Creates inline flex parent.</td>
                             </tr>
                         </table>
-                        <h3>flex-direction <code>.fd</code></h3>
+                        <h3 class="mt25 fw-600">flex-direction <code>.fd</code></h3>
                         <table>
                             <tr>
                                 <td><code>.fd-row</code> </td>
@@ -1731,10 +1781,10 @@
                             </tr>
                         </table>
 
-                        <h3>flex-flow <code>.ff</code></h3>
+                        <h3 class="mt25 fw-600">flex-flow <code>.ff</code></h3>
                         <table>
                             <tr>
-                                <td>.ff-row-wrap</td>
+                                <td><code>.ff-row-wrap</code></td>
                                 <td>:</td>
                                 <td></td>
                             </tr>
@@ -1745,7 +1795,7 @@
                             </tr>
                         </table>
 
-                        <h3>flex-wrap <code>.fw</code></h3>
+                        <h3 class="mt25 fw-600">flex-wrap <code>.fw</code></h3>
                         <table>
                             <tr>
                                 <td><code>.fw-wrap</code></td>
@@ -1764,7 +1814,7 @@
                             </tr>
                         </table>
 
-                        <h3>justify-content <code>.jc</code></h3>
+                        <h3 class="mt25 fw-600">justify-content <code>.jc</code></h3>
                         <table>
                             <tr>
                                 <td><code>.jc-start</code></td>
@@ -1798,7 +1848,7 @@
                             </tr>
                         </table>
 
-                        <h3>align-items <code>.ai</code></h3>
+                        <h3 class="mt25 fw-600">align-items <code>.ai</code></h3>
                         <table>
                             <tr>
                                 <td><code>.ai-start</code></td>
@@ -1827,7 +1877,7 @@
                             </tr>
                         </table>
 
-                        <h3>align-content <code>.ac</code></h3>
+                        <h3 class="mt25 fw-600">align-content <code>.ac</code></h3>
                         <table>
                             <tr>
                                 <td><code>.ac-start</code></td>
@@ -1865,13 +1915,13 @@
 
                     <!-- Google Material Icons -->
                     <section>
-                        <h2>Google Material Icons <code>.m-icons</code></h2>
+                        <h2 class="fw700">Google Material Icons <code>.m-icons</code></h2>
                         
                         <code>&lt;span class="m-icons"&gt;icon_name&lt;/span&gt;</code> <br>
 
                         For icon_name, please refer to <a href="https://fonts.google.com/icons">Google Fonts</a>.
 
-                        <h3>Here are some samples-</h3>
+                        <h3 class="mt15 fw-400">Examples -</h3>
                         <table>
                             <tr>
                                 <td><code>&lt;span class="m-icons"&gt;close&lt;/span&gt;</code></td>
@@ -1895,38 +1945,18 @@
 
                     <!-- Bangla -->
                     <section>
-                        <h2>Bangla <code>.bn</code></h2>
+                        <h2 class="fw-700">Bangla <code>.bn</code></h2>
                         <div class="bn">আমার সোনার বাংলা, আমি তোমায় ভালোবাসি</div>
                         <div>
                             Use <code>.bn</code> to display Bangla font. Default Bangla font is 'Anek Bangla'. You can customize it in theme.css.
                         </div>
                     </section>
                     <!-- Bangla// -->
-                </div>
-            </div>
-        </div><!-- .container -->
-    </main>
-    <footer></footer>
 
 
-    <div class="master-wrapper">
-        <main class="">
-
-            <div class="container flex fw-wrap">
-                <div class="content">
-                    <div class="mt300 mb100" style="font-size: 1.5rem;">OmniCSS v11.0.22</div>
-                    <h1 class="mb150" style="font-size: 1.5rem !important;">
-                        A hand-full CSS <code class="language-css">.class</code> library for busy developers.
-                    </h1>
-                    <div class="divider mb-300"></div>
-                 
-                    <!-- //raw content -->
+                    <section>
+                                           <!-- //raw content -->
                     <div>
-                        Google Material Icons<br>
-                        =====================<br>
-                            .m-icons<br><br>
-                        
-                        
                         Filter<br>
                         ======<br>
                             .brightness-50%, .brightness-60%, ........, .brightness-150%<br>
@@ -1942,24 +1972,16 @@
                         Transition<br>
                         ==========<br>
                             .transition : Add transition animation to all 0.3s ease-in-out;<br><br>
-
-                        .button<br>
-                        ==========<br>
-                        .button does not have any default text color, background color & border color. You can use color class (i.e. c-green-8, bg-teal-2 or bc-red-5 or )<br>
-                        .button also does not have any default padding & margin. <br><br>
-
-                        Bangla Font<br>
-                        ==========<br>
-                        Use .bn class to display Bangla font. Default Bangla font is 'Anek Bangla'<br><br>
-            
                         
                     </div>
                     <!-- raw content// -->
+                    </section>
+                </div>
+            </div>
+        </div><!-- .container -->
+    </main>
+    <footer></footer>
 
-                </div> <!-- .content ends -->
-            </div> <!-- container-fluid// -->
-        </main>
-    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/prism.js"></script>

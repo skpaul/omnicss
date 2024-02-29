@@ -184,7 +184,7 @@
     --scroll-color: var(--color);          /* applied to the index.php marquee*/
     --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
 
-    --hyperlink-color: var(--color);
+    --hyperlink-color: var(--blue-4);
     --hyperlink-color-hover: var(--accent-color);
 
     /* Default values for table */

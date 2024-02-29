@@ -33,23 +33,14 @@
 
 
 //Content
-    
     @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
-
-
     @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
-
-
-   
- 
-
     @import 'modules/content/hyperlink';
-
     @import 'modules/content/form';
     @import 'modules/content/buttons'; 
     @import 'modules/content/table'; // table, tr, td, ...
 
-    //Typography
+//Typography
     @import 'modules/typography/white-space';
     @import 'modules/typography/font-size'; // 
     @import 'modules/typography/font-weight'; //bold, bolder, lighter, 100-900
@@ -90,8 +81,3 @@
 @import 'modules/pages/payment-instruction';
 
 @import 'modules/colors';
-
-
-
-
-
