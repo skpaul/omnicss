@@ -59,13 +59,13 @@ $rmValues: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.
 
 @include small{
     @include create-font-size-in-percentage("-sm", "general");
-    @include create-font-size-in-percentage("Sm", "compact");
+    @include create-font-size-in-percentage("sm", "compact");
     @include create-font-size-in-rem("-sm", "general");
-    @include create-font-size-in-rem("Sm", "compact");
+    @include create-font-size-in-rem("sm", "compact");
 }
 @include large{
     @include create-font-size-in-percentage("-lg", "general");
-    @include create-font-size-in-percentage("Lg", "compact");
+    @include create-font-size-in-percentage("lg", "compact");
     @include create-font-size-in-rem("-lg", "general");
-    @include create-font-size-in-rem("Lg", "compact");
+    @include create-font-size-in-rem("lg", "compact");
 }
