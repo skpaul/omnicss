@@ -1,18 +1,19 @@
-.w-full, .full-width{
-    width:100% !important; 
+
+.w-auto{
+    width:auto !important; 
     @include small(){
         &-sm{
-            width:100% !important; 
+            width:auto !important; 
         }
     }
     @include large(){
         &-lg{
-            width:100% !important; 
+            width:auto !important; 
         }
     }
 }
 
-
+//.fit-content class has been deprecated
 .w-fit, .fit-content{
     width: -moz-fit-content  !important;
     width: fit-content !important;
@@ -31,6 +32,25 @@
     }
 }
 
+//Using max-content for box sizing
+// The max-content sizing keyword represents the intrinsic maximum width or height of the content. 
+//For text content this means that the content will not wrap at all even if it causes overflows.
+//.max-content class has been deprecated
+.w-max, .max-content{
+    width: max-content !important;
+    @include small(){
+        &-sm{
+            width: max-content !important;
+        }
+    }
+    @include large(){
+        &-lg{
+            width: max-content !important;
+        }
+    }
+}
+
+//.min-content class has been deprecated
 .w-min, .min-content{
     width: min-content !important;
     @include small(){
@@ -45,19 +65,57 @@
     }
 }
 
-//Using max-content for box sizing
-// The max-content sizing keyword represents the intrinsic maximum width or height of the content. 
-//For text content this means that the content will not wrap at all even if it causes overflows.
-.w-max, .max-content{
-    width: max-content !important;
+.w-inherit{
+    width:inherit !important; 
     @include small(){
         &-sm{
-            width: max-content !important;
+            width:inherit !important; 
         }
     }
     @include large(){
         &-lg{
-            width: max-content !important;
+            width:inherit !important; 
+        }
+    }
+}
+
+.w-initial{
+    width:initial !important; 
+    @include small(){
+        &-sm{
+            width:initial !important; 
+        }
+    }
+    @include large(){
+        &-lg{
+            width:initial !important; 
+        }
+    }
+}
+.w-unset{
+    width:unset !important; 
+    @include small(){
+        &-sm{
+            width:unset !important; 
+        }
+    }
+    @include large(){
+        &-lg{
+            width:unset !important; 
+        }
+    }
+}
+
+.w-full, .full-width{
+    width:100% !important; 
+    @include small(){
+        &-sm{
+            width:100% !important; 
+        }
+    }
+    @include large(){
+        &-lg{
+            width:100% !important; 
         }
     }
 }
