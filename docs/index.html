@@ -104,7 +104,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v12.0.0</code></div>
+            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v12.0.1</code></div>
             <h1 class="mb15 fs15">
                 A semantic & handy <code>.css</code> library for busy developers.
             </h1>
@@ -121,7 +121,7 @@
                         <h2>Installation</h2>
                         <div>
                             The easiest way to use from CDN below- <br>
-                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@12.0.0/omnicss.min.css</code>
+                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@12.0.1/omnicss.min.css</code>
                         </div>
                         <br>
                         <div>
@@ -1599,17 +1599,17 @@
                             <tr>
                                 <td><code>.relative</code> or <code>.rel</code></td>
                                 <td>:</td>
-                                <td>Relative positioning.</td>
+                                <td>Sets <code>position:relative;</code>. Not responsive.</td>
                             </tr>
                             <tr>
                                 <td><code>.fixed</code></td>
                                 <td>:</td>
-                                <td>Fixed positioning.</td>
+                                <td>Sets <code>position:fixed;</code>. Not responsive.</td>
                             </tr>
                             <tr>
                                 <td><code>.absolute</code> or <code>.abs</code></td>
                                 <td>:</td>
-                                <td>Absolute positioning.</td>
+                                <td>Sets <code>position:absolute;</code>. Not responsive.</td>
                             </tr>
                         </table>
                     </section>
@@ -1619,46 +1619,93 @@
                     <section>
                         <h2 class="fw700">Width <code>.w</code></h2>
                         <table>
+                            <!-- auto -->
                             <tr>
-                                <td><code>.w-full</code> or <code>.full-width</code></td>
-                                <td>:</td>
-                                <td>Sets 100% width.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.w-fit</code> or <code>.fit-content</code></td>
+                                <td><code>.w-auto</code></td>
                                 <td>:</td>
                                 <td>
-                                   Sets <code>width: fit-content</code>. <br>
-                                    To be responsive use the following class -
+                                    Sets <code>width: auto</code>
                                     <div>
-                                        <code>.w-fit-sm</code> or <code>.fit-content-sm</code> <br>
-                                        <code>.w-fit-lg</code> or <code>.fit-content-lg</code>
+                                        Responsive classes -<code>.w-auto-sm</code>, <code>.w-auto-lg</code>
                                     </div>
                                 </td>
                             </tr>
+                            <!-- fit-content -->
                             <tr>
-                                <td><code>.w-min</code> or <code>.min-content</code></td>
+                                <td><code>.w-fit</code></td>
                                 <td>:</td>
                                 <td>
-                                    Sets <code>width: min-content</code>. <br>
-                                     To be responsive use the following class -
-                                     <div>
-                                         <code>.w-min-sm</code> or <code>.min-content-sm</code> <br>
-                                         <code>.w-min-lg</code> or <code>.min-content-lg</code>
-                                     </div>
+                                    Sets <code>width: fit-content</code>
+                                    <div>
+                                        Responsive classes - <code>.w-fit-sm</code>, <code>.w-fit-lg</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- max-content -->
+                            <tr>
+                                <td><code>.w-max</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>width: max-content</code>
+                                    <div>
+                                        Responsive classes - <code>.w-max-sm</code>, <code>.w-max-lg</code>
+                                    </div>
                                  </td>
                             </tr>
+                            <!-- min-content -->
                             <tr>
-                                <td><code>.w-max</code> or <code>.max-content</code></td>
+                                <td><code>.w-min</code></td>
                                 <td>:</td>
                                 <td>
-                                    Sets <code>width: max-content</code>. <br>
-                                     To be responsive use the following class -
-                                     <div>
-                                         <code>.w-max-sm</code> or <code>.max-content-sm</code> <br>
-                                         <code>.w-max-lg</code> or <code>.max-content-lg</code>
-                                     </div>
+                                    Sets <code>width: min-content</code>
+                                    <div>
+                                       Responsive classes - <code>.w-min-sm</code>, <code>.w-min-lg</code>
+                                    </div>
                                  </td>
+                            </tr>
+                            <!-- inherit -->
+                            <tr>
+                                <td><code>.w-inherit</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>width: inherit</code>
+                                    <div>
+                                        Responsive classes - <code>.w-inherit-sm</code>, <code>.w-inherit-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- initial -->
+                            <tr>
+                                <td><code>.w-initial</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>width: initial</code>
+                                    <div>
+                                        Responsive classes - <code>.w-initial-sm</code>, <code>.w-initial-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- unset -->
+                            <tr>
+                                <td><code>.w-unset</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>width: unset</code>
+                                    <div>
+                                        Responsive classes - <code>.w-unset-sm</code>, <code>.w-unset-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- .w-full -->
+                            <tr>
+                                <td><code>.w-full</code> or <code>.full-width</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>width: 100%</code>
+                                    <div>
+                                        Responsive classes - <code>.w-full-sm</code>, <code>.w-full-lg</code>
+                                    </div>
+                                </td>
                             </tr>
                         </table>
                     </section>
@@ -1669,19 +1716,91 @@
                         <h2 class="fw700">Height <code>.h</code></h2>
                         <table>
                             <tr>
+                                <td><code>.h-auto</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: auto</code>
+                                    <div>
+                                        Responsive classes -<code>.h-auto-sm</code>, <code>.h-auto-lg</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- fit-content -->
+                            <tr>
+                                <td><code>.h-fit</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: fit-content</code>
+                                    <div>
+                                        Responsive classes - <code>.h-fit-sm</code>, <code>.h-fit-lg</code>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- max-content -->
+                            <tr>
+                                <td><code>.h-max</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: max-content</code>
+                                    <div>
+                                        Responsive classes - <code>.h-max-sm</code>, <code>.h-max-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- min-content -->
+                            <tr>
+                                <td><code>.h-min</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: min-content</code>
+                                    <div>
+                                       Responsive classes - <code>.h-min-sm</code>, <code>.h-min-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- inherit -->
+                            <tr>
+                                <td><code>.h-inherit</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: inherit</code>
+                                    <div>
+                                       Responsive classes - <code>.h-inherit-sm</code>, <code>.h-inherit-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- initial -->
+                            <tr>
+                                <td><code>.h-initial</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: initial</code>
+                                    <div>
+                                       Responsive classes - <code>.h-initial-sm</code>, <code>.h-initial-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- unset -->
+                            <tr>
+                                <td><code>.h-unset</code></td>
+                                <td>:</td>
+                                <td>
+                                    Sets <code>height: unset</code>
+                                    <div>
+                                       Responsive classes - <code>.h-unset-sm</code>, <code>.h-unset-lg</code>
+                                    </div>
+                                 </td>
+                            </tr>
+                            <!-- .h-full -->
+                            <tr>
                                 <td><code>.h-full</code> or <code>.full-height</code></td>
                                 <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.h-full-sm</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.h-full-lg</code></td>
-                                <td>:</td>
-                                <td></td>
+                                <td>
+                                    Sets <code>height: 100%</code>
+                                    <div>
+                                        Responsive classes - <code>.h-full-sm</code>, <code>.h-full-lg</code>
+                                    </div>
+                                </td>
                             </tr>
                         </table>
                     </section>
@@ -1695,39 +1814,40 @@
                                 <td><code>.hidden</code></td>
                                 <td>:</td>
                                 <td>
-                                    Sets <code>display: none</code>. <br>
-                                     To be responsive use the following class -
-                                     <div>
-                                        <code>.hidden-sm</code> <br> <code>.hidden-lg</code>
-                                     </div>
+                                    Sets <code>display: none</code>
+                                    <div>
+                                        Responsive classes - <code>.hidden-sm</code>, <code>.hidden-lg</code>
+                                    </div>
                                  </td>
                             </tr>
                             <tr>
                                 <td><code>.inline</code></td>
                                 <td>:</td>
                                 <td>
-                                    Sets <code>display: inline</code>. <br>
-                                     To be responsive use the following class -
-                                     <div>
-                                        <code>.inline-sm</code> <br> <code>.inline-lg</code>
-                                     </div>
+                                    Sets <code>display: inline</code>
+                                    <div>
+                                        Responsive classes - <code>.inline-sm</code>, <code>.inline-lg</code>
+                                    </div>
                                  </td>
                             </tr>
                             <tr>
                                 <td><code>.block</code></td>
                                 <td>:</td>
-                                <td>display: block;
-                                    <div>Responsive-
-                                    <code>.block-sm</code>, <code>.block-lg</code></div>
+                                <td>
+                                    Sets <code>display: block;</code>
+                                    <div>
+                                        Responsive classes - <code>.block-sm</code>, <code>.block-lg</code>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td><code>.inblock</code></td>
                                 <td>:</td>
                                 <td>
-                                    Sets display: inline-block;
-                                    <div>Responsive</div>
-                                    <code>.inblock-sm</code> <code>.inblock-lg</code>
+                                    Sets <code>display: inline-block;</code>
+                                    <div>
+                                        Responsive classes - <code>.inblock-sm</code> <code>.inblock-lg</code>
+                                    </div>
                                 </td>
                             </tr>
                         </table>
