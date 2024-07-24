@@ -49,36 +49,36 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
 
 @include small(){
     @include create-padding("pa", "padding", "general", "-sm"); 
-    @include create-padding("pa", "padding", "compact", "Sm"); 
+    @include create-padding("pa", "padding", "compact", "sm"); 
 
     @include create-padding("pt", "padding-top", "general", "-sm"); 
-    @include create-padding("pt", "padding-top", "compact", "Sm"); 
+    @include create-padding("pt", "padding-top", "compact", "sm"); 
 
     @include create-padding("pb", "padding-bottom", "general", "-sm"); 
-    @include create-padding("pb", "padding-bottom", "compact", "Sm"); 
+    @include create-padding("pb", "padding-bottom", "compact", "sm"); 
 
     @include create-padding("pl", "padding-left", "general", "-sm"); 
-    @include create-padding("pl", "padding-left", "compact", "Sm"); 
+    @include create-padding("pl", "padding-left", "compact", "sm"); 
 
     @include create-padding("pr", "padding-right", "general", "-sm"); 
-    @include create-padding("pr", "padding-right", "compact", "Sm"); 
+    @include create-padding("pr", "padding-right", "compact", "sm"); 
 }
 
 @include large(){
     @include create-padding("pa", "padding", "general", "-lg"); 
-    @include create-padding("pa", "padding", "compact", "Lg"); 
+    @include create-padding("pa", "padding", "compact", "lg"); 
 
     @include create-padding("pt", "padding-top", "general", "-lg"); 
-    @include create-padding("pt", "padding-top", "compact", "Lg"); 
+    @include create-padding("pt", "padding-top", "compact", "lg"); 
 
     @include create-padding("pb", "padding-bottom", "general", "-lg"); 
-    @include create-padding("pb", "padding-bottom", "compact", "Lg"); 
+    @include create-padding("pb", "padding-bottom", "compact", "lg"); 
 
     @include create-padding("pl", "padding-left", "general", "-lg"); 
-    @include create-padding("pl", "padding-left", "compact", "Lg"); 
+    @include create-padding("pl", "padding-left", "compact", "lg"); 
 
     @include create-padding("pr", "padding-right", "general", "-lg"); 
-    @include create-padding("pr", "padding-right", "compact", "Lg"); 
+    @include create-padding("pr", "padding-right", "compact", "lg"); 
 }
 
 @mixin create-both-padding($prefix, $property1, $property2, $version, $device:"") {
@@ -123,16 +123,16 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
 
 @include small(){
     @include create-both-padding("pv", "padding-top","padding-bottom", "general", "-sm"); 
-    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "Sm"); 
+    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "sm"); 
 
     @include create-both-padding("ph", "padding-left","padding-right", "general", "-sm"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "compact", "Sm"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "compact", "sm"); 
 }
 
 @include large(){
     @include create-both-padding("pv", "padding-top","padding-bottom", "general", "-lg"); 
-    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "Lg"); 
+    @include create-both-padding("pv", "padding-top","padding-bottom", "compact", "lg"); 
 
     @include create-both-padding("ph", "padding-left","padding-right", "general", "-lg"); 
-    @include create-both-padding("ph", "padding-left","padding-right", "compact", "Lg"); 
+    @include create-both-padding("ph", "padding-left","padding-right", "compact", "lg"); 
 }

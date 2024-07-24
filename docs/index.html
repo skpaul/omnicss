@@ -54,9 +54,19 @@
 
         h2{
             font-size: 1.5rem;
-            border-bottom: 1px solid #304a6f;
             line-height: 1.6;
-            margin-bottom: 1rem;
+            border-bottom: 1px solid #304a6f;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2>code {
+            font-size: 1.5rem !important;
+            line-height: 1;
+            padding-left: 2px !important;
+            margin-left: 14px;
         }
 
         code:not(code[class*=language-]) {
@@ -97,6 +107,11 @@
 
         .values > code{
             text-align: center;
+        }
+
+        p.compact-note{
+            letter-spacing: 0.01245rem;
+            margin-top: 1.2rem;
         }
     </style>
 </head>
@@ -714,6 +729,8 @@
                             <code>4.0</code>
                         </div>
 
+                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fs05</code> in stead of <code>.fs-0.5</code>.</p>
+
                         <h4 class="mt12">Example</h4>
                         <table>
                             <tr>
@@ -735,10 +752,51 @@
 
                         <h3 class="fs12 fw500 mt20" >Using percentage -</h3>
                         <div class="mt15 mb05">Available font sizes in % are the following -</div>
-                        <div class="grid fr12 values">
-                            <code>10%</code><code>20%</code><code>30%</code><code>40%</code><code>50%</code><code>60%</code><code>70%</code><code>80%</code><code>90%</code><code>100%</code><code>110%</code><code>120%</code><code>130%</code><code>140%</code><code>150%</code><code>160%</code><code>170%</code><code>180%</code><code>190%</code><code>200%</code><code>210%</code><code>220%</code><code>230%</code><code>240%</code><code>250%</code><code>260%</code><code>270%</code><code>280%</code><code>290%</code><code>300%</code><code>310%</code><code>320%</code><code>330%</code><code>340%</code><code>350%</code><code>360%</code><code>370%</code><code>380%</code><code>390%</code><code>400%</code>
+                        <div class="grid fr-12 values">
+                            <code>10%</code>
+                            <code>20%</code>
+                            <code>30%</code>
+                            <code>40%</code>
+                            <code>50%</code>
+                            <code>60%</code>
+                            <code>70%</code>
+                            <code>80%</code>
+                            <code>90%</code>
+                            <code>100%</code>
+                            <code>110%</code>
+                            <code>120%</code>
+                            <code>130%</code>
+                            <code>140%</code>
+                            <code>150%</code>
+                            <code>160%</code>
+                            <code>170%</code>
+                            <code>180%</code>
+                            <code>190%</code>
+                            <code>200%</code>
+                            <code>210%</code>
+                            <code>220%</code>
+                            <code>230%</code>
+                            <code>240%</code>
+                            <code>250%</code>
+                            <code>260%</code>
+                            <code>270%</code>
+                            <code>280%</code>
+                            <code>290%</code>
+                            <code>300%</code>
+                            <code>310%</code>
+                            <code>320%</code>
+                            <code>330%</code>
+                            <code>340%</code>
+                            <code>350%</code>
+                            <code>360%</code>
+                            <code>370%</code>
+                            <code>380%</code>
+                            <code>390%</code>
+                            <code>400%</code>
                         </div>
           
+                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fs50%</code> in stead of <code>.fs-50%</code>.</p>
+
                         <h4 class="mt10">Example</h4>
                         <table>
                             <tr>
@@ -775,6 +833,7 @@
                     <!-- Font Weight -->
                     <section>
                         <h2 class="fw700">Font Weight <code>.fw</code></h2>
+
                         <table>
                             <tr>
                                 <td><code>.bold</code> or <code>.strong</code></td>
@@ -791,49 +850,60 @@
                                 <td>:</td>
                                 <td class="lighter">Lighter text.</td>
                             </tr>
+                        </table>
+
+                        <h3 class="fs12 fw500 mt20">Using font-weight value -</h3>
+
+                        <p class="italic mt05">In case of google fonts, the <code>font-weight</code> value must be supported by that font.</p>
+
+                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fw100</code> in stead of <code>.fw-100</code>.</p>
+
+                        <h4 class="mt10">Examples-</h4>
+
+                        <table>
                             <tr>
-                                <td><code>.fw-100</code></td>
+                                <td><code>.fw-100</code> or <code>.fw100</code></td>
                                 <td>:</td>
                                 <td class="">font-weight: 100;</td>
                             </tr>
                             
                             <tr>
-                                <td><code>.fw-200</code></td>
+                                <td><code>.fw-200</code> or <code>.fw200</code></td>
                                 <td>:</td>
                                 <td class="fw-200">font-weight: 200;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-300</code></td>
+                                <td><code>.fw-300</code> or <code>.fw300</code></td>
                                 <td>:</td>
                                 <td class="fw-300">font-weight: 300;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-400</code></td>
+                                <td><code>.fw-400</code> or <code>.fw400</code></td>
                                 <td>:</td>
                                 <td class="fw-400">font-weight: 400;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-500</code></td>
+                                <td><code>.fw-500</code> or <code>.fw500</code></td>
                                 <td>:</td>
                                 <td class="fw-500">font-weight: 500;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-600</code></td>
+                                <td><code>.fw-600</code> or <code>.fw600</code></td>
                                 <td>:</td>
                                 <td class="fw-600">font-weight: 600;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-700</code></td>
+                                <td><code>.fw-700</code> or <code>.fw700</code></td>
                                 <td>:</td>
                                 <td class="fw-700">font-weight: 700;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-800</code></td>
+                                <td><code>.fw-800</code> or <code>.fw800</code></td>
                                 <td>:</td>
                                 <td class="fw-800">font-weight: 800;</td>
                             </tr>
                             <tr>
-                                <td><code>.fw-900</code></td>
+                                <td><code>.fw-900</code> or <code>.fw900</code></td>
                                 <td>:</td>
                                 <td class="fw-900">font-weight: 900;</td>
                             </tr>
@@ -858,7 +928,7 @@
                     <section>
                         <h2 class="fw700">Line Height  <code>.lh</code></h2>
                        
-                        <p class="mt15 mb05">Available line height values -</p>
+                        <p class="mt15 mb05">Available line height values in <code>rem</code> -</p>
                         <div class="grid fr12 values">
                             <code>0.1</code>
                             <code>0.2</code>
@@ -901,20 +971,22 @@
                             <code>4.0</code>
                         </div>
 
-                        <h3 class="mt15">Exmpales</h3>
+                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.lh12</code> in stead of <code>.lh-1.2</code>.</p>
+
+                        <h3 class="mt15">Exmpales-</h3>
                         <table>
                             <tr>
-                                <td><code>.lh-1.2</code></td>
+                                <td><code>.lh-1.2</code> or <code>.lh12</code></td>
                                 <td>:</td>
                                 <td>Sets <code>line-height: 1.2rem;</code></td>
                             </tr>
                             <tr>
-                                <td><code>.lh-0.8-sm</code></td>
+                                <td><code>.lh-0.8-sm</code> or code>.lh08sm</code></td>
                                 <td>:</td>
                                 <td>Sets <code>line-height: 1.2rem;</code> on small devices.</td>
                             </tr>
                             <tr>
-                                <td><code>.lh-1.8-lg</code></td>
+                                <td><code>.lh-1.8-lg</code> or <code>.lh18lg</code></td>
                                 <td>:</td>
                                 <td>Sets <code>line-height: 1.8rem;</code> on large devices.</td>
                             </tr>
@@ -1048,15 +1120,17 @@
                             <code>4.0</code>
                         </div>
                           
+                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.ma03</code> in stead of <code>.ma-0.3</code>.</p>
+
                         <h3 class="mt20 fs10 fw500">Margin All <code>.ma</code></h3>
                         <table>
                             <tr>
-                                <td><code>.ma-2.0</code></td>
+                                <td><code>.ma-2.0</code> or <code>.ma20</code></td>
                                 <td>:</td>
                                 <td>Creates margin for all sides 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.ma-0.9-sm</code></td>
+                                <td><code>.ma-0.9-sm</code> or <code>.ma0.9sm</code></td>
                                 <td>:</td>
                                 <td>Creates margin for all sides 2.0rem on small devices. </td>
                             </tr>
@@ -1070,17 +1144,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Left <code>.ml</code></h3>
                         <table>
                             <tr>
-                                <td><code>.ml-2.0</code></td>
+                                <td><code>.ml-2.0</code> or <code>.ml20</code></td>
                                 <td>:</td>
                                 <td>Creates left margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.ml-0.9-sm</code></td>
+                                <td><code>.ml-0.9-sm</code> or <code>.ml09sm</code></td>
                                 <td>:</td>
                                 <td>Creates left margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.ml-1.9-lg</code></td>
+                                <td><code>.ml-1.9-lg</code> or <code>.ml19lg</code></td>
                                 <td>:</td>
                                 <td>Creates left margin 1.9rem on large devices. </td>
                             </tr>
@@ -1089,17 +1163,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Right <code>.mr</code></h3>
                         <table>
                             <tr>
-                                <td><code>.mr-2.0</code></td>
+                                <td><code>.mr-2.0</code> or <code>.mr20</code></td>
                                 <td>:</td>
                                 <td>Creates right margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.mr-0.9-sm</code></td>
+                                <td><code>.mr-0.9-sm</code> or <code>.mr09sm</code></td>
                                 <td>:</td>
                                 <td>Creates right margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.mr-1.9-lg</code></td>
+                                <td><code>.mr-1.9-lg</code> or <code>.mr19lg</code></td>
                                 <td>:</td>
                                 <td>Creates right margin 1.9rem on large devices. </td>
                             </tr>
@@ -1108,17 +1182,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Top <code>.mt</code></h3>
                         <table>
                             <tr>
-                                <td><code>.mt-2.0</code></td>
+                                <td><code>.mt-2.0</code> or <code>.mt20</code></td>
                                 <td>:</td>
                                 <td>Creates top margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.mt-0.9-sm</code></td>
+                                <td><code>.mt-0.9-sm</code> or <code>.mt09sm</code></td>
                                 <td>:</td>
                                 <td>Creates top margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.mt-1.9-lg</code></td>
+                                <td><code>.mt-1.9-lg</code> or <code>.mt19lg</code></td>
                                 <td>:</td>
                                 <td>Creates top margin 1.9rem on large devices. </td>
                             </tr>
@@ -1127,17 +1201,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Bottom <code>.mb</code></h3>
                         <table>
                             <tr>
-                                <td><code>.mb-2.0</code></td>
+                                <td><code>.mb-2.0</code> or <code>.mb20</code></td>
                                 <td>:</td>
                                 <td>Creates bottom margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.mb-0.9-sm</code></td>
+                                <td><code>.mb-0.9-sm</code> or <code>.mb09sm</code></td>
                                 <td>:</td>
                                 <td>Creates bottom margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.mb-1.9-lg</code></td>
+                                <td><code>.mb-1.9-lg</code> or <code>.mb19lg</code></td>
                                 <td>:</td>
                                 <td>Creates bottom margin 1.9rem on large devices. </td>
                             </tr>
@@ -1147,17 +1221,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Vertically (Top + Bottom) <code>.mv</code></h3>
                         <table>
                             <tr>
-                                <td><code>.mv-2.0</code></td>
+                                <td><code>.mv-2.0</code> or <code>.mv20</code></td>
                                 <td>:</td>
                                 <td>Creates top + bottom margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.mv-0.9-sm</code></td>
+                                <td><code>.mv-0.9-sm</code> or <code>.mv09sm</code></td>
                                 <td>:</td>
                                 <td>Creates top + bottom margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.mv-1.9-lg</code></td>
+                                <td><code>.mv-1.9-lg</code> or <code>.mv19lg</code></td>
                                 <td>:</td>
                                 <td>Creates top + bottom margin 1.9rem on large devices. </td>
                             </tr>
@@ -1166,17 +1240,17 @@
                         <h3 class="mt20 fs10 fw500">Margin Horizontally (Left + Right) <code>.mh</code></h3>
                         <table>
                             <tr>
-                                <td><code>.mh-2.0</code></td>
+                                <td><code>.mh-2.0</code> or <code>.mh20</code></td>
                                 <td>:</td>
                                 <td>Creates left + right margin 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.mh-0.9-sm</code></td>
+                                <td><code>.mh-0.9-sm</code> or <code>.mh09sm</code></td>
                                 <td>:</td>
                                 <td>Creates left + right margin 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.mh-1.9-lg</code></td>
+                                <td><code>.mh-1.9-lg</code> or <code>.mh19lg</code></td>
                                 <td>:</td>
                                 <td>Creates left + right margin 1.9rem on large devices. </td>
                             </tr>
@@ -1230,21 +1304,23 @@
                             <code>3.9</code>
                             <code>4.0</code>
                         </div>
+
+                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.pa03</code> in stead of <code>.pa-0.3</code>.</p>
                           
                         <h3 class="mt20 fs10 fw500">Padding All <code>.pa</code></h3>
                         <table>
                             <tr>
-                                <td><code>.pa-2.0</code></td>
+                                <td><code>.pa-2.0</code> or <code>.pa20</code></td>
                                 <td>:</td>
                                 <td>Creates padding for all sides 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.pa-0.9-sm</code></td>
+                                <td><code>.pa-0.9-sm</code> or <code>.pa09sm</code></td>
                                 <td>:</td>
                                 <td>Creates padding for all sides 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.pa-1.9-lg</code></td>
+                                <td><code>.pa-1.9-lg</code> or <code>.pa19lg</code></td>
                                 <td>:</td>
                                 <td>Creates padding for all sides 1.9rem on large devices. </td>
                             </tr>
@@ -1253,17 +1329,17 @@
                         <h3 class="mt20 fs10 fw500">Padding Left <code>.pl</code></h3>
                         <table>
                             <tr>
-                                <td><code>.pl-2.0</code></td>
+                                <td><code>.pl-2.0</code> or <code>.pl20</code></td>
                                 <td>:</td>
                                 <td>Creates left padding 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.pl-0.9-sm</code></td>
+                                <td><code>.pl-0.9-sm</code> or <code>.pl09sm</code></td>
                                 <td>:</td>
                                 <td>Creates left padding 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.pl-1.9-lg</code></td>
+                                <td><code>.pl-1.9-lg</code> or <code>.pl19lg</code></td>
                                 <td>:</td>
                                 <td>Creates left padding 1.9rem on large devices. </td>
                             </tr>
@@ -1272,17 +1348,17 @@
                         <h3 class="mt20 fs10 fw500">Padding Right <code>.pr</code></h3>
                         <table>
                             <tr>
-                                <td><code>.pr-2.0</code></td>
+                                <td><code>.pr-2.0</code> or <code>.pr20</code></td>
                                 <td>:</td>
                                 <td>Creates right padding 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.pr-0.9-sm</code></td>
+                                <td><code>.pr-0.9-sm</code> or <code>.pr09sm</code></td>
                                 <td>:</td>
                                 <td>Creates right padding 2.0rem on small devices. </td>
                             </tr>
                             <tr>
-                                <td><code>.pr-1.9-lg</code></td>
+                                <td><code>.pr-1.9-lg</code> or <code>.pr19lg</code></td>
                                 <td>:</td>
                                 <td>Creates right padding 1.9rem on large devices. </td>
                             </tr>
@@ -1291,12 +1367,12 @@
                         <h3 class="mt20 fs10 fw500">Padding Top <code>.pt</code></h3>
                         <table>
                             <tr>
-                                <td><code>.pt-2.0</code></td>
+                                <td><code>.pt-2.0</code> or <code>.pt20</code></td>
                                 <td>:</td>
                                 <td>Creates top padding 2.0rem. </td>
                             </tr>
                             <tr>
-                                <td><code>.pt-0.9-sm</code></td>
+                                <td><code>.pt-0.9-sm</code> or <code>.pt09sm</code></td>
                                 <td>:</td>
                                 <td>Creates top padding 2.0rem on small devices. </td>
                             </tr>
@@ -1336,12 +1412,12 @@
                             <tr>
                                 <td><code>.pv-0.9-sm</code></td>
                                 <td>:</td>
-                                <td>Creates top + bottom padding 2.0rem on small devices. You can also write in compact style - <code>.pv09Sm</code></td>
+                                <td>Creates top + bottom padding 2.0rem on small devices. You can also write in compact style - <code>.pv09sm</code></td>
                             </tr>
                             <tr>
                                 <td><code>.pv-1.9-lg</code></td>
                                 <td>:</td>
-                                <td>Creates top + bottom padding 1.9rem on large devices. You can also write in compact style - <code>.pv19Lg</code></td>
+                                <td>Creates top + bottom padding 1.9rem on large devices. You can also write in compact style - <code>.pv19lg</code></td>
                             </tr>
                         </table>
 
@@ -1355,12 +1431,12 @@
                             <tr>
                                 <td><code>.ph-0.9-sm</code></td>
                                 <td>:</td>
-                                <td>Creates left + right padding 2.0rem on small devices. You can also write in compact style - <code>.ph09Sm</code></td>
+                                <td>Creates left + right padding 2.0rem on small devices. You can also write in compact style - <code>.ph09sm</code></td>
                             </tr>
                             <tr>
                                 <td><code>.ph-1.9-lg</code></td>
                                 <td>:</td>
-                                <td>Creates left + right padding 1.9rem on large devices. You can also write in compact style - <code>.ph19Lg</code></td>
+                                <td>Creates left + right padding 1.9rem on large devices. You can also write in compact style - <code>.ph19lg</code></td>
                             </tr>
                         </table>
 
@@ -1368,7 +1444,7 @@
                     <!-- Paddings -->
 
                     <!-- Table -->
-                    <section>
+                    <section class="bg-dark">
                         <h2 class="fw700">Table</h2>
                         <table>
                             <tr>
@@ -1418,11 +1494,34 @@
                                 </td>
                             </tr>
                         </table>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Col a</th>
+                                    <th>Col b</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>B</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
                     <!-- Table// -->
 
                     <!-- Spinner -->
-                    <section>
+                    <section class="bg-light">
                         <h2 class="fw700">Spinner/Loader</h2>
                         <table>
                             <tr>

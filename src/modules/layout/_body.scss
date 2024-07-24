@@ -19,9 +19,9 @@ body {
 
     // can be treated like a fallback 
     background-color: var(--background-color, #FFFFFF);  //Custom properties with fallbacks for use when the property has not been set
-    // will be "on top", if browser supports it 
-    background:  var(--background-color); 
-        // /* background can be anyone of the following -
+    // will be "on top", if browser supports it      
+        // /* Other approaches to set background color -
+        //     --background:  var(--background-color);
         //     --background-color: red; //solid color
         //     --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
         //     --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient

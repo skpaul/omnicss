@@ -55,36 +55,36 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
 
 @include small(){
     @include create-margin("ma", "margin", "general", "-sm"); 
-    @include create-margin("ma", "margin", "compact", "Sm"); 
+    @include create-margin("ma", "margin", "compact", "sm"); 
 
     @include create-margin("mt", "margin-top", "general", "-sm"); 
-    @include create-margin("mt", "margin-top", "compact", "Sm"); 
+    @include create-margin("mt", "margin-top", "compact", "sm"); 
 
     @include create-margin("mb", "margin-bottom", "general", "-sm"); 
-    @include create-margin("mb", "margin-bottom", "compact", "Sm"); 
+    @include create-margin("mb", "margin-bottom", "compact", "sm"); 
 
     @include create-margin("ml", "margin-left", "general", "-sm"); 
-    @include create-margin("ml", "margin-left", "compact", "Sm"); 
+    @include create-margin("ml", "margin-left", "compact", "sm"); 
 
     @include create-margin("mr", "margin-right", "general", "-sm"); 
-    @include create-margin("mr", "margin-right", "compact", "Sm"); 
+    @include create-margin("mr", "margin-right", "compact", "sm"); 
 }
 
 @include large(){
     @include create-margin("ma", "margin", "general", "-lg"); 
-    @include create-margin("ma", "margin", "compact", "Lg"); 
+    @include create-margin("ma", "margin", "compact", "lg"); 
 
     @include create-margin("mt", "margin-top", "general", "-lg"); 
-    @include create-margin("mt", "margin-top", "compact", "Lg"); 
+    @include create-margin("mt", "margin-top", "compact", "lg"); 
 
     @include create-margin("mb", "margin-bottom", "general", "-lg"); 
-    @include create-margin("mb", "margin-bottom", "compact", "Lg"); 
+    @include create-margin("mb", "margin-bottom", "compact", "lg"); 
 
     @include create-margin("ml", "margin-left", "general", "-lg"); 
-    @include create-margin("ml", "margin-left", "compact", "Lg"); 
+    @include create-margin("ml", "margin-left", "compact", "lg"); 
 
     @include create-margin("mr", "margin-right", "general", "-lg"); 
-    @include create-margin("mr", "margin-right", "compact", "Lg"); 
+    @include create-margin("mr", "margin-right", "compact", "lg"); 
 }
  
 
@@ -140,16 +140,16 @@ $values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2'
 
 @include small(){
     @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-sm"); 
-    @include create-both-margin("mv", "margin-top","margin-bottom", "compact", "Sm"); 
+    @include create-both-margin("mv", "margin-top","margin-bottom", "compact", "sm"); 
 
     @include create-both-margin("mh", "margin-left","margin-right", "general", "-sm"); 
-    @include create-both-margin("mh", "margin-left","margin-right", "compact", "Sm"); 
+    @include create-both-margin("mh", "margin-left","margin-right", "compact", "sm"); 
 }
 
 @include large(){
     @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-lg"); 
-    @include create-both-margin("mv", "margin-top","margin-bottom", "compact", "Lg"); 
+    @include create-both-margin("mv", "margin-top","margin-bottom", "compact", "lg"); 
 
     @include create-both-margin("mh", "margin-left","margin-right", "general", "-lg"); 
-    @include create-both-margin("mh", "margin-left","margin-right", "compact", "Lg"); 
+    @include create-both-margin("mh", "margin-left","margin-right", "compact", "lg"); 
 }

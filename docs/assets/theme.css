@@ -154,8 +154,9 @@
     --color: var(--gray-2);
    
     /* Used as default page background color */
-    --background-color: var(--gray-9);  /*--gray-9 = rgb(22,34,51)*/
-        /* background can be anyone of the following -
+    --background-color: #061223;  
+        /* Other approaches to set the background -
+            --background-color: var(--gray-9);  /*--gray-9 = rgb(22,34,51)
             --background-color: red; //solid color
             --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
             --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
@@ -164,8 +165,8 @@
     
     /* --dark & --light are two variants of --background-color. */
     /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/
-    --dark:   rgba(19,30,46,1);  
-    --light:  rgba(27,42,62,1);
+    --dark:   #000b1a; /*rgba(19,30,46,1); */
+    --light:  #081a32; /* rgba(27,42,62,1); */
 
     --line-height : 1.3;
     --accent-color: var(--blue-5);
