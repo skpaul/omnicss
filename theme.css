@@ -81,102 +81,104 @@ Change Opacity: rgba(red, green, blue, alpha)
     --gray-9:   #233651;
     --gray-10:  #162233;
     
-    --blue-1:   #c6e6ff;
-    --blue-2:   #96d0ff;
-    --blue-3:   #6cb6ff;
-    --blue-4:   #539bf5;
-    --blue-5:   #4184e4;
-    --blue-6:   #316dca;
-    --blue-7:   #255ab2;
-    --blue-8:   #1b4b91;
-    --blue-9:   #143d79;
-    --blue-10:  #0f2d5c;
+    --blue-1:   rgba(0, 0, 255, 55%);
+    --blue-2:   rgba(0, 0, 255, 60%);
+    --blue-3:   rgba(0, 0, 255, 65%);
+    --blue-4:   rgba(0, 0, 255, 70%);
+    --blue-5:   rgba(0, 0, 255, 75%);
+    --blue-6:   rgba(0, 0, 255, 80%);
+    --blue-7:   rgba(0, 0, 255, 85%);
+    --blue-8:   rgba(0, 0, 255, 90%);
+    --blue-9:   rgba(0, 0, 255, 95%);
+    --blue-10:  rgba(0, 0, 255, 100%);
 
-    --green-1:  #b4f1b4;
-    --green-2:  #8ddb8c;
-    --green-3:  #6bc46d;
-    --green-4:  #57ab5a;
-    --green-5:  #46954a;
-    --green-6:  #347d39;
-    --green-7:  #2b6a30;
-    --green-8:  #245829;
-    --green-9:  #1b4721;
-    --green-10: #113417;
+    --green-1:  rgba(0, 255, 0, 55%);
+    --green-2:  rgba(0, 255, 0, 60%);
+    --green-3:  rgba(0, 255, 0, 65%);
+    --green-4:  rgba(0, 255, 0, 70%);
+    --green-5:  rgba(0, 255, 0, 75%);
+    --green-6:  rgba(0, 255, 0, 80%);
+    --green-7:  rgba(0, 255, 0, 85%);
+    --green-8:  rgba(0, 255, 0, 90%);
+    --green-9:  rgba(0, 255, 0, 95%);
+    --green-10: rgba(0, 255, 0, 100%);
 
-    --yellow-1: rgba(218, 170, 63, 55%);
-    --yellow-2: rgba(218, 170, 63, 60%);
-    --yellow-3: rgba(218, 170, 63, 65%);
-    --yellow-4: rgba(218, 170, 63, 70%);
-    --yellow-5: rgba(218, 170, 63, 75%);
-    --yellow-6: rgba(218, 170, 63, 80%);
-    --yellow-7: rgba(218, 170, 63, 85%);
-    --yellow-8: rgba(218, 170, 63, 90%);
-    --yellow-9: rgba(218, 170, 63, 95%);
-    --yellow-10:rgba(218, 170, 63, 100%);
+    --yellow-1: rgba(255, 255, 0, 55%);
+    --yellow-2: rgba(255, 255, 0, 60%);
+    --yellow-3: rgba(255, 255, 0, 65%);
+    --yellow-4: rgba(255, 255, 0, 70%);
+    --yellow-5: rgba(255, 255, 0, 75%);
+    --yellow-6: rgba(255, 255, 0, 80%);
+    --yellow-7: rgba(255, 255, 0, 85%);
+    --yellow-8: rgba(255, 255, 0, 90%);
+    --yellow-9: rgba(255, 255, 0, 95%);
+    --yellow-10:rgba(255, 255, 0, 100%);
 
-    --orange-1: #ffddb0;
-    --orange-2: #ffbc6f;
-    --orange-3: #f69d50;
-    --orange-4: #e0823d;
-    --orange-5: #cc6b2c;
-    --orange-6: #ae5622;
-    --orange-7: #94471b;
-    --orange-8: #7f3913;
-    --orange-9: #682d0f;
-    --orange-10:#4d210c;
+    --orange-1: rgba(255, 165, 0, 55%);
+    --orange-2: rgba(255, 165, 0, 60%);
+    --orange-3: rgba(255, 165, 0, 65%);
+    --orange-4: rgba(255, 165, 0, 70%);
+    --orange-5: rgba(255, 165, 0, 75%);
+    --orange-6: rgba(255, 165, 0, 80%);
+    --orange-7: rgba(255, 165, 0, 85%);
+    --orange-8: rgba(255, 165, 0, 90%);
+    --orange-9: rgba(255, 165, 0, 95%);
+    --orange-10:rgba(255, 165, 0, 100%);
 
-    --red-1:    #ffd8d3;
-    --red-2:    #ffb8b0;
-    --red-3:    #ff938a;
-    --red-4:    #f47067;
-    --red-5:    #e5534b;
-    --red-6:    #c93c37;
-    --red-7:    #ad2e2c;
-    --red-8:    #922323;
-    --red-9:    #78191b;
-    --red-10:   #5D0F12;
+    --red-1:    rgba(255, 0, 0, 55%);
+    --red-2:    rgba(255, 0, 0, 60%);
+    --red-3:    rgba(255, 0, 0, 65%);
+    --red-4:    rgba(255, 0, 0, 70%);
+    --red-5:    rgba(255, 0, 0, 75%);
+    --red-6:    rgba(255, 0, 0, 80%);
+    --red-7:    rgba(255, 0, 0, 85%);
+    --red-8:    rgba(255, 0, 0, 90%);
+    --red-9:    rgba(255, 0, 0, 95%);
+    --red-10:   rgba(255, 0, 0, 100%);
 
-    --purple-1: #eedcff;
-    --purple-2: #dcbdfb;
-    --purple-3: #dcbdfb;
-    --purple-4: #b083f0;
-    --purple-5: #986ee2;
-    --purple-6: #8256d0;
-    --purple-7: #6b44bc;
-    --purple-8: #5936a2;
-    --purple-9: #472c82;
-    --purple-10:#352160;
+    --purple-1: rgba(169, 50, 242, 55%);
+    --purple-2: rgba(169, 50, 242, 60%);
+    --purple-3: rgba(169, 50, 242, 65%);
+    --purple-4: rgba(169, 50, 242, 70%);
+    --purple-5: rgba(169, 50, 242, 75%);
+    --purple-6: rgba(169, 50, 242, 80%);
+    --purple-7: rgba(169, 50, 242, 85%);
+    --purple-8: rgba(169, 50, 242, 90%);
+    --purple-9: rgba(169, 50, 242, 95%);
+    --purple-10:rgba(169, 50, 242, 100%);
 
-    --pink-1:   #ffd7eb;
-    --pink-2:   #ffb3d8;
-    --pink-3:   #fc8dc7;
-    --pink-4:   #e275ad;
-    --pink-5:   #c96198;
-    --pink-6:   #ae4c82;
-    --pink-7:   #983b6e;
-    --pink-8:   #7e325a;
-    --pink-9:   #69264a;
-    --pink-10:  #551639;  /*rgb(255 192 203 / 81%); #FFC0CB*/   
+    --pink-1:   rgba(255, 192, 203, 55%);
+    --pink-2:   rgba(255, 192, 203, 60%);
+    --pink-3:   rgba(255, 192, 203, 65%);
+    --pink-4:   rgba(255, 192, 203, 70%);
+    --pink-5:   rgba(255, 192, 203, 75%);
+    --pink-6:   rgba(255, 192, 203, 80%);
+    --pink-7:   rgba(255, 192, 203, 85%);
+    --pink-8:   rgba(255, 192, 203, 90%);
+    --pink-9:   rgba(255, 192, 203, 95%);
+    --pink-10:  rgba(255, 192, 203, 100%);  
     
-    --coral-1:  #FFDACF;
-    --coral-2:  #FFB9A5;
-    --coral-3:  #F79981;
-    --coral-4:  #EC775C;
-    --coral-5:  #DE5B41;
-    --coral-6:  #C2442D;
-    --coral-7:  #A93524;
-    --coral-8:  #8D291B;
-    --coral-9:  #771D13;
-    --coral-10: #5D1008;
+    --coral-1:  rgba(255, 127, 80, 55%);
+    --coral-2:  rgba(255, 127, 80, 60%);
+    --coral-3:  rgba(255, 127, 80, 65%);
+    --coral-4:  rgba(255, 127, 80, 70%);
+    --coral-5:  rgba(255, 127, 80, 75%);
+    --coral-6:  rgba(255, 127, 80, 80%);
+    --coral-7:  rgba(255, 127, 80, 85%);
+    --coral-8:  rgba(255, 127, 80, 90%);
+    --coral-9:  rgba(255, 127, 80, 95%);
+    --coral-10: rgba(255, 127, 80, 100%);
 
-    --teal-1:   #e6fffa;
-    --teal-2:   #e6fffa;
-    --teal-3:   #b2f5ea;
-    --teal-4:   #81e6d9;
-    --teal-5:   #4fd1c5;
-    --teal-6:   #38b2ac;
-    --teal-7:   #319795;
-    --teal-8:   #2c7a7b;
+    --teal-1:   rgba(0, 173, 173, 50%);
+    --teal-2:   rgba(0, 173, 173, 55%);
+    --teal-3:   rgba(0, 173, 173, 60%);
+    --teal-4:   rgba(0, 173, 173, 65%);
+    --teal-5:   rgba(0, 173, 173, 70%);
+    --teal-6:   rgba(0, 173, 173, 75%);
+    --teal-7:   rgba(0, 173, 173, 80%);
+    --teal-8:   rgba(0, 173, 173, 85%);
+    --teal-9:   rgba(0, 173, 173, 95%);
+    --teal-10:   rgba(0, 173, 173, 100%);
 } /* <---- Colors */
 
 :root {
@@ -193,10 +195,10 @@ Change Opacity: rgba(red, green, blue, alpha)
     /* https://nekocolor.com is also good tool */
 
     /* Used as default text color */
-    --color: var(--gray-2);
+    --color: #C2D0E5;
    
     /* Used as default page background color */
-    --background-color: var(--gray-9);  /*--gray-9 = rgb(22,34,51)*/
+    --background-color: rgba(33, 52, 79, 100%);  /*#21344f*/
         /* background can be anyone of the following -
             --background-color: red; //solid color
             --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
@@ -205,14 +207,20 @@ Change Opacity: rgba(red, green, blue, alpha)
         */
     
     /* --dark & --light are two variants of --background-color. */
-    /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/
-    --dark:   rgba(19,30,46,1);  
-    --light:  rgba(27,42,62,1);
+    /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/ 
+    /* Add more "black" to the default background color */
+    --dark-1: rgb(27, 46, 72); 
+    --dark-2: rgb(20, 36, 58); 
+    --dark-3: rgb(8, 23, 44);  
+    /* Add more "white" to the default background color */
+    --light-1:  rgb(39, 62, 94);
+    --light-2:  rgb(42, 66, 98);
+    --light-3:  rgb(59, 84, 118);
 
     --line-height : 1.3;
-    --accent-color: var(--blue-5);
+    --accent-color: var(--accent-5);
 
-    --border-color: var(--gray-5);
+    --border-color: #658ABD;
     --border: 1px solid var(--border-color);
     --border-radius: 0.25rem;
 

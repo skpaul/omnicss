@@ -28,6 +28,7 @@ $colors: 'gray' 'blue' 'green' 'yellow' 'orange' 'red' 'purple' 'pink' 'coral' '
         @include add-color("secondary", $scale , $property);
         @include add-color("accent", $scale , $property);
     }
+
     @each $color in $colors{
         @for $scale from 1 through 10 {
             @include add-color($color, $scale , $property);
@@ -103,15 +104,27 @@ $colors: 'gray' 'blue' 'green' 'yellow' 'orange' 'red' 'purple' 'pink' 'coral' '
 .bg-initial{background-color: initial;} 
 .bc-initial{border-color: initial;}
 
-.c-dark{color: var(--dark);} //.cDark{color: var(--dark);}
-.bg-dark{background-color: var(--dark);} //.bgDark{background-color: var(--dark);}
-.bc-dark{border-color: var(--dark);} //.bcDark{border-color: var(--dark);}
+//Add more "black" to the default background color
+.c-dark-1{color: var(--dark-1);}  
+.c-dark-2{color: var(--dark-2);}  
+.c-dark-3{color: var(--dark-3);} 
+.bg-dark-1{background-color: var(--dark-1);} 
+.bg-dark-2{background-color: var(--dark-2);} 
+.bg-dark-3{background-color: var(--dark-3);} 
+.bc-dark-1{border-color: var(--dark-1);} 
+.bc-dark-2{border-color: var(--dark-2);} 
+.bc-dark-3{border-color: var(--dark-3);} 
 
-.c-light{color: var(--light);} //.cLight{color: var(--light);}
-.bg-light{background-color: var(--light);} //.bgLight{background-color: var(--light);}
-.bc-light{border-color: var(--light); } //.bcLight{ border-color: var(--light); }  
-
-
+//Add more "white" to the default background color
+.c-light-1{color: var(--light-1);}  
+.c-light-2{color: var(--light-2);}  
+.c-light-3{color: var(--light-3);} 
+.bg-light-1{background-color: var(--light-1);} 
+.bg-light-2{background-color: var(--light-2);} 
+.bg-light-3{background-color: var(--light-3);} 
+.bc-light-1{border-color: var(--light-1);} 
+.bc-light-2{border-color: var(--light-2);} 
+.bc-light-3{border-color: var(--light-3);} 
 
 @mixin create-opacity($value, $version) {
     @if $version == "general" {

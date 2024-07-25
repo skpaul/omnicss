@@ -119,7 +119,7 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v12.0.1</code></div>
+            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v13.0.0</code></div>
             <h1 class="mb15 fs15">
                 A semantic & handy <code>.css</code> library for busy developers.
             </h1>
@@ -136,7 +136,7 @@
                         <h2>Installation</h2>
                         <div>
                             The easiest way to use from CDN below- <br>
-                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@12.0.1/omnicss.min.css</code>
+                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@13.0.0/omnicss.min.css</code>
                         </div>
                         <br>
                         <div>
@@ -468,9 +468,9 @@
                     </section>
                     <!-- Container -->
 
-                    <!-- Color Scheme & Palletes -->
+                    <!-- Color Theory -->
                     <section>
-                        <h2 class="fw700">Color Scheme & Palletes</h2>
+                        <h2 class="fw700">Color Theory</h2>
 
                         <h3 class="bold">Primary Color</h3>
                         <p>
@@ -530,6 +530,9 @@
                                     <a href="https://www.canva.com/colors/color-wheel/">Canva Color Wheel</a>
                                 </li>
                                 <li>
+                                    <a href="https://www.canva.com/colors/color-meanings/">Canva Color Meanings</a>
+                                </li>
+                                <li>
                                     <a href="https://www.figma.com/color-wheel/">Figma Color Wheel</a>
                                 </li>
                                 <li>
@@ -563,44 +566,225 @@
                         </p>
                     </section>
 
+                    <!-- Color Scheme & Palletes -->
+                    <style>
+                        div.colors>div{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 11px;
+                        }
+                        div.colors>div>div{
+                            width: 70px;
+                            height: 40px;
+                            border-radius: 3px;
+                        }
+                    </style>
+                    <section>
+                        <h2 class="fw700">Color Scheme & Palletes</h2>
+
+                        <p class="mb-2.0 italic">
+                            NOTE: You can customize the color density/shade in <code>theme.css</code> stylesheet.
+                        </p>
+
+                        <h3 class="fw-500">Dark & Light variants of default background color - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>dark-1 <div class="bg-dark-1 ba bc-light-3"></div></div>
+                            <div>dark-2 <div class="bg-dark-2"></div></div>
+                            <div>dark-3 <div class="bg-dark-3"></div></div>
+                            <div>light-1 <div class="bg-light-1"></div></div>
+                            <div>light-2 <div class="bg-light-2"></div></div>
+                            <div>light-3 <div class="bg-light-3"></div></div>
+
+                        </div>
+
+                        <h3 class="mt-1.5 fw-500">Primary Colors - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>primary-1 <div class="bg-primary-1"></div></div>
+                            <div>primary-2 <div class="bg-primary-2"></div></div>
+                            <div>primary-3 <div class="bg-primary-3"></div></div>
+                            <div>primary-4 <div class="bg-primary-4"></div></div>
+                            <div>primary-5 <div class="bg-primary-5"></div></div>
+                            <div>primary-6 <div class="bg-primary-6"></div></div>
+                            <div>primary-7 <div class="bg-primary-7"></div></div>
+                            <div>primary-8 <div class="bg-primary-8"></div></div>
+                            <div>primary-9 <div class="bg-primary-9"></div></div>
+                            <div>primary-10 <div class="bg-primary-10"></div></div>
+                        </div>
+
+                        <h3 class="mt-1.5 fw-500">Secondary Colors - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>secondary-1 <div class="bg-secondary-1"></div></div>
+                            <div>secondary-2 <div class="bg-secondary-2"></div></div>
+                            <div>secondary-3 <div class="bg-secondary-3"></div></div>
+                            <div>secondary-4 <div class="bg-secondary-4"></div></div>
+                            <div>secondary-5 <div class="bg-secondary-5"></div></div>
+                            <div>secondary-6 <div class="bg-secondary-6"></div></div>
+                            <div>secondary-7 <div class="bg-secondary-7"></div></div>
+                            <div>secondary-8 <div class="bg-secondary-8"></div></div>
+                            <div>secondary-9 <div class="bg-secondary-9"></div></div>
+                            <div>secondary-10 <div class="bg-secondary-10"></div></div>
+                        </div>
+
+                        <h3 class="mt-1.5 fw-500">Accent Colors - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>accent-1 <div class="bg-accent-1"></div></div>
+                            <div>accent-2 <div class="bg-accent-2"></div></div>
+                            <div>accent-3 <div class="bg-accent-3"></div></div>
+                            <div>accent-4 <div class="bg-accent-4"></div></div>
+                            <div>accent-5 <div class="bg-accent-5"></div></div>
+                            <div>accent-6 <div class="bg-accent-6"></div></div>
+                            <div>accent-7 <div class="bg-accent-7"></div></div>
+                            <div>accent-8 <div class="bg-accent-8"></div></div>
+                            <div>accent-9 <div class="bg-accent-9"></div></div>
+                            <div>accent-10 <div class="bg-accent-10"></div></div>
+                        </div>
+
+                       
+                        <h3 class="mt-1.5 fw-500">Gray - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>gray-1 <div class="bg-gray-1"></div></div>
+                            <div>gray-2 <div class="bg-gray-2"></div></div>
+                            <div>gray-3 <div class="bg-gray-3"></div></div>
+                            <div>gray-4 <div class="bg-gray-4"></div></div>
+                            <div>gray-5 <div class="bg-gray-5"></div></div>
+                            <div>gray-6 <div class="bg-gray-6"></div></div>
+                            <div>gray-7 <div class="bg-gray-7"></div></div>
+                            <div>gray-8 <div class="bg-gray-8"></div></div>
+                            <div>gray-9 <div class="bg-gray-9"></div></div>
+                            <div>gray-10 <div class="bg-gray-10"></div></div>
+                        </div>
+                        
+                        <h3 class="mt-1.5 fw-500">Blue - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>blue-1 <div class="bg-blue-1"></div></div>
+                            <div>blue-2 <div class="bg-blue-2"></div></div>
+                            <div>blue-3 <div class="bg-blue-3"></div></div>
+                            <div>blue-4 <div class="bg-blue-4"></div></div>
+                            <div>blue-5 <div class="bg-blue-5"></div></div>
+                            <div>blue-6 <div class="bg-blue-6"></div></div>
+                            <div>blue-7 <div class="bg-blue-7"></div></div>
+                            <div>blue-8 <div class="bg-blue-8"></div></div>
+                            <div>blue-9 <div class="bg-blue-9"></div></div>
+                            <div>blue-10 <div class="bg-blue-10"></div></div>
+                        </div>
+                        <h3 class="mt-1.5 fw-500">Green - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>green-1 <div class="bg-green-1"></div></div>
+                            <div>green-2 <div class="bg-green-2"></div></div>
+                            <div>green-3 <div class="bg-green-3"></div></div>
+                            <div>green-4 <div class="bg-green-4"></div></div>
+                            <div>green-5 <div class="bg-green-5"></div></div>
+                            <div>green-6 <div class="bg-green-6"></div></div>
+                            <div>green-7 <div class="bg-green-7"></div></div>
+                            <div>green-8 <div class="bg-green-8"></div></div>
+                            <div>green-9 <div class="bg-green-9"></div></div>
+                            <div>green-10 <div class="bg-green-10"></div></div>
+                        </div>
+
+                        <h3 class="mt-1.5 fw-500">Yellow - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>yellow-1 <div class="bg-yellow-1"></div></div>
+                            <div>yellow-2 <div class="bg-yellow-2"></div></div>
+                            <div>yellow-3 <div class="bg-yellow-3"></div></div>
+                            <div>yellow-4 <div class="bg-yellow-4"></div></div>
+                            <div>yellow-5 <div class="bg-yellow-5"></div></div>
+                            <div>yellow-6 <div class="bg-yellow-6"></div></div>
+                            <div>yellow-7 <div class="bg-yellow-7"></div></div>
+                            <div>yellow-8 <div class="bg-yellow-8"></div></div>
+                            <div>yellow-9 <div class="bg-yellow-9"></div></div>
+                            <div>yellow-10 <div class="bg-yellow-10"></div></div>
+                        </div>
+                        <h3 class="mt-1.5 fw-500">Orange - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>orange-1 <div class="bg-orange-1"></div></div>
+                            <div>orange-2 <div class="bg-orange-2"></div></div>
+                            <div>orange-3 <div class="bg-orange-3"></div></div>
+                            <div>orange-4 <div class="bg-orange-4"></div></div>
+                            <div>orange-5 <div class="bg-orange-5"></div></div>
+                            <div>orange-6 <div class="bg-orange-6"></div></div>
+                            <div>orange-7 <div class="bg-orange-7"></div></div>
+                            <div>orange-8 <div class="bg-orange-8"></div></div>
+                            <div>orange-9 <div class="bg-orange-9"></div></div>
+                            <div>orange-10 <div class="bg-orange-10"></div></div>
+                        </div>
+                        
+
+                        <h3 class="mt-1.5 fw-500">Red - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>red-1 <div class="bg-red-1"></div></div>
+                            <div>red-2 <div class="bg-red-2"></div></div>
+                            <div>red-3 <div class="bg-red-3"></div></div>
+                            <div>red-4 <div class="bg-red-4"></div></div>
+                            <div>red-5 <div class="bg-red-5"></div></div>
+                            <div>red-6 <div class="bg-red-6"></div></div>
+                            <div>red-7 <div class="bg-red-7"></div></div>
+                            <div>red-8 <div class="bg-red-8"></div></div>
+                            <div>red-9 <div class="bg-red-9"></div></div>
+                            <div>red-10 <div class="bg-red-10"></div></div>
+                        </div>
+                        
+                        <h3 class="mt-1.5 fw-500">Purple - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>purple-1 <div class="bg-purple-1"></div></div>
+                            <div>purple-2 <div class="bg-purple-2"></div></div>
+                            <div>purple-3 <div class="bg-purple-3"></div></div>
+                            <div>purple-4 <div class="bg-purple-4"></div></div>
+                            <div>purple-5 <div class="bg-purple-5"></div></div>
+                            <div>purple-6 <div class="bg-purple-6"></div></div>
+                            <div>purple-7 <div class="bg-purple-7"></div></div>
+                            <div>purple-8 <div class="bg-purple-8"></div></div>
+                            <div>purple-9 <div class="bg-purple-9"></div></div>
+                            <div>purple-10 <div class="bg-purple-10"></div></div>
+                        </div>
+                        <!-- '' '' '' '' '' '' '' '' 'teal'; -->
+                        <h3 class="mt-1.5 fw-500">Pink - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>pink-1 <div class="bg-pink-1"></div></div>
+                            <div>pink-2 <div class="bg-pink-2"></div></div>
+                            <div>pink-3 <div class="bg-pink-3"></div></div>
+                            <div>pink-4 <div class="bg-pink-4"></div></div>
+                            <div>pink-5 <div class="bg-pink-5"></div></div>
+                            <div>pink-6 <div class="bg-pink-6"></div></div>
+                            <div>pink-7 <div class="bg-pink-7"></div></div>
+                            <div>pink-8 <div class="bg-pink-8"></div></div>
+                            <div>pink-9 <div class="bg-pink-9"></div></div>
+                            <div>pink-10 <div class="bg-pink-10"></div></div>
+                        </div>
+                        <h3 class="mt-1.5 fw-500">Coral - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>coral-1 <div class="bg-coral-1"></div></div>
+                            <div>coral-2 <div class="bg-coral-2"></div></div>
+                            <div>coral-3 <div class="bg-coral-3"></div></div>
+                            <div>coral-4 <div class="bg-coral-4"></div></div>
+                            <div>coral-5 <div class="bg-coral-5"></div></div>
+                            <div>coral-6 <div class="bg-coral-6"></div></div>
+                            <div>coral-7 <div class="bg-coral-7"></div></div>
+                            <div>coral-8 <div class="bg-coral-8"></div></div>
+                            <div>coral-9 <div class="bg-coral-9"></div></div>
+                            <div>coral-10 <div class="bg-coral-10"></div></div>
+                        </div>
+                        <h3 class="mt-1.5 fw-500">Teal - </h3>
+                        <div class="grid fr10-lg fr3-sm colors">
+                            <div>teal-1 <div class="bg-teal-1"></div></div>
+                            <div>teal-2 <div class="bg-teal-2"></div></div>
+                            <div>teal-3 <div class="bg-teal-3"></div></div>
+                            <div>teal-4 <div class="bg-teal-4"></div></div>
+                            <div>teal-5 <div class="bg-teal-5"></div></div>
+                            <div>teal-6 <div class="bg-teal-6"></div></div>
+                            <div>teal-7 <div class="bg-teal-7"></div></div>
+                            <div>teal-8 <div class="bg-teal-8"></div></div>
+                            <div>teal-9 <div class="bg-teal-9"></div></div>
+                            <div>teal-10 <div class="bg-teal-10"></div></div>
+                        </div>
+                    </section>
                     <!-- Foreground colors -->
                     <section>
                         <h2 class="fw700">Color <code>.c</code></h2>
-                        <p class="mb-0.4">Available colors-</p>
-
-                        <div class="grid fr10 fr3-sm values">
-                            <code>gray</code>
-                            <code>red</code>
-                            <code>green</code>
-                            <code>blue</code>
-                            <code>orange</code>
-                            <code>teal</code>
-                            <code>purple</code>
-                            <code>yellow</code>
-                            <code>pink</code>
-                            <code>coral</code>
-                        </div>
-                        
-                        <p class="mt-1.2 mb-0.4">Color density/shade-</p>
-                        
-                        <div class="grid fr10 fr3-sm values">
-                            <code>1</code>
-                            <code>2</code>
-                            <code>3</code>
-                            <code>4</code>
-                            <code>5</code>
-                            <code>6</code>
-                            <code>7</code>
-                            <code>8</code>
-                            <code>9</code>
-                            <code>10</code>
-                        </div>
-
-                        <p class="pv-2.0 italic">
-                            NOTE: You can customize the color density/shade in <code>theme.css</code> stylesheet.
-                        </p>
+                        <p class="mb-0.4">Use a color name from Color Scheme & Palletes with <code>.c</code> prefix.</p>
                             
-                        <h3>Examples -</h3>
+                        <h3 class="mt-1.0">Examples -</h3>
                         <table>
                             <tr>
                                 <td><code>.c-green-3</code></td>
@@ -613,18 +797,17 @@
                                 <td class="c-yellow-1">1st shade of yellow color.</td>
                             </tr>
                         </table>
-
                         
                         <table>
                             <tr>
-                                <td><code>.c-dark</code></td>
+                                <td><code>.c-dark-1</code></td>
                                 <td>:</td>
-                                <td>Sets color from <code>--dark</code> variable.</td>
+                                <td>Sets <code>dark-1</code> color.</td>
                             </tr>
                             <tr>
-                                <td><code>.c-light</code></td>
+                                <td><code>.c-light-3</code></td>
                                 <td>:</td>
-                                <td>Sets color from <code>--light</code> variable.</td>
+                                <td>Sets color from <code>light-3</code>.</td>
                             </tr>
                         </table>
 
@@ -651,7 +834,44 @@
                                 <td>Initial color.</td>
                             </tr>
                         </table>
-                       
+
+                        <p class="mt-1.5 mb-1.0">You can also change the opacity of color - </p>
+                        <div class="grid fr7 fr3-sm values">
+                            <code>.opacity-5</code>
+                            <code>.opacity-10</code>
+                            <code>.opacity-15</code>
+                            <code>.opacity-20</code>
+                            <code>.opacity-25</code>
+                            <code>.opacity-30</code>
+                            <code>.opacity-35</code>
+                            <code>.opacity-40</code>
+                            <code>.opacity-45</code>
+                            <code>.opacity-50</code>
+                            <code>.opacity-55</code>
+                            <code>.opacity-60</code>
+                            <code>.opacity-65</code>
+                            <code>.opacity-70</code>
+                            <code>.opacity-75</code>
+                            <code>.opacity-80</code>
+                            <code>.opacity-85</code>
+                            <code>.opacity-90</code>
+                            <code>.opacity-95</code>
+                            <code>.opacity-100</code>
+                        </div>
+
+                        <h3 class="mt-1.5">Examples - </h3>
+                        <table>
+                            <tr>
+                                <td><code>.opacity-5</code></td>
+                                <td>:</td>
+                                <td>Sets <code> opacity: 5%;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>.opacity-30</code></td>
+                                <td>:</td>
+                                <td>Sets <code> opacity: 30%;</code></td>
+                            </tr>
+                        </table>
                     </section>
                     <!-- Foreground colors -->
 
@@ -659,65 +879,34 @@
                     <section>
                         <h2 class="fw700">Background Color <code>.bg</code></h2>
                        
-                        <p>Available colors-</p>
-                        <div class="grid fr10 fr3-sm values">
-                            <code>gray</code>
-                            <code>red</code>
-                            <code>green</code>
-                            <code>blue</code>
-                            <code>orange</code>
-                            <code>teal</code>
-                            <code>purple</code>
-                            <code>yellow</code>
-                            <code>pink</code>
-                            <code>coral</code>
-                        </div>
+                       <p>Use a color name from Color Scheme & Palletes with <code>.bg</code> prefix.</p>
                         
-                        <p class="mt10">Color density/shade-</p>
-                        <div class="grid fr10 fr3-sm values">
-                            <code>1</code>
-                            <code>2</code>
-                            <code>3</code>
-                            <code>4</code>
-                            <code>5</code>
-                            <code>6</code>
-                            <code>7</code>
-                            <code>8</code>
-                            <code>9</code>
-                            <code>10</code>
-                        </div>
 
-                        <p class="pv-250">
-                            You can customize the color shades in <code>theme.css</code> stylesheet.
-                        </p>
                             
-                        <h3 class="mt-2.0">Example</h3>
+                        <h3 class="mt-2.0">Examples -</h3>
                         <table>
                             <tr>
                                 <td><code>.bg-green-3</code></td>
                                 <td>:</td>
-                                <td class="bg-green-3 cGreen9 ph10">3rd shade of green color.</td>
+                                <td class="bg-green-3 c-green-9 ph10">3rd shade of green color.</td>
                             </tr>
                             <tr>
                                 <td><code>.bg-yellow-5</code></td>
                                 <td>:</td>
-                                <td class="bg-yellow-5 ph10">5th shade of yellow color.</td>
+                                <td class="bg-yellow-5 ph10" style="color:black;">5th shade of yellow color.</td>
                             </tr>
                         </table>
                         
-                        <p class="mt20">
-                            You can also use light/dark shade of <code>--background-color</code> defined in theme.css -
-                        </p>
                         <table>
                             <tr>
-                                <td><code>.bg-dark</code></td>
+                                <td><code>.bg-dark-2</code></td>
                                 <td>:</td>
-                                <td class="bg-dark">Dark shaded background color.</td>
+                                <td class="bg-dark-2">2nd dark variant of background color.</td>
                             </tr>
                             <tr>
-                                <td><code>.bg-light</code></td>
+                                <td><code>.bg-light-3</code></td>
                                 <td>:</td>
-                                <td class="bg-light">Light shaded background color.</td>
+                                <td class="bg-light-3">3rd light variant of background color.</td>
                             </tr>
                         </table>
 
@@ -730,61 +919,26 @@
                     <!-- Border colors -->
                     <section>
                         <h2 class="fw700">Border Color <code>.bc</code></h2>
-                       
-                        <p>Available colors-</p>
-                        <div class="grid fr10 fr3-sm values">
-                            <code>gray</code>
-                            <code>red</code>
-                            <code>green</code>
-                            <code>blue</code>
-                            <code>orange</code>
-                            <code>teal</code>
-                            <code>purple</code>
-                            <code>yellow</code>
-                            <code>pink</code>
-                            <code>coral</code>
-                        </div>
-                        
-                        <p class="mt10">Color density/shade-</p>
-                        <div class="grid fr10 fr3-sm values">
-                            <code>1</code>
-                            <code>2</code>
-                            <code>3</code>
-                            <code>4</code>
-                            <code>5</code>
-                            <code>6</code>
-                            <code>7</code>
-                            <code>8</code>
-                            <code>9</code>
-                            <code>10</code>
-                        </div>
-
-                        <p class="mt10">
-                            You can customize the color shades in <code>theme.css</code> stylesheet.
-                        </p>
-                            
-                        <h3 class="mt-2.0">Example</h3>
+ 
+                        <h3 class="mt-2.0 mb-1.0">Examples - </h3>
                         <table>
                             <tr>
                                 <td><code>.bc-green-3</code></td>
                                 <td>:</td>
-                                <td class="ba bcGreen3 ph10">3rd shade of green color. Please note that, you must use <code>.ba</code> to set the border width and style. </td>
+                                <td class="ba bc-green-3 ph10">3rd shade of green color. Please note that, you must use <code>.ba</code> to set the border width and style. </td>
                             </tr>
                         </table>
                         
-                        <p class="mt20">
-                            You can also use light/dark shade of <code>--background-color</code> defined in theme.css -
-                        </p>
                         <table>
                             <tr>
-                                <td><code>.bc-dark</code></td>
+                                <td><code>.bc-dark-1</code></td>
                                 <td>:</td>
-                                <td class="bc-dark">Dark shaded border color.</td>
+                                <td class="bc-dark-1">Sets border color from <code>dark-1</code>.</td>
                             </tr>
                             <tr>
-                                <td><code>.bc-light</code></td>
+                                <td><code>.bc-light-3</code></td>
                                 <td>:</td>
-                                <td class="bc-light">Light shaded border color.</td>
+                                <td class="bc-light-3">Sets border color from <code>light-3</code>.</td>
                             </tr>
                         </table>
 
@@ -1607,29 +1761,6 @@
                                     <code>background-color: var(--tr-hover-background-color);</code> //Sets bg color on hover. <br>
                                 </td>
                             </tr>
-                        </table>
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Col a</th>
-                                    <th>Col b</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>A</td>
-                                    <td>B</td>
-                                </tr>
-                                <tr>
-                                    <td>A</td>
-                                    <td>B</td>
-                                </tr>
-                                <tr>
-                                    <td>A</td>
-                                    <td>B</td>
-                                </tr>
-                            </tbody>
                         </table>
                     </section>
                     <!-- Table// -->
