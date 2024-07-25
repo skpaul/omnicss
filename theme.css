@@ -9,6 +9,7 @@
     1) Pixel-REM Converter      : nekocalc.com/px-to-rem-converter
     2) Color Scheme Generator   : color.adobe.com/create/color-wheel
     3) Color Shades Generator   : material.io/design/color/the-color-system.html#tools-for-picking-colors
+                                : https://colorkit.co/color-shades-generator/ffc0cb/
     4) Font Sizes Generator     : type-scale.com/
     5) nekocolor.com is also good color tool.
 
@@ -24,9 +25,50 @@
 */
 
 /* Colors----> */
+/*
+HOW TO CREATE DIFFERENT VARIATIONS OF A COLOR
+---------------------------------------------
+Change Tints  : Increase/Decrease "white" color. Tint refers refers to shades of a color as it's mixed with white.
+Change Shades : Increase/Decrease "black" color. Shades of the color as the color is mixed with black.
+Change Opacity: rgba(red, green, blue, alpha)
+                RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+*/
 :root {
     --black:    #1c2128;
     --white:    #E0E8F2;
+
+    --primary-1:   rgba(117, 179, 255, 50%);
+    --primary-2:   rgba(117, 179, 255, 55%);
+    --primary-3:   rgba(117, 179, 255, 65%);
+    --primary-4:   rgba(117, 179, 255, 70%);
+    --primary-5:   rgba(117, 179, 255, 75%);
+    --primary-6:   rgba(117, 179, 255, 80%);
+    --primary-7:   rgba(117, 179, 255, 85%);
+    --primary-8:   rgba(117, 179, 255, 90%);
+    --primary-9:   rgba(117, 179, 255, 95%);
+    --primary-10:  rgba(117, 179, 255, 100%);
+
+    --secondary-1:   rgb(179, 255, 117, 50%);
+    --secondary-2:   rgb(179, 255, 117, 55%);
+    --secondary-3:   rgb(179, 255, 117, 60%);
+    --secondary-4:   rgb(179, 255, 117, 65%);
+    --secondary-5:   rgb(179, 255, 117, 70%);
+    --secondary-6:   rgb(179, 255, 117, 75%);
+    --secondary-7:   rgb(179, 255, 117, 80%);
+    --secondary-8:   rgb(179, 255, 117, 85%);
+    --secondary-9:   rgb(179, 255, 117, 90%);
+    --secondary-10:  rgb(179, 255, 117, 100%);   /*#B3FF75*/
+
+    --accent-1:   rgb(255, 117, 179, 50%);
+    --accent-2:   rgb(255, 117, 179, 55%);
+    --accent-3:   rgb(255, 117, 179, 60%);
+    --accent-4:   rgb(255, 117, 179, 65%);
+    --accent-5:   rgb(255, 117, 179, 70%);
+    --accent-6:   rgb(255, 117, 179, 75%);
+    --accent-7:   rgb(255, 117, 179, 80%);
+    --accent-8:   rgb(255, 117, 179, 85%);
+    --accent-9:   rgb(255, 117, 179, 90%);
+    --accent-10:  rgb(255, 117, 179, 100%);   /*#FF75B3*/
 
     --gray-1:   #E0E8F2;
     --gray-2:   #C2D0E5;
@@ -37,7 +79,7 @@
     --gray-7:   #3D5F8E;
     --gray-8:   #304A6F;
     --gray-9:   #233651;
-    --gray-10:   #162233;
+    --gray-10:  #162233;
     
     --blue-1:   #c6e6ff;
     --blue-2:   #96d0ff;
@@ -48,7 +90,7 @@
     --blue-7:   #255ab2;
     --blue-8:   #1b4b91;
     --blue-9:   #143d79;
-    --blue-10:   #0f2d5c;
+    --blue-10:  #0f2d5c;
 
     --green-1:  #b4f1b4;
     --green-2:  #8ddb8c;
@@ -59,18 +101,18 @@
     --green-7:  #2b6a30;
     --green-8:  #245829;
     --green-9:  #1b4721;
-    --green-10:  #113417;
+    --green-10: #113417;
 
-    --yellow-1: #fbe090;
-    --yellow-2: #eac55f;
-    --yellow-3: #daaa3f;
-    --yellow-4: #c69026;
-    --yellow-5: #ae7c14;
-    --yellow-6: #966600;
-    --yellow-7: #805400;
-    --yellow-8: #6c4400;
-    --yellow-9: #593600;
-    --yellow-10: #452700;
+    --yellow-1: rgba(218, 170, 63, 55%);
+    --yellow-2: rgba(218, 170, 63, 60%);
+    --yellow-3: rgba(218, 170, 63, 65%);
+    --yellow-4: rgba(218, 170, 63, 70%);
+    --yellow-5: rgba(218, 170, 63, 75%);
+    --yellow-6: rgba(218, 170, 63, 80%);
+    --yellow-7: rgba(218, 170, 63, 85%);
+    --yellow-8: rgba(218, 170, 63, 90%);
+    --yellow-9: rgba(218, 170, 63, 95%);
+    --yellow-10:rgba(218, 170, 63, 100%);
 
     --orange-1: #ffddb0;
     --orange-2: #ffbc6f;
@@ -81,7 +123,7 @@
     --orange-7: #94471b;
     --orange-8: #7f3913;
     --orange-9: #682d0f;
-    --orange-10: #4d210c;
+    --orange-10:#4d210c;
 
     --red-1:    #ffd8d3;
     --red-2:    #ffb8b0;
@@ -92,7 +134,7 @@
     --red-7:    #ad2e2c;
     --red-8:    #922323;
     --red-9:    #78191b;
-    --red-10:    #5D0F12;
+    --red-10:   #5D0F12;
 
     --purple-1: #eedcff;
     --purple-2: #dcbdfb;
@@ -103,7 +145,7 @@
     --purple-7: #6b44bc;
     --purple-8: #5936a2;
     --purple-9: #472c82;
-    --purple-10: #352160;
+    --purple-10:#352160;
 
     --pink-1:   #ffd7eb;
     --pink-2:   #ffb3d8;
@@ -114,8 +156,8 @@
     --pink-7:   #983b6e;
     --pink-8:   #7e325a;
     --pink-9:   #69264a;
-    --pink-10:   #551639;
-
+    --pink-10:  #551639;  /*rgb(255 192 203 / 81%); #FFC0CB*/   
+    
     --coral-1:  #FFDACF;
     --coral-2:  #FFB9A5;
     --coral-3:  #F79981;
@@ -125,7 +167,7 @@
     --coral-7:  #A93524;
     --coral-8:  #8D291B;
     --coral-9:  #771D13;
-    --coral-10:  #5D1008;
+    --coral-10: #5D1008;
 
     --teal-1:   #e6fffa;
     --teal-2:   #e6fffa;

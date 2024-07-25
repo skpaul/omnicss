@@ -205,20 +205,15 @@
                             <tr>
                                 <td><code>--dark</code> </td>
                                 <td>:</td>
-                                <td>Quick variant of <code>--background-color</code> : <br>
-                                    Usage: <br>
-                                    <code>.c-dark</code>   : Sets font color dark <br>
-                                    <code>.bg-dark</code>  : Sets background color dark. <br>
-                                    <code>.bc-dark</code>  : Sets border color dark <br>
+                                <td>Dark shade of <code>--background-color</code> variable : <br>
+                                    Used in <code>.c-dark</code>, <code>.bg-dark</code>  and <code>.bc-dark</code>
                                 </td>
                             </tr>
                             <tr>
                                 <td><code>--light</code></td>
                                 <td>:</td>
-                                <td>Quick variant of <code>--background-color</code> : <br>
-                                    <code>.c-light</code> : Sets font color light. <br>
-                                    <code>.bg-light</code>: Sets background color light. <br>
-                                    <code>.bc-light</code>: Sets border color light. <br>
+                                <td>Light shade of <code>--background-color</code> variable : <br>
+                                    Used in <code>.c-light</code>, <code>.bg-light</code>  and <code>.bc-light</code>
                                 </td>
                             </tr>
                             <tr>
@@ -473,10 +468,106 @@
                     </section>
                     <!-- Container -->
 
+                    <!-- Color Scheme & Palletes -->
+                    <section>
+                        <h2 class="fw700">Color Scheme & Palletes</h2>
+
+                        <h3 class="bold">Primary Color</h3>
+                        <p>
+                            The primary color is a color that dominates your design, means the great stuff will use your primary color, including logo. Your primary color is the color associated with your brand.
+                        </p>
+                        
+                        <h3 class="bold mt-1.5">Number of Colors in Scheme: Three Recommended</h3>
+                        <p>
+                            You’ve got the primary color; now it is time to seize other colors in the color scheme. Before that, you need to decide how many colors do I need to complete a color scheme.
+                        </p>
+                        <p>
+                            For the palette, three colors recommended. Based on a Triad Color Scheme of the color theory. Which traditionally uses three Hues that evenly spaced around the Color Wheel.
+                        </p>
+                        <h3 class="bold mt-1.5">The 60–30–10 rule</h3>
+                        <p>
+                            The 60–30–10 rule is an old designer’s rule on how you can use colors in your design. Which describes as you should use primary color 60% referred to as slack & jacket, 30% usage of secondary color, which may include two secondary colors 15% each, which is the shirt and 10% for the accent color as a tie, all in a business suit.
+                        </p>
+                        <h3 class="bold mt-1.5">Secondary Color(s) and Accent Color</h3>
+                        <p>
+                            The color you will be using less often than the primary color is secondary. The color that you will use at least 10% is the accent color.
+                        </p>
+                        <p>
+                             Secondary and Accent colors you can select by trying different color theories using tools that allow you to create a color palette using color theories like a Color wheel or Color Space or Culrs.
+                        </p>
+                        <p>
+                            You can browse through the color palette list that uses your selected primary color in a palette as a primary color. You can find Color palettes from Colorsinspo, Culrs, etc.
+                        </p>
+                        <h3 class="bold mt-1.5">Neutral Colors: White, Black, Gray</h3>
+                        <p>
+                            Neutral means without color, which includes beige, ivory, taupe, black, gray, and shades of white. Be careful using these colors, White, Black, and Gray you will be using for Text, to create contrast for elements or as background-color.
+                        </p>
+                        <h3 class="bold mt-2.5">HOW TO CREATE DIFFERENT VARIATIONS OF A COLOR</h3>
+                        <p>
+                            <ul>
+                                <li>
+                                    Using Tints  : Increase/Decrease "white" color. Tint refers refers to shades of a color as it's mixed with white.
+                                </li>
+                                <li>
+                                    Using Shades : Increase/Decrease "black" color. Shades of the color as the color is mixed with black.
+                                </li>
+                                <li>
+                                    Using Opacity: rgba(red, green, blue, alpha). RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+                                </li>
+                            </ul>
+                        </p>
+
+                        <h3 class="bold mt-2.5 ucase">Great Color Tools</h3>
+                        <p>
+                            <ul>
+                                <li>
+                                    <a href="https://mycolor.space/">MyColor - Color Palletes Generator</a>
+                                </li>
+                                <li>
+                                    <a href="https://culrs.com/">Culrs: Color Palletes Generator</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.canva.com/colors/color-wheel/">Canva Color Wheel</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.figma.com/color-wheel/">Figma Color Wheel</a>
+                                </li>
+                                <li>
+                                    <a href="https://color.adobe.com/create/color-wheel">Adobe Color Wheel</a>
+                                </li>
+                                <li>
+                                    <a href="https://colorkit.co/color-shades-generator/ffc0cb/">ColorKit Color Shades Generator</a>
+                                </li>
+                                <li>
+                                    <a href="https://10015.io/tools/hex-to-rgba-converter">HEX to RGBA Converter</a>
+                                </li>
+                            </ul>
+                        </p>
+
+                        <p class="mt20">
+                            Tips & Tricks:
+                            <ul>
+                                <li class="c-primary-10">
+                                    High-emphasis text should have an opacity of 87%
+                                </li>
+                                <li>
+                                    Medium emphasis text is applied at 60%
+                                </li>
+                                <li>
+                                    Disabled text uses an opacity of 38%.
+                                </li>
+                                <li>
+                                    Convert HEX to rgba - rgba(#ff0000, 0.5);
+                                </li>
+                            </ul>
+                        </p>
+                    </section>
+
                     <!-- Foreground colors -->
                     <section>
                         <h2 class="fw700">Color <code>.c</code></h2>
-                        
+                        <p class="mb-0.4">Available colors-</p>
+
                         <div class="grid fr10 fr3-sm values">
                             <code>gray</code>
                             <code>red</code>
@@ -490,7 +581,7 @@
                             <code>coral</code>
                         </div>
                         
-                        <p class="mt-100">Color density/shade-</p>
+                        <p class="mt-1.2 mb-0.4">Color density/shade-</p>
                         
                         <div class="grid fr10 fr3-sm values">
                             <code>1</code>
@@ -505,11 +596,11 @@
                             <code>10</code>
                         </div>
 
-                        <p class="pv-250">
-                            You can customize the color shades in <code>theme.css</code> stylesheet.
+                        <p class="pv-2.0 italic">
+                            NOTE: You can customize the color density/shade in <code>theme.css</code> stylesheet.
                         </p>
                             
-                        <h3>Example</h3>
+                        <h3>Examples -</h3>
                         <table>
                             <tr>
                                 <td><code>.c-green-3</code></td>
@@ -523,21 +614,44 @@
                             </tr>
                         </table>
 
-                        You can also use light/dark shade of <code>--background-color</code> defined in theme.css.
+                        
                         <table>
                             <tr>
                                 <td><code>.c-dark</code></td>
                                 <td>:</td>
-                                <td class="c-dark">Dark shaded font color.</td>
+                                <td>Sets color from <code>--dark</code> variable.</td>
                             </tr>
                             <tr>
                                 <td><code>.c-light</code></td>
                                 <td>:</td>
-                                <td class="c-light">Light shaded font color.</td>
+                                <td>Sets color from <code>--light</code> variable.</td>
                             </tr>
                         </table>
 
-                        Use <code>.c-0</code> for transparent font color.
+                        <p class="mt-1.5">Other classes -</p>
+                        <table>
+                            <tr>
+                                <td><code>.c-0</code></td>
+                                <td>:</td>
+                                <td>Transparent color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.c-unset</code></td>
+                                <td>:</td>
+                                <td>Unset color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.c-inherit</code></td>
+                                <td>:</td>
+                                <td>Inherit color.</td>
+                            </tr>
+                            <tr>
+                                <td><code>.c-initial</code></td>
+                                <td>:</td>
+                                <td>Initial color.</td>
+                            </tr>
+                        </table>
+                       
                     </section>
                     <!-- Foreground colors -->
 

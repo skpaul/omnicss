@@ -6,7 +6,7 @@
 
 // High-emphasis text should have an opacity of 87%
 // Medium emphasis text is applied at 60%
-// Disabled text uses an opacity of 38%.
+// Disabled text uses an opacity of 38%
 
 @mixin add-color($color, $scale, $property) {
     &-#{$color}-#{$scale}{
@@ -20,48 +20,62 @@
     }  
 }
 
+$colors: 'gray' 'blue' 'green' 'yellow' 'orange' 'red' 'purple' 'pink' 'coral' 'teal';
+
 @mixin create-rule($property) {
     @for $scale from 1 through 10 {
-        @include add-color("gray", $scale , $property);
-        @include add-color-compact("Gray", $scale , $property);
+        @include add-color("primary", $scale , $property);
+        @include add-color("secondary", $scale , $property);
+        @include add-color("accent", $scale , $property);
     }
-    @for $scale from 1 through 10 {
-        @include add-color("blue", $scale , $property);
-        @include add-color-compact("Blue", $scale , $property);
+    @each $color in $colors{
+        @for $scale from 1 through 10 {
+            @include add-color($color, $scale , $property);
+            //@include add-color-compact("Gray", $scale , $property);
+        }
     }
-    @for $scale from 1 through 10 {
-        @include add-color("green", $scale , $property);
-        @include add-color-compact("Green", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("yellow", $scale , $property);
-        @include add-color-compact("Yellow", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("orange", $scale , $property);
-        @include add-color-compact("Orange", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("red", $scale , $property);
-        @include add-color-compact("Red", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("purple", $scale , $property);
-        @include add-color-compact("Purple", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("pink", $scale , $property);
-        @include add-color-compact("Pink", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("coral", $scale , $property);
-        @include add-color-compact("Coral", $scale , $property);
-    }
-    @for $scale from 1 through 10 {
-        @include add-color("teal", $scale , $property);
-        @include add-color-compact("Teal", $scale , $property);
-    }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("gray", $scale , $property);
+    //     //@include add-color-compact("Gray", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("blue", $scale , $property);
+    //     //@include add-color-compact("Blue", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("green", $scale , $property);
+    //     //@include add-color-compact("Green", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("yellow", $scale , $property);
+    //     //@include add-color-compact("Yellow", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("orange", $scale , $property);
+    //     //@include add-color-compact("Orange", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("red", $scale , $property);
+    //     //@include add-color-compact("Red", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("purple", $scale , $property);
+    //     //@include add-color-compact("Purple", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("pink", $scale , $property);
+    //     //@include add-color-compact("Pink", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("coral", $scale , $property);
+    //     //@include add-color-compact("Coral", $scale , $property);
+    // }
+    // @for $scale from 1 through 10 {
+    //     @include add-color("teal", $scale , $property);
+    //     //@include add-color-compact("Teal", $scale , $property);
+    // }
 }
+
 
 .c{
     @include create-rule("color");
@@ -73,14 +87,48 @@
     @include create-rule("border-color");
 }
 
-.c-0{color: transparent;} .c0{color: transparent;}
-.bg-0{background-color: transparent;} .bg0{background-color: transparent;}
-.bc-0{border-color: transparent;} .bc0{border-color: transparent;}
+.c-0{color: transparent;} //.c0{color: transparent;}
+.bg-0{background-color: transparent;} //.bg0{background-color: transparent;}
+.bc-0{border-color: transparent;} //.bc0{border-color: transparent;}
 
-.c-dark{color: var(--dark);} .cDark{color: var(--dark);}
-.bg-dark{background-color: var(--dark);} .bgDark{background-color: var(--dark);}
-.bc-dark{border-color: var(--dark);} .bcDark{border-color: var(--dark);}
+.c-unset{color: unset;} 
+.bg-unset{background-color: unset;} 
+.bc-unset{border-color: unset;}
 
-.c-light{color: var(--light);} .cLight{color: var(--light);}
-.bg-light{background-color: var(--light);} .bgLight{background-color: var(--light);}
-.bc-light{border-color: var(--light); } .bcLight{ border-color: var(--light); }  
+.c-inherit{color: inherit;} 
+.bg-inherit{background-color: inherit;} 
+.bc-inherit{border-color: inherit;}
+
+.c-initial{color: initial;} 
+.bg-initial{background-color: initial;} 
+.bc-initial{border-color: initial;}
+
+.c-dark{color: var(--dark);} //.cDark{color: var(--dark);}
+.bg-dark{background-color: var(--dark);} //.bgDark{background-color: var(--dark);}
+.bc-dark{border-color: var(--dark);} //.bcDark{border-color: var(--dark);}
+
+.c-light{color: var(--light);} //.cLight{color: var(--light);}
+.bg-light{background-color: var(--light);} //.bgLight{background-color: var(--light);}
+.bc-light{border-color: var(--light); } //.bcLight{ border-color: var(--light); }  
+
+
+
+@mixin create-opacity($value, $version) {
+    @if $version == "general" {
+        &-#{$value}{
+            opacity: #{$value} + '%';
+        }
+    }@else{
+        &#{$value}{
+            opacity: #{$value} + '%';
+        }
+    }
+}
+
+.opacity{
+    //This loop creates value 5,10,15, .......,100
+    @for $i from 1 through 20 {
+        $value: $i*5;
+        @include create-opacity($value, "general")  //creates .opacity-5 {opacity: 5%;}
+    }
+}
