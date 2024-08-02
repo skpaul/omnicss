@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Elevation</title>
+    <style>
+        :root {
+            --elevation-overlay-base-color: 255,255,255;
+            --bg-color : #121212;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .base-color{           
+            padding: 20px;
+            background-color: var(--bg-color);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .elevated{            
+            height: 139px;
+            width: 139px;
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* .dp-1{
+            background-color: rgba(var(--elevation-overlay-base-color), 5%);
+        } */
+
+        .dp-name, .dp-color{
+            color:white;
+        }
+
+        .dp-name{
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <p>Higher elevation, lighter surface</p>
+    <input type="text" id="colorValue" value="" oninput="myFunction();">
+    <div class="base-color">
+        <!-- <div class="elevated o1dp">
+            <div class="dp-name">01dp (Overlay: 1%)</div>
+            <div class="dp-color"></div>
+        </div> -->
+    </div>
+    <script>
+       
+        function myFunction(){
+            var colorValue = document.getElementById("colorValue").value;
+            document.documentElement.style.setProperty('--bg-color', colorValue);
+        }
+
+        function addcssrule(suffix, styleTag ) 
+        { 
+            styleTag.append(" .dp-"+ suffix +"{ background-color: rgba(var(--elevation-overlay-base-color), "+ suffix +"%);}");     
+        } 
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+        const eyeDropper = new EyeDropper()
+
+        async function useEyeDropper() {
+            try {
+                const selectedColor = await eyeDropper.open()
+               // console.log(selectedColor) // { sRGBHex: '#008080' }
+                // document.body.style.backgroundColor = selectedColor.sRGBHex;
+                return await selectedColor.sRGBHex;
+            } catch (err) {
+                console.log('eye dropper cancelled')
+            }
+        }
+
+        $(function() {
+            var minDp = 5;
+            var maxDp = 16;
+            for (let i = minDp; i <= maxDp ; i++) {
+                $('.base-color').append(' <div class="elevated dp-'+ i +'"><div class="dp-name">dp-'+ i +' (Overlay: '+ i +'%)</div><div class="dp-color"></div></div>');
+            }
+            var styleTag =  $("<style type='text/css'> </style>").appendTo("head");
+            for (let i = minDp; i <= maxDp; i++) {
+                addcssrule(i, styleTag );
+            }
+
+            $('.elevated').click(function(){
+                (async () => {
+                    var kk = await useEyeDropper();
+                     $(this).find('.dp-color').text(kk);
+                })()
+            });
+        });
+    </script>
+</body>
+</html>
