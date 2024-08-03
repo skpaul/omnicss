@@ -6,7 +6,7 @@
     <style>
         :root {
             --elevation-overlay-base-color: 0,0,0;
-            --target-color : #121212;
+            --target-color : #1C2128;
         }
 
         body{
@@ -105,7 +105,7 @@
 <body>
     <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 50px;">
         <div style="margin-right: 10px;">
-            <input type="text" value="#121212" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
+            <input type="text" value="#1C2128" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
         </div>
         <div style="position: relative;">
             <div class="picker-icon">
@@ -233,7 +233,7 @@
             });
 
             var styleTag =  $("<style type='text/css'> </style>").appendTo("head");
-            var overlayValues = [5,7,8,9,11,12,14,15,16];
+            var overlayValues = [2,3,4,5,6,7,8,9,10,11,12];
             function createColors(type, value, rgb){
                 $('.'+ type +'').append('<div class="color-box">'+
                                             '<div style="color: #efd5d5; font-size: 11px; margin-bottom:5px;" class="invert-color">Overlay (%)</div>' +
