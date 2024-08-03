@@ -1,6 +1,10 @@
 # OmniCSS
 A semantic & handy <code>.css</code> library for busy developers.
 
-[Documentation:](https://skpaul.github.io/omnicss/)
+## Documentation
 
-[Installation- https://cdn.jsdelivr.net/gh/skpaul/omnicss@13.0.0/omnicss.min.css](https://cdn.jsdelivr.net/gh/skpaul/omnicss@13.0.0/omnicss.min.css)
+For installation, classes & examples please visit the docs [home page](https://skpaul.github.io/omnicss/).
+
+## Colour Variants Tool
+
+A versatile & meticulous [online tool](https://skpaul.github.io/omnicss/tools/color-variants.html) for generating colour variants using shades & tints. Fully customizable shade and tint values.
