@@ -1,0 +1,158 @@
+
+/* Colors----> */
+/*
+HOW TO CREATE DIFFERENT VARIATIONS OF A COLOR
+---------------------------------------------
+Change Tints  : Increase/Decrease "white" color. Tint refers refers to shades of a color as it's mixed with white.
+Change Shades : Increase/Decrease "black" color. Shades of the color as the color is mixed with black.
+Change Opacity: rgba(red, green, blue, alpha)
+                RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
+*/
+:root {
+    --black:    #1c2128;
+    --white:    #E0E8F2;
+
+    --primary: #75b3ff;
+    --primary-1:   rgba(117, 179, 255, 50%);
+    --primary-2:   rgba(117, 179, 255, 55%);
+    --primary-3:   rgba(117, 179, 255, 65%);
+    --primary-4:   #6aa3e8;
+    --primary-5:   #6faaf2;
+    --primary-6:   rgba(117, 179, 255, 80%);
+    --primary-7:   rgba(117, 179, 255, 85%);
+    --primary-8:   rgba(117, 179, 255, 90%);
+    --primary-9:   rgba(117, 179, 255, 95%);
+    --primary-10:  rgba(117, 179, 255, 100%);
+
+    --secondary-1:   rgb(179, 255, 117, 50%);
+    --secondary-2:   rgb(179, 255, 117, 55%);
+    --secondary-3:   rgb(179, 255, 117, 60%);
+    --secondary-4:   rgb(179, 255, 117, 65%);
+    --secondary-5:   rgb(179, 255, 117, 70%);
+    --secondary-6:   rgb(179, 255, 117, 75%);
+    --secondary-7:   rgb(179, 255, 117, 80%);
+    --secondary-8:   rgb(179, 255, 117, 85%);
+    --secondary-9:   rgb(179, 255, 117, 90%);
+    --secondary-10:  rgb(179, 255, 117, 100%);   /*#B3FF75*/
+
+    --accent-1:   rgb(255, 117, 179, 50%);
+    --accent-2:   rgb(255, 117, 179, 55%);
+    --accent-3:   rgb(255, 117, 179, 60%);
+    --accent-4:   rgb(255, 117, 179, 65%);
+    --accent-5:   rgb(255, 117, 179, 70%);
+    --accent-6:   rgb(255, 117, 179, 75%);
+    --accent-7:   rgb(255, 117, 179, 80%);
+    --accent-8:   rgb(255, 117, 179, 85%);
+    --accent-9:   rgb(255, 117, 179, 90%);
+    --accent-10:  rgb(255, 117, 179, 100%);   /*#FF75B3*/
+
+    --gray-1:   #E0E8F2;
+    --gray-2:   #C2D0E5;
+    --gray-3:   #A3B9D8;
+    --gray-4:   #768390;
+    --gray-5:   #658ABD;
+    --gray-6:   #4A73AD;
+    --gray-7:   #3D5F8E;
+    --gray-8:   #304A6F;
+    --gray-9:   #233651;
+    --gray-10:  #162233;
+    
+    --blue-1:   rgba(0, 0, 255, 55%);
+    --blue-2:   rgba(0, 0, 255, 60%);
+    --blue-3:   rgba(0, 0, 255, 65%);
+    --blue-4:   rgba(0, 0, 255, 70%);
+    --blue-5:   rgba(0, 0, 255, 75%);
+    --blue-6:   rgba(0, 0, 255, 80%);
+    --blue-7:   rgba(0, 0, 255, 85%);
+    --blue-8:   rgba(0, 0, 255, 90%);
+    --blue-9:   rgba(0, 0, 255, 95%);
+    --blue-10:  rgba(0, 0, 255, 100%);
+
+    --green-1:  rgba(0, 255, 0, 55%);
+    --green-2:  rgba(0, 255, 0, 60%);
+    --green-3:  rgba(0, 255, 0, 65%);
+    --green-4:  rgba(0, 255, 0, 70%);
+    --green-5:  rgba(0, 255, 0, 75%);
+    --green-6:  rgba(0, 255, 0, 80%);
+    --green-7:  rgba(0, 255, 0, 85%);
+    --green-8:  rgba(0, 255, 0, 90%);
+    --green-9:  rgba(0, 255, 0, 95%);
+    --green-10: rgba(0, 255, 0, 100%);
+
+    --yellow-1: rgba(255, 255, 0, 55%);
+    --yellow-2: rgba(255, 255, 0, 60%);
+    --yellow-3: rgba(255, 255, 0, 65%);
+    --yellow-4: rgba(255, 255, 0, 70%);
+    --yellow-5: rgba(255, 255, 0, 75%);
+    --yellow-6: rgba(255, 255, 0, 80%);
+    --yellow-7: rgba(255, 255, 0, 85%);
+    --yellow-8: rgba(255, 255, 0, 90%);
+    --yellow-9: rgba(255, 255, 0, 95%);
+    --yellow-10:rgba(255, 255, 0, 100%);
+
+    --orange-1: rgba(255, 165, 0, 55%);
+    --orange-2: rgba(255, 165, 0, 60%);
+    --orange-3: rgba(255, 165, 0, 65%);
+    --orange-4: rgba(255, 165, 0, 70%);
+    --orange-5: rgba(255, 165, 0, 75%);
+    --orange-6: rgba(255, 165, 0, 80%);
+    --orange-7: rgba(255, 165, 0, 85%);
+    --orange-8: rgba(255, 165, 0, 90%);
+    --orange-9: rgba(255, 165, 0, 95%);
+    --orange-10:rgba(255, 165, 0, 100%);
+
+    --red-1:    rgba(255, 0, 0, 55%);
+    --red-2:    rgba(255, 0, 0, 60%);
+    --red-3:    rgba(255, 0, 0, 65%);
+    --red-4:    rgba(255, 0, 0, 70%);
+    --red-5:    rgba(255, 0, 0, 75%);
+    --red-6:    rgba(255, 0, 0, 80%);
+    --red-7:    rgba(255, 0, 0, 85%);
+    --red-8:    rgba(255, 0, 0, 90%);
+    --red-9:    rgba(255, 0, 0, 95%);
+    --red-10:   rgba(255, 0, 0, 100%);
+
+    --purple-1: rgba(169, 50, 242, 55%);
+    --purple-2: rgba(169, 50, 242, 60%);
+    --purple-3: rgba(169, 50, 242, 65%);
+    --purple-4: rgba(169, 50, 242, 70%);
+    --purple-5: rgba(169, 50, 242, 75%);
+    --purple-6: rgba(169, 50, 242, 80%);
+    --purple-7: rgba(169, 50, 242, 85%);
+    --purple-8: rgba(169, 50, 242, 90%);
+    --purple-9: rgba(169, 50, 242, 95%);
+    --purple-10:rgba(169, 50, 242, 100%);
+
+    --pink-1:   rgba(255, 192, 203, 55%);
+    --pink-2:   rgba(255, 192, 203, 60%);
+    --pink-3:   rgba(255, 192, 203, 65%);
+    --pink-4:   rgba(255, 192, 203, 70%);
+    --pink-5:   rgba(255, 192, 203, 75%);
+    --pink-6:   rgba(255, 192, 203, 80%);
+    --pink-7:   rgba(255, 192, 203, 85%);
+    --pink-8:   rgba(255, 192, 203, 90%);
+    --pink-9:   rgba(255, 192, 203, 95%);
+    --pink-10:  rgba(255, 192, 203, 100%);  
+    
+    --coral-1:  rgba(255, 127, 80, 55%);
+    --coral-2:  rgba(255, 127, 80, 60%);
+    --coral-3:  rgba(255, 127, 80, 65%);
+    --coral-4:  rgba(255, 127, 80, 70%);
+    --coral-5:  rgba(255, 127, 80, 75%);
+    --coral-6:  rgba(255, 127, 80, 80%);
+    --coral-7:  rgba(255, 127, 80, 85%);
+    --coral-8:  rgba(255, 127, 80, 90%);
+    --coral-9:  rgba(255, 127, 80, 95%);
+    --coral-10: rgba(255, 127, 80, 100%);
+
+    --teal-1:   rgba(0, 173, 173, 50%);
+    --teal-2:   rgba(0, 173, 173, 55%);
+    --teal-3:   rgba(0, 173, 173, 60%);
+    --teal-4:   rgba(0, 173, 173, 65%);
+    --teal-5:   rgba(0, 173, 173, 70%);
+    --teal-6:   rgba(0, 173, 173, 75%);
+    --teal-7:   rgba(0, 173, 173, 80%);
+    --teal-8:   rgba(0, 173, 173, 85%);
+    --teal-9:   rgba(0, 173, 173, 95%);
+    --teal-10:   rgba(0, 173, 173, 100%);
+} /* <---- Colors */
