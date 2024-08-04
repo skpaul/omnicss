@@ -31,10 +31,12 @@
             flex-direction: column-reverse;
             display: flex; 
         }
-        .color-box:hover{
-            /* flex-basis: 40px; */
-            /* transition: flex-basis 0.3s ease-in; */
-            /* scale: 1.5 1; */
+
+        .shades .overlay-value{
+            margin-bottom: 10px;
+        }
+        .tints .overlay-value{
+            margin-top: 10px;
         }
 
         input.overlay-value::-webkit-inner-spin-button, 
@@ -48,7 +50,7 @@
         input.overlay-value{
             width: 65px;
             text-align: center;
-            font-size: 20px;
+            font-size: 15px;
             border:none;
             outline: none;
             /* background-color: var(--target-color); */
@@ -120,7 +122,7 @@
     </style>
 </head>
 <body>
-    <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 50px;">
+    <div style="display: flex; justify-content: center; align-items: center; margin-top:100px; margin-bottom: 50px; ">
         <div style="margin-right: 10px;">
             <input type="text" value="#cd2929" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
         </div>
@@ -159,14 +161,21 @@
             justify-content: space-evenly;
             font-size: 30px;
             padding-right: 10px;
+            width: 288px;
             /* color: white; */
          
         }
     </style>
     <div style="display: flex;">
-        <div class="shades-tints-container-label invert-color" >
-            <div>Darker (Shades) =></div>
-            <div>Lighter (Tints) =></div>
+        <div class="shades-tints-container-label invert-color" style="margin-right: 72px;">
+            <div style="border: 1px solid #FFF; padding: 7px; border-radius: 7px; background-color: #000;">
+                <div style="font-weight: 600; font-size: 23px; color: white; margin-bottom: 5px;">Shades</div>
+                 <div style="font-size: 14px; line-height: 1.3; color: #d7d7d7;">Mixing more black. Change the above value to create different shade.</div>
+            </div>
+            <div style="border: 1px solid #000; padding: 7px; border-radius: 7px; background-color: #FFF;">
+                <div style="font-weight: 600; font-size: 23px; color: #000000; margin-bottom: 5px;">Tints</div>
+                 <div style="font-size: 14px; line-height: 1.3; color: #000000;">Mixing more white. Change the value below to create different tint.</div>
+            </div>
         </div>
         <div style="flex:1;">
             <div class="base-color shades"></div>
@@ -299,8 +308,7 @@
 
             function createShadesTints(type, value, rgb){
                 $('.'+ type +'').append('<div class="color-box">'+
-                                            '<div style="color: #efd5d5; font-size: 11px; margin-bottom:5px;" class="invert-color">Overlay (%)</div>' +
-                                            '<div><input class="overlay-value invert-color '+ type +'-'+ value +'" type="number" value="'+ value +'" min="0" max="100" step="1">%</div>'+
+                                            '<div><input class="overlay-value invert-color '+ type +'-'+ value +'" type="number" value="'+ value +'" min="0" max="100" step="1"></div>'+
                                             '<div class="overlay '+ type +'-'+ value +'">'+
                                                 '<div class="variant-color-code invert-color"></div>'+
                                             '</div>'+
