@@ -126,7 +126,7 @@
         <div style="margin-right: 10px;">
             <input type="text" value="#22616d" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
         </div>
-        <div style="position: relative;">
+        <div style="position: relative;" title="Color picker">
             <div class="picker-icon">
                 <div style="background-color: white;"></div>
                 <div style="background-color: rgb(186, 99, 207);"></div>
@@ -308,7 +308,7 @@
 
             function createShadesTints(type, value, rgb){
                 $('.'+ type +'').append('<div class="color-box">'+
-                                            '<div><input class="overlay-value invert-color '+ type +'-'+ value +'" type="number" value="'+ value +'" min="0" max="100" step="1"></div>'+
+                                            '<div><input class="overlay-value invert-color '+ type +'-'+ value +'" type="number" value="'+ value +'" min="0" max="100" step="1" title="Up/Down key to change the value."></div>'+
                                             '<div class="overlay '+ type +'-'+ value +'">'+
                                                 '<div class="variant-color-code invert-color"></div>'+
                                             '</div>'+
