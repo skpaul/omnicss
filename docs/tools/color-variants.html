@@ -6,7 +6,7 @@
     <style>
         :root {
             --elevation-overlay-base-color: 0,0,0;
-            --target-color : #cd2929;
+            --target-color : #22616d;
         }
 
         body{
@@ -124,7 +124,7 @@
 <body>
     <div style="display: flex; justify-content: center; align-items: center; margin-top:100px; margin-bottom: 50px; ">
         <div style="margin-right: 10px;">
-            <input type="text" value="#cd2929" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
+            <input type="text" value="#22616d" id="txt-target-color" style="text-transform: uppercase;" oninput="updateTargetColor();">
         </div>
         <div style="position: relative;">
             <div class="picker-icon">
@@ -149,7 +149,7 @@
                 <div style="background-color: rgb(240, 243, 42);"></div>
                 <div style="background-color: rgb(49, 191, 242);"></div>
             </div>
-            <input type="color" id="targetColor" value="#cd2929" oninput="changeTargetColor();">
+            <input type="color" id="targetColor" value="#22616d" oninput="changeTargetColor();">
         </div>
     </div>
    
@@ -259,7 +259,7 @@
 
             return `rgba(${r},${g},${b},${opacity})`;
         };
-        //console.log(convertHexToRGBA("#cd2929"));
+        //console.log(convertHexToRGBA("#22616d"));
 
         function convertRGBtoOBJ(colorString)
         {
@@ -273,7 +273,7 @@
             return rgbObj;
         }
 
-        //console.log(convertRGBtoOBJ(convertHexToRGBA("#cd2929")))
+        //console.log(convertRGBtoOBJ(convertHexToRGBA("#22616d")))
 
 
         const eyeDropper = new EyeDropper()
