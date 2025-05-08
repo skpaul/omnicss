@@ -1,147 +1,20 @@
 
-////========================
-//Convert HEX to rgba example
-// rgba(#ff0000, 0.5);
-////========================
-
-// High-emphasis text should have an opacity of 87%
-// Medium emphasis text is applied at 60%
-// Disabled text uses an opacity of 38%
-
-@mixin add-color($color, $scale, $property) {
-    &-#{$color}-#{$scale}{
-        #{$property}: var(--#{$color}-#{$scale});
-    }  
-}
-@mixin add-color-compact($color, $scale, $property) {
-    &#{$color}#{$scale}{
-        // #{$property}: var(--#{$color}-#{$scale});
-        #{$property}: var(--#{to-lower-case($color)}-#{$scale});
-    }  
-}
-
-$colors: 'gray' 'blue' 'green' 'yellow' 'orange' 'red' 'purple' 'pink' 'coral' 'teal';
-
-@mixin create-rule($property) {
-    @for $scale from 1 through 10 {
-        @include add-color("primary", $scale , $property);
-        @include add-color("secondary", $scale , $property);
-        @include add-color("accent", $scale , $property);
-    }
-
-    @each $color in $colors{
-        @for $scale from 1 through 10 {
-            @include add-color($color, $scale , $property);
-            //@include add-color-compact("Gray", $scale , $property);
-        }
-    }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("gray", $scale , $property);
-    //     //@include add-color-compact("Gray", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("blue", $scale , $property);
-    //     //@include add-color-compact("Blue", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("green", $scale , $property);
-    //     //@include add-color-compact("Green", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("yellow", $scale , $property);
-    //     //@include add-color-compact("Yellow", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("orange", $scale , $property);
-    //     //@include add-color-compact("Orange", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("red", $scale , $property);
-    //     //@include add-color-compact("Red", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("purple", $scale , $property);
-    //     //@include add-color-compact("Purple", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("pink", $scale , $property);
-    //     //@include add-color-compact("Pink", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("coral", $scale , $property);
-    //     //@include add-color-compact("Coral", $scale , $property);
-    // }
-    // @for $scale from 1 through 10 {
-    //     @include add-color("teal", $scale , $property);
-    //     //@include add-color-compact("Teal", $scale , $property);
-    // }
-}
-
-
+/* Text Colors */
 .c{
-    @include create-rule("color");
+    &-primary   { color: var(--color-primary); }
+    &-secondary { color: var(--color-secondary); }
+    &-success   { color: var(--color-success); }
+    &-warning   { color: var(--color-warning); }
+    &-danger    { color: var(--color-danger); }
+    &-muted     { color: var(--color-muted); }
 }
+
+/* Background Colors */
 .bg{
-    @include create-rule("background-color");
-}
-.bc{
-    @include create-rule("border-color");
-}
-
-.c-0{color: transparent;} //.c0{color: transparent;}
-.bg-0{background-color: transparent;} //.bg0{background-color: transparent;}
-.bc-0{border-color: transparent;} //.bc0{border-color: transparent;}
-
-.c-unset{color: unset;} 
-.bg-unset{background-color: unset;} 
-.bc-unset{border-color: unset;}
-
-.c-inherit{color: inherit;} 
-.bg-inherit{background-color: inherit;} 
-.bc-inherit{border-color: inherit;}
-
-.c-initial{color: initial;} 
-.bg-initial{background-color: initial;} 
-.bc-initial{border-color: initial;}
-
-//Add more "black" to the default background color
-.c-dark-1{color: var(--dark-1);}  
-.c-dark-2{color: var(--dark-2);}  
-.c-dark-3{color: var(--dark-3);} 
-.bg-dark-1{background-color: var(--dark-1);} 
-.bg-dark-2{background-color: var(--dark-2);} 
-.bg-dark-3{background-color: var(--dark-3);} 
-.bc-dark-1{border-color: var(--dark-1);} 
-.bc-dark-2{border-color: var(--dark-2);} 
-.bc-dark-3{border-color: var(--dark-3);} 
-
-//Add more "white" to the default background color
-.c-light-1{color: var(--light-1);}  
-.c-light-2{color: var(--light-2);}  
-.c-light-3{color: var(--light-3);} 
-.bg-light-1{background-color: var(--light-1);} 
-.bg-light-2{background-color: var(--light-2);} 
-.bg-light-3{background-color: var(--light-3);} 
-.bc-light-1{border-color: var(--light-1);} 
-.bc-light-2{border-color: var(--light-2);} 
-.bc-light-3{border-color: var(--light-3);} 
-
-@mixin create-opacity($value, $version) {
-    @if $version == "general" {
-        &-#{$value}{
-            opacity: #{$value} + '%';
-        }
-    }@else{
-        &#{$value}{
-            opacity: #{$value} + '%';
-        }
-    }
-}
-
-.opacity{
-    //This loop creates value 5,10,15, .......,100
-    @for $i from 1 through 20 {
-        $value: $i*5;
-        @include create-opacity($value, "general")  //creates .opacity-5 {opacity: 5%;}
-    }
+    &-primary     { background-color: var(--color-primary); }
+    &-secondary   { background-color: var(--color-secondary); }
+    &-success     { background-color: var(--color-success); }
+    &-warning     { background-color: var(--color-warning); }
+    &-danger      { background-color: var(--color-danger); }
+    &-muted       { background-color: var(--color-muted); }
 }

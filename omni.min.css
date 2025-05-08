@@ -1,3 +1,7 @@
+@charset "UTF-8";
+/* ===== OmniCSS ===== */
+/* A tiny, clean, futuristic CSS framework */
+/* ~2KB | No dependencies | MIT License */
 /* ====================================================
    VARIABLES
 ==================================================== */
@@ -6,33 +10,31 @@
   --border: 1px solid var(--border-color);
   --border-radius: 2px;
   --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
-  --color-primary: #0066ff;
-  --color-secondary: #7c3aed;
-  --color-success: #10b981;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-muted: #6b7280;
   /* Fluid Spacing */
+  --space-us: clamp(0.25rem, 0.25vw, 0.5rem);
   --space-xs: clamp(0.5rem, 0.5vw, 1rem);
   --space-sm: clamp(1rem, 1vw, 1.5rem);
   --space-md: clamp(1.5rem, 2vw, 2rem);
   --space-lg: clamp(2rem, 3vw, 3rem);
   --space-xl: clamp(3rem, 5vw, 5rem);
+  --space-2xl: clamp(4rem, 6vw, 6rem);
+  --space-3xl: clamp(5rem, 8vw, 8rem);
   /* Fluid Typography */
-  --text-xs: clamp(0.75rem, 0.75vw + 0.5rem, 1rem);
-  --text-sm: clamp(0.875rem, 0.875vw + 0.625rem, 1.25rem);
-  --text-base: clamp(1rem, 1vw + 0.75rem, 1.5rem);
-  --text-lg: clamp(1.125rem, 1.125vw + 0.875rem, 1.75rem);
-  --text-xl: clamp(1.25rem, 1.25vw + 1rem, 2rem);
-  --text-2xl: clamp(1.5rem, 1.5vw + 1.25rem, 2.5rem);
-  --text-3xl: clamp(1.875rem, 1.875vw + 1.5rem, 3rem);
+  --fs-us: clamp(0.625rem, 0.625vw + 0.375rem, 0.875rem);
+  --fs-xs: clamp(0.75rem, 0.75vw + 0.5rem, 1rem);
+  --fs-sm: clamp(0.875rem, 0.875vw + 0.625rem, 1.25rem);
+  --fs-md: clamp(1rem, 1vw + 0.75rem, 1.5rem);
+  --fs-lg: clamp(1.125rem, 1.125vw + 0.875rem, 1.75rem);
+  --fs-xl: clamp(1.25rem, 1.25vw + 1rem, 2rem);
+  --fs-2xl: clamp(1.5rem, 1.5vw + 1.25rem, 2.5rem);
+  --fs-3xl: clamp(1.875rem, 1.875vw + 1.5rem, 3rem);
 }
 
 /* ====================================================
-   THEME TOGGLE (dark/light)
+   Colors for Light/Dark theme
 ==================================================== */
-/* Default (Light) */
 :root {
+  /* Default theme Light */
   --color-bg: #ffffff;
   --color-text: #222222;
   --border-color: hsla(0, 0%, 91.34%, 1);
@@ -40,6 +42,12 @@
   --color-toggle-icon: #ffbb00;
   --transition-duration: 0.4s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-primary: #0066ff;
+  --color-secondary: #7c3aed;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-muted: #6b7280;
 }
 
 /* Dark mode colors. User explicitly selects dark/light. Overrides system preferences. */
@@ -145,6 +153,686 @@ a {
   /* Modern logical property */
   width: min(100% - var(--space-lg), 1200px);
   padding: var(--space-md);
+}
+
+/* ====================================================
+   LAYOUT STRUCTURE
+==================================================== */
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px 1fr auto;
+  /* grid-template-rows: auto 1fr auto; */
+  grid-auto-flow: row;
+  grid-template-areas: "header" "main" "footer";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  overflow-y: auto;
+  /* Adds scroll if needed */
+  min-height: 0;
+  /* Prevents grid blowout */
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* ====================================================
+   Fluid Grid
+==================================================== */
+.grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/*  
+    On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
+    On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
+*/
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
+}
+
+/*  
+    On desktop: If the container is wide enough, it will try to fit up to "3" or more columns (each at least 20 characters wide).
+    On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
+*/
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
+}
+
+.grid-4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
+}
+
+.grid-5 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr));
+}
+
+/* ====================================================
+   Fluid Typography
+==================================================== */
+.fs-us {
+  font-size: var(--fs-us);
+}
+
+.fs-xs {
+  font-size: var(--fs-xs);
+}
+
+.fs-sm {
+  font-size: var(--fs-sm);
+}
+
+.fs-md {
+  font-size: var(--fs-md);
+}
+
+.fs-lg {
+  font-size: var(--fs-lg);
+}
+
+.fs-xl {
+  font-size: var(--fs-xl);
+}
+
+.fs-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.fs-3xl {
+  font-size: var(--fs-3xl);
+}
+
+/* ====================================================
+   Fluid Spacing Utilities
+==================================================== */
+.pa-us {
+  padding: var(--space-us);
+}
+
+.pa-xs {
+  padding: var(--space-xs);
+}
+
+.pa-sm {
+  padding: var(--space-sm);
+}
+
+.pa-md {
+  padding: var(--space-md);
+}
+
+.pa-lg {
+  padding: var(--space-lg);
+}
+
+.pa-xl {
+  padding: var(--space-xl);
+}
+
+.pa-2xl {
+  padding: var(--space-2xl);
+}
+
+.pa-3xl {
+  padding: var(--space-3xl);
+}
+
+.pl-us {
+  padding-left: var(--space-us);
+}
+
+.pl-xs {
+  padding-left: var(--space-xs);
+}
+
+.pl-sm {
+  padding-left: var(--space-sm);
+}
+
+.pl-md {
+  padding-left: var(--space-md);
+}
+
+.pl-lg {
+  padding-left: var(--space-lg);
+}
+
+.pl-xl {
+  padding-left: var(--space-xl);
+}
+
+.pl-2xl {
+  padding-left: var(--space-2xl);
+}
+
+.pl-3xl {
+  padding-left: var(--space-3xl);
+}
+
+.pr-us {
+  padding-right: var(--space-us);
+}
+
+.pr-xs {
+  padding-right: var(--space-xs);
+}
+
+.pr-sm {
+  padding-right: var(--space-sm);
+}
+
+.pr-md {
+  padding-right: var(--space-md);
+}
+
+.pr-lg {
+  padding-right: var(--space-lg);
+}
+
+.pr-xl {
+  padding-right: var(--space-xl);
+}
+
+.pr-2xl {
+  padding-right: var(--space-2xl);
+}
+
+.pr-3xl {
+  padding-right: var(--space-3xl);
+}
+
+.pt-us {
+  padding-top: var(--space-us);
+}
+
+.pt-xs {
+  padding-top: var(--space-xs);
+}
+
+.pt-sm {
+  padding-top: var(--space-sm);
+}
+
+.pt-md {
+  padding-top: var(--space-md);
+}
+
+.pt-lg {
+  padding-top: var(--space-lg);
+}
+
+.pt-xl {
+  padding-top: var(--space-xl);
+}
+
+.pt-2xl {
+  padding-top: var(--space-2xl);
+}
+
+.pt-3xl {
+  padding-top: var(--space-3xl);
+}
+
+.pb-us {
+  padding-bottom: var(--space-us);
+}
+
+.pb-xs {
+  padding-bottom: var(--space-xs);
+}
+
+.pb-sm {
+  padding-bottom: var(--space-sm);
+}
+
+.pb-md {
+  padding-bottom: var(--space-md);
+}
+
+.pb-lg {
+  padding-bottom: var(--space-lg);
+}
+
+.pb-xl {
+  padding-bottom: var(--space-xl);
+}
+
+.pb-2xl {
+  padding-bottom: var(--space-2xl);
+}
+
+.pb-3xl {
+  padding-bottom: var(--space-3xl);
+}
+
+.ma-us {
+  margin: var(--space-us);
+}
+
+.ma-xs {
+  margin: var(--space-xs);
+}
+
+.ma-sm {
+  margin: var(--space-sm);
+}
+
+.ma-md {
+  margin: var(--space-md);
+}
+
+.ma-lg {
+  margin: var(--space-lg);
+}
+
+.ma-xl {
+  margin: var(--space-xl);
+}
+
+.ma-2xl {
+  margin: var(--space-2xl);
+}
+
+.ma-3xl {
+  margin: var(--space-3xl);
+}
+
+.ml-us {
+  margin-left: var(--space-us);
+}
+
+.ml-xs {
+  margin-left: var(--space-xs);
+}
+
+.ml-sm {
+  margin-left: var(--space-sm);
+}
+
+.ml-md {
+  margin-left: var(--space-md);
+}
+
+.ml-lg {
+  margin-left: var(--space-lg);
+}
+
+.ml-xl {
+  margin-left: var(--space-xl);
+}
+
+.ml-2xl {
+  margin-left: var(--space-2xl);
+}
+
+.ml-3xl {
+  margin-left: var(--space-3xl);
+}
+
+.mr-us {
+  margin-right: var(--space-us);
+}
+
+.mr-xs {
+  margin-right: var(--space-xs);
+}
+
+.mr-sm {
+  margin-right: var(--space-sm);
+}
+
+.mr-md {
+  margin-right: var(--space-md);
+}
+
+.mr-lg {
+  margin-right: var(--space-lg);
+}
+
+.mr-xl {
+  margin-right: var(--space-xl);
+}
+
+.mr-2xl {
+  margin-right: var(--space-2xl);
+}
+
+.mr-3xl {
+  margin-right: var(--space-3xl);
+}
+
+.mt-us {
+  margin-top: var(--space-us);
+}
+
+.mt-xs {
+  margin-top: var(--space-xs);
+}
+
+.mt-sm {
+  margin-top: var(--space-sm);
+}
+
+.mt-md {
+  margin-top: var(--space-md);
+}
+
+.mt-lg {
+  margin-top: var(--space-lg);
+}
+
+.mt-xl {
+  margin-top: var(--space-xl);
+}
+
+.mt-2xl {
+  margin-top: var(--space-2xl);
+}
+
+.mt-3xl {
+  margin-top: var(--space-3xl);
+}
+
+.mb-us {
+  margin-bottom: var(--space-us);
+}
+
+.mb-xs {
+  margin-bottom: var(--space-xs);
+}
+
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+.mb-xl {
+  margin-bottom: var(--space-xl);
+}
+
+.mb-2xl {
+  margin-bottom: var(--space-2xl);
+}
+
+.mb-3xl {
+  margin-bottom: var(--space-3xl);
+}
+
+/* Text Colors */
+.c-primary {
+  color: var(--color-primary);
+}
+.c-secondary {
+  color: var(--color-secondary);
+}
+.c-success {
+  color: var(--color-success);
+}
+.c-warning {
+  color: var(--color-warning);
+}
+.c-danger {
+  color: var(--color-danger);
+}
+.c-muted {
+  color: var(--color-muted);
+}
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-success {
+  background-color: var(--color-success);
+}
+.bg-warning {
+  background-color: var(--color-warning);
+}
+.bg-danger {
+  background-color: var(--color-danger);
+}
+.bg-muted {
+  background-color: var(--color-muted);
+}
+
+.darken:hover {
+  filter: brightness(85%);
+  transition: filter 0.2s ease-in-out;
+}
+
+.brighten:hover {
+  filter: brightness(1.15%);
+  transition: filter 0.2s ease-in-out;
+}
+
+/* Toggle button styles */
+#themeToggle {
+  --size: 2rem;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: none;
+  background: var(--color-toggle-bg);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition-duration) var(--transition-easing);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(90%);
+}
+
+.btn-outline {
+  background: transparent;
+  border: var(--border);
+  color: var(--color-text);
+}
+
+.btn-outline:hover {
+  background: var(--color-muted);
+  color: white;
+}
+
+/* ====================================================
+  The kebab menu, also known as the three dots menu, and the three vertical dots menu, is an icon used to open a menu with additional options.
+==================================================== */
+.action-menu {
+  position: relative;
+  display: inline-block;
+}
+.action-menu input {
+  display: none;
+}
+.action-menu label {
+  cursor: pointer;
+  font-size: 24px;
+  user-select: none;
+  padding: 4px;
+}
+.action-menu div {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.action-menu a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+.action-menu a:hover {
+  background-color: #f2f2f2;
+}
+.action-menu input:checked + label + div {
+  display: block;
+}
+
+/*
+    <div class="action-menu">
+        <input type="checkbox" id="menu1">
+        <label for="menu1">⋮</label>
+        <div>
+            <a href="#" onclick="document.getElementById('menu1').checked = false;">Edit</a> //uncheck the checkbox also, so the menu is hidden again.
+        </div>
+    </div>
+*/
+/* ====================================================
+Gridable = Grid + Table
+==================================================== */
+.gridable {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 0px;
+  background-color: inherit;
+  border: var(--border);
+}
+
+.grid-header {
+  display: contents;
+  font-weight: bold;
+}
+
+.header-item {
+  padding: var(--ad-padding);
+  background: inherit;
+  text-align: left;
+  border-bottom: var(--ad-border);
+  display: flex;
+  align-items: center;
+}
+
+.grid-row {
+  display: contents;
+}
+
+/* Alternative row bg color */
+.grid-row:nth-child(even) > .grid-cell {
+  background: inherit;
+}
+
+/* Alternative row bg color */
+.grid-row:nth-child(odd) > .grid-cell {
+  background: inherit;
+}
+
+.grid-cell {
+  padding: var(--ad-padding);
+  word-break: break-word;
+  /* Ensures long words break */
+  overflow-wrap: break-word;
+  /* Preferred property for wrapping */
+  white-space: normal;
+  /* Override any white-space: nowrap */
+  min-width: 0;
+  /* Allows cell to shrink below content's min-width */
+  /* border-bottom: var(--border); */
+}
+
+/* Don's show bottom border of last row cells */
+.grid-row:last-child > .grid-cell {
+  border-bottom: none;
+}
+
+/* Mobile responsiveness */
+/* max-width has been set to 659px because of A4 paper size in pdf download */
+@media (max-width: 659px) {
+  .gridable {
+    grid-template-columns: 1fr;
+    border: none;
+  }
+
+  .grid-header {
+    display: none;
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-bottom: 5px;
+    padding: 10px;
+    background: inherit;
+    border: var(--border);
+    border-radius: 0px;
+  }
+
+  .grid-row:last-child {
+    margin-bottom: 0px;
+  }
+
+  .grid-cell {
+    padding: 5px;
+    background: transparent !important;
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .grid-cell:last-child {
+    border-bottom: none;
+  }
+
+  .grid-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .grid-cell span {
+    flex: 1;
+    min-width: 0;
+    /* Allows text to wrap properly */
+  }
+
+  /* Add data-labels for mobile view */
+  .grid-cell::before {
+    content: attr(data-label) ": ";
+    font-weight: bold;
+  }
 }
 
 /*# sourceMappingURL=omni.min.css.map */

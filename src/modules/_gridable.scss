@@ -1,0 +1,116 @@
+/* ====================================================
+Gridable = Grid + Table
+==================================================== */
+
+.gridable{
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    gap: 0px;
+    background-color: inherit;
+    border: var(--border);
+}
+
+
+.grid-header {
+    display: contents;
+    font-weight: bold;
+}
+
+.header-item {
+    padding: var(--ad-padding);
+    background: inherit;
+
+    text-align: left;
+    border-bottom: var(--ad-border);
+    display: flex;
+    align-items: center;
+}
+
+.grid-row {
+    display: contents;
+}
+
+/* Alternative row bg color */
+.grid-row:nth-child(even) > .grid-cell {
+    background: inherit;
+}
+
+/* Alternative row bg color */
+.grid-row:nth-child(odd) > .grid-cell {
+    background: inherit;
+}
+
+.grid-cell {
+    padding: var(--ad-padding);
+    word-break: break-word; /* Ensures long words break */
+    overflow-wrap: break-word; /* Preferred property for wrapping */
+    white-space: normal; /* Override any white-space: nowrap */
+    min-width: 0; /* Allows cell to shrink below content's min-width */
+    /* border-bottom: var(--border); */
+}
+
+/* Don's show bottom border of last row cells */
+.grid-row:last-child > .grid-cell {
+    border-bottom: none;
+}
+
+
+/* Mobile responsiveness */
+/* max-width has been set to 659px because of A4 paper size in pdf download */
+@media (max-width: 659px) {
+    .gridable {
+        grid-template-columns: 1fr;
+        border:none;
+    }
+    
+    .grid-header {
+        display: none;
+    }
+    
+    .grid-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 5px;
+        margin-bottom: 5px;
+        padding: 10px;
+        background: inherit;
+        border: var(--border);
+        border-radius: 0px;
+    }
+
+    .grid-row:last-child{
+        margin-bottom: 0px;
+    }
+    
+    .grid-cell {
+        padding: 5px;
+        background: transparent !important;
+        border-bottom: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .grid-cell:last-child {
+        border-bottom: none;
+    }
+    
+    .grid-cell::before {
+        content: attr(data-label);
+        font-weight: bold;
+        width: 120px;
+        flex-shrink: 0;
+    }
+    
+    .grid-cell span {
+        flex: 1;
+        min-width: 0; /* Allows text to wrap properly */
+    }
+
+
+    /* Add data-labels for mobile view */
+    .grid-cell::before {
+        content: attr(data-label) ": ";
+        font-weight: bold;
+    }
+}
+

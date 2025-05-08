@@ -1,23 +1,54 @@
+.darken:hover {
+    filter: brightness(85%);
+    transition: filter 0.2s ease-in-out;
+}
+.brighten:hover {
+    filter: brightness(1.15%);
+    transition: filter 0.2s ease-in-out;
+}
 
-.box-shadow{
-    -webkit-box-shadow: 0 0 10px rgb(128, 126, 126); /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
-    -moz-box-shadow:  0 0 10px rgb(128, 126, 126); /* Firefox 3.5 - 3.6 */
-    box-shadow: 0 0 4px rgb(128, 126, 126); /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+/* Toggle button styles */
+#themeToggle {
+    --size: 2rem;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: none;
+    background: var(--color-toggle-bg);
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-duration) var(--transition-easing);
 }
 
 
-.scale-down-wrapper{
-    display: flex;
+.btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-/* this class must be within the  .scale-down-wrapper*/
-img.scale-down{
-  height: auto;
-  width:100%;
-  object-fit: scale-down;
-  object-position: 0 0;
+.btn-primary {
+    background: var(--color-primary);
+    color: white;
 }
 
-.error{
-    border-color: red !important;
+.btn-primary:hover {
+    filter: brightness(90%);
+}
+
+.btn-outline {
+    background: transparent;
+    border: var(--border);
+    color: var(--color-text);
+}
+
+.btn-outline:hover {
+    background: var(--color-muted);
+    color: white;
 }

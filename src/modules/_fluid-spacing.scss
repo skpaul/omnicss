@@ -1,0 +1,35 @@
+/* ====================================================
+   Fluid Spacing Utilities
+==================================================== */
+
+$spaceSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
+@mixin create-spacing($prefix, $property) {
+    @each $size in $spaceSizes{
+        .#{$prefix}-#{$size}{
+            #{$property}:var(--space-#{$size});; 
+        }
+    }
+}
+
+//padding
+@include create-spacing("pa", "padding"); 
+//padding-left
+@include create-spacing("pl", "padding-left"); 
+//padding-right
+@include create-spacing("pr", "padding-right"); 
+//padding-top
+@include create-spacing("pt", "padding-top"); 
+//padding-bottom
+@include create-spacing("pb", "padding-bottom"); 
+
+
+//margin
+@include create-spacing("ma", "margin"); 
+//margin-left
+@include create-spacing("ml", "margin-left"); 
+//margin-right
+@include create-spacing("mr", "margin-right"); 
+//margin-top
+@include create-spacing("mt", "margin-top"); 
+//margin-bottom
+@include create-spacing("mb", "margin-bottom"); 

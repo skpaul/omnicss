@@ -1,0 +1,55 @@
+/* ====================================================
+  The kebab menu, also known as the three dots menu, and the three vertical dots menu, is an icon used to open a menu with additional options.
+==================================================== */
+
+.action-menu {
+    position: relative;
+    display: inline-block;
+
+    & input {
+        display: none;
+    }
+
+    & label {
+        cursor: pointer;
+        font-size: 24px;
+        user-select: none;
+        padding: 4px;
+    }
+    & div {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        min-width: 120px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+    }
+    & a {
+        display: block;
+        padding: 8px 12px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    & a:hover {
+        background-color: #f2f2f2;
+      }
+    
+    & input:checked + label + div {
+        display: block;
+    }
+}
+
+/*
+    <div class="action-menu">
+        <input type="checkbox" id="menu1">
+        <label for="menu1">⋮</label>
+        <div>
+            <a href="#" onclick="document.getElementById('menu1').checked = false;">Edit</a> //uncheck the checkbox also, so the menu is hidden again.
+        </div>
+    </div>
+*/
