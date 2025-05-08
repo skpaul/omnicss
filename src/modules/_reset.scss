@@ -1,53 +1,49 @@
-/*
-  Modern Reset
-  See https://hankchizljaw.com/wrote/a-modern-css-reset/
-*/
+/* ====================================================
+   RESET & GLOBAL SETTINGS
+==================================================== */
+* { margin: 0; padding: 0; }
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*, *::before, *::after { box-sizing: border-box; }
+
+html { 
+    scroll-behavior: smooth;  /* scroll-behavior: auto; */
+    font-size: clamp(12px, 2vw, 18px);
+
+    /* more nuanced version: */
+    /* font-size: clamp(0.75rem, 1.5vw, 1.125rem); */
+
+    /* or */
+    /* font-size: clamp(14px, 1vw + 0.5em, 18px); */
 }
 
-*{
-    margin: 0;
-    padding: 0;
-}
-
-ul, ol {
-  list-style: none;
-//   margin: 0;
-//   padding: 0;
-}
-
-/* Set core root defaults */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
-    line-height: 1;
-	color: black;
-	background: white;
-    text-rendering: optimizeSpeed;
-}
+    font-family: var(--font-family);
+    font-weight: 400;
+    line-height: 1.6;
+    background: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
 
-/* 'a' elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
+    /* Font smoothing and numeric formatting */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility; /* text-rendering: optimizeSpeed; */
+    font-feature-settings: "lnum" 1;
+    -webkit-font-feature-settings: "lnum" 1;
 
-a {
-  text-decoration: none;
+    direction: ltr;
+
+    /* Smooth transitions for all themeable properties */
+    transition: background-color var(--transition-duration) var(--transition-easing),
+    color var(--transition-duration) var(--transition-easing);
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -55,24 +51,14 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+/* 'a' elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
 }
 
-
-
+a {
+    text-decoration: none;
+}

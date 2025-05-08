@@ -18,9 +18,9 @@ html {
 
     font-size: 16px;
     font-size: 100%; 
-    @include large{
-        font-size: 112.5%;
-    }
+    // @include lg{
+    //     font-size: 112.5%;
+    // }
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 

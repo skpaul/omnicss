@@ -1,0 +1,9 @@
+/* ====================================================
+   FLUID CONTAINER
+==================================================== */
+.container {
+    margin: 0 auto; /* Fallback for older browsers */
+    margin-inline: auto; /* Modern logical property */
+    width: min(100% - var(--space-lg), 1200px);
+    padding: var(--space-md);
+}

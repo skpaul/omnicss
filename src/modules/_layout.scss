@@ -1,0 +1,23 @@
+/* ====================================================
+   LAYOUT STRUCTURE
+==================================================== */
+.layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr auto;
+    /* grid-template-rows: auto 1fr auto; */
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+header { grid-area: header; }
+main { 
+        grid-area: main; 
+        overflow-y: auto; /* Adds scroll if needed */ 
+        min-height: 0; /* Prevents grid blowout */
+    }
+footer { grid-area: footer; }

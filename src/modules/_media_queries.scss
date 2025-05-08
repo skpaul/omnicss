@@ -26,27 +26,56 @@
 	} 
 }
 
-//for the simplicity, I opted only for two types of devices - sm & lg
-@mixin sm {
-    @media screen and (max-width: 991px) {
-        @content;
-    }
-}
+// This is desktop-first approach
+// If want to switch mobile-first, change the following to 'min-width'
+$min-max: 'max-width';
 
-@mixin small {
-    @media screen and (max-width: 991px) {
-        @content;
-    }
-}
+// Define breakpoint variables
+$xl: 1399.98px;
+$lg: 1199.98px;
+$md:  991.98px;
+$sm: 767.98px;
+$xs:  575.98px;
+$us: 479.98px;
 
-@mixin lg {
-	@media only screen and (min-width: 992px) {     
+/* Extra Large devices (large desktops, < 1400px) */
+@mixin xl {
+	@media only screen and (#{$min-max}: $xl) {     
 		@content;
 	} 
 }
 
-@mixin large {
-	@media only screen and (min-width: 992px) {     
+/* Large devices (desktops, < 1200px) */
+@mixin lg {
+	@media only screen and (#{$min-max}: $lg) {     
+		@content;
+	} 
+}
+
+/* Medium devices (tablets, < 992px) */
+@mixin md {
+	@media only screen and (#{$min-max}: $md) {     
+		@content;
+	} 
+}
+
+/* Small devices (landscape phones, < 768px) */
+@mixin sm {
+	@media only screen and (#{$min-max}: $sm) {     
+		@content;
+	} 
+}
+
+/* Extra Small devices (portrait phones, < 576px) */
+@mixin xs {
+	@media only screen and (#{$min-max}: $xs) {     
+		@content;
+	} 
+}
+
+/* Ultra Small (tiny devices, like older phones < 480px) */
+@mixin ul {
+	@media only screen and (#{$min-max}: $ul) {     
 		@content;
 	} 
 }

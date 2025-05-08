@@ -1,5 +1,5 @@
 
-// sass --watch omnicss.scss:../omnicss.min.css --style compressed
+// sass --watch omnicss.scss:../omni.min.css --style compressed
 
 // git tag 		//show current tags
 // git tag v11.0.22   	//create new tag
@@ -9,75 +9,79 @@
     //.bg {  &-orange { ... } } will turn into .bg-orange { ... }
 //<----- sass nesting//
 
+@import 'modules/variables';
+@import 'modules/dark-light-theme';
 @import 'modules/reset';
+
 @import 'modules/media_queries'; 
 @import 'modules/functions'; 
-// @import 'modules/root'; 
-
-// Layout
-    @import "modules/layout/document"; // html
-    @import "modules/layout/html"; // html
-    @import "modules/layout/body"; // body
-
-    @import "modules/layout/header"; // header
-    @import "modules/layout/main"; // main
-    @import "modules/layout/footer"; // footer
-
-    @import "modules/layout/container"; // .container, .container-fluid
-    @import "modules/layout/content"; //
-    @import "modules/layout/aside"; // 
-    @import "modules/layout/left-nav"; // 
-
-    @import 'modules/layout/flexbox/flex-parent'; //flex, inline-flex, flex-direction, justify-content, .....
-    @import 'modules/layout/flexbox/flex-child';  //flex-grow, flex-shrink, flex-basis, align-self, order, ....
+@import 'modules/container'; 
 
 
-//Content
-    @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
-    @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
-    @import 'modules/content/hyperlink';
-    @import 'modules/content/form';
-    @import 'modules/content/buttons'; 
-    @import 'modules/content/table'; // table, tr, td, ...
+// // Layout
 
-//Typography
-    @import 'modules/typography/white-space';
-    @import 'modules/typography/font-size'; // 
-    @import 'modules/typography/font-weight'; //bold, bolder, lighter, 100-900
-    @import 'modules/typography/line-height'; //.lh-1.1, .lh-1.2, ...., .lh-1.7
-    @import 'modules/typography/text-transform'; //uppercase, lowercase, capitalize
-    @import 'modules/typography/text-alignment'; //left, right, center, justify
-    @import 'modules/typography/text-decoration'; //underline, overline, line-through, ...
+//     @import "modules/layout/html"; // html
+//     @import "modules/layout/body"; // body
 
-//Component
-    @import 'modules/component/card';  
-    @import 'modules/component/divider';
-    @import 'modules/component/spinner';
+//     @import "modules/layout/header"; // header
+//     @import "modules/layout/main"; // main
+//     @import "modules/layout/footer"; // footer
 
-//Box Model
-    @import 'modules/box-model/margin'; 
-    @import 'modules/box-model/padding'; 
-    @import 'modules/box-model/borders';
+//     @import "modules/layout/container"; // .container, .container-fluid
+//     @import "modules/layout/content"; //
+//     @import "modules/layout/aside"; // 
+//     @import "modules/layout/left-nav"; // 
 
-//Misc
-    @import 'modules/misc/box-sizing';      //fullwidth, fullheight, fitcontent, mincontent, maxcontent
-    @import 'modules/misc/width';           //
-    @import 'modules/misc/height';           //
-    @import 'modules/misc/display';         //display:none/inline/block/inline-block/table/table-row/table-cell
-    @import 'modules/misc/positioning';     //relative, fixed, absolute
-    @import 'modules/misc/hover-effect';    //change background, border etc
-    @import 'modules/misc/cursor';          // pointer, progress, wait, not-allowed, help 
-    @import 'modules/misc/transition';      //transition effect
-    @import 'modules/misc/filter';          //filter- brightness, contrast, grayscale, blur
+//     @import 'modules/layout/flexbox/flex-parent'; //flex, inline-flex, flex-direction, justify-content, .....
+//     @import 'modules/layout/flexbox/flex-child';  //flex-grow, flex-shrink, flex-basis, align-self, order, ....
 
-    // @import 'modules/misc/tooltip'; //relative, fixed, absolute
 
-@import 'modules/google-material-icons'; 
+// //Content
+//     @import 'modules/content/typography'; // a, headings, p, ul, blockquote, ...
+//     @import 'modules/content/vertical-alignment'; //baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit
+//     @import 'modules/content/hyperlink';
+//     @import 'modules/content/form';
+//     @import 'modules/content/buttons'; 
+//     @import 'modules/content/table'; // table, tr, td, ...
 
-// @import 'modules/print/nonresponsive-grid';
-// @import 'modules/print/printable';
-@import 'modules/misc';
+// //Typography
+//     @import 'modules/typography/white-space';
+//     @import 'modules/typography/font-size'; // 
+//     @import 'modules/typography/font-weight'; //bold, bolder, lighter, 100-900
+//     @import 'modules/typography/line-height'; //.lh-1.1, .lh-1.2, ...., .lh-1.7
+//     @import 'modules/typography/text-transform'; //uppercase, lowercase, capitalize
+//     @import 'modules/typography/text-alignment'; //left, right, center, justify
+//     @import 'modules/typography/text-decoration'; //underline, overline, line-through, ...
 
-@import 'modules/pages/payment-instruction';
+// //Component
+//     @import 'modules/component/card';  
+//     @import 'modules/component/divider';
+//     @import 'modules/component/spinner';
 
-@import 'modules/colors';
+// //Box Model
+//     @import 'modules/box-model/margin'; 
+//     @import 'modules/box-model/padding'; 
+//     @import 'modules/box-model/borders';
+
+// //Misc
+//     @import 'modules/misc/box-sizing';      //fullwidth, fullheight, fitcontent, mincontent, maxcontent
+//     @import 'modules/misc/width';           //
+//     @import 'modules/misc/height';           //
+//     @import 'modules/misc/display';         //display:none/inline/block/inline-block/table/table-row/table-cell
+//     @import 'modules/misc/positioning';     //relative, fixed, absolute
+//     @import 'modules/misc/hover-effect';    //change background, border etc
+//     @import 'modules/misc/cursor';          // pointer, progress, wait, not-allowed, help 
+//     @import 'modules/misc/transition';      //transition effect
+//     @import 'modules/misc/filter';          //filter- brightness, contrast, grayscale, blur
+
+//     // @import 'modules/misc/tooltip'; //relative, fixed, absolute
+
+// @import 'modules/google-material-icons'; 
+
+// // @import 'modules/print/nonresponsive-grid';
+// // @import 'modules/print/printable';
+// @import 'modules/misc';
+
+// @import 'modules/pages/payment-instruction';
+
+// @import 'modules/colors';
