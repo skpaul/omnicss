@@ -13,31 +13,3 @@ $fontSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
 }
 
 @include createFontSizes("fs", "font-size"); 
-
-// .fs{
-//     &-us{
-//         font-size: var(--fs-us);
-//     }
-//     &-xs{
-//         font-size: var(--fs-xs);
-//     }
-//     &-sm{
-//         font-size: var(--fs-sm);
-//     }
-//     &-md{
-//         font-size: var(--fs-md);
-//     }
-
-//     &-lg{
-//         font-size: var(--fs-lg);
-//     }
-//     &-xl{
-//         font-size: var(--fs-xl);
-//     }
-//     &-2xl{
-//         font-size: var(--fs-2xl);
-//     }
-//     &-3xl{
-//         font-size: var(--fs-3xl);
-//     }
-// }

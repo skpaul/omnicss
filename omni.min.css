@@ -8,8 +8,10 @@
 :root {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --border: 1px solid var(--border-color);
-  --border-radius: 2px;
+  --border-radius: 4px;
   --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+  --transition-duration: 0.4s;
+  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
   /* Fluid Spacing */
   --space-us: clamp(0.25rem, 0.25vw, 0.5rem);
   --space-xs: clamp(0.5rem, 0.5vw, 1rem);
@@ -40,12 +42,11 @@
   --border-color: hsla(0, 0%, 91.34%, 1);
   --color-toggle-bg: #e0e0e0;
   --color-toggle-icon: #ffbb00;
-  --transition-duration: 0.4s;
-  --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
   --color-primary: #0066ff;
   --color-secondary: #7c3aed;
   --color-success: #10b981;
-  --color-warning: #f59e0b;
+  --color-info: rgb(232, 240, 254);
+  --color-warning: rgb(254, 247, 224);
   --color-danger: #ef4444;
   --color-muted: #6b7280;
 }
@@ -624,20 +625,6 @@ footer {
   transition: filter 0.2s ease-in-out;
 }
 
-/* Toggle button styles */
-#themeToggle {
-  --size: 2rem;
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  border: none;
-  background: var(--color-toggle-bg);
-  cursor: pointer;
-  padding: 0;
-  transition: background var(--transition-duration) var(--transition-easing);
-}
-
 .btn {
   display: inline-block;
   padding: 0.5em 1em;
@@ -667,6 +654,22 @@ footer {
 .btn-outline:hover {
   background: var(--color-muted);
   color: white;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
 }
 
 /* ====================================================
@@ -970,10 +973,6 @@ Gridable = Grid + Table
    HEADER & NAVIGATION
 ==================================================== */
 header {
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4rem;
   padding: 0 1rem;
   box-shadow: 0 3px 6px 0 rgba(50, 50, 50, 0.3);
   display: flex;
@@ -985,9 +984,145 @@ header {
 }
 header.fixed {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 header.smart {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hamburgerIcon img {
+  height: 100%;
+  margin-right: 0.73rem;
+}
+
+.brand a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  color: inherit;
+}
+
+.brand img {
+  height: 1.3rem;
+  width: auto;
+  margin-right: 1rem;
+}
+
+nav {
+  display: flex;
+  flex: 1;
+}
+
+.theme-toggle-wrapper {
+  margin-right: 1rem;
+}
+
+/* Toggle button styles */
+#themeToggle {
+  --size: 1.7rem;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  border: none;
+  background: var(--color-toggle-bg);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--transition-duration) var(--transition-easing);
+}
+
+.theme-toggle-wrapper {
+  width: 1.5rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+#candyIcon {
+  width: 1.5rem;
+  margin-left: auto;
+  cursor: pointer;
+}
+#candyIcon img {
+  height: 100%;
+}
+
+.dismissable {
+  display: none;
+  opacity: 1;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  padding: var(--space-xs);
+  border-radius: var(--border-radius);
+}
+.dismissable.success {
+  background: #f7f7f7;
+  color: #079d49;
+  border: 1px solid #dbdbdb;
+}
+.dismissable.warning {
+  background-color: #fef7e0;
+  border: 1px solid #ffdab4;
+  color: #e37400;
+}
+.dismissable.info {
+  background-color: #e8f0fe;
+  color: #054c95;
+  border: 1px solid #c4defa;
+}
+.dismissable.danger {
+  background: #FFF1F0;
+  color: #000000d9;
+  border: 1px solid #FFCCC7;
+}
+.dismissable.muted {
+  background-color: var(--color-muted);
+}
+.dismissable.show {
+  display: block;
+}
+.dismissable.hide {
+  opacity: 0;
+}
+.dismissable .dismiss {
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 1px 5px;
+}
+
+.board {
+  padding: var(--space-xs);
+  border-radius: var(--border-radius);
+}
+.board.success {
+  background: #f7f7f7;
+  color: #079d49;
+  border: 1px solid #dbdbdb;
+}
+.board.warning {
+  background-color: #fef7e0;
+  border: 1px solid #ffdab4;
+  color: #e37400;
+}
+.board.info {
+  background-color: #e8f0fe;
+  color: #054c95;
+  border: 1px solid #c4defa;
+}
+.board.danger {
+  background: #FFF1F0;
+  color: #000000d9;
+  border: 1px solid #FFCCC7;
+}
+.board.muted {
+  background-color: var(--color-muted);
 }
 
 /*# sourceMappingURL=omni.min.css.map */

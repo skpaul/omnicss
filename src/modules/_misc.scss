@@ -7,19 +7,6 @@
     transition: filter 0.2s ease-in-out;
 }
 
-/* Toggle button styles */
-#themeToggle {
-    --size: 2rem;
-    position: relative;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    border: none;
-    background: var(--color-toggle-bg);
-    cursor: pointer;
-    padding: 0;
-    transition: background var(--transition-duration) var(--transition-easing);
-}
 
 
 .btn {
@@ -52,3 +39,9 @@
     background: var(--color-muted);
     color: white;
 }
+
+
+.left{text-align: left;}
+.right{text-align: right;}
+.center{text-align: center;}
+.justify{text-align: justify;}

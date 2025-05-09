@@ -1,0 +1,47 @@
+.dismissable{
+    display: none;
+    opacity: 1;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding:var(--space-xs);
+    border-radius: var(--border-radius);
+
+    &.success{
+        background: #f7f7f7;
+        color: #079d49;
+        border:  1px solid #dbdbdb;
+    }
+    &.warning{
+        background-color: rgb(254, 247, 224);
+        border: 1px solid #ffdab4;
+        color: #e37400;
+    }
+    
+    &.info{
+        background-color: rgb(232, 240, 254);
+        color: #054c95;
+        border: 1px solid rgb(196, 222, 250);
+    }
+    &.danger{
+        background: #FFF1F0;
+        color: #000000d9;
+        border: 1px solid #FFCCC7;
+    }
+    &.muted{
+        background-color: var(--color-muted);
+    }
+
+    &.show {
+        display: block;
+    }
+    &.hide {
+        opacity: 0;
+    }
+
+    .dismiss {
+        border: 1px solid;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 11px;
+        padding: 1px 5px;
+    }
+}

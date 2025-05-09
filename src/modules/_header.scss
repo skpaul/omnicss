@@ -2,10 +2,6 @@
    HEADER & NAVIGATION
 ==================================================== */
 header {
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4rem;
     padding: 0 1rem;
     box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
     display: flex;
@@ -17,9 +13,79 @@ header {
 
     &.fixed{
         position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
     }
-    
+
     &.smart{
         position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
     }
+}
+
+#hamburgerIcon img {
+    height: 100%;
+    margin-right: 0.73rem;
+}
+
+
+
+
+
+.brand a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    position: relative;
+    color: inherit;
+}
+
+.brand img {
+    height: 1.3rem;
+    width: auto;
+    margin-right: 1rem;
+}
+
+
+nav {
+    display: flex;
+    flex: 1;
+}
+
+.theme-toggle-wrapper{
+    margin-right: 1rem;
+}
+
+/* Toggle button styles */
+#themeToggle {
+    --size: 1.7rem;
+    position: relative;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: none;
+    background: var(--color-toggle-bg);
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-duration) var(--transition-easing);
+}
+
+.theme-toggle-wrapper {
+    width: 1.5rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+   
+#candyIcon{
+    width: 1.5rem;
+    margin-left: auto;
+    cursor: pointer;
+    img{
+        height: 100%;
+    }   
 }
