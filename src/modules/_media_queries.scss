@@ -74,8 +74,8 @@ $us: 479.98px;
 }
 
 /* Ultra Small (tiny devices, like older phones < 480px) */
-@mixin ul {
-	@media only screen and (#{$min-max}: $ul) {     
+@mixin us {
+	@media only screen and (#{$min-max}: $us) {     
 		@content;
 	} 
 }

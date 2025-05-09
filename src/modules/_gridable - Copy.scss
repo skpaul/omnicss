@@ -1,54 +1,56 @@
 /* ====================================================
 Gridable = Grid + Table
 ==================================================== */
-.gridable {
+
+.gridable{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    width: 100%;
-    gap: 0;
+    grid-template-columns: 80px 1fr 1fr;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0px;
     background-color: inherit;
     border: var(--border);
-}
 
-/* Header + Rows (full-width + column inheritance) */
-.grid-header, .grid-row {
-    display: grid;
-    grid-column: 1 / -1;
-    grid-template-columns: inherit;
-}
+    .grid-header {
+        display: contents;
+        font-weight: bold;
+    }
 
-/* Critical Text Wrapping for Cells */
-.header-item, .grid-cell {
-    padding: var(--space-us);
-    word-break: break-word;    /* Breaks long words */
-    overflow-wrap: break-word; /* Prefers breaking at spaces */
-    white-space: normal;       /* Overrides any 'nowrap' */
-    min-width: 0;             /* Allows shrinking below content size */
-}
+    .header-item {
+        padding: var(--space-us);
+        background: inherit;    
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+    }
 
-/* Header Styles */
-.header-item {
-    font-weight: bold;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-}
+    .grid-row {
+        display: contents;
+    }
+    
+    /* Alternative row bg color */
+    .grid-row:nth-child(even) > .grid-cell {
+        background: var(--even-bg, inherit); /* Optional for striped rows */
+    }
 
-/* Cell Borders + Stripes */
-.grid-cell {
-    border-bottom: var(--border);
-}
+    /* Alternative row bg color */
+    .grid-row:nth-child(odd) > .grid-cell {
+        background: var(--odd-bg, inherit); /* Optional for striped rows */
+    }
 
-.grid-row:nth-child(even) .grid-cell {
-    background: var(--even-bg, inherit);
-}
-
-.grid-row:nth-child(odd) .grid-cell {
-    background: var(--odd-bg, inherit);
-}
-
-.grid-row:last-child .grid-cell {
-    border-bottom: none;
+    .grid-cell {
+        padding: var(--space-us);
+        word-break: break-word; /* Ensures long words break */
+        overflow-wrap: break-word; /* Preferred property for wrapping */
+        white-space: normal; /* Override any white-space: nowrap */
+        min-width: 0; /* Allows cell to shrink below content's min-width */
+        border-bottom: var(--border); 
+    }
+    
+    /* Don's show bottom border of last row cells */
+    .grid-row:last-child > .grid-cell {
+        border-bottom: none;
+    }
 }
 
 

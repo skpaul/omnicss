@@ -1,0 +1,25 @@
+/* ====================================================
+   HEADER & NAVIGATION
+==================================================== */
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    padding: 0 1rem;
+    box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: top 0.8s ease-in-out;
+    background-color: var(--color-bg);
+
+    &.fixed{
+        position: fixed;
+    }
+    
+    &.smart{
+        position: fixed;
+    }
+}
