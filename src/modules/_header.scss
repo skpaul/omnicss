@@ -2,14 +2,16 @@
    HEADER & NAVIGATION
 ==================================================== */
 header {
+    height: 60px;
     padding: 0 1rem;
-    box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
+    // box-shadow: 0 3px 6px 0 rgba(50, 50, 50, .3);
+    border-bottom: 1px solid var(--secondary-surface-border);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
     transition: top 0.8s ease-in-out;
-    background-color: var(--color-bg);
+    background-color: var(--secondary-surface-bg);
 
     &.fixed{
         position: fixed;
@@ -31,10 +33,6 @@ header {
     margin-right: 0.73rem;
 }
 
-
-
-
-
 .brand a {
     text-decoration: none;
     display: flex;
@@ -45,11 +43,10 @@ header {
 }
 
 .brand img {
-    height: 1.3rem;
+    height: 2.2rem;
     width: auto;
     margin-right: 1rem;
 }
-
 
 nav {
     display: flex;

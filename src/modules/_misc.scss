@@ -107,3 +107,29 @@
     height: 1px;
 }
 
+/* ================================ */
+/* Utility Classes for Easy Use */
+/* ================================ */
+.surface-primary {
+    background-color: var(--primary-surface-bg);
+    color: var(--primary-surface-text);
+    border: 1px solid var(--primary-surface-border);
+  }
+  
+  .surface-secondary {
+    background-color: var(--secondary-surface-bg);
+    color: var(--secondary-surface-text);
+    border: 1px solid var(--secondary-surface-border);
+  }
+  
+  .surface-tertiary {
+    background-color: var(--tertiary-surface-bg);
+    color: var(--tertiary-surface-text);
+    border: 1px solid var(--tertiary-surface-border);
+  }
+  
+  .surface-quaternary {
+    background-color: var(--quaternary-surface-bg);
+    color: var(--quaternary-surface-text);
+    border: 1px solid var(--quaternary-surface-border);
+  }

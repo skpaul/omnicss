@@ -7,7 +7,7 @@
 ==================================================== */
 :root {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --border: 1px solid var(--border-color);
+  --border: 1px solid var(--primary-surface-border);
   --border-radius: 4px;
   --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
   --transition-duration: 0.4s;
@@ -33,31 +33,91 @@
 }
 
 /* ====================================================
-   Colors for Light/Dark theme
+   Colors for Light theme (default)
 ==================================================== */
 :root {
-  /* Default theme Light */
-  --color-bg: #ffffff;
-  --color-text: #222222;
-  --border-color: hsla(0, 0%, 91.34%, 1);
-  --color-toggle-bg: #e0e0e0;
-  --color-toggle-icon: #ffbb00;
   --color-primary: #0066ff;
   --color-secondary: #7c3aed;
-  --color-success: #10b981;
-  --color-info: rgb(232, 240, 254);
-  --color-warning: rgb(254, 247, 224);
-  --color-danger: #ef4444;
-  --color-muted: #6b7280;
+  /* Surface Hierarchy */
+  --primary-surface-bg: #FFFFFF;
+  /* Main background */
+  --primary-surface-text: #2d2d2d;
+  /* Dark Gray for clear contrast */
+  --primary-surface-border: #e0e3e7;
+  /* Subtle border for base surface */
+  --secondary-surface-bg: #f9fafc;
+  /* Slightly elevated, for cards, input fields */
+  --secondary-surface-text: #3a3a3a;
+  --secondary-surface-border: #d6dbe0;
+  /* Soft border for clear separation */
+  --tertiary-surface-bg: #f3f4f6;
+  /* Even more elevated, for dropdowns, modals */
+  --tertiary-surface-text: #444444;
+  --tertiary-surface-border: #cdd2d9;
+  /* Slightly stronger border for clarity */
+  --quaternary-surface-bg: #e0e3e7;
+  /* For subtle dividers, button hover */
+  --quaternary-surface-text: #525252;
+  --quaternary-surface-border: #b5b9be;
+  /* Stronger for clear separation */
+  /* Alert Box Color Palette */
+  --info-bg: #e0f3ff;
+  --info-text: #0b62a4;
+  --info-border: 1px solid #66b3ff;
+  --success-bg: #e8f5e9;
+  --success-text: #2e7d32;
+  --success-border: 1px solid #81c784;
+  --caution-bg: #fff8e1;
+  --caution-text: #f57c00;
+  --caution-border: 1px solid #ffb74d;
+  --critical-bg: #ffebee;
+  --critical-text: #c62828;
+  --critical-border: 1px solid #e57373;
+  --color-toggle-bg: #e0e0e0;
+  --color-toggle-icon: #ffbb00;
 }
 
+/* ====================================================
+   Colors for Dark theme
+==================================================== */
 /* Dark mode colors. User explicitly selects dark/light. Overrides system preferences. */
 :root[data-theme=dark] {
-  --color-bg: #121212;
-  /*#121212 or #111111*/
-  --color-text: #E0E0E0;
-  /*#E0E0E0 to #F5F5F5*/
-  --border-color: #2D2D2D;
+  --color-primary: #0066ff;
+  --color-secondary: #7c3aed;
+  /* Surface Hierarchy */
+  --primary-surface-bg: #292a2d;
+  /* Main background */
+  --primary-surface-text: #e0e0e0;
+  /* Very light gray for strong contrast */
+  --primary-surface-border: #3a3b3e;
+  /* Subtle border for base surface */
+  --secondary-surface-bg: #323336;
+  /* Slightly elevated, for cards, input fields */
+  --secondary-surface-text: #d5d7d9;
+  --secondary-surface-border: #3d3e42;
+  /* Soft border for clear separation */
+  --tertiary-surface-bg: #3a3b3e;
+  /* Even more elevated, for dropdowns, modals */
+  --tertiary-surface-text: #c7c9cc;
+  --tertiary-surface-border: #46474b;
+  /* Slightly stronger border for clarity */
+  --quaternary-surface-bg: #46474b;
+  /* For subtle dividers, button hover */
+  --quaternary-surface-text: #b4b6b9;
+  --quaternary-surface-border: #5a5b60;
+  /* Stronger for clear separation */
+  --info-bg: #1e3a54;
+  --info-text: #aad4ff;
+  --info-border: 1px solid #3a6b9e;
+  --success-bg: #1e4026;
+  --success-text: #a5e2b5;
+  --success-border: 1px solid #3a6b47;
+  --caution-bg: #3b2a0d;
+  --caution-text: #ffd080;
+  --caution-border: 1px solid #a5752b;
+  --critical-bg: #4a1e1e;
+  --critical-text: #f29c9c;
+  --critical-border: 1px solid #b64444;
   --color-toggle-bg: #333333;
   --color-toggle-icon: #ffdd88;
 }
@@ -65,11 +125,44 @@
 /* System Dark Mode (system preference) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
-    --color-bg: #121212;
-    /*#121212 or #111111*/
-    --color-text: #E0E0E0;
-    /*#E0E0E0 to #F5F5F5*/
-    --border-color: #2D2D2D;
+    --color-primary: #0066ff;
+    --color-secondary: #7c3aed;
+    /* Surface Hierarchy */
+    --primary-surface-bg: #292a2d;
+    /* Main background */
+    --primary-surface-text: #e0e0e0;
+    /* Very light gray for strong contrast */
+    --primary-surface-border: #3a3b3e;
+    /* Subtle border for base surface */
+    --secondary-surface-bg: #323336;
+    /* Slightly elevated, for cards, input fields */
+    --secondary-surface-text: #d5d7d9;
+    --secondary-surface-border: #3d3e42;
+    /* Soft border for clear separation */
+    --tertiary-surface-bg: #3a3b3e;
+    /* Even more elevated, for dropdowns, modals */
+    --tertiary-surface-text: #c7c9cc;
+    --tertiary-surface-border: #46474b;
+    /* Slightly stronger border for clarity */
+    --quaternary-surface-bg: #46474b;
+    /* For subtle dividers, button hover */
+    --quaternary-surface-text: #b4b6b9;
+    --quaternary-surface-border: #5a5b60;
+    /* Stronger for clear separation */
+    --info-bg: #1e3a54;
+    --info-text: #aad4ff;
+    --info-border: 1px solid #3a6b9e;
+    --success-bg: #1e4026;
+    --success-text: #a5e2b5;
+    --success-border: #3a6b47;
+    --caution-bg: #3b2a0d;
+    --caution-text: #ffd080;
+    --caution-border: 1px solid #a5752b;
+    --critical-bg: #4a1e1e;
+    --critical-text: #f29c9c;
+    --critical-border: #b64444;
+    --color-toggle-bg: #333333;
+    --color-toggle-icon: #ffdd88;
   }
 }
 /* ====================================================
@@ -98,8 +191,8 @@ body {
   font-family: var(--font-family);
   font-weight: 400;
   line-height: 1.6;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
   min-height: 100vh;
   /* Font smoothing and numeric formatting */
   -webkit-font-smoothing: antialiased;
@@ -776,6 +869,33 @@ footer {
   height: 1px;
 }
 
+/* ================================ */
+/* Utility Classes for Easy Use */
+/* ================================ */
+.surface-primary {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
+}
+
+.surface-secondary {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+}
+
+.surface-tertiary {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+
+.surface-quaternary {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+}
+
 /* ====================================================
   The kebab menu, also known as the three dots menu, and the three vertical dots menu, is an icon used to open a menu with additional options.
 ==================================================== */
@@ -1067,24 +1187,67 @@ Gridable = Grid + Table
   }
 }
 .pill {
-  border: var(--border);
   padding: 1px 5px;
   margin: 0px 5px;
   border-radius: 5px;
+}
+.pill.primary {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
+}
+.pill.secondary {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+}
+.pill.tertiary {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+.pill.quaternary {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+}
+.pill.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: var(--success-border);
+}
+.pill.caution {
+  background-color: var(--caution-bg);
+  color: var(--caution-text);
+  border: var(--caution-border);
+}
+.pill.info {
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border: var(--info-border);
+}
+.pill.critical {
+  background-color: var(--critical-bg);
+  color: var(--critical-text);
+  border: var(--critical-border);
+}
+.pill.muted {
+  background-color: var(--color-muted);
 }
 
 /* ====================================================
    HEADER & NAVIGATION
 ==================================================== */
 header {
+  height: 60px;
   padding: 0 1rem;
-  box-shadow: 0 3px 6px 0 rgba(50, 50, 50, 0.3);
+  border-bottom: 1px solid var(--secondary-surface-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   transition: top 0.8s ease-in-out;
-  background-color: var(--color-bg);
+  background-color: var(--secondary-surface-bg);
 }
 header.fixed {
   position: fixed;
@@ -1114,7 +1277,7 @@ header.smart {
 }
 
 .brand img {
-  height: 1.3rem;
+  height: 2.2rem;
   width: auto;
   margin-right: 1rem;
 }
@@ -1164,25 +1327,45 @@ nav {
   padding: var(--space-xs);
   border-radius: var(--border-radius);
 }
-.dismissable.success {
-  background: #e6f4ea;
-  color: #079d49;
-  border: 1px solid #dbdbdb;
+.dismissable.primary {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
 }
-.dismissable.warning {
-  background-color: #fef7e0;
-  border: 1px solid #ffdab4;
-  color: #e37400;
+.dismissable.secondary {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+}
+.dismissable.tertiary {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+.dismissable.quaternary {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+}
+.dismissable.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: var(--success-border);
+}
+.dismissable.caution {
+  background-color: var(--caution-bg);
+  color: var(--caution-text);
+  border: var(--caution-border);
 }
 .dismissable.info {
-  background-color: #e8f0fe;
-  color: #054c95;
-  border: 1px solid #c4defa;
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border: var(--info-border);
 }
-.dismissable.danger {
-  background: #FFF1F0;
-  color: #000000d9;
-  border: 1px solid #FFCCC7;
+.dismissable.critical {
+  background-color: var(--critical-bg);
+  color: var(--critical-text);
+  border: var(--critical-border);
 }
 .dismissable.muted {
   background-color: var(--color-muted);
@@ -1206,24 +1389,24 @@ nav {
   border-radius: var(--border-radius);
 }
 .board.success {
-  background: #e6f4ea;
-  color: #079d49;
-  border: 1px solid #dbdbdb;
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: var(--success-border);
 }
-.board.warning {
-  background-color: #fef7e0;
-  border: 1px solid #ffdab4;
-  color: #e37400;
+.board.caution {
+  background-color: var(--caution-bg);
+  color: var(--caution-text);
+  border: var(--caution-border);
 }
 .board.info {
-  background-color: #e8f0fe;
-  color: #054c95;
-  border: 1px solid #c4defa;
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border: var(--info-border);
 }
-.board.danger {
-  background: #FFF1F0;
-  color: #000000d9;
-  border: 1px solid #FFCCC7;
+.board.critical {
+  background-color: var(--critical-bg);
+  color: var(--critical-text);
+  border: var(--critical-border);
 }
 .board.muted {
   background-color: var(--color-muted);

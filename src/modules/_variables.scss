@@ -4,7 +4,7 @@
 :root {
     --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-    --border: 1px solid var(--border-color);
+    --border: 1px solid var(--primary-surface-border);
     --border-radius: 4px;
     --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
 
@@ -36,42 +36,144 @@
 
 
 /* ====================================================
-   Colors for Light/Dark theme
+   Colors for Light theme (default)
 ==================================================== */
-    
-    :root {
-        /* Default theme Light */
-        --color-bg: #ffffff;
-        --color-text: #222222;
-        --border-color: hsla(0, 0%, 91.34%, 1);
+:root {
+    --color-primary: #0066ff;
+    --color-secondary: #7c3aed;
 
-        --color-toggle-bg: #e0e0e0;
-        --color-toggle-icon: #ffbb00;
+    /* Surface Hierarchy */
+    //Primary
+    --primary-surface-bg: #FFFFFF;      /* Main background */
+    --primary-surface-text: #2d2d2d;    /* Dark Gray for clear contrast */
+    --primary-surface-border: #e0e3e7;  /* Subtle border for base surface */
+    // Secondary
+    --secondary-surface-bg: #f9fafc;    /* Slightly elevated, for cards, input fields */
+    --secondary-surface-text: #3a3a3a;
+    --secondary-surface-border: #d6dbe0; /* Soft border for clear separation */
+    //Tertiary
+    --tertiary-surface-bg: #f3f4f6;     /* Even more elevated, for dropdowns, modals */
+    --tertiary-surface-text: #444444;
+    --tertiary-surface-border: #cdd2d9; /* Slightly stronger border for clarity */
+    //Quaternary
+    --quaternary-surface-bg: #e0e3e7;   /* For subtle dividers, button hover */
+    --quaternary-surface-text: #525252;
+    --quaternary-surface-border: #b5b9be; /* Stronger for clear separation */
 
+    /* Alert Box Color Palette */  
+    // Info:
+    --info-bg: #e0f3ff;
+    --info-text: #0b62a4;
+    --info-border: 1px solid #66b3ff;
+    // Success:
+    --success-bg: #e8f5e9;
+    --success-text: #2e7d32;
+    --success-border: 1px solid #81c784;
+    // Warning:
+    --caution-bg: #fff8e1;
+    --caution-text: #f57c00;
+    --caution-border: 1px solid #ffb74d;
+    // Danger:
+    --critical-bg: #ffebee;
+    --critical-text: #c62828;
+    --critical-border: 1px solid #e57373;
+
+    --color-toggle-bg: #e0e0e0;
+    --color-toggle-icon: #ffbb00;
+}
+
+/* ====================================================
+   Colors for Dark theme
+==================================================== */
+/* Dark mode colors. User explicitly selects dark/light. Overrides system preferences. */
+:root[data-theme="dark"] {
+    --color-primary: #0066ff;
+    --color-secondary: #7c3aed;
+
+    /* Surface Hierarchy */
+    //Primary
+    --primary-surface-bg: #292a2d;     /* Main background */
+    --primary-surface-text: #e0e0e0;   /* Very light gray for strong contrast */
+    --primary-surface-border: #3a3b3e; /* Subtle border for base surface */
+    // Secondary
+    --secondary-surface-bg: #323336;   /* Slightly elevated, for cards, input fields */
+    --secondary-surface-text: #d5d7d9;
+    --secondary-surface-border: #3d3e42; /* Soft border for clear separation */
+    // Tertiary
+    --tertiary-surface-bg: #3a3b3e;    /* Even more elevated, for dropdowns, modals */
+    --tertiary-surface-text: #c7c9cc;
+    --tertiary-surface-border: #46474b; /* Slightly stronger border for clarity */
+    //Quaternary
+    --quaternary-surface-bg: #46474b;  /* For subtle dividers, button hover */
+    --quaternary-surface-text: #b4b6b9;
+    --quaternary-surface-border: #5a5b60; /* Stronger for clear separation */
+
+    // Alert Box Color Palette   
+    // Info:
+    --info-bg: #1e3a54;
+    --info-text: #aad4ff;
+    --info-border: 1px solid #3a6b9e;
+    // Success:
+    --success-bg: #1e4026;
+    --success-text:  #a5e2b5;
+    --success-border: 1px solid  #3a6b47;
+    // Warning:
+    --caution-bg: #3b2a0d;
+    --caution-text: #ffd080;
+    --caution-border: 1px solid #a5752b;
+    // Danger:
+    --critical-bg: #4a1e1e;
+    --critical-text: #f29c9c;
+    --critical-border: 1px solid #b64444;
+
+    --color-toggle-bg: #333333;
+    --color-toggle-icon: #ffdd88;
+}
+
+
+/* System Dark Mode (system preference) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
         --color-primary: #0066ff;
         --color-secondary: #7c3aed;
-        --color-success: #10b981;
-        --color-info: rgb(232, 240, 254);
-        --color-warning: rgb(254, 247, 224);
-        --color-danger: #ef4444;
-        --color-muted: #6b7280;
-    }
     
-    /* Dark mode colors. User explicitly selects dark/light. Overrides system preferences. */
-    :root[data-theme="dark"] {
-        --color-bg: #121212;  /*#121212 or #111111*/
-        --color-text: #E0E0E0;  /*#E0E0E0 to #F5F5F5*/
-        --border-color: #2D2D2D;
-
+        /* Surface Hierarchy */
+        //Primary
+        --primary-surface-bg: #292a2d;     /* Main background */
+        --primary-surface-text: #e0e0e0;   /* Very light gray for strong contrast */
+        --primary-surface-border: #3a3b3e; /* Subtle border for base surface */
+        // Secondary
+        --secondary-surface-bg: #323336;   /* Slightly elevated, for cards, input fields */
+        --secondary-surface-text: #d5d7d9;
+        --secondary-surface-border: #3d3e42; /* Soft border for clear separation */
+        // Tertiary
+        --tertiary-surface-bg: #3a3b3e;    /* Even more elevated, for dropdowns, modals */
+        --tertiary-surface-text: #c7c9cc;
+        --tertiary-surface-border: #46474b; /* Slightly stronger border for clarity */
+        //Quaternary
+        --quaternary-surface-bg: #46474b;  /* For subtle dividers, button hover */
+        --quaternary-surface-text: #b4b6b9;
+        --quaternary-surface-border: #5a5b60; /* Stronger for clear separation */
+    
+        // Alert Box Color Palette   
+        // Info:
+        --info-bg: #1e3a54;
+        --info-text: #aad4ff;
+        --info-border: 1px solid #3a6b9e;
+        // Success:
+        --success-bg: #1e4026;
+        --success-text:  #a5e2b5;
+        --success-border:  #3a6b47;
+        // Warning:
+        --caution-bg: #3b2a0d;
+        --caution-text: #ffd080;
+        --caution-border: 1px solid #a5752b;
+        // Danger:
+        --critical-bg: #4a1e1e;
+        --critical-text: #f29c9c;
+        --critical-border: #b64444;
+    
         --color-toggle-bg: #333333;
         --color-toggle-icon: #ffdd88;
     }
-
-    /* System Dark Mode (system preference) */
-    @media (prefers-color-scheme: dark) {
-        :root:not([data-theme]) {
-            --color-bg: #121212;  /*#121212 or #111111*/
-            --color-text: #E0E0E0;  /*#E0E0E0 to #F5F5F5*/
-            --border-color: #2D2D2D;
-        }
-    }
+}

@@ -20,8 +20,8 @@ body {
     font-family: var(--font-family);
     font-weight: 400;
     line-height: 1.6;
-    background: var(--color-bg);
-    color: var(--color-text);
+    background: var(--primary-surface-bg);
+    color: var(--primary-surface-text);
     min-height: 100vh;
 
     /* Font smoothing and numeric formatting */
