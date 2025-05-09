@@ -656,6 +656,12 @@ footer {
   color: white;
 }
 
+/* ====================================================
+   White Space
+==================================================== */
+/* ====================================================
+   Text Alignment
+==================================================== */
 .left {
   text-align: left;
 }
@@ -670,6 +676,104 @@ footer {
 
 .justify {
   text-align: justify;
+}
+
+/* ====================================================
+   Text Transformation
+==================================================== */
+.ucase {
+  text-transform: uppercase;
+}
+
+.lcase {
+  text-transform: lowercase;
+}
+
+.ccase {
+  text-transform: capitalize;
+}
+
+/* ====================================================
+   Text Decoration
+==================================================== */
+.uline {
+  text-decoration: underline;
+}
+
+.oline {
+  text-decoration: overline;
+}
+
+.noline {
+  text-decoration: none;
+}
+
+/* ====================================================
+   Positioning
+==================================================== */
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+/* ====================================================
+   Display
+==================================================== */
+.hidden {
+  display: none;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.iblock {
+  display: inline-block;
+}
+
+/* ====================================================
+   Flexbox
+==================================================== */
+.flex {
+  display: flex;
+}
+
+.iflex {
+  display: inline-flex;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.fd-col {
+  flex-direction: column;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+/* ====================================================
+   Divider
+==================================================== */
+.line, .separator, .divider {
+  height: 1px;
 }
 
 /* ====================================================
@@ -1061,7 +1165,7 @@ nav {
   border-radius: var(--border-radius);
 }
 .dismissable.success {
-  background: #f7f7f7;
+  background: #e6f4ea;
   color: #079d49;
   border: 1px solid #dbdbdb;
 }
@@ -1102,7 +1206,7 @@ nav {
   border-radius: var(--border-radius);
 }
 .board.success {
-  background: #f7f7f7;
+  background: #e6f4ea;
   color: #079d49;
   border: 1px solid #dbdbdb;
 }

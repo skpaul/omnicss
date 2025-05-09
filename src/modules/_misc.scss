@@ -41,7 +41,69 @@
 }
 
 
+/* ====================================================
+   White Space
+==================================================== */
+
+
+/* ====================================================
+   Text Alignment
+==================================================== */
 .left{text-align: left;}
 .right{text-align: right;}
 .center{text-align: center;}
 .justify{text-align: justify;}
+
+/* ====================================================
+   Text Transformation
+==================================================== */
+.ucase{text-transform: uppercase;}
+.lcase{text-transform: lowercase;}
+.ccase{text-transform: capitalize;}
+
+/* ====================================================
+   Text Decoration
+==================================================== */
+.uline{text-decoration: underline;}
+.oline{text-decoration: overline;}
+.noline{text-decoration: none;}
+
+/* ====================================================
+   Positioning
+==================================================== */
+.relative{ position: relative; }
+.fixed{ position: fixed; }
+.absolute{ position: absolute; }
+
+
+/* ====================================================
+   Display
+==================================================== */
+.hidden{
+    display: none;
+}
+
+.inline{display: inline;}
+.block{display: block;}
+.iblock{display: inline-block;}
+
+
+/* ====================================================
+   Flexbox
+==================================================== */
+.flex{
+    display: flex;
+}
+.iflex{display: inline-flex;}
+.fd-row{flex-direction: row;}
+.fd-col{flex-direction: column;}
+.jc-center{justify-content: center;}
+.ai-center{align-items: center;}
+
+/* ====================================================
+   Divider
+==================================================== */
+.line, .separator, .divider{
+    height: 1px;
+}
+
