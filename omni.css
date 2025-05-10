@@ -645,6 +645,53 @@ a {
   background-color: var(--color-muted);
 }
 
+.card {
+  border-radius: var(--border-radius);
+}
+.card.primary {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
+}
+.card.secondary {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+}
+.card.tertiary {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+.card.quaternary {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+}
+.card.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: var(--success-border);
+}
+.card.caution {
+  background-color: var(--caution-bg);
+  color: var(--caution-text);
+  border: var(--caution-border);
+}
+.card.info {
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border: var(--info-border);
+}
+.card.critical {
+  background-color: var(--critical-bg);
+  color: var(--critical-text);
+  border: var(--critical-border);
+}
+.card.muted {
+  background-color: var(--color-muted);
+}
+
 /* ====================================================
    FLUID CONTAINER
 ==================================================== */
@@ -2033,16 +2080,16 @@ nav {
       On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
   */
 }
-.grid-fluid .gf-2 {
+.grid-fluid.gf-2 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
 }
-.grid-fluid .gf-3 {
+.grid-fluid.gf-3 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
 }
-.grid-fluid .gf-4 {
+.grid-fluid.gf-4 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
 }
-.grid-fluid .gf-5 {
+.grid-fluid.gf-5 {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr));
 }
 

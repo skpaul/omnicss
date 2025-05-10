@@ -1,3 +1,52 @@
 .card{
+    border-radius: var(--border-radius);
+    &.primary {
+        background-color: var(--primary-surface-bg);
+        color: var(--primary-surface-text);
+        border: 1px solid var(--primary-surface-border);
+      }
+      
+    &.secondary {
+        background-color: var(--secondary-surface-bg);
+        color: var(--secondary-surface-text);
+        border: 1px solid var(--secondary-surface-border);
+    }
     
+    &.tertiary {
+        background-color: var(--tertiary-surface-bg);
+        color: var(--tertiary-surface-text);
+        border: 1px solid var(--tertiary-surface-border);
+    }
+    
+    &.quaternary {
+        background-color: var(--quaternary-surface-bg);
+        color: var(--quaternary-surface-text);
+        border: 1px solid var(--quaternary-surface-border);
+    }
+
+    &.success{
+        background-color: var(--success-bg);
+        color: var(--success-text);
+        border: var(--success-border);
+    }
+    &.caution{
+        background-color: var(--caution-bg);
+        color: var(--caution-text);
+        border: var(--caution-border);
+    }
+    
+    &.info{
+        background-color: var(--info-bg);
+        color: var(--info-text);
+        border: var(--info-border);
+    }
+    &.critical{
+        background-color: var(--critical-bg);
+        color: var(--critical-text);
+        border: var(--critical-border);
+    }
+    
+    &.muted{
+        background-color: var(--color-muted);
+    }
 }

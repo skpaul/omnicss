@@ -10,13 +10,13 @@
         On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
         On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
     */
-    .gf-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr)); }
+    &.gf-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr)); }
 
     /*  
         On desktop: If the container is wide enough, it will try to fit up to "3" or more columns (each at least 20 characters wide).
         On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
     */
-    .gf-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
-    .gf-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
-    .gf-5 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
+    &.gf-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
+    &.gf-4 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
+    &.gf-5 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
 }
