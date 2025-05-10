@@ -1,4 +1,5 @@
 
+// sass --watch omnicss.scss:../omni.css
 // sass --watch omnicss.scss:../omni.min.css --style compressed
 
 // git tag 		//show current tags
@@ -13,24 +14,38 @@
 /* A tiny, clean, futuristic CSS framework */
 /* ~2KB | No dependencies | MIT License */
 
-@import 'modules/variables';
-@import 'modules/reset';
+@import 'modules/base/variables';
+@import 'modules/base/reset';
 
-@import 'modules/media_queries'; 
+@import 'modules/media-queries'; 
 @import 'modules/functions'; 
-@import 'modules/container'; 
-@import 'modules/layout'; 
-@import 'modules/grid'; 
-@import 'modules/fluid-typography'; 
-@import 'modules/fluid-spacing'; 
+
+@import 'modules/box-model/fluid-padding'; 
+@import 'modules/box-model/fluid-margin'; 
+
+@import 'modules/components/action-menu'; 
+@import 'modules/components/board'; 
+@import 'modules/components/card'; 
+@import 'modules/components/container'; 
+@import 'modules/components/dismissable'; 
+@import 'modules/components/gridable'; 
+@import 'modules/components/pill'; 
+
+@import 'modules/form/form'; 
+
+
+@import 'modules/layout/layout'; 
+@import 'modules/layout/header'; 
+
+@import 'modules/misc/misc'; 
+
+@import 'modules/typography/fluid-typography'; 
+@import 'modules/typography/typography-misc'; 
+
+
+@import 'modules/grid/grid'; 
+@import 'modules/grid/grid-fluid'; 
 @import 'modules/colors'; 
-@import 'modules/misc'; 
-@import 'modules/action-menu'; 
-@import 'modules/gridable'; 
-@import 'modules/pill'; 
-@import 'modules/header'; 
-@import 'modules/dismissable'; 
-@import 'modules/board'; 
 
 
 // // Layout

@@ -3,7 +3,7 @@ A semantic & handy <code>.css</code> library for busy developers.
 
 ## Documentation
 
-For installation, classes & examples please visit the docs [home page](https://skpaul.github.io/omnicss/).
+For installation, classes & examples please visit  [the docs](https://nobolok.com/omni-css/).
 
 ## Colour Variants Tool
 

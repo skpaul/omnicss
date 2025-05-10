@@ -1,0 +1,16 @@
+/* ====================================================
+   Fluid Padding
+==================================================== */
+
+//padding-all
+@include createSpacing("pa", "padding"); 
+//padding-left
+@include createSpacing("pl", "padding-left"); 
+//padding-right
+@include createSpacing("pr", "padding-right"); 
+//padding-top
+@include createSpacing("pt", "padding-top"); 
+//padding-bottom
+@include createSpacing("pb", "padding-bottom"); 
+
+

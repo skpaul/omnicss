@@ -1,37 +1,64 @@
+/*Used for padding and margin*/
+$spaceSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
+@mixin createSpacing($prefix, $property) {
+    @each $size in $spaceSizes{
+        .#{$prefix}-#{$size}{
+            #{$property}:var(--space-#{$size});
+        }
+    }
+}
+
+$fontSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
+@mixin createFontSizes($prefix, $property, ) {
+    @each $size in $fontSizes{
+        .#{$prefix}-#{$size}{
+            #{$property}:var(--fs-#{$size});
+        }
+    }
+}
+
+$fontWeights: 100,200,300,400,500,600,700,800,900;
+@mixin createFontWeights($prefix, $property, ) {
+    @each $value in $fontWeights{
+        .#{$prefix}-#{$value}{
+            #{$property}:#{$value}; 
+        }
+    }
+}
 
 // Here's a general way to escape decimal numbers for class names (replacing . with -)   ----->
-    @function strip-units ( $number ) {
-        @return $number / ( $number * 0 + 1 );
-    }
+@function strip-units ( $number ) {
+    @return $number / ( $number * 0 + 1 );
+}
 
-    @function replace-decimal( $value ) {
-        @if type-of( $value ) != 'number' {
-            @return $value;
-        }
-        $int: floor( strip-units( $value ) );
-        $fract: $value - $int;
-        @if ( $fract == 0 ) {
-            @return $int;
-        }
-        @while ( $fract != floor( $fract ) ) {
-            $fract: $fract * 10;
-        }
-        @return $int + '-' + $fract;
+@function replace-decimal( $value ) {
+    @if type-of( $value ) != 'number' {
+        @return $value;
     }
-    @function remove-decimal( $value ) {
-        @if type-of( $value ) != 'number' {
-            @return $value;
-        }
-        $int: floor( strip-units( $value ) );
-        $fract: $value - $int;
-        @if ( $fract == 0 ) {
-            @return $int;
-        }
-        @while ( $fract != floor( $fract ) ) {
-            $fract: $fract * 10;
-        }
-        @return $int + '' + $fract;
+    $int: floor( strip-units( $value ) );
+    $fract: $value - $int;
+    @if ( $fract == 0 ) {
+        @return $int;
     }
+    @while ( $fract != floor( $fract ) ) {
+        $fract: $fract * 10;
+    }
+    @return $int + '-' + $fract;
+}
+@function remove-decimal( $value ) {
+    @if type-of( $value ) != 'number' {
+        @return $value;
+    }
+    $int: floor( strip-units( $value ) );
+    $fract: $value - $int;
+    @if ( $fract == 0 ) {
+        @return $int;
+    }
+    @while ( $fract != floor( $fract ) ) {
+        $fract: $fract * 10;
+    }
+    @return $int + '' + $fract;
+}
 //<------ Here's a general way to escape decimal numbers for class names (replacing . with -)
 
 @function str-replace($string, $search, $replace: '') {
@@ -43,5 +70,3 @@
     
     @return $string;
   }
-
-

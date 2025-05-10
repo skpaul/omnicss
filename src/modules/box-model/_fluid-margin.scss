@@ -1,0 +1,13 @@
+/* ====================================================
+   Fluid Padding
+==================================================== */
+//margin-all
+@include createSpacing("ma", "margin"); 
+//margin-left
+@include createSpacing("ml", "margin-left"); 
+//margin-right
+@include createSpacing("mr", "margin-right"); 
+//margin-top
+@include createSpacing("mt", "margin-top"); 
+//margin-bottom
+@include createSpacing("mb", "margin-bottom"); 

@@ -1,37 +1,28 @@
+/* ====================================================
+   Board
+==================================================== */
 .board{
 
     padding:var(--space-xs);
     border-radius: var(--border-radius);
 
     &.success{
-        // background: #e6f4ea;
-        // color: #079d49;
-        // border:  1px solid #dbdbdb;
         background-color: var(--success-bg);
         color: var(--success-text);
         border: var(--success-border);
     }
     &.caution{
-        // background-color: rgb(254, 247, 224);
-        // border: 1px solid #ffdab4;
-        // color: #e37400;
         background-color: var(--caution-bg);
         color: var(--caution-text);
         border: var(--caution-border);
     }
     
     &.info{
-        // background-color: rgb(232, 240, 254);
-        // color: #054c95;
-        // border: 1px solid rgb(196, 222, 250);
         background-color: var(--info-bg);
         color: var(--info-text);
         border: var(--info-border);
     }
     &.critical{
-        // background: #FFF1F0;
-        // color: #000000d9;
-        // border: 1px solid #FFCCC7;
         background-color: var(--critical-bg);
         color: var(--critical-text);
         border: var(--critical-border);

@@ -1,0 +1,31 @@
+/* ====================================================
+   Font-Weight
+==================================================== */
+@include createFontWeights("fw", "font-weight"); 
+
+/* ====================================================
+   White Space
+==================================================== */
+
+
+/* ====================================================
+   Text Alignment
+==================================================== */
+.left{text-align: left;}
+.right{text-align: right;}
+.center{text-align: center;}
+.justify{text-align: justify;}
+
+/* ====================================================
+   Text Transformation
+==================================================== */
+.ucase{text-transform: uppercase;}
+.lcase{text-transform: lowercase;}
+.ccase{text-transform: capitalize;}
+
+/* ====================================================
+   Text Decoration
+==================================================== */
+.uline{text-decoration: underline;}
+.oline{text-decoration: overline;}
+.noline{text-decoration: none;}
