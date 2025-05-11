@@ -1,54 +1,65 @@
-.pill{
+%pill-base {
     padding: 1px 5px;
     margin: 0px 5px;
-    border-radius: 5px;
-    &.primary {
+    border-radius: var(--border-radius);
+}
+
+.pill{
+    &-ps {
+        @extend %pill-base;
         background-color: var(--primary-surface-bg);
         color: var(--primary-surface-text);
         border: 1px solid var(--primary-surface-border);
-      }
+    }
       
-    &.secondary {
+    &-ss {
+        @extend %pill-base;
         background-color: var(--secondary-surface-bg);
         color: var(--secondary-surface-text);
         border: 1px solid var(--secondary-surface-border);
     }
     
-    &.tertiary {
+    &-ts {
+        @extend %pill-base;
         background-color: var(--tertiary-surface-bg);
         color: var(--tertiary-surface-text);
         border: 1px solid var(--tertiary-surface-border);
     }
     
-    &.quaternary {
+    &-qs {
+        @extend %pill-base;
         background-color: var(--quaternary-surface-bg);
         color: var(--quaternary-surface-text);
         border: 1px solid var(--quaternary-surface-border);
     }
 
-    &.success{
+    &-success{
+        @extend %pill-base;
         background-color: var(--success-bg);
         color: var(--success-text);
         border: var(--success-border);
     }
-    &.caution{
+    &-caution{
+        @extend %pill-base;
         background-color: var(--caution-bg);
         color: var(--caution-text);
         border: var(--caution-border);
     }
     
-    &.info{
+    &-info{
+        @extend %pill-base;
         background-color: var(--info-bg);
         color: var(--info-text);
         border: var(--info-border);
     }
-    &.critical{
+    &-critical{
+        @extend %pill-base;
         background-color: var(--critical-bg);
         color: var(--critical-text);
         border: var(--critical-border);
     }
     
-    &.muted{
+    &-muted{
         background-color: var(--color-muted);
     }
 }

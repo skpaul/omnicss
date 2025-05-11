@@ -8,7 +8,7 @@
 :root {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --border: 1px solid var(--primary-surface-border);
-  --border-radius: 4px;
+  --border-radius: 5px;
   --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
   --transition-duration: 0.4s;
   --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
@@ -645,48 +645,29 @@ a {
   background-color: var(--color-muted);
 }
 
-.card {
+.card.muted, .card-qs, .card-ts, .card-ss, .card-ps {
   border-radius: var(--border-radius);
 }
-.card.primary {
+
+.card-ps {
   background-color: var(--primary-surface-bg);
   color: var(--primary-surface-text);
   border: 1px solid var(--primary-surface-border);
 }
-.card.secondary {
+.card-ss {
   background-color: var(--secondary-surface-bg);
   color: var(--secondary-surface-text);
   border: 1px solid var(--secondary-surface-border);
 }
-.card.tertiary {
+.card-ts {
   background-color: var(--tertiary-surface-bg);
   color: var(--tertiary-surface-text);
   border: 1px solid var(--tertiary-surface-border);
 }
-.card.quaternary {
+.card-qs {
   background-color: var(--quaternary-surface-bg);
   color: var(--quaternary-surface-text);
   border: 1px solid var(--quaternary-surface-border);
-}
-.card.success {
-  background-color: var(--success-bg);
-  color: var(--success-text);
-  border: var(--success-border);
-}
-.card.caution {
-  background-color: var(--caution-bg);
-  color: var(--caution-text);
-  border: var(--caution-border);
-}
-.card.info {
-  background-color: var(--info-bg);
-  color: var(--info-text);
-  border: var(--info-border);
-}
-.card.critical {
-  background-color: var(--critical-bg);
-  color: var(--critical-text);
-  border: var(--critical-border);
 }
 .card.muted {
   background-color: var(--color-muted);
@@ -1008,52 +989,53 @@ Gridable = Grid + Table
     font-weight: bold;
   }
 }
-.pill {
+.pill-critical, .pill-info, .pill-caution, .pill-success, .pill-qs, .pill-ts, .pill-ss, .pill-ps {
   padding: 1px 5px;
   margin: 0px 5px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
 }
-.pill.primary {
+
+.pill-ps {
   background-color: var(--primary-surface-bg);
   color: var(--primary-surface-text);
   border: 1px solid var(--primary-surface-border);
 }
-.pill.secondary {
+.pill-ss {
   background-color: var(--secondary-surface-bg);
   color: var(--secondary-surface-text);
   border: 1px solid var(--secondary-surface-border);
 }
-.pill.tertiary {
+.pill-ts {
   background-color: var(--tertiary-surface-bg);
   color: var(--tertiary-surface-text);
   border: 1px solid var(--tertiary-surface-border);
 }
-.pill.quaternary {
+.pill-qs {
   background-color: var(--quaternary-surface-bg);
   color: var(--quaternary-surface-text);
   border: 1px solid var(--quaternary-surface-border);
 }
-.pill.success {
+.pill-success {
   background-color: var(--success-bg);
   color: var(--success-text);
   border: var(--success-border);
 }
-.pill.caution {
+.pill-caution {
   background-color: var(--caution-bg);
   color: var(--caution-text);
   border: var(--caution-border);
 }
-.pill.info {
+.pill-info {
   background-color: var(--info-bg);
   color: var(--info-text);
   border: var(--info-border);
 }
-.pill.critical {
+.pill-critical {
   background-color: var(--critical-bg);
   color: var(--critical-text);
   border: var(--critical-border);
 }
-.pill.muted {
+.pill-muted {
   background-color: var(--color-muted);
 }
 
@@ -2068,9 +2050,7 @@ nav {
 /* ====================================================
    Fluid Grid
 ==================================================== */
-.grid-fluid {
-  display: grid;
-  gap: var(--space-md);
+.fluid-grid {
   /*  
       On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
       On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
@@ -2080,16 +2060,34 @@ nav {
       On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
   */
 }
-.grid-fluid.gf-2 {
+.fluid-grid-50 {
+  display: grid;
+  gap: var(--space-xs);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr));
+}
+.fluid-grid-40 {
+  display: grid;
+  gap: var(--space-xs);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr));
+}
+.fluid-grid-30 {
+  display: grid;
+  gap: var(--space-xs);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr));
 }
-.grid-fluid.gf-3 {
+.fluid-grid-20 {
+  display: grid;
+  gap: var(--space-xs);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr));
 }
-.grid-fluid.gf-4 {
+.fluid-grid-15 {
+  display: grid;
+  gap: var(--space-xs);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr));
 }
-.grid-fluid.gf-5 {
+.fluid-grid-12 {
+  display: grid;
+  gap: var(--space-xs);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr));
 }
 
