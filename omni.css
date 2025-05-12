@@ -752,13 +752,46 @@ a {
 /* ====================================================
 Gridable = Grid + Table
 ==================================================== */
-.gridable {
+[class^=gridable-] {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   width: 100%;
   gap: 0;
-  background-color: inherit;
-  border: var(--border);
+  border-radius: var(--border-radius);
+}
+
+:root {
+  --gridable-border-color: transparent;
+  --gridable-bg-color: red;
+}
+
+.gridable-ps {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
+  --gridable-border-color: var(--primary-surface-border);
+  --gridable-bg-color: var(--primary-surface-bg);
+}
+.gridable-ss {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+  --gridable-border-color: var(--secondary-surface-border);
+  --gridable-bg-color: var(--secondary-surface-bg);
+}
+.gridable-ts {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+  --gridable-border-color: var(--tertiary-surface-border);
+  --gridable-bg-color: var(--tertiary-surface-bg);
+}
+.gridable-qs {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+  --gridable-border-color: var(--quaternary-surface-border);
+  --gridable-bg-color: var(--quaternary-surface-bg);
 }
 
 /* Header + Rows (full-width + column inheritance) */
@@ -784,14 +817,14 @@ Gridable = Grid + Table
 /* Header Styles */
 .header-item {
   font-weight: bold;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--gridable-border-color);
   display: flex;
   align-items: center;
 }
 
 /* Cell Borders + Stripes */
 .grid-cell {
-  border-bottom: var(--border);
+  border-bottom: 1px solid var(--gridable-border-color);
 }
 
 .grid-row:nth-child(even) .grid-cell {
@@ -807,188 +840,144 @@ Gridable = Grid + Table
 }
 
 @media only screen and (max-width: 479.98px) {
-  .gridable.us {
+  [class^=gridable-].us {
     grid-template-columns: 1fr;
     border: none;
+    background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  .gridable.us .grid-header {
+  [class^=gridable-].us .grid-header {
     display: none;
   }
-  .gridable.us .grid-row {
+  [class^=gridable-].us .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
     margin-bottom: 5px;
     padding: 10px;
-    background: inherit;
-    border: var(--border);
-    border-radius: 0px;
+    background: var(--gridable-bg-color);
+    border: 1px solid var(--gridable-border-color);
+    border-radius: var(--border-radius);
   }
-  .gridable.us .grid-row:last-child {
+  [class^=gridable-].us .grid-row:last-child {
     margin-bottom: 0px;
   }
-  .gridable.us .grid-cell {
+  [class^=gridable-].us .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  .gridable.us .grid-cell::before {
+  [class^=gridable-].us .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  .gridable.us .grid-cell span {
+  [class^=gridable-].us .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  .gridable.us .grid-cell::before {
+  [class^=gridable-].us .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
-
 @media only screen and (max-width: 767.98px) {
-  .gridable.sm {
+  [class^=gridable-].sm {
     grid-template-columns: 1fr;
     border: none;
+    background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  .gridable.sm .grid-header {
+  [class^=gridable-].sm .grid-header {
     display: none;
   }
-  .gridable.sm .grid-row {
+  [class^=gridable-].sm .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
     margin-bottom: 5px;
     padding: 10px;
-    background: inherit;
-    border: var(--border);
-    border-radius: 0px;
+    background: var(--gridable-bg-color);
+    border: 1px solid var(--gridable-border-color);
+    border-radius: var(--border-radius);
   }
-  .gridable.sm .grid-row:last-child {
+  [class^=gridable-].sm .grid-row:last-child {
     margin-bottom: 0px;
   }
-  .gridable.sm .grid-cell {
+  [class^=gridable-].sm .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  .gridable.sm .grid-cell::before {
+  [class^=gridable-].sm .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  .gridable.sm .grid-cell span {
+  [class^=gridable-].sm .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  .gridable.sm .grid-cell::before {
+  [class^=gridable-].sm .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
-
 @media only screen and (max-width: 991.98px) {
-  .gridable.md {
+  [class^=gridable-].md {
     grid-template-columns: 1fr;
     border: none;
+    background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  .gridable.md .grid-header {
+  [class^=gridable-].md .grid-header {
     display: none;
   }
-  .gridable.md .grid-row {
+  [class^=gridable-].md .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
     margin-bottom: 5px;
     padding: 10px;
-    background: inherit;
-    border: var(--border);
-    border-radius: 0px;
+    background: var(--gridable-bg-color);
+    border: 1px solid var(--gridable-border-color);
+    border-radius: var(--border-radius);
   }
-  .gridable.md .grid-row:last-child {
+  [class^=gridable-].md .grid-row:last-child {
     margin-bottom: 0px;
   }
-  .gridable.md .grid-cell {
+  [class^=gridable-].md .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  .gridable.md .grid-cell::before {
+  [class^=gridable-].md .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  .gridable.md .grid-cell span {
+  [class^=gridable-].md .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  .gridable.md .grid-cell::before {
+  [class^=gridable-].md .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
 
-@media (max-width: 91.98px) {
-  .gridable {
-    grid-template-columns: 1fr;
-    border: none;
-    /* Add data-labels for mobile view */
-  }
-  .gridable .grid-header {
-    display: none;
-  }
-  .gridable .grid-row {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 5px;
-    margin-bottom: 5px;
-    padding: 10px;
-    background: inherit;
-    border: var(--border);
-    border-radius: 0px;
-  }
-  .gridable .grid-row:last-child {
-    margin-bottom: 0px;
-  }
-  .gridable .grid-cell {
-    padding: 5px;
-    background: transparent !important;
-    border-bottom: none;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .gridable .grid-cell::before {
-    content: attr(data-label);
-    font-weight: bold;
-    width: 120px;
-    flex-shrink: 0;
-  }
-  .gridable .grid-cell span {
-    flex: 1;
-    min-width: 0;
-    /* Allows text to wrap properly */
-  }
-  .gridable .grid-cell::before {
-    content: attr(data-label) ": ";
-    font-weight: bold;
-  }
-}
 .pill-critical, .pill-info, .pill-caution, .pill-success, .pill-qs, .pill-ts, .pill-ss, .pill-ps {
   padding: 1px 5px;
   margin: 0px 5px;
