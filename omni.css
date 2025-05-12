@@ -752,46 +752,12 @@ a {
 /* ====================================================
 Gridable = Grid + Table
 ==================================================== */
-[class^=gridable-] {
+.gridable {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   width: 100%;
   gap: 0;
   border-radius: var(--border-radius);
-}
-
-:root {
-  --gridable-border-color: transparent;
-  --gridable-bg-color: red;
-}
-
-.gridable-ps {
-  background-color: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
-  border: 1px solid var(--primary-surface-border);
-  --gridable-border-color: var(--primary-surface-border);
-  --gridable-bg-color: var(--primary-surface-bg);
-}
-.gridable-ss {
-  background-color: var(--secondary-surface-bg);
-  color: var(--secondary-surface-text);
-  border: 1px solid var(--secondary-surface-border);
-  --gridable-border-color: var(--secondary-surface-border);
-  --gridable-bg-color: var(--secondary-surface-bg);
-}
-.gridable-ts {
-  background-color: var(--tertiary-surface-bg);
-  color: var(--tertiary-surface-text);
-  border: 1px solid var(--tertiary-surface-border);
-  --gridable-border-color: var(--tertiary-surface-border);
-  --gridable-bg-color: var(--tertiary-surface-bg);
-}
-.gridable-qs {
-  background-color: var(--quaternary-surface-bg);
-  color: var(--quaternary-surface-text);
-  border: 1px solid var(--quaternary-surface-border);
-  --gridable-border-color: var(--quaternary-surface-border);
-  --gridable-bg-color: var(--quaternary-surface-bg);
 }
 
 /* Header + Rows (full-width + column inheritance) */
@@ -817,14 +783,22 @@ Gridable = Grid + Table
 /* Header Styles */
 .header-item {
   font-weight: bold;
-  border-bottom: 1px solid var(--gridable-border-color);
   display: flex;
   align-items: center;
 }
 
 /* Cell Borders + Stripes */
-.grid-cell {
-  border-bottom: 1px solid var(--gridable-border-color);
+.surf-p .header-item, .surf-p .grid-cell {
+  border-bottom: 1px solid var(--primary-surface-border);
+}
+.surf-s .header-item, .surf-s .grid-cell {
+  border-bottom: 1px solid var(--secondary-surface-border);
+}
+.surf-t .header-item, .surf-t .grid-cell {
+  border-bottom: 1px solid var(--tertiary-surface-border);
+}
+.surf-q .header-item, .surf-q .grid-cell {
+  border-bottom: 1px solid var(--quaternary-surface-border);
 }
 
 .grid-row:nth-child(even) .grid-cell {
@@ -840,192 +814,190 @@ Gridable = Grid + Table
 }
 
 @media only screen and (max-width: 479.98px) {
-  [class^=gridable-].us {
+  .gridable.us {
     grid-template-columns: 1fr;
     border: none;
     background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  [class^=gridable-].us .grid-header {
+  .gridable.us .grid-header {
     display: none;
   }
-  [class^=gridable-].us .grid-row {
+  .gridable.us .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
-    margin-bottom: 5px;
+    margin-bottom: var(--space-sm);
     padding: 10px;
-    background: var(--gridable-bg-color);
-    border: 1px solid var(--gridable-border-color);
     border-radius: var(--border-radius);
   }
-  [class^=gridable-].us .grid-row:last-child {
+  .gridable.us.surf-p .grid-row {
+    border: 1px solid var(--primary-surface-border);
+    background: var(--primary-surface-bg);
+  }
+  .gridable.us.surf-s .grid-row {
+    border: 1px solid var(--secondary-surface-border);
+    background: var(--secondary-surface-bg);
+  }
+  .gridable.us.surf-t .grid-row {
+    border: 1px solid var(--tertiary-surface-border);
+    background: var(--tertiary-surface-bg);
+  }
+  .gridable.us.surf-q .grid-row {
+    border: 1px solid var(--quaternary-surface-border);
+    background: var(--quaternary-surface-bg);
+  }
+  .gridable.us .grid-row:last-child {
     margin-bottom: 0px;
   }
-  [class^=gridable-].us .grid-cell {
+  .gridable.us .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  [class^=gridable-].us .grid-cell::before {
+  .gridable.us .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  [class^=gridable-].us .grid-cell span {
+  .gridable.us .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  [class^=gridable-].us .grid-cell::before {
+  .gridable.us .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
 @media only screen and (max-width: 767.98px) {
-  [class^=gridable-].sm {
+  .gridable.sm {
     grid-template-columns: 1fr;
     border: none;
     background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  [class^=gridable-].sm .grid-header {
+  .gridable.sm .grid-header {
     display: none;
   }
-  [class^=gridable-].sm .grid-row {
+  .gridable.sm .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
-    margin-bottom: 5px;
+    margin-bottom: var(--space-sm);
     padding: 10px;
-    background: var(--gridable-bg-color);
-    border: 1px solid var(--gridable-border-color);
     border-radius: var(--border-radius);
   }
-  [class^=gridable-].sm .grid-row:last-child {
+  .gridable.sm.surf-p .grid-row {
+    border: 1px solid var(--primary-surface-border);
+    background: var(--primary-surface-bg);
+  }
+  .gridable.sm.surf-s .grid-row {
+    border: 1px solid var(--secondary-surface-border);
+    background: var(--secondary-surface-bg);
+  }
+  .gridable.sm.surf-t .grid-row {
+    border: 1px solid var(--tertiary-surface-border);
+    background: var(--tertiary-surface-bg);
+  }
+  .gridable.sm.surf-q .grid-row {
+    border: 1px solid var(--quaternary-surface-border);
+    background: var(--quaternary-surface-bg);
+  }
+  .gridable.sm .grid-row:last-child {
     margin-bottom: 0px;
   }
-  [class^=gridable-].sm .grid-cell {
+  .gridable.sm .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  [class^=gridable-].sm .grid-cell::before {
+  .gridable.sm .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  [class^=gridable-].sm .grid-cell span {
+  .gridable.sm .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  [class^=gridable-].sm .grid-cell::before {
+  .gridable.sm .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
 @media only screen and (max-width: 991.98px) {
-  [class^=gridable-].md {
+  .gridable.md {
     grid-template-columns: 1fr;
     border: none;
     background-color: transparent;
     /* Add data-labels for mobile view */
   }
-  [class^=gridable-].md .grid-header {
+  .gridable.md .grid-header {
     display: none;
   }
-  [class^=gridable-].md .grid-row {
+  .gridable.md .grid-row {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
-    margin-bottom: 5px;
+    margin-bottom: var(--space-sm);
     padding: 10px;
-    background: var(--gridable-bg-color);
-    border: 1px solid var(--gridable-border-color);
     border-radius: var(--border-radius);
   }
-  [class^=gridable-].md .grid-row:last-child {
+  .gridable.md.surf-p .grid-row {
+    border: 1px solid var(--primary-surface-border);
+    background: var(--primary-surface-bg);
+  }
+  .gridable.md.surf-s .grid-row {
+    border: 1px solid var(--secondary-surface-border);
+    background: var(--secondary-surface-bg);
+  }
+  .gridable.md.surf-t .grid-row {
+    border: 1px solid var(--tertiary-surface-border);
+    background: var(--tertiary-surface-bg);
+  }
+  .gridable.md.surf-q .grid-row {
+    border: 1px solid var(--quaternary-surface-border);
+    background: var(--quaternary-surface-bg);
+  }
+  .gridable.md .grid-row:last-child {
     margin-bottom: 0px;
   }
-  [class^=gridable-].md .grid-cell {
+  .gridable.md .grid-cell {
     padding: 5px;
     background: transparent !important;
     border-bottom: none;
     display: flex;
     flex-wrap: wrap;
   }
-  [class^=gridable-].md .grid-cell::before {
+  .gridable.md .grid-cell::before {
     content: attr(data-label);
     font-weight: bold;
     width: 120px;
     flex-shrink: 0;
   }
-  [class^=gridable-].md .grid-cell span {
+  .gridable.md .grid-cell span {
     flex: 1;
     min-width: 0;
     /* Allows text to wrap properly */
   }
-  [class^=gridable-].md .grid-cell::before {
+  .gridable.md .grid-cell::before {
     content: attr(data-label) ": ";
     font-weight: bold;
   }
 }
 
-.pill-critical, .pill-info, .pill-caution, .pill-success, .pill-qs, .pill-ts, .pill-ss, .pill-ps {
+.pill {
   padding: 1px 5px;
   margin: 0px 5px;
   border-radius: var(--border-radius);
-}
-
-.pill-ps {
-  background-color: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
-  border: 1px solid var(--primary-surface-border);
-}
-.pill-ss {
-  background-color: var(--secondary-surface-bg);
-  color: var(--secondary-surface-text);
-  border: 1px solid var(--secondary-surface-border);
-}
-.pill-ts {
-  background-color: var(--tertiary-surface-bg);
-  color: var(--tertiary-surface-text);
-  border: 1px solid var(--tertiary-surface-border);
-}
-.pill-qs {
-  background-color: var(--quaternary-surface-bg);
-  color: var(--quaternary-surface-text);
-  border: 1px solid var(--quaternary-surface-border);
-}
-.pill-success {
-  background-color: var(--success-bg);
-  color: var(--success-text);
-  border: var(--success-border);
-}
-.pill-caution {
-  background-color: var(--caution-bg);
-  color: var(--caution-text);
-  border: var(--caution-border);
-}
-.pill-info {
-  background-color: var(--info-bg);
-  color: var(--info-text);
-  border: var(--info-border);
-}
-.pill-critical {
-  background-color: var(--critical-bg);
-  color: var(--critical-text);
-  border: var(--critical-border);
-}
-.pill-muted {
-  background-color: var(--color-muted);
 }
 
 /* Accent Color for Form Elements */
@@ -1337,6 +1309,12 @@ nav {
 }
 
 .ai-center {
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -2081,43 +2059,80 @@ nav {
 }
 
 /* Text Colors */
-.c-primary {
+.fc-p {
   color: var(--color-primary);
 }
-.c-secondary {
+.fc-s {
   color: var(--color-secondary);
 }
-.c-success {
-  color: var(--color-success);
+.fc-a {
+  color: var(--color-accent);
 }
-.c-warning {
-  color: var(--color-warning);
-}
-.c-danger {
-  color: var(--color-danger);
-}
-.c-muted {
-  color: var(--color-muted);
+.fc-black {
+  color: #2d2d2d;
 }
 
 /* Background Colors */
-.bg-primary {
+.bg-p {
   background-color: var(--color-primary);
 }
-.bg-secondary {
+.bg-s {
   background-color: var(--color-secondary);
 }
-.bg-success {
-  background-color: var(--color-success);
+.bg-a {
+  background-color: var(--color-accent);
 }
-.bg-warning {
-  background-color: var(--color-warning);
+.bg-black {
+  background-color: #2d2d2d;
 }
-.bg-danger {
-  background-color: var(--color-danger);
+
+/*Surface Hierarchy Colors*/
+.surf-p {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
 }
-.bg-muted {
-  background-color: var(--color-muted);
+.surf-s {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
 }
+.surf-t {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+.surf-q {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
+}
+
+/* Semantic Colors */
+.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+  border: var(--success-border);
+}
+
+.caution {
+  background-color: var(--caution-bg);
+  color: var(--caution-text);
+  border: var(--caution-border);
+}
+
+.info {
+  background-color: var(--info-bg);
+  color: var(--info-text);
+  border: var(--info-border);
+}
+
+.critical {
+  background-color: var(--critical-bg);
+  color: var(--critical-text);
+  border: var(--critical-border);
+}
+
+/*Brand/Functional Colors*/
 
 /*# sourceMappingURL=omni.css.map */

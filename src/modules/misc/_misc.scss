@@ -65,14 +65,13 @@
 /* ====================================================
    Flexbox
 ==================================================== */
-.flex{
-    display: flex;
-}
+.flex{display: flex;}
 .iflex{display: inline-flex;}
 .fd-row{flex-direction: row;}
 .fd-col{flex-direction: column;}
 .jc-center{justify-content: center;}
 .ai-center{align-items: center;}
+.flex-center{display: flex; justify-content: center; align-items: center;}
 
 /* ====================================================
    Divider

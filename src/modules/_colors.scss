@@ -1,20 +1,66 @@
 
+
 /* Text Colors */
-.c{
-    &-primary   { color: var(--color-primary); }
-    &-secondary { color: var(--color-secondary); }
-    &-success   { color: var(--color-success); }
-    &-warning   { color: var(--color-warning); }
-    &-danger    { color: var(--color-danger); }
-    &-muted     { color: var(--color-muted); }
+.fc{
+    &-p { color: var(--color-primary); }
+    &-s { color: var(--color-secondary); }
+    &-a { color: var(--color-accent); }
+    &-black{ color: #2d2d2d; }
 }
 
 /* Background Colors */
 .bg{
-    &-primary     { background-color: var(--color-primary); }
-    &-secondary   { background-color: var(--color-secondary); }
-    &-success     { background-color: var(--color-success); }
-    &-warning     { background-color: var(--color-warning); }
-    &-danger      { background-color: var(--color-danger); }
-    &-muted       { background-color: var(--color-muted); }
+    &-p { background-color: var(--color-primary); }
+    &-s { background-color: var(--color-secondary); }
+    &-a { background-color: var(--color-accent); }
+    &-black{ background-color: #2d2d2d; }
 }
+
+/*Surface Hierarchy Colors*/
+.surf{
+    &-p{
+        background-color: var(--primary-surface-bg);
+        color: var(--primary-surface-text);
+        border: 1px solid var(--primary-surface-border);
+    }
+    &-s{
+        background-color: var(--secondary-surface-bg);
+        color: var(--secondary-surface-text);
+        border: 1px solid var(--secondary-surface-border);
+    }
+    &-t{
+        background-color: var(--tertiary-surface-bg);
+        color: var(--tertiary-surface-text);
+        border: 1px solid var(--tertiary-surface-border);
+    }
+    &-q{
+        background-color: var(--quaternary-surface-bg);
+        color: var(--quaternary-surface-text);
+        border: 1px solid var(--quaternary-surface-border);
+    }
+}
+
+/* Semantic Colors */
+.success{
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: var(--success-border);
+}
+.caution{
+    background-color: var(--caution-bg);
+    color: var(--caution-text);
+    border: var(--caution-border);
+}
+
+.info{
+    background-color: var(--info-bg);
+    color: var(--info-text);
+    border: var(--info-border);
+}
+.critical{
+    background-color: var(--critical-bg);
+    color: var(--critical-text);
+    border: var(--critical-border);
+}
+
+/*Brand/Functional Colors*/
