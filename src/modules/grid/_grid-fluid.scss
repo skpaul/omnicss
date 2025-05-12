@@ -24,3 +24,59 @@
     &-15 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
     &-12 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
 }
+
+[class^="fluid-grid-"] {
+    .gap-sm{
+        gap: var(--space-sm) !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fluid-grid {
+    &-50 { gap: var(--space-xs); }
+    &-40 { gap: var(--space-xs); }
+    &-30 { gap: var(--space-xs); }
+    &-20 { gap: var(--space-xs); }
+    &-15 { gap: var(--space-xs); }
+    &-12 { gap: var(--space-xs); }
+}
+
+[class^="fluid-grid-"] {
+    &.gap-us{
+        gap: var(--space-us) !important;
+    }
+    &.gap-xs{
+        gap: var(--space-xs) !important;
+    }
+    &.gap-sm{
+        gap: var(--space-sm) !important;
+    }
+
+    &.gap-md{
+        gap: var(--space-md) !important;
+    }
+
+    &.gap-lg{
+        gap: var(--space-lg) !important;
+    }
+
+    &.gap-xl{
+        gap: var(--space-xl) !important;
+    }
+}
