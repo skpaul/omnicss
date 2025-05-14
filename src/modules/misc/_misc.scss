@@ -106,3 +106,15 @@
     color: var(--quaternary-surface-text);
     border: 1px solid var(--quaternary-surface-border);
   }
+
+  .w{
+    &-fit{
+        width: fit-content;
+    }
+    &-min{
+        width: min-content;
+    }
+    &-max{
+        width: max-content;
+    }
+  }

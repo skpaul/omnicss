@@ -645,32 +645,8 @@ a {
   background-color: var(--color-muted);
 }
 
-.card.muted, .card-qs, .card-ts, .card-ss, .card-ps {
+.card {
   border-radius: var(--border-radius);
-}
-
-.card-ps {
-  background-color: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
-  border: 1px solid var(--primary-surface-border);
-}
-.card-ss {
-  background-color: var(--secondary-surface-bg);
-  color: var(--secondary-surface-text);
-  border: 1px solid var(--secondary-surface-border);
-}
-.card-ts {
-  background-color: var(--tertiary-surface-bg);
-  color: var(--tertiary-surface-text);
-  border: 1px solid var(--tertiary-surface-border);
-}
-.card-qs {
-  background-color: var(--quaternary-surface-bg);
-  color: var(--quaternary-surface-text);
-  border: 1px solid var(--quaternary-surface-border);
-}
-.card.muted {
-  background-color: var(--color-muted);
 }
 
 /* ====================================================
@@ -1309,6 +1285,16 @@ nav {
   background-color: var(--quaternary-surface-bg);
   color: var(--quaternary-surface-text);
   border: 1px solid var(--quaternary-surface-border);
+}
+
+.w-fit {
+  width: fit-content;
+}
+.w-min {
+  width: min-content;
+}
+.w-max {
+  width: max-content;
 }
 
 /* ====================================================
