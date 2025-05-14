@@ -647,6 +647,7 @@ a {
 
 .card {
   border-radius: var(--border-radius);
+  padding: var(--space-xs);
 }
 
 /* ====================================================
@@ -680,6 +681,10 @@ a {
   cursor: pointer;
   font-size: 11px;
   padding: 1px 5px;
+}
+
+.expandable summary {
+  cursor: pointer;
 }
 
 /* ====================================================
