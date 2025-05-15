@@ -3,31 +3,26 @@
 ==================================================== */
 .grid{
     display: grid;
-    gap: var(--space-xs);
-
-    // For Fluid 
-    &.ch50{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr)); }
-    &.ch40{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr)); }
-    &.ch30{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr)); }
-    &.ch20{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
-    &.ch15{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
-    &.ch12{ grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); } 
+    gap: var(--space-md);
+    grid-template-columns: repeat(1, 1fr);
 
     &.dense{
         grid-auto-flow: dense; /* [2] */
     }
 
-    @include sm{
-        @for $i from 1 through 12 {
-            &.fr#{$i}-sm{
-                grid-template-columns: repeat(#{$i}, 1fr) !important;
-            }
+    @include lg{
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    @for $i from 1 through 12 {
+        &.fr#{$i}{
+            grid-template-columns: repeat(#{$i}, 1fr) !important;
         }
     }
 
-    @include md{
+    @include sm{
         @for $i from 1 through 12 {
-            &.fr#{$i}-md{
+            &.fr#{$i}-sm{
                 grid-template-columns: repeat(#{$i}, 1fr) !important;
             }
         }
@@ -43,6 +38,7 @@
 
     //A grid with unknown fractions 
     &.auto{
+
         --grid-column-count: 12;  //default 6 cols.
         @include sm{
             &.max1-sm{
@@ -83,45 +79,6 @@
             }
         }
         
-        @include md{
-            &.max1-md{
-                --grid-column-count: 1;
-            }
-            &.max2-md{
-                --grid-column-count: 2;
-            }
-            &.max3-md{
-                --grid-column-count: 3;
-            }
-            &.max4-md{
-                --grid-column-count: 4;
-            }
-            &.max5-md{
-                --grid-column-count: 5;
-            }
-            &.max6-md{
-                --grid-column-count: 6;
-            }
-            &.max7-md{
-                --grid-column-count: 7;
-            }
-            &.max8-md{
-                --grid-column-count: 8;
-            }
-            &.max9-md{
-                --grid-column-count: 9;
-            }
-            &.max10-md{
-                --grid-column-count: 10;
-            }
-            &.max11-md{
-                --grid-column-count: 11;
-            }
-            &.max12-md{
-                --grid-column-count: 12;
-            }
-        }
-
         @include lg{
             &.max1-lg{
                 --grid-column-count: 1;
@@ -163,36 +120,16 @@
 
         --grid-item--min-width: 100px;
         --gap-count: calc(var(--grid-column-count) - 1);
-        --total-gap-width: calc(var(--gap-count) * var(--space-xs));
+        --total-gap-width: calc(var(--gap-count) * var(--space-md));
         --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+        display: grid;
 
         // grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
         grid-template-columns: repeat(auto-fit, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
-    }
-}
 
-// Gap overriding 
-[class^="grid-"] {
-    &.gap-us{
-        gap: var(--space-us) !important;
-    }
-    &.gap-xs{
-        gap: var(--space-xs) !important;
-    }
-    &.gap-sm{
-        gap: var(--space-sm) !important;
-    }
-
-    &.gap-md{
-        gap: var(--space-md) !important;
-    }
-
-    &.gap-lg{
-        gap: var(--space-lg) !important;
-    }
-
-    &.gap-xl{
-        gap: var(--space-xl) !important;
+        // grid-auto-flow: row dense;
+        grid-gap: var(--space-md);
     }
 }
 
@@ -214,16 +151,16 @@
     }
 
     @for $i from 1 through 12 {
+        &>.fr#{$i} {
+            grid-column-end: span #{$i};
+        }
+
         @include sm{
             &>.fr#{$i}-sm {
                 grid-column-end: span #{$i};
             }
         }
-        @include md{
-            &>.fr#{$i}-md {
-                grid-column-end: span #{$i};
-            }
-        }
+
         @include lg{
             &>.fr#{$i}-lg {
                 grid-column-end: span #{$i};

@@ -1,41 +1,41 @@
 
-/* ====================================================
-   Fluid Grid
-==================================================== */
-.fluid-grid {
-    /*  
-        On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
-        On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
-    */
+// /* ====================================================
+//    Fluid Grid
+// ==================================================== */
+// .fluid-grid {
+//     /*  
+//         On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
+//         On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
+//     */
 
-    &-50 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr)); }
-    &-40 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr)); }
-    &-30 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr)); }
-    &-20 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
-    &-15 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
-    &-12 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
-}
+//     &-50 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr)); }
+//     &-40 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr)); }
+//     &-30 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 30ch), 1fr)); }
+//     &-20 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
+//     &-15 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
+//     &-12 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
+// }
 
-[class^="fluid-grid-"] {
-    &.gap-us{
-        gap: var(--space-us) !important;
-    }
-    &.gap-xs{
-        gap: var(--space-xs) !important;
-    }
-    &.gap-sm{
-        gap: var(--space-sm) !important;
-    }
+// [class^="fluid-grid-"] {
+//     &.gap-us{
+//         gap: var(--space-us) !important;
+//     }
+//     &.gap-xs{
+//         gap: var(--space-xs) !important;
+//     }
+//     &.gap-sm{
+//         gap: var(--space-sm) !important;
+//     }
 
-    &.gap-md{
-        gap: var(--space-md) !important;
-    }
+//     &.gap-md{
+//         gap: var(--space-md) !important;
+//     }
 
-    &.gap-lg{
-        gap: var(--space-lg) !important;
-    }
+//     &.gap-lg{
+//         gap: var(--space-lg) !important;
+//     }
 
-    &.gap-xl{
-        gap: var(--space-xl) !important;
-    }
-}
+//     &.gap-xl{
+//         gap: var(--space-xl) !important;
+//     }
+// }
