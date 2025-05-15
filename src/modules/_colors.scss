@@ -16,6 +16,19 @@
     &-black{ background-color: #2d2d2d; }
 }
 
+
+.fc-surf-p{color: var(--primary-surface-text);}
+.fc-surf-s{color: var(--secondary-surface-text);}
+.fc-surf-t{color: var(--tertiary-surface-text);}
+.fc-surf-q{color: var(--quaternary-surface-text);}
+
+.bg-surf-p{background-color: var(--primary-surface-bg);}
+.bg-surf-s{background-color: var(--secondary-surface-bg);}
+.bg-surf-t{background-color: var(--tertiary-surface-bg);}
+.bg-surf-q{background-color: var(--quaternary-surface-bg);}
+
+
+
 /*Surface Hierarchy Colors*/
 .surf{
     &-p{
@@ -39,6 +52,7 @@
         border: 1px solid var(--quaternary-surface-border);
     }
 }
+
 
 /* Semantic Colors */
 .success{
@@ -64,3 +78,5 @@
 }
 
 /*Brand/Functional Colors*/
+
+.reverse-color { filter: invert(100%);}

@@ -647,7 +647,6 @@ a {
 
 .card {
   border-radius: var(--border-radius);
-  padding: var(--space-xs);
 }
 
 /* ====================================================
@@ -660,6 +659,38 @@ a {
   /* Modern logical property */
   width: min(100% - var(--space-lg), 1200px);
   padding: var(--space-md);
+}
+
+dialog {
+  width: 80%;
+  max-width: 500px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  padding: var(--space-sm);
+  text-align: center;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+dialog .content {
+  margin-top: var(--space-us);
+  font-size: var(--fs-xs);
+  font-weight: 300;
+}
+dialog button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 2px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: var(--space-sm);
+  font-size: var(--fs-us);
+  font-weight: 300;
+}
+dialog button:hover {
+  background: #45a049;
 }
 
 .dismissable {
@@ -1268,30 +1299,6 @@ nav {
 /* ================================ */
 /* Utility Classes for Easy Use */
 /* ================================ */
-.surface-primary {
-  background-color: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
-  border: 1px solid var(--primary-surface-border);
-}
-
-.surface-secondary {
-  background-color: var(--secondary-surface-bg);
-  color: var(--secondary-surface-text);
-  border: 1px solid var(--secondary-surface-border);
-}
-
-.surface-tertiary {
-  background-color: var(--tertiary-surface-bg);
-  color: var(--tertiary-surface-text);
-  border: 1px solid var(--tertiary-surface-border);
-}
-
-.surface-quaternary {
-  background-color: var(--quaternary-surface-bg);
-  color: var(--quaternary-surface-text);
-  border: 1px solid var(--quaternary-surface-border);
-}
-
 .w-fit {
   width: fit-content;
 }
@@ -1300,6 +1307,17 @@ nav {
 }
 .w-max {
   width: max-content;
+}
+
+/* ================================ */
+/* Font-Style */
+/* ================================ */
+.b {
+  font-weight: bold;
+}
+
+.i {
+  font-style: italic;
 }
 
 /* ====================================================
@@ -1972,10 +1990,6 @@ nav {
       On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
       On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
   */
-  /*  
-      On desktop: If the container is wide enough, it will try to fit up to "3" or more columns (each at least 20 characters wide).
-      On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
-  */
 }
 .fluid-grid-50 {
   display: grid;
@@ -2006,29 +2020,6 @@ nav {
   display: grid;
   gap: var(--space-xs);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr));
-}
-
-[class^=fluid-grid-] .gap-sm {
-  gap: var(--space-sm) !important;
-}
-
-.fluid-grid-50 {
-  gap: var(--space-xs);
-}
-.fluid-grid-40 {
-  gap: var(--space-xs);
-}
-.fluid-grid-30 {
-  gap: var(--space-xs);
-}
-.fluid-grid-20 {
-  gap: var(--space-xs);
-}
-.fluid-grid-15 {
-  gap: var(--space-xs);
-}
-.fluid-grid-12 {
-  gap: var(--space-xs);
 }
 
 [class^=fluid-grid-].gap-us {
@@ -2076,6 +2067,38 @@ nav {
 }
 .bg-black {
   background-color: #2d2d2d;
+}
+
+.fc-surf-p {
+  color: var(--primary-surface-text);
+}
+
+.fc-surf-s {
+  color: var(--secondary-surface-text);
+}
+
+.fc-surf-t {
+  color: var(--tertiary-surface-text);
+}
+
+.fc-surf-q {
+  color: var(--quaternary-surface-text);
+}
+
+.bg-surf-p {
+  background-color: var(--primary-surface-bg);
+}
+
+.bg-surf-s {
+  background-color: var(--secondary-surface-bg);
+}
+
+.bg-surf-t {
+  background-color: var(--tertiary-surface-bg);
+}
+
+.bg-surf-q {
+  background-color: var(--quaternary-surface-bg);
 }
 
 /*Surface Hierarchy Colors*/
@@ -2126,5 +2149,8 @@ nav {
 }
 
 /*Brand/Functional Colors*/
+.reverse-color {
+  filter: invert(100%);
+}
 
 /*# sourceMappingURL=omni.css.map */

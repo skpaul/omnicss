@@ -3,19 +3,10 @@
    Fluid Grid
 ==================================================== */
 .fluid-grid {
-    
-
     /*  
         On desktop: If the container is wide enough, it will try to fit up to "2" or more columns (each at least 20 characters wide).
         On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
     */
-
-
-    /*  
-        On desktop: If the container is wide enough, it will try to fit up to "3" or more columns (each at least 20 characters wide).
-        On mobile: The grid items will stack into 1 column because the screen is too narrow for multiple 20ch-wide columns. 
-    */
-
 
     &-50 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 50ch), 1fr)); }
     &-40 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 40ch), 1fr)); }
@@ -23,38 +14,6 @@
     &-20 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20ch), 1fr)); }
     &-15 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 15ch), 1fr)); }
     &-12 { display: grid; gap: var(--space-xs); grid-template-columns: repeat(auto-fit, minmax(min(100%, 12ch), 1fr)); }
-}
-
-[class^="fluid-grid-"] {
-    .gap-sm{
-        gap: var(--space-sm) !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fluid-grid {
-    &-50 { gap: var(--space-xs); }
-    &-40 { gap: var(--space-xs); }
-    &-30 { gap: var(--space-xs); }
-    &-20 { gap: var(--space-xs); }
-    &-15 { gap: var(--space-xs); }
-    &-12 { gap: var(--space-xs); }
 }
 
 [class^="fluid-grid-"] {

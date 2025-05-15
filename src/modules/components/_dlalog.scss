@@ -1,0 +1,31 @@
+dialog{
+    width: 80%;
+    max-width: 500px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    margin: auto;
+    padding: var(--space-sm);
+    text-align: center;
+    font-size: var(--fs-xs);
+    font-weight: 500;
+
+    .content{
+        margin-top: var(--space-us);
+        font-size: var(--fs-xs);
+        font-weight: 300;
+    }
+
+    button { 
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 2px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: var(--space-sm);
+        font-size: var(--fs-us);
+        font-weight: 300;
+    }
+    button:hover { background: #45a049; }
+}
