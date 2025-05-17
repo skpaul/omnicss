@@ -11,3 +11,13 @@
 @include createSpacing("mt", "margin-top"); 
 //margin-bottom
 @include createSpacing("mb", "margin-bottom"); 
+
+// Utility
+.ma-auto{
+    margin: auto;
+}
+
+.mh-auto{
+   margin-left: auto; 
+   margin-right: auto; 
+}
