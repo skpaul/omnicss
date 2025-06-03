@@ -33,8 +33,6 @@
 }
 
 
-
-
 /* ====================================================
    Colors for Light theme (default)
 ==================================================== */
@@ -177,3 +175,23 @@
         --color-toggle-icon: #ffdd88;
     }
 }
+
+// _variables.scss
+$breakpoints: (
+  xl: 1399.98px,
+  lg: 1199.98px,
+  md: 991.98px,
+  sm: 767.98px,
+  xs: 575.98px,
+  us: 479.98px
+);
+
+// Breakpoint naming conventions for grid classes
+$breakpoint-names: (
+  xl: 'xl',  // .fr1-xl
+  lg: 'lg',  // .fr1-lg
+  md: 'md',
+  sm: 'sm',
+  xs: 'xs',
+  us: 'us'  
+);

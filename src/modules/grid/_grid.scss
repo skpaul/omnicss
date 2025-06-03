@@ -1,6 +1,7 @@
 /* ====================================================
    Grid
 ==================================================== */
+
 .grid{
     display: grid;
     gap: var(--space-xs);
@@ -17,22 +18,19 @@
         grid-auto-flow: dense; /* [2] */
     }
 
-    @include sm{
+    @for $i from 1 through 12 {
+        &.fr#{$i}{
+            grid-template-columns: repeat(#{$i}, 1fr) !important;
+        }
+    }
+
+    @include xl{
         @for $i from 1 through 12 {
-            &.fr#{$i}-sm{
+            &.fr#{$i}-xl{
                 grid-template-columns: repeat(#{$i}, 1fr) !important;
             }
         }
     }
-
-    @include md{
-        @for $i from 1 through 12 {
-            &.fr#{$i}-md{
-                grid-template-columns: repeat(#{$i}, 1fr) !important;
-            }
-        }
-    }
-
     @include lg{
         @for $i from 1 through 12 {
             &.fr#{$i}-lg{
@@ -40,6 +38,37 @@
             }
         }
     }
+    @include md{
+        @for $i from 1 through 12 {
+            &.fr#{$i}-md{
+                grid-template-columns: repeat(#{$i}, 1fr) !important;
+            }
+        }
+    }
+    @include sm{
+        @for $i from 1 through 12 {
+            &.fr#{$i}-sm{
+                grid-template-columns: repeat(#{$i}, 1fr) !important;
+            }
+        }
+    }
+    @include xs{
+        @for $i from 1 through 12 {
+            &.fr#{$i}-xs{
+                grid-template-columns: repeat(#{$i}, 1fr) !important;
+            }
+        }
+    }   
+    @include us{
+        @for $i from 1 through 12 {
+            &.fr#{$i}-us{
+                grid-template-columns: repeat(#{$i}, 1fr) !important;
+            }
+        }
+    }
+
+
+
 
     //A grid with unknown fractions 
     &.auto{

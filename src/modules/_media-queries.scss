@@ -1,85 +1,52 @@
-// Extra small devices (phones, 600px and down)
-@mixin extra-small-devices {
-	@media only screen and (max-width: 600px) {
-		@content;
-	} 
-}
+// Desktop-first approach (base styles for large screens, overrides for smaller screens)
 
-//Small devices (portrait tablets and large phones, 600px and up)
-@mixin small-devices {
-	@media only screen and (min-width: 600px) {
-		@content;
-	} 
-}
+// Breakpoint variables
+// $xl: 1399.98px;
+// $lg: 1199.98px;
+// $md: 991.98px;
+// $sm: 767.98px;
+// $xs: 575.98px;
+// $us: 479.98px;
 
-// Medium devices (landscape tablets, 768px and up) 
-@mixin medium-devices {
-	@media only screen and (min-width: 768px) {
-		@content;
-	} 
-}
+// Mixins for each breakpoint (desktop-first)
+@mixin xl { @media (min-width: map-get($breakpoints, xl)) { @content; } } /* Extra Large devices (min-width: 1400px) */
+@mixin lg { @media (min-width: map-get($breakpoints, lg)) { @content; } } /* Large devices (min-width: 1200px) */
+@mixin md { @media (max-width: map-get($breakpoints, md)) { @content; } } /* Medium devices (max-width: 992px) */
+@mixin sm { @media (max-width: map-get($breakpoints, sm)) { @content; } } /* Small devices (max-width: 768px) */
+@mixin xs { @media (max-width: map-get($breakpoints, xs)) { @content; } } /* Extra Small devices (max-width: 576px) */
+@mixin us { @media (max-width: map-get($breakpoints, us)) { @content; } } /* Ultra Small devices (max-width: 480px) */
 
-// Large devices (laptops/desktops, 992px and up) 
-@mixin large-devices {
-	@media only screen and (min-width: 992px) {     
-		@content;
-	} 
-}
 
-// This is desktop-first approach
-// If want to switch mobile-first, change the following to 'min-width'
-$min-max: 'max-width';
 
-// Define breakpoint variables
-$xl: 1399.98px;
-$lg: 1199.98px;
-$md:  991.98px;
-$sm: 767.98px;
-$xs:  575.98px;
-$us: 479.98px;
+// /* Extra Large devices (min-width: 1400px) */
+// @mixin xl {
+//   @media only screen and (min-width: $xl) { @content; }
+// }
 
-/* Extra Large devices (large desktops, < 1400px) */
-@mixin xl {
-	@media only screen and (#{$min-max}: $xl) {     
-		@content;
-	} 
-}
+// /* Large devices (min-width: 1200px) */
+// @mixin lg {
+//   @media only screen and (min-width: $lg) { @content; }
+// }
 
-/* Large devices (desktops, < 1200px) */
-@mixin lg {
-	@media only screen and (#{$min-max}: $lg) {     
-		@content;
-	} 
-}
+// /* Medium devices (max-width: 992px) */
+// @mixin md {
+//   @media only screen and (max-width: $md) { @content; }
+// }
 
-/* Medium devices (tablets, < 992px) */
-@mixin md {
-	@media only screen and (#{$min-max}: $md) {     
-		@content;
-	} 
-}
+// /* Small devices (max-width: 768px) */
+// @mixin sm {
+//   @media only screen and (max-width: $sm) { @content; }
+// }
 
-/* Small devices (landscape phones, < 768px) */
-@mixin sm {
-	@media only screen and (#{$min-max}: $sm) {     
-		@content;
-	} 
-}
+// /* Extra Small devices (max-width: 576px) */
+// @mixin xs {
+//   @media only screen and (max-width: $xs) { @content; }
+// }
 
-/* Extra Small devices (portrait phones, < 576px) */
-@mixin xs {
-	@media only screen and (#{$min-max}: $xs) {     
-		@content;
-	} 
-}
-
-/* Ultra Small (tiny devices, like older phones < 480px) */
-@mixin us {
-	@media only screen and (#{$min-max}: $us) {     
-		@content;
-	} 
-}
-
+// /* Ultra Small devices (max-width: 480px) */
+// @mixin us {
+//   @media only screen and (max-width: $us) { @content; }
+// }
 
 // //How to use media query mixins
 // //Media query can be inside a class
@@ -100,5 +67,3 @@ $us: 479.98px;
 //         width: 50%;  //on large devices 50%
 //     }
 // }
-
-
