@@ -67,9 +67,6 @@
         }
     }
 
-
-
-
     //A grid with unknown fractions 
     &.auto{
         --grid-column-count: 12;  //default 6 cols.
@@ -198,10 +195,8 @@
         // grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
         grid-template-columns: repeat(auto-fit, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
     }
-}
 
-// Gap overriding 
-[class^="grid-"] {
+    // Gap overriding 
     &.gap-us{
         gap: var(--space-us) !important;
     }
@@ -211,15 +206,12 @@
     &.gap-sm{
         gap: var(--space-sm) !important;
     }
-
     &.gap-md{
         gap: var(--space-md) !important;
     }
-
     &.gap-lg{
         gap: var(--space-lg) !important;
     }
-
     &.gap-xl{
         gap: var(--space-xl) !important;
     }
@@ -243,8 +235,16 @@
     }
 
     @for $i from 1 through 12 {
-        @include sm{
-            &>.fr#{$i}-sm {
+        &>.fr#{$i} {
+            grid-column-end: span #{$i};
+        }
+        @include xl{
+            &>.fr#{$i}-xl {
+                grid-column-end: span #{$i};
+            }
+        }
+        @include lg{
+            &>.fr#{$i}-lg {
                 grid-column-end: span #{$i};
             }
         }
@@ -253,8 +253,19 @@
                 grid-column-end: span #{$i};
             }
         }
-        @include lg{
-            &>.fr#{$i}-lg {
+
+        @include sm{
+            &>.fr#{$i}-sm {
+                grid-column-end: span #{$i};
+            }
+        }
+        @include xs{
+            &>.fr#{$i}-xs {
+                grid-column-end: span #{$i};
+            }
+        }
+        @include us{
+            &>.fr#{$i}-md {
                 grid-column-end: span #{$i};
             }
         }
