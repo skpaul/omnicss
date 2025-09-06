@@ -1,0 +1,174 @@
+$values: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '2.0' '2.1' '2.2' '2.3' '2.4' '2.5' '2.6' '2.7' '2.8' '2.9' '3.0' '3.1' '3.2' '3.3' '3.4' '3.5' '3.6' '3.7' '3.8' '3.9' '4.0';
+
+
+
+@mixin create-margin($prefix, $property, $version, $device:"") {
+    @if $version == "general" {
+        //General version. Create rules like .ma-1.4
+        .#{$prefix}-auto#{$device} {
+            #{$property}: auto !important;
+        }
+        .#{$prefix}-0#{$device} {
+            #{$property}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
+        }
+    } @else {
+        //Compact version. Create rules like .ma14
+        .#{$prefix}Auto#{$device} {
+            #{$property}: auto !important;
+        }
+        .#{$prefix}0#{$device} {
+            #{$property}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
+        }
+    }
+}
+
+
+@mixin create-both-margin($prefix, $property1, $property2, $version, $device:"") {
+
+    @if $version == "general" {
+        .#{$prefix}-auto#{$device} {
+            #{$property1}: auto !important;
+            #{$property2}: auto !important;
+        }
+
+        .#{$prefix}-0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
+        }
+
+    } @else {
+        .#{$prefix}Auto#{$device} {
+            #{$property1}: auto !important;
+            #{$property2}: auto !important;
+        }
+    
+        .#{$prefix}0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+
+        @each $value in $values{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
+        }
+    }
+}
+
+@include create-margin("ma", "margin", "general"); 
+// @include create-margin("ma", "margin", "compact"); 
+
+@include create-margin("mt", "margin-top", "general"); 
+// @include create-margin("mt", "margin-top", "compact"); 
+
+@include create-margin("mb", "margin-bottom", "general"); 
+// @include create-margin("mb", "margin-bottom", "compact"); 
+
+@include create-margin("ml", "margin-left", "general"); 
+// @include create-margin("ml", "margin-left", "compact"); 
+
+@include create-margin("mr", "margin-right", "general"); 
+// @include create-margin("mr", "margin-right", "compact"); 
+
+
+
+@include xl(){
+    @include create-margin("ma", "margin", "general", "-xl");
+    @include create-margin("mt", "margin-top", "general", "-xl");
+    @include create-margin("mb", "margin-bottom", "general", "-xl");
+    @include create-margin("ml", "margin-left", "general", "-xl");
+    @include create-margin("mr", "margin-right", "general", "-xl");
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-xl");
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-xl");
+}
+
+@include lg(){
+    @include create-margin("ma", "margin", "general", "-lg"); 
+    // @include create-margin("ma", "margin", "compact", "lg"); 
+
+    @include create-margin("mt", "margin-top", "general", "-lg"); 
+    // @include create-margin("mt", "margin-top", "compact", "lg"); 
+
+    @include create-margin("mb", "margin-bottom", "general", "-lg"); 
+    // @include create-margin("mb", "margin-bottom", "compact", "lg"); 
+
+    @include create-margin("ml", "margin-left", "general", "-lg"); 
+    // @include create-margin("ml", "margin-left", "compact", "lg"); 
+
+    @include create-margin("mr", "margin-right", "general", "-lg"); 
+    // @include create-margin("mr", "margin-right", "compact", "lg"); 
+
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-lg"); 
+    // @include create-both-margin("mv", "margin-top","margin-bottom", "compact", "lg"); 
+
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-lg"); 
+    // @include create-both-margin("mh", "margin-left","margin-right", "compact", "lg"); 
+}
+
+@include md(){
+    @include create-margin("ma", "margin", "general", "-md");
+    @include create-margin("mt", "margin-top", "general", "-md");
+    @include create-margin("mb", "margin-bottom", "general", "-md");
+    @include create-margin("ml", "margin-left", "general", "-md");
+    @include create-margin("mr", "margin-right", "general", "-md");
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-md");
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-md");
+}
+
+@include sm(){
+    @include create-margin("ma", "margin", "general", "-sm");
+    @include create-margin("mt", "margin-top", "general", "-sm");
+    @include create-margin("mb", "margin-bottom", "general", "-sm");
+    @include create-margin("ml", "margin-left", "general", "-sm");
+    @include create-margin("mr", "margin-right", "general", "-sm");
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-sm");
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-sm");
+}
+
+@include xs(){
+    @include create-margin("ma", "margin", "general", "-xs");
+    @include create-margin("mt", "margin-top", "general", "-xs");
+    @include create-margin("mb", "margin-bottom", "general", "-xs");
+    @include create-margin("ml", "margin-left", "general", "-xs");
+    @include create-margin("mr", "margin-right", "general", "-xs");
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-xs");
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-xs");
+}
+
+@include us(){
+    @include create-margin("ma", "margin", "general", "-us");
+    @include create-margin("mt", "margin-top", "general", "-us");
+    @include create-margin("mb", "margin-bottom", "general", "-us");
+    @include create-margin("ml", "margin-left", "general", "-us");
+    @include create-margin("mr", "margin-right", "general", "-us");
+    @include create-both-margin("mv", "margin-top","margin-bottom", "general", "-us");
+    @include create-both-margin("mh", "margin-left","margin-right", "general", "-us");
+}
