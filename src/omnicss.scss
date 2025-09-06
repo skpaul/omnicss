@@ -1,4 +1,3 @@
-
 // sass --watch omnicss.scss:../omni.css
 // sass --watch omnicss.scss:../omni.min.css --style compressed
 
@@ -9,6 +8,7 @@
 //sass nesting ----->
     //.bg {  &-orange { ... } } will turn into .bg-orange { ... }
 //<----- sass nesting//
+
 
 /* ===== OmniCSS ===== */
 /* A tiny, clean, futuristic CSS framework */
@@ -22,6 +22,7 @@
 
 @import 'modules/box-model/fluid-padding'; 
 @import 'modules/box-model/fluid-margin'; 
+@import 'modules/box-model/fixed_margin';
 
 @import 'modules/components/action-menu'; 
 @import 'modules/components/board'; 
@@ -43,4 +44,4 @@
 @import 'modules/typography/fluid-typography'; 
 @import 'modules/typography/typography-misc'; 
 
-@import 'modules/colors'; 
+@import 'modules/colors';
