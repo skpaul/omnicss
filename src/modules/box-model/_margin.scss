@@ -1,18 +1,3 @@
-// ====================================================
-//   Fluid Padding
-// ====================================================
-//margin-all
-@include createFluidSpacing("ma", "margin"); 
-//margin-left
-@include createFluidSpacing("ml", "margin-left"); 
-//margin-right
-@include createFluidSpacing("mr", "margin-right"); 
-//margin-top
-@include createFluidSpacing("mt", "margin-top"); 
-//margin-bottom
-@include createFluidSpacing("mb", "margin-bottom"); 
-
-
 
 // ====================================================
 //   Padding in rem

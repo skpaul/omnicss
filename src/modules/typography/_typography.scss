@@ -1,0 +1,22 @@
+
+
+@include createFontSizes("");
+
+@include xl{
+    @include createFontSizes("xl");
+}
+@include lg{
+    @include createFontSizes("lg");
+}
+@include md{
+    @include createFontSizes("md");
+}
+@include sm{
+    @include createFontSizes("sm");
+}
+@include xs{
+    @include createFontSizes("xs");
+}
+@include us{
+    @include createFontSizes("us");
+}

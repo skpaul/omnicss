@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9GXHD9GJD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S9GXHD9GJD');
+</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4517927595481015" crossorigin="anonymous"></script>
+        <!-- Essential Meta Tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OmniCSS – Fluid, Responsive CSS Framework for Modern Web Design</title>
+        <meta name="description" content="OmniCSS simplifies responsive design with fluid scaling, no rigid breakpoints. Build adaptive layouts faster using intuitive utility classes. Lightweight, flexible, and developer-friendly.">
+        <link rel="canonical" href="https://nobolok.com/omni-css">
+        
+<!-- Author, Copyright, Robots & Keyword -->
+<meta name="author" content="Saumitra Kumar Paul">
+<meta name="copyright" content="nobolok.com">
+<!-- <meta name="robots" content="index, follow"> -->
+
+<!-- Mobile/Web App Enhancements -->
+<meta name="theme-color" content="#ff4c60"> <!-- Android taskbar color --><!-- Make sure your /favicon.png exists in the root directory. -->
+
+<!-- Modern Universal Favicon (SVG recommended) -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+<!-- Legacy Icons (Optional: Only if supporting very old browsers) -->
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<!-- Fallback PNG (32x32 is enough for most browsers) -->
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+
+<!-- Apple Touch Icon (180x180 for iOS, transparent bg) -->
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+
+
+        <script>
+            // Immediately set theme before DOM renders
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            // Apply in this order: saved > system > light
+            document.documentElement.setAttribute('data-theme',
+                savedTheme || (systemPrefersDark ? 'dark' : 'light')
+            );
+        </script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.5/omni.min.css"><link rel="stylesheet" href="/assets/css/site.css">
+        <style>
+            section {
+                margin-top: var(--space-xl);
+            }
+
+            section>h2 {
+                color: var(--color-primary);
+                margin-bottom: var(--space-sm);
+            }
+
+            /* override GitHub Gist rule */
+            .dark-gist-container .gist {
+                filter: var(--gist-filter);
+            }
+
+            .dark-gist-container .gist-meta {
+                display: none;
+                /* Optional: hides GitHub's header */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="layout">
+            <header class="smart">
+                <div id="hamburgerIcon">
+    <img src="/assets/images/hamburger.svg" alt="Hamburger Icon">
+</div>
+<div class="brand">
+    <a href="/" title="Nobolok">
+        <!-- <img src="../assets/images/nobolok-logo.svg" alt="Nobolok Logo"> -->
+        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.57 61.23">
+            <g>
+                <path class="cls-1" d="M3.22,33.31A15.19,15.19,0,0,1,7.87,21.8a16.61,16.61,0,0,1,12-4.44,16.87,16.87,0,0,1,12,4.4,15.12,15.12,0,0,1,4.68,11.55v20H28.21V33.51a8.21,8.21,0,0,0-2.34-6,8,8,0,0,0-5.94-2.38,7.93,7.93,0,0,0-8.36,8.37V53.36H3.22Z"/>
+                <path class="cls-1" d="M59,17a17.64,17.64,0,0,1,13,5.33,17.81,17.81,0,0,1,5.33,13.1,18,18,0,0,1-5.33,13.22A17.76,17.76,0,0,1,58.81,54,17.41,17.41,0,0,1,46,48.57a18,18,0,0,1-5.36-13.14A18.2,18.2,0,0,1,59,17ZM49.16,35.65a10.17,10.17,0,0,0,2.91,7.2,9.06,9.06,0,0,0,13.65,0,10.62,10.62,0,0,0,.07-14.62,9.19,9.19,0,0,0-13.75,0A10.53,10.53,0,0,0,49.16,35.65Z"/>
+                <path class="cls-1" d="M99.63,17.36a18.08,18.08,0,0,1,13.25,5.12,17.79,17.79,0,0,1,5.18,13.21A17.76,17.76,0,0,1,99.63,54.08q-8.13,0-13.21-5.18T81.34,35.15V1.45h8.35V34.93a11,11,0,0,0,2.88,7.78,9.43,9.43,0,0,0,7.2,3.09,9.76,9.76,0,0,0,7-2.84,9.36,9.36,0,0,0,2.95-7,9.65,9.65,0,0,0-3.17-7.35,11.2,11.2,0,0,0-7.92-2.95A14.66,14.66,0,0,0,93.15,27V18.45l3.46-.87Z"/>
+                <path class="cls-1" d="M139.3,17a17.64,17.64,0,0,1,13,5.33,17.81,17.81,0,0,1,5.33,13.1,18,18,0,0,1-5.33,13.22A17.76,17.76,0,0,1,139.16,54a17.37,17.37,0,0,1-12.85-5.44,18,18,0,0,1-5.37-13.14A18.2,18.2,0,0,1,139.3,17Zm-9.79,18.65a10.14,10.14,0,0,0,2.92,7.2,9.05,9.05,0,0,0,13.64,0,10.62,10.62,0,0,0,.07-14.62,9.19,9.19,0,0,0-13.75,0A10.53,10.53,0,0,0,129.51,35.65Z"/>
+                <path class="cls-1" d="M161.69,1.45h8.36V53.36h-8.36Z"/>
+                <path class="cls-1" d="M192.44,17a17.68,17.68,0,0,1,13,5.33,17.81,17.81,0,0,1,5.32,13.1,18,18,0,0,1-5.32,13.22A17.79,17.79,0,0,1,192.29,54a17.4,17.4,0,0,1-12.85-5.44,18,18,0,0,1-5.36-13.14A18.18,18.18,0,0,1,192.44,17Zm-9.8,18.65a10.18,10.18,0,0,0,2.92,7.2,9.05,9.05,0,0,0,13.64,0,10.61,10.61,0,0,0,.08-14.62,9.2,9.2,0,0,0-13.76,0A10.53,10.53,0,0,0,182.64,35.65Z"/>
+                <path class="cls-1" d="M214.83,1.45h8.28L223.18,31h1.45a13.13,13.13,0,0,0,8.28-2.77,9.56,9.56,0,0,0,4-6.52l.22-3.67h8.49l-.28,4.82A10.93,10.93,0,0,1,243,29.39a16.5,16.5,0,0,1-6.23,5l1.73.93a15.74,15.74,0,0,1,2.3,1.77,14,14,0,0,1,3.24,4.64,15,15,0,0,1,1.51,6.55v5h-8.28l-.14-4.82a9,9,0,0,0-3.57-7.38,14.2,14.2,0,0,0-9.16-2.85h-1.24v15h-8.35Z"/>
+            </g>
+            <path class="cls-2" d="M34.68,22.2C38,10.88,28.21,6.82,28.21,6.82,39.82,9,43.55.51,43.55.51A13.77,13.77,0,0,0,50,15.71C39.35,12.73,34.68,22.2,34.68,22.2Z"/>
+            </svg>
+    </a>
+</div>
+
+<nav>
+    <!-- Your navigation content here -->
+</nav>
+
+<div class="theme-toggle-wrapper">
+    <button id="themeToggle" aria-label="Toggle dark mode">🌓</button>
+</div>
+<div id="candyIcon">
+    <img src="/assets/images/candy-thick.svg" alt="Candy Icon" srcset="">
+</div>            </header>
+            <!-- Left Menu -->
+<aside class="aside-menu left" id="leftMenuContent">
+    <button class="close-btn" onclick="toggleMenu('leftMenuContent', false)">Close</button>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/trains">Search Train</a></li>
+        <li><a href="/en/trains/list-of-intercity-trains-of-bangladesh">Intercity Train List</a></li>
+        <li><a href="/age-calculator">Age Calculator (Bangladeshi culture)</a></li>
+        <li><a href="/omni-css">OmniCSS Documentation</a></li>
+        <li><a href="/posts/ai/en/6-free-essential-ai-tools">6 Free AI Tools of 2025</a></li>
+        <li><a href="/posts/misc/symbols">Essential Symbols</a></li>
+    </ul>
+</aside>
+
+<!-- Right Menu -->
+<aside class="aside-menu right" id="rightMenuContent">
+    <button class="close-btn" onclick="toggleMenu('rightMenuContent', false)">Close</button>
+    <ul>
+        <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+        <li style="color: gray;">------------------------</li>
+        <li><a href="/legal/disclaimer">Disclaimer</a></li>
+        <li style="color: gray;">------------------------</li>
+        <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+        <li style="color: gray;">------------------------</li>
+    </ul>
+</aside>
+            <main class="main">
+                <div class="container">
+                    <section class="hero mt-xl mb-xl">
+                        <!-- <h1 class="fs-3xl">The next <span style="color:var(--color-primary)">evolution</span> in responsive, dynamic styling.</h1>   -->
+                        <h1>OmniCSS: The Fluid CSS Framework</h1>
+                    </section>
+
+                    <section class="about">
+                        <h2>Fluid CSS, Unleashed</h2>
+                        <p class="mb-sm">OmniCSS is the next-generation CSS framework that redefines fluid design. </p>
+                        <p class="mb-sm">
+                            By blending dynamic responsiveness with intuitive syntax, it eliminates rigid breakpoints and unlocks truly adaptive layouts. Write less code, craft smarter designs, and let the browser do the heavy lifting—welcome to CSS, evolved.
+                        </p>
+                        <ul class="ml-sm">
+                            <li> <b>For devs:</b> "Powered by CSS container queries, relative units, and a zero-config approach."</li>
+                            <li><b>For designers:</b> "Pixel-perfect flexibility, no media queries needed."</li>
+                        </ul>
+                    </section>
+
+                    <!-- Dark/Light Theme -->
+                    <section>
+                        <h2>Built-in Dark & Light Themes</h2>
+                        <div>
+                            OmniCSS streamlines theme management by dynamically syncing with system preferences—dark or light—while offering easy customization via intuitive CSS variables. Override defaults with a single data-theme attribute, or layer custom themes atop the built-in adaptive design.
+                        </div>
+                        <p>
+                            For finer control, extend with:
+                        </p>
+                        <div>
+                            [data-theme="dark"] { --bg: #0d1117; }  <br>
+                            [data-theme="light"] { --bg: #ffffff; }  
+                        </div>
+                        <p>
+                            No JavaScript required—just pure CSS flexibility.
+                        </p>
+
+                        <div class="dark-gist-container">
+                            <script src="https://gist.github.com/skpaul/246cd6519f42a7ec3a8ca49279fa2e22.js"></script>
+                        </div>
+                    </section>
+
+                    <!-- Think in ratios, not pixels. -->
+                    <section>
+                        <h2 class="mb-sm">Think in ratios, not pixels.</h2>
+                        <p class="mb-xs">
+                            Fluid design is the art of letting the viewport decide, creating interfaces that feel native on any screen.
+                        </p>
+                        <p>
+                            Fluid technique uses relative units (like %, vw, or rem) instead of fixed pixels, allowing elements to scale smoothly across screen sizes. It eliminates rigid breakpoints by relying on flexible ratios, creating more organic, responsive layouts. The result? Designs that adapt like water—no clunky jumps, just seamless flow.
+                        </p>
+                    </section>
+
+                    <!-- Fluid Sizing -->
+                    <section>
+                        <h2>Fluid Sizes</h2>
+                        <div>
+                            Fluid sizing is a responsive design approach where elements scale dynamically relative to the viewport (screen size) rather than using fixed units like px or rem. It relies on relative units like vw (viewport width), vh (viewport height), or percentages to ensure smooth adaptation across different screen sizes. This creates a more flexible and seamless user experience, eliminating rigid breakpoints and allowing designs to flow naturally.
+                        </div>
+                        <div class="mb-xs">
+                            OmniCSS has the following fluid sizes-
+                        </div>
+                        <div class="card surf-p fs-us pa-us">
+                            <div class="grid ch30">
+                                <div>
+                                    <span class="pill surf-t">us</span>- Ultra small
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">xs</span> Extra small
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">sm</span>- Small
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">md</span>- Medium
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">lg</span>- Large
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">xl</span>- Extra large
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">2xl</span>- 2x large
+                                </div>
+                                <div>
+                                    <span class="pill surf-t">3xl</span>- 3x large
+                                </div>
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Fluid Typography -->
+                    <section>
+                        <h2>Fluid Typography</h2>
+                        <div class="mb-sm">
+                            Fluid typography is a CSS technique where font sizes automatically adapt to the screen size, providing a seamless reading experience on different devices. This means the text can dynamically resize without needing multiple media queries, making the design more flexible and responsive.
+                        </div>
+                        <div class="mb-sm">
+                            <b>Before fluid typography:</b> Developers had to use multiple media queries to change font sizes for different screen sizes, which was complex and repetitive.
+                            <b>With fluid typography:</b> Just one line of CSS can achieve the same effect, making the design more scalable and maintainable.
+                        </div>
+                        <div class="mb-xs">
+                            Font sizes <span class="pill surf-s">.fs-*</span>
+                        </div>
+                        <div class="card surf-p pa-sm">
+                            <div class="fs-us">.fs-us</div>
+                            <div class="fs-xs">.fs-xs</div>
+                            <div class="fs-sm">.fs-sm</div>
+                            <div class="fs-md">.fs-md</div>
+                            <div class="fs-lg">.fs-lg</div>
+                            <div class="fs-xl">.fs-xl</div>
+                            <div class="fs-2xl">.fs-2xl</div>
+                            <div class="fs-3xl">.fs-3xl</div>
+                        </div>
+
+                    </section>
+
+                    <!-- Fluid Padding -->
+                    <section>
+                        <h2>Fluid Padding</h2>
+                        <div>Padding all <span class="pill surf-s">.pa-*</span></div>
+                        <div class="card surf-p pa-sm">
+                            <div class="surf-s pa-us w-fit ">.pa-us</div>
+                            <div class="surf-s pa-xs w-fit mt-sm">.pa-xs</div>
+                            <div class="surf-s pa-sm w-fit mt-sm">.pa-sm</div>
+                            <div class="surf-s pa-md w-fit mt-sm">.pa-md</div>
+                            <div class="surf-s pa-lg w-fit mt-sm">.pa-lg</div>
+                            <div class="surf-s pa-xl w-fit mt-sm">.pa-xl</div>
+                            <div class="surf-s pa-2xl w-fit mt-sm">.pa-2xl</div>
+                            <div class="surf-s pa-3xl w-fit mt-sm">.pa-2xl</div>
+
+                        </div>
+
+                        <div class="mt-sm">Padding Left <span class="pill surf-s">.pl-*</span></div>
+                        <div class="card surf-p pa-sm">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.pl-us</span></div>
+                                <div><span class="pill surf-s">.pl-xs</span></div>
+                                <div><span class="pill surf-s">.pl-sm</span></div>
+                                <div><span class="pill surf-s">.pl-md</span></div>
+                                <div><span class="pill surf-s">.pl-lg</span></div>
+                                <div><span class="pill surf-s">.pl-xl</span></div>
+                                <div><span class="pill surf-s">.pl-2xl</span></div>
+                                <div><span class="pill surf-s">.pl-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-md">Padding Right <span class="pill surf-s">.pr-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.pr-us</span></div>
+                                <div><span class="pill surf-s">.pr-xs</span></div>
+                                <div><span class="pill surf-s">.pr-sm</span></div>
+                                <div><span class="pill surf-s">.pr-md</span></div>
+                                <div><span class="pill surf-s">.pr-lg</span></div>
+                                <div><span class="pill surf-s">.pr-xl</span></div>
+                                <div><span class="pill surf-s">.pr-2xl</span></div>
+                                <div><span class="pill surf-s">.pr-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-md">Padding Top <span class="pill surf-s">.pt-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.pt-us</span></div>
+                                <div><span class="pill surf-s">.pt-xs</span></div>
+                                <div><span class="pill surf-s">.pt-sm</span></div>
+                                <div><span class="pill surf-s">.pt-md</span></div>
+                                <div><span class="pill surf-s">.pt-lg</span></div>
+                                <div><span class="pill surf-s">.pt-xl</span></div>
+                                <div><span class="pill surf-s">.pt-2xl</span></div>
+                                <div><span class="pill surf-s">.pt-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-md">Padding Bottom <span class="pill surf-s">.pb-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.pt-us</span></div>
+                                <div><span class="pill surf-s">.pt-xs</span></div>
+                                <div><span class="pill surf-s">.pt-sm</span></div>
+                                <div><span class="pill surf-s">.pt-md</span></div>
+                                <div><span class="pill surf-s">.pt-lg</span></div>
+                                <div><span class="pill surf-s">.pt-xl</span></div>
+                                <div><span class="pill surf-s">.pt-2xl</span></div>
+                                <div><span class="pill surf-s">.pt-3xl</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Fluid Margin -->
+                    <section>
+                        <h2>Fluid Margin</h2>
+                        <div>Margin all <span class="pill surf-s">.ma-*</span></div>
+                        <div class="card surf-p pa-sm">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.ma-us</span></div>
+                                <div><span class="pill surf-s">.ma-xs</span></div>
+                                <div><span class="pill surf-s">.ma-sm</span></div>
+                                <div><span class="pill surf-s">.ma-md</span></div>
+                                <div><span class="pill surf-s">.ma-lg</span></div>
+                                <div><span class="pill surf-s">.ma-xl</span></div>
+                                <div><span class="pill surf-s">.ma-2xl</span></div>
+                                <div><span class="pill surf-s">.ma-3xl</span></div>
+                            </div>
+                        </div>
+
+                        <div class="mt-sm">Margin Left <span class="pill surf-s">.ml-*</span></div>
+                        <div class="card surf-p pa-sm">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.ml-us</span></div>
+                                <div><span class="pill surf-s">.ml-xs</span></div>
+                                <div><span class="pill surf-s">.ml-sm</span></div>
+                                <div><span class="pill surf-s">.ml-md</span></div>
+                                <div><span class="pill surf-s">.ml-lg</span></div>
+                                <div><span class="pill surf-s">.ml-xl</span></div>
+                                <div><span class="pill surf-s">.ml-2xl</span></div>
+                                <div><span class="pill surf-s">.ml-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-sm">Margin Right <span class="pill surf-s">.mr-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.mr-us</span></div>
+                                <div><span class="pill surf-s">.mr-xs</span></div>
+                                <div><span class="pill surf-s">.mr-sm</span></div>
+                                <div><span class="pill surf-s">.mr-md</span></div>
+                                <div><span class="pill surf-s">.mr-lg</span></div>
+                                <div><span class="pill surf-s">.mr-xl</span></div>
+                                <div><span class="pill surf-s">.mr-2xl</span></div>
+                                <div><span class="pill surf-s">.mr-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-sm">Margin Top <span class="pill surf-s">.mt-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.mt-us</span></div>
+                                <div><span class="pill surf-s">.mt-xs</span></div>
+                                <div><span class="pill surf-s">.mt-sm</span></div>
+                                <div><span class="pill surf-s">.mt-md</span></div>
+                                <div><span class="pill surf-s">.mt-lg</span></div>
+                                <div><span class="pill surf-s">.mt-xl</span></div>
+                                <div><span class="pill surf-s">.mt-2xl</span></div>
+                                <div><span class="pill surf-s">.mt-3xl</span></div>
+                            </div>
+                        </div>
+                        <div class="mt-sm">Margin Bottom <span class="pill surf-s">.mb-*</span></div>
+                        <div class="card surf-p pa-sm mt-xs fs-us">
+                            <div class="grid ch12">
+                                <div><span class="pill surf-s">.mb-us</span></div>
+                                <div><span class="pill surf-s">.mb-xs</span></div>
+                                <div><span class="pill surf-s">.mb-sm</span></div>
+                                <div><span class="pill surf-s">.mb-md</span></div>
+                                <div><span class="pill surf-s">.mb-lg</span></div>
+                                <div><span class="pill surf-s">.mb-xl</span></div>
+                                <div><span class="pill surf-s">.mb-2xl</span></div>
+                                <div><span class="pill surf-s">.mb-3xl</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Surface Hierarchy  -->
+                    <section>
+                        <h2>Surface Hierarchy</h2>
+                        <div>
+                            <b>Surface Hierarchy</b> refers to the visual layering of UI elements (surfaces) to create depth, organization, and focus in a design system. It uses background colors, borders, shadows, and elevation to establish a clear order of importance.
+                        </div>
+                        <ul class="ml-sm mt-sm fs-us">
+                            <li>These surfaces create a consistent depth and contrast system in the UI.</li>
+                            <li>They allow creating a multi-layered design that feels natural and visually balanced.</li>
+                            <li>It ensures that elements like cards, modals, and dropdowns stand out properly without breaking the design's visual flow.</li>
+                        </ul>
+
+                        <h4 class="mt-sm">Primary Surface:</h4>
+                        <div>
+                            Represents the base or main background surface color. It's the most visible and widely used background.
+                        </div>
+
+                        <h4 class="mt-sm">Secondary Surface:</h4>
+                        <div>
+                            Slightly lighter or darker than the primary surface, used for elevated surfaces (like cards, modals).
+                        </div>
+
+
+                        <h4 class="mt-sm">Tertiary Surface:</h4>
+                        <div class="mb-md">
+                            Another variation, usually even lighter or darker, used for further layering (like tooltips, side panels).
+                        </div>
+
+                        <div class="grid ch20">
+                            <div class="pa-lg card surf-p  flex-center">
+                                Primary Surface
+                            </div>
+                            <div class="card surf-s pa-lg flex-center">
+                                Secondary Surface
+                            </div>
+                            <div class="card surf-t pa-lg flex-center">
+                                Tertiary Surface
+                            </div>
+                            <div class="card surf-q pa-lg flex-center">
+                                Quaternary Surface
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Color Systems -->
+                    <section>
+                        <h2>OmniCSS Color Systems</h2>
+                        <div>Two types of colors- Preset Color and Individual Color</div>
+                        <div>OmniCSS structures colors into three primary sets for clarity and reusability:</div>
+                        <div class="mt-sm">
+                            <h3>1. Surface Hierarchy Colors Preset</h3>
+                            <div class="fc-surf-t">Defines background, foreground and border colors using a single class.</div>
+                            <ul class="ml-sm mt-sm fs-us mb-sm">
+                                <li>Purpose: Define visual layering (z-axis depth) for UI containers. </li>
+                                <li>Use Case: Backgrounds, cards, panels, and structural elements. </li>
+                            </ul>
+                            <div class="grid ch40">
+                                <div class="surf-p pa-md center">
+                                    <span class="pill surf-s fs-md mb-sm">.surf-p</span>
+                                    <div>Primary surface colors set</div>
+                                    <div class="fs-us"><i>Highest prominence, e.g., main background.</i></div>
+                                </div>
+                                <div class="surf-s pa-md center">
+                                    <span class="pill surf-t fs-md mb-sm">.surf-s</span>
+                                    <div>Secondary Surface </div>
+                                    <div class="fs-us"><i>Mid-level, e.g, cards</i></div>
+                                </div>
+                                <div class="surf-t pa-md center">
+                                    <span class="pill surf-q fs-md mb-sm">.surf-t</span>
+                                    <div>Tertiary Surface</div>
+                                    <div class="fs-us"><i>Low prominence, e.g., nested elements</i></div>
+                                </div>
+                                <div class="surf-q pa-md center">
+                                    <span class="pill surf-t fs-md mb-sm">.surf-q</span>
+                                    <div>Quaternary Surface </div>
+                                    <div><i>Subtle accents, e.g., dividers</i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Semantic Colors Preset -->
+                        <div class="mt-sm">
+                            <h3>2. Semantic Colors Preset</h3>
+                            <div>Defines background, foreground and border colors using a single class.</div>
+                            <ul class="ml-sm mt-sm fs-us mb-sm">
+                                <li>Purpose: Communicate meaning/state (status, alerts, actions). </li>
+                                <li>Use Case: Buttons, badges, alerts, notifications.</li>
+                            </ul>
+                            <div class="grid ch40">
+                                <div class="success pa-md flex-center">.success</div>
+                                <div class="caution pa-md flex-center">.caution</div>
+                                <div class="info pa-md flex-center">.info</div>
+                                <div class="critical pa-md flex-center">.critical</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h3>3. Brand/Functional Colors</h3>
+                            <ul class="ml-sm mt-sm fs-us mb-sm">
+                                <li>Purpose: Core brand identity and key interactive elements. </li>
+                                <li> Use Case: Primary buttons, links, CTAs, branding, and accents. </li>
+                            </ul>
+                            <div class="grid ch30">
+                                <div class="fc-p pa-md flex-center">.fc-p <br>Font Color: Primary</div>
+                                <div class="fc-s pa-md flex-center">.fc-s <br>Font Color: Secondary</div>
+                                <div class="fc-a pa-md flex-center">.fc-a <br>Font Color: Accent</div>
+                                <div class="bg-p pa-md flex-center">
+                                    <div class="reverse-color">.bg-p <br>Background: Primary</div>
+                                </div>
+                                <div class="bg-s pa-md flex-center fc-black">.bg-s <br>Background: Secondary</div>
+                                <div class="bg-a pa-md flex-center">.bg-a <br>Background: Accent</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h3>Key Benefits</h3>
+                            <ul class="ml-sm">
+                                <li>Consistency: Surface colors for layout, semantic colors for meaning.</li>
+                                <li>Flexibility: Mix and match as needed (e.g., a gridable-ss with critical status).</li>
+                                <li>Theming: Change all --primary-surface-* or --success-* values globally.</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h3>Why This Separation?</h3>
+                            <ol class="ml-sm">
+                                <li>
+                                    Predictability:
+                                    <ul class="ml-sm">
+                                        <li>Surface colors = Where an element sits (hierarchy). </li>
+                                        <li>Semantic colors = What it means (state/action). </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Accessibility:
+                                    <ul class="ml-sm">
+                                        <li> Semantic colors enforce consistent contrast ratios for readability. </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Maintenance:
+                                    <ul class="ml-sm">
+                                        <li>Change --primary-surface-bg once to update all containers globally. </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h4 class="mb-xs">Full OmniCSS Color Taxonomy</h4>
+                            <div class="gridable surf-p md fs-us">
+                                <div class="grid-header">
+                                    <div class="header-item">Type</div>
+                                    <div class="header-item">Classes</div>
+                                    <div class="header-item">Purpose</div>
+                                </div>
+
+                                <div class="grid-row">
+                                    <div class="grid-cell" data-label="Type">1. Surface Hierarchy</div>
+                                    <div class="grid-cell" data-label="Variables"><span class="pill surf-s">.surf-p</span> <span class="pill surf-s">.surf-s</span> <span class="pill surf-s">.surf-t</span> <span class="pill surf-s">.surf-q</span></div>
+                                    <div class="grid-cell" data-label="Purpose">Layout containers (depth/z-axis)</div>
+                                </div>
+                                <div class="grid-row">
+                                    <div class="grid-cell" data-label="Type">2. Semantic Colors</div>
+                                    <div class="grid-cell" data-label="Variables"><span class="pill surf-s">.success</span> <span class="pill surf-s">.caution</span> <span class="pill surf-s">.info</span> <span class="pill surf-s">.critical</span></div>
+                                    <div class="grid-cell" data-label="Purpose">User feedback (status, alerts)</div>
+                                </div>
+                                <div class="grid-row">
+                                    <div class="grid-cell" data-label="Type">3. Brand/Functional</div>
+                                    <div class="grid-cell" data-label="Variables"><span class="pill surf-s">.fc-p</span> <span class="pill surf-s">.fc-s</span> <span class="pill surf-s">.fc-a</span> <span class="pill surf-s">.bg-p</span> <span class="pill surf-s">.bg-s</span> <span class="pill surf-s">.bg-a</span></div>
+                                    <div class="grid-cell" data-label="Purpose">Branding & interactive elements</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h3>Key Rules for Usage</h3>
+                            <ul class="ml-sm">
+                                <li>Surface Colors → Structural containers (.gridable-ps, .card-ss).</li>
+                                <li>Semantic Colors → Status/feedback (.pill-success, .alert-critical).</li>
+                                <li>Brand Colors → Brand identity and interactivity (.btn-primary, .text-accent).</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-sm">
+                            <h3>Why This Structure?</h3>
+                            <ul class="ml-sm">
+                                <li>Scalability: Add --color-tertiary later without confusion.</li>
+                                <li>Theming: Swap brand colors globally (e.g., dark mode).</li>
+                                <li>Clarity: Engineers/designers know which palette to use.</li>
+                            </ul>
+                        </div>
+
+                        .reverse-color { filter: invert(100%);}
+                    </section>
+
+                    <section>
+                        <h2>Individual Colors</h2>
+                        <div class="fs-us fw-500">Fore-Color <span class="pill surf-s">.fc-*</span></div>
+                        <style>
+                            table.fore-colors td,
+                            .background-colors td {
+                                padding: var(--space-xs);
+                                padding-left: 0px;
+                            }
+                        </style>
+                        <table class="fs-us fore-colors">
+                            <tbody>
+                                <tr>
+                                    <td><span class="pill surf-s">.fc-p</span></td>
+                                    <td>Use primary color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-s">.fc-s</span></td>
+                                    <td>Use secondary color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-a</span></td>
+                                    <td>Use accent color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-surf-p</span></td>
+                                    <td>Use primary surface text color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-surf-s</span></td>
+                                    <td>Use secondary surface text color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-surf-t</span></td>
+                                    <td>Use tertiary surface text color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-surf-q</span></td>
+                                    <td>Use quaternary surface text color as font color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.fc-black</span></td>
+                                    <td>Use black as font color.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="fs-us fw-500 mt-sm">Background <span class="pill surf-s">.bg-*</span></div>
+                        <table class="fs-us background-colors">
+                            <tbody>
+                                <tr>
+                                    <td><span class="pill surf-s">.bg-p</span></td>
+                                    <td>Use primary color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-s">.bg-s</span></td>
+                                    <td>Use secondary color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-a</span></td>
+                                    <td>Use accent color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-surf-p</span></td>
+                                    <td>Use primary surface back color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-surf-s</span></td>
+                                    <td>Use secondary surface back color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-surf-t</span></td>
+                                    <td>Use tertiary surface back color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-surf-q</span></td>
+                                    <td>Use quaternary surface back color as background color.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="pill surf-t">.bg-black</span></td>
+                                    <td>Use black as background color.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+
+                    <div class="fs-3xl">Omni Components</div>
+
+                    <!-- Container -->
+                    <section>
+                        <h2>Fluid Container</h2>
+                        <div><span class="pill">.container</span> for a fluid container.</div>
+                    </section>
+
+                    <!-- Grid -->
+                    <section>
+                        <h2>OmniCSS Grid System</h2>
+                        <div>
+                            <div>Introduction</div>
+                            <div>OmniCSS provides a versatile, responsive, and easy-to-use grid system, empowering developers to create flexible layouts without complex configurations. It utilizes CSS Grid for maximum control and efficiency.</div>
+                            <div>Key Features</div>
+                            <ul>
+                                <li>Responsive Columns: Supports 1 to 12 columns, adjustable using classes like .grid.fr1 to .grid.fr12.</li>
+                                <li>Dense Layout: The .grid.dense class enables automatic filling of available space.</li>
+                                <li>Automatic Column Layout: The .grid.auto class dynamically adjusts columns based on available width, ensuring consistent item sizes.</li>
+                                <li>Breakpoint Control: Offers tailored column settings for small (max-width: 767.98px) and large (max-width: 1199.98px) screens using suffixes -sm and -lg.</li>
+                            </ul>
+
+                        </div>
+                        <div>OmniCSS has two types of grid -</div>
+                        <ol>
+                            <li>Fluid Grid </li>
+                            <li>Traditional Grid</li>
+                        </ol>
+
+                        <h3>1. Basic Usage</h3>
+                        <div>Apply the .grid class to create a grid container:</div>
+
+                        <h4>Default Behavior</h4>
+                        <ul>
+                            <li><span class="pill surf-s">gap: var(--space-xs)</span> (small gap between items).</li>
+                            <li>Items flow in rows (default <span class="pill surf-s">grid-auto-flow: row</span>).</li>
+                        </ul>
+                        <div class="line bg-surf-t mt-sm mb-sm"></div>
+                        <h3>2. Column Layouts</h3>
+                        <h4>Fixed Fractional Columns (1fr to 12fr)</h4>
+                        <div>Use .fr{1-12}-{sm/md/lg} to define columns at different breakpoints:</div>
+                        <div class="grid fr3-sm fr6-md fr12-lg">...</div>
+                        <ul>
+                            <li>fr3-sm: 3 equal columns on small screens.</li>
+                            <li>fr6-md: 6 equal columns on medium screens.</li>
+                            <li>fr12-lg: 12 equal columns on large screens.</li>
+                        </ul>
+
+
+                        <h4>Fluid Column Widths (ch-based)</h4>
+                        <div>Use .ch{12-50} for content-adaptive columns:</div>
+                        <div class="grid ch30">...</div>
+                        <ul>
+                            <li>Columns adjust between min(100%, {N}ch) and 1fr.</li>
+                            <li>Example: .ch30 → columns are at least 30ch wide (but shrink if needed).</li>
+                        </ul>
+
+                        <h4>Auto-Fit Dynamic Grid</h4>
+                        <div>Use .auto for a flexible grid with min/max constraints:</div>
+                        <code>
+                            <div class="grid auto max4-md">...</div>
+                        </code>
+                        <ul>
+                            <li>--grid-column-count: Sets max columns (default: 12).</li>
+                            <li>--grid-item--min-width: Minimum column width (100px by default).</li>
+                            <li>Override with .max{1-12}-{sm/md/lg} (e.g., .max4-md → max 4 columns on medium screens).</li>
+                        </ul>
+
+                        <h3>3. Grid Child Controls</h3>
+                        <h4>Span Columns</h4>
+                        <div class="grid fr6-md">
+                            <div class="fr2-md">Span 2 columns</div>
+                        </div>
+                        <ul>
+                            <li>.fr{N}-{sm/md/lg}: Spans N columns at a given breakpoint.</li>
+                            <li>.fullwidth: Forces full-width (grid-column: 1 / -1).</li>
+                        </ul>
+
+                        <h4>Column Start Position</h4>
+                        <div class="grid fr6-md">
+                            <div class="from3-md">Starts at column 3</div>
+                        </div>
+                        <ul>
+                            <li>.from{N}-{sm/md/lg}: Starts at column N.</li>
+                        </ul>
+
+                        <h3>4. Gap Utilities</h3>
+                        <div>Override default gaps with:</div>
+                        <div class="grid gap-sm">...</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Class</th>
+                                    <th>Gap Size (<code>var(--space-*)</code>)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>.gap-us</code></td>
+                                    <td>Ultra-small (<code>us</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-xs</code></td>
+                                    <td>Extra-small (<code>xs</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-sm</code></td>
+                                    <td>Small (<code>sm</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-md</code></td>
+                                    <td>Medium (<code>md</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-lg</code></td>
+                                    <td>Large (<code>lg</code>)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>.gap-xl</code></td>
+                                    <td>Extra-large (<code>xl</code>)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>5. Advanced Options</h3>
+                        <h4>Dense Packing</h4>
+                        <div class="grid dense">...</div>
+                        <ul>
+                            <li>Fills gaps by reordering smaller items (grid-auto-flow: dense).</li>
+                        </ul>
+                    
+                        <h3>Breakpoints Reference</h3>
+                        <ul>
+                            <li>sm: Small screens (mobile).</li>
+                            <li>md: Medium screens (tablet).</li>
+                            <li>lg: Large screens (desktop).</li>
+                        </ul>
+
+                        <div>This system provides full control over responsive grids with minimal CSS.</div>
+
+
+                    </section>
+
+                    <!-- Gridable -->
+                    <section>
+                        <h2>Gridable = Grid + Table</h2>
+                        <div>
+                            Use <span class="pill">.gridable</span> for gridable component. Use <span class="pill">.us</span>/<span class="pill">.sm</span>/<span class="pill">.md</span> to make it reponsive at your target devices.
+                        </div>
+
+
+                        <div class="surf-p gridable md">
+                            <div class="grid-header">
+                                <div class="header-item">Col-1</div>
+                                <div class="header-item">Col-2</div>
+                                <div class="header-item">Col-3</div>
+                                <div class="header-item">Col-4</div>
+                                <div class="header-item">Col-5</div>
+                            </div>
+
+                            <div class="grid-row">
+                                <div class="grid-cell" data-label="Col-1">One</div>
+                                <div class="grid-cell" data-label="Col-2">Two</div>
+                                <div class="grid-cell" data-label="Col-3">Three</div>
+                                <div class="grid-cell" data-label="Col-4">Four</div>
+                                <div class="grid-cell" data-label="Col-5">Five</div>
+                            </div>
+                            <div class="grid-row">
+                                <div class="grid-cell" data-label="Col-1">One</div>
+                                <div class="grid-cell" data-label="Col-2">Two</div>
+                                <div class="grid-cell" data-label="Col-3">Three</div>
+                                <div class="grid-cell" data-label="Col-4">Four</div>
+                                <div class="grid-cell" data-label="Col-5">Five</div>
+                            </div>
+                        </div>
+
+                        <details class="expandable mt-sm">
+                            <summary class="fs-us fc-surf-t">View Source</summary>
+                            <div class="content">
+                                <div class="dark-gist-container">
+                                    <script src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
+                                </div>
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Dismissable -->
+                    <section>
+                        <h2>Dismissable <span class="pill surf-s">.dissmissable</span></h2>
+                        <div>
+                            <span class="pill">.dismissable</span> for a dismissable notice. Mention expiry in days. Must have a unique id for each dismissable.
+                        </div>
+
+                        <div class="grid ch40 gap-sm">
+                            <div class="dismissable surf-p" id="notice-4" data-expiry="10000">
+                                <div class="fs-us">
+                                    This is a <span class="pill surf-s">.dismissable</span> using primary surface <span class="pill surf-s">.surf-p</span>
+                                </div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable surf-s" id="notice-4" data-expiry="1">
+                                <div class="fs-us">
+                                    This is a <span class="pill surf-t">.dismissable</span> using secondary surface <span class="pill surf-t">.surf-s</span>
+                                </div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable surf-t" id="notice-4" data-expiry="1">
+                                <div class="fs-us">
+                                    This is a <span class="pill surf-q">.dismissable</span> using tertiary surface <span class="pill surf-q">.surf-t</span>
+                                </div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable surf-q" id="notice-4" data-expiry="1">
+                                <div class="fs-us">
+                                    This is a <span class="pill surf-s">.dismissable</span> using quaternary surface <span class="pill surf-q">.surf-s</span>
+                                </div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable info" id="notice-1" data-expiry="1">
+                                <div>
+                                    This is a <span class="pill info">.info</span> dismissable.
+                                </div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable success" id="notice-2" data-expiry="1">
+                                <div>
+                                    This is a <span class="pill success">.success</span> dismissable.
+                                </div>
+                                <div class="right mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable caution" id="notice-3" data-expiry="1">
+                                <div>
+                                    This is a <span class="pill caution">.caution</span> dismissable.
+                                </div>
+                                <div class="center mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+
+                            <div class="dismissable critical" id="notice-4" data-expiry="10000">
+                                <div>This is a <span class="pill critical">.critical</span> dismissable.</div>
+                                <div class="left mt-sm">
+                                    <span class="dismiss">Don't show</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <details class="expandable mt-sm">
+                            <summary class="fs-us fc-surf-t">View Source</summary>
+                            <div class="content">
+                                <div class="dark-gist-container">
+                                    <script src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
+                                </div>
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Dialog -->
+                    <section>
+                        <h2>Dialogbox</h2>
+                        <dialog id="dialog1">
+                            <form method="dialog">
+                                <div class="title">Dialog Content-1</div>
+                                <div class="content">A message to the users.</div>
+                                <button>Close</button> <!-- No JS needed -->
+                            </form>
+                        </dialog>
+                        <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
+
+                        <dialog id="dialog2">
+                            <form method="dialog">
+                                <div class="title">Dialog Content-2</div>
+                                <div class="content">A message to the users.</div>
+                                <button>Close</button> <!-- No JS needed -->
+                            </form>
+                        </dialog>
+                        <button onclick="dialog2.showModal()">Open Dialog</button>
+                    </section>
+
+                    <!-- Expandable -->
+                    <section>
+                        <h2>Expandable <span class="pill surf-s">.expandable</span></h2>
+                        <details class="expandable">
+                            <summary>Expandable</summary>
+                            <div class="content card surf-s pa-sm">
+                                <p class="fs-us">
+                                    Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat inventore. Et obcaecati vero in quod corporis sit nulla quia et dignissimos dolorem vel neque amet ut quia iusto! In iusto quia ut impedit voluptates eum recusandae quaerat 33 minus maxime nam odio itaque aut molestiae voluptatem est voluptatem quas.
+                                </p>
+                                <p class="fs-us mt-sm">
+                                    Sit temporibus provident sit eius fuga cum facilis omnis ea repudiandae excepturi! Et dolorem odit aut ullam eaque sed reprehenderit expedita qui dolores ipsam et pariatur quasi sit voluptatibus accusamus. Sit nemo vero nam veniam minus nam aspernatur ipsa ut quia atque id commodi molestias sed illo alias quo animi voluptas. Qui rerum rerum et voluptatem dolores in voluptates animi est aliquid voluptatum sit beatae excepturi.
+                                </p>
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Board -->
+                    <section>
+                        <h2>Board <span class="pill surf-s">.board</span></h2>
+                        <div class="grid ch40">
+                            <div class="board success">
+                                This is a <span class="pill success">.success</span> board
+                            </div>
+
+
+                            <div class="board info">
+                                This is a <span class="pill info">.info</span> board
+                            </div>
+
+                            <div class="board caution">
+                                This is a <span class="pill caution">.caution</span> board
+                            </div>
+
+                            <div class="board critical">
+                                This is a <span class="pill critical">.critical</span> board
+                            </div>
+                        </div>
+
+                        <details class="expandable mt-sm">
+                            <summary class="fs-us fc-surf-t">View Source</summary>
+                            <div class="content">
+                                <div class="dark-gist-container">
+                                    <script src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
+                                </div>
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Action menu -->
+                    <section>
+                        <h2>Action Menu <span class="pill surf-s">.action-menu</span></h2>
+
+                        This is an action menu
+                        <div class="action-menu">
+                            <input type="checkbox" id="menu1">
+                            <label for="menu1">⋮</label>
+                            <div>
+                                <a href="#" class="close-menu">Edit</a>
+                                <a href="#">Edit</a>
+                            </div>
+                        </div>
+
+                        <div class="fs-us fc-surf-t">
+                            checkbox id and label for must have same value, i.e. menu1.
+                        </div>
+
+                        <details class="expandable mt-sm">
+                            <summary class="fs-us fc-surf-t">View Source</summary>
+                            <div class="content">
+                                <div class="dark-gist-container">
+                                    <script src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
+                                </div>
+                            </div>
+                        </details>
+                    </section>
+
+                    <!-- Installation -->
+                    <section class="mb-lg">
+                        <h2>OmniCSS Installation</h2>
+                        <div>
+                            The easiest way to use from CDN below-
+                            <div class="surface-secondary mt-sm mb-sm pa-sm fs-xs">
+                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
+                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
+                            </div>
+                        </div>
+                        <div>
+                            As an alternative, download the latest repo from <a class="pill secondary" href="https://github.com/skpaul/omnicss">GitHub</a>.
+                        </div>
+                    </section>
+
+                    <!-- Base Layout -->
+                    <section class="mb-lg">
+                        <h2>Base Layout</h2>
+                        <p>
+                            <span class="pill secondary">.layout</span> class serves the foundation of your page design.
+                        </p>
+                        <p>
+                            Start by placing your content inside the header, main, and footer sections—OmniCSS will handle the fluid scaling automatically.
+                        </p>
+                        <div class="dark-gist-container">
+                            <script src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
+                        </div>
+                    </section>
+
+                    <!-- Header Template -->
+                    <section>
+                        <h2>Header Template</h2>
+                        <div>
+                            <span class="pill">.fixed</span> for always top and visible.
+                            <span class="pill">.smart</span> for Sticky header. Auto hide/show on scroll.
+                        </div>
+                        <div class="dark-gist-container">
+                            <script src="https://gist.github.com/skpaul/4fdb9d1638062f99ff8eb066fe5d9631.js"></script>
+                        </div>
+                    </section>
+
+                </div>
+
+            </main>
+            <footer>
+                
+    <div>©2025 Nobolok.com</div>
+    <a href="https://github.com/skpaul/omnicss">Built with OmniCSS</a>
+
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.4/omni.js"></script>    </body>
+
+</html>

@@ -2,2602 +2,925 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M7MBWWK0"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
 
-    gtag('config', 'G-Q3M7MBWWK0');
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniCSS – Fluid, Responsive CSS Framework for Modern Web Design</title>
+    <meta name="description"
+        content="OmniCSS simplifies responsive design with fluid scaling, no rigid breakpoints. Build adaptive layouts faster using intuitive utility classes. Lightweight, flexible, and developer-friendly.">
+    <link rel="canonical" href="https://nobolok.com/omni-css">
+
+    <!-- Author, Copyright, Robots & Keyword -->
+    <meta name="author" content="Saumitra Kumar Paul">
+    <meta name="copyright" content="nobolok.com">
+    <!-- <meta name="robots" content="index, follow"> -->
+
+    <!-- Mobile/Web App Enhancements -->
+    <meta name="theme-color" content="#ff4c60">
+    <!-- Android taskbar color --><!-- Make sure your /favicon.png exists in the root directory. -->
+
+    <!-- Modern Universal Favicon (SVG recommended) -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+    <!-- Legacy Icons (Optional: Only if supporting very old browsers) -->
+    <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+    <!-- Fallback PNG (32x32 is enough for most browsers) -->
+    <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+
+    <!-- Apple Touch Icon (180x180 for iOS, transparent bg) -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
+
+
+    <script>
+        // Immediately set theme before DOM renders
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Apply in this order: saved > system > light
+        document.documentElement.setAttribute('data-theme',
+            savedTheme || (systemPrefersDark ? 'dark' : 'light')
+        );
     </script>
 
-    <meta name="description" content="A semantic hand-full .css library for busy developers.">
-    <meta name="robots" content="index, follow">
-
-    <meta name="keywords" content="Web development, From-end design, CSS, SASS, CSS Style">
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Omni CSS</title>
-
-    <link href="assets/prism.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/monogrid@0.0.1/monogrid.min.css"> -->
-    <link href="https://cdn.jsdelivr.net/gh/skpaul/griddle@0.0.3/griddle.min.css"  rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/omnicss@11.0.22/omnicss.min.css"> -->
-    <!-- For github -->
-    <link rel="stylesheet" href="assets/omnicss.min.css">
-    <link rel="stylesheet" href="assets/colors.css">
-    <link rel="stylesheet" href="assets/theme.css">
-
-    <!-- For local -->
-    <!-- <link rel="stylesheet" href="../omnicss.min.css">
-    <link rel="stylesheet" href="../theme.css"> -->
-
+    <link rel="stylesheet" href="../omni.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/griddle@2.1.1/griddle.min.css">
+    <link rel="stylesheet" href="https://nobolok.com/assets/css/site.css">
     <style>
-        body{
-            line-height: 1.8;
-            font-size: 90%;
+        section {
+            margin-top: var(--space-xl);
         }
 
-        section{
-            background-color: var(--light);
-            border-color: var(--gray-7);
-            border-radius: var(--border-radius);
-            border-width: 1px;
-            border-style: solid;
-            padding: 1.5rem;
-            padding-top: 0.9rem;
-            margin-top: 2rem !important;
-            margin-bottom: 2rem !important;
+        section>h2 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
         }
 
-        h2{
-            font-size: 1.5rem;
-            line-height: 1.6;
-            border-bottom: 1px solid #304a6f;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        h2>code {
-            font-size: 1.5rem !important;
-            line-height: 1;
-            padding-left: 2px !important;
-            margin-left: 14px;
+        /* override GitHub Gist rule */
+        .dark-gist-container .gist {
+            filter: var(--gist-filter);
         }
 
-        code:not(code[class*=language-]) {
-            /* font-family: Consolas; */
-            font-family: "Inconsolata", monospace;
-            /* font-family: "Source Code Pro", monospace; */
-            border-radius: 0.3rem;
-            border: 1px solid #2b3e59;
-            padding: 4px 6px;
-            white-space: nowrap;
-            background-color: #162233;
-            font-size: 0.8rem;
-            color: #ffe8b1;
-        }
-        code[class*=language-] {
-            white-space: break-spaces;
-        }
-
-        :not(pre)>code[class*=language-],
-        pre[class*=language-] {
-            /* background: #22272e; */
-            background: #162233;
-            border-radius: 0.3rem;
-            border: 1px solid #2b3e59;
-            padding: 4px 6px;
-            /* white-space: ; */
-        }
-
-        table td{
-            vertical-align: top;
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-        table tr td:nth-child(2n){
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .values > code{
-            text-align: center;
-        }
-
-        p.compact-note{
-            letter-spacing: 0.01245rem;
-            margin-top: 1.2rem;
+        .dark-gist-container .gist-meta {
+            display: none;
+            /* Optional: hides GitHub's header */
         }
     </style>
 </head>
 
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="mt30 mb10 fs-3.0">OmniCSS  <code>v13.0.0</code></div>
-            <h1 class="mb15 fs15">
-                A semantic & handy <code>.css</code> library for busy developers.
-            </h1>
-        </div>
-    </header>
-
-    <main class="main">
-        <div class="container mv-300">
-            <div class="ba bc-gray-7">
-                <div class="container-900 mv-150">
-
-                    <!-- Installation -->
-                    <section>
-                        <h2>Installation</h2>
-                        <div>
-                            The easiest way to use from CDN below- <br>
-                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@13.0.0/omnicss.min.css</code>
-                        </div>
-                        <br>
-                        <div>
-                            As an alternative, download the latest repo from <a class="pointer cBlue4" href="https://github.com/skpaul/omnicss">GitHub</a> .
-                        </div>
-                        <br>
-                        <p>
-                            You'll also need to download the <code>theme.css</code>.
-                        </p>
-                    </section>
-                    <!-- Installation// -->
-                    
-                    <!-- //default settings -->
-                    <section class="round bg-light pa-150 mv-200 ba bc-gray-7">
-                        <h2 class="fs-150 fw-600">Default settings</h2>
-                        <p>Some default values are set in <code>theme.css</code>. You can customize those as your requirements.</p>
-                        
-                        <h3 class="fw500 mt15">Import google fonts</h3>
-                        <p>All required google fonts have been imported in <code>theme.css</code>. You can import your preferable fonts.</p>
-
-                        <h3 class="fw500 mt15">Color Schemes</h3>
-                        <p><code>theme.css</code> contains color names and shades. You can modify any time.</p>
-
-                        <h3 class="fw500 mt15">Default values -</h3>
-                        <table>
-                            <tr>
-                                <td><code>--container-max-width</code></td>
-                                <td>:</td>
-                                <td>: 1200px;</td>
-                            </tr>
-                            <tr>
-                                <td><code>--container-padding</code></td>
-                                <td>:</td>
-                                <td>: 0.75rem;  /* left + right*/</td>
-                            </tr>
-                            <tr>
-                                <td><code>--fallback-font</code></td>
-                                <td>:</td>
-                                <td>sans-serif;</td>
-                            </tr>
-                            <tr>
-                                <td><code>--font-family-english</code></td>
-                                <td>:</td>
-                                <td>: 'Inter', var(--fallback-font);</td>
-                            </tr>
-                            <tr>
-                                <td><code>--font-family-bangla</code></td>
-                                <td>:</td>
-                                <td>: 'Anek Bangla', var(--fallback-font);</td>
-                            </tr>
-                            <tr>
-                                <td><code>--font-weight</code></td>
-                                <td>:</td>
-                                <td>: 300;</td>
-                            </tr>
-                            <tr>
-                                <td><code>--color</code></td>
-                                <td>:</td>
-                                <td>Default text color  var(--gray-2).</td>
-                            </tr>
-                            <tr>
-                                <td><code>--background-color</code></td>
-                                <td>:</td>
-                                <td>Used as default page background color var(--gray-9).</td>
-                            </tr>
-                            <tr>
-                                <td><code>--dark</code> </td>
-                                <td>:</td>
-                                <td>Dark shade of <code>--background-color</code> variable : <br>
-                                    Used in <code>.c-dark</code>, <code>.bg-dark</code>  and <code>.bc-dark</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>--light</code></td>
-                                <td>:</td>
-                                <td>Light shade of <code>--background-color</code> variable : <br>
-                                    Used in <code>.c-light</code>, <code>.bg-light</code>  and <code>.bc-light</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>--line-height</code></td>
-                                <td>:</td>
-                                <td>1.3;</td>
-                            </tr>
-                            <tr>
-                                <td><code>--accent-color</code></td>
-                                <td>:</td>
-                                <td>var(--blue-5);</td>
-                            </tr>
-                            <tr>
-                                <td><code>--border-color</code></td>
-                                <td>:</td>
-                                <td>var(--gray-5);</td>
-                            </tr>
-                            <tr>
-                                <td><code>--border</code></td>
-                                <td>:</td>
-                                <td>1px solid var(--border-color);</td>
-                            </tr>
-                            <tr>
-                                <td><code>--border-radius</code></td>
-                                <td>:</td>
-                                <td>: 0.25rem;  Applicable if you use <code>.round</code> class.</td>
-                            </tr>
-                            <tr>
-                                <td><code>--header-menu-color </code></td>
-                                <td>:</td>
-                                <td>Applied to the top navigation menu items  i.e. Home, Login etc.</td>
-                            </tr>
-                            <tr>
-                                <td><code>--header-menu-color-hover</code></td>
-                                <td>:</td>
-                                <td>Applied to the top menu items  i.e. Home, Login etc.</td>
-                            </tr>
-                            <tr>
-                                <td><code>--hamb-color</code></td>
-                                <td>:</td>
-                                <td>Applied to the hamburger menu icon.</td>
-                            </tr>
-                            <tr>
-                                <td><code>--hamb-border-color</code></td>
-                                <td>:</td>
-                                <td>Applied to the hamburger menu box border.</td>
-                            </tr>
-                            <tr>
-                                <td><code>--scroll-color</code></td>
-                                <td>:</td>
-                                <td>Applied to the index.php marquee</td>
-                            </tr>
-                            <tr>
-                                <td><code>--scroll-color-hover</code></td>
-                                <td>:</td>
-                                <td>Applied to the index.php marquee</td>
-                            </tr>
-                            <tr>
-                                <td><code>--hyperlink-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--hyperlink-color-hover</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--table-background-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--table-border-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--thead-background-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--thead-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--th-border-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--tbody-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--tr-border-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--tr-even-background-color</code></td>
-                                <td>:</td>
-                                <td>for even rows only</td>
-                            </tr>
-                            <tr>
-                                <td><code>--tr-hover-background-color</code></td>
-                                <td>:</td>
-                                <td>on hover effect</td>
-                            </tr>
-                           
-                       
-
-                            <!-- Default values for form element -->
-                       
-                             <tr>
-                                <td><code>--label-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                             <tr>
-                                <td><code>--placeholder-color</code></td>
-                                <td>:</td>
-                                <td>For input[type=text], input[type=password], textarea</td>
-                            </tr>
-                             <tr>
-                                <td><code>--input-color</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-caret-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-background-color</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox </td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-background-color-on-hover</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-background-color-on-focus</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox </td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-border-color</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-border-color-on-hover</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
-                            </tr>
-                            <tr>
-                                <td><code>--input-border-color-on-focus</code></td>
-                                <td>:</td>
-                                <td>input[type=text], input[type=password], select, textarea, .textbox</td>
-                            </tr>
-                            <tr>
-                                <td><code>--button-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--button-border-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>--button-background-color</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-                      
-                    </section> <!-- default settings// -->
-
-                    <!-- Media Queries -->
-                    <section>
-                        <h2>Media Queries</h2>
-                        <p>To be minimalistic, OmniCSS uses only two types of device- </p>
-                        <table>
-                            <tr>
-                                <td><code>-sm</code></td>
-                                <td>:</td>
-                                <td>max-width: 991px</td>
-                            </tr>
-                            <tr>
-                                <td><code>-lg</code></td>
-                                <td>:</td>
-                                <td>min-width: 992px</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Media Queries// -->
-                    
-                    <!-- Container -->
-                    <section>
-                        <h2 class="fw700">Containers</h2>
-                        <table>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-fluid</code></td>
-                                <td>:</td>
-                                <td>Full width container</td>
-                            </tr>
-                            <tr>
-                                <td><code>.container</code></td>
-                                <td>:</td>
-                                <td>Max width 1200px default. You can change <code>--container-max-width</code> in theme.css to change the default value.</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-1100</code></td>
-                                <td>:</td>
-                                <td>Max width 1100px</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-1000</code></td>
-                                <td>:</td>
-                                <td>Max width 1000px</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-900</code></td>
-                                <td>:</td>
-                                <td>Max width 900px</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-800</code></td>
-                                <td>:</td>
-                                <td>Max width 800px</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-700</code></td>
-                                <td>:</td>
-                                <td>Max width 700px</td>
-                            </tr>
-                            <tr>
-                                <td><code class="ws-nowrap">.container-600</code></td>
-                                <td>:</td>
-                                <td>Max width 600px</td>
-                            </tr>
-                        </table>
-
-                    </section>
-                    <!-- Container -->
-
-                    <!-- Color Theory -->
-                    <section>
-                        <h2 class="fw700">Color Theory</h2>
-
-                        <h3 class="bold">Primary Color</h3>
-                        <p>
-                            The primary color is a color that dominates your design, means the great stuff will use your primary color, including logo. Your primary color is the color associated with your brand.
-                        </p>
-                        
-                        <h3 class="bold mt-1.5">Number of Colors in Scheme: Three Recommended</h3>
-                        <p>
-                            You’ve got the primary color; now it is time to seize other colors in the color scheme. Before that, you need to decide how many colors do I need to complete a color scheme.
-                        </p>
-                        <p>
-                            For the palette, three colors recommended. Based on a Triad Color Scheme of the color theory. Which traditionally uses three Hues that evenly spaced around the Color Wheel.
-                        </p>
-                        <h3 class="bold mt-1.5">The 60–30–10 rule</h3>
-                        <p>
-                            The 60–30–10 rule is an old designer’s rule on how you can use colors in your design. Which describes as you should use primary color 60% referred to as slack & jacket, 30% usage of secondary color, which may include two secondary colors 15% each, which is the shirt and 10% for the accent color as a tie, all in a business suit.
-                        </p>
-                        <h3 class="bold mt-1.5">Secondary Color(s) and Accent Color</h3>
-                        <p>
-                            The color you will be using less often than the primary color is secondary. The color that you will use at least 10% is the accent color.
-                        </p>
-                        <p>
-                             Secondary and Accent colors you can select by trying different color theories using tools that allow you to create a color palette using color theories like a Color wheel or Color Space or Culrs.
-                        </p>
-                        <p>
-                            You can browse through the color palette list that uses your selected primary color in a palette as a primary color. You can find Color palettes from Colorsinspo, Culrs, etc.
-                        </p>
-                        <h3 class="bold mt-1.5">Neutral Colors: White, Black, Gray</h3>
-                        <p>
-                            Neutral means without color, which includes beige, ivory, taupe, black, gray, and shades of white. Be careful using these colors, White, Black, and Gray you will be using for Text, to create contrast for elements or as background-color.
-                        </p>
-                        <h3 class="bold mt-2.5">HOW TO CREATE DIFFERENT VARIATIONS OF A COLOR</h3>
-                        <p>
-                            <ul>
-                                <li>
-                                    Using Tints  : Increase/Decrease "white" color. Tint refers refers to shades of a color as it's mixed with white.
-                                </li>
-                                <li>
-                                    Using Shades : Increase/Decrease "black" color. Shades of the color as the color is mixed with black.
-                                </li>
-                                <li>
-                                    Using Opacity: rgba(red, green, blue, alpha). RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
-                                </li>
-                            </ul>
-                        </p>
-
-                        <h3 class="bold mt-2.5 ucase">Great Color Tools</h3>
-                        <p>
-                            <ul>
-                                <li>
-                                    <a href="https://mycolor.space/">MyColor - Color Palletes Generator</a>
-                                </li>
-                                <li>
-                                    <a href="https://culrs.com/">Culrs: Color Palletes Generator</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.canva.com/colors/color-wheel/">Canva Color Wheel</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.canva.com/colors/color-meanings/">Canva Color Meanings</a>
-                                </li>
-                                <li>
-                                    <a href="https://www.figma.com/color-wheel/">Figma Color Wheel</a>
-                                </li>
-                                <li>
-                                    <a href="https://color.adobe.com/create/color-wheel">Adobe Color Wheel</a>
-                                </li>
-                                <li>
-                                    <a href="https://colorkit.co/color-shades-generator/ffc0cb/">ColorKit Color Shades Generator</a>
-                                </li>
-                                <li>
-                                    <a href="https://10015.io/tools/hex-to-rgba-converter">HEX to RGBA Converter</a>
-                                </li>
-                            </ul>
-                        </p>
-
-                        <p class="mt20">
-                            Tips & Tricks:
-                            <ul>
-                                <li class="c-primary-10">
-                                    High-emphasis text should have an opacity of 87%
-                                </li>
-                                <li>
-                                    Medium emphasis text is applied at 60%
-                                </li>
-                                <li>
-                                    Disabled text uses an opacity of 38%.
-                                </li>
-                                <li>
-                                    Convert HEX to rgba - rgba(#ff0000, 0.5);
-                                </li>
-                            </ul>
-                        </p>
-                    </section>
-
-                    <!-- Color Scheme & Palletes -->
-                    <style>
-                        div.colors>div{
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: 11px;
-                        }
-                        div.colors>div>div{
-                            width: 70px;
-                            height: 40px;
-                            border-radius: 3px;
-                        }
-                    </style>
-                    <section>
-                        <h2 class="fw700">Color Scheme & Palletes</h2>
-
-                        <p class="mb-2.0 italic">
-                            NOTE: You can customize the color density/shade in <code>theme.css</code> stylesheet.
-                        </p>
-
-                        <h3 class="fw-500">Dark & Light variants of default background color - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>dark-1 <div class="bg-dark-1 ba bc-light-3"></div></div>
-                            <div>dark-2 <div class="bg-dark-2"></div></div>
-                            <div>dark-3 <div class="bg-dark-3"></div></div>
-                            <div>light-1 <div class="bg-light-1"></div></div>
-                            <div>light-2 <div class="bg-light-2"></div></div>
-                            <div>light-3 <div class="bg-light-3"></div></div>
-
-                        </div>
-
-                        <h3 class="mt-1.5 fw-500">Primary Colors - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>primary-1 <div class="bg-primary-1"></div></div>
-                            <div>primary-2 <div class="bg-primary-2"></div></div>
-                            <div>primary-3 <div class="bg-primary-3"></div></div>
-                            <div>primary-4 <div class="bg-primary-4"></div></div>
-                            <div>primary-5 <div class="bg-primary-5"></div></div>
-                            <div>primary-6 <div class="bg-primary-6"></div></div>
-                            <div>primary-7 <div class="bg-primary-7"></div></div>
-                            <div>primary-8 <div class="bg-primary-8"></div></div>
-                            <div>primary-9 <div class="bg-primary-9"></div></div>
-                            <div>primary-10 <div class="bg-primary-10"></div></div>
-                        </div>
-
-                        <h3 class="mt-1.5 fw-500">Secondary Colors - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>secondary-1 <div class="bg-secondary-1"></div></div>
-                            <div>secondary-2 <div class="bg-secondary-2"></div></div>
-                            <div>secondary-3 <div class="bg-secondary-3"></div></div>
-                            <div>secondary-4 <div class="bg-secondary-4"></div></div>
-                            <div>secondary-5 <div class="bg-secondary-5"></div></div>
-                            <div>secondary-6 <div class="bg-secondary-6"></div></div>
-                            <div>secondary-7 <div class="bg-secondary-7"></div></div>
-                            <div>secondary-8 <div class="bg-secondary-8"></div></div>
-                            <div>secondary-9 <div class="bg-secondary-9"></div></div>
-                            <div>secondary-10 <div class="bg-secondary-10"></div></div>
-                        </div>
-
-                        <h3 class="mt-1.5 fw-500">Accent Colors - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>accent-1 <div class="bg-accent-1"></div></div>
-                            <div>accent-2 <div class="bg-accent-2"></div></div>
-                            <div>accent-3 <div class="bg-accent-3"></div></div>
-                            <div>accent-4 <div class="bg-accent-4"></div></div>
-                            <div>accent-5 <div class="bg-accent-5"></div></div>
-                            <div>accent-6 <div class="bg-accent-6"></div></div>
-                            <div>accent-7 <div class="bg-accent-7"></div></div>
-                            <div>accent-8 <div class="bg-accent-8"></div></div>
-                            <div>accent-9 <div class="bg-accent-9"></div></div>
-                            <div>accent-10 <div class="bg-accent-10"></div></div>
-                        </div>
-
-                       
-                        <h3 class="mt-1.5 fw-500">Gray - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>gray-1 <div class="bg-gray-1"></div></div>
-                            <div>gray-2 <div class="bg-gray-2"></div></div>
-                            <div>gray-3 <div class="bg-gray-3"></div></div>
-                            <div>gray-4 <div class="bg-gray-4"></div></div>
-                            <div>gray-5 <div class="bg-gray-5"></div></div>
-                            <div>gray-6 <div class="bg-gray-6"></div></div>
-                            <div>gray-7 <div class="bg-gray-7"></div></div>
-                            <div>gray-8 <div class="bg-gray-8"></div></div>
-                            <div>gray-9 <div class="bg-gray-9"></div></div>
-                            <div>gray-10 <div class="bg-gray-10"></div></div>
-                        </div>
-                        
-                        <h3 class="mt-1.5 fw-500">Blue - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>blue-1 <div class="bg-blue-1"></div></div>
-                            <div>blue-2 <div class="bg-blue-2"></div></div>
-                            <div>blue-3 <div class="bg-blue-3"></div></div>
-                            <div>blue-4 <div class="bg-blue-4"></div></div>
-                            <div>blue-5 <div class="bg-blue-5"></div></div>
-                            <div>blue-6 <div class="bg-blue-6"></div></div>
-                            <div>blue-7 <div class="bg-blue-7"></div></div>
-                            <div>blue-8 <div class="bg-blue-8"></div></div>
-                            <div>blue-9 <div class="bg-blue-9"></div></div>
-                            <div>blue-10 <div class="bg-blue-10"></div></div>
-                        </div>
-                        <h3 class="mt-1.5 fw-500">Green - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>green-1 <div class="bg-green-1"></div></div>
-                            <div>green-2 <div class="bg-green-2"></div></div>
-                            <div>green-3 <div class="bg-green-3"></div></div>
-                            <div>green-4 <div class="bg-green-4"></div></div>
-                            <div>green-5 <div class="bg-green-5"></div></div>
-                            <div>green-6 <div class="bg-green-6"></div></div>
-                            <div>green-7 <div class="bg-green-7"></div></div>
-                            <div>green-8 <div class="bg-green-8"></div></div>
-                            <div>green-9 <div class="bg-green-9"></div></div>
-                            <div>green-10 <div class="bg-green-10"></div></div>
-                        </div>
-
-                        <h3 class="mt-1.5 fw-500">Yellow - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>yellow-1 <div class="bg-yellow-1"></div></div>
-                            <div>yellow-2 <div class="bg-yellow-2"></div></div>
-                            <div>yellow-3 <div class="bg-yellow-3"></div></div>
-                            <div>yellow-4 <div class="bg-yellow-4"></div></div>
-                            <div>yellow-5 <div class="bg-yellow-5"></div></div>
-                            <div>yellow-6 <div class="bg-yellow-6"></div></div>
-                            <div>yellow-7 <div class="bg-yellow-7"></div></div>
-                            <div>yellow-8 <div class="bg-yellow-8"></div></div>
-                            <div>yellow-9 <div class="bg-yellow-9"></div></div>
-                            <div>yellow-10 <div class="bg-yellow-10"></div></div>
-                        </div>
-                        <h3 class="mt-1.5 fw-500">Orange - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>orange-1 <div class="bg-orange-1"></div></div>
-                            <div>orange-2 <div class="bg-orange-2"></div></div>
-                            <div>orange-3 <div class="bg-orange-3"></div></div>
-                            <div>orange-4 <div class="bg-orange-4"></div></div>
-                            <div>orange-5 <div class="bg-orange-5"></div></div>
-                            <div>orange-6 <div class="bg-orange-6"></div></div>
-                            <div>orange-7 <div class="bg-orange-7"></div></div>
-                            <div>orange-8 <div class="bg-orange-8"></div></div>
-                            <div>orange-9 <div class="bg-orange-9"></div></div>
-                            <div>orange-10 <div class="bg-orange-10"></div></div>
-                        </div>
-                        
-
-                        <h3 class="mt-1.5 fw-500">Red - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>red-1 <div class="bg-red-1"></div></div>
-                            <div>red-2 <div class="bg-red-2"></div></div>
-                            <div>red-3 <div class="bg-red-3"></div></div>
-                            <div>red-4 <div class="bg-red-4"></div></div>
-                            <div>red-5 <div class="bg-red-5"></div></div>
-                            <div>red-6 <div class="bg-red-6"></div></div>
-                            <div>red-7 <div class="bg-red-7"></div></div>
-                            <div>red-8 <div class="bg-red-8"></div></div>
-                            <div>red-9 <div class="bg-red-9"></div></div>
-                            <div>red-10 <div class="bg-red-10"></div></div>
-                        </div>
-                        
-                        <h3 class="mt-1.5 fw-500">Purple - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>purple-1 <div class="bg-purple-1"></div></div>
-                            <div>purple-2 <div class="bg-purple-2"></div></div>
-                            <div>purple-3 <div class="bg-purple-3"></div></div>
-                            <div>purple-4 <div class="bg-purple-4"></div></div>
-                            <div>purple-5 <div class="bg-purple-5"></div></div>
-                            <div>purple-6 <div class="bg-purple-6"></div></div>
-                            <div>purple-7 <div class="bg-purple-7"></div></div>
-                            <div>purple-8 <div class="bg-purple-8"></div></div>
-                            <div>purple-9 <div class="bg-purple-9"></div></div>
-                            <div>purple-10 <div class="bg-purple-10"></div></div>
-                        </div>
-                        <!-- '' '' '' '' '' '' '' '' 'teal'; -->
-                        <h3 class="mt-1.5 fw-500">Pink - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>pink-1 <div class="bg-pink-1"></div></div>
-                            <div>pink-2 <div class="bg-pink-2"></div></div>
-                            <div>pink-3 <div class="bg-pink-3"></div></div>
-                            <div>pink-4 <div class="bg-pink-4"></div></div>
-                            <div>pink-5 <div class="bg-pink-5"></div></div>
-                            <div>pink-6 <div class="bg-pink-6"></div></div>
-                            <div>pink-7 <div class="bg-pink-7"></div></div>
-                            <div>pink-8 <div class="bg-pink-8"></div></div>
-                            <div>pink-9 <div class="bg-pink-9"></div></div>
-                            <div>pink-10 <div class="bg-pink-10"></div></div>
-                        </div>
-                        <h3 class="mt-1.5 fw-500">Coral - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>coral-1 <div class="bg-coral-1"></div></div>
-                            <div>coral-2 <div class="bg-coral-2"></div></div>
-                            <div>coral-3 <div class="bg-coral-3"></div></div>
-                            <div>coral-4 <div class="bg-coral-4"></div></div>
-                            <div>coral-5 <div class="bg-coral-5"></div></div>
-                            <div>coral-6 <div class="bg-coral-6"></div></div>
-                            <div>coral-7 <div class="bg-coral-7"></div></div>
-                            <div>coral-8 <div class="bg-coral-8"></div></div>
-                            <div>coral-9 <div class="bg-coral-9"></div></div>
-                            <div>coral-10 <div class="bg-coral-10"></div></div>
-                        </div>
-                        <h3 class="mt-1.5 fw-500">Teal - </h3>
-                        <div class="grid fr10-lg fr3-sm colors">
-                            <div>teal-1 <div class="bg-teal-1"></div></div>
-                            <div>teal-2 <div class="bg-teal-2"></div></div>
-                            <div>teal-3 <div class="bg-teal-3"></div></div>
-                            <div>teal-4 <div class="bg-teal-4"></div></div>
-                            <div>teal-5 <div class="bg-teal-5"></div></div>
-                            <div>teal-6 <div class="bg-teal-6"></div></div>
-                            <div>teal-7 <div class="bg-teal-7"></div></div>
-                            <div>teal-8 <div class="bg-teal-8"></div></div>
-                            <div>teal-9 <div class="bg-teal-9"></div></div>
-                            <div>teal-10 <div class="bg-teal-10"></div></div>
-                        </div>
-                    </section>
-                    <!-- Foreground colors -->
-                    <section>
-                        <h2 class="fw700">Color <code>.c</code></h2>
-                        <p class="mb-0.4">Use a color name from Color Scheme & Palletes with <code>.c</code> prefix.</p>
-                            
-                        <h3 class="mt-1.0">Examples -</h3>
-                        <table>
-                            <tr>
-                                <td><code>.c-green-3</code></td>
-                                <td>:</td>
-                                <td class="c-green-3">3rd shade of green color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.c-yellow-1</code></td>
-                                <td>:</td>
-                                <td class="c-yellow-1">1st shade of yellow color.</td>
-                            </tr>
-                        </table>
-                        
-                        <table>
-                            <tr>
-                                <td><code>.c-dark-1</code></td>
-                                <td>:</td>
-                                <td>Sets <code>dark-1</code> color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.c-light-3</code></td>
-                                <td>:</td>
-                                <td>Sets color from <code>light-3</code>.</td>
-                            </tr>
-                        </table>
-
-                        <p class="mt-1.5">Other classes -</p>
-                        <table>
-                            <tr>
-                                <td><code>.c-0</code></td>
-                                <td>:</td>
-                                <td>Transparent color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.c-unset</code></td>
-                                <td>:</td>
-                                <td>Unset color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.c-inherit</code></td>
-                                <td>:</td>
-                                <td>Inherit color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.c-initial</code></td>
-                                <td>:</td>
-                                <td>Initial color.</td>
-                            </tr>
-                        </table>
-
-                        <p class="mt-1.5 mb-1.0">You can also change the opacity of color - </p>
-                        <div class="grid fr7 fr3-sm values">
-                            <code>.opacity-5</code>
-                            <code>.opacity-10</code>
-                            <code>.opacity-15</code>
-                            <code>.opacity-20</code>
-                            <code>.opacity-25</code>
-                            <code>.opacity-30</code>
-                            <code>.opacity-35</code>
-                            <code>.opacity-40</code>
-                            <code>.opacity-45</code>
-                            <code>.opacity-50</code>
-                            <code>.opacity-55</code>
-                            <code>.opacity-60</code>
-                            <code>.opacity-65</code>
-                            <code>.opacity-70</code>
-                            <code>.opacity-75</code>
-                            <code>.opacity-80</code>
-                            <code>.opacity-85</code>
-                            <code>.opacity-90</code>
-                            <code>.opacity-95</code>
-                            <code>.opacity-100</code>
-                        </div>
-
-                        <h3 class="mt-1.5">Examples - </h3>
-                        <table>
-                            <tr>
-                                <td><code>.opacity-5</code></td>
-                                <td>:</td>
-                                <td>Sets <code> opacity: 5%;</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.opacity-30</code></td>
-                                <td>:</td>
-                                <td>Sets <code> opacity: 30%;</code></td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Foreground colors -->
-
-                    <!-- Background colors -->
-                    <section>
-                        <h2 class="fw700">Background Color <code>.bg</code></h2>
-                       
-                       <p>Use a color name from Color Scheme & Palletes with <code>.bg</code> prefix.</p>
-                        
-
-                            
-                        <h3 class="mt-2.0">Examples -</h3>
-                        <table>
-                            <tr>
-                                <td><code>.bg-green-3</code></td>
-                                <td>:</td>
-                                <td class="bg-green-3 c-green-9 ph10">3rd shade of green color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bg-yellow-5</code></td>
-                                <td>:</td>
-                                <td class="bg-yellow-5 ph10" style="color:black;">5th shade of yellow color.</td>
-                            </tr>
-                        </table>
-                        
-                        <table>
-                            <tr>
-                                <td><code>.bg-dark-2</code></td>
-                                <td>:</td>
-                                <td class="bg-dark-2">2nd dark variant of background color.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bg-light-3</code></td>
-                                <td>:</td>
-                                <td class="bg-light-3">3rd light variant of background color.</td>
-                            </tr>
-                        </table>
-
-                        <p class="mt20">
-                            Use <code>.bg-0</code> for transparent background color.
-                        </p>
-                    </section>
-                    <!-- Background colors -->
-
-                    <!-- Border colors -->
-                    <section>
-                        <h2 class="fw700">Border Color <code>.bc</code></h2>
- 
-                        <h3 class="mt-2.0 mb-1.0">Examples - </h3>
-                        <table>
-                            <tr>
-                                <td><code>.bc-green-3</code></td>
-                                <td>:</td>
-                                <td class="ba bc-green-3 ph10">3rd shade of green color. Please note that, you must use <code>.ba</code> to set the border width and style. </td>
-                            </tr>
-                        </table>
-                        
-                        <table>
-                            <tr>
-                                <td><code>.bc-dark-1</code></td>
-                                <td>:</td>
-                                <td class="bc-dark-1">Sets border color from <code>dark-1</code>.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bc-light-3</code></td>
-                                <td>:</td>
-                                <td class="bc-light-3">Sets border color from <code>light-3</code>.</td>
-                            </tr>
-                        </table>
-
-                        <p class="mt20">
-                            Use <code>.bc-0</code> for transparent border color.
-                        </p>
-                    </section>
-                    <!-- Border colors -->
-
-                    <!-- //font-size -->
-                    <section>
-                        <h2 class="fw700">Font Size <code>.fs</code></h2>
-                        <p>You can set font-size property in two ways- using rem and percentage.</p>
-                        <h3 class="fs12 fw500 mt20" >Using rem -</h3>
-                        <div class="mt10 mb05">Available font sizes in rem are the following -</div>
-                        
-                        <div class="grid fr10 fr3-sm values">
-                            <code>0.1</code>
-                            <code>0.2</code>
-                            <code>0.3</code>
-                            <code>0.4</code>
-                            <code>0.5</code>
-                            <code>0.6</code>
-                            <code>0.7</code>
-                            <code>0.8</code>
-                            <code>0.9</code>
-                            <code>1.0</code>
-                            <code>1.1</code>
-                            <code>1.2</code>
-                            <code>1.3</code>
-                            <code>1.4</code>
-                            <code>1.5</code>
-                            <code>1.6</code>
-                            <code>1.7</code>
-                            <code>1.8</code>
-                            <code>1.9</code>
-                            <code>2.0</code>
-                            <code>2.1</code>
-                            <code>2.2</code>
-                            <code>2.3</code>
-                            <code>2.4</code>
-                            <code>2.5</code>
-                            <code>2.6</code>
-                            <code>2.7</code>
-                            <code>2.8</code>
-                            <code>2.9</code>
-                            <code>3.0</code>
-                            <code>3.1</code>
-                            <code>3.2</code>
-                            <code>3.3</code>
-                            <code>3.4</code>
-                            <code>3.5</code>
-                            <code>3.6</code>
-                            <code>3.7</code>
-                            <code>3.8</code>
-                            <code>3.9</code>
-                            <code>4.0</code>
-                        </div>
-
-                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fs05</code> in stead of <code>.fs-0.5</code>.</p>
-
-                        <h4 class="mt12">Example</h4>
-                        <table>
-                            <tr>
-                                <td><code>.fs-0.5</code> or <code>.fs05</code></td>
-                                <td>:</td>
-                                <td>Sets font-size: 0.5rem;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fs-1.2-sm</code> or <code>.fs12sm</code></td>
-                                <td>:</td>
-                                <td>Sets font size <code>1.2rem</code> in small devices.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fs-2.0-lg</code> or <code>.fs20lg</code></td>
-                                <td>:</td>
-                                <td>Sets font size <code>2.0rem</code> in large devices.</td>
-                            </tr>
-                        </table>
-
-                        <h3 class="fs12 fw500 mt20" >Using percentage -</h3>
-                        <div class="mt15 mb05">Available font sizes in % are the following -</div>
-                        <div class="grid fr-12 values">
-                            <code>10%</code>
-                            <code>20%</code>
-                            <code>30%</code>
-                            <code>40%</code>
-                            <code>50%</code>
-                            <code>60%</code>
-                            <code>70%</code>
-                            <code>80%</code>
-                            <code>90%</code>
-                            <code>100%</code>
-                            <code>110%</code>
-                            <code>120%</code>
-                            <code>130%</code>
-                            <code>140%</code>
-                            <code>150%</code>
-                            <code>160%</code>
-                            <code>170%</code>
-                            <code>180%</code>
-                            <code>190%</code>
-                            <code>200%</code>
-                            <code>210%</code>
-                            <code>220%</code>
-                            <code>230%</code>
-                            <code>240%</code>
-                            <code>250%</code>
-                            <code>260%</code>
-                            <code>270%</code>
-                            <code>280%</code>
-                            <code>290%</code>
-                            <code>300%</code>
-                            <code>310%</code>
-                            <code>320%</code>
-                            <code>330%</code>
-                            <code>340%</code>
-                            <code>350%</code>
-                            <code>360%</code>
-                            <code>370%</code>
-                            <code>380%</code>
-                            <code>390%</code>
-                            <code>400%</code>
-                        </div>
-          
-                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fs50%</code> in stead of <code>.fs-50%</code>.</p>
-
-                        <h4 class="mt10">Example</h4>
-                        <table>
-                            <tr>
-                                <td><code>.fs-50%</code> or <code>.fs50%</code></td>
-                                <td>:</td>
-                                <td>Sets font-size: 50% of <code>16px</code> or <code>1.00 rem</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.fs-60%</code> or <code>.fs60%</code></td>
-                                <td>:</td>
-                                <td>Sets font-size: 60% of <code>16px</code> or <code>1.00 rem</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.fs-110%-sm</code> or <code>.fs110%sm</code></td>
-                                <td>:</td>
-                                <td>Sets font-size: 110% in small devices.</td>
-                            </tr>
-                        </table>
-                    </section> <!-- font-size// -->
-
-                    <!-- Font Style -->
-                    <section>
-                        <h2 class="fw700">Font Style</h2>
-                        <table>
-                            <tr>
-                                <td><code>.italic</code></td>
-                                <td>:</td>
-                                <td class="italic">Italic text.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Font Style// -->
-
-                    <!-- Font Weight -->
-                    <section>
-                        <h2 class="fw700">Font Weight <code>.fw</code></h2>
-
-                        <table>
-                            <tr>
-                                <td><code>.bold</code> or <code>.strong</code></td>
-                                <td>:</td>
-                                <td class="bold">Bold text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bolder</code></td>
-                                <td>:</td>
-                                <td class="bolder">Bolder text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.lighter</code></td>
-                                <td>:</td>
-                                <td class="lighter">Lighter text.</td>
-                            </tr>
-                        </table>
-
-                        <h3 class="fs12 fw500 mt20">Using font-weight value -</h3>
-
-                        <p class="italic mt05">In case of google fonts, the <code>font-weight</code> value must be supported by that font.</p>
-
-                        <p class="compact-note">These classes support compact style, means, you don't need to write extra hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.fw100</code> in stead of <code>.fw-100</code>.</p>
-
-                        <h4 class="mt10">Examples-</h4>
-
-                        <table>
-                            <tr>
-                                <td><code>.fw-100</code> or <code>.fw100</code></td>
-                                <td>:</td>
-                                <td class="">font-weight: 100;</td>
-                            </tr>
-                            
-                            <tr>
-                                <td><code>.fw-200</code> or <code>.fw200</code></td>
-                                <td>:</td>
-                                <td class="fw-200">font-weight: 200;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-300</code> or <code>.fw300</code></td>
-                                <td>:</td>
-                                <td class="fw-300">font-weight: 300;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-400</code> or <code>.fw400</code></td>
-                                <td>:</td>
-                                <td class="fw-400">font-weight: 400;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-500</code> or <code>.fw500</code></td>
-                                <td>:</td>
-                                <td class="fw-500">font-weight: 500;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-600</code> or <code>.fw600</code></td>
-                                <td>:</td>
-                                <td class="fw-600">font-weight: 600;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-700</code> or <code>.fw700</code></td>
-                                <td>:</td>
-                                <td class="fw-700">font-weight: 700;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-800</code> or <code>.fw800</code></td>
-                                <td>:</td>
-                                <td class="fw-800">font-weight: 800;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-900</code> or <code>.fw900</code></td>
-                                <td>:</td>
-                                <td class="fw-900">font-weight: 900;</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Font Weight// -->
-
-                    <!-- White Space -->
-                    <section>
-                        <h2 class="fw700">White Space <code>.ws</code></h2>
-                        <table>
-                            <tr>
-                                <td><code>.ws-nowrap</code></td>
-                                <td>:</td>
-                                <td>Multiple whitespaces are collapsed into one, but the text doesn’t wrap to the next line. <code>white-space: nowrap;</code> </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- White Space// -->
-
-                    <!-- Line Heights -->
-                    <section>
-                        <h2 class="fw700">Line Height  <code>.lh</code></h2>
-                       
-                        <p class="mt15 mb05">Available line height values in <code>rem</code> -</p>
-                        <div class="grid fr12 values">
-                            <code>0.1</code>
-                            <code>0.2</code>
-                            <code>0.3</code>
-                            <code>0.4</code>
-                            <code>0.5</code>
-                            <code>0.6</code>
-                            <code>0.7</code>
-                            <code>0.8</code>
-                            <code>0.9</code>
-                            <code>1.0</code>
-                            <code>1.1</code>
-                            <code>1.2</code>
-                            <code>1.3</code>
-                            <code>1.4</code>
-                            <code>1.5</code>
-                            <code>1.6</code>
-                            <code>1.7</code>
-                            <code>1.8</code>
-                            <code>1.9</code>
-                            <code>2.0</code>
-                            <code>2.1</code>
-                            <code>2.2</code>
-                            <code>2.3</code>
-                            <code>2.4</code>
-                            <code>2.5</code>
-                            <code>2.6</code>
-                            <code>2.7</code>
-                            <code>2.8</code>
-                            <code>2.9</code>
-                            <code>3.0</code>
-                            <code>3.1</code>
-                            <code>3.2</code>
-                            <code>3.3</code>
-                            <code>3.4</code>
-                            <code>3.5</code>
-                            <code>3.6</code>
-                            <code>3.7</code>
-                            <code>3.8</code>
-                            <code>3.9</code>
-                            <code>4.0</code>
-                        </div>
-
-                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.lh12</code> in stead of <code>.lh-1.2</code>.</p>
-
-                        <h3 class="mt15">Exmpales-</h3>
-                        <table>
-                            <tr>
-                                <td><code>.lh-1.2</code> or <code>.lh12</code></td>
-                                <td>:</td>
-                                <td>Sets <code>line-height: 1.2rem;</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.lh-0.8-sm</code> or code>.lh08sm</code></td>
-                                <td>:</td>
-                                <td>Sets <code>line-height: 1.2rem;</code> on small devices.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.lh-1.8-lg</code> or <code>.lh18lg</code></td>
-                                <td>:</td>
-                                <td>Sets <code>line-height: 1.8rem;</code> on large devices.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Line Heights -->
-
-                    <!-- Text Transformation -->
-                    <section>
-                        <h2 class="fw700">Text Transformation</h2>
-                        <table>
-                            <tr>
-                                <td><code>.ucase</code></td>
-                                <td>:</td>
-                                <td>UPPERCASE</td>
-                            </tr>
-                            <tr>
-                                <td><code class="">.lcase</code></td>
-                                <td>:</td>
-                                <td>lowercase</td>
-                            </tr>
-                            <tr>
-                                <td><code>.ccase</code> or <code>.capitalize</code> or <code>.cap</code></td>
-                                <td>:</td>
-                                <td>Capitalizes the first letter of each word</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Text Transformation -->
-
-                    <!-- Text Alignments -->
-                    <section>
-                        <h2 class="fw700">Text Alignment <code>.ta</code></h2>
-                        <table>
-                            <tr>
-                                <td><code>.left</code> or <code>.ta-left</code></td>
-                                <td>:</td>
-                                <td>Left aligned text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.center</code> or <code>.ta-center</code></td>
-                                <td>:</td>
-                                <td>Center aligned text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.right</code> or <code>.ta-right</code></td>
-                                <td>:</td>
-                                <td>Right aligned text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.justify</code> or <code>.ta-justify</code></td>
-                                <td>:</td>
-                                <td>Justified text.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Text Alignments -->
-
-                    <!-- Text Decoration -->
-                    <section>
-                        <h2 class="fw700">Text Decoration</h2>
-                        <table>
-                            <tr>
-                                <td><code>.uline</code> or <code>.underline</code></td>
-                                <td>:</td>
-                                <td class="uline">Underline text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.oline</code> or <code>.overline</code></td>
-                                <td>:</td>
-                                <td class="oline">Overline text.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.tline</code> or <code>.line-through</code></td>
-                                <td>:</td>
-                                <td class="tline">Line through</td>
-                            </tr>
-                            <tr>
-                                <td><code>.noline</code></td>
-                                <td>:</td>
-                                <td>text-decoration: none;</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Text Decoration -->
-
-                    <!-- Margins -->
-                    <section>
-                        <h2 class="fw700">Margin</h2>
-                       
-                        <p class="mt15 mb05">Available margin values (in rem) -</p>
-                        <div class="grid fr12 values">
-                            <code>0.1</code>
-                            <code>0.2</code>
-                            <code>0.3</code>
-                            <code>0.4</code>
-                            <code>0.5</code>
-                            <code>0.6</code>
-                            <code>0.7</code>
-                            <code>0.8</code>
-                            <code>0.9</code>
-                            <code>1.0</code>
-                            <code>1.1</code>
-                            <code>1.2</code>
-                            <code>1.3</code>
-                            <code>1.4</code>
-                            <code>1.5</code>
-                            <code>1.6</code>
-                            <code>1.7</code>
-                            <code>1.8</code>
-                            <code>1.9</code>
-                            <code>2.0</code>
-                            <code>2.1</code>
-                            <code>2.2</code>
-                            <code>2.3</code>
-                            <code>2.4</code>
-                            <code>2.5</code>
-                            <code>2.6</code>
-                            <code>2.7</code>
-                            <code>2.8</code>
-                            <code>2.9</code>
-                            <code>3.0</code>
-                            <code>3.1</code>
-                            <code>3.2</code>
-                            <code>3.3</code>
-                            <code>3.4</code>
-                            <code>3.5</code>
-                            <code>3.6</code>
-                            <code>3.7</code>
-                            <code>3.8</code>
-                            <code>3.9</code>
-                            <code>4.0</code>
-                        </div>
-                          
-                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.ma03</code> in stead of <code>.ma-0.3</code>.</p>
-
-                        <h3 class="mt20 fs10 fw500">Margin All <code>.ma</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ma-2.0</code> or <code>.ma20</code></td>
-                                <td>:</td>
-                                <td>Creates margin for all sides 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.ma-0.9-sm</code> or <code>.ma0.9sm</code></td>
-                                <td>:</td>
-                                <td>Creates margin for all sides 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.ma-1.9-lg</code></td>
-                                <td>:</td>
-                                <td>Creates margin for all sides 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Margin Left <code>.ml</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ml-2.0</code> or <code>.ml20</code></td>
-                                <td>:</td>
-                                <td>Creates left margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.ml-0.9-sm</code> or <code>.ml09sm</code></td>
-                                <td>:</td>
-                                <td>Creates left margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.ml-1.9-lg</code> or <code>.ml19lg</code></td>
-                                <td>:</td>
-                                <td>Creates left margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Margin Right <code>.mr</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.mr-2.0</code> or <code>.mr20</code></td>
-                                <td>:</td>
-                                <td>Creates right margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mr-0.9-sm</code> or <code>.mr09sm</code></td>
-                                <td>:</td>
-                                <td>Creates right margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mr-1.9-lg</code> or <code>.mr19lg</code></td>
-                                <td>:</td>
-                                <td>Creates right margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Margin Top <code>.mt</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.mt-2.0</code> or <code>.mt20</code></td>
-                                <td>:</td>
-                                <td>Creates top margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mt-0.9-sm</code> or <code>.mt09sm</code></td>
-                                <td>:</td>
-                                <td>Creates top margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mt-1.9-lg</code> or <code>.mt19lg</code></td>
-                                <td>:</td>
-                                <td>Creates top margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Margin Bottom <code>.mb</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.mb-2.0</code> or <code>.mb20</code></td>
-                                <td>:</td>
-                                <td>Creates bottom margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mb-0.9-sm</code> or <code>.mb09sm</code></td>
-                                <td>:</td>
-                                <td>Creates bottom margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mb-1.9-lg</code> or <code>.mb19lg</code></td>
-                                <td>:</td>
-                                <td>Creates bottom margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-
-                        <h3 class="mt20 fs10 fw500">Margin Vertically (Top + Bottom) <code>.mv</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.mv-2.0</code> or <code>.mv20</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mv-0.9-sm</code> or <code>.mv09sm</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mv-1.9-lg</code> or <code>.mv19lg</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Margin Horizontally (Left + Right) <code>.mh</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.mh-2.0</code> or <code>.mh20</code></td>
-                                <td>:</td>
-                                <td>Creates left + right margin 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mh-0.9-sm</code> or <code>.mh09sm</code></td>
-                                <td>:</td>
-                                <td>Creates left + right margin 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.mh-1.9-lg</code> or <code>.mh19lg</code></td>
-                                <td>:</td>
-                                <td>Creates left + right margin 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Margins -->
-
-                    <!-- Paddings -->
-                    <section>
-                        <h2 class="fw700">Padding</h2>
-                       
-                        <p class="mt15 mb05">Available padding values (in rem) -</p>
-                        <div class="grid fr12 values">
-                            <code>0.1</code>
-                            <code>0.2</code>
-                            <code>0.3</code>
-                            <code>0.4</code>
-                            <code>0.5</code>
-                            <code>0.6</code>
-                            <code>0.7</code>
-                            <code>0.8</code>
-                            <code>0.9</code>
-                            <code>1.0</code>
-                            <code>1.1</code>
-                            <code>1.2</code>
-                            <code>1.3</code>
-                            <code>1.4</code>
-                            <code>1.5</code>
-                            <code>1.6</code>
-                            <code>1.7</code>
-                            <code>1.8</code>
-                            <code>1.9</code>
-                            <code>2.0</code>
-                            <code>2.1</code>
-                            <code>2.2</code>
-                            <code>2.3</code>
-                            <code>2.4</code>
-                            <code>2.5</code>
-                            <code>2.6</code>
-                            <code>2.7</code>
-                            <code>2.8</code>
-                            <code>2.9</code>
-                            <code>3.0</code>
-                            <code>3.1</code>
-                            <code>3.2</code>
-                            <code>3.3</code>
-                            <code>3.4</code>
-                            <code>3.5</code>
-                            <code>3.6</code>
-                            <code>3.7</code>
-                            <code>3.8</code>
-                            <code>3.9</code>
-                            <code>4.0</code>
-                        </div>
-
-                        <p class="compact-note">These classes support compact style, means, you don't need to write additional hyphen <code>-</code> or dot <code>.</code> in the rule name. Therefore, you can use <code>.pa03</code> in stead of <code>.pa-0.3</code>.</p>
-                          
-                        <h3 class="mt20 fs10 fw500">Padding All <code>.pa</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pa-2.0</code> or <code>.pa20</code></td>
-                                <td>:</td>
-                                <td>Creates padding for all sides 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pa-0.9-sm</code> or <code>.pa09sm</code></td>
-                                <td>:</td>
-                                <td>Creates padding for all sides 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pa-1.9-lg</code> or <code>.pa19lg</code></td>
-                                <td>:</td>
-                                <td>Creates padding for all sides 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Left <code>.pl</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pl-2.0</code> or <code>.pl20</code></td>
-                                <td>:</td>
-                                <td>Creates left padding 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pl-0.9-sm</code> or <code>.pl09sm</code></td>
-                                <td>:</td>
-                                <td>Creates left padding 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pl-1.9-lg</code> or <code>.pl19lg</code></td>
-                                <td>:</td>
-                                <td>Creates left padding 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Right <code>.pr</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pr-2.0</code> or <code>.pr20</code></td>
-                                <td>:</td>
-                                <td>Creates right padding 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pr-0.9-sm</code> or <code>.pr09sm</code></td>
-                                <td>:</td>
-                                <td>Creates right padding 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pr-1.9-lg</code> or <code>.pr19lg</code></td>
-                                <td>:</td>
-                                <td>Creates right padding 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Top <code>.pt</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pt-2.0</code> or <code>.pt20</code></td>
-                                <td>:</td>
-                                <td>Creates top padding 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pt-0.9-sm</code> or <code>.pt09sm</code></td>
-                                <td>:</td>
-                                <td>Creates top padding 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pt-1.9-lg</code></td>
-                                <td>:</td>
-                                <td>Creates top padding 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Bottom <code>.pb</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pb-2.0</code></td>
-                                <td>:</td>
-                                <td>Creates bottom padding 2.0rem. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pb-0.9-sm</code></td>
-                                <td>:</td>
-                                <td>Creates bottom padding 2.0rem on small devices. </td>
-                            </tr>
-                            <tr>
-                                <td><code>.pb-1.9-lg</code></td>
-                                <td>:</td>
-                                <td>Creates bottom padding 1.9rem on large devices. </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Vertically <code>.pv</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.pv-2.0</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom padding 2.0rem. You can also write in compact style - <code>.pv20</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.pv-0.9-sm</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom padding 2.0rem on small devices. You can also write in compact style - <code>.pv09sm</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.pv-1.9-lg</code></td>
-                                <td>:</td>
-                                <td>Creates top + bottom padding 1.9rem on large devices. You can also write in compact style - <code>.pv19lg</code></td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt20 fs10 fw500">Padding Horizontally <code>.ph</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ph-2.0</code></td>
-                                <td>:</td>
-                                <td>Creates left + right padding 2.0rem. You can also write in compact style - <code>.ph20</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ph-0.9-sm</code></td>
-                                <td>:</td>
-                                <td>Creates left + right padding 2.0rem on small devices. You can also write in compact style - <code>.ph09sm</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ph-1.9-lg</code></td>
-                                <td>:</td>
-                                <td>Creates left + right padding 1.9rem on large devices. You can also write in compact style - <code>.ph19lg</code></td>
-                            </tr>
-                        </table>
-
-                    </section>
-                    <!-- Paddings -->
-
-                    <!-- Table -->
-                    <section class="bg-dark">
-                        <h2 class="fw700">Table</h2>
-                        <table>
-                            <tr>
-                                <td class="va-top"><code>.table</code></td>
-                                <td class="va-top">:</td>
-                                <td>
-                                    <code>background-color: var(--table-background-color);</code> <br>
-                                    <code>border: 1px solid var(--table-border-color);</code> <br>
-                                    <code>border-radius: var(--border-radius);</code> <br>
-                                    <code>border-spacing: 0;</code> <br>
-                                    <code>overflow: hidden;</code> <br>
-                                    <code>font-size: 0.9rem;</code> <br>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="va-top"><code>.thead</code></td>
-                                <td class="va-top">:</td>
-                                <td>
-                                    <code>background-color: var(--thead-background-color);</code> <br>
-                                    <code>color: var(--thead-color);</code> <br>
-                                    <code>text-align: center;</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="va-top"><code>.th</code></td>
-                                <td class="va-top">:</td>
-                                <td>
-                                    <code>font-weight: 600;</code> <br>
-                                    <code>padding: 0.2345rem;</code> <br>
-                                    <code>border-bottom: 2px solid var(--th-border-color);</code> <br>
-                                    <code> word-break: break-all;</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="va-top"><code>.tbody</code></td>
-                                <td class="va-top">:</td>
-                                <td>
-                                    <code>color: var(--tbody-color);</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="va-top"><code>.tr</code></td>
-                                <td class="va-top">:</td>
-                                <td>
-                                    <code>background-color: var(--tr-even-background-color);</code> //Sets bg color on even rows. <br>
-                                    <code>background-color: var(--tr-hover-background-color);</code> //Sets bg color on hover. <br>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Table// -->
-
-                    <!-- Spinner -->
-                    <section class="bg-light">
-                        <h2 class="fw700">Spinner/Loader</h2>
-                        <table>
-                            <tr>
-                                <td><code>.spinner</code><code>.loader</code></td>
-                                <td class="ph-050">:</td>
-                                <td><span class="m-icons spinner ml-075">autorenew</span></td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Spinner// -->
-
-                    <!-- Borders -->
-                    <section>
-                        <h2 class="fw700">Borders <code>.b</code></h2>
-                        <table>
-                            <tr>
-                                <td><code>.ba</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid borders for all sides.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bt</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid <code>top</code> border.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bb</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid <code>bottom</code> border.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bl</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid <code>left</code> border.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.br</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid <code>right</code> border.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bv</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid borders vertically (left + right). To set border color, see Border Color section.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.bh</code></td>
-                                <td>:</td>
-                                <td>Sets 1px solid borders horizontally (top + bottom). To set border color, see Border Color section.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.solid</code></td>
-                                <td>:</td>
-                                <td>Sets solid border style.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.dash</code></td>
-                                <td>:</td>
-                                <td>Sets dashed border style.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.dot</code></td>
-                                <td>:</td>
-                                <td>Sets dotted border style.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.round</code></td>
-                                <td>:</td>
-                                <td>Sets  <code>0.25rem</code> border radius. 0.25rem is the default value. You can customize it in <code>theme.css</code>.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Borders// -->
-
-                    <!-- Border radius -->
-                    <section>
-                        <h2 class="fw700">Border Radius <code>.br</code></h2>
-                        You can set border radius in two ways- px and rem.
-
-                        <h3 class="fs12 fw400 mt10" >Border Radius in <code>px</code> - </h3>
-                        <p>Available values</p>
-                        
-                        <div class="grid fr10 fr3-sm values">
-                            <code>1</code>
-                            <code>2</code>
-                            <code>3</code>
-                            <code>4</code>
-                            <code>5</code>
-                            <code>6</code>
-                            <code>7</code>
-                            <code>8</code>
-                            <code>9</code>
-                            <code>10</code>
-                        </div>
-                       
-                        <h4 class="mt12">Example</h4>
-                        <table>
-                            <tr>
-                                <td><code>.br-1</code></td>
-                                <td>:</td>
-                                <td>Sets border-radius: 1px;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.br-10</code></td>
-                                <td>:</td>
-                                <td>Sets border-radius: 10px;</td>
-                            </tr>
-                        </table>
-
-
-                        <h3 class="fs12 fw400 mt19" >Border Radius in <code>rem</code> - </h3>
-                        <div class="grid fr10 fr3-sm values">
-                            <code>0.1</code>
-                            <code>0.2</code>
-                            <code>0.3</code>
-                            <code>0.4</code>
-                            <code>0.5</code>
-                            <code>0.6</code>
-                            <code>0.7</code>
-                            <code>0.8</code>
-                            <code>0.9</code>
-                            <code>1.0</code>
-                            <code>1.1</code>
-                            <code>1.2</code>
-                            <code>1.3</code>
-                            <code>1.4</code>
-                            <code>1.5</code>
-                            <code>1.6</code>
-                            <code>1.7</code>
-                            <code>1.8</code>
-                            <code>1.9</code>
-                            <code>2.0</code>
-                            <code>2.1</code>
-                            <code>2.2</code>
-                            <code>2.3</code>
-                            <code>2.4</code>
-                            <code>2.5</code>
-                            <code>2.6</code>
-                            <code>2.7</code>
-                            <code>2.8</code>
-                            <code>2.9</code>
-                            <code>3.0</code>
-                            <code>3.1</code>
-                            <code>3.2</code>
-                            <code>3.3</code>
-                            <code>3.4</code>
-                            <code>3.5</code>
-                            <code>3.6</code>
-                            <code>3.7</code>
-                            <code>3.8</code>
-                            <code>3.9</code>
-                            <code>4.0</code>
-                        </div>
-
-                        <h4 class="mt15">Example</h4>
-                        <table>
-                            <tr>
-                                <td><code>.br-1.0</code></td>
-                                <td>:</td>
-                                <td>Sets <code>1.0rem</code> border radius.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.br-1.2</code></td>
-                                <td>:</td>
-                                <td>Sets <code>1.2rem</code> border radius.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Border radius// -->
-
-                    <!-- Positioning -->
-                    <section>
-                        <h2 class="fw700">Positioning</h2>
-                        <table>
-                            <tr>
-                                <td><code>.relative</code> or <code>.rel</code></td>
-                                <td>:</td>
-                                <td>Sets <code>position:relative;</code>. Not responsive.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.fixed</code></td>
-                                <td>:</td>
-                                <td>Sets <code>position:fixed;</code>. Not responsive.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.absolute</code> or <code>.abs</code></td>
-                                <td>:</td>
-                                <td>Sets <code>position:absolute;</code>. Not responsive.</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Positioning// -->
-
-                    <!-- Width -->
-                    <section>
-                        <h2 class="fw700">Width <code>.w</code></h2>
-                        <table>
-                            <!-- auto -->
-                            <tr>
-                                <td><code>.w-auto</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: auto</code>
-                                    <div>
-                                        Responsive classes -<code>.w-auto-sm</code>, <code>.w-auto-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- fit-content -->
-                            <tr>
-                                <td><code>.w-fit</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: fit-content</code>
-                                    <div>
-                                        Responsive classes - <code>.w-fit-sm</code>, <code>.w-fit-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- max-content -->
-                            <tr>
-                                <td><code>.w-max</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: max-content</code>
-                                    <div>
-                                        Responsive classes - <code>.w-max-sm</code>, <code>.w-max-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- min-content -->
-                            <tr>
-                                <td><code>.w-min</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: min-content</code>
-                                    <div>
-                                       Responsive classes - <code>.w-min-sm</code>, <code>.w-min-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- inherit -->
-                            <tr>
-                                <td><code>.w-inherit</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: inherit</code>
-                                    <div>
-                                        Responsive classes - <code>.w-inherit-sm</code>, <code>.w-inherit-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- initial -->
-                            <tr>
-                                <td><code>.w-initial</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: initial</code>
-                                    <div>
-                                        Responsive classes - <code>.w-initial-sm</code>, <code>.w-initial-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- unset -->
-                            <tr>
-                                <td><code>.w-unset</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: unset</code>
-                                    <div>
-                                        Responsive classes - <code>.w-unset-sm</code>, <code>.w-unset-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- .w-full -->
-                            <tr>
-                                <td><code>.w-full</code> or <code>.full-width</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>width: 100%</code>
-                                    <div>
-                                        Responsive classes - <code>.w-full-sm</code>, <code>.w-full-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Width// -->
-
-                    <!-- Height -->
-                    <section>
-                        <h2 class="fw700">Height <code>.h</code></h2>
-                        <table>
-                            <tr>
-                                <td><code>.h-auto</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: auto</code>
-                                    <div>
-                                        Responsive classes -<code>.h-auto-sm</code>, <code>.h-auto-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- fit-content -->
-                            <tr>
-                                <td><code>.h-fit</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: fit-content</code>
-                                    <div>
-                                        Responsive classes - <code>.h-fit-sm</code>, <code>.h-fit-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                            <!-- max-content -->
-                            <tr>
-                                <td><code>.h-max</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: max-content</code>
-                                    <div>
-                                        Responsive classes - <code>.h-max-sm</code>, <code>.h-max-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- min-content -->
-                            <tr>
-                                <td><code>.h-min</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: min-content</code>
-                                    <div>
-                                       Responsive classes - <code>.h-min-sm</code>, <code>.h-min-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- inherit -->
-                            <tr>
-                                <td><code>.h-inherit</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: inherit</code>
-                                    <div>
-                                       Responsive classes - <code>.h-inherit-sm</code>, <code>.h-inherit-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- initial -->
-                            <tr>
-                                <td><code>.h-initial</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: initial</code>
-                                    <div>
-                                       Responsive classes - <code>.h-initial-sm</code>, <code>.h-initial-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- unset -->
-                            <tr>
-                                <td><code>.h-unset</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: unset</code>
-                                    <div>
-                                       Responsive classes - <code>.h-unset-sm</code>, <code>.h-unset-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <!-- .h-full -->
-                            <tr>
-                                <td><code>.h-full</code> or <code>.full-height</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>height: 100%</code>
-                                    <div>
-                                        Responsive classes - <code>.h-full-sm</code>, <code>.h-full-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Height// -->
-
-                    <!-- Display -->
-                    <section>
-                        <h2 class="fw700">Display</h2>
-                        <table>
-                            <tr>
-                                <td><code>.hidden</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>display: none</code>
-                                    <div>
-                                        Responsive classes - <code>.hidden-sm</code>, <code>.hidden-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <tr>
-                                <td><code>.inline</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>display: inline</code>
-                                    <div>
-                                        Responsive classes - <code>.inline-sm</code>, <code>.inline-lg</code>
-                                    </div>
-                                 </td>
-                            </tr>
-                            <tr>
-                                <td><code>.block</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>display: block;</code>
-                                    <div>
-                                        Responsive classes - <code>.block-sm</code>, <code>.block-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>.inblock</code></td>
-                                <td>:</td>
-                                <td>
-                                    Sets <code>display: inline-block;</code>
-                                    <div>
-                                        Responsive classes - <code>.inblock-sm</code> <code>.inblock-lg</code>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Display// -->
-
-                    <!-- Display Table -->
-                    <section>
-                        <h2 class="fw700">Display : table <code>.dt</code></h2>
-                        <table>
-                            <tr>
-                                <td><code>.dt</code></td>
-                                <td>:</td>
-                                <td>display: table;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.dt-row</code></td>
-                                <td>:</td>
-                                <td>display: table-row;</td>
-                            </tr>
-                            <tr>
-                                <td><code>.dt-cell</code></td>
-                                <td>:</td>
-                                <td>display: table-cell;</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Display Table// -->
-
-                    <!-- Line, Separator, Divider -->
-                    <section>
-                        <h2 class="fw700">Line, Separator, Divider</h2>
-                        <table>
-                            <tr>
-                                <td><code>.line</code> or <code>.separator</code> or <code>.divider</code></td>
-                                <td>:</td>
-                                <td>Creates a horizontal line <code>height: 1px;</code></td>
-                            </tr>
-                            <tr>
-                                <td><code>.line-v</code> or <code>.separator-v</code> or <code>.divider-v</code></td>
-                                <td>:</td>
-                                <td>Creates vertical line. width: 1px; height: 100%; display: inline-block;</td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Line, Separator, Divider// -->
-
-                    <!-- Cursor -->
-                    <section>
-                        <h2 class="fw-700">Cursor</h2>
-                        <table>
-                            <tr>
-                                <td class="pointer"><code>.pointer</code></td>
-                                <td>:</td>
-                                <td class="pointer">Hover this line to see the cursor pointer.</td>
-                            </tr>
-                            <tr>
-                                <td class="progress"><code>.progress</code></td>
-                                <td>:</td>
-                                <td class="progress">Hover this line to see the progress cursor.</td>
-                            </tr>
-                            <tr>
-                                <td class="wait"><code>.wait</code></td>
-                                <td>:</td>
-                                <td class="wait">Hover this line to see the wait cursor.</td>
-                            </tr>
-                            <tr>
-                                <td class="not-allowed"><code>.not-allowed</code></td>
-                                <td>:</td>
-                                <td class="not-allowed">Hover this line to see the not-allowed cursor.</td>
-                            </tr>
-                            <tr>
-                                <td class="help"><code>.help</code></td>
-                                <td>:</td>
-                                <td class="help">Hover this line to see the help cursor.</td>
-                            </tr>
-
-                        </table>
-                    </section>
-                    <!-- Cursor// -->
-
-                    <!-- Flexbox -->
-                    <section>
-                        <h2 class="fw-700">Flexbox</h2>
-                        <table>
-                            <tr>
-                                <td><code>.flex</code></td>
-                                <td>:</td>
-                                <td>Creates block-level flex parent.</td>
-                            </tr>
-                            <tr>
-                                <td><code>.inflex</code></td>
-                                <td>:</td>
-                                <td>Creates inline flex parent.</td>
-                            </tr>
-                        </table>
-                        <h3 class="mt25 fw-600">flex-direction <code>.fd</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.fd-row</code> </td>
-                                <td>:</td>
-                                <td>  flex-direction: row; <br>
-                                    <code>fd-row-sm</code> <code>.fd-row-lg</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>.fd-row-rev</code></td>
-                                <td>:</td>
-                                <td>
-                                    flex-direction: row-reverse; <br>
-                                    <code>.fd-row-rev-sm</code>.fd-row-rev-lg<code></code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>.fd-col</code></td>
-                                <td>:</td>
-                                <td>  flex-direction: column;
-                                    <code>.fd-col-sm</code> <code>.fd-col-lg</code>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><code>.fd-col-rev</code></td>
-                                <td>:</td>
-                                <td>
-                                    flex-direction: column-reverse;
-                                    <code>.fd-col-rev-sm</code> <code>.fd-col-rev-lg</code>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt25 fw-600">flex-flow <code>.ff</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ff-row-wrap</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ff-row-nowrap</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt25 fw-600">flex-wrap <code>.fw</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.fw-wrap</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-nowrap</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.fw-rev</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt25 fw-600">justify-content <code>.jc</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.jc-start</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.jc-end</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.jc-center</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.jc-between</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.jc-around</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.jc-evenly</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt25 fw-600">align-items <code>.ai</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ai-start</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ai-end</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ai-center</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ai-baseline</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ai-stretch</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-
-                        <h3 class="mt25 fw-600">align-content <code>.ac</code></h3>
-                        <table>
-                            <tr>
-                                <td><code>.ac-start</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ac-end</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ac-center</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ac-between</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ac-around</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td><code>.ac-stretch</code></td>
-                                <td>:</td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </section>
-                    <!-- Flexbox// -->
-
-                    <!-- Google Material Icons -->
-                    <section>
-                        <h2 class="fw700">Google Material Icons <code>.m-icons</code></h2>
-                        
-                        <code>&lt;span class="m-icons"&gt;icon_name&lt;/span&gt;</code> <br>
-
-                        For icon_name, please refer to <a href="https://fonts.google.com/icons">Google Fonts</a>.
-
-                        <h3 class="mt15 fw-400">Examples -</h3>
-                        <table>
-                            <tr>
-                                <td><code>&lt;span class="m-icons"&gt;close&lt;/span&gt;</code></td>
-                                <td>:</td>
-                                <td><code><span class="m-icons">close</span></code></td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;span class="m-icons"&gt;done&lt;/span&gt;</code></td>
-                                <td>:</td>
-                                <td><code><span class="m-icons">done</span></code></td>
-                            </tr>
-                            <tr>
-                                <td><code>&lt;span class="m-icons"&gt;check_box&lt;/span&gt;</code></td>
-                                <td>:</td>
-                                <td><code><span class="m-icons">check_box</span></code></td>
-                            </tr>
-                        </table>
-                       
-                    </section>
-                    <!-- Google Material Icons// -->
-
-                    <!-- Bangla -->
-                    <section>
-                        <h2 class="fw-700">Bangla <code>.bn</code></h2>
-                        <div class="bn">আমার সোনার বাংলা, আমি তোমায় ভালোবাসি</div>
-                        <div>
-                            Use <code>.bn</code> to display Bangla font. Default Bangla font is 'Anek Bangla'. You can customize it in theme.css.
-                        </div>
-                    </section>
-                    <!-- Bangla// -->
-
-
-                    <section>
-                                           <!-- //raw content -->
-                    <div>
-                        Filter<br>
-                        ======<br>
-                            .brightness-50%, .brightness-60%, ........, .brightness-150%<br>
-                            .contrast-50%, .contrast-60%, ........, .contrast-150%<br>
-                            .grayscale-50%, .grayscale-60%, ........, .grayscale-150%<br>
-                            .blur-1px, .blur-2px, ........, .blur-5px<br><br>
-                        
-                        Hover Effect<br>
-                        ============<br>
-                            .hover:bright-120%  : Increase 120% brightness on hover. Other values are- 100,120,140,160,180,200,300,400<br>
-                            .hover:dark-80%     : Decrease 80% brightness on hover. Other values are- 80,60,40,20,0<br><br>
-                        
-                        Transition<br>
-                        ==========<br>
-                            .transition : Add transition animation to all 0.3s ease-in-out;<br><br>
-                        
-                    </div>
-                    <!-- raw content// -->
-                    </section>
-                </div>
+    <div class="layout">
+        <header class="smart">
+            <div id="hamburgerIcon">
+                <img src="/assets/images/hamburger.svg" alt="Hamburger Icon">
             </div>
-        </div><!-- .container -->
-    </main>
-    <footer></footer>
+            <div class="brand">
+                <a href="/" title="Nobolok">
+                    <!-- <img src="../assets/images/nobolok-logo.svg" alt="Nobolok Logo"> -->
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 247.57 61.23">
+                        <g>
+                            <path class="cls-1"
+                                d="M3.22,33.31A15.19,15.19,0,0,1,7.87,21.8a16.61,16.61,0,0,1,12-4.44,16.87,16.87,0,0,1,12,4.4,15.12,15.12,0,0,1,4.68,11.55v20H28.21V33.51a8.21,8.21,0,0,0-2.34-6,8,8,0,0,0-5.94-2.38,7.93,7.93,0,0,0-8.36,8.37V53.36H3.22Z" />
+                            <path class="cls-1"
+                                d="M59,17a17.64,17.64,0,0,1,13,5.33,17.81,17.81,0,0,1,5.33,13.1,18,18,0,0,1-5.33,13.22A17.76,17.76,0,0,1,58.81,54,17.41,17.41,0,0,1,46,48.57a18,18,0,0,1-5.36-13.14A18.2,18.2,0,0,1,59,17ZM49.16,35.65a10.17,10.17,0,0,0,2.91,7.2,9.06,9.06,0,0,0,13.65,0,10.62,10.62,0,0,0,.07-14.62,9.19,9.19,0,0,0-13.75,0A10.53,10.53,0,0,0,49.16,35.65Z" />
+                            <path class="cls-1"
+                                d="M99.63,17.36a18.08,18.08,0,0,1,13.25,5.12,17.79,17.79,0,0,1,5.18,13.21A17.76,17.76,0,0,1,99.63,54.08q-8.13,0-13.21-5.18T81.34,35.15V1.45h8.35V34.93a11,11,0,0,0,2.88,7.78,9.43,9.43,0,0,0,7.2,3.09,9.76,9.76,0,0,0,7-2.84,9.36,9.36,0,0,0,2.95-7,9.65,9.65,0,0,0-3.17-7.35,11.2,11.2,0,0,0-7.92-2.95A14.66,14.66,0,0,0,93.15,27V18.45l3.46-.87Z" />
+                            <path class="cls-1"
+                                d="M139.3,17a17.64,17.64,0,0,1,13,5.33,17.81,17.81,0,0,1,5.33,13.1,18,18,0,0,1-5.33,13.22A17.76,17.76,0,0,1,139.16,54a17.37,17.37,0,0,1-12.85-5.44,18,18,0,0,1-5.37-13.14A18.2,18.2,0,0,1,139.3,17Zm-9.79,18.65a10.14,10.14,0,0,0,2.92,7.2,9.05,9.05,0,0,0,13.64,0,10.62,10.62,0,0,0,.07-14.62,9.19,9.19,0,0,0-13.75,0A10.53,10.53,0,0,0,129.51,35.65Z" />
+                            <path class="cls-1" d="M161.69,1.45h8.36V53.36h-8.36Z" />
+                            <path class="cls-1"
+                                d="M192.44,17a17.68,17.68,0,0,1,13,5.33,17.81,17.81,0,0,1,5.32,13.1,18,18,0,0,1-5.32,13.22A17.79,17.79,0,0,1,192.29,54a17.4,17.4,0,0,1-12.85-5.44,18,18,0,0,1-5.36-13.14A18.18,18.18,0,0,1,192.44,17Zm-9.8,18.65a10.18,10.18,0,0,0,2.92,7.2,9.05,9.05,0,0,0,13.64,0,10.61,10.61,0,0,0,.08-14.62,9.2,9.2,0,0,0-13.76,0A10.53,10.53,0,0,0,182.64,35.65Z" />
+                            <path class="cls-1"
+                                d="M214.83,1.45h8.28L223.18,31h1.45a13.13,13.13,0,0,0,8.28-2.77,9.56,9.56,0,0,0,4-6.52l.22-3.67h8.49l-.28,4.82A10.93,10.93,0,0,1,243,29.39a16.5,16.5,0,0,1-6.23,5l1.73.93a15.74,15.74,0,0,1,2.3,1.77,14,14,0,0,1,3.24,4.64,15,15,0,0,1,1.51,6.55v5h-8.28l-.14-4.82a9,9,0,0,0-3.57-7.38,14.2,14.2,0,0,0-9.16-2.85h-1.24v15h-8.35Z" />
+                        </g>
+                        <path class="cls-2"
+                            d="M34.68,22.2C38,10.88,28.21,6.82,28.21,6.82,39.82,9,43.55.51,43.55.51A13.77,13.77,0,0,0,50,15.71C39.35,12.73,34.68,22.2,34.68,22.2Z" />
+                    </svg>
+                </a>
+            </div>
+
+            <nav>
+                <!-- Your navigation content here -->
+            </nav>
+
+            <div class="theme-toggle-wrapper">
+                <button id="themeToggle" aria-label="Toggle dark mode">🌓</button>
+            </div>
+            <div id="candyIcon">
+                <img src="/assets/images/candy-thick.svg" alt="Candy Icon" srcset="">
+            </div>
+        </header>
+        <!-- Left Menu -->
+        <aside class="aside-menu left" id="leftMenuContent">
+            <button class="close-btn" onclick="toggleMenu('leftMenuContent', false)">Close</button>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/trains">Search Train</a></li>
+                <li><a href="/en/trains/list-of-intercity-trains-of-bangladesh">Intercity Train List</a></li>
+                <li><a href="/age-calculator">Age Calculator (Bangladeshi culture)</a></li>
+                <li><a href="/omni-css">OmniCSS Documentation</a></li>
+                <li><a href="/posts/ai/en/6-free-essential-ai-tools">6 Free AI Tools of 2025</a></li>
+                <li><a href="/posts/misc/symbols">Essential Symbols</a></li>
+            </ul>
+        </aside>
+
+        <!-- Right Menu -->
+        <aside class="aside-menu right" id="rightMenuContent">
+            <button class="close-btn" onclick="toggleMenu('rightMenuContent', false)">Close</button>
+            <ul>
+                <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                <li style="color: gray;">------------------------</li>
+                <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                <li style="color: gray;">------------------------</li>
+                <li><a href="/legal/terms-of-service">Terms of Service</a></li>
+                <li style="color: gray;">------------------------</li>
+            </ul>
+        </aside>
+        <main class="main">
+            <div class="container">
+                <section class="hero mt-xl mb-xl">
+                    <!-- <h1 class="fs-3xl">The next <span style="color:var(--color-primary)">evolution</span> in responsive, dynamic styling.</h1>   -->
+                    <h1>OmniCSS: The CSS Framework</h1>
+                </section>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/prism.js"></script>
-    <script>
+                <!-- Installation -->
+                <section class="mb20">
+                    <h2>OmniCSS Installation</h2>
+                    <div>
+                        The easiest way to use from CDN below-
+                        <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
+                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
+                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
+                        </div>
+                    </div>
+                    <div>
+                        As an alternative, download the latest repo from <a class="pill secondary"
+                            href="https://github.com/skpaul/omnicss">GitHub</a>.
+                    </div>
+                </section>
+
+                <!-- Base Layout -->
+                <section class="mb20">
+                    <h2>Base Layout</h2>
+                    <p>
+                        <span class="pill secondary">.layout</span> class serves the foundation of your page design.
+                    </p>
+                    <p>
+                        Start by placing your content inside the header, main, and footer sections—OmniCSS will handle
+                        the fluid scaling automatically.
+                    </p>
+                    <div class="dark-gist-container">
+                        <script src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
+                    </div>
+                </section>
 
 
-        $(document).ready(function () {
-            $('.left-nav a').click(function (e) {
-                e.preventDefault();
-                let link = $(this);
-                let parent = $(link.closest('li'));
-                let child = link.next();
-                if (child.length > 0) {
-                    if (parent.hasClass('expanded')) {
-                        child.slideUp(500);
-                        parent.removeClass('expanded').removeClass('bg-subtle');
-                    }
-                    else {
-                        child.slideDown(500);
-                        parent.addClass('expanded').addClass('bg-subtle', 1000);
-                    }
-                } else {
-
-                    window.location = link.attr('href');
-                }
-            });
-
-            $('#hambItem').click(function () {
-                toggleHamb();
-            });
-            $('#hambClose').click(function () {
-                toggleHamb();
-            });
-
-            function toggleHamb() {
-                // var mainTopNav = document.getElementById("mainTopNav");
-                mainTopNav = $("#mainTopNav");
-                var hambItem = document.getElementById("hambItem");
-                var hambClose = document.getElementById("hambClose");
-
-                // $('#top-nav').hide(600);
-
-                if (mainTopNav.hasClass('nav-open')) {
-                    mainTopNav.hide(700).removeClass('nav-open');
-                }
-                else {
-                    mainTopNav.show(700).addClass('nav-open');
-                };
-                // if (x.style.display == "block") {
-                //     x.style.display = "none";
-                // } else {
-                //     x.style.display = "block";
-                // }
+                <!-- Container -->
+                <section>
+                    <h2>Container</h2>
+                    <div class="grid fr1">
+                        <div><span class="pill surf-s">.container</span> sets max-width 1200px (default), centered with auto margins and padding</div>
+                        <div><span class="pill surf-s">.container-fluid</span> full width container, takes 100% width with horizontal padding</div>
+                        <div><span class="pill surf-s">.container-1100</span> sets max-width 1100px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container-1000</span> sets max-width 1000px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container-900</span> sets max-width 900px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container-800</span> sets max-width 800px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container-700</span> sets max-width 700px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container-600</span> sets max-width 600px, centered with auto margins</div>
+                    </div>
+                </section>
 
 
-                if (hambClose.style.display == "block") {
-                    hambClose.style.display = "none";
-                } else {
-                    hambClose.style.display = "block";
-                }
+                <!-- Dark/Light Theme -->
+                <section>
+                    <h2>Built-in Dark & Light Themes</h2>
+                    <div>
+                        OmniCSS supports automatic dark/light theme switching using CSS variables. Use
+                        <code>data-theme="dark"</code> or <code>data-theme="light"</code> on <code>&lt;html&gt;</code>
+                        or <code>&lt;body&gt;</code> to override system preference.
+                    </div>
+                    <p>Example:</p>
+                    <div>
+                        <code>[data-theme="dark"] { --primary-surface-bg: #292a2d; }</code><br>
+                        <code>[data-theme="light"] { --primary-surface-bg: #fff; }</code>
+                    </div>
+                    <p>No JavaScript required—just pure CSS flexibility.</p>
+                    <div class="dark-gist-container">
+                        <script src="https://gist.github.com/skpaul/246cd6519f42a7ec3a8ca49279fa2e22.js"></script>
+                    </div>
+                </section>
 
-                if (hambItem.style.display == "block") {
-                    hambItem.style.display = "none";
-                } else {
-                    hambItem.style.display = "block";
-                }
-            }
-        });
-    </script>
+
+
+
+
+                <!-- Font Sizes -->
+                <section>
+                    <h2>Font Sizes</h2>
+
+                    <div class="mb-xs">
+                        Font sizes <span class="pill surf-s">.fs-*</span>
+                    </div>
+                    <div class="card surf-p">
+                        <div class="grid fr8">
+                            <div class="fs01">.fs01</div>
+                            <div class="fs02">.fs02</div>
+                            <div class="fs03">.fs03</div>
+                            <div class="fs04">.fs04</div>
+                            <div class="fs05">.fs05</div>
+                            <div class="fs06">.fs06</div>
+                            <div class="fs07">.fs07</div>
+                            <div class="fs08">.fs08</div>
+                            <div class="fs09">.fs09</div>
+                            <div class="fs10">.fs10</div>
+                            <div class="fs11">.fs11</div>
+                            <div class="fs12">.fs12</div>
+                            <div class="fs13">.fs13</div>
+                            <div class="fs14">.fs14</div>
+                            <div class="fs15">.fs15</div>
+                            <div class="fs16">.fs16</div>
+                            <div class="fs17">.fs17</div>
+                            <div class="fs18">.fs18</div>
+                            <div class="fs19">.fs19</div>
+                            <div class="fs20">.fs20</div>
+                            <div class="fs21">.fs21</div>
+                            <div class="fs22">.fs22</div>
+                            <div class="fs23">.fs23</div>
+                            <div class="fs24">.fs24</div>
+                            <div class="fs25">.fs25</div>
+                            <div class="fs26">.fs26</div>
+                            <div class="fs27">.fs27</div>
+                            <div class="fs28">.fs28</div>
+                            <div class="fs29">.fs29</div>
+                            <div class="fs30">.fs30</div>
+                            <div class="fs31">.fs31</div>
+                            <div class="fs32">.fs32</div>
+                            <div class="fs33">.fs33</div>
+                            <div class="fs34">.fs34</div>
+                            <div class="fs35">.fs35</div>
+                            <div class="fs36">.fs36</div>
+                            <div class="fs37">.fs37</div>
+                            <div class="fs38">.fs38</div>
+                            <div class="fs39">.fs39</div>
+                            <div class="fs40">.fs40</div>
+                        </div>
+
+                    </div>
+
+                    <h2>Responsive Font Sizes</h2>
+                    <div class="grid fr6 fr1-sm">
+                        <div class="fs25-xl">.fs25-xl</div>
+                        <div class="fs25-lg">.fs25-lg</div>
+                        <div class="fs25-md">.fs25-md</div>
+                        <div class="fs25-sm">.fs25-sm</div>
+                        <div class="fs25-xs">.fs25-xs</div>
+                        <div class="fs25-us">.fs25-us</div>
+                    </div>
+                </section>
+
+                <!-- Padding -->
+                <section>
+                    <h2>Padding</h2>
+                    <div>Padding all <span class="pill surf-s">.pa-*</span></div>
+                    <div class="card surf-p pa-05">
+                        <div class="grid fr12">
+                            <div><span class="pill surf-s">.pa0</span></div>
+                            <div><span class="pill surf-s">.pa01</span></div>
+                            <div><span class="pill surf-s">.pa02</span></div>
+                            <div><span class="pill surf-s">.pa03</span></div>
+                            <div><span class="pill surf-s">.pa04</span></div>
+                            <div><span class="pill surf-s">.pa05</span></div>
+                            <div><span class="pill surf-s">.pa06</span></div>
+                            <div><span class="pill surf-s">.pa07</span></div>
+                            <div><span class="pill surf-s">.pa08</span></div>
+                            <div><span class="pill surf-s">.pa09</span></div>
+                            <div><span class="pill surf-s">.pa10</span></div>
+                            <div><span class="pill surf-s">.pa11</span></div>
+                            <div><span class="pill surf-s">.pa12</span></div>
+                            <div><span class="pill surf-s">.pa13</span></div>
+                            <div><span class="pill surf-s">.pa14</span></div>
+                            <div><span class="pill surf-s">.pa15</span></div>
+                            <div><span class="pill surf-s">.pa16</span></div>
+                            <div><span class="pill surf-s">.pa17</span></div>
+                            <div><span class="pill surf-s">.pa18</span></div>
+                            <div><span class="pill surf-s">.pa19</span></div>
+                            <div><span class="pill surf-s">.pa20</span></div>
+                            <div><span class="pill surf-s">.pa21</span></div>
+                            <div><span class="pill surf-s">.pa22</span></div>
+                            <div><span class="pill surf-s">.pa23</span></div>
+                            <div><span class="pill surf-s">.pa24</span></div>
+                            <div><span class="pill surf-s">.pa25</span></div>
+                            <div><span class="pill surf-s">.pa26</span></div>
+                            <div><span class="pill surf-s">.pa27</span></div>
+                            <div><span class="pill surf-s">.pa28</span></div>
+                            <div><span class="pill surf-s">.pa29</span></div>
+                            <div><span class="pill surf-s">.pa30</span></div>
+                            <div><span class="pill surf-s">.pa31</span></div>
+                            <div><span class="pill surf-s">.pa32</span></div>
+                            <div><span class="pill surf-s">.pa33</span></div>
+                            <div><span class="pill surf-s">.pa34</span></div>
+                            <div><span class="pill surf-s">.pa35</span></div>
+                            <div><span class="pill surf-s">.pa36</span></div>
+                            <div><span class="pill surf-s">.pa37</span></div>
+                            <div><span class="pill surf-s">.pa38</span></div>
+                            <div><span class="pill surf-s">.pa39</span></div>
+                            <div><span class="pill surf-s">.pa40</span></div>
+                            <div><span class="pill surf-s">.pa40-xl</span></div>
+                            <div><span class="pill surf-s">.pa40-lg</span></div>
+                            <div><span class="pill surf-s">.pa40-md</span></div>
+                            <div><span class="pill surf-s">.pa40-sm</span></div>
+                            <div><span class="pill surf-s">.pa40-xs</span></div>
+                            <div><span class="pill surf-s">.pa40-us</span></div>
+                        </div>
+
+                    </div>
+
+                    <div class="mt-sm">Padding Left <span class="pill surf-s">.pl-*</span></div>
+                    <div class="card surf-p pa-05">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.pl-us</span></div>
+                            <div><span class="pill surf-s">.pl-xs</span></div>
+                            <div><span class="pill surf-s">.pl-sm</span></div>
+                            <div><span class="pill surf-s">.pl-md</span></div>
+                            <div><span class="pill surf-s">.pl-lg</span></div>
+                            <div><span class="pill surf-s">.pl-xl</span></div>
+                            <div><span class="pill surf-s">.pl-2xl</span></div>
+                            <div><span class="pill surf-s">.pl-3xl</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-md">Padding Right <span class="pill surf-s">.pr-*</span></div>
+                    <div class="card surf-p pa-05 mt-05">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.pr-us</span></div>
+                            <div><span class="pill surf-s">.pr-xs</span></div>
+                            <div><span class="pill surf-s">.pr-sm</span></div>
+                            <div><span class="pill surf-s">.pr-md</span></div>
+                            <div><span class="pill surf-s">.pr-lg</span></div>
+                            <div><span class="pill surf-s">.pr-xl</span></div>
+                            <div><span class="pill surf-s">.pr-2xl</span></div>
+                            <div><span class="pill surf-s">.pr-3xl</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-md">Padding Top <span class="pill surf-s">.pt-*</span></div>
+                    <div class="card surf-p pa-05 mt-05">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.pt-us</span></div>
+                            <div><span class="pill surf-s">.pt-xs</span></div>
+                            <div><span class="pill surf-s">.pt-sm</span></div>
+                            <div><span class="pill surf-s">.pt-md</span></div>
+                            <div><span class="pill surf-s">.pt-lg</span></div>
+                            <div><span class="pill surf-s">.pt-xl</span></div>
+                            <div><span class="pill surf-s">.pt-2xl</span></div>
+                            <div><span class="pill surf-s">.pt-3xl</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-md">Padding Bottom <span class="pill surf-s">.pb*</span></div>
+                    <div class="card surf-p pa-05 mt-05">
+                        <div class="grid fr6">
+                            <div><span class="pill surf-s">.pb25</span></div>
+                            <div><span class="pill surf-s">.pb25-xs</span></div>
+
+                        </div>
+                    </div>
+                    <div class="mt-sm">Padding Top + Bottom <span class="pill surf-s">.pv*</span></div>
+                    <div class="card surf-p pa-05 mt-05 fs-10">
+                        <div class="grid fr12">
+                            <div><span class="pill surf-s">.pv18</span></div>
+                            <div><span class="pill surf-s">.pv18-md</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-sm">Padding Horrizontally Left + Right <span class="pill surf-s">.ph*</span></div>
+                    <div class="card surf-p pa-05 mt-05 fs-10">
+                        <div class="grid fr12">
+                            <div><span class="pill surf-s">.ph18</span></div>
+                            <div><span class="pill surf-s">.ph18-ls</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Margin -->
+                <section>
+                    <h2>Margin</h2>
+                    <div>Margin all <span class="pill surf-s">.ma-*</span></div>
+                    <div class="card surf-p pa-05">
+                        <div class="grid fr6">
+                            <div><span class="pill surf-s">.ma--0</span></div>
+                            <div><span class="pill surf-s">.ma--01</span></div>
+                            <div><span class="pill surf-s">.ma--02</span></div>
+                            <div><span class="pill surf-s">.ma--03</span></div>
+                            <div><span class="pill surf-s">.ma--04</span></div>
+                            <div><span class="pill surf-s">.ma--05</span></div>
+                            <div><span class="pill surf-s">.ma--06</span></div>
+                            <div><span class="pill surf-s">.ma--07</span></div>
+                            <div><span class="pill surf-s">.ma--08</span></div>
+                            <div><span class="pill surf-s">.ma--09</span></div>
+                            <div><span class="pill surf-s">.ma--10</span></div>
+                            <div><span class="pill surf-s">.ma--11</span></div>
+                            <div><span class="pill surf-s">.ma--12</span></div>
+                            <div><span class="pill surf-s">.ma--13</span></div>
+                            <div><span class="pill surf-s">.ma--14</span></div>
+                            <div><span class="pill surf-s">.ma-15</span></div>
+                            <div><span class="pill surf-s">.ma-16</span></div>
+                            <div><span class="pill surf-s">.ma-17</span></div>
+                            <div><span class="pill surf-s">.ma-18</span></div>
+                            <div><span class="pill surf-s">.ma-19</span></div>
+                            <div><span class="pill surf-s">.ma-20</span></div>
+                            <div><span class="pill surf-s">.ma-21</span></div>
+                            <div><span class="pill surf-s">.ma-22</span></div>
+                            <div><span class="pill surf-s">.ma-23</span></div>
+                            <div><span class="pill surf-s">.ma-24</span></div>
+                            <div><span class="pill surf-s">.ma-25</span></div>
+                            <div><span class="pill surf-s">.ma-26</span></div>
+                            <div><span class="pill surf-s">.ma-27</span></div>
+                            <div><span class="pill surf-s">.ma-28</span></div>
+                            <div><span class="pill surf-s">.ma-29</span></div>
+                            <div><span class="pill surf-s">.ma-30</span></div>
+                            <div><span class="pill surf-s">.ma-31</span></div>
+                            <div><span class="pill surf-s">.ma-32</span></div>
+                            <div><span class="pill surf-s">.ma-33</span></div>
+                            <div><span class="pill surf-s">.ma-34</span></div>
+                            <div><span class="pill surf-s">.ma-35</span></div>
+                            <div><span class="pill surf-s">.ma-36</span></div>
+                            <div><span class="pill surf-s">.ma-37</span></div>
+                            <div><span class="pill surf-s">.ma-38</span></div>
+                            <div><span class="pill surf-s">.ma-39</span></div>
+                            <div><span class="pill surf-s">.ma-40</span></div>
+                            <div><span class="pill surf-s">.ma-40-xl</span></div>
+                            <div><span class="pill surf-s">.ma-40-lg</span></div>
+                            <div><span class="pill surf-s">.ma-40-md</span></div>
+                            <div><span class="pill surf-s">.ma-40-sm</span></div>
+                            <div><span class="pill surf-s">.ma-40-xs</span></div>
+                            <div><span class="pill surf-s">.ma-40-us</span></div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="mt-sm">Margin Left <span class="pill surf-s">.ml-*</span></div>
+                    <div class="card surf-p pa-05">
+                        <div class="grid fr6">
+
+                            <div><span class="pill surf-s">.ml-0</span></div>
+                            <div><span class="pill surf-s">.ml-01</span></div>
+                            <div><span class="pill surf-s">.ml-02</span></div>
+                            <div><span class="pill surf-s">.ml-03</span></div>
+                            <div><span class="pill surf-s">.ml-04</span></div>
+                            <div><span class="pill surf-s">.ml-05</span></div>
+                            <div><span class="pill surf-s">.ml-06</span></div>
+                            <div><span class="pill surf-s">.ml-07</span></div>
+                            <div><span class="pill surf-s">.ml-08</span></div>
+                            <div><span class="pill surf-s">.ml-09</span></div>
+                            <div><span class="pill surf-s">.ml-10</span></div>
+                            <div><span class="pill surf-s">.ml-11</span></div>
+                            <div><span class="pill surf-s">.ml-12</span></div>
+                            <div><span class="pill surf-s">.ml-13</span></div>
+                            <div><span class="pill surf-s">.ml-14</span></div>
+                            <div><span class="pill surf-s">.ml-15</span></div>
+                            <div><span class="pill surf-s">.ml-16</span></div>
+                            <div><span class="pill surf-s">.ml-17</span></div>
+                            <div><span class="pill surf-s">.ml-18</span></div>
+                            <div><span class="pill surf-s">.ml-19</span></div>
+                            <div><span class="pill surf-s">.ml-20</span></div>
+                            <div><span class="pill surf-s">.ml-21</span></div>
+                            <div><span class="pill surf-s">.ml-22</span></div>
+                            <div><span class="pill surf-s">.ml-23</span></div>
+                            <div><span class="pill surf-s">.ml-24</span></div>
+                            <div><span class="pill surf-s">.ml-25</span></div>
+                            <div><span class="pill surf-s">.ml-26</span></div>
+                            <div><span class="pill surf-s">.ml-27</span></div>
+                            <div><span class="pill surf-s">.ml-28</span></div>
+                            <div><span class="pill surf-s">.ml-29</span></div>
+                            <div><span class="pill surf-s">.ml-30</span></div>
+                            <div><span class="pill surf-s">.ml-31</span></div>
+                            <div><span class="pill surf-s">.ml-32</span></div>
+                            <div><span class="pill surf-s">.ml-33</span></div>
+                            <div><span class="pill surf-s">.ml-34</span></div>
+                            <div><span class="pill surf-s">.ml-35</span></div>
+                            <div><span class="pill surf-s">.ml-36</span></div>
+                            <div><span class="pill surf-s">.ml-37</span></div>
+                            <div><span class="pill surf-s">.ml-38</span></div>
+                            <div><span class="pill surf-s">.ml-39</span></div>
+                            <div><span class="pill surf-s">.ml-40</span></div>
+                            <div><span class="pill surf-s">.ml-40-xl</span></div>
+                            <div><span class="pill surf-s">.ml-40-lg</span></div>
+                            <div><span class="pill surf-s">.ml-40-md</span></div>
+                            <div><span class="pill surf-s">.ml-40-sm</span></div>
+                            <div><span class="pill surf-s">.ml-40-xs</span></div>
+                            <div><span class="pill surf-s">.ml-40-us</span></div>
+
+                        </div>
+                    </div>
+                    <div class="mt-20">Margin Right <span class="pill surf-s">.mr-*</span></div>
+                    <div class="card surf-p pa-05 mt-05">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.mr-35</span></div>
+                            <div><span class="pill surf-s">.mr-35-xs</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-20">Margin Top <span class="pill surf-s">.mt-*</span></div>
+                    <div class="card surf-p pa-05 mt-05">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.mt-15</span></div>
+                            <div><span class="pill surf-s">.mt-15-xs</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-20">Margin Bottom <span class="pill surf-s">.mb-*</span></div>
+                    <div class="card surf-p pa-05 mt-05 fs-10">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.mb-20</span></div>
+                            <div><span class="pill surf-s">.mb-20-lg</span></div>
+
+                        </div>
+                    </div>
+                    <div class="mt-20">Margin Vertically (Top + Bottom) <span class="pill surf-s">.mv-*</span></div>
+                    <div class="card surf-p pa-05 mt-05 fs-1">
+                        <div class="grid fr3">
+                            <div><span class="pill surf-s">.mv-18</span></div>
+                        </div>
+                    </div>
+                    <div class="mt-20">Margin Horrizontally (Left + Right) <span class="pill surf-s">.mh-*</span></div>
+                    <div class="card surf-p pa-05 fs-1">
+                        <div class="grid ch12">
+                            <div><span class="pill surf-s">.mh-18</span></div>
+                            <div><span class="pill surf-s">.mh-18-ls</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Surface Hierarchy & Color System -->
+                <section>
+                    <h2>Surface Hierarchy & Color System</h2>
+                    <div>
+                        OmniCSS defines four surface levels for backgrounds, borders, and text: <code>.surf-p</code>
+                        (primary), <code>.surf-s</code> (secondary), <code>.surf-t</code> (tertiary),
+                        <code>.surf-q</code> (quaternary).
+                    </div>
+                    <div class="grid fr4 fr1-sm">
+                        <div class="pa-lg card surf-p flex-center">Primary Surface</div>
+                        <div class="card surf-s pa-lg flex-center">Secondary Surface</div>
+                        <div class="card surf-t pa-lg flex-center">Tertiary Surface</div>
+                        <div class="card surf-q pa-lg flex-center">Quaternary Surface</div>
+                    </div>
+                    <div class="mt20">Semantic colors for status/alerts:</div>
+                    <div class="grid fr4 fr1-sm">
+                        <div class="success pa-md flex-center">.success</div>
+                        <div class="caution pa-md flex-center">.caution</div>
+                        <div class="info pa-md flex-center">.info</div>
+                        <div class="critical pa-md flex-center">.critical</div>
+                    </div>
+                    <div class="mt-sm">Brand/Functional colors:</div>
+                    <div class="grid ch30">
+                        <div class="fc-p pa-md flex-center">.fc-p</div>
+                        <div class="fc-s pa-md flex-center">.fc-s</div>
+                        <div class="fc-a pa-md flex-center">.fc-a</div>
+                        <div class="bg-p pa-md flex-center">
+                            <div class="reverse-color">.bg-p</div>
+                        </div>
+                        <div class="bg-s pa-md flex-center fc-black">.bg-s</div>
+                        <div class="bg-a pa-md flex-center">.bg-a</div>
+                    </div>
+                </section>
+
+                <!-- Key Benefits -->
+                <section>
+                    <h2>Key Benefits</h2>
+                    <ul class="ml-sm">
+                        <li>Consistency: Surface colors for layout, semantic colors for meaning.</li>
+                        <li>Flexibility: Mix and match as needed (e.g., a gridable-ss with critical status).</li>
+                        <li>Theming: Change all --primary-surface-* or --success-* values globally.</li>
+                    </ul>
+                </section>
+
+                <!-- Why This Separation? -->
+                <section>
+                    <h2>Why This Separation?</h2>
+                    <ol class="ml-sm">
+                        <li>
+                            Predictability:
+                            <ul class="ml-sm">
+                                <li>Surface colors = Where an element sits (hierarchy). </li>
+                                <li>Semantic colors = What it means (state/action). </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Accessibility:
+                            <ul class="ml-sm">
+                                <li> Semantic colors enforce consistent contrast ratios for readability. </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Maintenance:
+                            <ul class="ml-sm">
+                                <li>Change --primary-surface-bg once to update all containers globally. </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <div class="fs-3xl">Omni Components</div>
+
+
+                <!-- Gridable -->
+                <section>
+                    <h2>Gridable = Grid + Table</h2>
+                    <div>
+                        Use <span class="pill">.gridable</span> for gridable component. Use <span
+                            class="pill">.us</span>/<span class="pill">.sm</span>/<span class="pill">.md</span> to make
+                        it reponsive at your target devices.
+                    </div>
+
+
+                    <div class="surf-p gridable md">
+                        <div class="grid-header">
+                            <div class="header-item">Col-1</div>
+                            <div class="header-item">Col-2</div>
+                            <div class="header-item">Col-3</div>
+                            <div class="header-item">Col-4</div>
+                            <div class="header-item">Col-5</div>
+                        </div>
+
+                        <div class="grid-row">
+                            <div class="grid-cell" data-label="Col-1">One</div>
+                            <div class="grid-cell" data-label="Col-2">Two</div>
+                            <div class="grid-cell" data-label="Col-3">Three</div>
+                            <div class="grid-cell" data-label="Col-4">Four</div>
+                            <div class="grid-cell" data-label="Col-5">Five</div>
+                        </div>
+                        <div class="grid-row">
+                            <div class="grid-cell" data-label="Col-1">One</div>
+                            <div class="grid-cell" data-label="Col-2">Two</div>
+                            <div class="grid-cell" data-label="Col-3">Three</div>
+                            <div class="grid-cell" data-label="Col-4">Four</div>
+                            <div class="grid-cell" data-label="Col-5">Five</div>
+                        </div>
+                    </div>
+
+                    <details class="expandable mt-sm">
+                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                        <div class="content">
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Dismissable -->
+                <section>
+                    <h2>Dismissable <span class="pill surf-s">.dissmissable</span></h2>
+                    <div>
+                        <span class="pill">.dismissable</span> for a dismissable notice. Mention expiry in days. Must
+                        have a unique id for each dismissable.
+                    </div>
+
+                    <div class="grid fr3" style="gap:10px;">
+                        <div class="dismissable surf-p" id="notice-4" data-expiry="10000">
+                            <div class="fs-10">
+                                This is a <span class="pill surf-s">.dismissable</span> using primary surface <span
+                                    class="pill surf-s">.surf-p</span>
+                            </div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable surf-s" id="notice-4" data-expiry="1">
+                            <div class="fs-10">
+                                This is a <span class="pill surf-t">.dismissable</span> using secondary surface <span
+                                    class="pill surf-t">.surf-s</span>
+                            </div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable surf-t" id="notice-4" data-expiry="1">
+                            <div class="fs-10">
+                                This is a <span class="pill surf-q">.dismissable</span> using tertiary surface <span
+                                    class="pill surf-q">.surf-t</span>
+                            </div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable surf-q" id="notice-4" data-expiry="1">
+                            <div class="fs-10">
+                                This is a <span class="pill surf-s">.dismissable</span> using quaternary surface <span
+                                    class="pill surf-q">.surf-s</span>
+                            </div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable info" id="notice-1" data-expiry="1">
+                            <div>
+                                This is a <span class="pill info">.info</span> dismissable.
+                            </div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable success" id="notice-2" data-expiry="1">
+                            <div>
+                                This is a <span class="pill success">.success</span> dismissable.
+                            </div>
+                            <div class="right mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable caution" id="notice-3" data-expiry="1">
+                            <div>
+                                This is a <span class="pill caution">.caution</span> dismissable.
+                            </div>
+                            <div class="center mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+
+                        <div class="dismissable critical" id="notice-4" data-expiry="10000">
+                            <div>This is a <span class="pill critical">.critical</span> dismissable.</div>
+                            <div class="left mt-sm">
+                                <span class="dismiss">Don't show</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <details class="expandable mt15">
+                        <summary class="fs-09 fc-surf-t">View Source</summary>
+                        <div class="content">
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Dialog -->
+                <section>
+                    <h2>Dialogbox</h2>
+                    <dialog id="dialog1">
+                        <form method="dialog">
+                            <div class="title">Dialog Content-1</div>
+                            <div class="content">A message to the users.</div>
+                            <button>Close</button> <!-- No JS needed -->
+                        </form>
+                    </dialog>
+                    <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
+
+                    <dialog id="dialog2">
+                        <form method="dialog">
+                            <div class="title">Dialog Content-2</div>
+                            <div class="content">A message to the users.</div>
+                            <button>Close</button> <!-- No JS needed -->
+                        </form>
+                    </dialog>
+                    <button onclick="dialog2.showModal()">Open Dialog</button>
+                </section>
+
+                <!-- Expandable -->
+                <section>
+                    <h2>Expandable <span class="pill surf-s">.expandable</span></h2>
+                    <details class="expandable">
+                        <summary>Expandable</summary>
+                        <div class="content card surf-s pa-05">
+                            <p class="fs-10">
+                                Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat inventore. Et
+                                obcaecati vero in quod corporis sit nulla quia et dignissimos dolorem vel neque amet ut
+                                quia iusto! In iusto quia ut impedit voluptates eum recusandae quaerat 33 minus maxime
+                                nam odio itaque aut molestiae voluptatem est voluptatem quas.
+                            </p>
+                            <p class="fs-10 mt-sm">
+                                Sit temporibus provident sit eius fuga cum facilis omnis ea repudiandae excepturi! Et
+                                dolorem odit aut ullam eaque sed reprehenderit expedita qui dolores ipsam et pariatur
+                                quasi sit voluptatibus accusamus. Sit nemo vero nam veniam minus nam aspernatur ipsa ut
+                                quia atque id commodi molestias sed illo alias quo animi voluptas. Qui rerum rerum et
+                                voluptatem dolores in voluptates animi est aliquid voluptatum sit beatae excepturi.
+                            </p>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Board -->
+                <section>
+                    <h2>Board <span class="pill surf-s">.board</span></h2>
+                    <div class="grid fr4">
+                        <div class="board success">
+                            This is a <span class="pill success">.success</span> board
+                        </div>
+
+
+                        <div class="board info">
+                            This is a <span class="pill info">.info</span> board
+                        </div>
+
+                        <div class="board caution">
+                            This is a <span class="pill caution">.caution</span> board
+                        </div>
+
+                        <div class="board critical">
+                            This is a <span class="pill critical">.critical</span> board
+                        </div>
+                    </div>
+
+                    <details class="expandable mt-sm">
+                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                        <div class="content">
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Pill -->
+                 <section>
+                    <h2>Pill <span class="pill surf-s">.pill</span></h2>
+                    <div class="grid fr4">
+                        <div>
+                           <span class="pill success">.success</span> 
+                        </div>
+
+
+                        <div class="">
+                           <span class="pill info">.info</span> 
+                        </div>
+
+                        <div class="">
+                           <span class="pill caution">.caution</span> 
+                        </div>
+
+                        <div class="">
+                           <span class="pill critical">.critical</span> 
+                        </div>
+                    </div>
+                 </section>
+
+                <!-- Action menu -->
+                <section>
+                    <h2>Action Menu <span class="pill surf-s">.action-menu</span></h2>
+
+                    This is an action menu
+                    <div class="action-menu">
+                        <input type="checkbox" id="menu1">
+                        <label for="menu1">⋮</label>
+                        <div>
+                            <a href="#" class="close-menu">Edit</a>
+                            <a href="#">Edit</a>
+                        </div>
+                    </div>
+
+                    <div class="fs-10 fc-surf-t">
+                        checkbox id and label for must have same value, i.e. menu1.
+                    </div>
+
+                    <details class="expandable mt-sm">
+                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                        <div class="content">
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
+                            </div>
+                        </div>
+                    </details>
+                </section>
+
+
+
+
+
+                <!-- Header Template -->
+                <section>
+                    <h2>Header Template</h2>
+                    <div>
+                        <span class="pill">.fixed</span> for always top and visible.
+                        <span class="pill">.smart</span> for Sticky header. Auto hide/show on scroll.
+                    </div>
+                    <div class="dark-gist-container">
+                        <script src="https://gist.github.com/skpaul/4fdb9d1638062f99ff8eb066fe5d9631.js"></script>
+                    </div>
+                </section>
+
+            </div>
+
+        </main>
+        <footer>
+
+            <div>©2025 Nobolok.com</div>
+            <a href="https://github.com/skpaul/omnicss">Built with OmniCSS</a>
+
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.4/omni.js"></script>
 </body>
 
 </html>
