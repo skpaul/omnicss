@@ -1,14 +1,78 @@
-/*Used for padding and margin*/
-$spaceSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
-@mixin createSpacing($prefix, $property) {
+
+@mixin createFluidSpacing($prefix, $property) {
     @each $size in $spaceSizes{
         .#{$prefix}-#{$size}{
             #{$property}:var(--space-#{$size});
         }
     }
 }
+//in rem value
+@mixin createFixedSpacing($prefix, $property, $version, $device:"") {
+    @if $version == "general" {
+        //General version. Create rules like .ma-1.4
+        .#{$prefix}-0#{$device} {
+            #{$property}: 0 !important;
+        }
 
-$fontSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
+        @each $value in $spacingValues{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
+        }
+    } @else {
+        //Compact version. Create rules like .ma14
+        .#{$prefix}0#{$device} {
+            #{$property}: 0 !important;
+        }
+
+        @each $value in $spacingValues{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property}:#{$value} + 'rem'; 
+            }
+        }
+    }
+}
+
+//values in rem
+@mixin create-both-spacing($prefix, $property1, $property2, $version, $device:"") {
+
+    @if $version == "general" {
+        .#{$prefix}-0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+
+        @each $value in $spacingValues{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
+        }
+
+    } @else {
+        .#{$prefix}0#{$device} {
+            #{$property1}: 0 !important;
+            #{$property2}: 0 !important;
+        }
+
+        @each $value in $spacingValues{
+            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            .#{$prefix}#{$part1}#{$part2}#{$device}{
+                #{$property1}: #{$value} + 'rem' !important;
+                #{$property2}: #{$value} + 'rem' !important;
+            }
+        }
+    }
+}
+
+//Creating fluid font sizes
 @mixin createFontSizes($prefix, $property, ) {
     @each $size in $fontSizes{
         .#{$prefix}-#{$size}{
@@ -17,7 +81,7 @@ $fontSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
     }
 }
 
-$fontWeights: 100,200,300,400,500,600,700,800,900;
+
 @mixin createFontWeights($prefix, $property, ) {
     @each $value in $fontWeights{
         .#{$prefix}-#{$value}{
@@ -70,4 +134,3 @@ $fontWeights: 100,200,300,400,500,600,700,800,900;
     
     @return $string;
   }
-

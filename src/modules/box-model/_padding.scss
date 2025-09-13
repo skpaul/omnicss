@@ -1,0 +1,88 @@
+// ====================================================
+//   Fluid Padding
+// ==================================================== 
+
+//padding-all
+@include createFluidSpacing("pa", "padding"); 
+//padding-left
+@include createFluidSpacing("pl", "padding-left"); 
+//padding-right
+@include createFluidSpacing("pr", "padding-right"); 
+//padding-top
+@include createFluidSpacing("pt", "padding-top"); 
+//padding-bottom
+@include createFluidSpacing("pb", "padding-bottom"); 
+
+
+
+// ====================================================
+//   Padding in rem
+// ====================================================
+
+@include createFixedSpacing("pa", "padding", "compact"); 
+@include createFixedSpacing("pt", "padding-top", "compact"); 
+@include createFixedSpacing("pb", "padding-bottom", "compact"); 
+@include createFixedSpacing("pl", "padding-left", "compact"); 
+@include createFixedSpacing("pr", "padding-right", "compact"); 
+@include create-both-spacing("pv", "padding-top","padding-bottom", "compact"); 
+@include create-both-spacing("ph", "padding-left","padding-right", "compact"); 
+
+@include us(){
+    @include createFixedSpacing("pa", "padding", "compact", "us"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "us"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "us"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "us"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "us"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "us"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "us"); 
+}
+
+@include xs(){
+    @include createFixedSpacing("pa", "padding", "compact", "xs"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "xs"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "xs"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "xs"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "xs"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "xs"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "xs"); 
+}
+
+@include sm(){
+    @include createFixedSpacing("pa", "padding", "compact", "sm"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "sm"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "sm"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "sm"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "sm"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "sm"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "sm"); 
+}
+
+@include md(){
+    @include createFixedSpacing("pa", "padding", "compact", "md"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "md"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "md"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "md"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "md"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "md"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "md"); 
+}
+
+@include lg(){
+    @include createFixedSpacing("pa", "padding", "compact", "lg"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "lg"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "lg"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "lg"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "lg"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "lg"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "lg"); 
+}
+
+@include xl(){
+    @include createFixedSpacing("pa", "padding", "compact", "xl"); 
+    @include createFixedSpacing("pt", "padding-top", "compact", "xl"); 
+    @include createFixedSpacing("pb", "padding-bottom", "compact", "xl"); 
+    @include createFixedSpacing("pl", "padding-left", "compact", "xl"); 
+    @include createFixedSpacing("pr", "padding-right", "compact", "xl"); 
+    @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "xl"); 
+    @include create-both-spacing("ph", "padding-left","padding-right", "compact", "xl"); 
+}

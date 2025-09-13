@@ -1,0 +1,97 @@
+// ====================================================
+//   Fluid Padding
+// ====================================================
+//margin-all
+@include createFluidSpacing("ma", "margin"); 
+//margin-left
+@include createFluidSpacing("ml", "margin-left"); 
+//margin-right
+@include createFluidSpacing("mr", "margin-right"); 
+//margin-top
+@include createFluidSpacing("mt", "margin-top"); 
+//margin-bottom
+@include createFluidSpacing("mb", "margin-bottom"); 
+
+
+
+// ====================================================
+//   Padding in rem
+// ====================================================
+
+@include createFixedSpacing("ma", "margin", "compact"); 
+@include createFixedSpacing("mt", "margin-top", "compact"); 
+@include createFixedSpacing("mb", "margin-bottom", "compact"); 
+@include createFixedSpacing("ml", "margin-left", "compact"); 
+@include createFixedSpacing("mr", "margin-right", "compact"); 
+@include create-both-spacing("mv", "margin-top","margin-bottom", "compact");
+@include create-both-spacing("mh", "margin-left","margin-right", "compact");
+
+@include us(){
+    @include createFixedSpacing("ma", "margin", "compact", "-us");
+    @include createFixedSpacing("mt", "margin-top", "compact", "-us");
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-us");
+    @include createFixedSpacing("ml", "margin-left", "compact", "-us");
+    @include createFixedSpacing("mr", "margin-right", "compact", "-us");
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-us");
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-us");
+}
+
+@include xs(){
+    @include createFixedSpacing("ma", "margin", "compact", "-xs");
+    @include createFixedSpacing("mt", "margin-top", "compact", "-xs");
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-xs");
+    @include createFixedSpacing("ml", "margin-left", "compact", "-xs");
+    @include createFixedSpacing("mr", "margin-right", "compact", "-xs");
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-xs");
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-xs");
+}
+
+@include sm(){
+    @include createFixedSpacing("ma", "margin", "compact", "-sm");
+    @include createFixedSpacing("mt", "margin-top", "compact", "-sm");
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-sm");
+    @include createFixedSpacing("ml", "margin-left", "compact", "-sm");
+    @include createFixedSpacing("mr", "margin-right", "compact", "-sm");
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-sm");
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-sm");
+}
+
+@include md(){
+    @include createFixedSpacing("ma", "margin", "compact", "-md");
+    @include createFixedSpacing("mt", "margin-top", "compact", "-md");
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-md");
+    @include createFixedSpacing("ml", "margin-left", "compact", "-md");
+    @include createFixedSpacing("mr", "margin-right", "compact", "-md");
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-md");
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-md");
+}
+
+@include lg(){
+    @include createFixedSpacing("ma", "margin", "compact", "-lg"); 
+    @include createFixedSpacing("mt", "margin-top", "compact", "-lg"); 
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-lg"); 
+    @include createFixedSpacing("ml", "margin-left", "compact", "-lg"); 
+    @include createFixedSpacing("mr", "margin-right", "compact", "-lg"); 
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-lg"); 
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-lg"); 
+}
+
+@include xl(){
+    @include createFixedSpacing("ma", "margin", "compact", "-xl");
+    @include createFixedSpacing("mt", "margin-top", "compact", "-xl");
+    @include createFixedSpacing("mb", "margin-bottom", "compact", "-xl");
+    @include createFixedSpacing("ml", "margin-left", "compact", "-xl");
+    @include createFixedSpacing("mr", "margin-right", "compact", "-xl");
+    @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-xl");
+    @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-xl");
+}
+
+// Utility
+.ma-auto{
+    margin: auto;
+}
+
+.mh-auto{
+   margin-left: auto; 
+   margin-right: auto; 
+}

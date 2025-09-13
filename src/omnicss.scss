@@ -9,7 +9,6 @@
     //.bg {  &-orange { ... } } will turn into .bg-orange { ... }
 //<----- sass nesting//
 
-
 /* ===== OmniCSS ===== */
 /* A tiny, clean, futuristic CSS framework */
 /* ~2KB | No dependencies | MIT License */
@@ -20,9 +19,8 @@
 @import 'modules/media-queries'; 
 @import 'modules/functions'; 
 
-@import 'modules/box-model/fluid-padding'; 
-@import 'modules/box-model/fluid-margin'; 
-@import 'modules/box-model/fixed_margin';
+@import 'modules/box-model/padding'; 
+@import 'modules/box-model/margin';
 
 @import 'modules/components/action-menu'; 
 @import 'modules/components/board'; 
