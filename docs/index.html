@@ -6,9 +6,9 @@
     <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OmniCSS – Fluid, Responsive CSS Framework for Modern Web Design</title>
+    <title>OmniCSS – Modern, Responsive CSS Framework for Web Design</title>
     <meta name="description"
-        content="OmniCSS simplifies responsive design with fluid scaling, no rigid breakpoints. Build adaptive layouts faster using intuitive utility classes. Lightweight, flexible, and developer-friendly.">
+        content="OmniCSS simplifies responsive design with fixed utilities and responsive breakpoints. Build adaptive layouts faster using intuitive utility classes. Lightweight, flexible, and developer-friendly.">
     <link rel="canonical" href="https://nobolok.com/omni-css">
 
     <!-- Author, Copyright, Robots & Keyword -->
@@ -32,23 +32,26 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 
 
-    <script>
-        // Immediately set theme before DOM renders
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    <!-- System theme mode - no manual override needed -->
 
-        // Apply in this order: saved > system > light
-        document.documentElement.setAttribute('data-theme',
-            savedTheme || (systemPrefersDark ? 'dark' : 'light')
-        );
-    </script>
-
-    <link rel="stylesheet" href="../omni.min.css">
+    <link rel="stylesheet" href="../omni.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/griddle@2.1.1/griddle.min.css">
     <link rel="stylesheet" href="https://nobolok.com/assets/css/site.css">
     <style>
         section {
             margin-top: var(--space-xl);
+        }
+
+        summary {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+
+        details>.content {
+            padding: 1.5rem;
+            border: 1px solid #5d5d5d;
+            border-radius: 7px;
         }
 
         section>h2 {
@@ -103,9 +106,6 @@
                 <!-- Your navigation content here -->
             </nav>
 
-            <div class="theme-toggle-wrapper">
-                <button id="themeToggle" aria-label="Toggle dark mode">🌓</button>
-            </div>
             <div id="candyIcon">
                 <img src="/assets/images/candy-thick.svg" alt="Candy Icon" srcset="">
             </div>
@@ -145,34 +145,81 @@
 
 
                 <!-- Installation -->
-                <section class="mb20">
+
+                <section class="mb-20">
                     <h2>OmniCSS Installation</h2>
-                    <div>
-                        The easiest way to use from CDN below-
-                        <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
-                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
-                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
+                    <details>
+                        <summary>View more.</summary>
+                        <div>
+                            The easiest way to use from CDN below-
+                            <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
+                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
+                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        As an alternative, download the latest repo from <a class="pill secondary"
-                            href="https://github.com/skpaul/omnicss">GitHub</a>.
-                    </div>
+                        <div>
+                            As an alternative, download the latest repo from <a class="pill secondary"
+                                href="https://github.com/skpaul/omnicss">GitHub</a>.
+                        </div>
+                    </details>
                 </section>
 
                 <!-- Base Layout -->
-                <section class="mb20">
-                    <h2>Base Layout</h2>
-                    <p>
-                        <span class="pill secondary">.layout</span> class serves the foundation of your page design.
-                    </p>
-                    <p>
-                        Start by placing your content inside the header, main, and footer sections—OmniCSS will handle
-                        the fluid scaling automatically.
-                    </p>
-                    <div class="dark-gist-container">
-                        <script src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
-                    </div>
+                <section class="mb-20">
+                    <details>
+                        <summary>Base Layout</summary>
+
+                        <div class="content">
+                            <p>
+                                <span class="pill secondary">.layout</span> class serves the foundation of your page
+                                design.
+                            </p>
+                            <p>
+                                Start by placing your content inside the header, main, and footer sections—OmniCSS will
+                                handle
+                                the layout automatically.
+                            </p>
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
+                            </div>
+
+                            <div class="explanation">
+                                <h3>Understanding the Layout Structure</h3>
+
+                                <h4><span class="pill surf-s">.layout</span> - The Container</h4>
+                                <p>
+                                    The <code>.layout</code> class creates a full-viewport grid with three rows: header,
+                                    main, and footer.
+                                    It ensures the footer always stays at the bottom, even on pages with minimal
+                                    content.
+                                </p>
+
+                                <h4><span class="pill surf-s">header</span> - Fixed Height</h4>
+                                <p>
+                                    The header section has a fixed height of <code>60px</code> and contains your site
+                                    navigation, logo, and other top-level UI elements.
+                                    Add <code>.fixed</code> or <code>.smart</code> classes for sticky header behavior.
+                                </p>
+
+                                <h4><span class="pill surf-s">main</span> - Flexible Content Area</h4>
+                                <p>
+                                    The main section takes up all remaining vertical space using <code>1fr</code>
+                                    (fractional unit).
+                                    Content here scrolls independently if it exceeds the viewport height. This is where
+                                    your page content lives.
+                                </p>
+
+                                <h4><span class="pill surf-s">footer</span> - Auto Height</h4>
+                                <p>
+                                    The footer has automatic height based on its content. It always sits at the bottom
+                                    of the viewport
+                                    or below the main content, whichever is lower—creating a "sticky footer" effect
+                                    without JavaScript.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
                 </section>
 
 
@@ -180,407 +227,330 @@
                 <section>
                     <h2>Container</h2>
                     <div class="grid fr1">
-                        <div><span class="pill surf-s">.container</span> sets max-width 1200px (default), centered with auto margins and padding</div>
-                        <div><span class="pill surf-s">.container-fluid</span> full width container, takes 100% width with horizontal padding</div>
-                        <div><span class="pill surf-s">.container-1100</span> sets max-width 1100px, centered with auto margins</div>
-                        <div><span class="pill surf-s">.container-1000</span> sets max-width 1000px, centered with auto margins</div>
-                        <div><span class="pill surf-s">.container-900</span> sets max-width 900px, centered with auto margins</div>
-                        <div><span class="pill surf-s">.container-800</span> sets max-width 800px, centered with auto margins</div>
-                        <div><span class="pill surf-s">.container-700</span> sets max-width 700px, centered with auto margins</div>
-                        <div><span class="pill surf-s">.container-600</span> sets max-width 600px, centered with auto margins</div>
+                        <div><span class="pill surf-s">.container</span> sets max-width 1200px (default), centered with
+                            auto margins and padding</div>
+                        <div><span class="pill surf-s">.container-fluid</span> full width container, takes 100% width
+                            with horizontal padding</div>
+                        <div><span class="pill surf-s">.container-1100</span> sets max-width 1100px, centered with auto
+                            margins</div>
+                        <div><span class="pill surf-s">.container-1000</span> sets max-width 1000px, centered with auto
+                            margins</div>
+                        <div><span class="pill surf-s">.container-900</span> sets max-width 900px, centered with auto
+                            margins</div>
+                        <div><span class="pill surf-s">.container-800</span> sets max-width 800px, centered with auto
+                            margins</div>
+                        <div><span class="pill surf-s">.container-700</span> sets max-width 700px, centered with auto
+                            margins</div>
+                        <div><span class="pill surf-s">.container-600</span> sets max-width 600px, centered with auto
+                            margins</div>
                     </div>
                 </section>
 
 
                 <!-- Dark/Light Theme -->
                 <section>
-                    <h2>Built-in Dark & Light Themes</h2>
+                    <h2>System-Based Dark & Light Themes</h2>
                     <div>
-                        OmniCSS supports automatic dark/light theme switching using CSS variables. Use
-                        <code>data-theme="dark"</code> or <code>data-theme="light"</code> on <code>&lt;html&gt;</code>
-                        or <code>&lt;body&gt;</code> to override system preference.
+                        OmniCSS automatically adapts to your system's theme preference using CSS variables and
+                        <code>@media (prefers-color-scheme: dark)</code>.
                     </div>
+                    <p>
+                        No JavaScript or manual toggles required—just pure CSS that respects your OS settings.
+                    </p>
                     <p>Example:</p>
                     <div>
-                        <code>[data-theme="dark"] { --primary-surface-bg: #292a2d; }</code><br>
-                        <code>[data-theme="light"] { --primary-surface-bg: #fff; }</code>
-                    </div>
-                    <p>No JavaScript required—just pure CSS flexibility.</p>
-                    <div class="dark-gist-container">
-                        <script src="https://gist.github.com/skpaul/246cd6519f42a7ec3a8ca49279fa2e22.js"></script>
+                        <code>@media (prefers-color-scheme: dark) {</code><br>
+                        <code>&nbsp;&nbsp;:root { --primary-surface-bg: #292a2d; }</code><br>
+                        <code>}</code>
                     </div>
                 </section>
 
+                <!-- CSS Variables Reference -->
+                <section>
+                    <h2>CSS Variables - Customization Reference</h2>
+                    <p>
+                        Override these CSS custom properties in your own stylesheet to customize OmniCSS to match your
+                        brand.
+                    </p>
+
+                    <h3>Brand Colors</h3>
+                    <div class="dark-gist-container">
+                        <script src="https://gist.github.com/skpaul/2799dfca0e5f033f9bd1afb48ef5ab7c.js"></script>
+                    </div>
 
 
 
+
+
+
+                    <h3>Surface System (Auto Light/Dark)</h3>
+                    <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                        <div>
+                            <h4>Light Mode (Default)</h4>
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/de6426caf20863bc5b08239a2405c2f0.js"></script>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Dark Mode (System Preference)</h4>
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/f23db4856bd3e76f6a356b6379500740.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Semantic Alert Colors</h3>
+                    <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                        <div>
+                            <h4>Light Mode</h4>
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/719792c27d35cd65915adebf381c6d75.js"></script>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Dark Mode</h4>
+                            <div class="dark-gist-container">
+                                <script
+                                    src="https://gist.github.com/skpaul/2c3c53977eeba4044a08a7d0b29a6515.js"></script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Core Design Tokens</h3>
+                    <div class="dark-gist-container">
+                        <script src="https://gist.github.com/skpaul/372558478da8084d4d16aa71e7f20949.js"></script>
+                    </div>
+
+
+                    <h3>Customization Example</h3>
+                    <p>Create your own stylesheet and override the variables:</p>
+                    <div class="dark-gist-container">
+
+                        <script src="https://gist.github.com/skpaul/e0017139926cd38bb3ff0147d1c76049.js"></script>
+                    </div>
+
+
+
+                    <p class="info pa-sm">
+                        <strong>💡 Tip:</strong> Load your custom stylesheet <em>after</em> omni.css to ensure your
+                        variables override the defaults.
+                    </p>
+                </section>
 
                 <!-- Font Sizes -->
                 <section>
-                    <h2>Font Sizes</h2>
+                    <details>
+                        <summary>Font Sizes</summary>
 
-                    <div class="mb-xs">
-                        Font sizes <span class="pill surf-s">.fs-*</span>
-                    </div>
-                    <div class="card surf-p">
-                        <div class="grid fr8">
-                            <div class="fs01">.fs01</div>
-                            <div class="fs02">.fs02</div>
-                            <div class="fs03">.fs03</div>
-                            <div class="fs04">.fs04</div>
-                            <div class="fs05">.fs05</div>
-                            <div class="fs06">.fs06</div>
-                            <div class="fs07">.fs07</div>
-                            <div class="fs08">.fs08</div>
-                            <div class="fs09">.fs09</div>
-                            <div class="fs10">.fs10</div>
-                            <div class="fs11">.fs11</div>
-                            <div class="fs12">.fs12</div>
-                            <div class="fs13">.fs13</div>
-                            <div class="fs14">.fs14</div>
-                            <div class="fs15">.fs15</div>
-                            <div class="fs16">.fs16</div>
-                            <div class="fs17">.fs17</div>
-                            <div class="fs18">.fs18</div>
-                            <div class="fs19">.fs19</div>
-                            <div class="fs20">.fs20</div>
-                            <div class="fs21">.fs21</div>
-                            <div class="fs22">.fs22</div>
-                            <div class="fs23">.fs23</div>
-                            <div class="fs24">.fs24</div>
-                            <div class="fs25">.fs25</div>
-                            <div class="fs26">.fs26</div>
-                            <div class="fs27">.fs27</div>
-                            <div class="fs28">.fs28</div>
-                            <div class="fs29">.fs29</div>
-                            <div class="fs30">.fs30</div>
-                            <div class="fs31">.fs31</div>
-                            <div class="fs32">.fs32</div>
-                            <div class="fs33">.fs33</div>
-                            <div class="fs34">.fs34</div>
-                            <div class="fs35">.fs35</div>
-                            <div class="fs36">.fs36</div>
-                            <div class="fs37">.fs37</div>
-                            <div class="fs38">.fs38</div>
-                            <div class="fs39">.fs39</div>
-                            <div class="fs40">.fs40</div>
+
+                        <div class="content">
+                            <div class="mb-20">
+                                Font sizes <span class="pill surf-s">.fs-*</span> — Fixed font sizes from 0.1rem to
+                                4.0rem.
+                            </div>
+                            <div class="card surf-p">
+                                <div class="grid fr5 fr2-sm">
+                                    <div class="fs-01">.fs-01</div>
+                                    <div class="fs-02">.fs-02</div>
+                                    <div class="fs-03">.fs-03</div>
+                                    <div class="fs-04">.fs-04</div>
+                                    <div class="fs-05">.fs-05</div>
+                                    <div class="fs-06">.fs-06</div>
+                                    <div class="fs-07">.fs-07</div>
+                                    <div class="fs-08">.fs-08</div>
+                                    <div class="fs-09">.fs-09</div>
+                                    <div class="fs-10">.fs-10</div>
+                                    <div class="fs-11">.fs-11</div>
+                                    <div class="fs-12">.fs-12</div>
+                                    <div class="fs-13">.fs-13</div>
+                                    <div class="fs-14">.fs-14</div>
+                                    <div class="fs-15">.fs-15</div>
+                                    <div class="fs-16">.fs-16</div>
+                                    <div class="fs-17">.fs-17</div>
+                                    <div class="fs-18">.fs-18</div>
+                                    <div class="fs-19">.fs-19</div>
+                                    <div class="fs-20">.fs-20</div>
+                                    <div class="fs-21">.fs-21</div>
+                                    <div class="fs-22">.fs-22</div>
+                                    <div class="fs-23">.fs-23</div>
+                                    <div class="fs-24">.fs-24</div>
+                                    <div class="fs-25">.fs-25</div>
+                                    <div class="fs-26">.fs-26</div>
+                                    <div class="fs-27">.fs-27</div>
+                                    <div class="fs-28">.fs-28</div>
+                                    <div class="fs-29">.fs-29</div>
+                                    <div class="fs-30">.fs-30</div>
+                                    <div class="fs-31">.fs-31</div>
+                                    <div class="fs-32">.fs-32</div>
+                                    <div class="fs-33">.fs-33</div>
+                                    <div class="fs-34">.fs-34</div>
+                                    <div class="fs-35">.fs-35</div>
+                                    <div class="fs-36">.fs-36</div>
+                                    <div class="fs-37">.fs-37</div>
+                                    <div class="fs-38">.fs-38</div>
+                                    <div class="fs-39">.fs-39</div>
+                                    <div class="fs-40">.fs-40</div>
+                                </div>
+                            </div>
+                            <h2>Responsive Font Sizes</h2>
+                            <p class="mb-xs">All font size classes include responsive variants for each breakpoint.
+                                Append <span class="pill surf-s">-xl</span>, <span class="pill surf-s">-lg</span>, <span
+                                    class="pill surf-s">-md</span>, <span class="pill surf-s">-sm</span>, <span
+                                    class="pill surf-s">-xs</span>, or <span class="pill surf-s">-us</span> to any font
+                                size class.</p>
+                            <div class="card surf-p">
+                                <div class="grid fr6 fr1-sm">
+                                    <div class="fs-25-xl">.fs-25-xl</div>
+                                    <div class="fs-25-lg">.fs-25-lg</div>
+                                    <div class="fs-25-md">.fs-25-md</div>
+                                    <div class="fs-25-sm">.fs-25-sm</div>
+                                    <div class="fs-25-xs">.fs-25-xs</div>
+                                    <div class="fs-25-us">.fs-25-us</div>
+                                </div>
+                            </div>
                         </div>
+                    </details>
 
-                    </div>
-
-                    <h2>Responsive Font Sizes</h2>
-                    <div class="grid fr6 fr1-sm">
-                        <div class="fs25-xl">.fs25-xl</div>
-                        <div class="fs25-lg">.fs25-lg</div>
-                        <div class="fs25-md">.fs25-md</div>
-                        <div class="fs25-sm">.fs25-sm</div>
-                        <div class="fs25-xs">.fs25-xs</div>
-                        <div class="fs25-us">.fs25-us</div>
-                    </div>
                 </section>
 
                 <!-- Padding -->
-                <section>
-                    <h2>Padding</h2>
-                    <div>Padding all <span class="pill surf-s">.pa-*</span></div>
-                    <div class="card surf-p pa-05">
-                        <div class="grid fr12">
-                            <div><span class="pill surf-s">.pa0</span></div>
-                            <div><span class="pill surf-s">.pa01</span></div>
-                            <div><span class="pill surf-s">.pa02</span></div>
-                            <div><span class="pill surf-s">.pa03</span></div>
-                            <div><span class="pill surf-s">.pa04</span></div>
-                            <div><span class="pill surf-s">.pa05</span></div>
-                            <div><span class="pill surf-s">.pa06</span></div>
-                            <div><span class="pill surf-s">.pa07</span></div>
-                            <div><span class="pill surf-s">.pa08</span></div>
-                            <div><span class="pill surf-s">.pa09</span></div>
-                            <div><span class="pill surf-s">.pa10</span></div>
-                            <div><span class="pill surf-s">.pa11</span></div>
-                            <div><span class="pill surf-s">.pa12</span></div>
-                            <div><span class="pill surf-s">.pa13</span></div>
-                            <div><span class="pill surf-s">.pa14</span></div>
-                            <div><span class="pill surf-s">.pa15</span></div>
-                            <div><span class="pill surf-s">.pa16</span></div>
-                            <div><span class="pill surf-s">.pa17</span></div>
-                            <div><span class="pill surf-s">.pa18</span></div>
-                            <div><span class="pill surf-s">.pa19</span></div>
-                            <div><span class="pill surf-s">.pa20</span></div>
-                            <div><span class="pill surf-s">.pa21</span></div>
-                            <div><span class="pill surf-s">.pa22</span></div>
-                            <div><span class="pill surf-s">.pa23</span></div>
-                            <div><span class="pill surf-s">.pa24</span></div>
-                            <div><span class="pill surf-s">.pa25</span></div>
-                            <div><span class="pill surf-s">.pa26</span></div>
-                            <div><span class="pill surf-s">.pa27</span></div>
-                            <div><span class="pill surf-s">.pa28</span></div>
-                            <div><span class="pill surf-s">.pa29</span></div>
-                            <div><span class="pill surf-s">.pa30</span></div>
-                            <div><span class="pill surf-s">.pa31</span></div>
-                            <div><span class="pill surf-s">.pa32</span></div>
-                            <div><span class="pill surf-s">.pa33</span></div>
-                            <div><span class="pill surf-s">.pa34</span></div>
-                            <div><span class="pill surf-s">.pa35</span></div>
-                            <div><span class="pill surf-s">.pa36</span></div>
-                            <div><span class="pill surf-s">.pa37</span></div>
-                            <div><span class="pill surf-s">.pa38</span></div>
-                            <div><span class="pill surf-s">.pa39</span></div>
-                            <div><span class="pill surf-s">.pa40</span></div>
-                            <div><span class="pill surf-s">.pa40-xl</span></div>
-                            <div><span class="pill surf-s">.pa40-lg</span></div>
-                            <div><span class="pill surf-s">.pa40-md</span></div>
-                            <div><span class="pill surf-s">.pa40-sm</span></div>
-                            <div><span class="pill surf-s">.pa40-xs</span></div>
-                            <div><span class="pill surf-s">.pa40-us</span></div>
+                <section class="mt-20">
+                    <details>
+                        <summary>Padding</summary>
+                        <div class="content">
+                            <p class="mb-05">Fixed padding utilities from 0 to 4.0rem in 0.1rem increments.</p>
+                            <h3 class="mt-md">Padding All Sides <span class="pill surf-s">.pa-*</span></h3>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr8">
+                                    <div><span class="pill surf-s">.pa-0</span></div>
+                                    <div><span class="pill surf-s">.pa-01</span></div>
+                                    <div><span class="pill surf-s">.pa-02</span></div>
+                                    <div><span class="pill surf-s">.pa-05</span></div>
+                                    <div><span class="pill surf-s">.pa-10</span></div>
+                                    <div><span class="pill surf-s">.pa-15</span></div>
+                                    <div><span class="pill surf-s">.pa-20</span></div>
+                                    <div><span class="pill surf-s">.pa-40</span></div>
+                                </div>
+                            </div>
+                            <h3 class="mt-md">Directional Padding</h3>
+                            <p class="mb-xs">Use <span class="pill surf-s">.pl-*</span> (left), <span
+                                    class="pill surf-s">.pr-*</span> (right), <span class="pill surf-s">.pt-*</span>
+                                (top),
+                                <span class="pill surf-s">.pb-*</span> (bottom) with values from 0 to 40.
+                            </p>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr6">
+                                    <div><span class="pill surf-s">.pl-05</span></div>
+                                    <div><span class="pill surf-s">.pr-10</span></div>
+                                    <div><span class="pill surf-s">.pt-15</span></div>
+                                    <div><span class="pill surf-s">.pb-20</span></div>
+                                </div>
+                            </div>
+                            <h3 class="mt-md">Axis Padding</h3>
+                            <p class="mb-xs">Use <span class="pill surf-s">.pv-*</span> for vertical (top + bottom) and
+                                <span class="pill surf-s">.ph-*</span> for horizontal (left + right).
+                            </p>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr6">
+                                    <div><span class="pill surf-s">.pv-10</span></div>
+                                    <div><span class="pill surf-s">.ph-15</span></div>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-
-                    <div class="mt-sm">Padding Left <span class="pill surf-s">.pl-*</span></div>
-                    <div class="card surf-p pa-05">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.pl-us</span></div>
-                            <div><span class="pill surf-s">.pl-xs</span></div>
-                            <div><span class="pill surf-s">.pl-sm</span></div>
-                            <div><span class="pill surf-s">.pl-md</span></div>
-                            <div><span class="pill surf-s">.pl-lg</span></div>
-                            <div><span class="pill surf-s">.pl-xl</span></div>
-                            <div><span class="pill surf-s">.pl-2xl</span></div>
-                            <div><span class="pill surf-s">.pl-3xl</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-md">Padding Right <span class="pill surf-s">.pr-*</span></div>
-                    <div class="card surf-p pa-05 mt-05">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.pr-us</span></div>
-                            <div><span class="pill surf-s">.pr-xs</span></div>
-                            <div><span class="pill surf-s">.pr-sm</span></div>
-                            <div><span class="pill surf-s">.pr-md</span></div>
-                            <div><span class="pill surf-s">.pr-lg</span></div>
-                            <div><span class="pill surf-s">.pr-xl</span></div>
-                            <div><span class="pill surf-s">.pr-2xl</span></div>
-                            <div><span class="pill surf-s">.pr-3xl</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-md">Padding Top <span class="pill surf-s">.pt-*</span></div>
-                    <div class="card surf-p pa-05 mt-05">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.pt-us</span></div>
-                            <div><span class="pill surf-s">.pt-xs</span></div>
-                            <div><span class="pill surf-s">.pt-sm</span></div>
-                            <div><span class="pill surf-s">.pt-md</span></div>
-                            <div><span class="pill surf-s">.pt-lg</span></div>
-                            <div><span class="pill surf-s">.pt-xl</span></div>
-                            <div><span class="pill surf-s">.pt-2xl</span></div>
-                            <div><span class="pill surf-s">.pt-3xl</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-md">Padding Bottom <span class="pill surf-s">.pb*</span></div>
-                    <div class="card surf-p pa-05 mt-05">
-                        <div class="grid fr6">
-                            <div><span class="pill surf-s">.pb25</span></div>
-                            <div><span class="pill surf-s">.pb25-xs</span></div>
-
-                        </div>
-                    </div>
-                    <div class="mt-sm">Padding Top + Bottom <span class="pill surf-s">.pv*</span></div>
-                    <div class="card surf-p pa-05 mt-05 fs-10">
-                        <div class="grid fr12">
-                            <div><span class="pill surf-s">.pv18</span></div>
-                            <div><span class="pill surf-s">.pv18-md</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-sm">Padding Horrizontally Left + Right <span class="pill surf-s">.ph*</span></div>
-                    <div class="card surf-p pa-05 mt-05 fs-10">
-                        <div class="grid fr12">
-                            <div><span class="pill surf-s">.ph18</span></div>
-                            <div><span class="pill surf-s">.ph18-ls</span></div>
-                        </div>
-                    </div>
+                    </details>
                 </section>
 
                 <!-- Margin -->
-                <section>
-                    <h2>Margin</h2>
-                    <div>Margin all <span class="pill surf-s">.ma-*</span></div>
-                    <div class="card surf-p pa-05">
-                        <div class="grid fr6">
-                            <div><span class="pill surf-s">.ma--0</span></div>
-                            <div><span class="pill surf-s">.ma--01</span></div>
-                            <div><span class="pill surf-s">.ma--02</span></div>
-                            <div><span class="pill surf-s">.ma--03</span></div>
-                            <div><span class="pill surf-s">.ma--04</span></div>
-                            <div><span class="pill surf-s">.ma--05</span></div>
-                            <div><span class="pill surf-s">.ma--06</span></div>
-                            <div><span class="pill surf-s">.ma--07</span></div>
-                            <div><span class="pill surf-s">.ma--08</span></div>
-                            <div><span class="pill surf-s">.ma--09</span></div>
-                            <div><span class="pill surf-s">.ma--10</span></div>
-                            <div><span class="pill surf-s">.ma--11</span></div>
-                            <div><span class="pill surf-s">.ma--12</span></div>
-                            <div><span class="pill surf-s">.ma--13</span></div>
-                            <div><span class="pill surf-s">.ma--14</span></div>
-                            <div><span class="pill surf-s">.ma-15</span></div>
-                            <div><span class="pill surf-s">.ma-16</span></div>
-                            <div><span class="pill surf-s">.ma-17</span></div>
-                            <div><span class="pill surf-s">.ma-18</span></div>
-                            <div><span class="pill surf-s">.ma-19</span></div>
-                            <div><span class="pill surf-s">.ma-20</span></div>
-                            <div><span class="pill surf-s">.ma-21</span></div>
-                            <div><span class="pill surf-s">.ma-22</span></div>
-                            <div><span class="pill surf-s">.ma-23</span></div>
-                            <div><span class="pill surf-s">.ma-24</span></div>
-                            <div><span class="pill surf-s">.ma-25</span></div>
-                            <div><span class="pill surf-s">.ma-26</span></div>
-                            <div><span class="pill surf-s">.ma-27</span></div>
-                            <div><span class="pill surf-s">.ma-28</span></div>
-                            <div><span class="pill surf-s">.ma-29</span></div>
-                            <div><span class="pill surf-s">.ma-30</span></div>
-                            <div><span class="pill surf-s">.ma-31</span></div>
-                            <div><span class="pill surf-s">.ma-32</span></div>
-                            <div><span class="pill surf-s">.ma-33</span></div>
-                            <div><span class="pill surf-s">.ma-34</span></div>
-                            <div><span class="pill surf-s">.ma-35</span></div>
-                            <div><span class="pill surf-s">.ma-36</span></div>
-                            <div><span class="pill surf-s">.ma-37</span></div>
-                            <div><span class="pill surf-s">.ma-38</span></div>
-                            <div><span class="pill surf-s">.ma-39</span></div>
-                            <div><span class="pill surf-s">.ma-40</span></div>
-                            <div><span class="pill surf-s">.ma-40-xl</span></div>
-                            <div><span class="pill surf-s">.ma-40-lg</span></div>
-                            <div><span class="pill surf-s">.ma-40-md</span></div>
-                            <div><span class="pill surf-s">.ma-40-sm</span></div>
-                            <div><span class="pill surf-s">.ma-40-xs</span></div>
-                            <div><span class="pill surf-s">.ma-40-us</span></div>
+                <section class="mt-20">
+                    <details>
+                        <summary>Margin</summary>
 
+                        <div class="content">
+                            <p class="mb-xs">Fixed margin utilities from 0 to 4.0rem in 0.1rem increments.</p>
+                            <h3 class="mt-md">Margin All Sides <span class="pill surf-s">.ma-*</span></h3>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr8">
+                                    <div><span class="pill surf-s">.ma-0</span></div>
+                                    <div><span class="pill surf-s">.ma-01</span></div>
+                                    <div><span class="pill surf-s">.ma-02</span></div>
+                                    <div><span class="pill surf-s">.ma-05</span></div>
+                                    <div><span class="pill surf-s">.ma-10</span></div>
+                                    <div><span class="pill surf-s">.ma-15</span></div>
+                                    <div><span class="pill surf-s">.ma-20</span></div>
+                                    <div><span class="pill surf-s">.ma-40</span></div>
+                                </div>
+                            </div>
+                            <h3 class="mt-md">Directional Margin</h3>
+                            <p class="mb-xs">Use <span class="pill surf-s">.ml-*</span> (left), <span
+                                    class="pill surf-s">.mr-*</span> (right), <span class="pill surf-s">.mt-*</span>
+                                (top),
+                                <span class="pill surf-s">.mb-*</span> (bottom) with values from 0 to 40.
+                            </p>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr6">
+                                    <div><span class="pill surf-s">.ml-05</span></div>
+                                    <div><span class="pill surf-s">.mr-10</span></div>
+                                    <div><span class="pill surf-s">.mt-15</span></div>
+                                    <div><span class="pill surf-s">.mb-20</span></div>
+                                </div>
+                            </div>
+                            <h3 class="mt-md">Axis Margin</h3>
+                            <p class="mb-xs">Use <span class="pill surf-s">.mv-*</span> for vertical (top + bottom) and
+                                <span class="pill surf-s">.mh-*</span> for horizontal (left + right).
+                            </p>
+                            <div class="card surf-p pa-05">
+                                <div class="grid fr6">
+                                    <div><span class="pill surf-s">.mv-10</span></div>
+                                    <div><span class="pill surf-s">.mh-15</span></div>
+                                </div>
+                            </div>
+                        </div>
 
-
-                        </div>
-                    </div>
-
-                    <div class="mt-sm">Margin Left <span class="pill surf-s">.ml-*</span></div>
-                    <div class="card surf-p pa-05">
-                        <div class="grid fr6">
-
-                            <div><span class="pill surf-s">.ml-0</span></div>
-                            <div><span class="pill surf-s">.ml-01</span></div>
-                            <div><span class="pill surf-s">.ml-02</span></div>
-                            <div><span class="pill surf-s">.ml-03</span></div>
-                            <div><span class="pill surf-s">.ml-04</span></div>
-                            <div><span class="pill surf-s">.ml-05</span></div>
-                            <div><span class="pill surf-s">.ml-06</span></div>
-                            <div><span class="pill surf-s">.ml-07</span></div>
-                            <div><span class="pill surf-s">.ml-08</span></div>
-                            <div><span class="pill surf-s">.ml-09</span></div>
-                            <div><span class="pill surf-s">.ml-10</span></div>
-                            <div><span class="pill surf-s">.ml-11</span></div>
-                            <div><span class="pill surf-s">.ml-12</span></div>
-                            <div><span class="pill surf-s">.ml-13</span></div>
-                            <div><span class="pill surf-s">.ml-14</span></div>
-                            <div><span class="pill surf-s">.ml-15</span></div>
-                            <div><span class="pill surf-s">.ml-16</span></div>
-                            <div><span class="pill surf-s">.ml-17</span></div>
-                            <div><span class="pill surf-s">.ml-18</span></div>
-                            <div><span class="pill surf-s">.ml-19</span></div>
-                            <div><span class="pill surf-s">.ml-20</span></div>
-                            <div><span class="pill surf-s">.ml-21</span></div>
-                            <div><span class="pill surf-s">.ml-22</span></div>
-                            <div><span class="pill surf-s">.ml-23</span></div>
-                            <div><span class="pill surf-s">.ml-24</span></div>
-                            <div><span class="pill surf-s">.ml-25</span></div>
-                            <div><span class="pill surf-s">.ml-26</span></div>
-                            <div><span class="pill surf-s">.ml-27</span></div>
-                            <div><span class="pill surf-s">.ml-28</span></div>
-                            <div><span class="pill surf-s">.ml-29</span></div>
-                            <div><span class="pill surf-s">.ml-30</span></div>
-                            <div><span class="pill surf-s">.ml-31</span></div>
-                            <div><span class="pill surf-s">.ml-32</span></div>
-                            <div><span class="pill surf-s">.ml-33</span></div>
-                            <div><span class="pill surf-s">.ml-34</span></div>
-                            <div><span class="pill surf-s">.ml-35</span></div>
-                            <div><span class="pill surf-s">.ml-36</span></div>
-                            <div><span class="pill surf-s">.ml-37</span></div>
-                            <div><span class="pill surf-s">.ml-38</span></div>
-                            <div><span class="pill surf-s">.ml-39</span></div>
-                            <div><span class="pill surf-s">.ml-40</span></div>
-                            <div><span class="pill surf-s">.ml-40-xl</span></div>
-                            <div><span class="pill surf-s">.ml-40-lg</span></div>
-                            <div><span class="pill surf-s">.ml-40-md</span></div>
-                            <div><span class="pill surf-s">.ml-40-sm</span></div>
-                            <div><span class="pill surf-s">.ml-40-xs</span></div>
-                            <div><span class="pill surf-s">.ml-40-us</span></div>
-
-                        </div>
-                    </div>
-                    <div class="mt-20">Margin Right <span class="pill surf-s">.mr-*</span></div>
-                    <div class="card surf-p pa-05 mt-05">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.mr-35</span></div>
-                            <div><span class="pill surf-s">.mr-35-xs</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-20">Margin Top <span class="pill surf-s">.mt-*</span></div>
-                    <div class="card surf-p pa-05 mt-05">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.mt-15</span></div>
-                            <div><span class="pill surf-s">.mt-15-xs</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-20">Margin Bottom <span class="pill surf-s">.mb-*</span></div>
-                    <div class="card surf-p pa-05 mt-05 fs-10">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.mb-20</span></div>
-                            <div><span class="pill surf-s">.mb-20-lg</span></div>
-
-                        </div>
-                    </div>
-                    <div class="mt-20">Margin Vertically (Top + Bottom) <span class="pill surf-s">.mv-*</span></div>
-                    <div class="card surf-p pa-05 mt-05 fs-1">
-                        <div class="grid fr3">
-                            <div><span class="pill surf-s">.mv-18</span></div>
-                        </div>
-                    </div>
-                    <div class="mt-20">Margin Horrizontally (Left + Right) <span class="pill surf-s">.mh-*</span></div>
-                    <div class="card surf-p pa-05 fs-1">
-                        <div class="grid ch12">
-                            <div><span class="pill surf-s">.mh-18</span></div>
-                            <div><span class="pill surf-s">.mh-18-ls</span></div>
-                        </div>
-                    </div>
+                    </details>
                 </section>
 
                 <!-- Surface Hierarchy & Color System -->
-                <section>
-                    <h2>Surface Hierarchy & Color System</h2>
-                    <div>
-                        OmniCSS defines four surface levels for backgrounds, borders, and text: <code>.surf-p</code>
-                        (primary), <code>.surf-s</code> (secondary), <code>.surf-t</code> (tertiary),
-                        <code>.surf-q</code> (quaternary).
-                    </div>
-                    <div class="grid fr4 fr1-sm">
-                        <div class="pa-lg card surf-p flex-center">Primary Surface</div>
-                        <div class="card surf-s pa-lg flex-center">Secondary Surface</div>
-                        <div class="card surf-t pa-lg flex-center">Tertiary Surface</div>
-                        <div class="card surf-q pa-lg flex-center">Quaternary Surface</div>
-                    </div>
-                    <div class="mt20">Semantic colors for status/alerts:</div>
-                    <div class="grid fr4 fr1-sm">
-                        <div class="success pa-md flex-center">.success</div>
-                        <div class="caution pa-md flex-center">.caution</div>
-                        <div class="info pa-md flex-center">.info</div>
-                        <div class="critical pa-md flex-center">.critical</div>
-                    </div>
-                    <div class="mt-sm">Brand/Functional colors:</div>
-                    <div class="grid ch30">
-                        <div class="fc-p pa-md flex-center">.fc-p</div>
-                        <div class="fc-s pa-md flex-center">.fc-s</div>
-                        <div class="fc-a pa-md flex-center">.fc-a</div>
-                        <div class="bg-p pa-md flex-center">
-                            <div class="reverse-color">.bg-p</div>
+                <section class="mt-20">
+                    <details>
+                        <summary>Surface Hierarchy & Color System</summary>
+
+                        <div class="content">
+                            <div>
+                                OmniCSS defines four surface levels for backgrounds, borders, and text:
+                                <code>.surf-p</code>
+                                (primary), <code>.surf-s</code> (secondary), <code>.surf-t</code> (tertiary),
+                                <code>.surf-q</code> (quaternary).
+                            </div>
+                            <div class="grid fr4 fr1-sm">
+                                <div class="pa-lg card surf-p flex-center">Primary Surface</div>
+                                <div class="card surf-s pa-lg flex-center">Secondary Surface</div>
+                                <div class="card surf-t pa-lg flex-center">Tertiary Surface</div>
+                                <div class="card surf-q pa-lg flex-center">Quaternary Surface</div>
+                            </div>
+                            <div class="mt20">Semantic colors for status/alerts:</div>
+                            <div class="grid fr4 fr1-sm">
+                                <div class="success pa-md flex-center">.success</div>
+                                <div class="caution pa-md flex-center">.caution</div>
+                                <div class="info pa-md flex-center">.info</div>
+                                <div class="critical pa-md flex-center">.critical</div>
+                            </div>
+                            <div class="mt-sm">Brand/Functional colors:</div>
+                            <div class="grid ch30">
+                                <div class="fc-p pa-md flex-center">.fc-p</div>
+                                <div class="fc-s pa-md flex-center">.fc-s</div>
+                                <div class="fc-a pa-md flex-center">.fc-a</div>
+                                <div class="bg-p pa-md flex-center">
+                                    <div class="reverse-color">.bg-p</div>
+                                </div>
+                                <div class="bg-s pa-md flex-center fc-black">.bg-s</div>
+                                <div class="bg-a pa-md flex-center">.bg-a</div>
+                            </div>
                         </div>
-                        <div class="bg-s pa-md flex-center fc-black">.bg-s</div>
-                        <div class="bg-a pa-md flex-center">.bg-a</div>
-                    </div>
+                    </details>
                 </section>
 
                 <!-- Key Benefits -->
@@ -619,7 +589,7 @@
                     </ol>
                 </section>
 
-                <div class="fs-3xl">Omni Components</div>
+                <div class="fs-30">Omni Components</div>
 
 
                 <!-- Gridable -->
@@ -842,27 +812,27 @@
                 </section>
 
                 <!-- Pill -->
-                 <section>
+                <section>
                     <h2>Pill <span class="pill surf-s">.pill</span></h2>
                     <div class="grid fr4">
                         <div>
-                           <span class="pill success">.success</span> 
+                            <span class="pill success">.success</span>
                         </div>
 
 
                         <div class="">
-                           <span class="pill info">.info</span> 
+                            <span class="pill info">.info</span>
                         </div>
 
                         <div class="">
-                           <span class="pill caution">.caution</span> 
+                            <span class="pill caution">.caution</span>
                         </div>
 
                         <div class="">
-                           <span class="pill critical">.critical</span> 
+                            <span class="pill critical">.critical</span>
                         </div>
                     </div>
-                 </section>
+                </section>
 
                 <!-- Action menu -->
                 <section>
