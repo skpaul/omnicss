@@ -1,10 +1,10 @@
-// Dark/Light theme toggle
-document.getElementById('themeToggle').addEventListener('click', () => {
-    const html = document.documentElement;
-    const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-});
+// Dark/Light theme toggle  [currently deprecated]
+// document.getElementById('themeToggle').addEventListener('click', () => {
+//     const html = document.documentElement;
+//     const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+//     html.setAttribute('data-theme', newTheme);
+//     localStorage.setItem('theme', newTheme);
+// });
 
 
 //Sticky header. Auto hide/show on scroll.

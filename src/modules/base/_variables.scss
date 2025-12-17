@@ -58,6 +58,22 @@
 
     --color-toggle-bg: #e0e0e0;
     --color-toggle-icon: #ffbb00;
+
+    /* Form Elements */
+    --label-color: #3a3a3a;
+    --placeholder-color: #999999;
+    --input-color: #2d2d2d;
+    --input-caret-color: #0066ff;
+    --input-background-color: #FFFFFF;
+    --input-background-color-on-hover: #FFFFFF;
+    --input-background-color-on-focus: #f9fafc;
+    --input-border-color: #d6dbe0;
+    --input-border-color-on-hover: #0066ff;
+    --input-border-color-on-focus: #0066ff;
+    
+    --button-color: #2d2d2d;
+    --button-border-color: #d6dbe0;
+    --button-background-color: #FFFFFF;
 }
 
 /* ====================================================
@@ -106,6 +122,22 @@
     
         --color-toggle-bg: #333333;
         --color-toggle-icon: #ffdd88;
+
+        /* Form Elements (Dark Mode) */
+        --label-color: #d5d7d9;
+        --placeholder-color: #7a7c7f;
+        --input-color: #e0e0e0;
+        --input-caret-color: #66b3ff;
+        --input-background-color: #292a2d;
+        --input-background-color-on-hover: #292a2d;
+        --input-background-color-on-focus: #323336;
+        --input-border-color: #46474b;
+        --input-border-color-on-hover: #0066ff;
+        --input-border-color-on-focus: #0066ff;
+        
+        --button-color: #e0e0e0;
+        --button-border-color: #46474b;
+        --button-background-color: #323336;
     }
 }
 

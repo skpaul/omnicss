@@ -2,7 +2,6 @@
     display: none;
     opacity: 1;
     transition: opacity 0.6s ease, transform 0.6s ease;
-    padding:var(--space-xs);
     border-radius: var(--border-radius);
 
     &.show {

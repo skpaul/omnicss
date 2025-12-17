@@ -2,8 +2,6 @@
    Board
 ==================================================== */
 .board{
-
-    padding:var(--space-xs);
     border-radius: var(--border-radius);
 
     &.success{

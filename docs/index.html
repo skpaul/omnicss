@@ -324,6 +324,45 @@
                         <script src="https://gist.github.com/skpaul/372558478da8084d4d16aa71e7f20949.js"></script>
                     </div>
 
+                    <h3>Form Input Variables</h3>
+                    <p class="mb-xs">Customize form elements by overriding these variables:</p>
+                    <div class="card surf-p pa-10">
+                        <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                            <div>
+                                <strong>Colors</strong>
+                                <ul class="ml-sm fs-09 mt-xs">
+                                    <li><code>--label-color</code></li>
+                                    <li><code>--input-color</code></li>
+                                    <li><code>--input-caret-color</code></li>
+                                    <li><code>--placeholder-color</code></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Background Colors</strong>
+                                <ul class="ml-sm fs-09 mt-xs">
+                                    <li><code>--input-background-color</code></li>
+                                    <li><code>--input-background-color-on-hover</code></li>
+                                    <li><code>--input-background-color-on-focus</code></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Border Colors</strong>
+                                <ul class="ml-sm fs-09 mt-xs">
+                                    <li><code>--input-border-color</code></li>
+                                    <li><code>--input-border-color-on-hover</code></li>
+                                    <li><code>--input-border-color-on-focus</code></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>Button Colors</strong>
+                                <ul class="ml-sm fs-09 mt-xs">
+                                    <li><code>--button-color</code></li>
+                                    <li><code>--button-border-color</code></li>
+                                    <li><code>--button-background-color</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
                     <h3>Customization Example</h3>
                     <p>Create your own stylesheet and override the variables:</p>
@@ -593,173 +632,201 @@
 
 
                 <!-- Gridable -->
-                <section>
-                    <h2>Gridable = Grid + Table</h2>
-                    <div>
-                        Use <span class="pill">.gridable</span> for gridable component. Use <span
-                            class="pill">.us</span>/<span class="pill">.sm</span>/<span class="pill">.md</span> to make
-                        it reponsive at your target devices.
-                    </div>
+                <section class="mt-20">
+                    <details>
+                        <summary>Gridable = Grid + Table</summary>
 
+                        <style>
+                            .header-item,
+                            .grid-cell {
+                                padding: 0.5rem;
+                            }
 
-                    <div class="surf-p gridable md">
-                        <div class="grid-header">
-                            <div class="header-item">Col-1</div>
-                            <div class="header-item">Col-2</div>
-                            <div class="header-item">Col-3</div>
-                            <div class="header-item">Col-4</div>
-                            <div class="header-item">Col-5</div>
-                        </div>
-
-                        <div class="grid-row">
-                            <div class="grid-cell" data-label="Col-1">One</div>
-                            <div class="grid-cell" data-label="Col-2">Two</div>
-                            <div class="grid-cell" data-label="Col-3">Three</div>
-                            <div class="grid-cell" data-label="Col-4">Four</div>
-                            <div class="grid-cell" data-label="Col-5">Five</div>
-                        </div>
-                        <div class="grid-row">
-                            <div class="grid-cell" data-label="Col-1">One</div>
-                            <div class="grid-cell" data-label="Col-2">Two</div>
-                            <div class="grid-cell" data-label="Col-3">Three</div>
-                            <div class="grid-cell" data-label="Col-4">Four</div>
-                            <div class="grid-cell" data-label="Col-5">Five</div>
-                        </div>
-                    </div>
-
-                    <details class="expandable mt-sm">
-                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                            .grid-cell {
+                                color: gray;
+                            }
+                        </style>
                         <div class="content">
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
+                            <div class="mb-10">
+                                Use <span class="pill">.gridable</span> for gridable component. Use <span
+                                    class="pill">.us</span>/<span class="pill">.sm</span>/<span class="pill">.md</span>
+                                to make
+                                it reponsive at your target devices.
                             </div>
+                            <div class="surf-p gridable md">
+                                <div class="grid-header">
+                                    <div class="header-item">Col-1</div>
+                                    <div class="header-item">Col-2</div>
+                                    <div class="header-item">Col-3</div>
+                                    <div class="header-item">Col-4</div>
+                                    <div class="header-item">Col-5</div>
+                                </div>
+                                <div class="grid-row">
+                                    <div class="grid-cell" data-label="Col-1">One</div>
+                                    <div class="grid-cell" data-label="Col-2">Two</div>
+                                    <div class="grid-cell" data-label="Col-3">Three</div>
+                                    <div class="grid-cell" data-label="Col-4">Four</div>
+                                    <div class="grid-cell" data-label="Col-5">Five</div>
+                                </div>
+                                <div class="grid-row">
+                                    <div class="grid-cell" data-label="Col-1">One</div>
+                                    <div class="grid-cell" data-label="Col-2">Two</div>
+                                    <div class="grid-cell" data-label="Col-3">Three</div>
+                                    <div class="grid-cell" data-label="Col-4">Four</div>
+                                    <div class="grid-cell" data-label="Col-5">Five</div>
+                                </div>
+                            </div>
+                            <details class="expandable mt-10">
+                                <summary class="fs-08 fc-surf-t">View Source</summary>
+                                <div class="content">
+                                    <div class="dark-gist-container">
+                                        <script
+                                            src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </section>
 
                 <!-- Dismissable -->
-                <section>
-                    <h2>Dismissable <span class="pill surf-s">.dissmissable</span></h2>
-                    <div>
-                        <span class="pill">.dismissable</span> for a dismissable notice. Mention expiry in days. Must
-                        have a unique id for each dismissable.
-                    </div>
-
-                    <div class="grid fr3" style="gap:10px;">
-                        <div class="dismissable surf-p" id="notice-4" data-expiry="10000">
-                            <div class="fs-10">
-                                This is a <span class="pill surf-s">.dismissable</span> using primary surface <span
-                                    class="pill surf-s">.surf-p</span>
-                            </div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable surf-s" id="notice-4" data-expiry="1">
-                            <div class="fs-10">
-                                This is a <span class="pill surf-t">.dismissable</span> using secondary surface <span
-                                    class="pill surf-t">.surf-s</span>
-                            </div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable surf-t" id="notice-4" data-expiry="1">
-                            <div class="fs-10">
-                                This is a <span class="pill surf-q">.dismissable</span> using tertiary surface <span
-                                    class="pill surf-q">.surf-t</span>
-                            </div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable surf-q" id="notice-4" data-expiry="1">
-                            <div class="fs-10">
-                                This is a <span class="pill surf-s">.dismissable</span> using quaternary surface <span
-                                    class="pill surf-q">.surf-s</span>
-                            </div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable info" id="notice-1" data-expiry="1">
-                            <div>
-                                This is a <span class="pill info">.info</span> dismissable.
-                            </div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable success" id="notice-2" data-expiry="1">
-                            <div>
-                                This is a <span class="pill success">.success</span> dismissable.
-                            </div>
-                            <div class="right mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable caution" id="notice-3" data-expiry="1">
-                            <div>
-                                This is a <span class="pill caution">.caution</span> dismissable.
-                            </div>
-                            <div class="center mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-
-                        <div class="dismissable critical" id="notice-4" data-expiry="10000">
-                            <div>This is a <span class="pill critical">.critical</span> dismissable.</div>
-                            <div class="left mt-sm">
-                                <span class="dismiss">Don't show</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <details class="expandable mt15">
-                        <summary class="fs-09 fc-surf-t">View Source</summary>
+                <section class="mt-20">
+                    <details>
+                        <summary>Dismissable <span class="pill surf-s">.dissmissable</span></summary>
                         <div class="content">
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
+                            <div class="mt-10">
+                                <span class="pill">.dismissable</span> for a dismissable notice. Mention expiry in days.
+                                Must
+                                have a unique id for each dismissable.
                             </div>
+
+                            <div class="grid fr3" style="gap:1rem;">
+                                <div class="dismissable surf-p pa-07" id="notice-1010" data-expiry="2">
+                                    <div class="fs-10">
+                                        This is a <span class="pill surf-s">.dismissable</span> using primary surface
+                                        <span class="pill surf-s">.surf-p</span>
+                                    </div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable surf-s pa-07" id="notice-4" data-expiry="1">
+                                    <div class="fs-10">
+                                        This is a <span class="pill surf-t">.dismissable</span> using secondary surface
+                                        <span class="pill surf-t">.surf-s</span>
+                                    </div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable surf-t pa-07" id="notice-4" data-expiry="1">
+                                    <div class="fs-10">
+                                        This is a <span class="pill surf-q">.dismissable</span> using tertiary surface
+                                        <span class="pill surf-q">.surf-t</span>
+                                    </div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable surf-q pa-07" id="notice-4" data-expiry="1">
+                                    <div class="fs-10">
+                                        This is a <span class="pill surf-s">.dismissable</span> using quaternary surface
+                                        <span class="pill surf-q">.surf-s</span>
+                                    </div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable info pa-07" id="notice-1" data-expiry="1">
+                                    <div>
+                                        This is a <span class="pill info">.info</span> dismissable.
+                                    </div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable success pa-07" id="notice-2" data-expiry="1">
+                                    <div>
+                                        This is a <span class="pill success">.success</span> dismissable.
+                                    </div>
+                                    <div class="right mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable caution pa-07" id="notice-3" data-expiry="1">
+                                    <div>
+                                        This is a <span class="pill caution">.caution</span> dismissable.
+                                    </div>
+                                    <div class="center mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                                <div class="dismissable critical pa-07" id="notice-4" data-expiry="10000">
+                                    <div>This is a <span class="pill critical">.critical</span> dismissable.</div>
+                                    <div class="left mt-sm">
+                                        <span class="dismiss">Don't show</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <details class="expandable mt-15">
+                                <summary class="fs-09 fc-surf-t">View Source</summary>
+                                <div class="content">
+                                    <div class="dark-gist-container">
+                                        <script
+                                            src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </section>
 
                 <!-- Dialog -->
-                <section>
-                    <h2>Dialogbox</h2>
-                    <dialog id="dialog1">
-                        <form method="dialog">
-                            <div class="title">Dialog Content-1</div>
-                            <div class="content">A message to the users.</div>
-                            <button>Close</button> <!-- No JS needed -->
-                        </form>
-                    </dialog>
-                    <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
+                <section class="mt-20">
+                    <details>
+                        <summary>Dialogbox</summary>
+                        <div class="content">
+                            <p class="mb-10">
+                                The native HTML <code>&lt;dialog&gt;</code> element creates accessible modal dialogs
+                                with built-in backdrop, focus management, and keyboard support. No JavaScript required
+                                for basic functionality—just use <code>method="dialog"</code> on the form and a simple
+                                <code>showModal()</code> call.
+                            </p>
 
-                    <dialog id="dialog2">
-                        <form method="dialog">
-                            <div class="title">Dialog Content-2</div>
-                            <div class="content">A message to the users.</div>
-                            <button>Close</button> <!-- No JS needed -->
-                        </form>
-                    </dialog>
-                    <button onclick="dialog2.showModal()">Open Dialog</button>
+                            <dialog id="dialog1" class="pa-10">
+                                <form method="dialog">
+                                    <div class="title">Dialog Content-1</div>
+                                    <div class="content">A message to the users.</div>
+                                    <button>Close</button> <!-- No JS needed -->
+                                </form>
+                            </dialog>
+                            <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
+                            <dialog id="dialog2">
+                                <form method="dialog">
+                                    <div class="title">Dialog Content-2</div>
+                                    <div class="content">A message to the users.</div>
+                                    <button>Close</button> <!-- No JS needed -->
+                                </form>
+                            </dialog>
+                            <button onclick="dialog2.showModal()">Open Dialog</button>
+                        </div>
+
+                        <details>
+                            <summary>View Source:</summary>
+                            <div class="content">
+                                <div class="dark-gist-container">
+                                    <script
+                                        src="https://gist.github.com/skpaul/44e1329875b3c40d9f1f4e039b482a41.js"></script>
+                                </div>
+                            </div>
+                        </details>
+                    </details>
                 </section>
 
                 <!-- Expandable -->
-                <section>
-                    <h2>Expandable <span class="pill surf-s">.expandable</span></h2>
+                <section class="mt-20">
                     <details class="expandable">
-                        <summary>Expandable</summary>
+                        <summary>Expandable <span class="pill surf-s">.expandable</span></summary>
                         <div class="content card surf-s pa-05">
                             <p class="fs-10">
                                 Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat inventore. Et
@@ -779,104 +846,244 @@
                 </section>
 
                 <!-- Board -->
-                <section>
-                    <h2>Board <span class="pill surf-s">.board</span></h2>
-                    <div class="grid fr4">
-                        <div class="board success">
-                            This is a <span class="pill success">.success</span> board
-                        </div>
-
-
-                        <div class="board info">
-                            This is a <span class="pill info">.info</span> board
-                        </div>
-
-                        <div class="board caution">
-                            This is a <span class="pill caution">.caution</span> board
-                        </div>
-
-                        <div class="board critical">
-                            This is a <span class="pill critical">.critical</span> board
-                        </div>
-                    </div>
-
-                    <details class="expandable mt-sm">
-                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                <section class="mt-20">
+                    <details>
+                        <summary>Board <span class="pill surf-s">.board</span></summary>
                         <div class="content">
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
+                            <p class="mb-10">
+                                Boards are attention-grabbing content containers with a subtle left border accent.
+                                Perfect for notices, announcements, alerts, or highlighting important information.
+                                Combine with semantic color classes (<code>.success</code>, <code>.info</code>,
+                                <code>.caution</code>, <code>.critical</code>) for visual meaning.
+                            </p>
+                            <div class="grid fr4 fr1-sm" style="gap:1rem;">
+                                <div class="board success pa-07">
+                                    This is a <span class="pill success">.success</span> board
+                                </div>
+
+
+                                <div class="board info pa-07">
+                                    This is a <span class="pill info">.info</span> board
+                                </div>
+
+                                <div class="board caution pa-07">
+                                    This is a <span class="pill caution">.caution</span> board
+                                </div>
+
+                                <div class="board critical pa-07">
+                                    This is a <span class="pill critical">.critical</span> board
+                                </div>
                             </div>
+
+                            <details class="expandable mt-sm">
+                                <summary class="fs-10 fc-surf-t">View Source</summary>
+                                <div class="content">
+                                    <div class="dark-gist-container">
+                                        <script
+                                            src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </section>
 
                 <!-- Pill -->
-                <section>
-                    <h2>Pill <span class="pill surf-s">.pill</span></h2>
-                    <div class="grid fr4">
-                        <div>
-                            <span class="pill success">.success</span>
-                        </div>
-
-
-                        <div class="">
-                            <span class="pill info">.info</span>
-                        </div>
-
-                        <div class="">
-                            <span class="pill caution">.caution</span>
-                        </div>
-
-                        <div class="">
-                            <span class="pill critical">.critical</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Action menu -->
-                <section>
-                    <h2>Action Menu <span class="pill surf-s">.action-menu</span></h2>
-
-                    This is an action menu
-                    <div class="action-menu">
-                        <input type="checkbox" id="menu1">
-                        <label for="menu1">⋮</label>
-                        <div>
-                            <a href="#" class="close-menu">Edit</a>
-                            <a href="#">Edit</a>
-                        </div>
-                    </div>
-
-                    <div class="fs-10 fc-surf-t">
-                        checkbox id and label for must have same value, i.e. menu1.
-                    </div>
-
-                    <details class="expandable mt-sm">
-                        <summary class="fs-10 fc-surf-t">View Source</summary>
+                <section class="mt-20">
+                    <details>
+                        <summary>Pill <span class="pill surf-s">.pill</span></summary>
                         <div class="content">
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
+                            <p class="mb-10">
+                                Pills are compact, rounded inline badges perfect for tags, labels, status indicators, or highlighting short text snippets. They automatically adapt to light and dark themes. Combine with semantic color classes (<code>.success</code>, <code>.info</code>, <code>.caution</code>, <code>.critical</code>) or surface classes (<code>.surf-s</code>, <code>.surf-t</code>) for visual context.
+                            </p>
+                            <div class="grid fr4">
+                                <div>
+                                    <span class="pill success">.success</span>
+                                </div>
+                                <div class="">
+                                    <span class="pill info">.info</span>
+                                </div>
+                                <div class="">
+                                    <span class="pill caution">.caution</span>
+                                </div>
+                                <div class="">
+                                    <span class="pill critical">.critical</span>
+                                </div>
                             </div>
                         </div>
                     </details>
                 </section>
 
+                <!-- Action menu -->
+                <section class="mt-20">
+                    <details>
+                        <summary>Action Menu <span class="pill surf-s">.action-menu</span></summary>
+                        <div class="content">
+                            <p class="mb-10">
+                                A CSS-only kebab menu (three vertical dots ⋮) that reveals contextual actions on click. Perfect for table rows, cards, or anywhere you need compact action menus. Uses a checkbox input for state management—no JavaScript required except for auto-closing when clicking menu items. Add the <code>.close-menu</code> class to any link to automatically dismiss the menu after selection.
+                            </p>
 
+                            <p class="mb-10">This is an action menu:</p>
+                            <div class="action-menu">
+                                <input type="checkbox" id="menu1">
+                                <label for="menu1">⋮</label>
+                                <div>
+                                    <a href="#" class="close-menu">Edit</a>
+                                    <a href="#" class="close-menu">Delete</a>
+                                    <a href="#" class="close-menu">Share</a>
+                                </div>
+                            </div>
 
+                            <p class="mt-10 info pa-05">
+                                <strong>Note:</strong> The checkbox <code>id</code> and label's <code>for</code> attribute must match (e.g., both "menu1").
+                            </p>
 
+                            <details class="expandable mt-sm">
+                                <summary class="fs-10 fc-surf-t">View Source</summary>
+                                <div class="content">
+                                    <div class="dark-gist-container">
+                                        <script
+                                            src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+                </section>
+
+                <!-- Forms -->
+                <section class="mt-20">
+                    <details>
+                        <summary>Forms <span class="pill surf-s">.field</span></summary>
+                        <div class="content">
+                            <p class="mb-10">
+                                OmniCSS provides clean, theme-aware form styling with consistent sizing, smooth transitions, and accessible states. All form elements use CSS variables for easy theming and support both light and dark modes automatically.
+                            </p>
+
+                            <h3 class="mt-md mb-sm">Basic Form Structure</h3>
+                            <p class="mb-xs">Use the <code>.field</code> wrapper for consistent vertical spacing between form elements.</p>
+                            
+                            <form class="card surf-p pa-10">
+                                <div class="field">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" placeholder="Enter your name">
+                                </div>
+
+                                <div class="field">
+                                    <label for="email">Email Address</label>
+                                    <input type="text" id="email" placeholder="you@example.com">
+                                </div>
+
+                                <div class="field">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" placeholder="Enter password">
+                                </div>
+
+                                <div class="field">
+                                    <label for="country">Country</label>
+                                    <select id="country">
+                                        <option value="">Select a country</option>
+                                        <option value="bd">Bangladesh</option>
+                                        <option value="in">India</option>
+                                        <option value="us">United States</option>
+                                        <option value="uk">United Kingdom</option>
+                                    </select>
+                                </div>
+
+                                <div class="field">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" placeholder="Type your message here..." rows="4"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn">Submit</button>
+                            </form>
+
+                            <h3 class="mt-md mb-sm">Required Fields</h3>
+                            <p class="mb-xs">Add the <code>.required</code> class to labels to display a red asterisk (*).</p>
+                            
+                            <form class="card surf-s pa-10">
+                                <div class="field">
+                                    <label for="username" class="required">Username</label>
+                                    <input type="text" id="username" placeholder="Choose a username">
+                                </div>
+
+                                <div class="field">
+                                    <label for="email2" class="required">Email</label>
+                                    <input type="text" id="email2" placeholder="your.email@example.com">
+                                </div>
+                            </form>
+
+                            <h3 class="mt-md mb-sm">Textbox Class</h3>
+                            <p class="mb-xs">Use <code>.textbox</code> to make any element look like a text input. Perfect for displaying readonly data.</p>
+                            
+                            <div class="card surf-p pa-10">
+                                <div class="field">
+                                    <label>Order ID</label>
+                                    <div class="textbox">#ORD-2025-001234</div>
+                                </div>
+                                <div class="field">
+                                    <label>Status</label>
+                                    <div class="textbox">Completed</div>
+                                </div>
+                            </div>
+
+                            <h3 class="mt-md mb-sm">Radio & Checkbox Groups</h3>
+                            <p class="mb-xs">Use <code>.radio-group</code> and <code>.checkbox-group</code> for grouped inputs.</p>
+                            
+                            <form class="card surf-s pa-10">
+                                <div class="field">
+                                    <label class="required">Select Plan</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="plan" value="free"> Free Plan</label>
+                                        <label><input type="radio" name="plan" value="basic"> Basic Plan - $9/mo</label>
+                                        <label><input type="radio" name="plan" value="pro"> Pro Plan - $29/mo</label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label>Preferences</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" name="prefs" value="newsletter"> Subscribe to newsletter</label>
+                                        <label><input type="checkbox" name="prefs" value="updates"> Receive product updates</label>
+                                        <label><input type="checkbox" name="prefs" value="offers"> Get special offers</label>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <h3 class="mt-md mb-sm">Form Theming</h3>
+                            <p class="mb-xs">All form elements use CSS variables for theming. See the <strong>Form Input Variables</strong> section in the <a href="#" class="pill info">CSS Variables - Customization Reference</a> above for the complete list of customizable properties.</p>
+
+                            <p class="info pa-05 mt-sm">
+                                <strong>💡 Interactive States:</strong> Form elements feature smooth transitions on hover and focus, with an inset box shadow on focus for better accessibility.
+                            </p>
+
+                            <details class="expandable mt-sm">
+                                <summary class="fs-10 fc-surf-t">View Source Code</summary>
+                                <div class="content">
+                                    <div class="dark-gist-container">
+                                        <script src="https://gist.github.com/skpaul/YOUR_GIST_ID_HERE.js"></script>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+                </section>
 
                 <!-- Header Template -->
-                <section>
-                    <h2>Header Template</h2>
-                    <div>
+                <section class="mt-20">
+                    <details>
+                        <summary>Header Template</summary>
+                        <div class="content">
+                              <div>
                         <span class="pill">.fixed</span> for always top and visible.
                         <span class="pill">.smart</span> for Sticky header. Auto hide/show on scroll.
                     </div>
                     <div class="dark-gist-container">
                         <script src="https://gist.github.com/skpaul/4fdb9d1638062f99ff8eb066fe5d9631.js"></script>
                     </div>
+                        </div>
+                    </details>
+                  
                 </section>
 
             </div>
@@ -890,7 +1097,8 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.4/omni.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.4/omni.js"></script> -->
+    <script src="../omni.js"></script>
 </body>
 
 </html>
