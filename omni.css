@@ -20,6 +20,7 @@
 :root {
   --color-primary: #0066ff;
   --color-secondary: #7c3aed;
+  --color-black: #2d2d2d;
   /* Surface Hierarchy */
   --primary-surface-bg: #FFFFFF;
   /* Main background */
@@ -71,6 +72,8 @@
   --button-color: #2d2d2d;
   --button-border-color: #d6dbe0;
   --button-background-color: #FFFFFF;
+  /* Accent Color (single variable for the project) */
+  --accent-color: #0066ff;
 }
 
 /* ====================================================
@@ -80,6 +83,7 @@
   :root {
     --color-primary: #0066ff;
     --color-secondary: #7c3aed;
+    --color-black: #e0e0e0;
     /* Surface Hierarchy */
     --primary-surface-bg: #292a2d;
     /* Main background */
@@ -127,9 +131,15 @@
     --input-border-color: #46474b;
     --input-border-color-on-hover: #0066ff;
     --input-border-color-on-focus: #0066ff;
+    --radio-border-color: #7f8086;
+    /* slightly brighter than  --input-border-color*/
+    --checkbox-border-color: var(--radio-border-color);
+    /*  same as radio border color */
     --button-color: #e0e0e0;
     --button-border-color: #46474b;
     --button-background-color: #323336;
+    /* Accent Color (dark mode) */
+    --accent-color: #66b3ff;
   }
 }
 /* ====================================================
@@ -3119,12 +3129,8 @@ Gridable = Grid + Table
 }
 
 /* Accent Color for Form Elements */
-input, select, button {
-  accent-color: #007bff;
-}
-
-input[type=checkbox] {
-  accent-color: #ff5722;
+input, select, button, input[type=checkbox], input[type=radio] {
+  accent-color: var(--accent-color);
 }
 
 .field {
@@ -3200,7 +3206,7 @@ input[type=text], input[type=password], select, textarea, .radio-group, .checkbo
 }
 
 input[type=text], input[type=password], select, .textbox {
-  height: 2.2rem !important;
+  height: 2.4rem !important;
 }
 
 input[type=text], input[type=password], select, .textbox, textarea, .radio-group label, .checkbox-group label {
@@ -3212,6 +3218,70 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
   color: var(--input-color);
   background-color: var(--input-background-color);
   border: 1px solid var(--input-border-color);
+}
+.radio-group > label, .checkbox-group > label {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.radio-group > label:hover, .checkbox-group > label:hover {
+  background-color: var(--quaternary-surface-bg);
+}
+
+input[type=radio] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+  border: 2px solid var(--radio-border-color);
+  border-radius: 50%;
+  background-color: var(--input-background-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+input[type=radio]:hover {
+  background-color: var(--quaternary-surface-bg);
+  border-color: var(--accent-color);
+}
+input[type=radio]:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: inset 0 0 0 3px var(--input-background-color);
+}
+
+input[type=checkbox] {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+  border: 2px solid var(--checkbox-border-color);
+  border-radius: 3px;
+  background-color: var(--input-background-color);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+input[type=checkbox]:hover {
+  background-color: var(--quaternary-surface-bg);
+  border-color: var(--accent-color);
+}
+input[type=checkbox]:checked {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+input[type=checkbox]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid var(--input-background-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* ====================================================
@@ -4692,10 +4762,10 @@ nav {
   color: var(--color-secondary);
 }
 .fc-a {
-  color: var(--color-accent);
+  color: var(--accent-color);
 }
 .fc-black {
-  color: #2d2d2d;
+  color: var(--color-black);
 }
 
 /* Background Colors */
@@ -4706,10 +4776,10 @@ nav {
   background-color: var(--color-secondary);
 }
 .bg-a {
-  background-color: var(--color-accent);
+  background-color: var(--accent-color);
 }
 .bg-black {
-  background-color: #2d2d2d;
+  background-color: var(--color-black);
 }
 
 .fc-surf-p {

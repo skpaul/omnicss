@@ -1,11 +1,7 @@
-  /* Accent Color for Form Elements */
-  input, select, button {
-    accent-color: #007bff;
-  }
-
-  input[type="checkbox"] {
-    accent-color: #ff5722;
-  }
+/* Accent Color for Form Elements */
+input, select, button, input[type="checkbox"], input[type="radio"] {
+  accent-color: var(--accent-color);
+}
 
 
 
@@ -104,7 +100,7 @@ input[type=text], input[type=password], select, textarea, .radio-group, .checkbo
 
 //Make same height.
 input[type=text], input[type=password], select, .textbox{
-    height: 2.2rem !important;
+    height: 2.4rem !important;
 }
 
 //Set font size.
@@ -118,22 +114,77 @@ input[type=text], input[type=password], select, .textbox, textarea, .radio-group
     background-color: var(--input-background-color);
     border: 1px solid var(--input-border-color);
 
-    //By default, a radio-group shows radio inputes vertically.
-    //add .horizontal class to make it horizontal
-    // &.horizontal{
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     flex-direction: row;
-    //     @include small{
-    //         flex-direction: column;
-    //     }
-    //     &>label{
-    //         white-space: nowrap;
-    //         flex:1;
-    //         flex-basis: 25%;
-    //      }
-    //     &>label:not(:last-child){
-    //        margin-right: 1.5rem;
-    //     }
-    // }
+    &>label{
+        display: flex;
+        align-items: center;
+        padding: 0.3rem 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover{
+            background-color: var(--quaternary-surface-bg);
+        }
+    }
+
+}
+
+
+input[type="radio"]{
+    appearance: none; // Hide native control
+    width: 1rem;
+    height: 1rem;
+    margin-right: 10px;
+    border: 2px solid var(--radio-border-color);
+    border-radius: 50%;
+    background-color: var(--input-background-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+        background-color: var(--quaternary-surface-bg); // ✅ Now works
+        border-color: var(--accent-color);
+    }
+
+    &:checked{
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+        box-shadow: inset 0 0 0 3px var(--input-background-color); // Inner dot
+    }
+}
+
+input[type="checkbox"]{
+    appearance: none; // Hide native control
+    width: 1rem;
+    height: 1rem;
+    margin-right: 10px;
+    border: 2px solid var(--checkbox-border-color);
+    border-radius: 3px;
+    background-color: var(--input-background-color);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &:hover{
+        background-color: var(--quaternary-surface-bg);
+        border-color: var(--accent-color);
+    }
+
+    &:checked{
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+
+        // Checkmark
+        &::after{
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 4px;
+            height: 8px;
+            border: solid var(--input-background-color);
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    }
 }

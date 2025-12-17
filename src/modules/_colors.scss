@@ -4,16 +4,16 @@
 .fc{
     &-p { color: var(--color-primary); }
     &-s { color: var(--color-secondary); }
-    &-a { color: var(--color-accent); }
-    &-black{ color: #2d2d2d; }
+    &-a { color: var(--accent-color); }
+    &-black{ color: var(--color-black); }
 }
 
 /* Background Colors */
 .bg{
     &-p { background-color: var(--color-primary); }
     &-s { background-color: var(--color-secondary); }
-    &-a { background-color: var(--color-accent); }
-    &-black{ background-color: #2d2d2d; }
+    &-a { background-color: var(--accent-color); }
+    &-black{ background-color: var(--color-black); }
 }
 
 

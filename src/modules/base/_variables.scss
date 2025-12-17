@@ -19,6 +19,7 @@
 :root {
     --color-primary: #0066ff;
     --color-secondary: #7c3aed;
+    --color-black: #2d2d2d;
 
     /* Surface Hierarchy */
     //Primary
@@ -74,6 +75,9 @@
     --button-color: #2d2d2d;
     --button-border-color: #d6dbe0;
     --button-background-color: #FFFFFF;
+
+    /* Accent Color (single variable for the project) */
+    --accent-color: #0066ff;
 }
 
 /* ====================================================
@@ -83,6 +87,7 @@
     :root {
         --color-primary: #0066ff;
         --color-secondary: #7c3aed;
+        --color-black: #e0e0e0;
     
         /* Surface Hierarchy */
         //Primary
@@ -134,10 +139,16 @@
         --input-border-color: #46474b;
         --input-border-color-on-hover: #0066ff;
         --input-border-color-on-focus: #0066ff;
+
+        --radio-border-color: #7f8086;    /* slightly brighter than  --input-border-color*/
+        --checkbox-border-color: var(--radio-border-color);    /*  same as radio border color */
         
         --button-color: #e0e0e0;
         --button-border-color: #46474b;
         --button-background-color: #323336;
+
+        /* Accent Color (dark mode) */
+        --accent-color: #66b3ff;
     }
 }
 
