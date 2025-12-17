@@ -7,6 +7,8 @@
 ==================================================== */
 :root {
   --font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-weight: 300;
+  --line-height: 1.6;
   --border: 1px solid var(--primary-surface-border);
   --border-radius: 5px;
   --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
@@ -87,7 +89,7 @@
     /* Surface Hierarchy */
     --primary-surface-bg: #292a2d;
     /* Main background */
-    --primary-surface-text: #e0e0e0;
+    --primary-surface-text: #dbdbdb;
     /* Very light gray for strong contrast */
     --primary-surface-border: #3a3b3e;
     /* Subtle border for base surface */
@@ -170,8 +172,8 @@ html {
 
 body {
   font-family: var(--font-family);
-  font-weight: 400;
-  line-height: 1.6;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
   background: var(--primary-surface-bg);
   color: var(--primary-surface-text);
   min-height: 100vh;

@@ -24,8 +24,8 @@ html {
 
 body {
     font-family: var(--font-family);
-    font-weight: 400;
-    line-height: 1.6;
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
     background: var(--primary-surface-bg);
     color: var(--primary-surface-text);
     min-height: 100vh;
