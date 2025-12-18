@@ -16,6 +16,14 @@
     &-black{ background-color: var(--color-black); }
 }
 
+/* Border Colors */
+.bc{
+    &-p { border-color: var(--color-primary); }
+    &-s { border-color: var(--color-secondary); }
+    &-a { border-color: var(--accent-color); }
+    &-black{ border-color: var(--color-black); }
+}
+
 
 .fc-surf-p{color: var(--primary-surface-text);}
 .fc-surf-s{color: var(--secondary-surface-text);}

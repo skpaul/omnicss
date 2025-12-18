@@ -61,6 +61,7 @@
   --color-toggle-bg: #e0e0e0;
   --color-toggle-icon: #ffbb00;
   /* Form Elements */
+  --accent-color: #0066ff;
   --label-color: #3a3a3a;
   --placeholder-color: #999999;
   --input-color: #2d2d2d;
@@ -71,11 +72,13 @@
   --input-border-color: #d6dbe0;
   --input-border-color-on-hover: #0066ff;
   --input-border-color-on-focus: #0066ff;
+  --radio-border-color: #7f8086;
+  /* slightly brighter than  --input-border-color*/
+  --checkbox-border-color: var(--radio-border-color);
+  /*  same as radio border color */
   --button-color: #2d2d2d;
   --button-border-color: #d6dbe0;
   --button-background-color: #FFFFFF;
-  /* Accent Color (single variable for the project) */
-  --accent-color: #0066ff;
 }
 
 /* ====================================================
@@ -220,6 +223,104 @@ a {
 /* Small devices (max-width: 768px) */
 /* Extra Small devices (max-width: 576px) */
 /* Ultra Small devices (max-width: 480px) */
+/* ====================================================
+   Border All Sides
+==================================================== */
+.ba {
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* ====================================================
+   Border Directional (Individual Sides)
+==================================================== */
+.bt {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.bb {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.bl {
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+
+.br {
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+/* ====================================================
+   Border Horizontal & Vertical
+==================================================== */
+.bh {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-right-width: 1px;
+  border-right-style: solid;
+}
+
+.bv {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+/* ====================================================
+   Border Width
+==================================================== */
+.bw-0 {
+  border-width: 0;
+}
+
+.bw-1 {
+  border-width: 1px;
+}
+
+.bw-2 {
+  border-width: 2px;
+}
+
+.bw-3 {
+  border-width: 3px;
+}
+
+.bw-4 {
+  border-width: 4px;
+}
+
+.bw-5 {
+  border-width: 5px;
+}
+
+/* ====================================================
+   Border Style
+==================================================== */
+.bs-solid {
+  border-style: solid;
+}
+
+.bs-dashed {
+  border-style: dashed;
+}
+
+.bs-dotted {
+  border-style: dotted;
+}
+
+.bs-double {
+  border-style: double;
+}
+
+.bs-none {
+  border-style: none;
+}
+
 .pa-0 {
   padding: 0 !important;
 }
@@ -4782,6 +4883,20 @@ nav {
 }
 .bg-black {
   background-color: var(--color-black);
+}
+
+/* Border Colors */
+.bc-p {
+  border-color: var(--color-primary);
+}
+.bc-s {
+  border-color: var(--color-secondary);
+}
+.bc-a {
+  border-color: var(--accent-color);
+}
+.bc-black {
+  border-color: var(--color-black);
 }
 
 .fc-surf-p {

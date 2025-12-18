@@ -143,267 +143,896 @@
                     <h1>OmniCSS: The CSS Framework</h1>
                 </section>
 
-
-                <!-- Installation -->
-                <section class="mt-20">
-                    <details>
-                        <summary>OmniCSS Installation</summary>
-                        <div>
-                            The easiest way to use from CDN below-
-                            <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
-                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
-                                <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
-                            </div>
-                        </div>
-                        <div>
-                            As an alternative, download the latest repo from <a class="pill secondary"
-                                href="https://github.com/skpaul/omnicss">GitHub</a>.
-                        </div>
-                    </details>
-                </section>
-
-                <!-- Base Layout -->
-                <section class="mt-20">
-                    <details>
-                        <summary>Base Layout</summary>
-
-                        <div class="content">
-                            <p class="fs-09">
-                                <span class="pill surf-t">.layout</span> class serves the foundation of your page
-                                design.
-                            </p>
-                            <p>
-                                Start by placing your content inside the header, main, and footer sections—OmniCSS will
-                                handle
-                                the layout automatically.
-                            </p>
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
-                            </div>
-
-                            <div class="explanation">
-                                <h3 class="mb-10">Understanding the Layout Structure</h3>
-
-                                <h4><span class="pill surf-s">.layout</span> - The Container</h4>
-                                <p>
-                                    The <code>.layout</code> class creates a full-viewport grid with three rows: header,
-                                    main, and footer.
-                                    It ensures the footer always stays at the bottom, even on pages with minimal
-                                    content.
-                                </p>
-
-                                <h4><span class="pill surf-s">header</span> - Fixed Height</h4>
-                                <p>
-                                    The header section has a fixed height of <code>60px</code> and contains your site
-                                    navigation, logo, and other top-level UI elements.
-                                    Add <code>.fixed</code> or <code>.smart</code> classes for sticky header behavior.
-                                </p>
-
-                                <h4><span class="pill surf-s">main</span> - Flexible Content Area</h4>
-                                <p>
-                                    The main section takes up all remaining vertical space using <code>1fr</code>
-                                    (fractional unit).
-                                    Content here scrolls independently if it exceeds the viewport height. This is where
-                                    your page content lives.
-                                </p>
-
-                                <h4><span class="pill surf-s">footer</span> - Auto Height</h4>
-                                <p>
-                                    The footer has automatic height based on its content. It always sits at the bottom
-                                    of the viewport
-                                    or below the main content, whichever is lower—creating a "sticky footer" effect
-                                    without JavaScript.
-                                </p>
-                            </div>
-                        </div>
-                    </details>
-                </section>
-
-                <!-- Container -->
-                <section class="mt-20">
-                    <details>
-                        <summary>Container</summary>
-                        <div class="content">
-                            <div class="grid fr1">
-                                <div><span class="pill surf-s">.container</span> sets max-width 1200px (default),
-                                    centered with
-                                    auto margins and padding</div>
-                                <div><span class="pill surf-s">.container-fluid</span> full width container, takes 100%
-                                    width
-                                    with horizontal padding</div>
-                                <div><span class="pill surf-s">.container-1100</span> sets max-width 1100px, centered
-                                    with auto
-                                    margins</div>
-                                <div><span class="pill surf-s">.container-1000</span> sets max-width 1000px, centered
-                                    with auto
-                                    margins</div>
-                                <div><span class="pill surf-s">.container-900</span> sets max-width 900px, centered with
-                                    auto
-                                    margins</div>
-                                <div><span class="pill surf-s">.container-800</span> sets max-width 800px, centered with
-                                    auto
-                                    margins</div>
-                                <div><span class="pill surf-s">.container-700</span> sets max-width 700px, centered with
-                                    auto
-                                    margins</div>
-                                <div><span class="pill surf-s">.container-600</span> sets max-width 600px, centered with
-                                    auto
-                                    margins</div>
-                            </div>
-                        </div>
-                    </details>
-
-
-                </section>
-
-                <!-- Dark/Light Theme -->
-                <section class="mt-20">
-
-                    <details>
-                        <summary>System-Based Dark & Light Themes</summary>
-                        <div class="content">
-                            <div>
-                                OmniCSS automatically adapts to your system's theme preference using CSS variables and
-                                <code>@media (prefers-color-scheme: dark)</code>.
-                            </div>
-                            <p>
-                                No JavaScript or manual toggles required—just pure CSS that respects your OS settings.
-                            </p>
-                            <p>Example:</p>
-                            <div>
-                                <code>@media (prefers-color-scheme: dark) {</code><br>
-                                <code>&nbsp;&nbsp;:root { --primary-surface-bg: #292a2d; }</code><br>
-                                <code>}</code>
-                            </div>
-                        </div>
-                    </details>
-
-                </section>
-
-                <!-- CSS Variables Reference -->
-                <section class="mt-20">
-                    <details>
-                        <summary>CSS Variables - Customization Reference</summary>
+                <!-- The System -->
+                <article>
+                    <details open>
+                        <summary>The System</summary>
                         <div class="content">
 
-                            <p>
-                                Override these CSS custom properties in your own stylesheet to customize OmniCSS to
-                                match your
-                                brand.
-                            </p>
-                            <h3>Brand Colors</h3>
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/2799dfca0e5f033f9bd1afb48ef5ab7c.js"></script>
-                            </div>
-                            <p class="info pa-05 mt-sm">
-                                <strong>Note:</strong> <code>--color-black</code> is <code>#2d2d2d</code> in light mode
-                                and
-                                <code>#e0e0e0</code> in dark mode for theme consistency.
-                            </p>
-                            <h3>Surface System (Auto Light/Dark)</h3>
-                            <div class="grid fr2 fr1-sm" style="gap: 1rem;">
-                                <div>
-                                    <h4>Light Mode (Default)</h4>
-                                    <div class="dark-gist-container">
-                                        <script
-                                            src="https://gist.github.com/skpaul/de6426caf20863bc5b08239a2405c2f0.js"></script>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4>Dark Mode (System Preference)</h4>
-                                    <div class="dark-gist-container">
-                                        <script
-                                            src="https://gist.github.com/skpaul/f23db4856bd3e76f6a356b6379500740.js"></script>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Semantic Alert Colors</h3>
-                            <div class="grid fr2 fr1-sm" style="gap: 1rem;">
-                                <div>
-                                    <h4>Light Mode</h4>
-                                    <div class="dark-gist-container">
-                                        <script
-                                            src="https://gist.github.com/skpaul/719792c27d35cd65915adebf381c6d75.js"></script>
-                                    </div>
-                                </div>
-                                <div>
-                                    <h4>Dark Mode</h4>
-                                    <div class="dark-gist-container">
-                                        <script
-                                            src="https://gist.github.com/skpaul/2c3c53977eeba4044a08a7d0b29a6515.js"></script>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3>Core Design Tokens</h3>
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/372558478da8084d4d16aa71e7f20949.js"></script>
-                            </div>
-                            <h3>Form Input Variables</h3>
-                            <p class="mb-xs">Customize form elements by overriding these variables:</p>
-                            <div class="card surf-p pa-10">
-                                <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                            <!-- Installation -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>OmniCSS Installation</summary>
                                     <div>
-                                        <strong>Colors</strong>
-                                        <ul class="ml-sm fs-09 mt-xs">
-                                            <li><code>--label-color</code></li>
-                                            <li><code>--input-color</code></li>
-                                            <li><code>--input-caret-color</code></li>
-                                            <li><code>--placeholder-color</code></li>
-                                        </ul>
+                                        The easiest way to use from CDN below-
+                                        <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
+                                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
+                                            <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
+                                        </div>
                                     </div>
                                     <div>
-                                        <strong>Background Colors</strong>
-                                        <ul class="ml-sm fs-09 mt-xs">
-                                            <li><code>--input-background-color</code></li>
-                                            <li><code>--input-background-color-on-hover</code></li>
-                                            <li><code>--input-background-color-on-focus</code></li>
-                                        </ul>
+                                        As an alternative, download the latest repo from <a class="pill secondary"
+                                            href="https://github.com/skpaul/omnicss">GitHub</a>.
                                     </div>
-                                    <div>
-                                        <strong>Border Colors</strong>
-                                        <ul class="ml-sm fs-09 mt-xs">
-                                            <li><code>--input-border-color</code></li>
-                                            <li><code>--input-border-color-on-hover</code></li>
-                                            <li><code>--input-border-color-on-focus</code></li>
-                                        </ul>
+                                </details>
+                            </section>
+
+                            <!-- Container -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Container</summary>
+                                    <div class="content">
+                                        <div class="grid fr1">
+                                            <div><span class="pill surf-s">.container</span> sets max-width 1200px
+                                                (default),
+                                                centered with
+                                                auto margins and padding</div>
+                                            <div><span class="pill surf-s">.container-fluid</span> full width container,
+                                                takes 100%
+                                                width
+                                                with horizontal padding</div>
+                                            <div><span class="pill surf-s">.container-1100</span> sets max-width 1100px,
+                                                centered
+                                                with auto
+                                                margins</div>
+                                            <div><span class="pill surf-s">.container-1000</span> sets max-width 1000px,
+                                                centered
+                                                with auto
+                                                margins</div>
+                                            <div><span class="pill surf-s">.container-900</span> sets max-width 900px,
+                                                centered with
+                                                auto
+                                                margins</div>
+                                            <div><span class="pill surf-s">.container-800</span> sets max-width 800px,
+                                                centered with
+                                                auto
+                                                margins</div>
+                                            <div><span class="pill surf-s">.container-700</span> sets max-width 700px,
+                                                centered with
+                                                auto
+                                                margins</div>
+                                            <div><span class="pill surf-s">.container-600</span> sets max-width 600px,
+                                                centered with
+                                                auto
+                                                margins</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <strong>Button Colors</strong>
-                                        <ul class="ml-sm fs-09 mt-xs">
-                                            <li><code>--button-color</code></li>
-                                            <li><code>--button-border-color</code></li>
-                                            <li><code>--button-background-color</code></li>
-                                        </ul>
+                                </details>
+
+
+                            </section>
+
+                            <!-- Dark/Light Theme -->
+                            <section class="mt-20">
+
+                                <details>
+                                    <summary>System-Based Dark & Light Themes</summary>
+                                    <div class="content">
+                                        <div>
+                                            OmniCSS automatically adapts to your system's theme preference using CSS
+                                            variables and
+                                            <code>@media (prefers-color-scheme: dark)</code>.
+                                        </div>
+                                        <p>
+                                            No JavaScript or manual toggles required—just pure CSS that respects your OS
+                                            settings.
+                                        </p>
+                                        <p>Example:</p>
+                                        <div>
+                                            <code>@media (prefers-color-scheme: dark) {</code><br>
+                                            <code>&nbsp;&nbsp;:root { --primary-surface-bg: #292a2d; }</code><br>
+                                            <code>}</code>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <strong>Accent Color</strong>
-                                        <ul class="ml-sm fs-09 mt-xs">
-                                            <li><code>--accent-color</code> - Controls the color used by native form
-                                                controls
-                                                (checkboxes, radios, range sliders, progress bars) and related focus
-                                                accents.
+                                </details>
+
+                            </section>
+
+                            <!-- CSS Variables Reference -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>CSS Variables - Customization Reference</summary>
+                                    <div class="content">
+                                        <p>Override these CSS custom properties in your own stylesheet to customize
+                                            OmniCSS to match your brand.</p>
+                                        <h3 class="mt-20 mb-08">Core Design Tokens</h3>
+                                        <div class="dark-gist-container">
+                                            <script
+                                                src="https://gist.github.com/skpaul/372558478da8084d4d16aa71e7f20949.js"></script>
+                                        </div>
+
+                                        <h3 class="mt-20 mb-08">Brand Colors</h3>
+                                        <div class="dark-gist-container">
+                                            <script
+                                                src="https://gist.github.com/skpaul/2799dfca0e5f033f9bd1afb48ef5ab7c.js"></script>
+                                        </div>
+                                        <p class="info pa-05 mt-sm">
+                                            <strong>Note:</strong> <code>--color-black</code> is <code>#2d2d2d</code> in
+                                            light mode
+                                            and
+                                            <code>#e0e0e0</code> in dark mode for theme consistency.
+                                        </p>
+
+                                        <h3 class="mt-20 mb-08">Surface System (Auto Light/Dark)</h3>
+                                        <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Light Mode (Default)</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/de6426caf20863bc5b08239a2405c2f0.js"></script>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Dark Mode (System Preference)</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/f23db4856bd3e76f6a356b6379500740.js"></script>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h3 class="mt-20 mb-08">Semantic Alert Colors</h3>
+                                        <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Light Mode</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/719792c27d35cd65915adebf381c6d75.js"></script>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Dark Mode</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/2c3c53977eeba4044a08a7d0b29a6515.js"></script>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-20 mb-08">Form Input Variables</h3>
+                                        <p class="mb-08 fs-09">Customize form elements by overriding these variables:
+                                        </p>
+                                        <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Light Mode</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/93de079a8ae6f6d4d42db30d3479f955.js"></script>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="fw-300 mb-06">Dark Mode</h4>
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/e5a729c300498125acf73c10707ae221.js"></script>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                        <h3 class="mt-20 mb-08">Customization Example</h3>
+                                        <p>Create your own stylesheet and override the variables:</p>
+                                        <div class="dark-gist-container">
+                                            <script
+                                                src="https://gist.github.com/skpaul/e0017139926cd38bb3ff0147d1c76049.js"></script>
+                                        </div>
+                                        <p class="info pa-sm">
+                                            <strong>💡 Tip:</strong> Load your custom stylesheet <em>after</em> omni.css
+                                            to ensure your variables override the defaults.
+                                        </p>
+                                    </div>
+                                </details>
+                            </section>
+
+                            <!-- Responsive Breakpoints & Media Queries -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Responsive Breakpoints & Media Queries</summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            OmniCSS uses a desktop approach with six responsive breakpoints. Each
+                                            breakpoint has corresponding utility class suffixes and Sass mixins for
+                                            custom styling.
+                                        </p>
+
+                                        <h3 class="mb-15">Breakpoint Values</h3>
+                                        <div class="card surf-p pa-10">
+                                            <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <strong>Extra Large (xl)</strong><br>
+                                                    <code class="fs-09">min-width: 1400px</code>
+                                                </div>
+                                                <div>
+                                                    <strong>Large (lg)</strong><br>
+                                                    <code class="fs-09">min-width: 1200px</code>
+                                                </div>
+                                                <div>
+                                                    <strong>Medium (md)</strong><br>
+                                                    <code class="fs-09">max-width: 992px</code>
+                                                </div>
+                                                <div>
+                                                    <strong>Small (sm)</strong><br>
+                                                    <code class="fs-09">max-width: 768px</code>
+                                                </div>
+                                                <div>
+                                                    <strong>Extra Small (xs)</strong><br>
+                                                    <code class="fs-09">max-width: 576px</code>
+                                                </div>
+                                                <div>
+                                                    <strong>Ultra Small (us)</strong><br>
+                                                    <code class="fs-09">max-width: 480px</code>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-15">Responsive Utility Class Suffixes</h3>
+                                        <p class="mb-10">
+                                            Append breakpoint suffixes to any utility class to apply styles at specific
+                                            screen sizes. Examples:
+                                        </p>
+                                        <div class="card surf-s pa-10">
+                                            <div class="grid fr3 fr1-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <code>.fs-20-sm</code><br>
+                                                    <span class="fs-09">Font size 2.0rem on small devices</span>
+                                                </div>
+                                                <div>
+                                                    <code>.pa-10-md</code><br>
+                                                    <span class="fs-09">Padding 1.0rem on medium devices</span>
+                                                </div>
+                                                <div>
+                                                    <code>.mb-20-xs</code><br>
+                                                    <span class="fs-09">Margin bottom 2.0rem on extra small
+                                                        devices</span>
+                                                </div>
+                                                <div>
+                                                    <code>.grid.fr3-sm</code><br>
+                                                    <span class="fs-09">3-column grid on small devices</span>
+                                                </div>
+                                                <div>
+                                                    <code>.grid.fr1-xs</code><br>
+                                                    <span class="fs-09">Single column on extra small devices</span>
+                                                </div>
+                                                <div>
+                                                    <code>.hide-md</code><br>
+                                                    <span class="fs-09">Hide element on medium devices and below</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-15">Sass Mixins for Custom Styles</h3>
+                                        <p class="mb-05 fs-09">
+                                            Use these mixins in your custom SCSS to write responsive styles:
+                                        </p>
+                                        <style>
+                                            ul.breakpoint-mixins {
+                                                margin-left: 1rem;
+                                            }
+
+                                            ul.breakpoint-mixins>li {
+                                                margin-bottom: 0.5rem;
+                                            }
+
+                                            ul.breakpoint-mixins>li::marker {
+                                                color: red;
+                                            }
+                                        </style>
+                                        <div class="card surf-p pa-10">
+                                            <h4 class="mb-xs">Available Mixins</h4>
+                                            <ul class="ml-sm fs-09 breakpoint-mixins">
+                                                <li><code>@include xl { ... }</code> - Extra Large devices (min-width:
+                                                    1400px)</li>
+                                                <li><code>@include lg { ... }</code> - Large devices (min-width: 1200px)
+                                                </li>
+                                                <li><code>@include md { ... }</code> - Medium devices (max-width: 992px)
+                                                </li>
+                                                <li><code>@include sm { ... }</code> - Small devices (max-width: 768px)
+                                                </li>
+                                                <li><code>@include xs { ... }</code> - Extra Small devices (max-width:
+                                                    576px)</li>
+                                                <li><code>@include us { ... }</code> - Ultra Small devices (max-width:
+                                                    480px)</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </details>
+                            </section>
+
+                            <!-- Surface Hierarchy  -->
+                             <section class="mt-20">
+                                <details>
+                                    <summary>Surface Hierarchy</summary>
+                                    <div class="content">
+                                        <div class="mb-10">
+                                            OmniCSS defines four surface levels for backgrounds, borders, and text:
+                                        </div>
+                                        <div class="grid fr4 fr1-sm">
+                                            <div class="pa-10 center card surf-p"><span class="pill surf-s">.surf-p</span> <br> <span class="fs-09">Primary Surface</span></div>
+                                            <div class="pa-10 center card surf-s"><span class="pill surf-t">.surf-s</span> <br> <span class="fs-09">Secondary Surface</span></div>
+                                            <div class="pa-10 center card surf-t"><span class="pill surf-q">.surf-s</span> <br> <span class="fs-09">Tertiary Surface</span></div>
+                                            <div class="pa-10 center card surf-q"><span class="pill surf-t">.surf-q</span> <br> <span class="fs-09">Quaternary Surface</span></div>                                        
+                                        </div>
+                                    </div>
+                                </details>
+
+                             </section>
+                              
+                             <!-- Color System -->
+                            <section class="mt-20">
+                                <details open>
+                                    <summary>Color System</summary>
+                                    <div class="content">
+                                        <p class="mb-15">OmniCSS has the following color system-</p>
+
+                                        <ul class="ml-10">
+                                            <li>
+                                                <h4>Brand/Functional Colors</h4>
+                                                <ul class="ml-10 fs-09">
+                                                    <li>Primary Brand Color</li>
+                                                    <li>Secondary Brand Color</li>
+                                                </ul>
+                                            </li>
+                                            <li class="mt-05">
+                                                <h4>Semantic Colors</h4>
+                                                <ul class="ml-10 fs-09">
+                                                    <li>Success</li>
+                                                    <li>Caution</li>
+                                                    <li>Info</li>
+                                                    <li>Critical</li>
+                                                </ul>
+                                            </li>
+                                            <li class="mt-05">
+                                                <h4>Surface Hierarchy Colors</h4>
                                             </li>
                                         </ul>
+
+                                        <p class="mt-15">See more details and examples in the respective section below.</p>
                                     </div>
-                                </div>
-                            </div>
-                            <h3>Customization Example</h3>
-                            <p>Create your own stylesheet and override the variables:</p>
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/e0017139926cd38bb3ff0147d1c76049.js"></script>
-                            </div>
-                            <p class="info pa-sm">
-                                <strong>💡 Tip:</strong> Load your custom stylesheet <em>after</em> omni.css to ensure
-                                your
-                                variables override the defaults.
-                            </p>
+                                  
+                                </details>
+                            </section>
+
+
+
                         </div>
                     </details>
-                </section>
+                </article>
+
+                <!-- Components -->
+                <article>
+                    <details>
+                        <summary class="fs-30">Omni Components</summary>
+
+                        <div class="content">
+                            <!-- Gridable -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Gridable = Grid + Table</summary>
+                                    <style>
+                                        .header-item,
+                                        .grid-cell {
+                                            padding: 0.5rem;
+                                        }
+
+                                        .grid-cell {
+                                            color: gray;
+                                        }
+                                    </style>
+                                    <div class="content">
+                                        <div class="mb-10">
+                                            Use <span class="pill">.gridable</span> for gridable component. Use <span
+                                                class="pill">.us</span>/<span class="pill">.sm</span>/<span
+                                                class="pill">.md</span>
+                                            to make
+                                            it reponsive at your target devices.
+                                        </div>
+                                        <div class="surf-p gridable md">
+                                            <div class="grid-header">
+                                                <div class="header-item">Col-1</div>
+                                                <div class="header-item">Col-2</div>
+                                                <div class="header-item">Col-3</div>
+                                                <div class="header-item">Col-4</div>
+                                                <div class="header-item">Col-5</div>
+                                            </div>
+                                            <div class="grid-row">
+                                                <div class="grid-cell" data-label="Col-1">One</div>
+                                                <div class="grid-cell" data-label="Col-2">Two</div>
+                                                <div class="grid-cell" data-label="Col-3">Three</div>
+                                                <div class="grid-cell" data-label="Col-4">Four</div>
+                                                <div class="grid-cell" data-label="Col-5">Five</div>
+                                            </div>
+                                            <div class="grid-row">
+                                                <div class="grid-cell" data-label="Col-1">One</div>
+                                                <div class="grid-cell" data-label="Col-2">Two</div>
+                                                <div class="grid-cell" data-label="Col-3">Three</div>
+                                                <div class="grid-cell" data-label="Col-4">Four</div>
+                                                <div class="grid-cell" data-label="Col-5">Five</div>
+                                            </div>
+                                        </div>
+                                        <details class="expandable mt-10">
+                                            <summary class="fs-08 fc-surf-t">View Source</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Dismissable -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Dismissable <span class="pill surf-s">.dissmissable</span></summary>
+                                    <div class="content">
+                                        <div class="mt-10">
+                                            <span class="pill">.dismissable</span> for a dismissable notice. Mention
+                                            expiry
+                                            in days.
+                                            Must
+                                            have a unique id for each dismissable.
+                                        </div>
+                                        <div class="grid fr3" style="gap:1rem;">
+                                            <div class="dismissable surf-p pa-07" id="notice-1010" data-expiry="2">
+                                                <div class="fs-10">
+                                                    This is a <span class="pill surf-s">.dismissable</span> using
+                                                    primary
+                                                    surface
+                                                    <span class="pill surf-s">.surf-p</span>
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable surf-s pa-07" id="notice-4" data-expiry="1">
+                                                <div class="fs-10">
+                                                    This is a <span class="pill surf-t">.dismissable</span> using
+                                                    secondary
+                                                    surface
+                                                    <span class="pill surf-t">.surf-s</span>
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable surf-t pa-07" id="notice-4" data-expiry="1">
+                                                <div class="fs-10">
+                                                    This is a <span class="pill surf-q">.dismissable</span> using
+                                                    tertiary
+                                                    surface
+                                                    <span class="pill surf-q">.surf-t</span>
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable surf-q pa-07" id="notice-4" data-expiry="1">
+                                                <div class="fs-10">
+                                                    This is a <span class="pill surf-s">.dismissable</span> using
+                                                    quaternary
+                                                    surface
+                                                    <span class="pill surf-q">.surf-s</span>
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable info pa-07" id="notice-1" data-expiry="1">
+                                                <div>
+                                                    This is a <span class="pill info">.info</span> dismissable.
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable success pa-07" id="notice-2" data-expiry="1">
+                                                <div>
+                                                    This is a <span class="pill success">.success</span> dismissable.
+                                                </div>
+                                                <div class="right mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable caution pa-07" id="notice-3" data-expiry="1">
+                                                <div>
+                                                    This is a <span class="pill caution">.caution</span> dismissable.
+                                                </div>
+                                                <div class="center mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                            <div class="dismissable critical pa-07" id="notice-4" data-expiry="10000">
+                                                <div>This is a <span class="pill critical">.critical</span> dismissable.
+                                                </div>
+                                                <div class="left mt-sm">
+                                                    <span class="dismiss">Don't show</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <details class="expandable mt-15">
+                                            <summary class="fs-09 fc-surf-t">View Source</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Dialog -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Dialogbox</summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            The native HTML <code>&lt;dialog&gt;</code> element creates accessible modal
+                                            dialogs
+                                            with built-in backdrop, focus management, and keyboard support. No
+                                            JavaScript
+                                            required
+                                            for basic functionality—just use <code>method="dialog"</code> on the form
+                                            and a
+                                            simple
+                                            <code>showModal()</code> call.
+                                        </p>
+                                        <dialog id="dialog1" class="pa-10">
+                                            <form method="dialog">
+                                                <div class="title">Dialog Content-1</div>
+                                                <div class="content">A message to the users.</div>
+                                                <button>Close</button> <!-- No JS needed -->
+                                            </form>
+                                        </dialog>
+                                        <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
+                                        <dialog id="dialog2">
+                                            <form method="dialog">
+                                                <div class="title">Dialog Content-2</div>
+                                                <div class="content">A message to the users.</div>
+                                                <button>Close</button> <!-- No JS needed -->
+                                            </form>
+                                        </dialog>
+                                        <button onclick="dialog2.showModal()">Open Dialog</button>
+                                    </div>
+                                    <details>
+                                        <summary>View Source:</summary>
+                                        <div class="content">
+                                            <div class="dark-gist-container">
+                                                <script
+                                                    src="https://gist.github.com/skpaul/44e1329875b3c40d9f1f4e039b482a41.js"></script>
+                                            </div>
+                                        </div>
+                                    </details>
+                                </details>
+                            </section>
+                            <!-- Expandable -->
+                            <section class="mt-20">
+                                <details class="expandable">
+                                    <summary>Expandable <span class="pill surf-s">.expandable</span></summary>
+                                    <div class="content card surf-s pa-05">
+                                        <p class="fs-10">
+                                            Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat
+                                            inventore. Et
+                                            obcaecati vero in quod corporis sit nulla quia et dignissimos dolorem vel
+                                            neque
+                                            amet ut
+                                            quia iusto! In iusto quia ut impedit voluptates eum recusandae quaerat 33
+                                            minus
+                                            maxime
+                                            nam odio itaque aut molestiae voluptatem est voluptatem quas.
+                                        </p>
+                                        <p class="fs-10 mt-sm">
+                                            Sit temporibus provident sit eius fuga cum facilis omnis ea repudiandae
+                                            excepturi! Et
+                                            dolorem odit aut ullam eaque sed reprehenderit expedita qui dolores ipsam et
+                                            pariatur
+                                            quasi sit voluptatibus accusamus. Sit nemo vero nam veniam minus nam
+                                            aspernatur
+                                            ipsa ut
+                                            quia atque id commodi molestias sed illo alias quo animi voluptas. Qui rerum
+                                            rerum et
+                                            voluptatem dolores in voluptates animi est aliquid voluptatum sit beatae
+                                            excepturi.
+                                        </p>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Board -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Board <span class="pill surf-s">.board</span></summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            Boards are attention-grabbing content containers with a subtle left border
+                                            accent.
+                                            Perfect for notices, announcements, alerts, or highlighting important
+                                            information.
+                                            Combine with semantic color classes (<code>.success</code>,
+                                            <code>.info</code>,
+                                            <code>.caution</code>, <code>.critical</code>) for visual meaning.
+                                        </p>
+                                        <div class="grid fr4 fr1-sm" style="gap:1rem;">
+                                            <div class="board success pa-07">
+                                                This is a <span class="pill success">.success</span> board
+                                            </div>
+                                            <div class="board info pa-07">
+                                                This is a <span class="pill info">.info</span> board
+                                            </div>
+                                            <div class="board caution pa-07">
+                                                This is a <span class="pill caution">.caution</span> board
+                                            </div>
+                                            <div class="board critical pa-07">
+                                                This is a <span class="pill critical">.critical</span> board
+                                            </div>
+                                        </div>
+                                        <details class="expandable mt-sm">
+                                            <summary class="fs-10 fc-surf-t">View Source</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Pill -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Pill <span class="pill surf-s">.pill</span></summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            Pills are compact, rounded inline badges perfect for tags, labels, status
+                                            indicators, or
+                                            highlighting short text snippets. They automatically adapt to light and dark
+                                            themes.
+                                            Combine with semantic color classes (<code>.success</code>,
+                                            <code>.info</code>,
+                                            <code>.caution</code>, <code>.critical</code>) or surface classes
+                                            (<code>.surf-s</code>,
+                                            <code>.surf-t</code>) for visual context.
+                                        </p>
+                                        <div class="grid fr4">
+                                            <div>
+                                                <span class="pill success">.success</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="pill info">.info</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="pill caution">.caution</span>
+                                            </div>
+                                            <div class="">
+                                                <span class="pill critical">.critical</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Action menu -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Action Menu <span class="pill surf-s">.action-menu</span></summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            A CSS-only kebab menu (three vertical dots ⋮) that reveals contextual
+                                            actions on
+                                            click.
+                                            Perfect for table rows, cards, or anywhere you need compact action menus.
+                                            Uses a
+                                            checkbox input for state management—no JavaScript required except for
+                                            auto-closing when
+                                            clicking menu items. Add the <code>.close-menu</code> class to any link to
+                                            automatically
+                                            dismiss the menu after selection.
+                                        </p>
+                                        <p class="mb-10">This is an action menu:</p>
+                                        <div class="action-menu">
+                                            <input type="checkbox" id="menu1">
+                                            <label for="menu1">⋮</label>
+                                            <div>
+                                                <a href="#" class="close-menu">Edit</a>
+                                                <a href="#" class="close-menu">Delete</a>
+                                                <a href="#" class="close-menu">Share</a>
+                                            </div>
+                                        </div>
+                                        <p class="mt-10 info pa-05">
+                                            <strong>Note:</strong> The checkbox <code>id</code> and label's
+                                            <code>for</code>
+                                            attribute must match (e.g., both "menu1").
+                                        </p>
+                                        <details class="expandable mt-sm">
+                                            <summary class="fs-10 fc-surf-t">View Source</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
+                            <!-- Forms -->
+                            <section class="mt-20">
+                                <details>
+                                    <summary>Forms <span class="pill surf-s">.field</span></summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            OmniCSS provides clean, theme-aware form styling with consistent sizing,
+                                            smooth
+                                            transitions, and accessible states. All form elements use CSS variables for
+                                            easy
+                                            theming
+                                            and support both light and dark modes automatically.
+                                        </p>
+                                        <h3 class="mt-md mb-sm">Basic Form Structure</h3>
+                                        <p class="mb-xs">Use the <code>.field</code> wrapper for consistent vertical
+                                            spacing
+                                            between
+                                            form elements.</p>
+                                        <form class="card surf-p pa-10">
+                                            <div class="field">
+                                                <label for="name">Full Name</label>
+                                                <input type="text" id="name" placeholder="Enter your name">
+                                            </div>
+                                            <div class="field">
+                                                <label for="email">Email Address</label>
+                                                <input type="text" id="email" placeholder="you@example.com">
+                                            </div>
+                                            <div class="field">
+                                                <label for="password">Password</label>
+                                                <input type="password" id="password" placeholder="Enter password">
+                                            </div>
+                                            <div class="field">
+                                                <label for="country">Country</label>
+                                                <select id="country">
+                                                    <option value="">Select a country</option>
+                                                    <option value="bd">Bangladesh</option>
+                                                    <option value="in">India</option>
+                                                    <option value="us">United States</option>
+                                                    <option value="uk">United Kingdom</option>
+                                                </select>
+                                            </div>
+                                            <div class="field">
+                                                <label for="message">Message</label>
+                                                <textarea id="message" placeholder="Type your message here..."
+                                                    rows="4"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn">Submit</button>
+                                        </form>
+                                        <h3 class="mt-md mb-sm">Required Fields</h3>
+                                        <p class="mb-xs">Add the <code>.required</code> class to labels to display a red
+                                            asterisk
+                                            (*).</p>
+                                        <form class="card surf-s pa-10">
+                                            <div class="field">
+                                                <label for="username" class="required">Username</label>
+                                                <input type="text" id="username" placeholder="Choose a username">
+                                            </div>
+                                            <div class="field">
+                                                <label for="email2" class="required">Email</label>
+                                                <input type="text" id="email2" placeholder="your.email@example.com">
+                                            </div>
+                                        </form>
+                                        <h3 class="mt-md mb-sm">Textbox Class</h3>
+                                        <p class="mb-xs">Use <code>.textbox</code> to make any element look like a text
+                                            input.
+                                            Perfect for displaying readonly data.</p>
+                                        <div class="card surf-p pa-10">
+                                            <div class="field">
+                                                <label>Order ID</label>
+                                                <div class="textbox">#ORD-2025-001234</div>
+                                            </div>
+                                            <div class="field">
+                                                <label>Status</label>
+                                                <div class="textbox">Completed</div>
+                                            </div>
+                                        </div>
+                                        <h3 class="mt-md mb-sm">Radio & Checkbox Groups</h3>
+                                        <p class="mb-xs">Use <code>.radio-group</code> and <code>.checkbox-group</code>
+                                            for
+                                            grouped
+                                            inputs.</p>
+                                        <form class="card surf-s pa-10">
+                                            <div class="field">
+                                                <label class="required">Select Plan (Vertical layout)</label>
+                                                <div class="radio-group grid fr1">
+                                                    <label><input type="radio" name="plan" value="free"> Free
+                                                        Plan</label>
+                                                    <label><input type="radio" name="plan" value="basic"> Basic Plan -
+                                                        $9/mo</label>
+                                                    <label><input type="radio" name="plan" value="pro"> Pro Plan -
+                                                        $29/mo</label>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="required">Select Plan (Horizontal layout)</label>
+                                                <div class="radio-group grid fr3 fr1-sm">
+                                                    <label><input type="radio" name="plan" value="free"> Free
+                                                        Plan</label>
+                                                    <label><input type="radio" name="plan" value="basic"> Basic Plan -
+                                                        $9/mo</label>
+                                                    <label><input type="radio" name="plan" value="pro"> Pro Plan -
+                                                        $29/mo</label>
+                                                </div>
+                                            </div>
+                                            <details>
+                                                <summary>View Source</summary>
+                                                <div class="content">
+                                                    <div class="dark-gist-container">
+                                                        <script
+                                                            src="https://gist.github.com/skpaul/5db090ec82ffbee40457616827c35db4.js"></script>
+                                                    </div>
+                                                </div>
+                                            </details>
+                                            <div class="field">
+                                                <label>Preferences</label>
+                                                <div class="checkbox-group grid fr3">
+                                                    <label><input type="checkbox" name="prefs" value="newsletter">
+                                                        Subscribe
+                                                        to
+                                                        newsletter</label>
+                                                    <label><input type="checkbox" name="prefs" value="updates"> Receive
+                                                        product
+                                                        updates</label>
+                                                    <label><input type="checkbox" name="prefs" value="offers"> Get
+                                                        special
+                                                        offers</label>
+                                                </div>
+                                            </div>
+                                            <details>
+                                                <summary>View Source</summary>
+                                                <div class="content">
+                                                    <div class="dark-gist-container">
+                                                        <script
+                                                            src="https://gist.github.com/skpaul/099dd485737f2e42219ebd47e5ac9013.js"></script>
+                                                    </div>
+                                                </div>
+                                            </details>
+                                        </form>
+                                        <h3 class="mt-md mb-sm">Form Theming</h3>
+                                        <p class="mb-xs">All form elements use CSS variables for theming. See the
+                                            <strong>Form Input
+                                                Variables</strong> section in the <a href="#" class="pill info">CSS
+                                                Variables -
+                                                Customization Reference</a> above for the complete list of customizable
+                                            properties.
+                                        </p>
+                                        <p class="info pa-05 mt-sm">
+                                            <strong>💡 Interactive States:</strong> Form elements feature smooth
+                                            transitions
+                                            on
+                                            hover and focus, with an inset box shadow on focus for better accessibility.
+                                        </p>
+                                        <details class="expandable mt-sm">
+                                            <summary class="fs-10 fc-surf-t">View Source Code</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script
+                                                        src="https://gist.github.com/skpaul/YOUR_GIST_ID_HERE.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
+                        </div>
+                    </details>
+                </article>
 
                 <!-- Utility Classes -->
                 <article>
@@ -1024,11 +1653,11 @@
                             </section>
 
                             <!-- buttons -->
-                             <section>
+                            <section>
                                 <details>
                                     <summary>Buttons</summary>
                                     <div class="content">
-                                         <div class="card surf-p pa-10">
+                                        <div class="card surf-p pa-10">
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <button class="btn">Default Button</button>
@@ -1050,612 +1679,286 @@
                                         </div>
                                     </div>
                                 </details>
-                             </section>
+                            </section>
+
+                            <!-- Border Utilities -->
+                            <section>
+                                <details>
+                                    <summary>Border Utilities</summary>
+                                    <div class="content">
+                                        <p class="mb-10">
+                                            Comprehensive border utilities for controlling borders on all sides, individual sides, or axis combinations. Combine with color utilities for custom border colors.
+                                        </p>
+
+                                        <h3 class="mt-md mb-sm">Border All Sides</h3>
+                                        <p class="mb-xs">Apply a 1px solid border to all sides:</p>
+                                        <div class="card surf-p pa-10">
+                                            <div class="ba surf-s pa-md w-fit">
+                                                <code>.ba</code> - Border on all sides
+                                            </div>
+                                            <div class="fs-09 mt-sm">
+                                                <strong>Note:</strong> Border color inherits from the element's color or can be set using color utilities.
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-md mb-sm">Border Directional (Individual Sides)</h3>
+                                        <p class="mb-xs">Apply borders to specific sides:</p>
+                                        <div class="card surf-s pa-10">
+                                            <div class="grid fr4 fr2-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <div class="bt surf-p pa-md">Border Top</div>
+                                                    <div class="fs-09"><code>.bt</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="bb surf-p pa-md">Border Bottom</div>
+                                                    <div class="fs-09"><code>.bb</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="bl surf-p pa-md">Border Left</div>
+                                                    <div class="fs-09"><code>.bl</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="br surf-p pa-md">Border Right</div>
+                                                    <div class="fs-09"><code>.br</code></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-md mb-sm">Border Horizontal & Vertical</h3>
+                                        <p class="mb-xs">Apply borders on two sides at once:</p>
+                                        <div class="card surf-p pa-10">
+                                            <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <div class="bh surf-s pa-md">Horizontal Borders</div>
+                                                    <div class="fs-09"><code>.bh</code> - Left + Right borders</div>
+                                                </div>
+                                                <div>
+                                                    <div class="bv surf-s pa-md">Vertical Borders</div>
+                                                    <div class="fs-09"><code>.bv</code> - Top + Bottom borders</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-md mb-sm">Border Width</h3>
+                                        <p class="mb-xs">Control border thickness (0-5px):</p>
+                                        <div class="card surf-s pa-10">
+                                            <div class="grid fr6 fr3-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <div class="ba bw-0 surf-p pa-05">No Border</div>
+                                                    <div class="fs-09"><code>.bw-0</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-1 surf-p pa-05">1px</div>
+                                                    <div class="fs-09"><code>.bw-1</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-2 surf-p pa-05">2px</div>
+                                                    <div class="fs-09"><code>.bw-2</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-3 surf-p pa-05">3px</div>
+                                                    <div class="fs-09"><code>.bw-3</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-4 surf-p pa-05">4px</div>
+                                                    <div class="fs-09"><code>.bw-4</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-5 surf-p pa-05">5px</div>
+                                                    <div class="fs-09"><code>.bw-5</code></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-md mb-sm">Border Style</h3>
+                                        <p class="mb-xs">Change border appearance:</p>
+                                        <div class="card surf-p pa-10">
+                                            <div class="grid fr5 fr2-sm" style="gap: 1rem;">
+                                                <div>
+                                                    <div class="ba bs-solid surf-s pa-05">Solid</div>
+                                                    <div class="fs-09"><code>.bs-solid</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bs-dashed surf-s pa-05">Dashed</div>
+                                                    <div class="fs-09"><code>.bs-dashed</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bs-dotted surf-s pa-05">Dotted</div>
+                                                    <div class="fs-09"><code>.bs-dotted</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bw-3 bs-double surf-s pa-05">Double</div>
+                                                    <div class="fs-09"><code>.bs-double</code></div>
+                                                </div>
+                                                <div>
+                                                    <div class="ba bs-none surf-s pa-05">None</div>
+                                                    <div class="fs-09"><code>.bs-none</code></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 class="mt-md mb-sm">Practical Examples</h3>
+
+                                        <h4 class="mt-sm mb-xs">Example 1: Card with Custom Border</h4>
+                                        <div class="card surf-s pa-10">
+                                            <div class="ba bw-2 bs-dashed surf-p pa-md w-fit">
+                                                <h4 class="b">Special Offer!</h4>
+                                                <p class="mt-xs">Limited time deal - 2px dashed border</p>
+                                            </div>
+                                            <pre class="fs-09 mt-md"><code>&lt;div class="ba bw-2 bs-dashed surf-p pa-md"&gt;
+    &lt;h4 class="b"&gt;Special Offer!&lt;/h4&gt;
+    &lt;p class="mt-xs"&gt;Limited time deal&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                                        </div>
+
+                                        <h4 class="mt-sm mb-xs">Example 2: Bottom Border for Sections</h4>
+                                        <div class="card surf-p pa-10">
+                                            <div class="bb bw-2 pb-sm mb-sm">
+                                                <h5 class="b">Section Title</h5>
+                                            </div>
+                                            <p class="fs-09">Content with a decorative bottom border above</p>
+                                            <pre class="fs-09 mt-md"><code>&lt;div class="bb bw-2 pb-sm mb-sm"&gt;
+    &lt;h5 class="b"&gt;Section Title&lt;/h5&gt;
+&lt;/div&gt;</code></pre>
+                                        </div>
+
+                                        <h4 class="mt-sm mb-xs">Example 3: Combining with Colors</h4>
+                                        <div class="card surf-s pa-10">
+                                            <div class="flex" style="gap: 1rem;">
+                                                <div class="ba bw-3 surf-p pa-md fc-p" style="border-color: var(--color-primary);">
+                                                    Primary Border
+                                                </div>
+                                                <div class="ba bw-3 surf-p pa-md fc-s" style="border-color: var(--color-secondary);">
+                                                    Secondary Border
+                                                </div>
+                                                <div class="ba bw-3 surf-p pa-md" style="border-color: var(--success-bg);">
+                                                    Success Border
+                                                </div>
+                                            </div>
+                                            <pre class="fs-09 mt-md"><code>&lt;div class="ba bw-3 surf-p pa-md" style="border-color: var(--color-primary);"&gt;
+    Primary Border
+&lt;/div&gt;</code></pre>
+                                        </div>
+
+                                        <p class="info pa-05 mt-md">
+                                            <strong>💡 Pro Tip:</strong> Combine border utilities for maximum flexibility: <code>.ba .bw-3 .bs-dashed</code> creates a 3px dashed border on all sides. Border colors can be set using inline styles with CSS variables or by combining with color classes.
+                                        </p>
+
+                                        <details class="expandable mt-sm">
+                                            <summary class="fs-10 fc-surf-t">View Source Code (_border.scss)</summary>
+                                            <div class="content">
+                                                <div class="dark-gist-container">
+                                                    <script src="https://gist.github.com/skpaul/YOUR_BORDER_GIST_ID.js"></script>
+                                                </div>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </details>
+                            </section>
                         </div>
                     </details>
                 </article>
 
 
 
-                <!-- Surface Hierarchy & Color System -->
-                <section class="mt-20">
-                    <details>
-                        <summary>Surface Hierarchy & Color System</summary>
-
-                        <div class="content">
-                            <div>
-                                OmniCSS defines four surface levels for backgrounds, borders, and text:
-                                <code>.surf-p</code>
-                                (primary), <code>.surf-s</code> (secondary), <code>.surf-t</code> (tertiary),
-                                <code>.surf-q</code> (quaternary).
-                            </div>
-                            <div class="grid fr4 fr1-sm">
-                                <div class="pa-lg card surf-p flex-center">Primary Surface</div>
-                                <div class="card surf-s pa-lg flex-center">Secondary Surface</div>
-                                <div class="card surf-t pa-lg flex-center">Tertiary Surface</div>
-                                <div class="card surf-q pa-lg flex-center">Quaternary Surface</div>
-                            </div>
-                            <div class="mt20">Semantic colors for status/alerts:</div>
-                            <div class="grid fr4 fr1-sm">
-                                <div class="success pa-md flex-center">.success</div>
-                                <div class="caution pa-md flex-center">.caution</div>
-                                <div class="info pa-md flex-center">.info</div>
-                                <div class="critical pa-md flex-center">.critical</div>
-                            </div>
-                            <div class="mt-sm">Brand/Functional colors:</div>
-                            <div class="grid ch30">
-                                <div class="fc-p pa-md flex-center">.fc-p</div>
-                                <div class="fc-s pa-md flex-center">.fc-s</div>
-                                <div class="fc-a pa-md flex-center">.fc-a</div>
-                                <div class="bg-p pa-md flex-center">
-                                    <div class="reverse-color">.bg-p</div>
-                                </div>
-                                <div class="bg-s pa-md flex-center fc-black">.bg-s</div>
-                                <div class="bg-a pa-md flex-center">.bg-a</div>
-                            </div>
-                        </div>
-                    </details>
-                </section>
 
 
 
-                <!-- Key Benefits -->
-                <section>
-                    <h2>Key Benefits</h2>
-                    <ul class="ml-sm">
-                        <li>Consistency: Surface colors for layout, semantic colors for meaning.</li>
-                        <li>Flexibility: Mix and match as needed (e.g., a gridable-ss with critical status).</li>
-                        <li>Theming: Change all --primary-surface-* or --success-* values globally.</li>
-                    </ul>
-                </section>
-
-                <!-- Why This Separation? -->
-                <section>
-                    <h2>Why This Separation?</h2>
-                    <ol class="ml-sm">
-                        <li>
-                            Predictability:
-                            <ul class="ml-sm">
-                                <li>Surface colors = Where an element sits (hierarchy). </li>
-                                <li>Semantic colors = What it means (state/action). </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Accessibility:
-                            <ul class="ml-sm">
-                                <li> Semantic colors enforce consistent contrast ratios for readability. </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Maintenance:
-                            <ul class="ml-sm">
-                                <li>Change --primary-surface-bg once to update all containers globally. </li>
-                            </ul>
-                        </li>
-                    </ol>
-                </section>
 
 
+                <!-- Page Template -->
                 <article>
                     <details>
-                        <summary class="fs-30">Omni Components</summary>
-
+                        <summary>Page Template</summary>
                         <div class="content">
-                            <!-- Gridable -->
+                            <!-- Header Template -->
                             <section class="mt-20">
                                 <details>
-                                    <summary>Gridable = Grid + Table</summary>
-                                    <style>
-                                        .header-item,
-                                        .grid-cell {
-                                            padding: 0.5rem;
-                                        }
+                                    <summary>Header Template</summary>
+                                    <div class="content">
+                                        <div>
+                                            <span class="pill">.fixed</span> for always top and visible.
+                                            <span class="pill">.smart</span> for Sticky header. Auto hide/show on
+                                            scroll.
+                                        </div>
+                                        <div class="dark-gist-container">
+                                            <script
+                                                src="https://gist.github.com/skpaul/4fdb9d1638062f99ff8eb066fe5d9631.js"></script>
+                                        </div>
+                                    </div>
+                                </details>
 
-                                        .grid-cell {
-                                            color: gray;
-                                        }
-                                    </style>
-                                    <div class="content">
-                                        <div class="mb-10">
-                                            Use <span class="pill">.gridable</span> for gridable component. Use <span
-                                                class="pill">.us</span>/<span class="pill">.sm</span>/<span
-                                                class="pill">.md</span>
-                                            to make
-                                            it reponsive at your target devices.
-                                        </div>
-                                        <div class="surf-p gridable md">
-                                            <div class="grid-header">
-                                                <div class="header-item">Col-1</div>
-                                                <div class="header-item">Col-2</div>
-                                                <div class="header-item">Col-3</div>
-                                                <div class="header-item">Col-4</div>
-                                                <div class="header-item">Col-5</div>
-                                            </div>
-                                            <div class="grid-row">
-                                                <div class="grid-cell" data-label="Col-1">One</div>
-                                                <div class="grid-cell" data-label="Col-2">Two</div>
-                                                <div class="grid-cell" data-label="Col-3">Three</div>
-                                                <div class="grid-cell" data-label="Col-4">Four</div>
-                                                <div class="grid-cell" data-label="Col-5">Five</div>
-                                            </div>
-                                            <div class="grid-row">
-                                                <div class="grid-cell" data-label="Col-1">One</div>
-                                                <div class="grid-cell" data-label="Col-2">Two</div>
-                                                <div class="grid-cell" data-label="Col-3">Three</div>
-                                                <div class="grid-cell" data-label="Col-4">Four</div>
-                                                <div class="grid-cell" data-label="Col-5">Five</div>
-                                            </div>
-                                        </div>
-                                        <details class="expandable mt-10">
-                                            <summary class="fs-08 fc-surf-t">View Source</summary>
-                                            <div class="content">
-                                                <div class="dark-gist-container">
-                                                    <script
-                                                        src="https://gist.github.com/skpaul/78b7c38cfe1cb5f011038d8e2c01bd8d.js"></script>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </div>
-                                </details>
                             </section>
-                            <!-- Dismissable -->
+
+                            <!-- Base Layout -->
                             <section class="mt-20">
                                 <details>
-                                    <summary>Dismissable <span class="pill surf-s">.dissmissable</span></summary>
+                                    <summary>Base Layout</summary>
+
                                     <div class="content">
-                                        <div class="mt-10">
-                                            <span class="pill">.dismissable</span> for a dismissable notice. Mention
-                                            expiry
-                                            in days.
-                                            Must
-                                            have a unique id for each dismissable.
+                                        <p class="fs-09">
+                                            <span class="pill surf-t">.layout</span> class serves the foundation of your
+                                            page
+                                            design.
+                                        </p>
+                                        <p>
+                                            Start by placing your content inside the header, main, and footer
+                                            sections—OmniCSS will
+                                            handle
+                                            the layout automatically.
+                                        </p>
+                                        <div class="dark-gist-container">
+                                            <script
+                                                src="https://gist.github.com/skpaul/7de87fb2436caa97b9b856aaabd7e35b.js"></script>
                                         </div>
-                                        <div class="grid fr3" style="gap:1rem;">
-                                            <div class="dismissable surf-p pa-07" id="notice-1010" data-expiry="2">
-                                                <div class="fs-10">
-                                                    This is a <span class="pill surf-s">.dismissable</span> using
-                                                    primary
-                                                    surface
-                                                    <span class="pill surf-s">.surf-p</span>
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable surf-s pa-07" id="notice-4" data-expiry="1">
-                                                <div class="fs-10">
-                                                    This is a <span class="pill surf-t">.dismissable</span> using
-                                                    secondary
-                                                    surface
-                                                    <span class="pill surf-t">.surf-s</span>
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable surf-t pa-07" id="notice-4" data-expiry="1">
-                                                <div class="fs-10">
-                                                    This is a <span class="pill surf-q">.dismissable</span> using
-                                                    tertiary
-                                                    surface
-                                                    <span class="pill surf-q">.surf-t</span>
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable surf-q pa-07" id="notice-4" data-expiry="1">
-                                                <div class="fs-10">
-                                                    This is a <span class="pill surf-s">.dismissable</span> using
-                                                    quaternary
-                                                    surface
-                                                    <span class="pill surf-q">.surf-s</span>
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable info pa-07" id="notice-1" data-expiry="1">
-                                                <div>
-                                                    This is a <span class="pill info">.info</span> dismissable.
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable success pa-07" id="notice-2" data-expiry="1">
-                                                <div>
-                                                    This is a <span class="pill success">.success</span> dismissable.
-                                                </div>
-                                                <div class="right mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable caution pa-07" id="notice-3" data-expiry="1">
-                                                <div>
-                                                    This is a <span class="pill caution">.caution</span> dismissable.
-                                                </div>
-                                                <div class="center mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                            <div class="dismissable critical pa-07" id="notice-4" data-expiry="10000">
-                                                <div>This is a <span class="pill critical">.critical</span> dismissable.
-                                                </div>
-                                                <div class="left mt-sm">
-                                                    <span class="dismiss">Don't show</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <details class="expandable mt-15">
-                                            <summary class="fs-09 fc-surf-t">View Source</summary>
-                                            <div class="content">
-                                                <div class="dark-gist-container">
-                                                    <script
-                                                        src="https://gist.github.com/skpaul/c465721d5ff38b3555da2dfca2b76a83.js"></script>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </div>
-                                </details>
-                            </section>
-                            <!-- Dialog -->
-                            <section class="mt-20">
-                                <details>
-                                    <summary>Dialogbox</summary>
-                                    <div class="content">
-                                        <p class="mb-10">
-                                            The native HTML <code>&lt;dialog&gt;</code> element creates accessible modal
-                                            dialogs
-                                            with built-in backdrop, focus management, and keyboard support. No
-                                            JavaScript
-                                            required
-                                            for basic functionality—just use <code>method="dialog"</code> on the form
-                                            and a
-                                            simple
-                                            <code>showModal()</code> call.
-                                        </p>
-                                        <dialog id="dialog1" class="pa-10">
-                                            <form method="dialog">
-                                                <div class="title">Dialog Content-1</div>
-                                                <div class="content">A message to the users.</div>
-                                                <button>Close</button> <!-- No JS needed -->
-                                            </form>
-                                        </dialog>
-                                        <button class="btn" onclick="dialog1.showModal()">Open Dialog</button>
-                                        <dialog id="dialog2">
-                                            <form method="dialog">
-                                                <div class="title">Dialog Content-2</div>
-                                                <div class="content">A message to the users.</div>
-                                                <button>Close</button> <!-- No JS needed -->
-                                            </form>
-                                        </dialog>
-                                        <button onclick="dialog2.showModal()">Open Dialog</button>
-                                    </div>
-                                    <details>
-                                        <summary>View Source:</summary>
-                                        <div class="content">
-                                            <div class="dark-gist-container">
-                                                <script
-                                                    src="https://gist.github.com/skpaul/44e1329875b3c40d9f1f4e039b482a41.js"></script>
-                                            </div>
-                                        </div>
-                                    </details>
-                                </details>
-                            </section>
-                            <!-- Expandable -->
-                            <section class="mt-20">
-                                <details class="expandable">
-                                    <summary>Expandable <span class="pill surf-s">.expandable</span></summary>
-                                    <div class="content card surf-s pa-05">
-                                        <p class="fs-10">
-                                            Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat
-                                            inventore. Et
-                                            obcaecati vero in quod corporis sit nulla quia et dignissimos dolorem vel
-                                            neque
-                                            amet ut
-                                            quia iusto! In iusto quia ut impedit voluptates eum recusandae quaerat 33
-                                            minus
-                                            maxime
-                                            nam odio itaque aut molestiae voluptatem est voluptatem quas.
-                                        </p>
-                                        <p class="fs-10 mt-sm">
-                                            Sit temporibus provident sit eius fuga cum facilis omnis ea repudiandae
-                                            excepturi! Et
-                                            dolorem odit aut ullam eaque sed reprehenderit expedita qui dolores ipsam et
-                                            pariatur
-                                            quasi sit voluptatibus accusamus. Sit nemo vero nam veniam minus nam
-                                            aspernatur
-                                            ipsa ut
-                                            quia atque id commodi molestias sed illo alias quo animi voluptas. Qui rerum
-                                            rerum et
-                                            voluptatem dolores in voluptates animi est aliquid voluptatum sit beatae
-                                            excepturi.
-                                        </p>
-                                    </div>
-                                </details>
-                            </section>
-                            <!-- Board -->
-                            <section class="mt-20">
-                                <details>
-                                    <summary>Board <span class="pill surf-s">.board</span></summary>
-                                    <div class="content">
-                                        <p class="mb-10">
-                                            Boards are attention-grabbing content containers with a subtle left border
-                                            accent.
-                                            Perfect for notices, announcements, alerts, or highlighting important
-                                            information.
-                                            Combine with semantic color classes (<code>.success</code>,
-                                            <code>.info</code>,
-                                            <code>.caution</code>, <code>.critical</code>) for visual meaning.
-                                        </p>
-                                        <div class="grid fr4 fr1-sm" style="gap:1rem;">
-                                            <div class="board success pa-07">
-                                                This is a <span class="pill success">.success</span> board
-                                            </div>
-                                            <div class="board info pa-07">
-                                                This is a <span class="pill info">.info</span> board
-                                            </div>
-                                            <div class="board caution pa-07">
-                                                This is a <span class="pill caution">.caution</span> board
-                                            </div>
-                                            <div class="board critical pa-07">
-                                                This is a <span class="pill critical">.critical</span> board
-                                            </div>
-                                        </div>
-                                        <details class="expandable mt-sm">
-                                            <summary class="fs-10 fc-surf-t">View Source</summary>
-                                            <div class="content">
-                                                <div class="dark-gist-container">
-                                                    <script
-                                                        src="https://gist.github.com/skpaul/32d5faebb9c862add816e1512dd65262.js"></script>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </div>
-                                </details>
-                            </section>
-                            <!-- Pill -->
-                            <section class="mt-20">
-                                <details>
-                                    <summary>Pill <span class="pill surf-s">.pill</span></summary>
-                                    <div class="content">
-                                        <p class="mb-10">
-                                            Pills are compact, rounded inline badges perfect for tags, labels, status
-                                            indicators, or
-                                            highlighting short text snippets. They automatically adapt to light and dark
-                                            themes.
-                                            Combine with semantic color classes (<code>.success</code>,
-                                            <code>.info</code>,
-                                            <code>.caution</code>, <code>.critical</code>) or surface classes
-                                            (<code>.surf-s</code>,
-                                            <code>.surf-t</code>) for visual context.
-                                        </p>
-                                        <div class="grid fr4">
-                                            <div>
-                                                <span class="pill success">.success</span>
-                                            </div>
-                                            <div class="">
-                                                <span class="pill info">.info</span>
-                                            </div>
-                                            <div class="">
-                                                <span class="pill caution">.caution</span>
-                                            </div>
-                                            <div class="">
-                                                <span class="pill critical">.critical</span>
-                                            </div>
+
+                                        <div class="explanation">
+                                            <h3 class="mb-10">Understanding the Layout Structure</h3>
+
+                                            <h4><span class="pill surf-s">.layout</span> - The Container</h4>
+                                            <p>
+                                                The <code>.layout</code> class creates a full-viewport grid with three
+                                                rows: header,
+                                                main, and footer.
+                                                It ensures the footer always stays at the bottom, even on pages with
+                                                minimal
+                                                content.
+                                            </p>
+
+                                            <h4><span class="pill surf-s">header</span> - Fixed Height</h4>
+                                            <p>
+                                                The header section has a fixed height of <code>60px</code> and contains
+                                                your site
+                                                navigation, logo, and other top-level UI elements.
+                                                Add <code>.fixed</code> or <code>.smart</code> classes for sticky header
+                                                behavior.
+                                            </p>
+
+                                            <h4><span class="pill surf-s">main</span> - Flexible Content Area</h4>
+                                            <p>
+                                                The main section takes up all remaining vertical space using
+                                                <code>1fr</code>
+                                                (fractional unit).
+                                                Content here scrolls independently if it exceeds the viewport height.
+                                                This is where
+                                                your page content lives.
+                                            </p>
+
+                                            <h4><span class="pill surf-s">footer</span> - Auto Height</h4>
+                                            <p>
+                                                The footer has automatic height based on its content. It always sits at
+                                                the bottom
+                                                of the viewport
+                                                or below the main content, whichever is lower—creating a "sticky footer"
+                                                effect
+                                                without JavaScript.
+                                            </p>
                                         </div>
                                     </div>
                                 </details>
                             </section>
-                            <!-- Action menu -->
-                            <section class="mt-20">
-                                <details>
-                                    <summary>Action Menu <span class="pill surf-s">.action-menu</span></summary>
-                                    <div class="content">
-                                        <p class="mb-10">
-                                            A CSS-only kebab menu (three vertical dots ⋮) that reveals contextual
-                                            actions on
-                                            click.
-                                            Perfect for table rows, cards, or anywhere you need compact action menus.
-                                            Uses a
-                                            checkbox input for state management—no JavaScript required except for
-                                            auto-closing when
-                                            clicking menu items. Add the <code>.close-menu</code> class to any link to
-                                            automatically
-                                            dismiss the menu after selection.
-                                        </p>
-                                        <p class="mb-10">This is an action menu:</p>
-                                        <div class="action-menu">
-                                            <input type="checkbox" id="menu1">
-                                            <label for="menu1">⋮</label>
-                                            <div>
-                                                <a href="#" class="close-menu">Edit</a>
-                                                <a href="#" class="close-menu">Delete</a>
-                                                <a href="#" class="close-menu">Share</a>
-                                            </div>
-                                        </div>
-                                        <p class="mt-10 info pa-05">
-                                            <strong>Note:</strong> The checkbox <code>id</code> and label's
-                                            <code>for</code>
-                                            attribute must match (e.g., both "menu1").
-                                        </p>
-                                        <details class="expandable mt-sm">
-                                            <summary class="fs-10 fc-surf-t">View Source</summary>
-                                            <div class="content">
-                                                <div class="dark-gist-container">
-                                                    <script
-                                                        src="https://gist.github.com/skpaul/46e54babd29064cf16b05ced6c17734e.js"></script>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </div>
-                                </details>
-                            </section>
-                            <!-- Forms -->
-                            <section class="mt-20">
-                                <details>
-                                    <summary>Forms <span class="pill surf-s">.field</span></summary>
-                                    <div class="content">
-                                        <p class="mb-10">
-                                            OmniCSS provides clean, theme-aware form styling with consistent sizing,
-                                            smooth
-                                            transitions, and accessible states. All form elements use CSS variables for
-                                            easy
-                                            theming
-                                            and support both light and dark modes automatically.
-                                        </p>
-                                        <h3 class="mt-md mb-sm">Basic Form Structure</h3>
-                                        <p class="mb-xs">Use the <code>.field</code> wrapper for consistent vertical
-                                            spacing
-                                            between
-                                            form elements.</p>
-                                        <form class="card surf-p pa-10">
-                                            <div class="field">
-                                                <label for="name">Full Name</label>
-                                                <input type="text" id="name" placeholder="Enter your name">
-                                            </div>
-                                            <div class="field">
-                                                <label for="email">Email Address</label>
-                                                <input type="text" id="email" placeholder="you@example.com">
-                                            </div>
-                                            <div class="field">
-                                                <label for="password">Password</label>
-                                                <input type="password" id="password" placeholder="Enter password">
-                                            </div>
-                                            <div class="field">
-                                                <label for="country">Country</label>
-                                                <select id="country">
-                                                    <option value="">Select a country</option>
-                                                    <option value="bd">Bangladesh</option>
-                                                    <option value="in">India</option>
-                                                    <option value="us">United States</option>
-                                                    <option value="uk">United Kingdom</option>
-                                                </select>
-                                            </div>
-                                            <div class="field">
-                                                <label for="message">Message</label>
-                                                <textarea id="message" placeholder="Type your message here..."
-                                                    rows="4"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn">Submit</button>
-                                        </form>
-                                        <h3 class="mt-md mb-sm">Required Fields</h3>
-                                        <p class="mb-xs">Add the <code>.required</code> class to labels to display a red
-                                            asterisk
-                                            (*).</p>
-                                        <form class="card surf-s pa-10">
-                                            <div class="field">
-                                                <label for="username" class="required">Username</label>
-                                                <input type="text" id="username" placeholder="Choose a username">
-                                            </div>
-                                            <div class="field">
-                                                <label for="email2" class="required">Email</label>
-                                                <input type="text" id="email2" placeholder="your.email@example.com">
-                                            </div>
-                                        </form>
-                                        <h3 class="mt-md mb-sm">Textbox Class</h3>
-                                        <p class="mb-xs">Use <code>.textbox</code> to make any element look like a text
-                                            input.
-                                            Perfect for displaying readonly data.</p>
-                                        <div class="card surf-p pa-10">
-                                            <div class="field">
-                                                <label>Order ID</label>
-                                                <div class="textbox">#ORD-2025-001234</div>
-                                            </div>
-                                            <div class="field">
-                                                <label>Status</label>
-                                                <div class="textbox">Completed</div>
-                                            </div>
-                                        </div>
-                                        <h3 class="mt-md mb-sm">Radio & Checkbox Groups</h3>
-                                        <p class="mb-xs">Use <code>.radio-group</code> and <code>.checkbox-group</code>
-                                            for
-                                            grouped
-                                            inputs.</p>
-                                        <form class="card surf-s pa-10">
-                                            <div class="field">
-                                                <label class="required">Select Plan (Vertical layout)</label>
-                                                <div class="radio-group grid fr1">
-                                                    <label><input type="radio" name="plan" value="free"> Free
-                                                        Plan</label>
-                                                    <label><input type="radio" name="plan" value="basic"> Basic Plan -
-                                                        $9/mo</label>
-                                                    <label><input type="radio" name="plan" value="pro"> Pro Plan -
-                                                        $29/mo</label>
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <label class="required">Select Plan (Horizontal layout)</label>
-                                                <div class="radio-group grid fr3 fr1-sm">
-                                                    <label><input type="radio" name="plan" value="free"> Free
-                                                        Plan</label>
-                                                    <label><input type="radio" name="plan" value="basic"> Basic Plan -
-                                                        $9/mo</label>
-                                                    <label><input type="radio" name="plan" value="pro"> Pro Plan -
-                                                        $29/mo</label>
-                                                </div>
-                                            </div>
-                                            <details>
-                                                <summary>View Source</summary>
-                                                <div class="content">
-                                                    <div class="dark-gist-container">
-                                                        <script
-                                                            src="https://gist.github.com/skpaul/5db090ec82ffbee40457616827c35db4.js"></script>
-                                                    </div>
-                                                </div>
-                                            </details>
-                                            <div class="field">
-                                                <label>Preferences</label>
-                                                <div class="checkbox-group grid fr3">
-                                                    <label><input type="checkbox" name="prefs" value="newsletter">
-                                                        Subscribe
-                                                        to
-                                                        newsletter</label>
-                                                    <label><input type="checkbox" name="prefs" value="updates"> Receive
-                                                        product
-                                                        updates</label>
-                                                    <label><input type="checkbox" name="prefs" value="offers"> Get
-                                                        special
-                                                        offers</label>
-                                                </div>
-                                            </div>
-                                            <details>
-                                                <summary>View Source</summary>
-                                                <div class="content">
-                                                    <div class="dark-gist-container">
-                                                        <script
-                                                            src="https://gist.github.com/skpaul/099dd485737f2e42219ebd47e5ac9013.js"></script>
-                                                    </div>
-                                                </div>
-                                            </details>
-                                        </form>
-                                        <h3 class="mt-md mb-sm">Form Theming</h3>
-                                        <p class="mb-xs">All form elements use CSS variables for theming. See the
-                                            <strong>Form Input
-                                                Variables</strong> section in the <a href="#" class="pill info">CSS
-                                                Variables -
-                                                Customization Reference</a> above for the complete list of customizable
-                                            properties.
-                                        </p>
-                                        <p class="info pa-05 mt-sm">
-                                            <strong>💡 Interactive States:</strong> Form elements feature smooth
-                                            transitions
-                                            on
-                                            hover and focus, with an inset box shadow on focus for better accessibility.
-                                        </p>
-                                        <details class="expandable mt-sm">
-                                            <summary class="fs-10 fc-surf-t">View Source Code</summary>
-                                            <div class="content">
-                                                <div class="dark-gist-container">
-                                                    <script
-                                                        src="https://gist.github.com/skpaul/YOUR_GIST_ID_HERE.js"></script>
-                                                </div>
-                                            </div>
-                                        </details>
-                                    </div>
-                                </details>
-                            </section>
+
+
                         </div>
                     </details>
                 </article>
@@ -1663,209 +1966,6 @@
 
 
 
-
-                <!-- Header Template -->
-                <section class="mt-20">
-                    <details>
-                        <summary>Header Template</summary>
-                        <div class="content">
-                            <div>
-                                <span class="pill">.fixed</span> for always top and visible.
-                                <span class="pill">.smart</span> for Sticky header. Auto hide/show on scroll.
-                            </div>
-                            <div class="dark-gist-container">
-                                <script
-                                    src="https://gist.github.com/skpaul/4fdb9d1638062f99ff8eb066fe5d9631.js"></script>
-                            </div>
-                        </div>
-                    </details>
-
-                </section>
-
-                <!-- Responsive Breakpoints & Media Queries -->
-                <section class="mt-20">
-                    <details>
-                        <summary>Responsive Breakpoints & Media Queries</summary>
-                        <div class="content">
-                            <p class="mb-10">
-                                OmniCSS uses a mobile-first approach with six responsive breakpoints. Each breakpoint
-                                has corresponding utility class suffixes and Sass mixins for custom styling.
-                            </p>
-
-                            <h3 class="mt-md mb-sm">Breakpoint Values</h3>
-                            <div class="card surf-p pa-10">
-                                <div class="grid fr2 fr1-sm" style="gap: 1rem;">
-                                    <div>
-                                        <strong>Extra Large (xl)</strong><br>
-                                        <code class="fs-09">min-width: 1400px</code>
-                                    </div>
-                                    <div>
-                                        <strong>Large (lg)</strong><br>
-                                        <code class="fs-09">min-width: 1200px</code>
-                                    </div>
-                                    <div>
-                                        <strong>Medium (md)</strong><br>
-                                        <code class="fs-09">max-width: 992px</code>
-                                    </div>
-                                    <div>
-                                        <strong>Small (sm)</strong><br>
-                                        <code class="fs-09">max-width: 768px</code>
-                                    </div>
-                                    <div>
-                                        <strong>Extra Small (xs)</strong><br>
-                                        <code class="fs-09">max-width: 576px</code>
-                                    </div>
-                                    <div>
-                                        <strong>Ultra Small (us)</strong><br>
-                                        <code class="fs-09">max-width: 480px</code>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h3 class="mt-md mb-sm">Responsive Utility Class Suffixes</h3>
-                            <p class="mb-xs">
-                                Append breakpoint suffixes to any utility class to apply styles at specific screen
-                                sizes. Examples:
-                            </p>
-                            <div class="card surf-s pa-10">
-                                <div class="grid fr3 fr1-sm" style="gap: 1rem;">
-                                    <div>
-                                        <code>.fs-20-sm</code><br>
-                                        <span class="fs-09">Font size 2.0rem on small devices</span>
-                                    </div>
-                                    <div>
-                                        <code>.pa-10-md</code><br>
-                                        <span class="fs-09">Padding 1.0rem on medium devices</span>
-                                    </div>
-                                    <div>
-                                        <code>.mb-20-xs</code><br>
-                                        <span class="fs-09">Margin bottom 2.0rem on extra small devices</span>
-                                    </div>
-                                    <div>
-                                        <code>.grid.fr3-sm</code><br>
-                                        <span class="fs-09">3-column grid on small devices</span>
-                                    </div>
-                                    <div>
-                                        <code>.grid.fr1-xs</code><br>
-                                        <span class="fs-09">Single column on extra small devices</span>
-                                    </div>
-                                    <div>
-                                        <code>.hide-md</code><br>
-                                        <span class="fs-09">Hide element on medium devices and below</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <h3 class="mt-md mb-sm">Sass Mixins for Custom Styles</h3>
-                            <p class="mb-xs">
-                                Use these mixins in your custom SCSS to write responsive styles:
-                            </p>
-                            <div class="card surf-p pa-10">
-                                <h4 class="mb-xs">Available Mixins</h4>
-                                <ul class="ml-sm fs-09">
-                                    <li><code>@include xl { ... }</code> - Extra Large devices (min-width: 1400px)</li>
-                                    <li><code>@include lg { ... }</code> - Large devices (min-width: 1200px)</li>
-                                    <li><code>@include md { ... }</code> - Medium devices (max-width: 992px)</li>
-                                    <li><code>@include sm { ... }</code> - Small devices (max-width: 768px)</li>
-                                    <li><code>@include xs { ... }</code> - Extra Small devices (max-width: 576px)</li>
-                                    <li><code>@include us { ... }</code> - Ultra Small devices (max-width: 480px)</li>
-                                </ul>
-                            </div>
-
-                            <h3 class="mt-md mb-sm">Usage Examples</h3>
-
-                            <h4 class="mt-sm mb-xs">Example 1: Mixin Inside a Class</h4>
-                            <div class="card surf-s pa-10">
-                                <pre class="fs-09"><code>.my-container {
-    width: 65%;  /* Default: 65% width */
-    
-    @include lg {
-        width: 50%;  /* Large devices: 50% width */
-    }
-    
-    @include sm {
-        width: 100%;  /* Small devices: 100% width */
-    }
-}</code></pre>
-                            </div>
-
-                            <h4 class="mt-sm mb-xs">Example 2: Mixin Outside a Class</h4>
-                            <div class="card surf-s pa-10">
-                                <pre class="fs-09"><code>@include md {
-    .sidebar {
-        display: none;  /* Hide sidebar on medium and smaller devices */
-    }
-    
-    .main-content {
-        width: 100%;  /* Full width when sidebar is hidden */
-    }
-}</code></pre>
-                            </div>
-
-                            <h4 class="mt-sm mb-xs">Example 3: Multiple Breakpoints</h4>
-                            <div class="card surf-s pa-10">
-                                <pre class="fs-09"><code>.hero {
-    font-size: 3rem;    /* Default */
-    padding: 4rem 2rem;
-    
-    @include xl {
-        font-size: 4rem;  /* Extra large screens */
-        padding: 6rem 4rem;
-    }
-    
-    @include md {
-        font-size: 2rem;  /* Medium screens */
-        padding: 2rem 1rem;
-    }
-    
-    @include xs {
-        font-size: 1.5rem;  /* Extra small screens */
-        padding: 1rem 0.5rem;
-    }
-}</code></pre>
-                            </div>
-
-                            <h3 class="mt-md mb-sm">Breakpoint Variables</h3>
-                            <p class="mb-xs">
-                                Access breakpoint values directly in your SCSS using the <code>$breakpoints</code> map:
-                            </p>
-                            <div class="card surf-p pa-10">
-                                <pre class="fs-09"><code>$breakpoints: (
-    xl: 1399.98px,
-    lg: 1199.98px,
-    md: 991.98px,
-    sm: 767.98px,
-    xs: 575.98px,
-    us: 479.98px
-);
-
-// Access a specific breakpoint value
-$medium-screen: map-get($breakpoints, md);
-
-// Use in custom media query
-@media (max-width: $medium-screen) {
-    // Your styles here
-}</code></pre>
-                            </div>
-
-                            <p class="info pa-05 mt-md">
-                                <strong>💡 Best Practice:</strong> Use the provided mixins (<code>@include md</code>,
-                                etc.) instead of writing raw media queries. This ensures consistency across your project
-                                and makes code more maintainable.
-                            </p>
-
-                            <details class="expandable mt-sm">
-                                <summary class="fs-10 fc-surf-t">View Source Code (_media-queries.scss)</summary>
-                                <div class="content">
-                                    <div class="dark-gist-container">
-                                        <script
-                                            src="https://gist.github.com/skpaul/YOUR_MEDIA_QUERIES_GIST_ID.js"></script>
-                                    </div>
-                                </div>
-                            </details>
-                        </div>
-                    </details>
-                </section>
 
             </div>
 

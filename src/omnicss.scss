@@ -19,9 +19,12 @@
 @import 'modules/media-queries'; 
 @import 'modules/functions'; 
 
+//Box Model
+@import 'modules/box-model/border'; 
 @import 'modules/box-model/padding'; 
 @import 'modules/box-model/margin';
 
+//Components 
 @import 'modules/components/action-menu'; 
 @import 'modules/components/board'; 
 @import 'modules/components/card'; 
