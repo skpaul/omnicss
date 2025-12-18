@@ -1,7 +1,10 @@
 .pill{
     padding: 1px 5px;
     font-size: 0.9em;
+    border-width: 1px;
+    border-style: solid;
     border-radius: var(--border-radius);
     display: inline-block;
     line-height: 1.2em;
+    letter-spacing: 0.07rem;
 }

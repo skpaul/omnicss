@@ -65,7 +65,6 @@
 }
 
 @mixin createFontSizes($device) {
-   //Compact version. Create rules like .fs10
    @if $device == "" {
         @each $value in $sizes{
             $part1: str-slice($value, 1, 1); 

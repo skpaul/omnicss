@@ -1,8 +1,9 @@
 
 // ====================================================
-//   Padding in rem
+//   Margin in rem
 // ====================================================
 
+// Base margin utilities (no breakpoint suffix)
 @include createFixedSpacing("ma", "margin", "compact"); 
 @include createFixedSpacing("mt", "margin-top", "compact"); 
 @include createFixedSpacing("mb", "margin-bottom", "compact"); 
@@ -11,10 +12,83 @@
 @include create-both-spacing("mv", "margin-top","margin-bottom", "compact");
 @include create-both-spacing("mh", "margin-left","margin-right", "compact");
 
+// Responsive margin utilities for all breakpoints
+@each $breakpoint-key, $breakpoint-suffix in $breakpoint-names {
+    @if $breakpoint-key == xl {
+        @include xl {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == lg {
+        @include lg {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == md {
+        @include md {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == sm {
+        @include sm {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == xs {
+        @include xs {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == us {
+        @include us {
+            @include createFixedSpacing("ma", "margin", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mt", "margin-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mb", "margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("ml", "margin-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("mr", "margin-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mv", "margin-top","margin-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("mh", "margin-left","margin-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    }
+}
+
 
 // Utility
 .ma-auto{
     margin: auto;
+}
+
+.ml-auto{
+   margin-left: auto; 
+}
+
+.mr-auto{
+   margin-right: auto; 
 }
 
 .mh-auto{

@@ -4,6 +4,7 @@
 //   Padding in rem
 // ====================================================
 
+// Base padding utilities (no breakpoint suffix)
 @include createFixedSpacing("pa", "padding", "compact"); 
 @include createFixedSpacing("pt", "padding-top", "compact"); 
 @include createFixedSpacing("pb", "padding-bottom", "compact"); 
@@ -11,3 +12,68 @@
 @include createFixedSpacing("pr", "padding-right", "compact"); 
 @include create-both-spacing("pv", "padding-top","padding-bottom", "compact"); 
 @include create-both-spacing("ph", "padding-left","padding-right", "compact"); 
+
+// Responsive padding utilities for all breakpoints
+@each $breakpoint-key, $breakpoint-suffix in $breakpoint-names {
+    @if $breakpoint-key == xl {
+        @include xl {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == lg {
+        @include lg {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == md {
+        @include md {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == sm {
+        @include sm {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == xs {
+        @include xs {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    } @else if $breakpoint-key == us {
+        @include us {
+            @include createFixedSpacing("pa", "padding", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pt", "padding-top", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pb", "padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pl", "padding-left", "compact", "-#{$breakpoint-suffix}"); 
+            @include createFixedSpacing("pr", "padding-right", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("pv", "padding-top","padding-bottom", "compact", "-#{$breakpoint-suffix}"); 
+            @include create-both-spacing("ph", "padding-left","padding-right", "compact", "-#{$breakpoint-suffix}"); 
+        }
+    }
+}
