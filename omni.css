@@ -271,24 +271,28 @@ a {
   border-bottom-style: solid;
 }
 
+.br-02 {
+  border-radius: 0.2rem !important;
+}
+
 .br-03 {
-  border-radius: 0.3rem;
+  border-radius: 0.3rem !important;
 }
 
 .br-04 {
-  border-radius: 0.4rem;
+  border-radius: 0.4rem !important;
 }
 
 .br-05 {
-  border-radius: 0.5rem;
+  border-radius: 0.5rem !important;
 }
 
 .br-06 {
-  border-radius: 0.6rem;
+  border-radius: 0.6rem !important;
 }
 
 .br-07 {
-  border-radius: 0.7rem;
+  border-radius: 0.7rem !important;
 }
 
 /* ====================================================
@@ -17670,10 +17674,6 @@ a {
   background-color: var(--color-muted);
 }
 
-.card {
-  border-radius: var(--border-radius);
-}
-
 .container {
   margin: 0 auto;
   /* Fallback for older browsers */
@@ -18031,7 +18031,6 @@ Gridable = Grid + Table
   border-radius: var(--border-radius);
   display: inline-block;
   line-height: 1.2em;
-  letter-spacing: 0.07rem;
 }
 
 /* Accent Color for Form Elements */
@@ -18443,39 +18442,39 @@ nav {
   font-style: italic;
 }
 
-.light-080 {
+.bright-080 {
   filter: brightness(0.8);
 }
 
-.light-085 {
+.bright-085 {
   filter: brightness(0.85);
 }
 
-.light-090 {
+.bright-090 {
   filter: brightness(0.9);
 }
 
-.light-095 {
+.bright-095 {
   filter: brightness(0.95);
 }
 
-.light-100 {
+.bright-100 {
   filter: brightness(1);
 }
 
-.light-105 {
+.bright-105 {
   filter: brightness(1.05);
 }
 
-.light-110 {
+.bright-110 {
   filter: brightness(1.1);
 }
 
-.light-115 {
+.bright-115 {
   filter: brightness(1.15);
 }
 
-.light-120 {
+.bright-120 {
   filter: brightness(1.2);
 }
 
@@ -19768,6 +19767,22 @@ nav {
 
 .bg-surf-q {
   background-color: var(--quaternary-surface-bg);
+}
+
+.bc-surf-p {
+  border-color: var(--primary-surface-border);
+}
+
+.bc-surf-s {
+  border-color: var(--secondary-surface-border);
+}
+
+.bc-surf-t {
+  border-color: var(--tertiary-surface-border);
+}
+
+.bc-surf-q {
+  border-color: var(--quaternary-surface-border);
 }
 
 /*Surface Hierarchy Colors*/

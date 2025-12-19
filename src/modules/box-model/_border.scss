@@ -48,11 +48,13 @@
     border-bottom-style: solid;
 }
 
-.br-03 {border-radius: 0.3rem;}
-.br-04 {border-radius: 0.4rem;}
-.br-05 {border-radius: 0.5rem;}
-.br-06 {border-radius: 0.6rem;}
-.br-07 {border-radius: 0.7rem;}
+//Use !important, so that it can override the default radius, if any.
+.br-02 {border-radius: 0.2rem !important;}
+.br-03 {border-radius: 0.3rem !important;}
+.br-04 {border-radius: 0.4rem !important;}
+.br-05 {border-radius: 0.5rem !important;}
+.br-06 {border-radius: 0.6rem !important;}
+.br-07 {border-radius: 0.7rem !important;}
 
 /* ====================================================
    Border Width

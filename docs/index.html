@@ -38,25 +38,38 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skpaul/griddle@2.1.1/griddle.min.css">
     <link rel="stylesheet" href="https://nobolok.com/assets/css/site.css">
     <style>
-        section {
-            margin-top: var(--space-xl);
-        }
-
         summary {
             color: var(--color-primary);
-            margin-bottom: var(--space-sm);
             font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        details details>summary {
+            color: var(--color-primary);
+
+            font-size: 1.2rem;
+        }
+
+        details details details {
+            margin-bottom: 2rem;
+            ;
+        }
+
+        details details details>summary {
+            color: var(--color-primary);
+            font-size: 1.0rem;
         }
 
         details>.content {
             padding: 1.5rem;
-            border: 1px solid #5d5d5d;
+            margin-left: 1.5rem;
+            border: 1px solid #4f4e4e;
             border-radius: 7px;
         }
 
         section>h2 {
             color: var(--color-primary);
-            margin-bottom: var(--space-sm);
+
         }
 
         /* override GitHub Gist rule */
@@ -146,7 +159,7 @@
                 <!-- The System -->
                 <article class="mt-25">
                     <details>
-                        <summary class="fs-20">The System</summary>
+                        <summary>The System</summary>
                         <div class="content">
 
                             <!-- Installation -->
@@ -155,7 +168,7 @@
                                     <summary>OmniCSS Installation</summary>
                                     <div>
                                         The easiest way to use from CDN below-
-                                        <div class="surface-secondary mt-sm mb-sm pa-05 fs-xs">
+                                        <div class="surface-secondary mt-08 mb-sm pa-05 fs-xs">
                                             <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.min.css</code>
                                             <code>https://cdn.jsdelivr.net/gh/skpaul/omnicss@14.0.1/omni.js</code>
                                         </div>
@@ -252,7 +265,7 @@
                                         </p>
 
                                         <h3 class="mb-15">Breakpoint Values</h3>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr2 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <strong>Extra Large (xl)</strong><br>
@@ -286,7 +299,7 @@
                                             Append breakpoint suffixes to any utility class to apply styles at specific
                                             screen sizes. Examples:
                                         </p>
-                                        <div class="card surf-s pa-10">
+                                        <div class="surf-s pa-10">
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <code>.fs-20-sm</code><br>
@@ -333,7 +346,7 @@
                                                 color: red;
                                             }
                                         </style>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <h4 class="mb-08">Available Mixins</h4>
                                             <ul class="ml-sm fs-09 breakpoint-mixins">
                                                 <li><code>@include xl { ... }</code> - Extra Large devices (min-width:
@@ -359,23 +372,37 @@
                             <section class="mt-20">
                                 <details>
                                     <summary>Surface Hierarchy</summary>
-                                    <div class="content">
+                                    <div class="content" id="surface-hierarchy">
+
                                         <div class="mb-10">
-                                            OmniCSS defines four surface levels for backgrounds, borders, and text:
+                                            A 'Surface' Defines background, foreground and border colors using a single
+                                            class.
+                                            OmniCSS has four surface levels.
                                         </div>
-                                        <div class="grid fr4 fr1-sm">
-                                            <div class="pa-10 center card surf-p"><span
-                                                    class="pill surf-s">.surf-p</span> <br> <span class="fs-09">Primary
-                                                    Surface</span></div>
-                                            <div class="pa-10 center card surf-s"><span
-                                                    class="pill surf-t">.surf-s</span> <br> <span
-                                                    class="fs-09">Secondary Surface</span></div>
-                                            <div class="pa-10 center card surf-t"><span
-                                                    class="pill surf-q">.surf-s</span> <br> <span class="fs-09">Tertiary
-                                                    Surface</span></div>
-                                            <div class="pa-10 center card surf-q"><span
-                                                    class="pill surf-t">.surf-q</span> <br> <span
-                                                    class="fs-09">Quaternary Surface</span></div>
+                                        <ul class="ml-10 mb-15 fs-09">
+                                            <li><span class="b">Purpose:</span> Define visual layering (z-axis depth)
+                                                for UI containers.</li>
+                                            <li> <span class="b">Use Case:</span> Backgrounds, cards, panels, and
+                                                structural elements.</li>
+                                        </ul>
+                                        <div class="grid fr2 fr1-sm" style="gap:1.5rem;">
+                                            <div class="pa-10 center br-05 surf-p">
+                                                <div class="pill fs-15 mb-12 bc-surf-s">.surf-p</div>
+                                                <div class="fs-09">Primary Surface</div>
+                                            </div>
+                                            <div class="pa-10 center br-05 surf-s">
+                                                <div class="pill fs-15 mb-12 bc-surf-q">.surf-s</div>
+                                                <div class="fs-09">Secondary Surface</div>
+                                            </div>
+                                            <div class="pa-10 center br-05 surf-t">
+                                                <div class="pill fs-15 mb-12">.surf-s</div>
+                                                <div class="fs-09">Tertiary
+                                                    Surface</div>
+                                            </div>
+                                            <div class="pa-10 center surf-q br-05">
+                                                <div class="pill fs-15 mb-12">.surf-q</div>
+                                                <div class="fs-09">Quaternary Surface</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </details>
@@ -424,7 +451,7 @@
                 <!-- Components -->
                 <article class="mt-25">
                     <details>
-                        <summary class="fs-20">Omni Components</summary>
+                        <summary>Omni Components</summary>
 
                         <div class="content">
                             <!-- Gridable -->
@@ -489,12 +516,10 @@
                                 <details>
                                     <summary>Dismissable <span class="pill surf-s">.dissmissable</span></summary>
                                     <div class="content">
-                                        <div class="mt-10">
-                                            <span class="pill">.dismissable</span> for a dismissable notice. Mention
-                                            expiry
-                                            in days.
-                                            Must
-                                            have a unique id for each dismissable.
+                                        <div class="mt-04 mb-10">
+                                            <span class="pill bc-surf-p">.dismissable</span> for a dismissable notice.
+                                            Mention
+                                            expiry in days. Must have a unique id for each dismissable.
                                         </div>
                                         <div class="grid fr3" style="gap:1rem;">
                                             <div class="dismissable surf-p pa-07" id="notice-1010" data-expiry="2">
@@ -504,7 +529,7 @@
                                                     surface
                                                     <span class="pill surf-s">.surf-p</span>
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -515,7 +540,7 @@
                                                     surface
                                                     <span class="pill surf-t">.surf-s</span>
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -526,7 +551,7 @@
                                                     surface
                                                     <span class="pill surf-q">.surf-t</span>
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -537,7 +562,7 @@
                                                     surface
                                                     <span class="pill surf-q">.surf-s</span>
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -545,7 +570,7 @@
                                                 <div>
                                                     This is a <span class="pill info">.info</span> dismissable.
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -553,7 +578,7 @@
                                                 <div>
                                                     This is a <span class="pill success">.success</span> dismissable.
                                                 </div>
-                                                <div class="right mt-sm">
+                                                <div class="right mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -561,14 +586,14 @@
                                                 <div>
                                                     This is a <span class="pill caution">.caution</span> dismissable.
                                                 </div>
-                                                <div class="center mt-sm">
+                                                <div class="center mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
                                             <div class="dismissable critical pa-07" id="notice-4" data-expiry="10000">
                                                 <div>This is a <span class="pill critical">.critical</span> dismissable.
                                                 </div>
-                                                <div class="left mt-sm">
+                                                <div class="left mt-08">
                                                     <span class="dismiss">Don't show</span>
                                                 </div>
                                             </div>
@@ -633,7 +658,7 @@
                             <section class="mt-20">
                                 <details class="expandable">
                                     <summary>Expandable <span class="pill surf-s">.expandable</span></summary>
-                                    <div class="content card surf-s pa-05">
+                                    <div class="content surf-s pa-05">
                                         <p class="fs-10">
                                             Lorem ipsum dolor sit amet. Sit quia veniam qui mollitia tenetur id fugiat
                                             inventore. Et
@@ -645,7 +670,7 @@
                                             maxime
                                             nam odio itaque aut molestiae voluptatem est voluptatem quas.
                                         </p>
-                                        <p class="fs-10 mt-sm">
+                                        <p class="fs-10 mt-08">
                                             Sit temporibus provident sit eius fuga cum facilis omnis ea repudiandae
                                             excepturi! Et
                                             dolorem odit aut ullam eaque sed reprehenderit expedita qui dolores ipsam et
@@ -689,7 +714,7 @@
                                                 This is a <span class="pill critical">.critical</span> board
                                             </div>
                                         </div>
-                                        <details class="expandable mt-sm">
+                                        <details class="expandable mt-08">
                                             <summary class="fs-10 fc-surf-t">View Source</summary>
                                             <div class="content">
                                                 <div class="dark-gist-container">
@@ -766,7 +791,7 @@
                                             <code>for</code>
                                             attribute must match (e.g., both "menu1").
                                         </p>
-                                        <details class="expandable mt-sm">
+                                        <details class="expandable mt-08">
                                             <summary class="fs-10 fc-surf-t">View Source</summary>
                                             <div class="content">
                                                 <div class="dark-gist-container">
@@ -796,7 +821,7 @@
                                             spacing
                                             between
                                             form elements.</p>
-                                        <form class="card surf-p pa-10">
+                                        <form class="surf-p pa-10">
                                             <div class="field">
                                                 <label for="name">Full Name</label>
                                                 <input type="text" id="name" placeholder="Enter your name">
@@ -830,7 +855,7 @@
                                         <p class="mb-08">Add the <code>.required</code> class to labels to display a red
                                             asterisk
                                             (*).</p>
-                                        <form class="card surf-s pa-10">
+                                        <form class="surf-s pa-10">
                                             <div class="field">
                                                 <label for="username" class="required">Username</label>
                                                 <input type="text" id="username" placeholder="Choose a username">
@@ -844,7 +869,7 @@
                                         <p class="mb-08">Use <code>.textbox</code> to make any element look like a text
                                             input.
                                             Perfect for displaying readonly data.</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="field">
                                                 <label>Order ID</label>
                                                 <div class="textbox">#ORD-2025-001234</div>
@@ -859,7 +884,7 @@
                                             for
                                             grouped
                                             inputs.</p>
-                                        <form class="card surf-s pa-10">
+                                        <form class="surf-s pa-10">
                                             <div class="field">
                                                 <label class="required">Select Plan (Vertical layout)</label>
                                                 <div class="radio-group grid fr1">
@@ -924,13 +949,13 @@
                                                 Customization Reference</a> above for the complete list of customizable
                                             properties.
                                         </p>
-                                        <p class="info pa-05 mt-sm">
+                                        <p class="info pa-05 mt-08">
                                             <strong>💡 Interactive States:</strong> Form elements feature smooth
                                             transitions
                                             on
                                             hover and focus, with an inset box shadow on focus for better accessibility.
                                         </p>
-                                        <details class="expandable mt-sm">
+                                        <details class="expandable mt-08">
                                             <summary class="fs-10 fc-surf-t">View Source Code</summary>
                                             <div class="content">
                                                 <div class="dark-gist-container">
@@ -949,13 +974,13 @@
                 <!-- Utility Classes -->
                 <article class="mt-25">
                     <details>
-                        <summary class="fs-20">Utility Classes</summary>
+                        <summary>Utility Classes</summary>
                         <div class="content">
                             <!-- Typography -->
                             <section>
                                 <details>
                                     <summary>Typography</summary>
-                                    <div class="content">
+                                    <div class="content" id="typography">
                                         <!-- Font Sizes -->
                                         <section>
                                             <details>
@@ -1025,7 +1050,7 @@
                                                         <span class="pill surf-s">-us</span> to any font
                                                         size class.
                                                     </p>
-                                                    <div class="card surf-p">
+                                                    <div class="surf-p">
                                                         <div class="grid fr6 fr1-sm">
                                                             <div class="fs-25-xl">.fs-25-xl</div>
                                                             <div class="fs-25-lg">.fs-25-lg</div>
@@ -1047,7 +1072,7 @@
                                                 <div class="content">
                                                     <h3 class="mt-15 mb-sm"></h3>
                                                     <p class="mb-08">Quick font style utilities:</p>
-                                                    <div class="card surf-s pa-10">
+                                                    <div class="surf-s pa-10">
                                                         <div class="grid fr2 fr1-sm" style="gap: 1rem;">
                                                             <div>
                                                                 <span class="b">Bold Text</span>
@@ -1070,11 +1095,11 @@
                                             <details>
                                                 <summary>Font Weight</summary>
                                                 <div class="content">
-                                                    <h4 class="mt-sm mb-08 fs-10">Font Weight</h4>
+                                                    <h4 class="mt-08 mb-08 fs-10">Font Weight</h4>
                                                     <p class="mb-08 fs-09">Control text weight with <code>.fw-*</code>
                                                         classes
                                                         (100-900):</p>
-                                                    <div class="card surf-p pa-10">
+                                                    <div class="surf-p pa-10">
                                                         <div class="grid fr5 fr2-sm" style="gap: 1rem;">
                                                             <div class="fw-100">Thin (100)</div>
                                                             <div class="fw-200">Extra Light (200)</div>
@@ -1086,7 +1111,7 @@
                                                             <div class="fw-800">Extra Bold (800)</div>
                                                             <div class="fw-900">Black (900)</div>
                                                         </div>
-                                                        <div class="fs-09 mt-sm">
+                                                        <div class="fs-09 mt-08">
                                                             Available classes: <code>.fw-100</code>,
                                                             <code>.fw-200</code>,
                                                             <code>.fw-300</code>,
@@ -1106,25 +1131,25 @@
                                             <details>
                                                 <summary>Text Alignment</summary>
                                                 <div class="content">
-                                                    <h4 class="mt-sm mb-08 fs-10">Text Alignment</h4>
+                                                    <h4 class="mt-08 mb-08 fs-10">Text Alignment</h4>
                                                     <p class="mb-08 fs-09">Control horizontal text alignment:</p>
-                                                    <div class="card surf-s pa-10">
+                                                    <div class="surf-s pa-10">
                                                         <div class="grid fr4 fr1-sm" style="gap: 1rem;">
                                                             <div>
-                                                                <div class="left card surf-p pa-05">Left Aligned</div>
+                                                                <div class="left surf-p pa-05">Left Aligned</div>
                                                                 <div class="fs-09"><code>.left</code></div>
                                                             </div>
                                                             <div>
-                                                                <div class="center card surf-p pa-05">Center Aligned
+                                                                <div class="center surf-p pa-05">Center Aligned
                                                                 </div>
                                                                 <div class="fs-09"><code>.center</code></div>
                                                             </div>
                                                             <div>
-                                                                <div class="right card surf-p pa-05">Right Aligned</div>
+                                                                <div class="right surf-p pa-05">Right Aligned</div>
                                                                 <div class="fs-09"><code>.right</code></div>
                                                             </div>
                                                             <div>
-                                                                <div class="justify card surf-p pa-05">Justified text
+                                                                <div class="justify surf-p pa-05">Justified text
                                                                     distributes
                                                                     evenly across
                                                                     the full width of the container.</div>
@@ -1141,27 +1166,26 @@
                                         <section>
                                             <details>
                                                 <summary>Text Transform</summary>
-                                                <div class="content">
-
-                                                    <div class="card surf-p pa-10">
-                                                        <div class="grid fr3 fr1-sm" style="gap: 1rem;">
-                                                            <div>
-                                                                <div class="ucase">uppercase text</div>
-                                                                <div class="fs-09"><code>.ucase</code> - text-transform:
-                                                                    uppercase
-                                                                </div>
+                                                <div class="content" id="text-transform">
+                                                    <div class="grid fr3 fr1-sm" style="gap: 1rem;">
+                                                        <div>
+                                                            <div class="ucase">uppercase text</div>
+                                                            <div class="fs-09"><code
+                                                                    class="pill bright-085">.ucase</code> -
+                                                                text-transform:
+                                                                uppercase
                                                             </div>
-                                                            <div>
-                                                                <div class="lcase">LOWERCASE TEXT</div>
-                                                                <div class="fs-09"><code>.lcase</code> - text-transform:
-                                                                    lowercase
-                                                                </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="lcase">LOWERCASE TEXT</div>
+                                                            <div class="fs-09"><code>.lcase</code> - text-transform:
+                                                                lowercase
                                                             </div>
-                                                            <div>
-                                                                <div class="ccase">capitalize each word</div>
-                                                                <div class="fs-09"><code>.ccase</code> - text-transform:
-                                                                    capitalize
-                                                                </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="ccase">capitalize each word</div>
+                                                            <div class="fs-09"><code>.ccase</code> - text-transform:
+                                                                capitalize
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1175,9 +1199,9 @@
                                             <details>
                                                 <summary>Text Decoration</summary>
                                                 <div class="content">
-                                                    <h4 class="mt-sm mb-08 fs-10">Text Decoration</h4>
+                                                    <h4 class="mt-08 mb-08 fs-10">Text Decoration</h4>
                                                     <p class="mb-08 fs-09">Add or remove text decorations:</p>
-                                                    <div class="card surf-s pa-10">
+                                                    <div class="surf-s pa-10">
                                                         <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                             <div>
                                                                 <span class="uline">Underlined Text</span>
@@ -1214,68 +1238,78 @@
                                 <details>
                                     <summary>Padding</summary>
                                     <div class="content" id="padding">
-                                        <p class="mb-05">Fixed padding utilities from 0 to 4.0rem in <b>0.1rem</b> increments.
+                                        <p class="mb-05">Fixed padding utilities from 0 to 4.0rem in <b>0.1rem</b>
+                                            increments.
                                         </p>
-                                        <h4 class="mt-15">Padding All Sides <span class="pill surf-s">.pa-*</span></h4>
-                                        <div class="card surf-p pa-05">
-                                            <div class="grid fr8">
-                                                <div><span class="pill surf-s">.pa-0</span></div>
-                                                <div><span class="pill surf-s">.pa-01</span></div>
-                                                <div><span class="pill surf-s">.pa-02</span></div>
-                                                <div><span class="pill surf-s">.pa-05</span></div>
-                                                <div><span class="pill surf-s">.pa-10</span></div>
-                                                <div><span class="pill surf-s">.pa-15</span></div>
-                                                <div><span class="pill surf-s">.pa-20</span></div>
-                                                <div><span class="pill surf-s">.pa-40</span></div>
-                                            </div>
+                                        <h4 class="mt-15 mb-10 fw-400">Padding All Sides <span
+                                                class="pill surf-s">.pa-*</span></h4>
+                                        <div class="grid fr8">
+                                            <div><span class="pill surf-s">.pa-0</span></div>
+                                            <div><span class="pill surf-s">.pa-01</span></div>
+                                            <div><span class="pill surf-s">.pa-02</span></div>
+                                            <div><span class="pill surf-s">.pa-05</span></div>
+                                            <div><span class="pill surf-s">.pa-10</span></div>
+                                            <div><span class="pill surf-s">.pa-15</span></div>
+                                            <div><span class="pill surf-s">.pa-20</span></div>
+                                            <div><span class="pill surf-s">.pa-40</span></div>
                                         </div>
-                                        <h4 class="mt-15">Directional Padding</h4>
+                                        <div class="line bg-surf-t mv-15"></div>
+                                        <h4 class="mt-15 mb-10 fw-400">Directional Padding</h4>
                                         <p class="mb-08">Use <span class="pill surf-s">.pl-*</span> (left), <span
                                                 class="pill surf-s">.pr-*</span> (right), <span
                                                 class="pill surf-s">.pt-*</span>
                                             (top),
                                             <span class="pill surf-s">.pb-*</span> (bottom) with values from 0 to 40.
                                         </p>
-                                        <div class="card surf-p pa-05">
-                                            <div class="grid fr6">
-                                                <div><span class="pill surf-s">.pl-05</span></div>
-                                                <div><span class="pill surf-s">.pr-10</span></div>
-                                                <div><span class="pill surf-s">.pt-15</span></div>
-                                                <div><span class="pill surf-s">.pb-20</span></div>
-                                            </div>
+                                        <div class="grid fr6">
+                                            <div><span class="pill surf-s">.pl-05</span></div>
+                                            <div><span class="pill surf-s">.pr-10</span></div>
+                                            <div><span class="pill surf-s">.pt-15</span></div>
+                                            <div><span class="pill surf-s">.pb-20</span></div>
                                         </div>
-                                        <h3 class="mt-15">Axis Padding</h3>
+                                        <div class="line bg-surf-t mv-15"></div>
+
+                                        <h4 class="mt-15 mb-10 fw-400">Axis Padding</h4>
                                         <p class="mb-08">Use <span class="pill surf-s">.pv-*</span> for vertical (top +
                                             bottom) and
                                             <span class="pill surf-s">.ph-*</span> for horizontal (left + right).
                                         </p>
-                                        <div class="card surf-p pa-05">
                                             <div class="grid fr6">
                                                 <div><span class="pill surf-s">.pv-10</span></div>
                                                 <div><span class="pill surf-s">.ph-15</span></div>
                                             </div>
-                                        </div>
+                                        <div class="line bg-surf-t mv-15"></div>
 
-                                        <h3 class="mt-15">Responsive Padding</h3>
-                                        <p class="mb-08">All padding classes include responsive variants for each breakpoint. Append <span class="pill surf-s">-xl</span>, <span class="pill surf-s">-lg</span>, <span class="pill surf-s">-md</span>, <span class="pill surf-s">-sm</span>, <span class="pill surf-s">-xs</span>, or <span class="pill surf-s">-us</span> to any padding class.</p>
-                                        <div class="card surf-s pa-10">
+
+                                        <h4 class="mt-15 mb-10 fw-400">Responsive Padding</h4>
+                                        <p class="mb-08 fs-09">All padding classes include responsive variants for each
+                                            breakpoint. Append <span class="pill surf-s">-xl</span>, <span
+                                                class="pill surf-s">-lg</span>, <span class="pill surf-s">-md</span>,
+                                            <span class="pill surf-s">-sm</span>, <span class="pill surf-s">-xs</span>,
+                                            or <span class="pill surf-s">-us</span> to any padding class.
+                                        </p>
+                                        <div class="surf-s pa-10">
                                             <h4 class="mb-08 fs-10">Examples:</h4>
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
-                                                    <code>.pa-10-sm</code><br>
-                                                    <span class="fs-09">1.0rem padding on all sides on small devices</span>
+                                                    <code class="pill fs-12 bc-surf-t">.pa-10-sm</code><br>
+                                                    <span class="fs-09">1.0rem padding on all sides on small
+                                                        devices</span>
                                                 </div>
                                                 <div>
-                                                    <code>.pt-05-md</code><br>
+                                                    <code class="pill fs-12 bc-surf-t">.pt-05-md</code><br>
                                                     <span class="fs-09">0.5rem padding top on medium devices</span>
                                                 </div>
                                                 <div>
-                                                    <code>.ph-20-xs</code><br>
-                                                    <span class="fs-09">2.0rem horizontal padding on extra small devices</span>
+                                                    <code class="pill fs-12 bc-surf-t">.ph-20-xs</code><br>
+                                                    <span class="fs-09">2.0rem horizontal padding on extra small
+                                                        devices</span>
                                                 </div>
                                             </div>
-                                            <p class="info pa-05 mt-sm fs-09">
-                                                <strong>💡 Note:</strong> All padding utilities (pa, pt, pb, pl, pr, pv, ph) support responsive breakpoints for complete layout control across all device sizes.
+                                            <p class="info pa-05 mt-08 fs-09">
+                                                <strong>💡 Note:</strong> All padding utilities (pa, pt, pb, pl, pr, pv,
+                                                ph) support responsive breakpoints for complete layout control across
+                                                all device sizes.
                                             </p>
                                         </div>
                                     </div>
@@ -1283,14 +1317,15 @@
                             </section>
 
                             <!-- Margin -->
-                            <section class="mt-20" >
+                            <section class="mt-20">
                                 <details>
-                                    <summary >Margin</summary>
+                                    <summary>Margin</summary>
                                     <div class="content" id="margin">
-                                        <p class="mb-05">Fixed margin utilities from 0 to 4.0rem in <b>0.1rem</b> increments.
+                                        <p class="mb-05">Fixed margin utilities from 0 to 4.0rem in <b>0.1rem</b>
+                                            increments.
                                         </p>
                                         <h3 class="mt-15">Margin All Sides <span class="pill surf-s">.ma-*</span></h3>
-                                        <div class="card surf-p pa-05">
+                                        <div class="surf-p pa-05">
                                             <div class="grid fr8">
                                                 <div><span class="pill surf-s">.ma-0</span></div>
                                                 <div><span class="pill surf-s">.ma-01</span></div>
@@ -1309,7 +1344,7 @@
                                             (top),
                                             <span class="pill surf-s">.mb-*</span> (bottom) with values from 0 to 40.
                                         </p>
-                                        <div class="card surf-p pa-05">
+                                        <div class="surf-p pa-05">
                                             <div class="grid fr6">
                                                 <div><span class="pill surf-s">.ml-05</span></div>
                                                 <div><span class="pill surf-s">.mr-10</span></div>
@@ -1317,12 +1352,12 @@
                                                 <div><span class="pill surf-s">.mb-20</span></div>
                                             </div>
                                         </div>
-                                        <h3  class="mt-15">Axis Margin</h3>
+                                        <h3 class="mt-15">Axis Margin</h3>
                                         <p class="mb-08">Use <span class="pill surf-s">.mv-*</span> for vertical (top +
                                             bottom) and
                                             <span class="pill surf-s">.mh-*</span> for horizontal (left + right).
                                         </p>
-                                        <div class="card surf-p pa-05">
+                                        <div class="surf-p pa-05">
                                             <div class="grid fr6">
                                                 <div><span class="pill surf-s">.mv-10</span></div>
                                                 <div><span class="pill surf-s">.mh-15</span></div>
@@ -1330,13 +1365,19 @@
                                         </div>
 
                                         <h3 id="responsive-margin" class="mt-15">Responsive Margin</h3>
-                                        <p class="mb-10">All margin classes include responsive variants for each breakpoint. Append <span class="pill surf-s">-xl</span>, <span class="pill surf-s">-lg</span>, <span class="pill surf-s">-md</span>, <span class="pill surf-s">-sm</span>, <span class="pill surf-s">-xs</span>, or <span class="pill surf-s">-us</span> to any margin class.</p>
-                                        <div class="card surf-s pa-10">
+                                        <p class="mb-10">All margin classes include responsive variants for each
+                                            breakpoint. Append <span class="pill surf-s">-xl</span>, <span
+                                                class="pill surf-s">-lg</span>, <span class="pill surf-s">-md</span>,
+                                            <span class="pill surf-s">-sm</span>, <span class="pill surf-s">-xs</span>,
+                                            or <span class="pill surf-s">-us</span> to any margin class.
+                                        </p>
+                                        <div class="surf-s pa-10">
                                             <h4 class="mb-08 fs-10">Examples:</h4>
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <code>.ma-10-sm</code><br>
-                                                    <span class="fs-09">1.0rem margin on all sides on small devices</span>
+                                                    <span class="fs-09">1.0rem margin on all sides on small
+                                                        devices</span>
                                                 </div>
                                                 <div>
                                                     <code>.mt-05-md</code><br>
@@ -1344,36 +1385,41 @@
                                                 </div>
                                                 <div>
                                                     <code>.mh-20-xs</code><br>
-                                                    <span class="fs-09">2.0rem horizontal margin on extra small devices</span>
+                                                    <span class="fs-09">2.0rem horizontal margin on extra small
+                                                        devices</span>
                                                 </div>
                                             </div>
-                                           
+
                                         </div>
 
-                                         <h4 id="auto-margin" class="mt-15 fs-10">Auto Margin</h4>
-                                            <p class="mb-10 fs-09">Use auto margins for horizontal centering or pushing elements:</p>
-                                            <div class="grid fr2 fr1-sm" style="gap: 1rem;">
-                                                <div>
-                                                    <code class="pill surf-s">.ml-auto</code><br>
-                                                    <span class="fs-09">Push element to the right</span>
-                                                </div>
-                                                <div>
-                                                    <code class="pill surf-s">.mr-auto</code><br>
-                                                    <span class="fs-09">Push element to the left</span>
-                                                </div>
-                                                <div>
-                                                    <code class="pill surf-s">.mh-auto</code><br>
-                                                    <span class="fs-09">Center element horizontally</span>
-                                                </div>
-                                                <div>
-                                                    <code class="pill surf-s">.ma-auto</code><br>
-                                                    <span class="fs-09">Auto margin on all sides</span>
-                                                </div>
+                                        <h4 id="auto-margin" class="mt-15 fs-10">Auto Margin</h4>
+                                        <p class="mb-10 fs-09">Use auto margins for horizontal centering or pushing
+                                            elements:</p>
+                                        <div class="grid fr2 fr1-sm" style="gap: 1rem;">
+                                            <div>
+                                                <code class="pill surf-s">.ml-auto</code><br>
+                                                <span class="fs-09">Push element to the right</span>
                                             </div>
-                                            
-                                            <p class="info pa-05 mt-15 fs-09">
-                                                <strong>💡 Note:</strong> All margin utilities (ma, mt, mb, ml, mr, mv, mh) support responsive breakpoints for complete layout control across all device sizes. Auto margins also support responsive variants like <code>.ml-auto-sm</code>.
-                                            </p>
+                                            <div>
+                                                <code class="pill surf-s">.mr-auto</code><br>
+                                                <span class="fs-09">Push element to the left</span>
+                                            </div>
+                                            <div>
+                                                <code class="pill surf-s">.mh-auto</code><br>
+                                                <span class="fs-09">Center element horizontally</span>
+                                            </div>
+                                            <div>
+                                                <code class="pill surf-s">.ma-auto</code><br>
+                                                <span class="fs-09">Auto margin on all sides</span>
+                                            </div>
+                                        </div>
+
+                                        <p class="info pa-05 mt-15 fs-09">
+                                            <strong>💡 Note:</strong> All margin utilities (ma, mt, mb, ml, mr, mv, mh)
+                                            support responsive breakpoints for complete layout control across all device
+                                            sizes. Auto margins also support responsive variants like
+                                            <code>.ml-auto-sm</code>.
+                                        </p>
                                     </div>
                                 </details>
                             </section>
@@ -1511,6 +1557,7 @@
                                                         the font color of other element same as quaternary surface's
                                                         font color.</li>
                                                 </ul>
+                                                <br>
 
                                                 <ul class="ml-10">
                                                     <li class="mb-05"><span class="pill surf-s">.bg-surf-p</span> : Set
@@ -1526,145 +1573,211 @@
                                                         the background color of other element same as quaternary
                                                         surface's background color.</li>
                                                 </ul>
+
+                                                <br>
+                                                <ul class="ml-10">
+                                                    <li class="mb-05"><span class="pill surf-s">.bc-surf-p</span> : Set
+                                                        the border color of other element same as primary surface's
+                                                        border color.</li>
+                                                    <li class="mb-05"><span class="pill surf-s">.bc-surf-s</span> : Set
+                                                        the border color of other element same as secondary
+                                                        surface's border color.</li>
+                                                    <li class="mb-05"><span class="pill surf-s">.bc-surf-t</span> : Set
+                                                        the border color of other element same as tertiary surface's
+                                                        border color.</li>
+                                                    <li class="mb-05"><span class="pill surf-s">.bc-surf-q</span> : Set
+                                                        the border color of other element same as quaternary
+                                                        surface's border color.</li>
+                                                </ul>
                                             </div>
                                         </details>
 
                                         <details>
                                             <summary>Brightness Filter Utilities</summary>
-                                            <div class="content">
+                                            <div class="content" id="brightness">
                                                 <p class="mb-10">
-                                                    Control the brightness of any element using CSS filter utilities. Perfect for creating hover effects, adjusting image brightness, or fine-tuning visual elements.
+                                                    Control the brightness of any element using CSS filter utilities.
+                                                    Perfect for adjusting image brightness, or
+                                                    fine-tuning visual hierarchy.
                                                 </p>
 
-                                                <h4 class="mt-sm mb-08 fs-10">Available Brightness Levels</h4>
-                                                <p class="mb-08 fs-09">Apply brightness filters from 80% (darker) to 120% (brighter):</p>
-                                                
-                                                <div class="card surf-p pa-10">
+                                                <h4 class="mt-08 mb-08 fs-10">Available Brightness Levels</h4>
+                                                <p class="mb-08 fs-09">Apply brightness filters from 80% (darker) to
+                                                    120% (brighter):</p>
+
+                                                <div class="surf-p pa-10">
                                                     <div class="grid fr5 fr2-sm" style="gap: 1rem;">
                                                         <div>
-                                                            <div class="light-080 surf-s pa-md flex-center">80%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-080</code></div>
+                                                            <div
+                                                                class="bright-080 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>80%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-080</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-085 surf-s pa-md flex-center">85%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-085</code></div>
+                                                            <div
+                                                                class="bright-085 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>85%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-085</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-090 surf-s pa-md flex-center">90%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-090</code></div>
+                                                            <div
+                                                                class="bright-090 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>90%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-090</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-095 surf-s pa-md flex-center">95%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-095</code></div>
+                                                            <div
+                                                                class="bright-095 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>95%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-095</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-100 surf-s pa-md flex-center">100%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-100</code> (default)</div>
+                                                            <div
+                                                                class="bright-100 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>100% (default)</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-100</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-105 surf-s pa-md flex-center">105%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-105</code></div>
+                                                            <div
+                                                                class="bright-105 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>105%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-105</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-110 surf-s pa-md flex-center">110%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-110</code></div>
+                                                            <div
+                                                                class="bright-110 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>110%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-110</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-115 surf-s pa-md flex-center">115%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-115</code></div>
+                                                            <div
+                                                                class="bright-115 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>115%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-115</code></div>
+                                                            </div>
                                                         </div>
                                                         <div>
-                                                            <div class="light-120 surf-s pa-md flex-center">120%</div>
-                                                            <div class="fs-09 mt-xs"><code>.light-120</code></div>
+                                                            <div
+                                                                class="bright-120 surf-p pa-15 flex fd-col jc-center ai-center">
+                                                                <div>120%</div>
+                                                                <div class="fs-09 mt-08"><code
+                                                                        class="pill surf-s">.bright-120</code></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <h4 class="mt-15 mb-08 fs-10">Brightness Scale Comparison</h4>
-                                                <div class="card surf-s pa-10">
-                                                    <div class="flex fd-col" style="gap: 0.5rem;">
-                                                        <div class="light-080 bg-p pa-md">
-                                                            <span class="reverse-color">.light-080 - Darker (80%)</span>
+                                                <div class="surf-s pa-10">
+                                                    <div class="flex fd-col fs-08" style="gap: 0.5rem;">
+                                                        <div class="bright-080 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-080 - Darker
+                                                                (80%)</span>
                                                         </div>
-                                                        <div class="light-085 bg-p pa-md">
-                                                            <span class="reverse-color">.light-085 - Dark (85%)</span>
+                                                        <div class="bright-085 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-085 - Dark (85%)</span>
                                                         </div>
-                                                        <div class="light-090 bg-p pa-md">
-                                                            <span class="reverse-color">.light-090 - Slightly Dark (90%)</span>
+                                                        <div class="bright-090 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-090 - Slightly Dark
+                                                                (90%)</span>
                                                         </div>
-                                                        <div class="light-095 bg-p pa-md">
-                                                            <span class="reverse-color">.light-095 - Almost Normal (95%)</span>
+                                                        <div class="bright-095 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-095 - Almost Normal
+                                                                (95%)</span>
                                                         </div>
-                                                        <div class="light-100 bg-p pa-md">
-                                                            <span class="reverse-color">.light-100 - Normal (100%)</span>
+                                                        <div class="bright-100 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-100 - Normal
+                                                                (100%)</span>
                                                         </div>
-                                                        <div class="light-105 bg-p pa-md">
-                                                            <span class="reverse-color">.light-105 - Slightly Bright (105%)</span>
+                                                        <div class="bright-105 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-105 - Slightly Bright
+                                                                (105%)</span>
                                                         </div>
-                                                        <div class="light-110 bg-p pa-md">
-                                                            <span class="reverse-color">.light-110 - Bright (110%)</span>
+                                                        <div class="bright-110 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-110 - Bright
+                                                                (110%)</span>
                                                         </div>
-                                                        <div class="light-115 bg-p pa-md">
-                                                            <span class="reverse-color">.light-115 - Brighter (115%)</span>
+                                                        <div class="bright-115 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-115 - Brighter
+                                                                (115%)</span>
                                                         </div>
-                                                        <div class="light-120 bg-p pa-md">
-                                                            <span class="reverse-color">.light-120 - Brightest (120%)</span>
+                                                        <div class="bright-120 bg-p pa-01">
+                                                            <span class="reverse-color">.bright-120 - Brightest
+                                                                (120%)</span>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <h4 class="mt-15 mb-08 fs-10">Practical Examples</h4>
 
-                                                <div class="card surf-p pa-10 mb-sm">
+                                                <div class="surf-p pa-10 mb-sm">
                                                     <h5 class="b mb-08">Example 1: Muted Background</h5>
-                                                    <div class="light-085 info pa-md">
-                                                        This info box has a dimmed appearance using <code>.light-085</code>
+                                                    <div class="bright-085 info pa-15">
+                                                        This info box has a dimmed appearance using
+                                                        <code>.bright-085</code>
                                                     </div>
-                                                    <pre class="fs-09 mt-sm"><code>&lt;div class="light-085 info pa-md"&gt;
-    This info box has a dimmed appearance
-&lt;/div&gt;</code></pre>
                                                 </div>
 
-                                                <div class="card surf-s pa-10 mb-sm">
+                                                <div class="surf-s pa-10 mb-sm">
                                                     <h5 class="b mb-08">Example 2: Highlighted Element</h5>
-                                                    <div class="light-110 success pa-md">
-                                                        This success message appears brighter using <code>.light-110</code>
+                                                    <div class="bright-110 success pa-15">
+                                                        This success message appears brighter using <code
+                                                            class="pill fw-300 br-02">.bright-110</code>
                                                     </div>
-                                                    <pre class="fs-09 mt-sm"><code>&lt;div class="light-110 success pa-md"&gt;
-    This success message appears brighter
-&lt;/div&gt;</code></pre>
+
                                                 </div>
 
-                                                <div class="card surf-p pa-10">
-                                                    <h5 class="b mb-08">Example 3: Subtle Card Variations</h5>
+                                                <div class="surf-p pa-10">
+                                                    <h5 class="b mb-08">Example 3: Subtle Variations</h5>
                                                     <div class="grid fr3 fr1-sm" style="gap: 1rem;">
-                                                        <div class="light-090 card surf-s pa-md">
+                                                        <div class="bright-090 surf-s pa-15">
                                                             <h6 class="b">Subtle Card</h6>
-                                                            <p class="fs-09 mt-xs">90% brightness</p>
+                                                            <p class="fs-09 mt-08">90% brightness</p>
                                                         </div>
-                                                        <div class="light-100 card surf-s pa-md">
+                                                        <div class="bright-100 surf-s pa-15">
                                                             <h6 class="b">Normal Card</h6>
-                                                            <p class="fs-09 mt-xs">100% brightness</p>
+                                                            <p class="fs-09 mt-08">100% brightness</p>
                                                         </div>
-                                                        <div class="light-110 card surf-s pa-md">
+                                                        <div class="bright-110 surf-s pa-15">
                                                             <h6 class="b">Bright Card</h6>
-                                                            <p class="fs-09 mt-xs">110% brightness</p>
+                                                            <p class="fs-09 mt-08">110% brightness</p>
                                                         </div>
                                                     </div>
-                                                    <pre class="fs-09 mt-15"><code>&lt;div class="light-090 card surf-s pa-md"&gt;Subtle Card&lt;/div&gt;
-&lt;div class="light-100 card surf-s pa-md"&gt;Normal Card&lt;/div&gt;
-&lt;div class="light-110 card surf-s pa-md"&gt;Bright Card&lt;/div&gt;</code></pre>
                                                 </div>
 
                                                 <p class="info pa-05 mt-15">
-                                                    <strong>💡 Pro Tip:</strong> Brightness filters work on all elements including backgrounds, text, and images. Use <code>.light-080</code> to <code>.light-095</code> for darkening effects and <code>.light-105</code> to <code>.light-120</code> for brightening. Combine with hover effects like <code>.darken:hover</code> or <code>.brighten:hover</code> for interactive elements.
+                                                    <strong>💡 Pro Tip:</strong> Brightness filters work on all elements
+                                                    including backgrounds, text, and images. Use
+                                                    <code>.bright-080</code>
+                                                    to <code>.bright-095</code> for darkening effects and
+                                                    <code>.bright-105</code> to <code>.bright-120</code> for
+                                                    brightening.
+                                                    Combine with hover effects like <code>.darken:hover</code> or
+                                                    <code>.brighten:hover</code> for interactive elements.
                                                 </p>
 
-                                                <details class="expandable mt-sm">
-                                                    <summary class="fs-10 fc-surf-t">View Source Code (_filter.scss)</summary>
+                                                <details class="expandable mt-08">
+                                                    <summary class="fs-10 fc-surf-t">View Source Code (_filter.scss)
+                                                    </summary>
                                                     <div class="content">
                                                         <div class="dark-gist-container">
-                                                            <script src="https://gist.github.com/skpaul/YOUR_FILTER_GIST_ID.js"></script>
+                                                            <script
+                                                                src="https://gist.github.com/skpaul/YOUR_FILTER_GIST_ID.js"></script>
                                                         </div>
                                                     </div>
                                                 </details>
@@ -1684,7 +1797,7 @@
                                             meaningful
                                             states. All classes automatically adapt to light/dark mode.
                                         </p>
-                                        <details class="expandable mt-sm">
+                                        <details class="expandable mt-08">
                                             <summary class="fs-10 fc-surf-t">View Source Code</summary>
                                             <div class="content">
                                                 <div class="dark-gist-container">
@@ -1704,7 +1817,7 @@
                                     <div class="content">
                                         <h3 class="mt-15 mb-sm">Positioning</h3>
                                         <p class="mb-08">Quick position utilities:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr4 fr2-sm" style="gap: 1rem;">
                                                 <div><code>.relative</code> - position: relative</div>
                                                 <div><code>.fixed</code> - position: fixed</div>
@@ -1722,13 +1835,13 @@
                                     <div class="content">
                                         <h3 class="mv-15">Hover Effects</h3>
                                         <p class="mb-15">Apply hover brightness effects to any element:</p>
-                                        <div class="card surf-s pa-10">
+                                        <div class="surf-s pa-10">
                                             <div class="grid fr2 fr1-sm" style="gap: 1rem;">
-                                                <div class="card surf-p pa-15 darken" style="cursor: pointer;">
+                                                <div class="surf-p pa-15 darken" style="cursor: pointer;">
                                                     <strong>Hover me (.darken)</strong>
                                                     <div class="fs-09 mt-10">Darkens to 85% brightness on hover</div>
                                                 </div>
-                                                <div class="card surf-p pa-15 brighten" style="cursor: pointer;">
+                                                <div class="surf-p pa-15 brighten" style="cursor: pointer;">
                                                     <strong>Hover me (.brighten)</strong>
                                                     <div class="fs-09 mt-15">Brightens to 115% on hover</div>
                                                 </div>
@@ -1748,7 +1861,7 @@
                                 <details>
                                     <summary>Display</summary>
                                     <div class="content">
-                                        <div class="card surf-s pa-10">
+                                        <div class="surf-s pa-10">
                                             <div class="grid fr4 fr2-sm" style="gap: 1rem;">
                                                 <div><code>.hidden</code> - display: none</div>
                                                 <div><code>.inline</code> - display: inline</div>
@@ -1767,7 +1880,7 @@
                                     <div class="content">
                                         <h3 class="mt-15 mb-sm">Flexbox Utilities</h3>
                                         <p class="mb-08">Powerful flexbox layout utilities:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <h4 class="mb-08 fs-10">Container Classes</h4>
                                             <div class="grid fr3 fr1-sm mb-md" style="gap: 1rem;">
                                                 <div><code>.flex</code> - display: flex</div>
@@ -1786,39 +1899,39 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h4 class="mt-sm mb-08">Flexbox Examples</h4>
-                                        <div class="card surf-s pa-10">
+                                        <h4 class="mt-08 mb-08">Flexbox Examples</h4>
+                                        <div class="surf-s pa-10">
                                             <div class="flex jc-center ai-center"
                                                 style="height: 100px; border: 1px dashed gray;">
                                                 <span class="pill info">Centered with .flex .jc-center .ai-center</span>
                                             </div>
-                                            <div class="flex-center mt-sm"
+                                            <div class="flex-center mt-08"
                                                 style="height: 100px; border: 1px dashed gray;">
                                                 <span class="pill success">Centered with .flex-center</span>
                                             </div>
-                                            <div class="flex fd-col mt-sm"
+                                            <div class="flex fd-col mt-08"
                                                 style="gap: 0.5rem; border: 1px dashed gray; padding: 1rem;">
                                                 <div class="pill caution">Item 1</div>
                                                 <div class="pill caution">Item 2</div>
                                                 <div class="pill caution">Item 3</div>
-                                                <div class="fs-09 mt-xs">Using .flex .fd-col</div>
+                                                <div class="fs-09 mt-08">Using .flex .fd-col</div>
                                             </div>
                                         </div>
                                         <h3 class="mt-15 mb-sm">Width Utilities</h3>
                                         <p class="mb-08">Responsive width classes based on content:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <div class="w-fit surf-s pa-05"><code>.w-fit</code></div>
-                                                    <div class="fs-09 mt-xs">width: fit-content</div>
+                                                    <div class="fs-09 mt-08">width: fit-content</div>
                                                 </div>
                                                 <div>
                                                     <div class="w-min surf-s pa-05"><code>.w-min</code></div>
-                                                    <div class="fs-09 mt-xs">width: min-content</div>
+                                                    <div class="fs-09 mt-08">width: min-content</div>
                                                 </div>
                                                 <div>
                                                     <div class="w-max surf-s pa-05"><code>.w-max</code></div>
-                                                    <div class="fs-09 mt-xs">width: max-content</div>
+                                                    <div class="fs-09 mt-08">width: max-content</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1833,9 +1946,9 @@
                                     <div class="content">
                                         <h3 class="mt-15 mb-sm">Dividers</h3>
                                         <p class="mb-08">Horizontal line separators:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <p>Content above divider</p>
-                                            <div class="line surf-s mt-sm mb-sm"></div>
+                                            <div class="line surf-s mt-08 mb-sm"></div>
                                             <p>Content below divider</p>
                                             <div class="fs-09 mt-15">
                                                 Use <code>.line</code>, <code>.separator</code>, or
@@ -1853,20 +1966,20 @@
                                 <details>
                                     <summary>Buttons</summary>
                                     <div class="content">
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr3 fr1-sm" style="gap: 1rem;">
                                                 <div>
                                                     <button class="btn">Default Button</button>
-                                                    <div class="fs-09 mt-xs"><code>.btn</code> - Base button style</div>
+                                                    <div class="fs-09 mt-08"><code>.btn</code> - Base button style</div>
                                                 </div>
                                                 <div>
                                                     <button class="btn btn-primary">Primary Button</button>
-                                                    <div class="fs-09 mt-xs"><code>.btn-primary</code> - Primary color
+                                                    <div class="fs-09 mt-08"><code>.btn-primary</code> - Primary color
                                                         button</div>
                                                 </div>
                                                 <div>
                                                     <button class="btn btn-outline">Outline Button</button>
-                                                    <div class="fs-09 mt-xs"><code>.btn-outline</code> - Transparent
+                                                    <div class="fs-09 mt-08"><code>.btn-outline</code> - Transparent
                                                         with
                                                         border
                                                     </div>
@@ -1890,11 +2003,11 @@
 
                                         <h3 class="mt-15 mb-sm">Border All Sides</h3>
                                         <p class="mb-08">Apply a 1px solid border to all sides:</p>
-                                        <div class="card surf-p pa-10">
-                                            <div class="ba surf-s pa-md w-fit">
+                                        <div class="surf-p pa-10">
+                                            <div class="ba surf-s pa-15 w-fit">
                                                 <code>.ba</code> - Border on all sides
                                             </div>
-                                            <div class="fs-09 mt-sm">
+                                            <div class="fs-09 mt-08">
                                                 <strong>Note:</strong> Border color inherits from the element's color or
                                                 can be set using color utilities.
                                             </div>
@@ -1902,22 +2015,22 @@
 
                                         <h3 class="mt-15 mb-sm">Border Directional (Individual Sides)</h3>
                                         <p class="mb-08">Apply borders to specific sides:</p>
-                                        <div class="card surf-s pa-10">
+                                        <div class="surf-s pa-10">
                                             <div class="grid fr4 fr2-sm" style="gap: 1rem;">
                                                 <div>
-                                                    <div class="bt surf-p pa-md">Border Top</div>
+                                                    <div class="bt surf-p pa-15">Border Top</div>
                                                     <div class="fs-09"><code>.bt</code></div>
                                                 </div>
                                                 <div>
-                                                    <div class="bb surf-p pa-md">Border Bottom</div>
+                                                    <div class="bb surf-p pa-15">Border Bottom</div>
                                                     <div class="fs-09"><code>.bb</code></div>
                                                 </div>
                                                 <div>
-                                                    <div class="bl surf-p pa-md">Border Left</div>
+                                                    <div class="bl surf-p pa-15">Border Left</div>
                                                     <div class="fs-09"><code>.bl</code></div>
                                                 </div>
                                                 <div>
-                                                    <div class="br surf-p pa-md">Border Right</div>
+                                                    <div class="br surf-p pa-15">Border Right</div>
                                                     <div class="fs-09"><code>.br</code></div>
                                                 </div>
                                             </div>
@@ -1925,14 +2038,14 @@
 
                                         <h3 class="mt-15 mb-sm">Border Horizontal & Vertical</h3>
                                         <p class="mb-08">Apply borders on two sides at once:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr2 fr1-sm" style="gap: 1rem;">
                                                 <div>
-                                                    <div class="bh surf-s pa-md">Horizontal Borders</div>
+                                                    <div class="bh surf-s pa-15">Horizontal Borders</div>
                                                     <div class="fs-09"><code>.bh</code> - Left + Right borders</div>
                                                 </div>
                                                 <div>
-                                                    <div class="bv surf-s pa-md">Vertical Borders</div>
+                                                    <div class="bv surf-s pa-15">Vertical Borders</div>
                                                     <div class="fs-09"><code>.bv</code> - Top + Bottom borders</div>
                                                 </div>
                                             </div>
@@ -1940,7 +2053,7 @@
 
                                         <h3 class="mt-15 mb-sm">Border Width</h3>
                                         <p class="mb-08">Control border thickness (0-5px):</p>
-                                        <div class="card surf-s pa-10">
+                                        <div class="surf-s pa-10">
                                             <div class="grid fr6 fr3-sm" style="gap: 1rem;">
                                                 <div>
                                                     <div class="ba bw-0 surf-p pa-05">No Border</div>
@@ -1971,7 +2084,7 @@
 
                                         <h3 class="mt-15 mb-sm">Border Style</h3>
                                         <p class="mb-08">Change border appearance:</p>
-                                        <div class="card surf-p pa-10">
+                                        <div class="surf-p pa-10">
                                             <div class="grid fr5 fr2-sm" style="gap: 1rem;">
                                                 <div>
                                                     <div class="ba bs-solid surf-s pa-05">Solid</div>
@@ -1998,20 +2111,20 @@
 
                                         <h3 class="mt-15 mb-sm">Practical Examples</h3>
 
-                                        <h4 class="mt-sm mb-08">Example 1: Card with Custom Border</h4>
-                                        <div class="card surf-s pa-10">
-                                            <div class="ba bw-2 bs-dashed surf-p pa-md w-fit">
+                                        <h4 class="mt-08 mb-08">Example 1: Card with Custom Border</h4>
+                                        <div class="surf-s pa-10">
+                                            <div class="ba bw-2 bs-dashed surf-p pa-15 w-fit">
                                                 <h4 class="b">Special Offer!</h4>
-                                                <p class="mt-xs">Limited time deal - 2px dashed border</p>
+                                                <p class="mt-08">Limited time deal - 2px dashed border</p>
                                             </div>
-                                            <pre class="fs-09 mt-15"><code>&lt;div class="ba bw-2 bs-dashed surf-p pa-md"&gt;
+                                            <pre class="fs-09 mt-15"><code>&lt;div class="ba bw-2 bs-dashed surf-p pa-15"&gt;
     &lt;h4 class="b"&gt;Special Offer!&lt;/h4&gt;
-    &lt;p class="mt-xs"&gt;Limited time deal&lt;/p&gt;
+    &lt;p class="mt-08"&gt;Limited time deal&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                                         </div>
 
-                                        <h4 class="mt-sm mb-08">Example 2: Bottom Border for Sections</h4>
-                                        <div class="card surf-p pa-10">
+                                        <h4 class="mt-08 mb-08">Example 2: Bottom Border for Sections</h4>
+                                        <div class="surf-p pa-10">
                                             <div class="bb bw-2 pb-sm mb-sm">
                                                 <h5 class="b">Section Title</h5>
                                             </div>
@@ -2021,23 +2134,23 @@
 &lt;/div&gt;</code></pre>
                                         </div>
 
-                                        <h4 class="mt-sm mb-08">Example 3: Combining with Colors</h4>
-                                        <div class="card surf-s pa-10">
+                                        <h4 class="mt-08 mb-08">Example 3: Combining with Colors</h4>
+                                        <div class="surf-s pa-10">
                                             <div class="flex" style="gap: 1rem;">
-                                                <div class="ba bw-3 surf-p pa-md fc-p"
+                                                <div class="ba bw-3 surf-p pa-15 fc-p"
                                                     style="border-color: var(--color-primary);">
                                                     Primary Border
                                                 </div>
-                                                <div class="ba bw-3 surf-p pa-md fc-s"
+                                                <div class="ba bw-3 surf-p pa-15 fc-s"
                                                     style="border-color: var(--color-secondary);">
                                                     Secondary Border
                                                 </div>
-                                                <div class="ba bw-3 surf-p pa-md"
+                                                <div class="ba bw-3 surf-p pa-15"
                                                     style="border-color: var(--success-bg);">
                                                     Success Border
                                                 </div>
                                             </div>
-                                            <pre class="fs-09 mt-15"><code>&lt;div class="ba bw-3 surf-p pa-md" style="border-color: var(--color-primary);"&gt;
+                                            <pre class="fs-09 mt-15"><code>&lt;div class="ba bw-3 surf-p pa-15" style="border-color: var(--color-primary);"&gt;
     Primary Border
 &lt;/div&gt;</code></pre>
                                         </div>
@@ -2049,7 +2162,7 @@
                                             variables or by combining with color classes.
                                         </p>
 
-                                        <details class="expandable mt-sm">
+                                        <details class="expandable mt-08">
                                             <summary class="fs-10 fc-surf-t">View Source Code (_border.scss)</summary>
                                             <div class="content">
                                                 <div class="dark-gist-container">
@@ -2068,7 +2181,7 @@
                 <!-- Customization -->
                 <article class="mt-25">
                     <details>
-                        <summary class="fs-20">Customize OmniCSS</summary>
+                        <summary>Customize OmniCSS</summary>
                         <div class="content">
                             <p>Override these CSS custom properties in your own stylesheet to customize
                                 OmniCSS to match your brand.</p>
@@ -2083,7 +2196,7 @@
                                 <script
                                     src="https://gist.github.com/skpaul/2799dfca0e5f033f9bd1afb48ef5ab7c.js"></script>
                             </div>
-                            <p class="info pa-05 mt-sm">
+                            <p class="info pa-05 mt-08">
                                 <strong>Note:</strong> <code>--color-black</code> is <code>#2d2d2d</code> in
                                 light mode
                                 and
@@ -2164,7 +2277,7 @@
                 <!-- Page Template -->
                 <article class="mt-25">
                     <details>
-                        <summary class="fs-20">Page Template</summary>
+                        <summary>Page Template</summary>
                         <div class="content">
                             <!-- Header Template -->
                             <section class="mt-20">
