@@ -1,277 +1,186 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100;200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-/* 
-    Necessary Tools:
-    ============================================
-    1) Pixel-REM Converter      : nekocalc.com/px-to-rem-converter
-    2) Color Scheme Generator   : color.adobe.com/create/color-wheel
-    3) Color Shades Generator   : material.io/design/color/the-color-system.html#tools-for-picking-colors
-                                : https://colorkit.co/color-shades-generator/ffc0cb/
-    4) Font Sizes Generator     : type-scale.com/
-    5) nekocolor.com is also good color tool.
-
-    Font Size Tips:
-    ============================================
-    font-size: 100%; in most browsers, this 100% = 16px = 1rem
-    font-size: 112.5%; In most browsers this 112.5% = 18px = 1.125rem
-
-    //Another option to set font-size-
-    //In order to seamlessly convert pixels to rem, we can set the root sizing to 62.5%. That means 1rem = 10px:
-    font-size: 62.5%;  (62.5/100) * 16px = 10px  
-
-*/
-
-/* Colors----> */
-/*
-HOW TO CREATE DIFFERENT VARIATIONS OF A COLOR
----------------------------------------------
-Change Tints  : Increase/Decrease "white" color. Tint refers refers to shades of a color as it's mixed with white.
-Change Shades : Increase/Decrease "black" color. Shades of the color as the color is mixed with black.
-Change Opacity: rgba(red, green, blue, alpha)
-                RGBA color values are an extension of RGB color values with an alpha channel - which specifies the opacity for a color. The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (not transparent at all):
-*/
+/* ====================================================
+   VARIABLES
+==================================================== */
 :root {
-    --black:    #1c2128;
-    --white:    #E0E8F2;
-
-    --primary-1:   rgba(117, 179, 255, 50%);
-    --primary-2:   rgba(117, 179, 255, 55%);
-    --primary-3:   rgba(117, 179, 255, 65%);
-    --primary-4:   rgba(117, 179, 255, 70%);
-    --primary-5:   rgba(117, 179, 255, 75%);
-    --primary-6:   rgba(117, 179, 255, 80%);
-    --primary-7:   rgba(117, 179, 255, 85%);
-    --primary-8:   rgba(117, 179, 255, 90%);
-    --primary-9:   rgba(117, 179, 255, 95%);
-    --primary-10:  rgba(117, 179, 255, 100%);
-
-    --secondary-1:   rgb(179, 255, 117, 50%);
-    --secondary-2:   rgb(179, 255, 117, 55%);
-    --secondary-3:   rgb(179, 255, 117, 60%);
-    --secondary-4:   rgb(179, 255, 117, 65%);
-    --secondary-5:   rgb(179, 255, 117, 70%);
-    --secondary-6:   rgb(179, 255, 117, 75%);
-    --secondary-7:   rgb(179, 255, 117, 80%);
-    --secondary-8:   rgb(179, 255, 117, 85%);
-    --secondary-9:   rgb(179, 255, 117, 90%);
-    --secondary-10:  rgb(179, 255, 117, 100%);   /*#B3FF75*/
-
-    --accent-1:   rgb(255, 117, 179, 50%);
-    --accent-2:   rgb(255, 117, 179, 55%);
-    --accent-3:   rgb(255, 117, 179, 60%);
-    --accent-4:   rgb(255, 117, 179, 65%);
-    --accent-5:   rgb(255, 117, 179, 70%);
-    --accent-6:   rgb(255, 117, 179, 75%);
-    --accent-7:   rgb(255, 117, 179, 80%);
-    --accent-8:   rgb(255, 117, 179, 85%);
-    --accent-9:   rgb(255, 117, 179, 90%);
-    --accent-10:  rgb(255, 117, 179, 100%);   /*#FF75B3*/
-
-    --gray-1:   #E0E8F2;
-    --gray-2:   #C2D0E5;
-    --gray-3:   #A3B9D8;
-    --gray-4:   #768390;
-    --gray-5:   #658ABD;
-    --gray-6:   #4A73AD;
-    --gray-7:   #3D5F8E;
-    --gray-8:   #304A6F;
-    --gray-9:   #233651;
-    --gray-10:  #162233;
-    
-    --blue-1:   rgba(0, 0, 255, 55%);
-    --blue-2:   rgba(0, 0, 255, 60%);
-    --blue-3:   rgba(0, 0, 255, 65%);
-    --blue-4:   rgba(0, 0, 255, 70%);
-    --blue-5:   rgba(0, 0, 255, 75%);
-    --blue-6:   rgba(0, 0, 255, 80%);
-    --blue-7:   rgba(0, 0, 255, 85%);
-    --blue-8:   rgba(0, 0, 255, 90%);
-    --blue-9:   rgba(0, 0, 255, 95%);
-    --blue-10:  rgba(0, 0, 255, 100%);
-
-    --green-1:  rgba(0, 255, 0, 55%);
-    --green-2:  rgba(0, 255, 0, 60%);
-    --green-3:  rgba(0, 255, 0, 65%);
-    --green-4:  rgba(0, 255, 0, 70%);
-    --green-5:  rgba(0, 255, 0, 75%);
-    --green-6:  rgba(0, 255, 0, 80%);
-    --green-7:  rgba(0, 255, 0, 85%);
-    --green-8:  rgba(0, 255, 0, 90%);
-    --green-9:  rgba(0, 255, 0, 95%);
-    --green-10: rgba(0, 255, 0, 100%);
-
-    --yellow-1: rgba(255, 255, 0, 55%);
-    --yellow-2: rgba(255, 255, 0, 60%);
-    --yellow-3: rgba(255, 255, 0, 65%);
-    --yellow-4: rgba(255, 255, 0, 70%);
-    --yellow-5: rgba(255, 255, 0, 75%);
-    --yellow-6: rgba(255, 255, 0, 80%);
-    --yellow-7: rgba(255, 255, 0, 85%);
-    --yellow-8: rgba(255, 255, 0, 90%);
-    --yellow-9: rgba(255, 255, 0, 95%);
-    --yellow-10:rgba(255, 255, 0, 100%);
-
-    --orange-1: rgba(255, 165, 0, 55%);
-    --orange-2: rgba(255, 165, 0, 60%);
-    --orange-3: rgba(255, 165, 0, 65%);
-    --orange-4: rgba(255, 165, 0, 70%);
-    --orange-5: rgba(255, 165, 0, 75%);
-    --orange-6: rgba(255, 165, 0, 80%);
-    --orange-7: rgba(255, 165, 0, 85%);
-    --orange-8: rgba(255, 165, 0, 90%);
-    --orange-9: rgba(255, 165, 0, 95%);
-    --orange-10:rgba(255, 165, 0, 100%);
-
-    --red-1:    rgba(255, 0, 0, 55%);
-    --red-2:    rgba(255, 0, 0, 60%);
-    --red-3:    rgba(255, 0, 0, 65%);
-    --red-4:    rgba(255, 0, 0, 70%);
-    --red-5:    rgba(255, 0, 0, 75%);
-    --red-6:    rgba(255, 0, 0, 80%);
-    --red-7:    rgba(255, 0, 0, 85%);
-    --red-8:    rgba(255, 0, 0, 90%);
-    --red-9:    rgba(255, 0, 0, 95%);
-    --red-10:   rgba(255, 0, 0, 100%);
-
-    --purple-1: rgba(169, 50, 242, 55%);
-    --purple-2: rgba(169, 50, 242, 60%);
-    --purple-3: rgba(169, 50, 242, 65%);
-    --purple-4: rgba(169, 50, 242, 70%);
-    --purple-5: rgba(169, 50, 242, 75%);
-    --purple-6: rgba(169, 50, 242, 80%);
-    --purple-7: rgba(169, 50, 242, 85%);
-    --purple-8: rgba(169, 50, 242, 90%);
-    --purple-9: rgba(169, 50, 242, 95%);
-    --purple-10:rgba(169, 50, 242, 100%);
-
-    --pink-1:   rgba(255, 192, 203, 55%);
-    --pink-2:   rgba(255, 192, 203, 60%);
-    --pink-3:   rgba(255, 192, 203, 65%);
-    --pink-4:   rgba(255, 192, 203, 70%);
-    --pink-5:   rgba(255, 192, 203, 75%);
-    --pink-6:   rgba(255, 192, 203, 80%);
-    --pink-7:   rgba(255, 192, 203, 85%);
-    --pink-8:   rgba(255, 192, 203, 90%);
-    --pink-9:   rgba(255, 192, 203, 95%);
-    --pink-10:  rgba(255, 192, 203, 100%);  
-    
-    --coral-1:  rgba(255, 127, 80, 55%);
-    --coral-2:  rgba(255, 127, 80, 60%);
-    --coral-3:  rgba(255, 127, 80, 65%);
-    --coral-4:  rgba(255, 127, 80, 70%);
-    --coral-5:  rgba(255, 127, 80, 75%);
-    --coral-6:  rgba(255, 127, 80, 80%);
-    --coral-7:  rgba(255, 127, 80, 85%);
-    --coral-8:  rgba(255, 127, 80, 90%);
-    --coral-9:  rgba(255, 127, 80, 95%);
-    --coral-10: rgba(255, 127, 80, 100%);
-
-    --teal-1:   rgba(0, 173, 173, 50%);
-    --teal-2:   rgba(0, 173, 173, 55%);
-    --teal-3:   rgba(0, 173, 173, 60%);
-    --teal-4:   rgba(0, 173, 173, 65%);
-    --teal-5:   rgba(0, 173, 173, 70%);
-    --teal-6:   rgba(0, 173, 173, 75%);
-    --teal-7:   rgba(0, 173, 173, 80%);
-    --teal-8:   rgba(0, 173, 173, 85%);
-    --teal-9:   rgba(0, 173, 173, 95%);
-    --teal-10:   rgba(0, 173, 173, 100%);
-} /* <---- Colors */
-
-:root {
-    --container-max-width: 1200px;
-    --container-padding: 0.75rem;  /* left + right*/
-
-    --fallback-font: sans-serif;
-    --font-family-english: 'Inter', var(--fallback-font); 
-    --font-family-bangla: 'Anek Bangla', var(--fallback-font);
+    --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-weight: 300;
+    --line-height: 1.6;
 
-    /* Color scheme were generated from https://color.adobe.com/create/color-wheel */
-    /* Shades were generated from https://material.io/design/color/the-color-system.html#tools-for-picking-colors */
-    /* https://nekocolor.com is also good tool */
+    --border: 1px solid var(--primary-surface-border);
+    --border-radius: 5px;
+    --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
 
-    /* Used as default text color */
-    --color: #C2D0E5;
-   
-    /* Used as default page background color */
-    --background-color: rgba(33, 52, 79, 100%);  /*#21344f*/
-        /* background can be anyone of the following -
-            --background-color: red; //solid color
-            --background-color: linear-gradient(307deg, #29648a 0%, #5e9ac3 50%); //gradient
-            --background-color: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486); //gradient
-            --background-color: #ffffff url(assets/images/corners/corners-4/corner-4-right-bottom.png) no-repeat right bottom / contain; //background image
-        */
+    --transition-duration: 0.4s;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* ====================================================
+   Colors for Light theme (default)
+==================================================== */
+:root {
+    --color-primary: #0066ff;
+    --color-secondary: #7c3aed;
+    --color-black: #2d2d2d;
+
+    /* Surface Hierarchy */
+    //Primary
+    --primary-surface-bg: #FFFFFF;      /* Main background */
+    --primary-surface-text: #2d2d2d;    /* Dark Gray for clear contrast */
+    --primary-surface-border: #e0e3e7;  /* Subtle border for base surface */
+    // Secondary
+    --secondary-surface-bg: #f9fafc;    /* Slightly elevated, for cards, input fields */
+    --secondary-surface-text: #3a3a3a;
+    --secondary-surface-border: #d6dbe0; /* Soft border for clear separation */
+    //Tertiary
+    --tertiary-surface-bg: #f3f4f6;     /* Even more elevated, for dropdowns, modals */
+    --tertiary-surface-text: #444444;
+    --tertiary-surface-border: #cdd2d9; /* Slightly stronger border for clarity */
+    //Quaternary
+    --quaternary-surface-bg: #e0e3e7;   /* For subtle dividers, button hover */
+    --quaternary-surface-text: #525252;
+    --quaternary-surface-border: #b5b9be; /* Stronger for clear separation */
+
+    /* Alert Box Color Palette */  
+    // Info:
+    --info-bg: #e0f3ff;
+    --info-text: #0b62a4;
+    --info-border: 1px solid #66b3ff;
+    // Success:
+    --success-bg: #e8f5e9;
+    --success-text: #2e7d32;
+    --success-border: 1px solid #81c784;
+    // Warning:
+    --caution-bg: #fff8e1;
+    --caution-text: #f57c00;
+    --caution-border: 1px solid #ffb74d;
+    // Danger:
+    --critical-bg: #ffebee;
+    --critical-text: #c62828;
+    --critical-border: 1px solid #e57373;
+
+    --color-toggle-bg: #e0e0e0;
+    --color-toggle-icon: #ffbb00;
+
+    /* Form Elements */
+    --accent-color: #0066ff;
+
+    --label-color: #3a3a3a;
+    --placeholder-color: #999999;
+    --input-color: #2d2d2d;
+    --input-caret-color: #0066ff;
+    --input-background-color: #FFFFFF;
+    --input-background-color-on-hover: #FFFFFF;
+    --input-background-color-on-focus: #f9fafc;
+    --input-border-color: #d6dbe0;
+    --input-border-color-on-hover: #0066ff;
+    --input-border-color-on-focus: #0066ff;
+
+    --radio-border-color: #7f8086;    /* slightly brighter than  --input-border-color*/
+    --checkbox-border-color: var(--radio-border-color);    /*  same as radio border color */
+
+    --button-color: #2d2d2d;
+    --button-border-color: #d6dbe0;
+    --button-background-color: #FFFFFF;
+
+}
+
+/* ====================================================
+   System Dark Mode (system preference only)
+==================================================== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #0066ff;
+        --color-secondary: #7c3aed;
+        --color-black: #e0e0e0;
     
-    /* --dark & --light are two variants of --background-color. */
-    /* Used in .c-dark, .c-light, .bg-dark, .bg-light, .bc-dark, .bc-light. File- _colors.scss.*/ 
-    /* Add more "black" to the default background color */
-    --dark-1: rgb(27, 46, 72); 
-    --dark-2: rgb(20, 36, 58); 
-    --dark-3: rgb(8, 23, 44);  
-    /* Add more "white" to the default background color */
-    --light-1:  rgb(39, 62, 94);
-    --light-2:  rgb(42, 66, 98);
-    --light-3:  rgb(59, 84, 118);
+        /* Surface Hierarchy */
+        //Primary
+        --primary-surface-bg: #292a2d;     /* Main background */
+        --primary-surface-text: #dbdbdb;   /* Very light gray for strong contrast */
+        --primary-surface-border: #3a3b3e; /* Subtle border for base surface */
+        // Secondary
+        --secondary-surface-bg: #323336;   /* Slightly elevated, for cards, input fields */
+        --secondary-surface-text: #d5d7d9;
+        --secondary-surface-border: #3d3e42; /* Soft border for clear separation */
+        // Tertiary
+        --tertiary-surface-bg: #3a3b3e;    /* Even more elevated, for dropdowns, modals */
+        --tertiary-surface-text: #c7c9cc;
+        --tertiary-surface-border: #46474b; /* Slightly stronger border for clarity */
+        //Quaternary
+        --quaternary-surface-bg: #46474b;  /* For subtle dividers, button hover */
+        --quaternary-surface-text: #b4b6b9;
+        --quaternary-surface-border: #5a5b60; /* Stronger for clear separation */
+    
+        // Alert Box Color Palette   
+        // Info:
+        --info-bg: #1e3a54;
+        --info-text: #aad4ff;
+        --info-border: 1px solid #3a6b9e;
+        // Success:
+        --success-bg: #1e4026;
+        --success-text:  #a5e2b5;
+        --success-border: 1px solid #3a6b47;
+        // Warning:
+        --caution-bg: #3b2a0d;
+        --caution-text: #ffd080;
+        --caution-border: 1px solid #a5752b;
+        // Danger:
+        --critical-bg: #4a1e1e;
+        --critical-text: #fbbcbc;
+        --critical-border: 1px solid #b64444;
+    
+        --color-toggle-bg: #333333;
+        --color-toggle-icon: #ffdd88;
 
-    --line-height : 1.3;
-    --accent-color: var(--accent-5);
+        /* Form Elements (Dark Mode) */
+        --label-color: #d5d7d9;
+        --placeholder-color: #7a7c7f;
+        --input-color: #e0e0e0;
+        --input-caret-color: #66b3ff;
+        --input-background-color: #292a2d;
+        --input-background-color-on-hover: #292a2d;
+        --input-background-color-on-focus: #323336;
+        --input-border-color: #46474b;
+        --input-border-color-on-hover: #0066ff;
+        --input-border-color-on-focus: #0066ff;
 
-    --border-color: #658ABD;
-    --border: 1px solid var(--border-color);
-    --border-radius: 0.25rem;
+        --radio-border-color: #7f8086;    /* slightly brighter than  --input-border-color*/
+        --checkbox-border-color: var(--radio-border-color);    /*  same as radio border color */
 
-    /* All the following colors are the variant of the above base colors. */
-    --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
-    --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
-    --header-menu-color: var(--blue-3);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --header-menu-color-hover: var(--blue-2);               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
-    --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
-    --hamb-border-color: var(--color);     /* applied to the hamburger menu box border.*/
-    --scroll-color: var(--color);          /* applied to the index.php marquee*/
-    --scroll-color-hover: var(--color);    /* applied to the index.php marquee*/
+        --button-color: #e0e0e0;
+        --button-border-color: #46474b;
+        --button-background-color: #323336;
 
-    --hyperlink-color: var(--blue-4);
-    --hyperlink-color-hover: var(--accent-color);
-
-    /* Default values for table */
-    --table-background-color: transparent; 
-    --table-border-color: transparent; 
-    --thead-background-color: transparent; 
-    --thead-color: transparent; 
-    --th-border-color:transparent;
-    --tbody-color:transparent;
-    --tr-border-color:transparent;
-    --tr-even-background-color:transparent;     /* for even rows only */
-    --tr-hover-background-color:transparent;    /* on hover effect */
-
-    /* Form element */
-    --label-color: var(--gray-2);
-    --placeholder-color: #51637b; /* input[type=text], input[type=password], textarea */
-    --input-color: var(--gray-2);  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-caret-color: #fff;
-    --input-background-color: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-background-color-on-hover: unset;  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-background-color-on-focus: #162233;  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-border-color: #46576e;  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-border-color-on-hover: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
-    --input-border-color-on-focus: var(--accent-color);  /* input[type=text], input[type=password], select, textarea, .textbox */
-
-    --button-color:             var(--gray-2);
-    --button-border-color:      var(--gray-2);
-    --button-background-color:  var(--gray-2);
-
+        /* Accent Color (dark mode) */
+        --accent-color: #66b3ff;
+    }
 }
 
-/* Override sweet-modal color */
-  .sweet-modal-content{
-    color: black;
-}
+// _variables.scss
+$breakpoints: (
+  xl: 1399.98px,
+  lg: 1199.98px,
+  md: 991.98px,
+  sm: 767.98px,
+  xs: 575.98px,
+  us: 479.98px
+);
 
-.sweet-modal-overlay {
-     background: radial-gradient(at center, rgba(34, 39, 46, 0.6) 0%, rgba(34, 39, 46, 0.7) 100%)  !important;
-}
+// Breakpoint naming conventions for grid classes
+$breakpoint-names: (
+  xl: 'xl',  // .fr1-xl
+  lg: 'lg',  // .fr1-lg
+  md: 'md',
+  sm: 'sm',
+  xs: 'xs',
+  us: 'us'  
+);
 
+//Used to create padding and margin in rem
+$sizes: '0.1' '0.2' '0.3' '0.4' '0.5' '0.6' '0.7' '0.8' '0.9' '1.0' '1.1' '1.2' '1.3' '1.4' '1.5' '1.6' '1.7' '1.8' '1.9' '2.0' '2.1' '2.2' '2.3' '2.4' '2.5' '2.6' '2.7' '2.8' '2.9' '3.0' '3.1' '3.2' '3.3' '3.4' '3.5' '3.6' '3.7' '3.8' '3.9' '4.0';
+
+
+$fontSizes: us, xs, sm, md, lg, xl, 2xl, 3xl;
+
+$fontWeights: 100,200,300,400,500,600,700,800,900;

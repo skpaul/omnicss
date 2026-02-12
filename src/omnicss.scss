@@ -1,4 +1,5 @@
 // sass --watch omnicss.scss:../omni.css
+// sass --watch omnicss.scss:../omni.min.css
 // sass --watch omnicss.scss:../omni.min.css --style compressed
 
 // git tag 		//show current tags
@@ -45,6 +46,5 @@
 @import 'modules/misc/filter'; 
 
 @import 'modules/typography/typography'; 
-@import 'modules/typography/typography-misc'; 
 
 @import 'modules/colors';

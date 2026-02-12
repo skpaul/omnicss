@@ -1,3 +1,42 @@
+// This is a generic function to use almost in all purpose
+@mixin createRule($prefix, $property, $values, $unit, $device) {
+    @if $device == "" {
+        @each $value in $values{
+              @if str-index($value, ".") {
+                // dot exists
+                $part1: str-slice($value, 1, 1); 
+                $part2: str-slice($value, 3, 4) ;
+                .#{$prefix}-#{$part1}#{$part2}{
+                    #{$property}:#{$value}; 
+                }
+            } @else {
+                //no dot
+                .#{$prefix}-#{$value}{
+                    #{$property}:#{$value}#{$unit}; 
+                }
+            }
+        }
+    }
+    @else{
+         @each $value in $values{
+              @if str-index($value, ".") {
+                // dot exists
+                $part1: str-slice($value, 1, 1); 
+                $part2: str-slice($value, 3, 4) ;
+                .#{$prefix}-#{$part1}#{$part2}-#{$device}{
+                    #{$property}:#{$value}; 
+                }
+            } @else {
+                //no dot
+                .#{$prefix}-#{$value}-#{$device}{
+                    #{$property}:#{$value}#{$unit}; 
+                }
+            }
+        }
+    }
+}
+
+
 //in rem value
 @mixin createFixedSpacing($prefix, $property, $version, $device:"") {
     @if $version == "general" {
@@ -92,6 +131,8 @@
         }
     }
 }
+
+
 
 // Here's a general way to escape decimal numbers for class names (replacing . with -)   ----->
 @function strip-units ( $number ) {

@@ -18418,9 +18418,6 @@ nav {
   height: 1px;
 }
 
-/* ================================ */
-/* Utility Classes for Easy Use */
-/* ================================ */
 .w-fit {
   width: fit-content;
 }
@@ -18431,15 +18428,8 @@ nav {
   width: max-content;
 }
 
-/* ================================ */
-/* Font-Style */
-/* ================================ */
-.b {
-  font-weight: bold;
-}
-
-.i {
-  font-style: italic;
+.round {
+  border-radius: var(--border-radius);
 }
 
 .bright-080 {
@@ -18478,6 +18468,9 @@ nav {
   filter: brightness(1.2);
 }
 
+/* ====================================================
+   Font-Size
+==================================================== */
 .fs-01 {
   font-size: 0.1rem;
 }
@@ -19607,6 +19600,10 @@ nav {
 /* ====================================================
    Font-Weight
 ==================================================== */
+.b {
+  font-weight: bold;
+}
+
 .fw-100 {
   font-weight: 100;
 }
@@ -19643,6 +19640,323 @@ nav {
   font-weight: 900;
 }
 
+/* ====================================================
+   Line-Height
+==================================================== */
+.lh-10 {
+  line-height: 1.0;
+}
+
+.lh-11 {
+  line-height: 1.1;
+}
+
+.lh-12 {
+  line-height: 1.2;
+}
+
+.lh-13 {
+  line-height: 1.3;
+}
+
+.lh-14 {
+  line-height: 1.4;
+}
+
+.lh-15 {
+  line-height: 1.5;
+}
+
+.lh-16 {
+  line-height: 1.6;
+}
+
+.lh-17 {
+  line-height: 1.7;
+}
+
+.lh-18 {
+  line-height: 1.8;
+}
+
+.lh-19 {
+  line-height: 1.9;
+}
+
+.lh-20 {
+  line-height: 2.0;
+}
+
+@media (min-width: 1399.98px) {
+  .lh-10-xl {
+    line-height: 1.0;
+  }
+
+  .lh-11-xl {
+    line-height: 1.1;
+  }
+
+  .lh-12-xl {
+    line-height: 1.2;
+  }
+
+  .lh-13-xl {
+    line-height: 1.3;
+  }
+
+  .lh-14-xl {
+    line-height: 1.4;
+  }
+
+  .lh-15-xl {
+    line-height: 1.5;
+  }
+
+  .lh-16-xl {
+    line-height: 1.6;
+  }
+
+  .lh-17-xl {
+    line-height: 1.7;
+  }
+
+  .lh-18-xl {
+    line-height: 1.8;
+  }
+
+  .lh-19-xl {
+    line-height: 1.9;
+  }
+
+  .lh-20-xl {
+    line-height: 2.0;
+  }
+}
+@media (min-width: 1199.98px) {
+  .lh-10-lg {
+    line-height: 1.0;
+  }
+
+  .lh-11-lg {
+    line-height: 1.1;
+  }
+
+  .lh-12-lg {
+    line-height: 1.2;
+  }
+
+  .lh-13-lg {
+    line-height: 1.3;
+  }
+
+  .lh-14-lg {
+    line-height: 1.4;
+  }
+
+  .lh-15-lg {
+    line-height: 1.5;
+  }
+
+  .lh-16-lg {
+    line-height: 1.6;
+  }
+
+  .lh-17-lg {
+    line-height: 1.7;
+  }
+
+  .lh-18-lg {
+    line-height: 1.8;
+  }
+
+  .lh-19-lg {
+    line-height: 1.9;
+  }
+
+  .lh-20-lg {
+    line-height: 2.0;
+  }
+}
+@media (max-width: 991.98px) {
+  .lh-10-md {
+    line-height: 1.0;
+  }
+
+  .lh-11-md {
+    line-height: 1.1;
+  }
+
+  .lh-12-md {
+    line-height: 1.2;
+  }
+
+  .lh-13-md {
+    line-height: 1.3;
+  }
+
+  .lh-14-md {
+    line-height: 1.4;
+  }
+
+  .lh-15-md {
+    line-height: 1.5;
+  }
+
+  .lh-16-md {
+    line-height: 1.6;
+  }
+
+  .lh-17-md {
+    line-height: 1.7;
+  }
+
+  .lh-18-md {
+    line-height: 1.8;
+  }
+
+  .lh-19-md {
+    line-height: 1.9;
+  }
+
+  .lh-20-md {
+    line-height: 2.0;
+  }
+}
+@media (max-width: 767.98px) {
+  .lh-10-sm {
+    line-height: 1.0;
+  }
+
+  .lh-11-sm {
+    line-height: 1.1;
+  }
+
+  .lh-12-sm {
+    line-height: 1.2;
+  }
+
+  .lh-13-sm {
+    line-height: 1.3;
+  }
+
+  .lh-14-sm {
+    line-height: 1.4;
+  }
+
+  .lh-15-sm {
+    line-height: 1.5;
+  }
+
+  .lh-16-sm {
+    line-height: 1.6;
+  }
+
+  .lh-17-sm {
+    line-height: 1.7;
+  }
+
+  .lh-18-sm {
+    line-height: 1.8;
+  }
+
+  .lh-19-sm {
+    line-height: 1.9;
+  }
+
+  .lh-20-sm {
+    line-height: 2.0;
+  }
+}
+@media (max-width: 575.98px) {
+  .lh-10-xs {
+    line-height: 1.0;
+  }
+
+  .lh-11-xs {
+    line-height: 1.1;
+  }
+
+  .lh-12-xs {
+    line-height: 1.2;
+  }
+
+  .lh-13-xs {
+    line-height: 1.3;
+  }
+
+  .lh-14-xs {
+    line-height: 1.4;
+  }
+
+  .lh-15-xs {
+    line-height: 1.5;
+  }
+
+  .lh-16-xs {
+    line-height: 1.6;
+  }
+
+  .lh-17-xs {
+    line-height: 1.7;
+  }
+
+  .lh-18-xs {
+    line-height: 1.8;
+  }
+
+  .lh-19-xs {
+    line-height: 1.9;
+  }
+
+  .lh-20-xs {
+    line-height: 2.0;
+  }
+}
+@media (max-width: 479.98px) {
+  .lh-10-us {
+    line-height: 1.0;
+  }
+
+  .lh-11-us {
+    line-height: 1.1;
+  }
+
+  .lh-12-us {
+    line-height: 1.2;
+  }
+
+  .lh-13-us {
+    line-height: 1.3;
+  }
+
+  .lh-14-us {
+    line-height: 1.4;
+  }
+
+  .lh-15-us {
+    line-height: 1.5;
+  }
+
+  .lh-16-us {
+    line-height: 1.6;
+  }
+
+  .lh-17-us {
+    line-height: 1.7;
+  }
+
+  .lh-18-us {
+    line-height: 1.8;
+  }
+
+  .lh-19-us {
+    line-height: 1.9;
+  }
+
+  .lh-20-us {
+    line-height: 2.0;
+  }
+}
 /* ====================================================
    White Space
 ==================================================== */
@@ -19693,6 +20007,20 @@ nav {
 
 .noline {
   text-decoration: none;
+}
+
+/* ================================ */
+/* Font-Style */
+/* ================================ */
+.i {
+  font-style: italic;
+}
+
+/* ====================================================
+   Misc
+==================================================== */
+.super {
+  vertical-align: super;
 }
 
 /* Text Colors */

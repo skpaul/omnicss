@@ -1,5 +1,6 @@
-
-
+/* ====================================================
+   Font-Size
+==================================================== */
 @include createFontSizes("");
 
 @include xl{
@@ -20,3 +21,73 @@
 @include us{
     @include createFontSizes("us");
 }
+
+
+/* ====================================================
+   Font-Weight
+==================================================== */
+.b{
+    font-weight: bold;
+}
+@include createFontWeights("fw", "font-weight"); 
+
+
+/* ====================================================
+   Line-Height
+==================================================== */
+@include createRule("lh", "line-height", $lineHeights, "", ""); 
+@include xl{
+    @include createRule("lh", "line-height", $lineHeights, "", "xl"); 
+}
+@include lg{
+    @include createRule("lh", "line-height", $lineHeights, "", "lg"); 
+}
+@include md{
+    @include createRule("lh", "line-height", $lineHeights, "", "md"); 
+}
+@include sm{
+    @include createRule("lh", "line-height", $lineHeights, "", "sm"); 
+}
+@include xs{
+   @include createRule("lh", "line-height", $lineHeights, "", "xs"); 
+}
+@include us{
+    @include createRule("lh", "line-height", $lineHeights, "", "us"); 
+}
+
+/* ====================================================
+   White Space
+==================================================== */
+
+
+/* ====================================================
+   Text Alignment
+==================================================== */
+.left{text-align: left;}
+.right{text-align: right;}
+.center{text-align: center;}
+.justify{text-align: justify;}
+
+/* ====================================================
+   Text Transformation
+==================================================== */
+.ucase{text-transform: uppercase;}
+.lcase{text-transform: lowercase;}
+.ccase{text-transform: capitalize;}
+
+/* ====================================================
+   Text Decoration
+==================================================== */
+.uline{text-decoration: underline;}
+.oline{text-decoration: overline;}
+.noline{text-decoration: none;}
+
+/* ================================ */
+/* Font-Style */
+/* ================================ */
+.i{font-style: italic;}
+
+/* ====================================================
+   Misc
+==================================================== */
+.super{vertical-align: super;}
