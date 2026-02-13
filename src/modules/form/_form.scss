@@ -1,19 +1,24 @@
 /* Accent Color for Form Elements */
-input, select, button, input[type="checkbox"], input[type="radio"] {
-  accent-color: var(--accent-color);
+input,
+select,
+button,
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--accent-color);
 }
 
 
 
-.field{
+.field {
     margin-bottom: 0.7rem;
     background-color: inherit;
 }
 
-label{
+label {
     font-weight: 600;
     display: inline-flex;
     line-height: normal;
+
     &.required::after {
         content: "*";
         color: #f33029;
@@ -22,25 +27,33 @@ label{
 }
 
 // default state -
-input[type=text], input[type=password], select, textarea, .textbox{
-    background-color: var(--input-background-color);//defined in theme.css
-    color: var(--input-color);                      //defined in theme.css
-    border: 1px solid var(--input-border-color);    //defined in theme.css
+input[type=text],
+input[type=password],
+select,
+textarea,
+.textbox {
+    background-color: var(--input-background-color); //defined in theme.css
+    color: var(--input-color); //defined in theme.css
+    border: 1px solid var(--input-border-color); //defined in theme.css
     width: 100%;
-    margin-top:5px;
+    margin-top: 5px;
     outline: none;
     caret-color: var(--input-caret-color);
 }
 
 // hover & focus state-
-input[type=text], input[type=password], select, textarea{
-    &:hover{
+input[type=text],
+input[type=password],
+select,
+textarea {
+    &:hover {
         border-color: var(--input-border-color-on-hover); //defined in theme.css
         transition: border-color 0.3s ease-in-out;
     }
-    &:focus{
+
+    &:focus {
         background-color: var(--input-background-color-on-focus); //defined in theme.css
-        border-color: var(--input-border-color-on-focus); 
+        border-color: var(--input-border-color-on-focus);
         transition: border-color 0.3s ease-in-out;
         box-shadow: inset 0 0 4px var(--input-border-color-on-focus);
         transition: box-shadow 0.3s ease-in-out;
@@ -49,7 +62,7 @@ input[type=text], input[type=password], select, textarea{
 
 
 textarea {
-    resize: vertical;   // Allow only vertical resizing of textareas.
+    resize: vertical; // Allow only vertical resizing of textareas.
     min-height: 70px;
     overflow: auto;
 }
@@ -59,26 +72,29 @@ textarea {
 }
 
 // placeholder color
-input, textarea{
-    &::-webkit-input-placeholder { 
+input,
+textarea {
+    &::-webkit-input-placeholder {
         // Chrome/Opera/Safari
         color: var(--placeholder-color);
     }
-    &:-moz-placeholder { 
+
+    &:-moz-placeholder {
         // Firefox 18- 
         color: var(--placeholder-color);
     }
-    &::-moz-placeholder { 
+
+    &::-moz-placeholder {
         // Firefox 19+
         color: var(--placeholder-color);
     }
-    
-    &:-ms-input-placeholder { 
+
+    &:-ms-input-placeholder {
         // IE 10+
         color: var(--placeholder-color);
     }
-    
-    &::placeholder{
+
+    &::placeholder {
         color: var(--placeholder-color);
     }
 }
@@ -87,95 +103,120 @@ select option[value=""] {
     color: var(--placeholder-color);
 }
 
-.textbox{
+.textbox {
     //This class transforms any element to look like input[type=text]
     //Useful to show readonly data.
     //Properties are added in the following rules.
 }
 
 //same padding
-input[type=text], input[type=password], select, textarea, .radio-group, .checkbox-group, .textbox{
-    padding: 0.232124rem 0.37rem ;
+input[type=text],
+input[type=password],
+select,
+textarea,
+.radio-group,
+.checkbox-group,
+.textbox {
+    padding: 0.232124rem 0.37rem;
 }
 
 //Make same height.
-input[type=text], input[type=password], select, .textbox{
+input[type=text],
+input[type=password],
+select,
+.textbox {
     height: 2.4rem !important;
 }
 
 //Set font size.
-input[type=text], input[type=password], select, .textbox, textarea, .radio-group label, .checkbox-group label {
+input[type=text],
+input[type=password],
+select,
+.textbox,
+textarea,
+.radio-group label,
+.checkbox-group label {
     font-size: 0.9rem;
     letter-spacing: normal;
 }
 
-.radio-group, .checkbox-group{
+.radio-group,
+.checkbox-group {
     color: var(--input-color);
     background-color: var(--input-background-color);
     border: 1px solid var(--input-border-color);
 
-    &>label{
+    label {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        gap: 10px;
         padding: 0.3rem 0.5rem;
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.2s ease-in-out;
 
-        &:hover{
+        &:hover {
             background-color: var(--quaternary-surface-bg);
         }
+
+         input {
+            flex: 0 0 auto;
+            margin-top: 4px;
+            cursor: pointer;
+        }
+
+        span {
+            flex: 1 1 auto;
+            line-height: 1.8;
+            font-weight: normal;
+        }
     }
-
 }
-
-
-input[type="radio"]{
+ 
+.radio-group input[type="radio"] {
     appearance: none; // Hide native control
     width: 1rem;
     height: 1rem;
-    margin-right: 10px;
+    // margin-right: 10px;
     border: 2px solid var(--radio-border-color);
     border-radius: 50%;
     background-color: var(--input-background-color);
-    cursor: pointer;
+    
     transition: all 0.2s ease-in-out;
 
-    &:hover{
-        background-color: var(--quaternary-surface-bg); // ✅ Now works
+    &:hover {
+        background-color: var(--quaternary-surface-bg); // Now works
         border-color: var(--accent-color);
     }
 
-    &:checked{
+    &:checked {
         background-color: var(--accent-color);
         border-color: var(--accent-color);
         box-shadow: inset 0 0 0 3px var(--input-background-color); // Inner dot
     }
 }
 
-input[type="checkbox"]{
+.checkbox-group input[type="checkbox"] {
     appearance: none; // Hide native control
     width: 1rem;
     height: 1rem;
-    margin-right: 10px;
+    // margin-right: 10px;
     border: 2px solid var(--checkbox-border-color);
     border-radius: 3px;
     background-color: var(--input-background-color);
-    cursor: pointer;
     transition: all 0.2s ease-in-out;
     position: relative;
-
-    &:hover{
+    &:hover {
         background-color: var(--quaternary-surface-bg);
         border-color: var(--accent-color);
     }
 
-    &:checked{
+    &:checked {
         background-color: var(--accent-color);
         border-color: var(--accent-color);
 
         // Checkmark
-        &::after{
+        &::after {
             content: '';
             position: absolute;
             left: 4px;
