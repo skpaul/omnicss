@@ -1,16 +1,9 @@
-// Dark/Light theme toggle  [currently deprecated]
-// document.getElementById('themeToggle').addEventListener('click', () => {
-//     const html = document.documentElement;
-//     const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-//     html.setAttribute('data-theme', newTheme);
-//     localStorage.setItem('theme', newTheme);
-// });
-
 
 //Sticky header. Auto hide/show on scroll.
 let lastScrollTop = 0;
 let scrollUpStart = null;
 const header = document.querySelector("header.smart");
+if(header){
 
 window.addEventListener("scroll", () => {
     let st = window.pageYOffset || document.documentElement.scrollTop;
@@ -32,6 +25,7 @@ window.addEventListener("scroll", () => {
 
     lastScrollTop = st <= 0 ? 0 : st;
 });
+}
 
 
 // Toggle Menus
