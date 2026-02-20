@@ -66,9 +66,56 @@
 .iflex{display: inline-flex;}
 .fd-row{flex-direction: row;}
 .fd-col{flex-direction: column;}
-.jc-center{justify-content: center;}
-.ai-center{align-items: center;}
+.fw-wrap{flex-wrap: wrap;}
+.fw-nowrap{flex-wrap: nowrap;}
+.fw-wrap-reverse{flex-wrap: wrap-reverse;}
+
+
 .flex-center{display: flex; justify-content: center; align-items: center;}
+
+
+.jc-start{justify-content: flex-start;}
+.jc-end{justify-content: flex-end;}
+.jc-center{justify-content: center;}
+.jc-between{justify-content: space-between;}
+.jc-around{justify-content: space-around;}
+.jc-evenly{justify-content: space-evenly;}
+
+.ai-start{align-items: flex-start;}
+.ai-end{align-items: flex-end;}
+.ai-center{align-items: center;}
+.ai-baseline{align-items: baseline;}
+.ai-stretch{align-items: stretch;}
+
+.ac-start{align-content: flex-start;}
+.ac-end{align-content: flex-end;}
+.ac-center{align-content: center;}
+.ac-between{align-content: space-between;}
+.ac-around{align-content: space-around;}
+.ac-evenly{align-content: space-evenly;}
+.ac-stretch{align-content: stretch;}
+
+.as-auto{align-self: auto;}
+.as-start{align-self: flex-start;}
+.as-end{align-self: flex-end;}
+.as-center{align-self: center;}
+.as-baseline{align-self: baseline;}
+.as-stretch{align-self: stretch;}
+
+.gap-0{gap: 0;}
+.gap-1{gap: 0.25rem;}
+.gap-2{gap: 0.5rem;}
+.gap-3{gap: 1rem;}
+
+.rgap-0{row-gap: 0;}
+.rgap-1{row-gap: 0.25rem;}
+.rgap-2{row-gap: 0.5rem;}
+.rgap-3{row-gap: 1rem;}
+
+.cgap-0{column-gap: 0;}
+.cgap-1{column-gap: 0.25rem;}
+.cgap-2{column-gap: 0.5rem;}
+.cgap-3{column-gap: 1rem;}
 
 /* ====================================================
    Divider
