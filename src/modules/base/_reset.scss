@@ -39,8 +39,7 @@ body {
     direction: ltr;
 
     /* Smooth transitions for all themeable properties */
-    transition: background-color var(--transition-duration) var(--transition-easing),
-    color var(--transition-duration) var(--transition-easing);
+    transition: background-color var(--transition-duration) var(--transition-easing), color var(--transition-duration) var(--transition-easing), border-color var(--transition-duration) var(--transition-easing) ;
 }
 
 
