@@ -27,6 +27,7 @@
 :root {
     --container-max-width: 1200px;
     --container-padding: 0.75rem;  /* left + right*/
+     /* --container-padding: clamp(1rem, 3vw, 2rem); This is a good alternative */
 
     --fallback-font: sans-serif;
     --font-family-english: 'Inter', var(--fallback-font); 

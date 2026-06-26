@@ -46,10 +46,12 @@ body {
 /* Make images easier to work with */
 img,
 picture {
-    max-width: 100%;
-    height: auto;
-    width: auto;
     display: block;
+    max-width: 100%;
+}
+
+img {
+    height: auto;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -57,12 +59,19 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+    font-family: inherit;
+    font-size: inherit
+}
+
+/* Prevents collapsed textareas when empty */
+textarea:not([rows]) {
+    min-height: 10em;
 }
 
 /* 'a' elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
+    color: currentColor
 }
 
 a {

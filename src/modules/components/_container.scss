@@ -1,43 +1,24 @@
+@mixin container-base {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: var(--container-padding);
+}
 
 .container {
-    margin: 0 auto; /* Fallback for older browsers */
-    margin-inline: auto; /* Modern logical property */
-    width: min(100% - var(--space-lg), 1200px);
-    padding: var(--space-md);
+    @include container-base;
+    max-width: var(--container-max-width);
 }
 
-
-[class^='container-'], [class*='container-'],
-.container,
 .container-fluid {
-    width: 100%;
-    padding-right: var(--container-padding, 0.75rem);
-    padding-left: var(--container-padding, 0.75rem);
-    margin-right: auto;
-    margin-left: auto;
-    flex: 1 0 auto;
+    @include container-base;
+    max-width: none;
 }
 
-.container{
-    max-width: var(--container-max-width, 1200px); 
-}
+$container-widths: 600, 700, 800, 900, 1000, 1100;
 
-.container-1100{
-    max-width: 1100px; 
-}
-
-.container-1000{
-    max-width: 1000px; 
-}
-.container-900{
-    max-width: 900px; 
-}
-.container-800{
-    max-width: 800px; 
-}
-.container-700{
-    max-width: 700px; 
-}
-.container-600{
-    max-width: 600px; 
+@each $width in $container-widths {
+    .container-#{$width} {
+        @include container-base;
+        max-width: #{$width}px;
+    }
 }
