@@ -14,8 +14,6 @@
     max-width: none;
 }
 
-$container-widths: 600, 700, 800, 900, 1000, 1100;
-
 @each $width in $container-widths {
     .container-#{$width} {
         @include container-base;

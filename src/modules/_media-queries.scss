@@ -1,69 +1,7 @@
 // Desktop-first approach (base styles for large screens, overrides for smaller screens)
-
-// Breakpoint variables
-// $xl: 1399.98px;
-// $lg: 1199.98px;
-// $md: 991.98px;
-// $sm: 767.98px;
-// $xs: 575.98px;
-// $us: 479.98px;
-
-// Mixins for each breakpoint (desktop-first)
 @mixin xl { @media (min-width: map-get($breakpoints, xl)) { @content; } } /* Extra Large devices (min-width: 1400px) */
 @mixin lg { @media (min-width: map-get($breakpoints, lg)) { @content; } } /* Large devices (min-width: 1200px) */
 @mixin md { @media (max-width: map-get($breakpoints, md)) { @content; } } /* Medium devices (max-width: 992px) */
 @mixin sm { @media (max-width: map-get($breakpoints, sm)) { @content; } } /* Small devices (max-width: 768px) */
 @mixin xs { @media (max-width: map-get($breakpoints, xs)) { @content; } } /* Extra Small devices (max-width: 576px) */
 @mixin us { @media (max-width: map-get($breakpoints, us)) { @content; } } /* Ultra Small devices (max-width: 480px) */
-
-
-
-// /* Extra Large devices (min-width: 1400px) */
-// @mixin xl {
-//   @media only screen and (min-width: $xl) { @content; }
-// }
-
-// /* Large devices (min-width: 1200px) */
-// @mixin lg {
-//   @media only screen and (min-width: $lg) { @content; }
-// }
-
-// /* Medium devices (max-width: 992px) */
-// @mixin md {
-//   @media only screen and (max-width: $md) { @content; }
-// }
-
-// /* Small devices (max-width: 768px) */
-// @mixin sm {
-//   @media only screen and (max-width: $sm) { @content; }
-// }
-
-// /* Extra Small devices (max-width: 576px) */
-// @mixin xs {
-//   @media only screen and (max-width: $xs) { @content; }
-// }
-
-// /* Ultra Small devices (max-width: 480px) */
-// @mixin us {
-//   @media only screen and (max-width: $us) { @content; }
-// }
-
-// //How to use media query mixins
-// //Media query can be inside a class
-// .class{
-//     width: 65%; //default 65%
-//     @include sm{
-//         width: 100%;  //on small devices 100%
-//     }
-
-//     @include lg{
-//         width: 50%;  //on large devices 50%
-//     }
-// }
-
-// //Media query can be outside a class
-// @include lg{
-//     .class{
-//         width: 50%;  //on large devices 50%
-//     }
-// }

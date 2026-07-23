@@ -4,7 +4,6 @@ let lastScrollTop = 0;
 let scrollUpStart = null;
 const header = document.querySelector("header.smart");
 if (header) {
-
     window.addEventListener("scroll", () => {
         let st = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -12,14 +11,16 @@ if (header) {
             // Scrolling down
             //hide the header only after the user scrolls down at least 100px
             if (st > 100) {
-                header.style.top = "-70px";
+                // header.style.top = "-70px";
+                header.classList.add("is-hidden");
             }
             scrollUpStart = null;
         } else {
             if (scrollUpStart === null) scrollUpStart = st;
 
             if (scrollUpStart - st >= 5) {
-                header.style.top = "0";
+                // header.style.top = "0";
+                header.classList.remove("is-hidden");
             }
         }
 

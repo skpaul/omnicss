@@ -9,15 +9,10 @@
 html {
     width: 100%;
     min-height: 100%;
-
-    font-size: 16px;
     font-size: 100%; 
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    
     accent-color: var(--accent-color);
     scroll-behavior: smooth;  /* scroll-behavior: auto; */
 }
@@ -32,11 +27,8 @@ body {
 
     /* Font smoothing and numeric formatting */
     -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility; /* text-rendering: optimizeSpeed; */
     font-feature-settings: "lnum" 1;
     -webkit-font-feature-settings: "lnum" 1;
-
-    direction: ltr;
 
     /* Smooth transitions for all themeable properties */
     transition: background-color var(--transition-duration) var(--transition-easing), color var(--transition-duration) var(--transition-easing), border-color var(--transition-duration) var(--transition-easing) ;
@@ -45,13 +37,18 @@ body {
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+video {
     display: block;
     max-width: 100%;
 }
 
 img {
     height: auto;
+}
+
+svg {
+    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */

@@ -25,6 +25,7 @@
 */
 
 :root {
+    --header-height:60px;
     --container-max-width: 1200px;
     --container-padding: 0.75rem;  /* left + right*/
      /* --container-padding: clamp(1rem, 3vw, 2rem); This is a good alternative */
@@ -69,8 +70,6 @@
     --border-radius: 0.25rem;
 
     /* All the following colors are the variant of the above base colors. */
-    --gov-color: var(--gray-4);             /* applied to the text of "Government of the People's Republic of Bangladesh" */
-    --org-color: var(--gray-1);             /* applied to the organization/company/office name in the top header */
     --header-menu-color: var(--blue-3);           /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
     --header-menu-color-hover: var(--blue-2);               /* applied to the top menu items  i.e. Home, Photo Resizer, Customer Care etc.*/
     --hamb-color: var(--color);            /* applied to the hamburger menu icon.*/
