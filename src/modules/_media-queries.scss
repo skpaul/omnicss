@@ -1,7 +1,26 @@
+@use "sass:list";
+@use "sass:map";
+
+@mixin breakpoint($name) {
+    $bp: map.get($breakpoints, $name);
+
+    @if map.has-key($bp, min) {
+        @media (min-width: map.get($bp, min)) {
+            @content;
+        }
+    } @else if map.has-key($bp, max) {
+        @media (max-width: map.get($bp, max)) {
+            @content;
+        }
+    }
+}
+
+
+
 // Desktop-first approach (base styles for large screens, overrides for smaller screens)
-@mixin xl { @media (min-width: map-get($breakpoints, xl)) { @content; } } /* Extra Large devices (min-width: 1400px) */
-@mixin lg { @media (min-width: map-get($breakpoints, lg)) { @content; } } /* Large devices (min-width: 1200px) */
-@mixin md { @media (max-width: map-get($breakpoints, md)) { @content; } } /* Medium devices (max-width: 992px) */
-@mixin sm { @media (max-width: map-get($breakpoints, sm)) { @content; } } /* Small devices (max-width: 768px) */
-@mixin xs { @media (max-width: map-get($breakpoints, xs)) { @content; } } /* Extra Small devices (max-width: 576px) */
-@mixin us { @media (max-width: map-get($breakpoints, us)) { @content; } } /* Ultra Small devices (max-width: 480px) */
+@mixin xl { @media (min-width: map-get($breakpointsOld, xl)) { @content; } } /* Extra Large devices (min-width: 1400px) */
+@mixin lg { @media (min-width: map-get($breakpointsOld, lg)) { @content; } } /* Large devices (min-width: 1200px) */
+@mixin md { @media (max-width: map-get($breakpointsOld, md)) { @content; } } /* Medium devices (max-width: 992px) */
+@mixin sm { @media (max-width: map-get($breakpointsOld, sm)) { @content; } } /* Small devices (max-width: 768px) */
+@mixin xs { @media (max-width: map-get($breakpointsOld, xs)) { @content; } } /* Extra Small devices (max-width: 576px) */
+@mixin us { @media (max-width: map-get($breakpointsOld, us)) { @content; } } /* Ultra Small devices (max-width: 480px) */

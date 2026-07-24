@@ -122,6 +122,15 @@
 
 // _variables.scss
 $breakpoints: (
+    us: (max: 479.98px),
+    xs: (max: 575.98px),
+    sm: (max: 767.98px),
+    md: (max: 991.98px),
+    lg: (min: 1199.98px),
+    xl: (min: 1399.98px)
+);
+
+$breakpointsOld: (
   xl: 1399.98px,
   lg: 1199.98px,
   md: 991.98px,

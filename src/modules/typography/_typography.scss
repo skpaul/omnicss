@@ -1,26 +1,17 @@
 /* ====================================================
    Font-Size
 ==================================================== */
-@include createFontSizes("");
+@use "sass:meta";
+@use "sass:map";
 
-@include xl{
-    @include createFontSizes("xl");
+
+@each $bp in map.keys($breakpoints) {
+    @include breakpoint($bp) {
+        @include createFontSizes($bp);
+    }
 }
-@include lg{
-    @include createFontSizes("lg");
-}
-@include md{
-    @include createFontSizes("md");
-}
-@include sm{
-    @include createFontSizes("sm");
-}
-@include xs{
-    @include createFontSizes("xs");
-}
-@include us{
-    @include createFontSizes("us");
-}
+
+@include createFontSizes("");
 
 
 /* ====================================================

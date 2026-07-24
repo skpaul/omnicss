@@ -38,56 +38,24 @@
 
 
 //in rem value
-@mixin createFixedSpacing($prefix, $property, $version, $device:"") {
-    @if $version == "general" {
-        //General version. Create rules like .ma-1.4
-        .#{$prefix}-0#{$device} {
-            #{$property}: 0 !important;
-        }
+@mixin createFixedSpacing($prefix, $property, $device:"") {
+     //Create rules like .ma-14
+    .#{$prefix}-0#{$device} {
+        #{$property}: 0 !important;
+    }
 
-        @each $value in $sizes{
-            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
-                #{$property}:#{$value} + 'rem'; 
-            }
-        }
-    } @else {
-        //Compact version. Create rules like .ma14
-        .#{$prefix}-0#{$device} {
-            #{$property}: 0 !important;
-        }
-
-        @each $value in $sizes{
-            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-            .#{$prefix}-#{$part1}#{$part2}#{$device}{
-                #{$property}:#{$value} + 'rem'; 
-            }
+    @each $value in $sizes{
+        $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
+        $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+        .#{$prefix}-#{$part1}#{$part2}#{$device}{
+            #{$property}:#{$value} + 'rem'; 
         }
     }
 }
 
 //values in rem
-@mixin create-both-spacing($prefix, $property1, $property2, $version, $device:"") {
-
-    @if $version == "general" {
-        .#{$prefix}-0#{$device} {
-            #{$property1}: 0 !important;
-            #{$property2}: 0 !important;
-        }
-
-        @each $value in $sizes{
-            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
-            .#{$prefix}-#{$part1}\.#{$part2}#{$device}{
-                #{$property1}: #{$value} + 'rem' !important;
-                #{$property2}: #{$value} + 'rem' !important;
-            }
-        }
-
-    } @else {
-        .#{$prefix}-0#{$device} {
+@mixin create-both-spacing($prefix, $property1, $property2, $device:"") {
+   .#{$prefix}-0#{$device} {
             #{$property1}: 0 !important;
             #{$property2}: 0 !important;
         }
@@ -100,7 +68,6 @@
                 #{$property2}: #{$value} + 'rem' !important;
             }
         }
-    }
 }
 
 @mixin createFontSizes($device) {

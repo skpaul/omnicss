@@ -1,0 +1,19 @@
+@use "sass:meta";
+/* ====================================================
+   Display
+==================================================== */
+.hidden { display: none; }
+
+@each $key, $suffix in $breakpoint-names {
+    $mixin: meta.get-mixin($key);
+
+    @include meta.apply($mixin) {
+        .hidden-#{$suffix} {
+            display: none;
+        }
+    }
+}
+
+.inline { display: inline; }
+.block { display: block; }
+.iblock { display: inline-block; }
