@@ -2,11 +2,19 @@
    VARIABLES
 ==================================================== */
 :root {
+    --background: #fff; /*default background color*/
+    --color: #ccc; /*default font color*/
+    --border-color: #000; /*default border color*/
+
     --font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
     --font-weight: 300;
     --line-height: 1.6;
 
-    --border: 1px solid var(--primary-surface-border);
+    --header-height:60px;
+    --container-max-width: 1600px;
+    --container-padding: 0.75rem;  /* left + right*/
+
+    --border: 1px solid var(--border-color);
     --border-radius: 5px;
     --box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
 
@@ -15,149 +23,102 @@
 }
 
 
+
 /* ====================================================
-   Colors for Light theme (default)
+   Theme Colors (light + dark defined once)
+   - Uses the CSS light-dark() function so each variable
+     carries both values in one place (no duplicated blocks).
+   - Automatically follows the OS/browser prefers-color-scheme
+     because :root has "color-scheme: light dark".
+   - To force a theme manually, toggle a class on <html>:
+       <html class="light">  -> always light
+       <html class="dark">   -> always dark
 ==================================================== */
 :root {
+    color-scheme: light dark;
+
+    --background: light-dark(#fff, #0F172A); /*default background color*/
+    --color: #ccc; /*default font color*/
+    --border-color: #000; /*default border color*/
+
     --color-primary: #0066ff;
     --color-secondary: #7c3aed;
-    --color-black: #2d2d2d;
+    --color-black: light-dark(#2d2d2d, #e0e0e0);
 
     /* Surface Hierarchy */
-    //Primary
-    --primary-surface-bg: #FFFFFF;      /* Main background */
-    --primary-surface-text: #2d2d2d;    /* Dark Gray for clear contrast */
-    --primary-surface-border: #e0e3e7;  /* Subtle border for base surface */
-    // Secondary
-    --secondary-surface-bg: #f9fafc;    /* Slightly elevated, for cards, input fields */
-    --secondary-surface-text: #3a3a3a;
-    --secondary-surface-border: #d6dbe0; /* Soft border for clear separation */
-    //Tertiary
-    --tertiary-surface-bg: #f3f4f6;     /* Even more elevated, for dropdowns, modals */
-    --tertiary-surface-text: #444444;
-    --tertiary-surface-border: #cdd2d9; /* Slightly stronger border for clarity */
-    //Quaternary
-    --quaternary-surface-bg: #e0e3e7;   /* For subtle dividers, button hover */
-    --quaternary-surface-text: #525252;
-    --quaternary-surface-border: #b5b9be; /* Stronger for clear separation */
+    /* Primary */
+    --primary-surface-bg: light-dark(#FFFFFF, #292a2d);
+    --primary-surface-text: light-dark(#2d2d2d, #dbdbdb);
+    --primary-surface-border: light-dark(#e0e3e7, #3a3b3e);
 
-    /* Alert Box Color Palette */  
-    // Info:
-    --info-bg: #e0f3ff;
-    --info-text: #0b62a4;
-    --info-border: 1px solid #66b3ff;
-    // Success:
-    --success-bg: #e8f5e9;
-    --success-text: #2e7d32;
-    --success-border: 1px solid #81c784;
-    // Warning:
-    --caution-bg: #fff8e1;
-    --caution-text: #f57c00;
-    --caution-border: 1px solid #ffb74d;
-    // Danger:
-    --critical-bg: #ffebee;
-    --critical-text: #c62828;
-    --critical-border: 1px solid #e57373;
+    /* Secondary */
+    --secondary-surface-bg: light-dark(#f9fafc, #323336);
+    --secondary-surface-text: light-dark(#3a3a3a, #d5d7d9);
+    --secondary-surface-border: light-dark(#d6dbe0, #3d3e42);
 
-    --color-toggle-bg: #e0e0e0;
-    --color-toggle-icon: #ffbb00;
+    /* Tertiary */
+    --tertiary-surface-bg: light-dark(#f3f4f6, #3a3b3e);
+    --tertiary-surface-text: light-dark(#444444, #c7c9cc);
+    --tertiary-surface-border: light-dark(#cdd2d9, #46474b);
+
+    /* Quaternary */
+    --quaternary-surface-bg: light-dark(#e0e3e7, #46474b);
+    --quaternary-surface-text: light-dark(#525252, #b4b6b9);
+    --quaternary-surface-border: light-dark(#b5b9be, #5a5b60);
+
+    /* Alert Box Color Palette */
+    /* Info */
+    --info-bg: light-dark(#e0f3ff, #1e3a54);
+    --info-text: light-dark(#0b62a4, #aad4ff);
+    --info-border-color: light-dark(#66b3ff, #3a6b9e);
+    --info-border: 1px solid var(--info-border-color);
+
+    /* Success */
+    --success-bg: light-dark(#e8f5e9, #1e4026);
+    --success-text: light-dark(#2e7d32, #a5e2b5);
+    --success-border-color: light-dark(#81c784, #3a6b47);
+    --success-border: 1px solid var(--success-border-color);
+
+    /* Warning */
+    --caution-bg: light-dark(#fff8e1, #3b2a0d);
+    --caution-text: light-dark(#f57c00, #ffd080);
+    --caution-border-color: light-dark(#ffb74d, #a5752b);
+    --caution-border: 1px solid var(--caution-border-color);
+
+    /* Danger */
+    --critical-bg: light-dark(#ffebee, #4a1e1e);
+    --critical-text: light-dark(#c62828, #fbbcbc);
+    --critical-border-color: light-dark(#e57373, #b64444);
+    --critical-border: 1px solid var(--critical-border-color);
+
+    --color-toggle-bg: light-dark(#e0e0e0, #333333);
+    --color-toggle-icon: light-dark(#ffbb00, #ffdd88);
 
     /* Form Elements */
-    --accent-color: #0066ff;
+    --accent-color: light-dark(#0066ff, #66b3ff);
 
-    --label-color: #3a3a3a;
-    --placeholder-color: #999999;
-    --input-color: #2d2d2d;
-    --input-caret-color: #0066ff;
-    --input-background-color: #FFFFFF;
-    --input-background-color-on-hover: #FFFFFF;
-    --input-background-color-on-focus: #f9fafc;
-    --input-border-color: #d6dbe0;
+    --label-color: light-dark(#3a3a3a, #d5d7d9);
+    --placeholder-color: light-dark(#999999, #7a7c7f);
+    --input-color: light-dark(#2d2d2d, #e0e0e0);
+    --input-caret-color: light-dark(#0066ff, #66b3ff);
+    --input-background-color: light-dark(#FFFFFF, #292a2d);
+    --input-background-color-on-hover: light-dark(#FFFFFF, #292a2d);
+    --input-background-color-on-focus: light-dark(#f9fafc, #323336);
+    --input-border-color: light-dark(#d6dbe0, #46474b);
     --input-border-color-on-hover: #0066ff;
     --input-border-color-on-focus: #0066ff;
 
-    --radio-border-color: #7f8086;    /* slightly brighter than  --input-border-color*/
-    --checkbox-border-color: var(--radio-border-color);    /*  same as radio border color */
+    --radio-border-color: #7f8086;
+    --checkbox-border-color: var(--radio-border-color);
 
-    --button-color: #2d2d2d;
-    --button-border-color: #d6dbe0;
-    --button-background-color: #FFFFFF;
-
+    --button-color: light-dark(#2d2d2d, #e0e0e0);
+    --button-border-color: light-dark(#d6dbe0, #46474b);
+    --button-background-color: light-dark(#FFFFFF, #323336);
 }
 
-/* ====================================================
-   System Dark Mode (system preference only)
-==================================================== */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --color-primary: #0066ff;
-        --color-secondary: #7c3aed;
-        --color-black: #e0e0e0;
-    
-        /* Surface Hierarchy */
-        //Primary
-        --primary-surface-bg: #292a2d;     /* Main background */
-        --primary-surface-text: #dbdbdb;   /* Very light gray for strong contrast */
-        --primary-surface-border: #3a3b3e; /* Subtle border for base surface */
-        // Secondary
-        --secondary-surface-bg: #323336;   /* Slightly elevated, for cards, input fields */
-        --secondary-surface-text: #d5d7d9;
-        --secondary-surface-border: #3d3e42; /* Soft border for clear separation */
-        // Tertiary
-        --tertiary-surface-bg: #3a3b3e;    /* Even more elevated, for dropdowns, modals */
-        --tertiary-surface-text: #c7c9cc;
-        --tertiary-surface-border: #46474b; /* Slightly stronger border for clarity */
-        //Quaternary
-        --quaternary-surface-bg: #46474b;  /* For subtle dividers, button hover */
-        --quaternary-surface-text: #b4b6b9;
-        --quaternary-surface-border: #5a5b60; /* Stronger for clear separation */
-    
-        // Alert Box Color Palette   
-        // Info:
-        --info-bg: #1e3a54;
-        --info-text: #aad4ff;
-        --info-border: 1px solid #3a6b9e;
-        // Success:
-        --success-bg: #1e4026;
-        --success-text:  #a5e2b5;
-        --success-border: 1px solid #3a6b47;
-        // Warning:
-        --caution-bg: #3b2a0d;
-        --caution-text: #ffd080;
-        --caution-border: 1px solid #a5752b;
-        // Danger:
-        --critical-bg: #4a1e1e;
-        --critical-text: #fbbcbc;
-        --critical-border: 1px solid #b64444;
-    
-        --color-toggle-bg: #333333;
-        --color-toggle-icon: #ffdd88;
-
-        /* Form Elements (Dark Mode) */
-        --label-color: #d5d7d9;
-        --placeholder-color: #7a7c7f;
-        --input-color: #e0e0e0;
-        --input-caret-color: #66b3ff;
-        --input-background-color: #292a2d;
-        --input-background-color-on-hover: #292a2d;
-        --input-background-color-on-focus: #323336;
-        --input-border-color: #46474b;
-        --input-border-color-on-hover: #0066ff;
-        --input-border-color-on-focus: #0066ff;
-
-        --radio-border-color: #7f8086;    /* slightly brighter than  --input-border-color*/
-        --checkbox-border-color: var(--radio-border-color);    /*  same as radio border color */
-
-        --button-color: #e0e0e0;
-        --button-border-color: #46474b;
-        --button-background-color: #323336;
-
-        /* Accent Color (dark mode) */
-        --accent-color: #66b3ff;
-    }
-}
-
-
+/* Manual override: force a theme regardless of system preference */
+:root.light { color-scheme: light; }
+:root.dark  { color-scheme: dark; }
 
 // _variables.scss
 $breakpoints: (
