@@ -29,69 +29,24 @@ if (header) {
 }
 
 
-// Toggle Menus
-const hamburgerIcon = document.getElementById("hamburgerIcon");
-const candyIcon = document.getElementById("candyIcon");
-
-if (hamburgerIcon) hamburgerIcon.addEventListener("click", () => toggleMenu('leftMenuContent', true));
-if (candyIcon) candyIcon.addEventListener("click", () => toggleMenu('rightMenuContent', true));
-
-function toggleMenu1(id, show) {
-    const el = document.getElementById(id);
-    if (show) {
-        el.classList.add("show");
-    } else {
-        el.classList.remove("show");
-    }
-}
-
-let scrollY = 0;
-
-function toggleMenu(id, show) {
-    const el = document.getElementById(id);
-
-    if (show) {
-        el.classList.add("show");
-
-        scrollY = window.scrollY;
-        document.body.style.top = `-${scrollY}px`;
-        document.body.classList.add("menu-open");
-    } else {
-        el.classList.remove("show");
-
-        const leftOpen = document.getElementById("leftMenuContent").classList.contains("show");
-        const rightOpen = document.getElementById("rightMenuContent").classList.contains("show");
-
-        if (!leftOpen && !rightOpen) {
-            document.body.classList.remove("menu-open");
-            document.body.style.top = "";
-            window.scrollTo(0, scrollY);
-        }
-    }
-}
-
 //Required markup for toggleTheme() function ::
-    //<head>
-    //   <script>
-    //     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    //         document.documentElement.classList.add('dark');
-    //     }
-    //   </script>
-    //</head>
-
-    //  <button class="theme-toggle" id="themeToggle" title="Toggle Theme" onclick="toggleTheme(this)">
-    //       <span class="icon">🌗</span>
-    //  </button>
+//  <button class="theme-toggle" id="themeToggle" title="Toggle Theme" onclick="toggleTheme(this)">
+//       <span class="icon">🌗</span>
+//  </button>
 
 function toggleTheme(btn) {
     const root = document.documentElement;
     const themeIcon = btn.querySelector('.icon');
 
-    root.classList.toggle('dark');
+    const isDark = root.classList.contains('dark') ||
+        (!root.classList.contains('light') &&
+         window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    root.classList.remove('light', 'dark');
+    root.classList.add(isDark ? 'light' : 'dark');
 
     if (themeIcon) {
-        themeIcon.textContent =
-            root.classList.contains('dark') ? '☀️' : '🌙';
+        themeIcon.textContent = isDark ? '🌙' : '☀️';
     }
 }
 
@@ -175,63 +130,7 @@ const Dismissable = (() => {
         dismiss
     };
 })();
-// const Dismissable = (() => {
-//     const storageKeyPrefix = 'omni-dismissable';
 
-//     // Get current timestamp in milliseconds
-//     const now = () => new Date().getTime();
-
-//     // Check if the notice should be shown
-//     function shouldShow(id) {
-//       const stored = localStorage.getItem(storageKeyPrefix + id);
-//       if (!stored) return true;
-//       try {
-//         const data = JSON.parse(stored);
-//         return now() > data.expiresAt;
-//       } catch (e) {
-//         return true; // Fail-safe: show if JSON parse fails
-//       }
-//     }
-
-//     // Save dismissed state to localStorage
-//     function dismiss(id, expiryMs) {
-//       const expiresAt = now() + parseInt(expiryMs || 0, 10);
-//       localStorage.setItem(storageKeyPrefix + id, JSON.stringify({ expiresAt }));
-//     }
-
-//     // Initialize all notices on the page
-//     function initAll() {
-//       document.querySelectorAll('.dismissable').forEach(notice => {
-//         const id = notice.id || null;
-//         const expiry = notice.dataset.expiry;
-
-//         if (!id) return; // Skip if no ID set
-
-//         if (shouldShow(id)) {
-//           notice.classList.add('show');
-
-//           // Attach event to internal dismiss button
-//           const dismissBtn = notice.querySelector('.dismiss');
-//           if (dismissBtn) {
-//             dismissBtn.addEventListener('click', () => {
-//               dismiss(id, expiry);
-//               notice.classList.add('hide');
-//               setTimeout(() => {
-//                 notice.style.display = 'none';
-//               }, 600); // Matches CSS transition
-//             });
-//           }
-//         } else {
-//           notice.style.display = 'none';
-//         }
-//       });
-//     }
-
-//     return {
-//       initAll,
-//       dismiss
-//     };
-//   })();
 
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {

@@ -162,9 +162,7 @@
 html {
   width: 100%;
   min-height: 100%;
-  font-size: 16px;
   font-size: 100%;
-  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-print-color-adjust: exact !important;
   print-color-adjust: exact !important;
@@ -177,29 +175,31 @@ body {
   font-family: var(--font-family);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
+  background: var(--background);
+  color: var(--color);
   min-height: 100vh;
   /* Font smoothing and numeric formatting */
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  /* text-rendering: optimizeSpeed; */
   font-feature-settings: "lnum" 1;
   -webkit-font-feature-settings: "lnum" 1;
-  direction: ltr;
   /* Smooth transitions for all themeable properties */
   transition: background-color var(--transition-duration) var(--transition-easing), color var(--transition-duration) var(--transition-easing), border-color var(--transition-duration) var(--transition-easing);
 }
 
 /* Make images easier to work with */
 img,
-picture {
+picture,
+video {
   display: block;
   max-width: 100%;
 }
 
 img {
   height: auto;
+}
+
+svg {
+  display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -17739,6 +17739,34 @@ a {
   max-width: 1100px;
 }
 
+.container-1200 {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  max-width: 1200px;
+}
+
+.container-1320 {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  max-width: 1320px;
+}
+
+.container-1440 {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  max-width: 1440px;
+}
+
+.container-1600 {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  max-width: 1600px;
+}
+
 dialog {
   width: 80%;
   max-width: 500px;
@@ -18259,8 +18287,7 @@ textarea,
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 1fr auto;
-  /* grid-template-rows: auto 1fr auto; */
+  grid-template-rows: var(--header-height) 1fr auto;
   grid-auto-flow: row;
   grid-template-areas: "header" "main" "footer";
 }
@@ -18281,89 +18308,30 @@ footer {
   grid-area: footer;
 }
 
+/* Optional: Only main scrolls */
+.layout.scroll main {
+  overflow-y: auto;
+  min-height: 0;
+}
+
 /* ====================================================
    HEADER & NAVIGATION
 ==================================================== */
 header {
-  height: 60px;
-  padding: 0 1rem;
-  border-bottom: 1px solid var(--secondary-surface-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: transform 0.3s ease;
+}
+header.fixed, header.smart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  transition: top 0.8s ease-in-out;
-  background-color: var(--secondary-surface-bg);
 }
-header.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-header.smart {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#hamburgerIcon img {
-  height: 100%;
-  margin-right: 0.73rem;
-}
-
-.brand a {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  position: relative;
-  color: inherit;
-}
-
-.brand img {
-  height: 2.2rem;
-  width: auto;
-  margin-right: 1rem;
-}
-
-nav {
-  display: flex;
-  flex: 1;
-}
-
-.theme-toggle-wrapper {
-  margin-right: 1rem;
-}
-
-/* Toggle button styles */
-#themeToggle {
-  --size: 1.7rem;
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  border: none;
-  background: var(--color-toggle-bg);
-  cursor: pointer;
-  padding: 0;
-  transition: background var(--transition-duration) var(--transition-easing);
-}
-
-.theme-toggle-wrapper {
-  width: 1.5rem;
-  margin-left: auto;
-  cursor: pointer;
-}
-
-#candyIcon {
-  width: 1.5rem;
-  margin-left: auto;
-  cursor: pointer;
-}
-#candyIcon img {
-  height: 100%;
+header.smart.is-hidden {
+  transform: translateY(-100%);
 }
 
 .darken:hover {
