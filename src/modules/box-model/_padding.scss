@@ -20,18 +20,32 @@ $padding-dual: (
 
 
 // Base padding utilities (no breakpoint suffix)
-@include createFixedSpacing("pa", "padding"); 
-@include createFixedSpacing("pt", "padding-top"); 
-@include createFixedSpacing("pb", "padding-bottom"); 
-@include createFixedSpacing("pl", "padding-left"); 
-@include createFixedSpacing("pr", "padding-right"); 
+
+// @include createFixedSpacing("pa", "padding"); 
+@include createRule("pa", "padding", $sizes, "rem", ""); 
+
+//@include createFixedSpacing("pt", "padding-top"); 
+@include createRule("pt", "padding-top", $sizes, "rem", ""); 
+
+
+// @include createFixedSpacing("pb", "padding-bottom"); 
+@include createRule("pb", "padding-bottom", $sizes, "rem", ""); 
+
+
+// @include createFixedSpacing("pl", "padding-left"); 
+@include createRule("pl", "padding-left", $sizes, "rem", ""); 
+
+
+// @include createFixedSpacing("pr", "padding-right"); 
+@include createRule("pr", "padding-right", $sizes, "rem", ""); 
+
 @include create-both-spacing("pv", "padding-top","padding-bottom"); 
 @include create-both-spacing("ph", "padding-left","padding-right"); 
 
 @each $bp in map.keys($breakpoints) {
     @include breakpoint($bp) {
         @each $class, $property in $padding-properties {
-            @include createFixedSpacing($class, $property, "-#{$bp}");
+            @include createRule($class, $property, $sizes, "rem", $bp); 
         }
          @each $class, $properties in $padding-dual {
             @include create-both-spacing($class, nth($properties, 1), nth($properties, 2), "-#{$bp}");

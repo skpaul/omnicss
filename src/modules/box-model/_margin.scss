@@ -19,46 +19,26 @@ $margin-dual: (
 );
 
 
-// Base margin utilities (no breakpoint suffix)
-@include createFixedSpacing("ma", "margin"); 
-@include createFixedSpacing("mt", "margin-top"); 
-@include createFixedSpacing("mb", "margin-bottom"); 
-@include createFixedSpacing("ml", "margin-left"); 
-@include createFixedSpacing("mr", "margin-right"); 
-@include create-both-spacing("mv", "margin-top","margin-bottom");
-@include create-both-spacing("mh", "margin-left","margin-right");
+@include createRule("ma", "margin", $sizes, "rem", ""); 
+
+@include createRule("mt", "margin-top", $sizes, "rem", ""); 
+@include createRule("mb", "margin-bottom", $sizes, "rem", ""); 
+@include createRule("ml", "margin-left", $sizes, "rem", ""); 
+@include createRule("mr", "margin-right", $sizes, "rem", ""); 
+
+@include create-both-spacing("mv", "margin-top","margin-bottom"); 
+@include create-both-spacing("mh", "margin-left","margin-right"); 
 
 @each $bp in map.keys($breakpoints) {
     @include breakpoint($bp) {
-        @each $class, $property in $padding-properties {
-            @include createFixedSpacing($class, $property, "-#{$bp}");
+        @each $class, $property in $margin-properties {
+            @include createRule($class, $property, $sizes, "rem", $bp); 
         }
-         @each $class, $properties in $padding-dual {
+         @each $class, $properties in $margin-dual {
             @include create-both-spacing($class, nth($properties, 1), nth($properties, 2), "-#{$bp}");
         }
     }
 }
-
-// @each $bp-key, $bp-suffix in $breakpoint-names {
-//     @include meta.apply(meta.get-mixin($bp-key)) {
-//         @each $class, $property in $margin-properties {
-//             @include createFixedSpacing(
-//                 $class,
-//                 $property,
-//                 "-#{$bp-suffix}"
-//             );
-//         }
-
-//         @each $class, $properties in $margin-dual {
-//             @include create-both-spacing(
-//                 $class,
-//                 nth($properties, 1),
-//                 nth($properties, 2),
-//                 "-#{$bp-suffix}"
-//             );
-//         }
-//     }
-// }
 
 
 

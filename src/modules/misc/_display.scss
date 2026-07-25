@@ -1,14 +1,13 @@
 @use "sass:meta";
+@use "sass:map";
 /* ====================================================
    Display
 ==================================================== */
 .hidden { display: none; }
 
-@each $key, $suffix in $breakpoint-names {
-    $mixin: meta.get-mixin($key);
-
-    @include meta.apply($mixin) {
-        .hidden-#{$suffix} {
+@each $bp in map.keys($breakpoints) {
+    @include breakpoint($bp) {
+        .hidden-#{$bp} {
             display: none;
         }
     }

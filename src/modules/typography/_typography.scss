@@ -4,12 +4,20 @@
 /* ====================================================
    Font-Size
 ==================================================== */
-@include createFontSizes("");
+// @include createFontSizes("");
+
+@include createRule("fs", "font-size", $sizes, "rem", ""); 
 @each $bp in map.keys($breakpoints) {
     @include breakpoint($bp) {
-        @include createFontSizes($bp);
+        @include createRule("fs", "font-size", $sizes, "rem", $bp); 
     }
 }
+
+// @each $bp in map.keys($breakpoints) {
+//     @include breakpoint($bp) {
+//         @include createFontSizes($bp);
+//     }
+// }
 
 /* ====================================================
    Font-Weight
@@ -17,8 +25,8 @@
 .b{
     font-weight: bold;
 }
-@include createFontWeights("fw", "font-weight"); 
 
+@include createRule("fw", "font-weight", $fontWeights, "", ""); 
 
 /* ====================================================
    Line-Height
@@ -27,10 +35,10 @@
 
 @each $bp in map.keys($breakpoints) {
     @include breakpoint($bp) {
-        @include createFontSizes($bp);
         @include createRule("lh", "line-height", $lineHeights, "", $bp); 
     }
 }
+
 
 /* ====================================================
    White Space
