@@ -1,0 +1,24 @@
+
+/*Surface Hierarchy Colors*/
+.surf{
+    &-p{
+        background-color: var(--primary-surface-bg);
+        color: var(--primary-surface-text);
+        border: 1px solid var(--primary-surface-border);
+    }
+    &-s{
+        background-color: var(--secondary-surface-bg);
+        color: var(--secondary-surface-text);
+        border: 1px solid var(--secondary-surface-border);
+    }
+    &-t{
+        background-color: var(--tertiary-surface-bg);
+        color: var(--tertiary-surface-text);
+        border: 1px solid var(--tertiary-surface-border);
+    }
+    &-q{
+        background-color: var(--quaternary-surface-bg);
+        color: var(--quaternary-surface-text);
+        border: 1px solid var(--quaternary-surface-border);
+    }
+}

@@ -35,8 +35,8 @@
 :root {
   color-scheme: light dark;
   --background: light-dark(#fff, #0F172A); /*default background color*/
-  --color: #ccc; /*default font color*/
-  --border-color: #000; /*default border color*/
+  --color: light-dark(#1F2937, #E5E7EB); /*default font color*/
+  --border-color: light-dark(#D1D5DB, #374151); /*default border color*/
   --color-primary: #0066ff;
   --color-secondary: #7c3aed;
   --color-black: light-dark(#2d2d2d, #e0e0e0);
@@ -14640,62 +14640,6 @@ header.smart.is-hidden {
   transform: translateY(-100%);
 }
 
-.darken:hover {
-  filter: brightness(85%);
-  transition: filter 0.2s ease-in-out;
-}
-
-.brighten:hover {
-  filter: brightness(115%);
-  transition: filter 0.2s ease-in-out;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.5em 1em;
-  border-radius: var(--border-radius);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  filter: brightness(90%);
-}
-
-.btn-outline {
-  background: transparent;
-  border: var(--border);
-  color: var(--color-text);
-}
-
-.btn-outline:hover {
-  background: var(--color-muted);
-  color: white;
-}
-
-/* ====================================================
-   Positioning
-==================================================== */
-.relative {
-  position: relative;
-}
-
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
 /* ====================================================
    Flexbox
 ==================================================== */
@@ -14833,15 +14777,15 @@ header.smart.is-hidden {
   gap: 0;
 }
 
-.gap-1 {
-  gap: 0.25rem;
+.gap-02 {
+  gap: 0.2rem;
 }
 
-.gap-2 {
+.gap-05 {
   gap: 0.5rem;
 }
 
-.gap-3 {
+.gap-10 {
   gap: 1rem;
 }
 
@@ -14849,15 +14793,15 @@ header.smart.is-hidden {
   row-gap: 0;
 }
 
-.rgap-1 {
-  row-gap: 0.25rem;
+.rgap-02 {
+  row-gap: 0.2rem;
 }
 
-.rgap-2 {
+.rgap-05 {
   row-gap: 0.5rem;
 }
 
-.rgap-3 {
+.rgap-10 {
   row-gap: 1rem;
 }
 
@@ -14865,16 +14809,77 @@ header.smart.is-hidden {
   column-gap: 0;
 }
 
-.cgap-1 {
-  column-gap: 0.25rem;
+.cgap-02 {
+  column-gap: 0.2rem;
 }
 
-.cgap-2 {
+.cgap-05 {
   column-gap: 0.5rem;
 }
 
-.cgap-3 {
+.cgap-10 {
   column-gap: 1rem;
+}
+
+.flex > .auto-fill {
+  flex: 1;
+  min-width: 0;
+}
+
+.darken:hover {
+  filter: brightness(85%);
+  transition: filter 0.2s ease-in-out;
+}
+
+.brighten:hover {
+  filter: brightness(115%);
+  transition: filter 0.2s ease-in-out;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  filter: brightness(90%);
+}
+
+.btn-outline {
+  background: transparent;
+  border: var(--border);
+  color: var(--color-text);
+}
+
+.btn-outline:hover {
+  background: var(--color-muted);
+  color: white;
+}
+
+/* ====================================================
+   Positioning
+==================================================== */
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
 }
 
 /* ====================================================
@@ -16329,6 +16334,9 @@ header.smart.is-hidden {
 }
 
 /* Text Colors */
+.fc {
+  color: var(--color);
+}
 .fc-p {
   color: var(--color-primary);
 }
@@ -16343,6 +16351,9 @@ header.smart.is-hidden {
 }
 
 /* Background Colors */
+.bg {
+  background-color: var(--background);
+}
 .bg-p {
   background-color: var(--color-primary);
 }
@@ -16357,6 +16368,9 @@ header.smart.is-hidden {
 }
 
 /* Border Colors */
+.bc {
+  border-color: var(--border-color);
+}
 .bc-p {
   border-color: var(--color-primary);
 }
@@ -16418,28 +16432,6 @@ header.smart.is-hidden {
   border-color: var(--quaternary-surface-border);
 }
 
-/*Surface Hierarchy Colors*/
-.surf-p {
-  background-color: var(--primary-surface-bg);
-  color: var(--primary-surface-text);
-  border: 1px solid var(--primary-surface-border);
-}
-.surf-s {
-  background-color: var(--secondary-surface-bg);
-  color: var(--secondary-surface-text);
-  border: 1px solid var(--secondary-surface-border);
-}
-.surf-t {
-  background-color: var(--tertiary-surface-bg);
-  color: var(--tertiary-surface-text);
-  border: 1px solid var(--tertiary-surface-border);
-}
-.surf-q {
-  background-color: var(--quaternary-surface-bg);
-  color: var(--quaternary-surface-text);
-  border: 1px solid var(--quaternary-surface-border);
-}
-
 /* Semantic Colors */
 .success {
   background-color: var(--success-bg);
@@ -16468,6 +16460,28 @@ header.smart.is-hidden {
 /*Brand/Functional Colors*/
 .reverse-color {
   filter: invert(100%);
+}
+
+/*Surface Hierarchy Colors*/
+.surf-p {
+  background-color: var(--primary-surface-bg);
+  color: var(--primary-surface-text);
+  border: 1px solid var(--primary-surface-border);
+}
+.surf-s {
+  background-color: var(--secondary-surface-bg);
+  color: var(--secondary-surface-text);
+  border: 1px solid var(--secondary-surface-border);
+}
+.surf-t {
+  background-color: var(--tertiary-surface-bg);
+  color: var(--tertiary-surface-text);
+  border: 1px solid var(--tertiary-surface-border);
+}
+.surf-q {
+  background-color: var(--quaternary-surface-bg);
+  color: var(--quaternary-surface-text);
+  border: 1px solid var(--quaternary-surface-border);
 }
 
 /*# sourceMappingURL=omni.min.css.map */

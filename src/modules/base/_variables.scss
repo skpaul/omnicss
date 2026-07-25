@@ -36,8 +36,8 @@
     color-scheme: light dark;
 
     --background: light-dark(#fff, #0F172A); /*default background color*/
-    --color: #ccc; /*default font color*/
-    --border-color: #000; /*default border color*/
+    --color:      light-dark(#1F2937, #E5E7EB); /*default font color*/
+    --border-color: light-dark(#D1D5DB, #374151); /*default border color*/
 
     --color-primary: #0066ff;
     --color-secondary: #7c3aed;
