@@ -1,18 +1,15 @@
-/* ====================================================
-   Font-Size
-==================================================== */
 @use "sass:meta";
 @use "sass:map";
 
-
+/* ====================================================
+   Font-Size
+==================================================== */
+@include createFontSizes("");
 @each $bp in map.keys($breakpoints) {
     @include breakpoint($bp) {
         @include createFontSizes($bp);
     }
 }
-
-@include createFontSizes("");
-
 
 /* ====================================================
    Font-Weight
@@ -27,28 +24,18 @@
    Line-Height
 ==================================================== */
 @include createRule("lh", "line-height", $lineHeights, "", ""); 
-@include xl{
-    @include createRule("lh", "line-height", $lineHeights, "", "xl"); 
-}
-@include lg{
-    @include createRule("lh", "line-height", $lineHeights, "", "lg"); 
-}
-@include md{
-    @include createRule("lh", "line-height", $lineHeights, "", "md"); 
-}
-@include sm{
-    @include createRule("lh", "line-height", $lineHeights, "", "sm"); 
-}
-@include xs{
-   @include createRule("lh", "line-height", $lineHeights, "", "xs"); 
-}
-@include us{
-    @include createRule("lh", "line-height", $lineHeights, "", "us"); 
+
+@each $bp in map.keys($breakpoints) {
+    @include breakpoint($bp) {
+        @include createFontSizes($bp);
+        @include createRule("lh", "line-height", $lineHeights, "", $bp); 
+    }
 }
 
 /* ====================================================
    White Space
 ==================================================== */
+
 
 
 /* ====================================================

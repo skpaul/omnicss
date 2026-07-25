@@ -3,6 +3,7 @@
 // ====================================================
 
 @use "sass:meta";
+@use "sass:map";
 
 $margin-properties: (
     ma: margin,
@@ -27,27 +28,37 @@ $margin-dual: (
 @include create-both-spacing("mv", "margin-top","margin-bottom");
 @include create-both-spacing("mh", "margin-left","margin-right");
 
-
-@each $bp-key, $bp-suffix in $breakpoint-names {
-    @include meta.apply(meta.get-mixin($bp-key)) {
-        @each $class, $property in $margin-properties {
-            @include createFixedSpacing(
-                $class,
-                $property,
-                "-#{$bp-suffix}"
-            );
+@each $bp in map.keys($breakpoints) {
+    @include breakpoint($bp) {
+        @each $class, $property in $padding-properties {
+            @include createFixedSpacing($class, $property, "-#{$bp}");
         }
-
-        @each $class, $properties in $margin-dual {
-            @include create-both-spacing(
-                $class,
-                nth($properties, 1),
-                nth($properties, 2),
-                "-#{$bp-suffix}"
-            );
+         @each $class, $properties in $padding-dual {
+            @include create-both-spacing($class, nth($properties, 1), nth($properties, 2), "-#{$bp}");
         }
     }
 }
+
+// @each $bp-key, $bp-suffix in $breakpoint-names {
+//     @include meta.apply(meta.get-mixin($bp-key)) {
+//         @each $class, $property in $margin-properties {
+//             @include createFixedSpacing(
+//                 $class,
+//                 $property,
+//                 "-#{$bp-suffix}"
+//             );
+//         }
+
+//         @each $class, $properties in $margin-dual {
+//             @include create-both-spacing(
+//                 $class,
+//                 nth($properties, 1),
+//                 nth($properties, 2),
+//                 "-#{$bp-suffix}"
+//             );
+//         }
+//     }
+// }
 
 
 
