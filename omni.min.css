@@ -40,6 +40,9 @@
   --color-primary: #0066ff;
   --color-secondary: #7c3aed;
   --color-black: light-dark(#2d2d2d, #e0e0e0);
+  --link-color: light-dark(#3DBCEE, #5FC7F0);
+  --link-color-hover: light-dark(#2196C7, #7FD4EE);
+  --link-color-visited: light-dark(#6D5CE0, #9B8FF0);
   /* Surface Hierarchy */
   /* Primary */
   --primary-surface-bg: light-dark(#FFFFFF, #292a2d);
@@ -185,6 +188,17 @@ a:not([class]) {
 
 a {
   text-decoration: none;
+  color: var(--link-color);
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--link-color-hover);
+}
+
+a:visited:not([class]) {
+  color: var(--link-color-visited);
 }
 
 /* Extra Large devices (min-width: 1400px) */

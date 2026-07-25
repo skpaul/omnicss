@@ -74,4 +74,15 @@ a:not([class]) {
 
 a {
     text-decoration: none;
+    color: var(--link-color);
+    transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--link-color-hover);
+}
+
+a:visited:not([class]) {
+    color: var(--link-color-visited);
 }
