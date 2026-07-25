@@ -22,8 +22,6 @@
     --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 /* ====================================================
    Theme Colors (light + dark defined once)
    - Uses the CSS light-dark() function so each variable
@@ -120,35 +118,15 @@
 :root.light { color-scheme: light; }
 :root.dark  { color-scheme: dark; }
 
-// _variables.scss
+// Desktop-first approach (base styles for large screens, overrides for smaller screens)
 $breakpoints: (
-    us: (max: 479.98px),
-    xs: (max: 575.98px),
-    sm: (max: 767.98px),
-    md: (max: 991.98px),
+    xl: (min: 1399.98px),
     lg: (min: 1199.98px),
-    xl: (min: 1399.98px)
+    md: (max: 991.98px),
+    sm: (max: 767.98px),
+    xs: (max: 575.98px),
+    us: (max: 479.98px)
 );
-
-$breakpointsOld: (
-  xl: 1399.98px,
-  lg: 1199.98px,
-  md: 991.98px,
-  sm: 767.98px,
-  xs: 575.98px,
-  us: 479.98px
-);
-
-// Breakpoint naming conventions for grid classes
-$breakpoint-names: (
-  xl: 'xl',  // .fr1-xl
-  lg: 'lg',  // .fr1-lg
-  md: 'md',
-  sm: 'sm',
-  xs: 'xs',
-  us: 'us'  
-);
-
 
 $container-widths: (600, 700, 800, 900, 1000, 1100,  1200,  1320, 1440, 1600);
 

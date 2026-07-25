@@ -54,6 +54,16 @@
 .center{text-align: center;}
 .justify{text-align: justify;}
 
+$text-alignments: left, right, center, justify;
+@each $bp in map.keys($breakpoints) {
+    @include breakpoint($bp) {
+        @each $align in $text-alignments {
+            .ta-#{$align}-#{$bp} { text-align: $align; }
+        }
+    }
+}
+
+
 /* ====================================================
    Text Transformation
 ==================================================== */
