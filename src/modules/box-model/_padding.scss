@@ -4,6 +4,7 @@
 
 @use "sass:meta";
 @use "sass:map";
+@use "sass:list";
 
 $padding-properties: (
     pa: padding,
@@ -48,7 +49,7 @@ $padding-dual: (
             @include createRule($class, $property, $sizes, "rem", $bp); 
         }
          @each $class, $properties in $padding-dual {
-            @include create-both-spacing($class, nth($properties, 1), nth($properties, 2), "-#{$bp}");
+            @include create-both-spacing($class, list.nth($properties, 1), list.nth($properties, 2), "-#{$bp}");
         }
     }
 }

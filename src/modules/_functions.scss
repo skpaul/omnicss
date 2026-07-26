@@ -2,7 +2,8 @@
 
 @mixin createRule($prefix, $property, $values, $unit, $device) {
 
-    $suffix: if($device == "", "", "-#{$device}");
+    // $suffix: if($device == "", "", "-#{$device}");
+    $suffix: if(sass($device == ""): ""; else: "-#{$device}");
 
     @each $value in $values {
         $class: null;
@@ -20,6 +21,7 @@
         }
     }
 }
+
 
 // This is a generic function to use almost in all purpose
 // @mixin createRule($prefix, $property, $values, $unit, $device) {
@@ -86,8 +88,8 @@
         }
 
         @each $value in $sizes{
-            $part1: str-slice($value, 1, 1); //when $value = '0.50', it returns '0'
-            $part2: str-slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
+            $part1: string.slice($value, 1, 1); //when $value = '0.50', it returns '0'
+            $part2: string.slice($value, 3, 4) ; //when $value = '0.50', it returns '50'
             .#{$prefix}-#{$part1}#{$part2}#{$device}{
                 #{$property1}: #{$value} + 'rem' !important;
                 #{$property2}: #{$value} + 'rem' !important;
