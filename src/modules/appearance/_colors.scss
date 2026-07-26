@@ -73,3 +73,19 @@
 /*Brand/Functional Colors*/
 
 .reverse-color { filter: invert(100%);}
+
+.muted-90{
+    color: color-mix(in srgb, currentColor 90%, transparent);
+}
+.muted-80{
+    color: color-mix(in srgb, currentColor 80%, transparent);
+}
+.muted-70{
+    color: color-mix(in srgb, currentColor 70%, transparent);
+}
+.muted-60{
+    color: color-mix(in srgb, currentColor 60%, transparent);
+}
+.muted-50{
+    color: color-mix(in srgb, currentColor 50%, transparent);
+}
