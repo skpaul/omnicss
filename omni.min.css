@@ -16363,6 +16363,33 @@ header.smart.is-hidden {
 .fc-black {
   color: var(--color-black);
 }
+.fc-muted-09 {
+  color: color-mix(in srgb, currentColor 90%, transparent);
+}
+.fc-muted-08 {
+  color: color-mix(in srgb, currentColor 80%, transparent);
+}
+.fc-muted-07 {
+  color: color-mix(in srgb, currentColor 70%, transparent);
+}
+.fc-muted-06 {
+  color: color-mix(in srgb, currentColor 60%, transparent);
+}
+.fc-muted-05 {
+  color: color-mix(in srgb, currentColor 50%, transparent);
+}
+.fc-muted-04 {
+  color: color-mix(in srgb, currentColor 40%, transparent);
+}
+.fc-muted-03 {
+  color: color-mix(in srgb, currentColor 30%, transparent);
+}
+.fc-muted-02 {
+  color: color-mix(in srgb, currentColor 20%, transparent);
+}
+.fc-muted-01 {
+  color: color-mix(in srgb, currentColor 10%, transparent);
+}
 
 /* Background Colors */
 .bg {
@@ -16380,6 +16407,33 @@ header.smart.is-hidden {
 .bg-black {
   background-color: var(--color-black);
 }
+.bg-muted-09 {
+  background-color: color-mix(in srgb, currentColor 90%, transparent);
+}
+.bg-muted-08 {
+  background-color: color-mix(in srgb, currentColor 80%, transparent);
+}
+.bg-muted-07 {
+  background-color: color-mix(in srgb, currentColor 70%, transparent);
+}
+.bg-muted-06 {
+  background-color: color-mix(in srgb, currentColor 60%, transparent);
+}
+.bg-muted-05 {
+  background-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+.bg-muted-04 {
+  background-color: color-mix(in srgb, currentColor 40%, transparent);
+}
+.bg-muted-03 {
+  background-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+.bg-muted-02 {
+  background-color: color-mix(in srgb, currentColor 20%, transparent);
+}
+.bg-muted-01 {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
 
 /* Border Colors */
 .bc {
@@ -16396,6 +16450,33 @@ header.smart.is-hidden {
 }
 .bc-black {
   border-color: var(--color-black);
+}
+.bc-muted-09 {
+  border-color: color-mix(in srgb, currentColor 90%, transparent);
+}
+.bc-muted-08 {
+  border-color: color-mix(in srgb, currentColor 80%, transparent);
+}
+.bc-muted-07 {
+  border-color: color-mix(in srgb, currentColor 70%, transparent);
+}
+.bc-muted-06 {
+  border-color: color-mix(in srgb, currentColor 60%, transparent);
+}
+.bc-muted-05 {
+  border-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+.bc-muted-04 {
+  border-color: color-mix(in srgb, currentColor 40%, transparent);
+}
+.bc-muted-03 {
+  border-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+.bc-muted-02 {
+  border-color: color-mix(in srgb, currentColor 20%, transparent);
+}
+.bc-muted-01 {
+  border-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
 .fc-surf-p {

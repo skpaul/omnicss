@@ -1,4 +1,10 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "sass:math";
 
+$mutedColorVariants: 90, 80, 70, 60, 50, 40, 30, 20, 10;
 
 /* Text Colors */
 .fc{
@@ -7,7 +13,17 @@
     &-s { color: var(--color-secondary); }
     &-a { color: var(--accent-color); }
     &-black{ color: var(--color-black); }
+
+    @each $value in $mutedColorVariants {
+       $class: math.div($value, 10);
+
+        &-muted-0#{$class} {
+            color: color-mix(in srgb, currentColor #{$value * 1%}, transparent);
+        }
+    }
 }
+
+
 
 /* Background Colors */
 .bg{
@@ -16,6 +32,13 @@
     &-s { background-color: var(--color-secondary); }
     &-a { background-color: var(--accent-color); }
     &-black{ background-color: var(--color-black); }
+    @each $value in $mutedColorVariants {
+       $class: math.div($value, 10);
+
+        &-muted-0#{$class} {
+            background-color: color-mix(in srgb, currentColor #{$value * 1%}, transparent);
+        }
+    }
 }
 
 /* Border Colors */
@@ -25,6 +48,13 @@
     &-s { border-color: var(--color-secondary); }
     &-a { border-color: var(--accent-color); }
     &-black{ border-color: var(--color-black); }
+        @each $value in $mutedColorVariants {
+       $class: math.div($value, 10);
+
+        &-muted-0#{$class} {
+            border-color: color-mix(in srgb, currentColor #{$value * 1%}, transparent);
+        }
+    }
 }
 
 
