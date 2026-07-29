@@ -41,8 +41,8 @@
     --color: #ccc; /*default font color*/
     --border-color: #000; /*default border color*/
 
-    --color-primary: #0066ff;
-    --color-secondary: #7c3aed;
+    --primary-color: #0066ff;
+    --secondary-color: #7c3aed;
     --color-black: light-dark(#2d2d2d, #e0e0e0);
 
     /* Surface Hierarchy */

@@ -9,8 +9,8 @@ $mutedColorVariants: 90, 80, 70, 60, 50, 40, 30, 20, 10;
 /* Text Colors */
 .fc{
     color: var(--color); 
-    &-p { color: var(--color-primary); }
-    &-s { color: var(--color-secondary); }
+    &-p { color: var(--primary-color); }
+    &-s { color: var(--secondary-color); }
     &-a { color: var(--accent-color); }
     &-black{ color: var(--color-black); }
 
@@ -28,8 +28,8 @@ $mutedColorVariants: 90, 80, 70, 60, 50, 40, 30, 20, 10;
 /* Background Colors */
 .bg{
     background-color: var(--background);
-    &-p { background-color: var(--color-primary); }
-    &-s { background-color: var(--color-secondary); }
+    &-p { background-color: var(--primary-color); }
+    &-s { background-color: var(--secondary-color); }
     &-a { background-color: var(--accent-color); }
     &-black{ background-color: var(--color-black); }
     @each $value in $mutedColorVariants {
@@ -44,8 +44,8 @@ $mutedColorVariants: 90, 80, 70, 60, 50, 40, 30, 20, 10;
 /* Border Colors */
 .bc{
     border-color: var(--border-color);
-    &-p { border-color: var(--color-primary); }
-    &-s { border-color: var(--color-secondary); }
+    &-p { border-color: var(--primary-color); }
+    &-s { border-color: var(--secondary-color); }
     &-a { border-color: var(--accent-color); }
     &-black{ border-color: var(--color-black); }
         @each $value in $mutedColorVariants {

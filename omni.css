@@ -37,8 +37,8 @@
   --background: light-dark(#fff, #0F172A); /*default background color*/
   --color: #ccc; /*default font color*/
   --border-color: #000; /*default border color*/
-  --color-primary: #0066ff;
-  --color-secondary: #7c3aed;
+  --primary-color: #0066ff;
+  --secondary-color: #7c3aed;
   --color-black: light-dark(#2d2d2d, #e0e0e0);
   /* Surface Hierarchy */
   /* Primary */
@@ -14772,7 +14772,7 @@ header.smart.is-hidden {
 }
 
 .btn-primary {
-  background: var(--color-primary);
+  background: var(--primary-color);
   color: white;
 }
 
@@ -16356,10 +16356,10 @@ header.smart.is-hidden {
 
 /* Text Colors */
 .fc-p {
-  color: var(--color-primary);
+  color: var(--primary-color);
 }
 .fc-s {
-  color: var(--color-secondary);
+  color: var(--secondary-color);
 }
 .fc-a {
   color: var(--accent-color);
@@ -16370,10 +16370,10 @@ header.smart.is-hidden {
 
 /* Background Colors */
 .bg-p {
-  background-color: var(--color-primary);
+  background-color: var(--primary-color);
 }
 .bg-s {
-  background-color: var(--color-secondary);
+  background-color: var(--secondary-color);
 }
 .bg-a {
   background-color: var(--accent-color);
@@ -16384,10 +16384,10 @@ header.smart.is-hidden {
 
 /* Border Colors */
 .bc-p {
-  border-color: var(--color-primary);
+  border-color: var(--primary-color);
 }
 .bc-s {
-  border-color: var(--color-secondary);
+  border-color: var(--secondary-color);
 }
 .bc-a {
   border-color: var(--accent-color);

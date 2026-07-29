@@ -34,21 +34,21 @@ if (header) {
 //       <span class="icon">🌗</span>
 //  </button>
 
-function toggleTheme(btn) {
-    const root = document.documentElement;
-    const themeIcon = btn.querySelector('.icon');
+        function toggleTheme(btn) {
+            const root = document.documentElement;
+            const themeIcon = btn.querySelector('.icon');
 
-    const isDark = root.classList.contains('dark') ||
-        (!root.classList.contains('light') &&
-         window.matchMedia('(prefers-color-scheme: dark)').matches);
+            const isDark = root.classList.contains('dark') ||
+                (!root.classList.contains('light') &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches);
 
-    root.classList.remove('light', 'dark');
-    root.classList.add(isDark ? 'light' : 'dark');
+            root.classList.remove('light', 'dark');
+            root.classList.add(isDark ? 'light' : 'dark');
 
-    if (themeIcon) {
-        themeIcon.textContent = isDark ? '🌙' : '☀️';
-    }
-}
+            if (themeIcon) {
+                themeIcon.textContent = isDark ? '🌙' : '☀️';
+            }
+        }
 
 
 // The kebab menu, also known as the three dots menu, and the three vertical dots menu, is an icon used to open a menu with additional options.
