@@ -14,11 +14,13 @@
 /* A tiny, clean, futuristic CSS framework */
 /* ~2KB | No dependencies | MIT License */
 
+@import 'modules/theme';
+
+//Base
 @import 'modules/base/variables';
 @import 'modules/base/reset';
-
-@import 'modules/media-queries'; 
-@import 'modules/functions'; 
+@import 'modules/base/media-queries'; 
+@import 'modules/base/functions'; 
 
 //Box Model
 @import 'modules/box-model/border'; 
