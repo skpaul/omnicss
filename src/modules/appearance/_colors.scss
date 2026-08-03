@@ -53,6 +53,7 @@ $mutedColorVariants: 90, 80, 70, 60, 50, 40, 30, 20, 10;
 
         &-muted-0#{$class} {
             border-color: color-mix(in srgb, currentColor #{$value * 1%}, transparent);
+            //FORMULA :: color-mix(in srgb, var(--color) 70%, transparent)
         }
     }
 }
