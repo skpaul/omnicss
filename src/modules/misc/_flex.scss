@@ -14,7 +14,7 @@
 
 // Mixin to emit base & responsive properties cleanly
 @mixin generate-flex-utilities($bp: "") {
-  $suffix: if($bp == "", "", "-#{$bp}");
+    $suffix: if($bp == "", "", "-#{$bp}");
 
   // Direction & Wrap
   .fd-row#{$suffix} { flex-direction: row !important; }
