@@ -1,59 +1,93 @@
+@use "sass:map";
 
 /* ====================================================
    Flexbox
 ==================================================== */
 .flex{display: flex;}
 .iflex{display: inline-flex;}
-.fd-row{flex-direction: row;}
-.fd-col{flex-direction: column;}
-.fw-wrap{flex-wrap: wrap;}
-.fw-nowrap{flex-wrap: nowrap;}
-.fw-wrap-reverse{flex-wrap: wrap-reverse;}
-.flex-center{display: flex; justify-content: center; align-items: center;}
 
 
-.jc-start{justify-content: flex-start;}
-.jc-end{justify-content: flex-end;}
-.jc-center{justify-content: center;}
-.jc-between{justify-content: space-between;}
-.jc-around{justify-content: space-around;}
-.jc-evenly{justify-content: space-evenly;}
 
-.ai-start{align-items: flex-start;}
-.ai-end{align-items: flex-end;}
-.ai-center{align-items: center;}
-.ai-baseline{align-items: baseline;}
-.ai-stretch{align-items: stretch;}
+/* ====================================================
+   Flexbox & Alignment Utilities
+==================================================== */
 
-.ac-start{align-content: flex-start;}
-.ac-end{align-content: flex-end;}
-.ac-center{align-content: center;}
-.ac-between{align-content: space-between;}
-.ac-around{align-content: space-around;}
-.ac-evenly{align-content: space-evenly;}
-.ac-stretch{align-content: stretch;}
+// Mixin to emit base & responsive properties cleanly
+@mixin generate-flex-utilities($bp: "") {
+  $suffix: if($bp == "", "", "-#{$bp}");
 
-.as-auto{align-self: auto;}
-.as-start{align-self: flex-start;}
-.as-end{align-self: flex-end;}
-.as-center{align-self: center;}
-.as-baseline{align-self: baseline;}
-.as-stretch{align-self: stretch;}
+  // Direction & Wrap
+  .fd-row#{$suffix} { flex-direction: row !important; }
+  .fd-col#{$suffix} { flex-direction: column !important; }
+  .fw-wrap#{$suffix} { flex-wrap: wrap !important; }
+  .fw-nowrap#{$suffix} { flex-wrap: nowrap !important; }
+  .fw-wrap-reverse#{$suffix} { flex-wrap: wrap-reverse !important; }
 
-.gap-0{gap: 0;}
-.gap-02{gap: 0.20rem;}
-.gap-05{gap: 0.5rem;}
-.gap-10{gap: 1.0rem;}
+  // Helpers
+  .flex-center#{$suffix} {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 
-.rgap-0{row-gap: 0;}
-.rgap-02{row-gap: 0.20rem;}
-.rgap-05{row-gap: 0.5rem;}
-.rgap-10{row-gap: 1rem;}
+  // Justify Content
+  .jc-start#{$suffix} { justify-content: flex-start !important; }
+  .jc-end#{$suffix} { justify-content: flex-end !important; }
+  .jc-center#{$suffix} { justify-content: center !important; }
+  .jc-between#{$suffix} { justify-content: space-between !important; }
+  .jc-around#{$suffix} { justify-content: space-around !important; }
+  .jc-evenly#{$suffix} { justify-content: space-evenly !important; }
 
-.cgap-0{column-gap: 0;}
-.cgap-02{column-gap: 0.20rem;}
-.cgap-05{column-gap: 0.5rem;}
-.cgap-10{column-gap: 1rem;}
+  // Align Items
+  .ai-start#{$suffix} { align-items: flex-start !important; }
+  .ai-end#{$suffix} { align-items: flex-end !important; }
+  .ai-center#{$suffix} { align-items: center !important; }
+  .ai-baseline#{$suffix} { align-items: baseline !important; }
+  .ai-stretch#{$suffix} { align-items: stretch !important; }
+
+  // Align Content
+  .ac-start#{$suffix} { align-content: flex-start !important; }
+  .ac-end#{$suffix} { align-content: flex-end !important; }
+  .ac-center#{$suffix} { align-content: center !important; }
+  .ac-between#{$suffix} { align-content: space-between !important; }
+  .ac-around#{$suffix} { align-content: space-around !important; }
+  .ac-evenly#{$suffix} { align-content: space-evenly !important; }
+  .ac-stretch#{$suffix} { align-content: stretch !important; }
+
+  // Align Self
+  .as-auto#{$suffix} { align-self: auto !important; }
+  .as-start#{$suffix} { align-self: flex-start !important; }
+  .as-end#{$suffix} { align-self: flex-end !important; }
+  .as-center#{$suffix} { align-self: center !important; }
+  .as-baseline#{$suffix} { align-self: baseline !important; }
+  .as-stretch#{$suffix} { align-self: stretch !important; }
+
+  // Gaps
+  .gap-0#{$suffix} { gap: 0 !important; }
+  .gap-02#{$suffix} { gap: 0.2rem !important; }
+  .gap-05#{$suffix} { gap: 0.5rem !important; }
+  .gap-10#{$suffix} { gap: 1rem !important; }
+
+  .rgap-0#{$suffix} { row-gap: 0 !important; }
+  .rgap-02#{$suffix} { row-gap: 0.2rem !important; }
+  .rgap-05#{$suffix} { row-gap: 0.5rem !important; }
+  .rgap-10#{$suffix} { row-gap: 1rem !important; }
+
+  .cgap-0#{$suffix} { column-gap: 0 !important; }
+  .cgap-02#{$suffix} { column-gap: 0.2rem !important; }
+  .cgap-05#{$suffix} { column-gap: 0.5rem !important; }
+  .cgap-10#{$suffix} { column-gap: 1rem !important; }
+}
+
+// 1. Base Utilities (no breakpoint suffix)
+@include generate-flex-utilities();
+
+// 2. Responsive Utilities (grouped by breakpoint)
+@each $bp in map.keys($breakpoints) {
+  @include breakpoint($bp) {
+    @include generate-flex-utilities($bp);
+  }
+}
 
 .flex {
     > .auto-fill{flex: 1; min-width: 0;}
